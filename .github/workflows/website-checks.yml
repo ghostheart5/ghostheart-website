@@ -95,3 +95,41 @@ jobs:
                   print(f"{source}: {href} ({reason})")
               raise SystemExit(1)
           PY
+
+      - name: Check website JavaScript syntax
+        run: node --check ghostheart-website/js/ghostheart.js
+
+      - name: Prevent false email signup confirmation
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          html_path = Path("ghostheart-website/index.html")
+          javascript_path = Path("ghostheart-website/js/ghostheart.js")
+          html = html_path.read_text(encoding="utf-8")
+          javascript = javascript_path.read_text(encoding="utf-8")
+          notice = "Email signup is being connected. No address is collected yet."
+          old_success = "You are in. New GhostHeart signals will find you."
+
+          email_input = re.search(r'<input\b[^>]*\bid="email"[^>]*>', html, re.S)
+          submit_button = re.search(r'<button\b[^>]*\btype="submit"[^>]*>', html, re.S)
+
+          errors = []
+          if notice not in html:
+              errors.append("Missing visible email-signup unavailable notice.")
+          if old_success in html or old_success in javascript:
+              errors.append("Found the retired email-signup success message.")
+          if '.addEventListener("submit"' in javascript or ".addEventListener('submit'" in javascript:
+              errors.append("Client-side submit handling is not allowed before persistence exists.")
+          for element, label in ((email_input, "email input"), (submit_button, "submit button")):
+              if element is None or not re.search(r'\bdisabled\b', element.group(0)):
+                  errors.append(f"The {label} must remain disabled.")
+              if element is None or 'aria-describedby="signup-unavailable"' not in element.group(0):
+                  errors.append(f"The {label} must describe the unavailable state.")
+
+          if errors:
+              for error in errors:
+                  print(error)
+              raise SystemExit(1)
+          PY
