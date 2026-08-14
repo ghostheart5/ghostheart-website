@@ -94,3 +94,4 @@ jobs:
               for source, href, reason in missing:
                   print(f"{source}: {href} ({reason})")
               raise SystemExit(1)
+          PY
