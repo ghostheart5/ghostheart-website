@@ -684,12 +684,15 @@
               name="email"
               type="email"
               autocomplete="email"
-              placeholder="you@example.com"
-              required
+              placeholder="Email signup coming soon"
+              aria-describedby="signup-unavailable"
+              disabled
             />
-            <button type="submit" class="gh-btn">Join The Signal</button>
+            <button type="submit" class="gh-btn" aria-describedby="signup-unavailable" disabled>
+              Join The Signal
+            </button>
           </div>
-          <p class="form-note">No noise. No spam. Only meaningful signals.</p>
+          <p class="form-note" id="signup-unavailable">Email signup is being connected. No address is collected yet.</p>
           <p class="form-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>

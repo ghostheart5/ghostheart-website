@@ -102,26 +102,6 @@ if (sections.length && navLinks.length) {
   markActiveLink(sections[0].id);
 }
 
-const signupForm = document.querySelector(".signup-form");
-const statusText = document.querySelector("#form-status");
-
-if (signupForm && statusText) {
-  signupForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const emailInput = signupForm.querySelector("input[type='email']");
-    const email = emailInput ? emailInput.value.trim() : "";
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(email)) {
-      statusText.textContent = "Please enter a valid email address before joining the signal.";
-      return;
-    }
-
-    statusText.textContent = "You are in. New GhostHeart signals will find you.";
-    signupForm.reset();
-  });
-}
-
 const particleField = document.querySelector("#particles");
 if (particleField && !reducedMotion) {
   const particleCount = 20;
