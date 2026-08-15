@@ -142,8 +142,11 @@ jobs:
 
           page_path = Path("ghostheart-website/human-too.html")
           css_path = Path("ghostheart-website/css/ghostheart.css")
+          artwork_path = Path("ghostheart-website/assets/images/releases/human-too-cover.jpg")
           page = page_path.read_text(encoding="utf-8") if page_path.exists() else ""
           css = css_path.read_text(encoding="utf-8")
+          canonical_url = "https://www.myghostheart.com/ghostheart-website/human-too.html"
+          artwork_url = "https://www.myghostheart.com/ghostheart-website/assets/images/releases/human-too-cover.jpg"
 
           required_text = (
               "Human Too",
@@ -151,7 +154,9 @@ jobs:
               "Releasing August 21, 2026",
               "Coming August 21",
               "Reviewed support resources are being prepared.",
-              "https://myghostheart.com/ghostheart-website/human-too.html",
+              canonical_url,
+              artwork_url,
+              'src="assets/images/releases/human-too-cover.jpg"',
               "MusicRecording",
               "human_too_ghostheart_continue",
           )
@@ -168,6 +173,8 @@ jobs:
           errors = []
           if not page_path.exists():
               errors.append("Missing Human Too release page.")
+          if not artwork_path.exists():
+              errors.append("Missing approved Human Too release artwork.")
           for value in required_text:
               if value not in page:
                   errors.append(f"Human Too page missing required value: {value}")
@@ -177,6 +184,10 @@ jobs:
           for pattern in forbidden_url_patterns:
               if re.search(pattern, page, re.I):
                   errors.append(f"Human Too page contains an unverified DSP URL: {pattern}")
+          if "Copilot_20260715_184612.png" in page:
+              errors.append("Human Too page still uses the legacy Copilot artwork.")
+          if "https://myghostheart.com/" in page:
+              errors.append("Human Too page uses the non-www canonical hostname.")
           if re.search(r'\b(?:keegan|radetski)\b', page, re.I):
               errors.append("Human Too page exposes founder legal identity.")
           if ".human-too-hero" not in css:

@@ -6,17 +6,27 @@
 
 ## Route
 
-`https://myghostheart.com/ghostheart-website/human-too.html`
+`https://www.myghostheart.com/ghostheart-website/human-too.html`
 
 The root page currently redirects into `ghostheart-website/`, so this route follows the existing deployed file layout.
 
 ## Content Ownership
 
-The displayed lyric excerpt is founder-owned material authorized for this page. Do not add complete lyrics without a separate release-content review. Artwork on the page is an existing GhostHeart website asset; new release artwork requires its own documented provenance review.
+The displayed lyric excerpt is founder-owned material authorized for this page. Do not add complete lyrics without a separate release-content review.
+
+The approved GH-MUS-001 consumer artwork is `ghostheart-website/assets/images/releases/human-too-cover.jpg`, copied from `GH-MUS-001_Human_Too_Cover_3000x3000_RGB.jpg`. It is the required Human Too hero, Open Graph, and Twitter card image. Do not substitute the legacy `Copilot_20260715_184612.png` asset on this release page.
 
 ## Release State
 
-The page is intentionally useful before and after release. Until verified DSP URLs are available, each listening destination remains plain status text. It is not a link, button, or disabled control.
+The confirmed release date is August 21, 2026. The page is intentionally useful before and after release. Until verified DSP URLs are available, each listening destination remains plain status text. It is not a link, button, or disabled control.
+
+## Artwork Update Procedure
+
+1. Preserve the approved source file outside the website repository with its release records.
+2. Add any future approved artwork as a new, release-specific asset under `ghostheart-website/assets/images/releases/`; do not overwrite shared legacy imagery.
+3. Update the hero `img`, `og:image`, and `twitter:image` together, using the `https://www.myghostheart.com/` hostname for absolute metadata URLs.
+4. Confirm the image dimensions, provenance record, meaningful alt text, metadata values, and local HTTP response.
+5. Run the website checks before committing.
 
 ## DSP-Link Update Procedure
 
