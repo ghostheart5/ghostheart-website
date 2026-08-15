@@ -1125,3 +1125,290 @@ blockquote {
     opacity: 0;
   }
 }
+
+/* Human Too release signal */
+.release-page .gh-background::before {
+  opacity: 0.46;
+}
+
+.release-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.release-nav-links a,
+.gh-footer a {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.release-nav-links a:hover,
+.release-nav-links a:focus-visible,
+.gh-footer a:hover,
+.gh-footer a:focus-visible {
+  color: var(--ghost-rose);
+}
+
+.human-too-hero {
+  min-height: min(820px, calc(100vh - 5rem));
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 8vw, 6rem);
+}
+
+.human-too-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.human-too-hero h1 {
+  margin-bottom: 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(3.1rem, 11vw, 8.4rem);
+  line-height: 0.83;
+  color: var(--light-through-cracks);
+}
+
+.human-too-hero h1 span {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.17em;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  color: var(--ghost-rose);
+}
+
+.human-too-campaign {
+  max-width: 20ch;
+  margin-bottom: 0.7rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  line-height: 1.18;
+  color: var(--ghost-rose);
+}
+
+.human-too-supporting,
+.release-date {
+  color: var(--memory-silver);
+}
+
+.human-too-supporting {
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.release-date {
+  margin-bottom: 0;
+  font-size: 1.04rem;
+}
+
+.release-date time {
+  color: var(--light-through-cracks);
+  font-weight: 700;
+}
+
+.human-too-art {
+  position: relative;
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.human-too-art::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: rgba(255, 123, 114, 0.24);
+  filter: blur(55px);
+}
+
+.human-too-art img {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid rgba(255, 182, 193, 0.42);
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px rgba(255, 123, 114, 0.06), 0 0 74px rgba(112, 101, 212, 0.28);
+}
+
+.human-too-section {
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+  border-top: 1px solid rgba(199, 208, 222, 0.18);
+}
+
+.section-intro,
+.human-too-prose p,
+.continue-section p {
+  max-width: 65ch;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.listen-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  max-width: 850px;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listen-status li {
+  min-height: 108px;
+  padding: 1rem;
+  display: grid;
+  align-content: space-between;
+  border: 1px solid rgba(199, 208, 222, 0.22);
+  border-radius: var(--radius-sm);
+  background: rgba(8, 9, 13, 0.45);
+}
+
+.listen-status span {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.16rem;
+  color: var(--light-through-cracks);
+}
+
+.listen-status strong {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ghost-rose);
+}
+
+.human-too-prose {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.signal-section-human {
+  display: grid;
+  gap: 2rem;
+}
+
+.signal-statement h2 {
+  margin-bottom: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  color: var(--light-through-cracks);
+}
+
+.signal-principles {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(255, 182, 193, 0.28);
+}
+
+.signal-principles p {
+  margin: 0;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(199, 208, 222, 0.18);
+  color: var(--memory-silver);
+  font-size: clamp(1.04rem, 2vw, 1.28rem);
+  line-height: 1.5;
+}
+
+.lyric-section {
+  text-align: center;
+}
+
+.lyric-section h2 {
+  margin-bottom: 1.4rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  color: var(--light-through-cracks);
+}
+
+.lyric-section blockquote {
+  max-width: 25ch;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  color: var(--ghost-rose);
+}
+
+.lyric-credit {
+  margin: 1rem 0 0;
+  color: var(--memory-silver);
+  font-size: 0.83rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.continue-section {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.continue-section h2 {
+  margin-bottom: 0.7rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  color: var(--light-through-cracks);
+}
+
+.pillar-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.pillar-links a {
+  min-height: 76px;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
+  border: 1px solid rgba(255, 182, 193, 0.28);
+  border-radius: var(--radius-sm);
+  color: var(--light-through-cracks);
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 123, 114, 0.08);
+}
+
+.pillar-links a:hover,
+.pillar-links a:focus-visible {
+  background: rgba(112, 101, 212, 0.22);
+  color: var(--ghost-rose);
+}
+
+.release-page a:focus-visible {
+  outline: 2px solid var(--ghost-rose);
+  outline-offset: 4px;
+}
+
+@media (min-width: 760px) {
+  .human-too-hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
+  }
+
+  .signal-section-human,
+  .continue-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 759px) {
+  .release-nav-links {
+    gap: 0.55rem;
+  }
+
+  .release-nav-links a:not(:last-child) {
+    display: none;
+  }
+}
