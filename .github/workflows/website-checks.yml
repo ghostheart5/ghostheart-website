@@ -133,3 +133,57 @@ jobs:
                   print(error)
               raise SystemExit(1)
           PY
+
+      - name: Validate Human Too release signal
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          page_path = Path("ghostheart-website/human-too.html")
+          css_path = Path("ghostheart-website/css/ghostheart.css")
+          page = page_path.read_text(encoding="utf-8") if page_path.exists() else ""
+          css = css_path.read_text(encoding="utf-8")
+
+          required_text = (
+              "Human Too",
+              "SEE THE PERSON. NOT THE LABEL.",
+              "Releasing August 21, 2026",
+              "Coming August 21",
+              "Reviewed support resources are being prepared.",
+              "https://myghostheart.com/ghostheart-website/human-too.html",
+              "MusicRecording",
+              "human_too_ghostheart_continue",
+          )
+          forbidden_text = (
+              "Spotify URL",
+              "Apple Music ID",
+              "href=\"#\"",
+              "href='#'",
+          )
+          forbidden_url_patterns = (
+              r'https?://[^\"\s<]*(?:spotify\.com|music\.apple\.com)[^\"\s<]*',
+          )
+
+          errors = []
+          if not page_path.exists():
+              errors.append("Missing Human Too release page.")
+          for value in required_text:
+              if value not in page:
+                  errors.append(f"Human Too page missing required value: {value}")
+          for value in forbidden_text:
+              if value in page:
+                  errors.append(f"Human Too page contains forbidden placeholder: {value}")
+          for pattern in forbidden_url_patterns:
+              if re.search(pattern, page, re.I):
+                  errors.append(f"Human Too page contains an unverified DSP URL: {pattern}")
+          if re.search(r'\b(?:keegan|radetski)\b', page, re.I):
+              errors.append("Human Too page exposes founder legal identity.")
+          if ".human-too-hero" not in css:
+              errors.append("Human Too release styling is missing.")
+
+          if errors:
+              for error in errors:
+                  print(error)
+              raise SystemExit(1)
+          PY
