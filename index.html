@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GhostHeart Redirect</title>
   <meta http-equiv="refresh" content="0; url=./ghostheart-website/" />
+  <meta name="theme-color" content="#050507" />
+  <style>
+    html, body { min-height: 100%; margin: 0; background: #050507; color: #f8efe4; font-family: Georgia, serif; }
+    body { display: grid; place-items: center; }
+    a { color: #ffb36b; }
+  </style>
   <script>
-    window.location.replace("./ghostheart-website/");
+    window.location.replace("./ghostheart-website/" + window.location.search + window.location.hash);
   </script>
 </head>
 <body>
-  <p>Redirecting to GhostHeart...</p>
-  <p><a href="./ghostheart-website/">Open the site</a></p>
+  <main>
+    <p>Entering GhostHeart…</p>
+    <p><a href="./ghostheart-website/">Open the site</a></p>
+  </main>
 </body>
 </html>
