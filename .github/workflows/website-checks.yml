@@ -56,7 +56,7 @@ jobs:
           from urllib.parse import unquote, urlsplit
 
           ROOT = Path.cwd().resolve()
-          SKIPPED_SCHEMES = {"data", "http", "https", "javascript", "mailto", "tel"}
+          SKIPPED_SCHEMES = {"data", "http", "https", "javascript", "mailto", "tel", "sms"}
 
           class LinkParser(HTMLParser):
               def __init__(self):
@@ -116,17 +116,18 @@ jobs:
           submit_button = re.search(r'<button\b[^>]*\btype="submit"[^>]*>', html, re.S)
 
           errors = []
-          if notice not in html:
-              errors.append("Missing visible email-signup unavailable notice.")
           if old_success in html or old_success in javascript:
               errors.append("Found the retired email-signup success message.")
           if '.addEventListener("submit"' in javascript or ".addEventListener('submit'" in javascript:
               errors.append("Client-side submit handling is not allowed before persistence exists.")
-          for element, label in ((email_input, "email input"), (submit_button, "submit button")):
-              if element is None or not re.search(r'\bdisabled\b', element.group(0)):
-                  errors.append(f"The {label} must remain disabled.")
-              if element is None or 'aria-describedby="signup-unavailable"' not in element.group(0):
-                  errors.append(f"The {label} must describe the unavailable state.")
+          if email_input is not None or submit_button is not None:
+              if notice not in html:
+                  errors.append("Missing visible email-signup unavailable notice.")
+              for element, label in ((email_input, "email input"), (submit_button, "submit button")):
+                  if element is None or not re.search(r'\bdisabled\b', element.group(0)):
+                      errors.append(f"The {label} must remain disabled.")
+                  if element is None or 'aria-describedby="signup-unavailable"' not in element.group(0):
+                      errors.append(f"The {label} must describe the unavailable state.")
 
           if errors:
               for error in errors:
@@ -156,6 +157,7 @@ jobs:
               "Reviewed support resources are being prepared.",
               canonical_url,
               artwork_url,
+              "https://open.spotify.com/album/5BiC5SRSxlB13PSAJlFk88",
               'src="assets/images/releases/human-too-cover.jpg"',
               "MusicRecording",
               "human_too_ghostheart_continue",
@@ -167,7 +169,7 @@ jobs:
               "href='#'",
           )
           forbidden_url_patterns = (
-              r'https?://[^\"\s<]*(?:spotify\.com|music\.apple\.com)[^\"\s<]*',
+              r'https?://[^\"\s<]*music\.apple\.com[^\"\s<]*',
           )
 
           errors = []
