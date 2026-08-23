@@ -152,8 +152,9 @@ jobs:
           required_text = (
               "Human Too",
               "SEE THE PERSON. NOT THE LABEL.",
-              "Releasing August 21, 2026",
-              "Coming August 21",
+              'Released <time datetime="2026-08-21">August 21, 2026</time>',
+              "Human Too is out now",
+              "Listen now through the verified Spotify release page.",
               "Reviewed support resources are being prepared.",
               canonical_url,
               artwork_url,

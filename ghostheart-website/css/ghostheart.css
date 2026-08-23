@@ -201,8 +201,10 @@ tr th {
 }
 
 .gh-logo {
+  min-height: 44px;
   text-decoration: none;
   display: grid;
+  align-content: center;
   line-height: 1;
 }
 
@@ -257,6 +259,9 @@ tr th {
 }
 
 .gh-nav-links a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-size: 0.84rem;
   text-transform: uppercase;
@@ -1301,6 +1306,9 @@ blockquote {
 
 .release-nav-links a,
 .gh-footer a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-muted);
   font-size: 0.74rem;
   letter-spacing: 0.08em;
@@ -1447,6 +1455,12 @@ blockquote {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ghost-rose);
+}
+
+.listen-status a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .human-too-prose {
