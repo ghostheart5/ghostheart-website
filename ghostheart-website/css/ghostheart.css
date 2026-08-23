@@ -926,6 +926,14 @@ blockquote {
   color: #98a1b3;
 }
 
+.signup-honeypot {
+  position: absolute;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-note {
   margin-top: 0.65rem;
   margin-bottom: 0;

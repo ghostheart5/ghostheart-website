@@ -36,15 +36,20 @@
           Shadowfire updates, and future GhostHeart releases.
         </p>
 
-        <form class="signup-form" action="#" method="post">
-          <label for="email">Email Address</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" required />
-          <button type="submit">Join The Signal</button>
+        <form class="signup-form" action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" method="post" target="_blank">
+          <label for="signal-email">Email Address</label>
+          <div class="input-row">
+            <input id="signal-email" type="email" name="EMAIL" autocomplete="email" inputmode="email" placeholder="you@example.com" aria-describedby="signal-signup-note" required />
+            <button class="gh-btn" type="submit" name="subscribe">Join The Signal</button>
+          </div>
+          <div class="signup-honeypot" aria-hidden="true">
+            <input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off" />
+          </div>
         </form>
 
-        <p class="small-note">
-          This form is visual for now. Connect it later to Mailchimp, ConvertKit,
-          Buttondown, Beehiiv, Supabase, or another email service.
+        <p class="small-note" id="signal-signup-note">
+          You’ll confirm your email before anything is sent. No paywall. No sales pitch.
+          Unsubscribe anytime.
         </p>
       </section>
     </main>
