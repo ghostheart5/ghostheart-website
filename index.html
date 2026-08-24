@@ -20,6 +20,21 @@
   <meta name="theme-color" content="#080808">
   <link rel="canonical" href="https://www.myghostheart.com/">
   <meta property="og:url" content="https://www.myghostheart.com/">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["MusicGroup", "Organization"],
+      "@id": "https://www.myghostheart.com/#ghostheart",
+      "name": "GhostHeart",
+      "url": "https://www.myghostheart.com/",
+      "logo": "https://www.myghostheart.com/assets/versions/official-ghostheart.png",
+      "sameAs": [
+        "https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7",
+        "https://www.tiktok.com/@ghosthearted1",
+        "https://www.youtube.com/@GhostHeart-M95RTK"
+      ]
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to the story</a>
@@ -78,17 +93,11 @@
               <p class="track-type">Identity Song</p>
               <h3 id="identity-song-title">Who Is GhostHeart?</h3>
               <p>The name, the scars, and the reason a hidden heart finally chose to be seen.</p>
-              <div class="track-media">
-                <p class="track-now"><i aria-hidden="true"></i> GhostHeart: The Start</p>
-                <audio controls preload="metadata" aria-label="Play GhostHeart: The Start, the identity song">
-                  <source src="assets/home/ghostheart-the-start-v1.mp3" type="audio/mpeg">
-                  Your browser does not support audio playback.
-                </audio>
-              </div>
               <details class="media-access">
                 <summary>About this film</summary>
-                <p id="identity-film-description">A vertical identity film introducing GhostHeart through the name, the scars, and the choice to let a hidden heart be seen. The companion audio player presents the same identity song.</p>
+                <p id="identity-film-description">A vertical identity film introducing GhostHeart through the name, the scars, and the choice to let a hidden heart be seen.</p>
               </details>
+              <p class="media-status">Captions and transcript: not yet available.</p>
             </div>
           </article>
 
@@ -104,17 +113,11 @@
               <p class="track-type">Mission Song</p>
               <h3 id="oath-song-title">GhostHeart’s Oath</h3>
               <p>The promise to protect the unseen, tell the truth, and turn survival into something useful.</p>
-              <div class="track-media">
-                <p class="track-now"><i aria-hidden="true"></i> GhostHeart’s Oath</p>
-                <audio controls preload="metadata" aria-label="Play GhostHeart’s Oath, the mission song">
-                  <source src="assets/home/ghosthearts-oath-v1.mp3" type="audio/mpeg">
-                  Your browser does not support audio playback.
-                </audio>
-              </div>
               <details class="media-access">
                 <summary>About this film</summary>
-                <p id="oath-film-description">A vertical mission film carrying GhostHeart’s promise to protect the unseen, tell the truth, and turn survival into something useful. The companion audio player presents the same mission song.</p>
+                <p id="oath-film-description">A vertical mission film carrying GhostHeart’s promise to protect the unseen, tell the truth, and turn survival into something useful.</p>
               </details>
+              <p class="media-status">Captions and transcript: not yet available.</p>
             </div>
           </article>
         </div>
@@ -168,6 +171,27 @@
       </div>
     </section>
 
+    <section class="platform-rail" aria-labelledby="platform-rail-title">
+      <div class="wrap platform-rail-inner">
+        <div class="platform-rail-copy">
+          <p class="eyebrow">The official signal</p>
+          <h2 id="platform-rail-title">Follow the story beyond this page.</h2>
+          <p>Listen to the releases, follow the rebuilding, and watch the films from GhostHeart’s official profiles.</p>
+        </div>
+        <nav class="platform-links" aria-label="Official GhostHeart music and social profiles">
+          <a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener noreferrer" aria-label="Listen to GhostHeart on Spotify (opens in a new tab)">
+            <span>Listen</span><strong>Spotify</strong><i aria-hidden="true">↗</i>
+          </a>
+          <a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener noreferrer" aria-label="Follow GhostHeart on TikTok at ghosthearted1 (opens in a new tab)">
+            <span>Follow</span><strong>TikTok</strong><i aria-hidden="true">↗</i>
+          </a>
+          <a href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer" aria-label="Watch GhostHeart on YouTube (opens in a new tab)">
+            <span>Watch</span><strong>YouTube</strong><i aria-hidden="true">↗</i>
+          </a>
+        </nav>
+      </div>
+    </section>
+
     <section class="signal-signup" id="join-the-signal" aria-labelledby="signal-signup-title">
       <div class="wrap signal-signup-shell">
         <div class="signal-signup-copy">
@@ -185,7 +209,7 @@
           <div class="signal-honeypot" aria-hidden="true">
             <input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off">
           </div>
-          <p id="signal-signup-note">You’ll confirm your email before anything is sent. No paywall. No sales pitch. Unsubscribe anytime. Read the <a href="GhostHeart_Privacy.html">privacy and email notice</a>.</p>
+          <p id="signal-signup-note">You’ll confirm your email before anything is sent. No paywall. No sales pitch. Unsubscribe anytime. Read the <a class="signal-privacy-link" href="GhostHeart_Privacy.html">privacy and email notice</a>.</p>
         </form>
       </div>
     </section>
@@ -203,7 +227,16 @@
   </main>
 
   <footer class="footer">
-    <div class="wrap footer-inner"><span>GhostHeart</span><span>The heart survived. The mission continues.</span><span class="footer-actions"><a href="GhostHeart_Privacy.html">Privacy</a><a href="index.html#home">Back to top ↑</a></span></div>
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="index.html#home" aria-label="GhostHeart home">Ghost<span>Heart</span></a>
+      <span class="footer-mission">The heart survived. The mission continues.</span>
+      <nav class="footer-platforms" aria-label="Official GhostHeart profiles">
+        <a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener noreferrer" aria-label="GhostHeart on Spotify (opens in a new tab)">Spotify</a>
+        <a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener noreferrer" aria-label="GhostHeart on TikTok at ghosthearted1 (opens in a new tab)">TikTok</a>
+        <a href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer" aria-label="GhostHeart on YouTube (opens in a new tab)">YouTube</a>
+      </nav>
+      <span class="footer-actions"><a href="GhostHeart_Privacy.html">Privacy</a><a href="index.html#home">Back to top ↑</a></span>
+    </div>
   </footer>
 
   <script>

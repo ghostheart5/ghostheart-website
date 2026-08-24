@@ -1,0 +1,72 @@
+.official-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  margin-top: 1rem;
+  padding: 1rem clamp(.8rem, 3vw, 1.5rem) 0;
+  border-top: 1px solid rgba(214, 154, 80, .22);
+  color: #f4f0ea;
+}
+
+.official-platforms__label {
+  flex-basis: 100%;
+  margin: 0;
+  color: #d6aa74;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.official-platforms__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.official-platforms a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: .65rem .95rem;
+  border: 1px solid rgba(237, 51, 39, .52);
+  border-radius: 999px;
+  color: #f4f0ea;
+  background: rgba(237, 51, 39, .06);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color .18s ease, background-color .18s ease, color .18s ease;
+}
+
+.official-platforms a:hover {
+  border-color: rgba(214, 154, 80, .86);
+  background: rgba(214, 154, 80, .1);
+  color: #fffaf3;
+}
+
+.official-platforms a:focus-visible {
+  outline: 3px solid #ff756a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .official-platforms__links,
+  .official-platforms a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .official-platforms a {
+    transition: none;
+  }
+}

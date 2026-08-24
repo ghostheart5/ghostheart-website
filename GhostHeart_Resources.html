@@ -153,9 +153,9 @@
     }
     body { color: var(--paper); background: #080708; font-size: 16px; line-height: 1.55; }
     .wrap { width: min(1184px, calc(100% - 40px)); }
-    .nav-inner { min-height: 60px; }
-    .brand { font-size: 1rem; }
-    .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; gap: .55rem; border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.025); color: var(--paper); padding: 8px 11px; font: inherit; font-size: .76rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+    .nav-inner { min-height: 60px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; }
+    .brand { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; justify-self: center; margin-right: 0; padding-inline: .4rem; font-size: 1rem; }
+    .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; justify-self: start; gap: .55rem; border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.025); color: var(--paper); padding: 8px 11px; font: inherit; font-size: .76rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
     .menu-toggle:hover, .menu-toggle:focus-visible { border-color: rgba(214,154,80,.72); background: rgba(214,154,80,.08); }
     .menu-icon { position: relative; width: 15px; height: 11px; }
     .menu-icon::before, .menu-icon::after, .menu-icon span { content: ""; position: absolute; left: 0; width: 15px; height: 2px; background: currentColor; transition: transform .18s ease, opacity .18s ease; }
@@ -171,7 +171,7 @@
     .menu-group h2 { margin: 0 0 .45rem; color: var(--amber); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
     .menu-group a { min-height: 44px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .48rem 0; color: var(--soft); font-size: .82rem; font-weight: 750; text-decoration: none; }
     .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--paper); border-color: var(--amber); }
-    .back { min-height: 44px; display: inline-flex; align-items: center; border-radius: 3px; padding: 8px 12px; font-size: .84rem; font-weight: 800; }
+    .back { min-height: 44px; display: inline-flex; align-items: center; justify-self: end; border-radius: 3px; padding: 8px 12px; font-size: .84rem; font-weight: 800; }
     .hero { padding: 28px 0 22px; }
     .hero-panel {
       min-height: 26rem;
@@ -243,9 +243,9 @@
     }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 28px, 1184px); }
-      .nav-inner { min-height: 56px; }
-      .brand { margin-right: 0; }
+      .nav-inner { min-height: 56px; grid-template-columns: 1fr auto 1fr; gap: 8px; }
       .menu-toggle { padding-inline: 9px; }
+      .menu-toggle > span:last-child { display: none; }
       .back { padding: 7px 10px; font-size: .76rem; }
       .hero { padding-top: 14px; }
       .hero-panel { min-height: 0; padding: 1.45rem 1.2rem; background-position: 62% center; }
@@ -263,6 +263,7 @@
     }
     @media (max-width: 360px) { .filters { grid-template-columns: 1fr; } .filter:last-child { grid-column: auto; } }
   </style>
+  <link rel="stylesheet" href="assets/site-platforms.css">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#080808">
@@ -273,8 +274,8 @@
   <a class="skip-link" href="#resources-main">Skip to support resources</a>
   <header class="nav">
     <div class="wrap nav-inner">
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
-      <a class="brand" href="index.html#home">Ghost<span>Heart</span></a>
+      <button class="menu-toggle" type="button" aria-label="Explore GhostHeart" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home" aria-label="GhostHeart home">Ghost<span>Heart</span></a>
       <a class="back" href="index.html#home">Home</a>
     </div>
     <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
@@ -374,7 +375,9 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap">U.S. starting points • Services and availability can change • Check the official destination for current information</div></footer>
+  <footer class="footer"><div class="wrap">U.S. starting points • Services and availability can change • Check the official destination for current information</div>
+    <nav class="official-platforms" aria-label="Official GhostHeart profiles"><p class="official-platforms__label">Official profiles</p><div class="official-platforms__links"><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" aria-label="GhostHeart on Spotify (opens in a new tab)" target="_blank" rel="noopener noreferrer">Spotify</a><a href="https://www.tiktok.com/@ghosthearted1" aria-label="GhostHeart on TikTok (opens in a new tab)" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" aria-label="GhostHeart on YouTube (opens in a new tab)" target="_blank" rel="noopener noreferrer">YouTube</a></div></nav>
+  </footer>
   <script>
     (() => {
       const toggle = document.querySelector('.menu-toggle');
