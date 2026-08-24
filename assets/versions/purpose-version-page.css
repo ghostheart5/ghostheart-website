@@ -99,6 +99,11 @@ h1 { max-width: 17ch; margin: 0; font-size: clamp(2.25rem, 5vw, 4.4rem); line-he
 .signal-progress { display: flex; gap: .35rem; margin-top: 1.3rem; }
 .signal-progress span { width: 1.8rem; height: 3px; background: rgba(255,255,255,.14); }
 .signal-progress span.is-active { background: var(--ember-light); box-shadow: 0 0 .8rem rgba(255,118,109,.6); }
+.purpose-reasoning { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; }
+.purpose-step { position: relative; min-height: 12rem; border: 1px solid var(--line); padding: 1.15rem; background: repeating-linear-gradient(108deg, transparent 0 23px, rgba(255,255,255,.018) 24px), linear-gradient(145deg, rgba(237,51,39,.12), transparent 56%), #111112; }
+.purpose-step .step-number { color: var(--ember-light); font-size: .68rem; font-weight: 950; letter-spacing: .14em; }
+.purpose-step h3 { margin: .7rem 0 0; font-size: clamp(1.25rem, 2.4vw, 1.7rem); }
+.purpose-step p { margin: .65rem 0 0; color: #ded5cf; font-family: Georgia, serif; line-height: 1.6; }
 @keyframes reveal-arrive { from { opacity: .55; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
 .purpose-switcher { position: relative; border-block: 1px solid var(--line); background: rgba(7,7,8,.97); }
@@ -125,6 +130,7 @@ h1 { max-width: 17ch; margin: 0; font-size: clamp(2.25rem, 5vw, 4.4rem); line-he
   .switch-link.previous { grid-column: 1; grid-row: 2; }
   .switch-link.next { grid-column: 2; grid-row: 2; }
   .entry-header, .purpose-interactive { grid-template-columns: 1fr; }
+  .purpose-reasoning { grid-template-columns: 1fr; }
   .entry-header { align-items: start; }
   .signal-choices { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .signal-choice { min-height: 6.4rem; grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: .18rem; }

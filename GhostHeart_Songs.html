@@ -57,7 +57,7 @@
     .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 5px; transform: rotate(45deg); }
     .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
     .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 5px; transform: rotate(-45deg); }
-    .brand { font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .brand { min-height: 2.75rem; display: inline-flex; align-items: center; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
     .brand span { color: var(--ember); }
     .nav-signal { justify-self: end; color: var(--muted); font-family: Georgia, serif; font-size: .82rem; }
     .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,9,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
@@ -236,7 +236,6 @@
         <h1 id="hero-title">Songs for the parts that refused to disappear.</h1>
         <p class="lead">Every release carries a different version of the same life—anger, grief, love, survival, and the choice to keep going.</p>
         <div class="hero-actions">
-          <a class="primary-link" href="#records">Hear the catalog ↓</a>
           <span class="tape" aria-hidden="true">Play it loud</span>
         </div>
       </div>
@@ -262,54 +261,65 @@
       <div class="wrap">
         <div class="catalog-heading">
           <p class="eyebrow">The Record Wall</p>
-          <h2 id="catalog-title">Every release is a door. <span class="catalog-count">8 releases • 17 tracks</span></h2>
+          <h2 id="catalog-title">Every release is a door. <span class="catalog-count" id="catalog-count">9 releases • 19 tracks</span></h2>
           <p>Pick one. Turn it up. Let it tell you why it is here.</p>
         </div>
 
         <div class="record-grid">
-          <article class="record-card">
+          <article class="record-card" id="born-between-two-worlds" data-track-count="2">
+            <div class="cover"><img src="assets/songs/born-between-two-worlds.jpg" alt="Official Spotify cover artwork for Born Between Two Worlds" width="300" height="300" decoding="async" fetchpriority="high"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 09</span><span>Multi-track • 2 tracks</span><span class="artist-pick">Latest release</span></div>
+              <h3>Born Between Two Worlds</h3>
+              <p class="track-list">Tracks: Born Between Two Worlds (6:18) • The Man Beneath the Moon (3:01)</p>
+              <p>The song release connected to Chapter One, with the official lyric film kept inside the story experience.</p>
+              <div class="record-actions"><a class="button" href="story/ch-001-born-between-worlds.html#watch" aria-label="Watch Born Between Two Worlds on the Chapter One page">Watch</a><a class="button" href="https://open.spotify.com/album/7kta9P7Ocr1CX8iFmb96wZ" target="_blank" rel="noopener noreferrer" aria-label="Listen to Born Between Two Worlds on Spotify (opens in a new tab)">Listen</a></div>
+            </div>
+          </article>
+
+          <article class="record-card" data-track-count="1">
             <div class="cover"><img src="assets/songs/sunrise-doesnt-ask-for-permission.jpg" alt="Cover artwork for Sunrise Doesn't Ask for Permission" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 01</span><span>Single • 1 track</span></div>
               <h3>Sunrise Doesn't Ask for Permission</h3>
               <p>Light returns without waiting for anyone to approve it.</p>
-              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/sunrise-doesnt-ask-for-permission-lyric-20260823.mp4" aria-label="Watch Sunrise Doesn't Ask for Permission film">Watch</a></div>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/sunrise-doesnt-ask-for-permission-lyric-20260823.mp4" aria-label="Watch Sunrise Doesn't Ask for Permission film">Watch</a><a class="button" href="https://open.spotify.com/album/0bEFEG24JJtcjQns6PIGP7" target="_blank" rel="noopener noreferrer" aria-label="Listen to Sunrise Doesn't Ask for Permission on Spotify (opens in a new tab)">Listen</a></div>
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="1">
             <div class="cover"><img src="assets/songs/the-dad.jpg" alt="Cover artwork for The Dad" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 02</span><span>Single • 1 track</span></div>
               <h3>The Dad</h3>
               <p>A promise to become the father the next generation deserves.</p>
-              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/the-dad-official-lyric-v3-20260823.mp4" aria-label="Watch The Dad film">Watch</a></div>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/the-dad-official-lyric-v3-20260823.mp4" aria-label="Watch The Dad film">Watch</a><a class="button" href="https://open.spotify.com/album/3Tj0tECUm0Wg9AuVkIOQLs" target="_blank" rel="noopener noreferrer" aria-label="Listen to The Dad on Spotify (opens in a new tab)">Listen</a></div>
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="2">
             <div class="cover"><img src="assets/songs/rebellion.jpg" alt="Cover artwork for Rebellion" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 03</span><span>Multi-track • 2 tracks</span></div>
               <h3>Rebellion</h3>
               <p class="track-list">Tracks: Rebellion • You Can't Change Us</p>
               <p>The moment survival refuses to stay silent.</p>
-              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/rebellion-graffiti-lyric-20260823.mp4" aria-label="Watch Rebellion film">Watch</a></div>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/rebellion-graffiti-lyric-20260823.mp4" aria-label="Watch Rebellion film">Watch</a><a class="button" href="https://open.spotify.com/album/7jkKCwKlYjadMvBsJokvDq" target="_blank" rel="noopener noreferrer" aria-label="Listen to Rebellion on Spotify (opens in a new tab)">Listen</a></div>
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="2">
             <div class="cover"><img src="assets/songs/what-did-you-take-from-her.jpg" alt="Cover artwork for What Did You Take From Her" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 04</span><span>Multi-track • 2 tracks</span></div>
               <h3>What Did You Take From Her</h3>
               <p class="track-list">Tracks: What Did You Take From Her • New Part of Me</p>
               <p>A reckoning with what pain changed and what it could not erase.</p>
-              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/what-did-you-take-from-her-witness-wall-20260823.mp4" aria-label="Watch What Did You Take From Her film">Watch</a></div>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/what-did-you-take-from-her-witness-wall-20260823.mp4" aria-label="Watch What Did You Take From Her film">Watch</a><a class="button" href="https://open.spotify.com/album/2OdIWfDuaCGITzk1gx8eJm" target="_blank" rel="noopener noreferrer" aria-label="Listen to What Did You Take From Her on Spotify (opens in a new tab)">Listen</a></div>
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="3">
             <div class="cover"><img src="assets/songs/still.jpg" alt="Cover artwork for Still" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 05</span><span>Multi-track • 3 tracks</span><span class="artist-pick">Artist Pick</span></div>
@@ -320,7 +330,7 @@
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="2">
             <div class="cover"><img src="assets/songs/heart-of-the-ashes.jpg" alt="Cover artwork for Heart of the Ashes" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 06</span><span>Multi-track • 2 tracks</span></div>
@@ -331,7 +341,7 @@
             </div>
           </article>
 
-          <article class="record-card" id="human-too">
+          <article class="record-card" id="human-too" data-track-count="1">
             <div class="cover"><img src="assets/songs/human-too.jpg" alt="Cover artwork for Human Too" width="900" height="900" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 07</span><span>Single • 1 track</span><span>Aug 21, 2026</span></div>
@@ -341,17 +351,17 @@
             </div>
           </article>
 
-          <article class="record-card">
+          <article class="record-card" data-track-count="5">
             <div class="cover"><img src="assets/songs/ashes-and-embers.jpg" alt="Ashes and Embers cover artwork showing a black revolving door surrounding an ember-red heart" width="800" height="800" loading="lazy" decoding="async"></div>
             <div class="record-copy">
               <div class="record-meta"><span>Release 08</span><span>Album • 5 tracks</span><span>Aug 18, 2026</span></div>
               <h3>Ashes &amp; Embers</h3>
               <p>Just Not This Morning • Look at Me • Revolving Door • You Can't Close a Revolving Door • I Got You for Life</p>
-              <div class="record-actions"><a class="button" href="GhostHeart_Videos.html#ashes-and-embers-films" aria-label="Watch all five Ashes and Embers films">Watch</a></div>
+              <div class="record-actions"><a class="button" href="GhostHeart_Videos.html#ashes-and-embers-films" aria-label="Watch all five Ashes and Embers films">Watch</a><a class="button" href="https://open.spotify.com/album/3vovZ08vmdjsAZNun6rmq7" target="_blank" rel="noopener noreferrer" aria-label="Listen to Ashes and Embers on Spotify (opens in a new tab)">Listen</a></div>
             </div>
           </article>
         </div>
-        <div class="archive-toggle-row"><button class="archive-toggle" id="song-archive-toggle" type="button" aria-expanded="false" aria-controls="song-record-grid">View all 8 releases</button></div>
+        <div class="archive-toggle-row"><button class="archive-toggle" id="song-archive-toggle" type="button" aria-expanded="false" aria-controls="song-record-grid">View all 9 releases</button></div>
       </div>
     </section>
 
@@ -367,7 +377,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p>GhostHeart Released Songs • Eight releases, seventeen tracks, one evolving story</p>
+      <p>GhostHeart Released Songs • <span id="footer-catalog-count">Nine releases, nineteen tracks</span>, one evolving story</p>
       <nav class="official-platforms" aria-label="Official GhostHeart platforms">
         <p class="official-platforms__label">Listen and follow</p>
         <div class="official-platforms__links">
@@ -385,11 +395,19 @@
       const records = [...document.querySelectorAll('.record-card')];
       const archiveToggle = document.getElementById('song-archive-toggle');
       const recordGrid = document.querySelector('.record-grid');
+      const releaseCount = records.length;
+      const trackCount = records.reduce((total, card) => total + Number(card.dataset.trackCount || 0), 0);
+      const countLabel = `${releaseCount} releases • ${trackCount} tracks`;
+      const numberWords = { 9: 'Nine', 19: 'nineteen' };
+      const catalogCount = document.getElementById('catalog-count');
+      const footerCount = document.getElementById('footer-catalog-count');
+      if (catalogCount) catalogCount.textContent = countLabel;
+      if (footerCount) footerCount.textContent = `${numberWords[releaseCount] || releaseCount} releases, ${numberWords[trackCount] || trackCount} tracks`;
       if (recordGrid) recordGrid.id = 'song-record-grid';
       const setArchiveOpen = (open) => {
         records.forEach((card, index) => { card.hidden = !open && index >= 4; });
         archiveToggle.setAttribute('aria-expanded', String(open));
-        archiveToggle.textContent = open ? 'Show fewer releases' : 'View all 8 releases';
+        archiveToggle.textContent = open ? 'Show fewer releases' : `View all ${releaseCount} releases`;
       };
       const hasArchiveTarget = () => records.some((card) => card.id && `#${card.id}` === window.location.hash);
       setArchiveOpen(hasArchiveTarget());

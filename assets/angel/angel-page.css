@@ -40,7 +40,7 @@ a { color: inherit; }
 .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 5px; transform: rotate(45deg); }
 .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
 .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 5px; transform: rotate(-45deg); }
-.brand { font-weight: 900; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.brand { min-height: 2.75rem; display: inline-flex; align-items: center; font-weight: 900; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 .brand span { color: var(--ember); }
 .nav-signal { justify-self: end; color: var(--muted); font-family: Georgia, serif; font-size: .82rem; }
 .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,10,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
@@ -171,7 +171,7 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 2px solid 
   .song-actions .button { flex: 1 1 10rem; }
   .closing { padding-block: 1.8rem; }
   .closing-copy { padding: 1.25rem; }
-  .closing-visual { max-height: 10rem; aspect-ratio: 3 / 1; }
+  .closing-visual { min-height: 0; max-height: none; aspect-ratio: 16 / 9; object-fit: cover; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
