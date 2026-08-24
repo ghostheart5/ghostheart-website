@@ -13,7 +13,7 @@
   <meta name="twitter:title" content="Chapter One: Born Between Worlds | GhostHeart's Story">
   <meta name="twitter:description" content="Watch, read, listen, and remember Chapter One of GhostHeart's Story.">
   <link rel="stylesheet" href="../assets/shared/responsive-system.css?v=20260824-responsive3">
-  <link rel="stylesheet" href="../assets/story/chapter-page.css?v=20260824-topfilm6">
+  <link rel="stylesheet" href="../assets/story/chapter-page.css?v=20260824-topfilm7">
   <link rel="stylesheet" href="../assets/site-platforms.css">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="manifest" href="../site.webmanifest">
@@ -45,11 +45,12 @@
           <div class="chapter-film-frame">
             <a class="back-link" href="../GhostHeart_Story.html#chapters">← All chapters</a>
             <span class="chapter-number" aria-hidden="true">01</span>
-            <video controls playsinline preload="metadata" poster="../assets/story/born-between-the-worlds.png" aria-label="Born Between Two Worlds official lyric film" aria-describedby="chapter-film-access">
+            <video controls playsinline preload="metadata" poster="../assets/story/born-between-the-worlds.png" aria-label="Born Between Two Worlds official lyric film" aria-describedby="chapter-film-summary">
               <source src="../assets/story/born-between-two-worlds-official-lyric-video.mp4" type="video/mp4">
               <track kind="captions" src="../assets/story/born-between-two-worlds.en.vtt" srclang="en" label="English lyrics" default>
               Your browser does not support the Born Between Two Worlds lyric film.
             </video>
+            <p class="visually-hidden" id="chapter-film-summary">Official Born Between Two Worlds lyric film, six minutes eighteen seconds. Exact English lyric captions are available.</p>
           </div>
           <figcaption class="chapter-film-caption">
             <div><p class="eyebrow">GhostHeart's Story · Chapter One</p><h1 id="chapter-title">Born Between Worlds</h1><p class="chapter-hook">Before the name, a small heartbeat learned to live between tenderness and the storms beyond the door.</p></div>
@@ -59,10 +60,10 @@
         <div class="chapter-opening-actions"><a class="button" href="#read">Read Chapter One</a><a class="button secondary" href="#chapter-film-access">Captions &amp; exact lyrics</a></div>
         <details class="media-access" id="chapter-film-access">
           <summary>Captions, exact lyrics, and visual description</summary>
-          <p><strong>Captions:</strong> Exact English lyrics from GhostHeart's supplied lyric file are available through the video player's CC control.</p>
+          <p><strong>Captions:</strong> Exact English lyrics from GhostHeart's supplied lyric file are available through the video player's CC control. The track transcribes the sung lyrics; instrumental music is not separately described.</p>
           <p><strong>Reading note:</strong> The written chapter below is a separate telling of the story. The exact song transcript follows inside this panel.</p>
           <p><strong>Poster description:</strong> A luminous heart hangs inside a dark, wing-like shell between cool gray-blue mist and red sparks over reflective ground.</p>
-          <p><strong>Film visual description:</strong> The film remains with that symbolic composition as the heart slowly brightens and dims between the two colors. Mist drifts, embers float, and reflections move across the ground while title and lyric cards fade in and out. There are no people or rapid scene changes; the motion comes from pulsing light, atmospheric movement, and slow transitions.</p>
+          <p><strong>Film visual description:</strong> The film moves through stylized dark-fantasy scenes, including a mother holding a baby beneath a winged guardian, an armored bear, a grandmother offering safety, shadowed figures, gates, and storm-lit rooms. The ember-red heart returns across the film while lyrics appear over shifting mist, sparks, light, and reflections.</p>
           <div class="lyric-transcript" id="lyrics">
             <h2>Born Between Two Worlds — exact lyric transcript</h2>
             <pre>Born into two worlds—
@@ -185,7 +186,7 @@ But it was there.</pre>
 
     <div class="journey">
 
-      <section class="wrap chapter-block" id="read" aria-labelledby="read-title">
+      <section class="wrap chapter-block" id="read" aria-label="Chapter One written narrative">
         <header class="block-head">
           <p class="part-label">Read</p>
           <h2 id="read-title">Born Between Worlds</h2>
@@ -306,11 +307,17 @@ But it was there.</pre>
     (() => {
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.getElementById('gateway-menu');
+      const accessLink = document.querySelector('a[href="#chapter-film-access"]');
+      const accessPanel = document.getElementById('chapter-film-access');
       const setOpen = (open) => { toggle.setAttribute('aria-expanded', String(open)); menu.hidden = !open; };
       toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
       menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
       document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
       document.addEventListener('click', (event) => { if (!menu.hidden && !event.target.closest('.nav')) setOpen(false); });
+      accessLink.addEventListener('click', () => {
+        accessPanel.open = true;
+        requestAnimationFrame(() => accessPanel.querySelector('summary').focus());
+      });
     })();
   </script>
 </body>
