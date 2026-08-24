@@ -135,6 +135,9 @@
     .featured-film::after { content: ""; position: absolute; right: -2rem; bottom: 1.2rem; width: 13rem; height: .35rem; background: var(--ember); transform: rotate(-8deg); box-shadow: 0 .55rem 0 rgba(237,51,39,.18); pointer-events: none; }
     .featured-thumb, .video-thumb { position: relative; overflow: hidden; background: #090909; }
     .featured-thumb { aspect-ratio: 16 / 9; }
+    .youtube-player, .youtube-facade { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; background: #000; }
+    .youtube-facade { padding: 0; color: inherit; font: inherit; cursor: pointer; }
+    .youtube-player:focus-visible, .youtube-facade:focus-visible { outline: 3px solid var(--ember-light); outline-offset: 3px; }
     .featured-thumb img, .video-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease, filter .25s ease; }
     .featured-thumb::after, .video-thumb::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.1); box-shadow: inset 0 0 2.5rem rgba(0,0,0,.25); pointer-events: none; }
     .play-mark { position: absolute; left: 50%; top: 50%; z-index: 2; width: 3.7rem; height: 3.7rem; display: grid; place-items: center; transform: translate(-50%, -50%) rotate(-2deg); border: 1px solid rgba(255,255,255,.72); background: rgba(237,51,39,.94); color: #090909; font-size: 1.1rem; box-shadow: .35rem .35rem 0 rgba(0,0,0,.52); }
@@ -202,6 +205,8 @@
       h1 { font-size: clamp(2.2rem, 10.5vw, 2.75rem); }
       .video-grid { grid-template-columns: 1fr; gap: .65rem; }
       .video-card { display: grid; grid-template-columns: 7.4rem minmax(0, 1fr); padding: .6rem; }
+      .video-card.embedded-card { grid-template-columns: 1fr; }
+      .video-card.embedded-card .video-copy { padding: .65rem .15rem .1rem; }
       .video-thumb { align-self: start; }
       .video-thumb .play-mark { width: 2.2rem; height: 2.2rem; font-size: .7rem; }
       .video-copy { padding: .05rem .25rem .05rem .7rem; }
@@ -275,15 +280,16 @@
           <h2 id="feature-title">See the person before the label.</h2>
         </div>
         <article class="featured-film">
-          <a class="featured-thumb" href="https://www.youtube.com/watch?v=2g9o0jFL0Xc" target="_blank" rel="noopener noreferrer" aria-label="Watch Human Too on YouTube">
+          <button class="featured-thumb youtube-facade" type="button" data-youtube-id="2g9o0jFL0Xc" data-player-title="Play Human Too on the GhostHeart website" aria-label="Load Human Too player on this page">
             <img src="assets/videos/human-too.jpg" alt="Human Too official widescreen video thumbnail" width="480" height="360" decoding="async" fetchpriority="high">
             <span class="play-mark" aria-hidden="true">▶</span>
-          </a>
+          </button>
           <div class="featured-copy">
             <p class="eyebrow">Now showing</p>
             <h3>Human Too</h3>
             <p>Judgment makes people disappear. This film asks us to see the person before the label.</p>
-            <a class="button primary" href="https://www.youtube.com/watch?v=2g9o0jFL0Xc" target="_blank" rel="noopener noreferrer" aria-label="Watch Human Too on YouTube">Watch</a>
+            <p class="accessibility-status">Press the film frame to load the player here. Nothing starts without you.</p>
+            <noscript><a class="button primary" href="https://www.youtube.com/watch?v=2g9o0jFL0Xc">Open Human Too on YouTube</a></noscript>
           </div>
         </article>
       </div>
@@ -297,17 +303,17 @@
           <p>Open a film when you are ready. Nothing plays without you.</p>
         </div>
         <div class="video-grid">
-          <article class="video-card">
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=rSZT1Nd4Xlk" target="_blank" rel="noopener noreferrer" aria-label="Watch Angel in the Ashes on YouTube"><img src="assets/videos/angel-in-the-ashes-canon-20260823.jpg" alt="GhostHeart in black and crimson beside the Angel in white and gold" width="480" height="360" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></a>
-            <div class="video-copy"><div class="video-meta"><span>Film 03</span></div><h3>Angel in the Ashes</h3><p>The official widescreen film for “Angel in the Ashes”: mercy enters the fire, and GhostHeart chooses to rise beside the Angel.</p><a class="button" href="https://www.youtube.com/watch?v=rSZT1Nd4Xlk" target="_blank" rel="noopener noreferrer" aria-label="Watch Angel in the Ashes on YouTube">Watch</a></div>
+          <article class="video-card embedded-card">
+            <button class="video-thumb youtube-facade" type="button" data-youtube-id="rSZT1Nd4Xlk" data-player-title="Play Angel in the Ashes on the GhostHeart website" aria-label="Load Angel in the Ashes player on this page"><img src="assets/videos/angel-in-the-ashes-canon-20260823.jpg" alt="GhostHeart in black and crimson beside the Angel in white and gold" width="480" height="360" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></button>
+            <div class="video-copy"><div class="video-meta"><span>Film 03</span></div><h3>Angel in the Ashes</h3><p>The official widescreen film for “Angel in the Ashes”: mercy enters the fire, and GhostHeart chooses to rise beside the Angel.</p><noscript><a class="button" href="https://www.youtube.com/watch?v=rSZT1Nd4Xlk">Open on YouTube</a></noscript></div>
           </article>
           <article class="video-card">
             <video class="video-thumb local-video" controls preload="none" playsinline poster="assets/videos/what-did-you-take-from-her.jpg" width="1280" height="720" aria-label="Watch What Did You Take From Her" aria-describedby="what-did-you-take-accessibility"><source src="assets/videos/local-20260823/what-did-you-take-from-her-witness-wall-20260823.mp4" type="video/mp4">Your browser does not support video playback.</video>
             <div class="video-copy"><div class="video-meta"><span>Film 04</span></div><h3>What Did You Take From Her</h3><p>A reckoning with what pain changed—and what it could not erase.</p><p class="accessibility-status" id="what-did-you-take-accessibility">Captions and transcript: not yet available.</p><a class="button" href="assets/videos/local-20260823/what-did-you-take-from-her-witness-wall-20260823.mp4" aria-label="Watch What Did You Take From Her local video">Watch</a></div>
           </article>
-          <article class="video-card">
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=Wgdfz9q394U" target="_blank" rel="noopener noreferrer" aria-label="Watch Heart of the Ashes on YouTube"><img src="assets/videos/heart-of-the-ashes-graffiti-20260823.jpg" alt="Heart of the Ashes official Graffiti Lyric Video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></a>
-            <div class="video-copy"><div class="video-meta"><span>Film 05</span></div><h3>Heart of the Ashes</h3><p>Love, survival, and the heart that remains after the fire.</p><a class="button" href="https://www.youtube.com/watch?v=Wgdfz9q394U" target="_blank" rel="noopener noreferrer" aria-label="Watch Heart of the Ashes on YouTube">Watch</a></div>
+          <article class="video-card embedded-card">
+            <button class="video-thumb youtube-facade" type="button" data-youtube-id="Wgdfz9q394U" data-player-title="Play Heart of the Ashes on the GhostHeart website" aria-label="Load Heart of the Ashes player on this page"><img src="assets/videos/heart-of-the-ashes-graffiti-20260823.jpg" alt="Heart of the Ashes official Graffiti Lyric Video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></button>
+            <div class="video-copy"><div class="video-meta"><span>Film 05</span></div><h3>Heart of the Ashes</h3><p>Love, survival, and the heart that remains after the fire.</p><noscript><a class="button" href="https://www.youtube.com/watch?v=Wgdfz9q394U">Open on YouTube</a></noscript></div>
           </article>
           <article class="video-card">
             <video class="video-thumb local-video" controls preload="none" playsinline poster="assets/videos/sunrise-doesnt-ask-for-permission-v2.jpg" width="1280" height="720" aria-label="Watch Sunrise Doesn't Ask for Permission" aria-describedby="sunrise-accessibility"><source src="assets/videos/local-20260823/sunrise-doesnt-ask-for-permission-lyric-20260823.mp4" type="video/mp4">Your browser does not support video playback.</video>
@@ -317,13 +323,13 @@
             <video class="video-thumb local-video" controls preload="none" playsinline poster="assets/videos/still-v2.jpg" width="1280" height="720" aria-label="Watch Still" aria-describedby="still-accessibility"><source src="assets/videos/local-20260823/still-viking-music-video-20260823.mp4" type="video/mp4">Your browser does not support video playback.</video>
             <div class="video-copy"><div class="video-meta"><span>Film 07</span></div><h3>Still</h3><p>The quiet weight of what remains when everything else changes.</p><p class="accessibility-status" id="still-accessibility">Captions and transcript: not yet available.</p><a class="button" href="assets/videos/local-20260823/still-viking-music-video-20260823.mp4" aria-label="Watch Still local video">Watch</a></div>
           </article>
-          <article class="video-card">
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=YAq3cI1gJbM" target="_blank" rel="noopener noreferrer" aria-label="Watch You Can't Change Us on YouTube"><img src="assets/videos/you-cant-change-us.jpg" alt="You Can't Change Us official video thumbnail" width="480" height="360" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></a>
-            <div class="video-copy"><div class="video-meta"><span>Film 08</span></div><h3>You Can't Change Us</h3><p>A refusal to surrender identity for someone else's comfort.</p><a class="button" href="https://www.youtube.com/watch?v=YAq3cI1gJbM" target="_blank" rel="noopener noreferrer" aria-label="Watch You Can't Change Us on YouTube">Watch</a></div>
+          <article class="video-card embedded-card">
+            <button class="video-thumb youtube-facade" type="button" data-youtube-id="YAq3cI1gJbM" data-player-title="Play You Can't Change Us on the GhostHeart website" aria-label="Load You Can't Change Us player on this page"><img src="assets/videos/you-cant-change-us.jpg" alt="You Can't Change Us official video thumbnail" width="480" height="360" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></button>
+            <div class="video-copy"><div class="video-meta"><span>Film 08</span></div><h3>You Can't Change Us</h3><p>A refusal to surrender identity for someone else's comfort.</p><noscript><a class="button" href="https://www.youtube.com/watch?v=YAq3cI1gJbM">Open on YouTube</a></noscript></div>
           </article>
-          <article class="video-card">
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=YHp4i52smhk" target="_blank" rel="noopener noreferrer" aria-label="Watch Why Didn't You Call on YouTube"><img src="assets/videos/why-didnt-you-call.jpg" alt="Why Didn't You Call official lyric video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></a>
-            <div class="video-copy"><div class="video-meta"><span>Film 09</span></div><h3>Why Didn't You Call?</h3><p>The questions that arrive after distance and silence.</p><a class="button" href="https://www.youtube.com/watch?v=YHp4i52smhk" target="_blank" rel="noopener noreferrer" aria-label="Watch Why Didn't You Call on YouTube">Watch</a></div>
+          <article class="video-card embedded-card">
+            <button class="video-thumb youtube-facade" type="button" data-youtube-id="YHp4i52smhk" data-player-title="Play Why Didn't You Call? on the GhostHeart website" aria-label="Load Why Didn't You Call? player on this page"><img src="assets/videos/why-didnt-you-call.jpg" alt="Why Didn't You Call official lyric video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></button>
+            <div class="video-copy"><div class="video-meta"><span>Film 09</span></div><h3>Why Didn't You Call?</h3><p>The questions that arrive after distance and silence.</p><noscript><a class="button" href="https://www.youtube.com/watch?v=YHp4i52smhk">Open on YouTube</a></noscript></div>
           </article>
           <article class="video-card">
             <video class="video-thumb local-video" controls preload="none" playsinline poster="assets/videos/the-dad-v2.jpg" width="1280" height="720" aria-label="Watch The Dad" aria-describedby="the-dad-accessibility"><source src="assets/videos/local-20260823/the-dad-official-lyric-v3-20260823.mp4" type="video/mp4">Your browser does not support video playback.</video>
@@ -333,9 +339,9 @@
             <video class="video-thumb local-video" controls preload="none" playsinline poster="assets/videos/rebellion-v2.jpg" width="1280" height="720" aria-label="Watch Rebellion" aria-describedby="rebellion-accessibility"><source src="assets/videos/local-20260823/rebellion-graffiti-lyric-20260823.mp4" type="video/mp4">Your browser does not support video playback.</video>
             <div class="video-copy"><div class="video-meta"><span>Film 12</span></div><h3>Rebellion</h3><p>Survival stops asking permission.</p><p class="accessibility-status" id="rebellion-accessibility">Captions and transcript: not yet available.</p><a class="button" href="assets/videos/local-20260823/rebellion-graffiti-lyric-20260823.mp4" aria-label="Watch Rebellion local video">Watch</a></div>
           </article>
-          <article class="video-card">
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=2z1IUv-Hamc" target="_blank" rel="noopener noreferrer" aria-label="Watch I Still Would on YouTube"><img src="assets/videos/i-still-would-graffiti-20260823.jpg" alt="I Still Would official Graffiti Lyric Video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></a>
-            <div class="video-copy"><div class="video-meta"><span>Film 13</span></div><h3>I Still Would</h3><p>Memory keeps what distance cannot.</p><a class="button" href="https://www.youtube.com/watch?v=2z1IUv-Hamc" target="_blank" rel="noopener noreferrer" aria-label="Watch I Still Would on YouTube">Watch</a></div>
+          <article class="video-card embedded-card">
+            <button class="video-thumb youtube-facade" type="button" data-youtube-id="2z1IUv-Hamc" data-player-title="Play I Still Would on the GhostHeart website" aria-label="Load I Still Would player on this page"><img src="assets/videos/i-still-would-graffiti-20260823.jpg" alt="I Still Would official Graffiti Lyric Video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span class="play-mark" aria-hidden="true">▶</span></button>
+            <div class="video-copy"><div class="video-meta"><span>Film 13</span></div><h3>I Still Would</h3><p>Memory keeps what distance cannot.</p><noscript><a class="button" href="https://www.youtube.com/watch?v=2z1IUv-Hamc">Open on YouTube</a></noscript></div>
           </article>
 
           <article class="video-card" id="ashes-and-embers-films">
@@ -389,6 +395,20 @@
       const archiveToggle = document.getElementById('video-archive-toggle');
       const videoGrid = document.querySelector('.video-grid');
       if (videoGrid) videoGrid.id = 'video-card-grid';
+      document.querySelectorAll('.youtube-facade').forEach((facade) => {
+        facade.addEventListener('click', () => {
+          const player = document.createElement('iframe');
+          player.className = facade.classList.contains('featured-thumb') ? 'featured-thumb youtube-player' : 'video-thumb youtube-player';
+          player.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(facade.dataset.youtubeId)}?rel=0`;
+          player.title = facade.dataset.playerTitle;
+          player.loading = 'eager';
+          player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          player.referrerPolicy = 'strict-origin-when-cross-origin';
+          player.allowFullscreen = true;
+          facade.replaceWith(player);
+          player.focus();
+        });
+      });
       const setArchiveOpen = (open) => {
         films.forEach((card, index) => { card.hidden = !open && index >= 6; });
         archiveToggle.setAttribute('aria-expanded', String(open));
