@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy and Email Notice — GhostHeart</title>
+  <meta name="description" content="How GhostHeart handles email addresses submitted through the GhostHeart Signal signup form.">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="assets/home/homepage.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Privacy.html">
+  <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Privacy.html">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to privacy notice</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home" aria-label="GhostHeart home">Ghost<span>Heart</span></a>
+      <span class="nav-signal">Your trust matters.</span>
+    </div>
+    <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
+      <div class="wrap menu-grid">
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a href="index.html#identity">Identity &amp; Oath</a><a href="index.html#join-the-signal">Join the Signal</a></div>
+        <div class="menu-group"><h2>Three Worlds</h2><a href="GhostHeart_Versions.html">Versions</a><a href="GhostHeart_Story.html">Story</a><a href="GhostHeart_Angel.html">GhostHeart's Angel</a></div>
+        <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html">Videos</a><a href="GhostHeart_Songs.html">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
+        <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="legal-page" id="main-content">
+    <div class="wrap">
+      <article>
+        <p class="eyebrow">Privacy and email</p>
+        <h1>Your inbox stays yours.</h1>
+        <p>This notice applies to the email address you choose to submit through the Join the GhostHeart Signal form.</p>
+
+        <h2>What is collected</h2>
+        <p>The signup form asks for your email address. GhostHeart does not ask for a password, payment information, or sensitive personal information through this form.</p>
+
+        <h2>Why it is collected</h2>
+        <p>Your email address is used to send GhostHeart updates such as new songs, films, stories, resources, and project news. You must confirm the subscription before messages are sent.</p>
+
+        <h2>Who processes it</h2>
+        <p>The form is processed by Mailchimp. When you submit it, Mailchimp receives the information and handles the confirmation and mailing-list record under its own privacy practices.</p>
+
+        <h2>Your control</h2>
+        <ul>
+          <li>You can leave the form blank and continue using the rest of the website.</li>
+          <li>You can ignore the confirmation message and remain unsubscribed.</li>
+          <li>You can unsubscribe from any GhostHeart Signal email using the link included in that message.</li>
+        </ul>
+
+        <h2>No sale of signup information</h2>
+        <p>GhostHeart does not sell the email address you provide through this signup form.</p>
+
+        <p><a href="index.html#join-the-signal">Return to Join the GhostHeart Signal</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-inner"><span>GhostHeart</span><span>Privacy is part of trust.</span><a href="index.html#home">Return home ↑</a></div></footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('gateway-menu');
+      const setOpen = (open) => { toggle.setAttribute('aria-expanded', String(open)); menu.hidden = !open; };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
+      document.addEventListener('click', (event) => { if (!menu.hidden && !event.target.closest('.nav')) setOpen(false); });
+    })();
+  </script>
+</body>
+</html>

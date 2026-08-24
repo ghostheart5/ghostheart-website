@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A calm, choice-based directory of U.S. crisis, mental health, safety, housing, legal, youth, LGBTQ+, and Veteran support resources.">
+  <title>Resources — GhostHeart</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GhostHeart">
+  <meta property="og:title" content="You Don’t Have to Figure This Out Alone — GhostHeart Resources">
+  <meta property="og:description" content="A calm, choice-based place to find U.S. crisis, mental health, safety, housing, legal, youth, LGBTQ+, and Veteran support.">
+  <meta property="og:image" content="https://www.myghostheart.com/assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GhostHeart Resources">
+  <meta name="twitter:description" content="Choose what feels closest. Call, text, chat, or read first—there is no perfect way to begin.">
+  <meta name="twitter:image" content="https://www.myghostheart.com/assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f5f2ef;
+      --muted: #aaa3a0;
+      --red: #f04444;
+      --red-dark: #8f171f;
+      --panel: rgba(20, 18, 20, .88);
+      --panel-strong: #171417;
+      --line: rgba(255, 255, 255, .12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, .42);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 5%, rgba(176, 24, 36, .25), transparent 32rem),
+        radial-gradient(circle at 88% 30%, rgba(104, 11, 20, .17), transparent 30rem),
+        linear-gradient(145deg, #080708 0%, #100c0e 52%, #050505 100%);
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #ff6c6c; outline-offset: 3px; }
+    .skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; transform: translateY(-180%); background: #f5f2ef; color: #080708; padding: .75rem 1rem; font-weight: 900; }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(1160px, calc(100% - 32px)); margin-inline: auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 6, 7, .9);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { min-height: 70px; display: flex; align-items: center; gap: 20px; }
+    .brand { margin-right: auto; text-decoration: none; font-size: 1.25rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .brand span, .eyebrow, .card-kicker { color: var(--red); }
+    .back { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: #eee7e4; }
+    .back:hover { border-color: rgba(240, 68, 68, .72); background: rgba(240, 68, 68, .09); }
+    .hero { padding: 72px 0 38px; }
+    .eyebrow { margin: 0 0 10px; font-size: .78rem; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 880px; margin-bottom: 18px; font-size: clamp(2.5rem, 7vw, 5.6rem); line-height: .98; letter-spacing: -.055em; }
+    .lede { max-width: 760px; color: #c9c2bf; font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .boundary { margin-top: 26px; padding: 16px 18px; border-left: 4px solid var(--red); background: rgba(240, 68, 68, .08); color: #ddd5d2; }
+    .urgent { padding: 24px 0 48px; }
+    .urgent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .urgent-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      padding: 26px;
+      border: 1px solid rgba(255, 91, 91, .48);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(133, 18, 29, .36), rgba(22, 16, 18, .95));
+      box-shadow: var(--shadow);
+    }
+    .urgent-card h2 { margin-bottom: 8px; font-size: clamp(1.7rem, 4vw, 2.7rem); }
+    .urgent-card p { color: #d7cecb; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .07);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .button.primary { border-color: transparent; background: var(--red); color: #12090a; }
+    .button:hover { transform: translateY(-1px); }
+    .catalog { padding: 24px 0 70px; }
+    .section-head { max-width: 820px; margin-bottom: 24px; }
+    .section-head h2 { margin-bottom: 10px; font-size: clamp(2rem, 4.8vw, 3.8rem); letter-spacing: -.04em; }
+    .section-head p { color: var(--muted); }
+    .filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 24px; }
+    .filter {
+      min-height: 42px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .035);
+      color: #ddd7d4;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+    .filter[aria-pressed="true"] { border-color: rgba(240, 68, 68, .74); background: rgba(240, 68, 68, .16); color: #fff; }
+    .resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .resource {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, .22);
+    }
+    .resource[hidden] { display: none; }
+    .card-kicker { margin-bottom: 6px; font-size: .75rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    .resource h3 { margin-bottom: 8px; font-size: 1.28rem; line-height: 1.2; }
+    .resource p { color: #bdb5b2; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 18px; }
+    .tag { padding: 4px 8px; border-radius: 999px; background: rgba(255, 255, 255, .055); color: #bfb7b3; font-size: .72rem; }
+    .resource .actions { margin-top: auto; }
+    .mapping { padding: 70px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .018); }
+    .mapping-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .map-card { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel-strong); }
+    .map-card h3 { margin-bottom: 5px; }
+    .map-card p { margin-bottom: 0; color: var(--muted); }
+    .privacy { padding: 70px 0; }
+    .privacy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .privacy article { padding: 20px; border-left: 3px solid var(--red-dark); background: rgba(255, 255, 255, .025); }
+    .privacy p { margin-bottom: 0; color: var(--muted); }
+    .footer { padding: 26px 0 40px; border-top: 1px solid var(--line); color: #8f8784; }
+    @media (max-width: 900px) { .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .privacy-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .urgent-grid, .resource-grid, .mapping-grid { grid-template-columns: 1fr; } .back { font-size: .86rem; } .hero { padding-top: 52px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button:hover { transform: none; } }
+  </style>
+  <style id="resources-redesign">
+    :root {
+      --paper: #f3eee8;
+      --soft: #c9c0bb;
+      --amber: #d69a50;
+      --violet: #76536f;
+      --violet-deep: #352231;
+      --danger: #e53e42;
+      --panel: rgba(17, 16, 18, .94);
+      --line: rgba(243, 238, 232, .14);
+    }
+    body { color: var(--paper); background: #080708; font-size: 16px; line-height: 1.55; }
+    .wrap { width: min(1184px, calc(100% - 40px)); }
+    .nav-inner { min-height: 60px; }
+    .brand { font-size: 1rem; }
+    .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; gap: .55rem; border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.025); color: var(--paper); padding: 8px 11px; font: inherit; font-size: .76rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+    .menu-toggle:hover, .menu-toggle:focus-visible { border-color: rgba(214,154,80,.72); background: rgba(214,154,80,.08); }
+    .menu-icon { position: relative; width: 15px; height: 11px; }
+    .menu-icon::before, .menu-icon::after, .menu-icon span { content: ""; position: absolute; left: 0; width: 15px; height: 2px; background: currentColor; transition: transform .18s ease, opacity .18s ease; }
+    .menu-icon::before { top: 0; }
+    .menu-icon span { top: 4.5px; }
+    .menu-icon::after { top: 9px; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 4.5px; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 4.5px; transform: rotate(-45deg); }
+    .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,7,8,.99); box-shadow: 0 1.5rem 3rem rgba(0,0,0,.45); }
+    .gateway-menu[hidden] { display: none; }
+    .menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.25rem; padding-block: 1rem 1.2rem; }
+    .menu-group h2 { margin: 0 0 .45rem; color: var(--amber); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+    .menu-group a { min-height: 44px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .48rem 0; color: var(--soft); font-size: .82rem; font-weight: 750; text-decoration: none; }
+    .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--paper); border-color: var(--amber); }
+    .back { min-height: 44px; display: inline-flex; align-items: center; border-radius: 3px; padding: 8px 12px; font-size: .84rem; font-weight: 800; }
+    .hero { padding: 28px 0 22px; }
+    .hero-panel {
+      min-height: 26rem;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      isolation: isolate;
+      border: 1px solid rgba(214, 154, 80, .34);
+      padding: clamp(1.5rem, 5vw, 3.25rem);
+      background: url("assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg") center 46% / cover no-repeat;
+      box-shadow: 0 2rem 5rem rgba(0,0,0,.42);
+    }
+    .hero-panel::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7,6,7,.98) 0%, rgba(7,6,7,.91) 43%, rgba(7,6,7,.35) 76%, rgba(7,6,7,.56) 100%), linear-gradient(0deg, rgba(0,0,0,.82), transparent 64%); }
+    .hero-panel::after { content: ""; position: absolute; right: 0; bottom: 1rem; z-index: -1; width: 46%; height: 3px; background: linear-gradient(90deg, transparent, rgba(214,154,80,.72), rgba(229,62,66,.18)); box-shadow: 0 0 1.25rem rgba(214,154,80,.35); transform: rotate(-2deg); }
+    .hero-copy { max-width: 42rem; }
+    .eyebrow, .card-kicker { color: var(--amber); font-size: .7rem; }
+    h1 { max-width: 14ch; margin-bottom: .85rem; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: .98; letter-spacing: -.04em; }
+    .lede { max-width: 56ch; margin-bottom: 0; color: #ddd4cf; font-size: clamp(1rem, 1.6vw, 1.1rem); line-height: 1.5; }
+    .scope { margin: .65rem 0 0; color: #a99f9a; font-size: .82rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+    .hero-actions .button { min-height: 44px; }
+    .hero-actions .crisis-action { border-color: rgba(214,154,80,.62); background: rgba(53,34,49,.9); }
+    .hero-actions .emergency-action { border-color: rgba(229,62,66,.82); background: rgba(93,17,22,.86); }
+    .urgent { padding: 22px 0 34px; }
+    .urgent-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: .9rem; }
+    .urgent-head h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.2rem); }
+    .urgent-head p { max-width: 45ch; margin: 0; color: var(--soft); font-size: .92rem; }
+    .urgent-grid { gap: .8rem; }
+    .urgent-card { min-height: 0; border-radius: 6px; padding: 1.25rem; box-shadow: 0 1.5rem 3rem rgba(0,0,0,.25); }
+    .urgent-card.crisis { border-color: rgba(173,121,164,.5); background: linear-gradient(145deg, rgba(69,42,64,.9), rgba(20,17,21,.98)); }
+    .urgent-card.emergency { border-color: rgba(229,62,66,.56); background: linear-gradient(145deg, rgba(91,20,25,.62), rgba(20,16,18,.98)); }
+    .urgent-card h3 { margin-bottom: .35rem; font-size: clamp(1.2rem, 2vw, 1.55rem); }
+    .urgent-card p { max-width: 58ch; margin-bottom: .8rem; color: #d4cbc6; font-size: .95rem; }
+    .choice-note { margin: .85rem 0 0; color: #afa6a1; font-size: .88rem; }
+    .button { min-height: 44px; border-radius: 3px; padding: 8px 12px; font-size: .82rem; }
+    .button:hover { transform: none; border-color: rgba(214,154,80,.72); background: rgba(214,154,80,.12); }
+    .button.primary { background: var(--danger); color: #12090a; }
+    .button.crisis-primary { border-color: rgba(214,154,80,.72); background: var(--violet); color: #fff; }
+    .catalog { padding: 36px 0 46px; border-top: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.018), transparent); }
+    .section-head { max-width: 46rem; margin-bottom: 1rem; }
+    .section-head h2 { margin-bottom: .45rem; font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: 1.05; letter-spacing: -.03em; }
+    .section-head p { margin-bottom: 0; color: var(--soft); }
+    .filters { gap: .5rem; margin-bottom: .75rem; }
+    .filter { min-height: 44px; border-radius: 3px; padding: 8px 12px; font-size: .86rem; }
+    .filter[aria-pressed="true"] { border-color: rgba(214,154,80,.75); background: rgba(214,154,80,.14); }
+    .result-status { min-height: 1.4rem; margin: 0 0 .8rem; color: #9f9691; font-size: .82rem; }
+    .resource-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: .7rem; align-items: stretch; }
+    .resource { min-height: 0; position: relative; overflow: hidden; border-radius: 5px; padding: 1rem; background: rgba(17,16,18,.94); box-shadow: 0 1rem 2.6rem rgba(0,0,0,.2); }
+    .resource::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--amber); opacity: .72; }
+    .resource h3 { margin-bottom: .35rem; font-size: 1.08rem; }
+    .resource p { margin-bottom: .75rem; color: #c4bbb6; font-size: .94rem; line-height: 1.48; }
+    .card-kicker, .tags { display: none; }
+    .resource .actions { gap: .4rem; }
+    .resource .button { min-height: 44px; padding: 8px 10px; font-size: .78rem; }
+    .before { padding: 40px 0; border-top: 1px solid var(--line); }
+    .before-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: .75rem; }
+    .before-card { border: 1px solid var(--line); border-radius: 5px; padding: 1.1rem; background: rgba(255,255,255,.025); }
+    .before-card h3 { margin-bottom: .4rem; font-size: 1.05rem; }
+    .before-card p { margin-bottom: .8rem; color: var(--soft); font-size: .91rem; }
+    .before-card .quick-exit-note { margin-top: .7rem; margin-bottom: 0; color: #9f9691; font-size: .78rem; }
+    .boundary { margin: .75rem 0 0; border-left-color: var(--amber); background: rgba(214,154,80,.06); color: #b9afaa; font-size: .84rem; }
+    .footer { padding: 20px 0 28px; font-size: .8rem; }
+    @media (max-width: 760px) {
+      .menu-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .urgent-head { display: block; }
+      .urgent-head p { margin-top: .35rem; }
+      .before-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, 1184px); }
+      .nav-inner { min-height: 56px; }
+      .brand { margin-right: 0; }
+      .menu-toggle { padding-inline: 9px; }
+      .back { padding: 7px 10px; font-size: .76rem; }
+      .hero { padding-top: 14px; }
+      .hero-panel { min-height: 0; padding: 1.45rem 1.2rem; background-position: 62% center; }
+      .hero-panel::before { background: linear-gradient(90deg, rgba(7,6,7,.97), rgba(7,6,7,.76)), linear-gradient(0deg, rgba(0,0,0,.84), transparent 68%); }
+      h1 { font-size: clamp(2.1rem, 10vw, 2.65rem); }
+      .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .hero-actions .emergency-action { grid-column: 1 / -1; }
+      .urgent { padding-top: 10px; }
+      .urgent-grid { grid-template-columns: 1fr; }
+      .catalog { padding-block: 30px 36px; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .filters { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); overflow: visible; }
+      .filter { width: 100%; }
+      .filter:last-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 360px) { .filters { grid-template-columns: 1fr; } .filter:last-child { grid-column: auto; } }
+  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Resources.html">
+  <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Resources.html">
+</head>
+<body>
+  <a class="skip-link" href="#resources-main">Skip to support resources</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home">Ghost<span>Heart</span></a>
+      <a class="back" href="index.html#home">Home</a>
+    </div>
+    <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
+      <div class="wrap menu-grid">
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a href="index.html#identity">Identity &amp; Oath</a></div>
+        <div class="menu-group"><h2>Three Worlds</h2><a href="GhostHeart_Versions.html">Versions</a><a href="GhostHeart_Story.html">Story</a><a href="GhostHeart_Angel.html">GhostHeart's Angel</a></div>
+        <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html">Videos</a><a href="GhostHeart_Songs.html">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
+        <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html" aria-current="page">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="resources-main" tabindex="-1">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Real help • Your choice</p>
+            <h1 id="page-title">You don’t have to figure this out alone.</h1>
+            <p class="lede">Choose what feels closest. You can call, text, chat, or read first. There is no perfect way to begin.</p>
+            <p class="scope">U.S.-based starting points. Availability and eligibility can vary.</p>
+            <div class="hero-actions" aria-label="Immediate support options">
+              <a class="button crisis-action" href="tel:988">Call 988</a>
+              <a class="button crisis-action" href="sms:988">Text 988</a>
+              <a class="button emergency-action" href="tel:911">Immediate danger — Call 911</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="urgent" aria-labelledby="urgent-title">
+      <div class="wrap">
+        <div class="urgent-head"><h2 id="urgent-title">Need support right now?</h2><p>Choose the option that fits what is happening—not what you think you are supposed to choose.</p></div>
+        <div class="urgent-grid">
+          <article class="urgent-card crisis">
+            <h3>Talk with a crisis counselor</h3>
+            <p>For emotional distress, thoughts of suicide, or concern about someone else. Call, text, or chat with a trained crisis counselor.</p>
+            <div class="actions"><a class="button crisis-primary" href="tel:988">Call 988</a><a class="button" href="sms:988">Text 988</a><a class="button" href="https://chat.988lifeline.org/" target="_blank" rel="noopener noreferrer">Chat with 988</a><a class="button" href="https://988lifeline.org/confidentiality/" target="_blank" rel="noopener noreferrer">988 confidentiality</a></div>
+          </article>
+          <article class="urgent-card emergency">
+            <h3>Get emergency response</h3>
+            <p>For an urgent threat to life or safety, a serious medical emergency, fire, or a crime in progress.</p>
+            <div class="actions"><a class="button primary" href="tel:911">Call 911</a><a class="button" href="https://www.911.gov/calling-911/frequently-asked-questions/" target="_blank" rel="noopener noreferrer">911 information</a></div>
+          </article>
+        </div>
+        <p class="choice-note">Not sure which fits? 988 is for emotional support and crisis de-escalation. 911 is for urgent threats to life or physical safety, serious medical emergencies, fire, or crimes in progress.</p>
+      </div>
+    </section>
+
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Start where you are</p><h2 id="catalog-title">What feels closest today?</h2><p>You do not need a diagnosis or the perfect words. Pick one place to start, or show every option.</p></div>
+        <div class="filters" aria-label="Filter resources">
+          <button class="filter" type="button" data-filter="start" aria-pressed="true">Start here</button>
+          <button class="filter" type="button" data-filter="crisis" aria-pressed="false">Crisis support</button>
+          <button class="filter" type="button" data-filter="mental" aria-pressed="false">Mental health</button>
+          <button class="filter" type="button" data-filter="safety" aria-pressed="false">Safety &amp; abuse</button>
+          <button class="filter" type="button" data-filter="youth" aria-pressed="false">Youth &amp; family</button>
+          <button class="filter" type="button" data-filter="lgbtq" aria-pressed="false">LGBTQ+ &amp; trans</button>
+          <button class="filter" type="button" data-filter="housing" aria-pressed="false">Housing &amp; legal</button>
+          <button class="filter" type="button" data-filter="veterans" aria-pressed="false">Veterans</button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="false">Show everything</button>
+        </div>
+        <p class="result-status" id="result-status" aria-live="polite"></p>
+
+        <div class="resource-grid" id="resource-grid">
+          <article class="resource" id="r01" data-tags="crisis"><p class="card-kicker">Immediate</p><h3>911 Emergency Services</h3><p>For an urgent threat to life or safety, a serious medical emergency, fire, or a crime in progress.</p><div class="tags"><span class="tag">Crisis</span></div><div class="actions"><a class="button primary" href="tel:911">Call 911</a><a class="button" href="https://www.911.gov/" target="_blank" rel="noopener noreferrer">911.gov</a></div></article>
+          <article class="resource" id="r02" data-tags="crisis mental"><p class="card-kicker">Crisis support</p><h3>988 Suicide &amp; Crisis Lifeline</h3><p>Emotional support for you or someone you care about by call, text, or chat.</p><div class="tags"><span class="tag">Crisis</span></div><div class="actions"><a class="button crisis-primary" href="tel:988">Call 988</a><a class="button" href="sms:988">Text 988</a><a class="button" href="https://chat.988lifeline.org/" target="_blank" rel="noopener noreferrer">Chat</a></div></article>
+          <article class="resource" id="r03" data-tags="safety youth"><p class="card-kicker">Child safety</p><h3>Childhelp National Child Abuse Hotline</h3><p>Questions or support about child abuse. A counselor can listen and help explain possible next steps, 24/7.</p><div class="tags"><span class="tag">Youth</span></div><div class="actions"><a class="button crisis-primary" href="tel:18004224453">Call 800-422-4453</a><a class="button" href="sms:18004224453">Text 800-422-4453 (send GO)</a><a class="button" href="https://childhelphotline.org/" target="_blank" rel="noopener noreferrer">Childhelp</a></div></article>
+          <article class="resource" id="r04" data-tags="start safety"><p class="card-kicker">Relationship safety</p><h3>National Domestic Violence Hotline</h3><p>Support for relationship abuse, safety planning, and finding local services.</p><div class="tags"><span class="tag">Safety</span></div><div class="actions"><a class="button crisis-primary" href="tel:18007997233">Call 800-799-SAFE</a><a class="button" href="sms:88788">Text START to 88788</a><a class="button" href="https://www.thehotline.org/get-help/" target="_blank" rel="noopener noreferrer">Chat &amp; options</a></div></article>
+          <article class="resource" id="r05" data-tags="safety"><p class="card-kicker">Sexual violence</p><h3>RAINN National Sexual Assault Hotline</h3><p>Support after sexual assault or abuse—for survivors and people who care about them, 24/7.</p><div class="tags"><span class="tag">Safety</span></div><div class="actions"><a class="button crisis-primary" href="tel:18006564673">Call 800-656-HOPE</a><a class="button" href="sms:64673">Text HOPE to 64673</a><a class="button" href="https://rainn.org/help-and-healing/hotline/" target="_blank" rel="noopener noreferrer">Chat &amp; options</a></div></article>
+          <article class="resource" id="r06" data-tags="start mental"><p class="card-kicker">Treatment</p><h3>SAMHSA Find Help</h3><p>Find treatment and support for mental health, drug, or alcohol concerns. No diagnosis is required to start looking.</p><div class="tags"><span class="tag">Mental health</span></div><div class="actions"><a class="button" href="https://www.samhsa.gov/find-help" target="_blank" rel="noopener noreferrer">Open SAMHSA Find Help</a></div></article>
+          <article class="resource" id="r07" data-tags="start mental"><p class="card-kicker">Information</p><h3>NAMI HelpLine</h3><p>Information, practical guidance, and peer-informed support for mental health questions. This is not a crisis line.</p><div class="tags"><span class="tag">Mental health</span></div><div class="actions"><a class="button" href="tel:18009506264">Call 800-950-NAMI</a><a class="button" href="sms:62640">Text NAMI to 62640</a><a class="button" href="https://www.nami.org/nami-helpline/" target="_blank" rel="noopener noreferrer">Hours &amp; options</a></div></article>
+          <article class="resource" id="r08" data-tags="safety youth"><p class="card-kicker">Bullying</p><h3>StopBullying.gov</h3><p>Clear steps for young people, parents, and educators responding to bullying or cyberbullying.</p><div class="tags"><span class="tag">Youth</span></div><div class="actions"><a class="button" href="https://www.stopbullying.gov/" target="_blank" rel="noopener noreferrer">Open official guidance</a></div></article>
+          <article class="resource" id="r09" data-tags="start housing"><p class="card-kicker">Local essentials</p><h3>211</h3><p>Find local help with food, housing, bills, transportation, health care, and other basic needs.</p><div class="tags"><span class="tag">Basic needs</span></div><div class="actions"><a class="button crisis-primary" href="tel:211">Call 211</a><a class="button" href="https://www.211.org/" target="_blank" rel="noopener noreferrer">Find your local 211</a></div></article>
+          <article class="resource" id="r10" data-tags="housing"><p class="card-kicker">Housing</p><h3>HUD Housing Counseling</h3><p>Connect with a HUD-approved counselor about renting, homeownership, foreclosure, or homelessness.</p><div class="tags"><span class="tag">Housing</span></div><div class="actions"><a class="button" href="https://www.hud.gov/counseling" target="_blank" rel="noopener noreferrer">Find HUD counseling</a></div></article>
+          <article class="resource" id="r11" data-tags="housing"><p class="card-kicker">Legal</p><h3>Legal Services Corporation</h3><p>Find nonprofit civil legal-aid organizations serving low-income people with civil legal problems.</p><div class="tags"><span class="tag">Legal aid</span></div><div class="actions"><a class="button" href="https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help" target="_blank" rel="noopener noreferrer">Find civil legal aid</a></div></article>
+          <article class="resource" id="r12" data-tags="safety youth"><p class="card-kicker">Child welfare</p><h3>Child Welfare Information Gateway</h3><p>Federal information about child abuse reporting, prevention, foster care, adoption, and family support. This is not a crisis line.</p><div class="tags"><span class="tag">Families</span></div><div class="actions"><a class="button" href="https://www.childwelfare.gov/" target="_blank" rel="noopener noreferrer">Open the official gateway</a></div></article>
+          <article class="resource" id="r13" data-tags="crisis lgbtq"><p class="card-kicker">LGBTQ+ youth</p><h3>The Trevor Project</h3><p>Free, confidential, 24/7 crisis support for LGBTQ+ young people by call, text, or chat.</p><div class="tags"><span class="tag">LGBTQ+</span></div><div class="actions"><a class="button crisis-primary" href="tel:18664887386">Call 866-488-7386</a><a class="button" href="sms:678678">Text START to 678-678</a><a class="button" href="https://www.thetrevorproject.org/get-help/" target="_blank" rel="noopener noreferrer">Chat &amp; options</a></div></article>
+          <article class="resource" id="r14" data-tags="mental lgbtq"><p class="card-kicker">Trans peer support</p><h3>Trans Lifeline</h3><p>Peer support from trans people for trans and questioning people, even when you are not in crisis. Check current hours.</p><div class="tags"><span class="tag">Trans</span></div><div class="actions"><a class="button crisis-primary" href="tel:18775658860">Call 877-565-8860</a><a class="button" href="https://translifeline.org/hotline/" target="_blank" rel="noopener noreferrer">Hours &amp; privacy</a></div></article>
+          <article class="resource" id="r15" data-tags="crisis veterans"><p class="card-kicker">Veterans crisis</p><h3>Veterans Crisis Line</h3><p>24/7 crisis support for Veterans, service members, and people who care about them. VA enrollment is not required.</p><div class="tags"><span class="tag">Veterans</span></div><div class="actions"><a class="button crisis-primary" href="tel:988">Call 988, then press 1</a><a class="button" href="sms:838255">Text 838255</a><a class="button" href="https://www.veteranscrisisline.net/" target="_blank" rel="noopener noreferrer">Chat &amp; options</a></div></article>
+          <article class="resource" id="r16" data-tags="housing veterans"><p class="card-kicker">Veterans housing</p><h3>National Call Center for Homeless Veterans</h3><p>Housing help for Veterans who are homeless or may lose their housing, and for people supporting them, 24/7.</p><div class="tags"><span class="tag">Veterans</span></div><div class="actions"><a class="button crisis-primary" href="tel:18774243838">Call 877-424-3838</a><a class="button" href="https://department.va.gov/homeless/nationalcallcenter/" target="_blank" rel="noopener noreferrer">VA housing help</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="before" aria-labelledby="before-title">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Your privacy • Your choice</p><h2 id="before-title">Before you reach out</h2><p>It is okay to ask what will happen next and how your information may be used before you share your story.</p></div>
+        <div class="before-grid">
+          <article class="before-card"><h3>What “confidential” means at 988</h3><p>You can receive support without giving your name or location. Confidential does not mean anonymous: 988 may receive your phone number or chat IP address, calls may be monitored or recorded for quality assurance, and information can be shared in limited circumstances such as imminent risk or when required by law.</p><div class="actions"><a class="button" href="https://988lifeline.org/confidentiality/" target="_blank" rel="noopener noreferrer">Read 988’s privacy policy</a></div></article>
+          <article class="before-card"><h3>Need to leave this page quickly?</h3><p>Internet, call, and text activity can sometimes be monitored and may not be completely erasable. Use a safer device if you can. Clear history only if doing so will not raise suspicion.</p><div class="actions"><a class="button" href="https://www.weather.gov/">Leave this page</a><a class="button" href="https://www.thehotline.org/resources/how-to-clear-search-history-and-other-tech-safety-tips/" target="_blank" rel="noopener noreferrer">Technology-safety guidance</a></div><p class="quick-exit-note">Opens Weather.gov in this tab. It does not erase browser, call, or text history.</p></article>
+        </div>
+        <div class="boundary">GhostHeart does not ask you to enter personal details on this page. GhostHeart is not a crisis, medical, legal, housing, or emergency-response service; these links connect to outside organizations with their own services and privacy rules.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap">U.S. starting points • Services and availability can change • Check the official destination for current information</div></footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('gateway-menu');
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.hidden = !open;
+      };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); }
+      });
+      document.addEventListener('click', (event) => {
+        if (!menu.hidden && !event.target.closest('.nav')) setOpen(false);
+      });
+    })();
+    (() => {
+      const buttons = [...document.querySelectorAll('.filter')];
+      const cards = [...document.querySelectorAll('.resource')];
+      const status = document.getElementById('result-status');
+      const applyFilter = (button) => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        cards.forEach((card) => { card.hidden = filter !== 'all' && !card.dataset.tags.split(' ').includes(filter); });
+        const count = cards.filter((card) => !card.hidden).length;
+        status.textContent = `${count} ${count === 1 ? 'resource' : 'resources'} shown.`;
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => applyFilter(button)));
+      applyFilter(buttons.find((button) => button.getAttribute('aria-pressed') === 'true'));
+    })();
+  </script>
+</body>
+</html>
