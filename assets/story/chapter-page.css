@@ -140,7 +140,7 @@ a:focus-visible, button:focus-visible, video:focus-visible, audio:focus-visible,
   .chapter-number { width: 2.5rem; font-size: 1.05rem; }
   .chapter-opening { padding-inline: .5rem; }
   .chapter-film-caption { padding: .7rem .75rem; }
-  .page-chapter .chapter-opening-actions .button { flex: 1 1 0; width: auto; min-width: 0; padding-inline: .4rem; }
+  .page-chapter .chapter-opening-actions .button { flex: 1 1 0; width: auto; min-width: 0; min-height: 3rem; padding: .35rem .4rem; line-height: 1.15; }
   .chapter-block { padding-inline: 1.05rem; }
   #read { --folio-padding: 1.1rem; }
   .support-links .button, .relationship-actions .button, .continuation-actions .button { width: 100%; }
