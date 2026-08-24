@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "updated": "2026-08-22",
+  "visibilityRule": "Only chapters with status ready and visible true appear in the Story library.",
+  "orderRule": "A chapter number is assigned only after the creator approves its place in the life chronology. Array position does not imply chapter order.",
+  "chapters": [
+    {
+      "chapterId": "ch-001-born-between-worlds",
+      "number": 1,
+      "slug": "born-between-worlds",
+      "title": "Born Between Worlds",
+      "lifeStage": "Baby / Origin",
+      "hook": "Before the name, a small heartbeat learned to live between tenderness and the storms beyond the door.",
+      "songCanonicalTitle": "Born Between Two Worlds",
+      "pageUrl": "story/ch-001-born-between-worlds.html",
+      "posterUrl": "assets/story/born-between-the-worlds.png",
+      "filmUrl": "assets/story/born-between-worlds-with-song-v2.webm",
+      "filmDurationSeconds": 378,
+      "experienceLabel": "4 min read • 6:18 song • chapter film",
+      "status": "ready",
+      "visible": true,
+      "sequenceStatus": "approved",
+      "matchConfidence": "high",
+      "socialShortStatus": "not_created",
+      "unresolvedQuestions": [
+        "Should the chapter and song intentionally keep different titles?",
+        "Should Born Between Two Worlds be added to the maintained chapter-song binder?",
+        "Should the current closing quote be added to the canonical quote catalog?"
+      ]
+    },
+    {
+      "chapterId": "ch-002-too-small",
+      "number": 2,
+      "slug": "too-small",
+      "title": "Too Small",
+      "lifeStage": "Elementary, approximately ages five through seven",
+      "hook": "An early-childhood chapter about facing a large world while still being very small.",
+      "songCanonicalTitle": "Too Small",
+      "status": "mapped_hidden",
+      "visible": false,
+      "sequenceStatus": "approved",
+      "matchConfidence": "high",
+      "socialShortStatus": "not_created",
+      "unresolvedQuestions": [
+        "Which exact Too Small master is canonical?",
+        "Which creator-confirmed memories can be used?",
+        "Which canonical quote belongs to this chapter?"
+      ]
+    },
+    {
+      "chapterId": "rebellion",
+      "number": null,
+      "slug": "rebellion",
+      "title": "Rebellion",
+      "lifeStage": "Young Adult",
+      "hook": "A young-adult chapter about the moment resistance became a voice of its own.",
+      "songCanonicalTitle": "Rebellion",
+      "status": "mapped_hidden",
+      "visible": false,
+      "sequenceStatus": "unplaced",
+      "matchConfidence": "high",
+      "socialShortStatus": "not_created",
+      "unresolvedQuestions": [
+        "What point in young adulthood does this chapter begin?",
+        "Which chapter comes directly before and after Rebellion?",
+        "Which Rebellion track is the chapter master?",
+        "Which creator-approved facts and quote belong here?"
+      ]
+    },
+    {
+      "chapterId": "i-still-would",
+      "number": null,
+      "slug": "i-still-would",
+      "title": "I Still Would",
+      "lifeStage": "Young Adult",
+      "hook": "A young-adult chapter about the love and memory that remain after someone is gone.",
+      "songCanonicalTitle": "I Still Would",
+      "status": "mapped_hidden",
+      "visible": false,
+      "sequenceStatus": "unplaced",
+      "matchConfidence": "high",
+      "socialShortStatus": "not_created",
+      "unresolvedQuestions": [
+        "Which exact audio master is canonical?",
+        "Which person or event may be named publicly?",
+        "Which canonical quote belongs to this chapter?"
+      ]
+    },
+    {
+      "chapterId": "why-didnt-you-call",
+      "number": null,
+      "slug": "why-didnt-you-call",
+      "title": "Why Didn’t You Call",
+      "lifeStage": "Adult",
+      "hook": "An adult chapter shaped by the questions that arrive after distance and silence.",
+      "songCanonicalTitle": "Why Didn’t You Call",
+      "status": "mapped_hidden",
+      "visible": false,
+      "sequenceStatus": "unplaced",
+      "matchConfidence": "high",
+      "socialShortStatus": "not_created",
+      "unresolvedQuestions": [
+        "Which exact audio master is canonical?",
+        "What confirmed context can be public without exposing private details?",
+        "Which canonical quote belongs to this chapter?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostHeart's Versions — Every Version Has a Voice</title>
+  <meta name="description" content="Meet GhostHeart's seven core Versions and five purpose Versions: Mission, Hope, Father, Brother, and Son.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GhostHeart">
+  <meta property="og:title" content="GhostHeart's Versions — Every Version Has a Voice">
+  <meta property="og:description" content="Meet GhostHeart's seven core Versions and five purpose Versions—twelve voices carried by one heart.">
+  <meta property="og:image" content="https://www.myghostheart.com/assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GhostHeart's Versions — Every Version Has a Voice">
+  <meta name="twitter:description" content="Twelve GhostHeart Versions. Twelve voices carried by one heart.">
+  <meta name="twitter:image" content="https://www.myghostheart.com/assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --ink: #09090a;
+      --panel: #101011;
+      --panel-strong: #171719;
+      --text: #f8f4f1;
+      --muted: #bdb4ae;
+      --quiet: #8f8782;
+      --ember: #ed3327;
+      --ember-light: #ff766d;
+      --line: rgba(255, 102, 90, .25);
+      --soft-line: rgba(255, 255, 255, .09);
+      --max: 80rem;
+      --reading: 44rem;
+      --shadow: 0 2rem 5rem rgba(0, 0, 0, .52);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 78% 10%, rgba(237, 51, 39, .11), transparent 29rem),
+        radial-gradient(circle at 9% 62%, rgba(114, 14, 20, .08), transparent 33rem);
+    }
+    a { color: inherit; }
+    button, audio, video { font: inherit; }
+    img { max-width: 100%; }
+    .skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; transform: translateY(-200%); padding: .75rem 1rem; background: var(--text); color: var(--bg); font-weight: 850; }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(1.1rem, 4vw, 3rem); }
+    .eyebrow { margin: 0 0 .9rem; color: var(--ember-light); font-size: .73rem; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+    .nav { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--line); background: rgba(5, 5, 5, .94); backdrop-filter: blur(14px); }
+    .nav-inner { min-height: 4rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.25rem; }
+    .menu-toggle { justify-self: start; display: inline-flex; min-height: 2.75rem; align-items: center; gap: .65rem; border: 1px solid var(--line); background: rgba(255,255,255,.02); color: var(--text); padding: .55rem .8rem; font-size: .76rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+    .menu-toggle:hover, .menu-toggle:focus-visible { border-color: var(--ember); background: rgba(237,51,39,.08); outline: none; box-shadow: 0 0 0 3px rgba(237,51,39,.14); }
+    .menu-icon { position: relative; width: 1rem; height: .75rem; }
+    .menu-icon::before, .menu-icon::after, .menu-icon span { content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: var(--ember-light); transition: transform .2s ease, top .2s ease, opacity .2s ease; }
+    .menu-icon::before { top: 0; }
+    .menu-icon span { top: 5px; }
+    .menu-icon::after { top: 10px; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 5px; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 5px; transform: rotate(-45deg); }
+    .brand { min-height: 2.75rem; display: inline-flex; align-items: center; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .brand span { color: var(--ember); }
+    .brand:hover, .brand:focus-visible { outline: 3px solid rgba(237,51,39,.3); outline-offset: 4px; }
+    .nav-signal { justify-self: end; color: var(--muted); font-family: Georgia, serif; font-size: .82rem; }
+    .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,9,.99); box-shadow: 0 2rem 4rem rgba(0,0,0,.6); }
+    .gateway-menu[hidden] { display: none; }
+    .menu-grid { display: grid; grid-template-columns: .8fr 1.2fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-block: 2rem; }
+    .menu-group h2 { margin: 0 0 .75rem; color: var(--ember-light); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+    .menu-group a { display: block; border-bottom: 1px solid rgba(255,255,255,.07); padding: .62rem 0; color: var(--muted); font-size: .88rem; font-weight: 750; text-decoration: none; }
+    .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--ember); outline: none; }
+    .three-door-rail { border-bottom: 1px solid var(--soft-line); background: #080809; }
+    .door-rail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .door-tab { position: relative; min-height: 4rem; display: flex; align-items: center; gap: .9rem; border-right: 1px solid var(--soft-line); padding: .7rem 1rem; color: var(--muted); text-decoration: none; }
+    .door-tab:first-child { border-left: 1px solid var(--soft-line); }
+    .door-tab:hover, .door-tab:focus-visible { background: rgba(255,255,255,.025); color: var(--text); outline: 3px solid rgba(237,51,39,.3); outline-offset: -3px; }
+    .door-tab[aria-current="page"] { background: linear-gradient(120deg, rgba(237,51,39,.17), rgba(237,51,39,.035)); color: var(--text); }
+    .door-tab[aria-current="page"]::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: var(--ember); }
+    .door-number { color: var(--ember-light); font-size: .7rem; font-weight: 900; letter-spacing: .13em; }
+    .door-label strong { display: block; margin-bottom: .15rem; font-size: .92rem; }
+    .door-label span { display: block; color: var(--quiet); font-family: Georgia, serif; font-size: .76rem; }
+    .hero { position: relative; min-height: clamp(19rem, 31vw, 24rem); display: grid; align-items: center; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--soft-line); background: #040404; }
+    .hero-image { position: absolute; inset: 0; z-index: -3; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; filter: saturate(.96) contrast(1.04); }
+    .core-banner { position: relative; min-height: 0; aspect-ratio: 3 / 1; display: flex; align-items: flex-end; overflow: hidden; margin: 0 0 .75rem; border: 1px solid var(--line); background: #050505; box-shadow: 0 1.8rem 4rem rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.08), inset 0 -2px rgba(237,51,39,.28); isolation: isolate; }
+    .core-banner img { position: absolute; inset: 0; z-index: -2; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .core-banner::after { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(108deg, transparent 0 23px, rgba(255,255,255,.018) 24px), linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.1) 72%), linear-gradient(90deg, rgba(0,0,0,.45), transparent 38%); }
+    .core-banner .section-head { margin: 0; padding: 1rem 1.25rem; }
+    .core-tagline { max-width: 38rem; margin: .35rem 0 0; color: #d8d0cb; font-family: Georgia, serif; font-size: .92rem; line-height: 1.4; }
+    .hero::before, .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+    .hero::before { z-index: -2; background: linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.82) 22%, rgba(0,0,0,.32) 48%, rgba(0,0,0,.12) 70%), linear-gradient(0deg, rgba(5,5,5,.72) 0%, transparent 34%, rgba(0,0,0,.24) 100%); }
+    .hero::after { z-index: -1; background: radial-gradient(circle at 58% 50%, transparent 24%, rgba(0,0,0,.18) 74%); box-shadow: inset 0 0 4rem rgba(0,0,0,.42); }
+    .hero-content { position: relative; z-index: 1; width: 100%; max-width: var(--max); padding-block: clamp(3rem, 6vw, 5rem); }
+    .hero-content > p, .hero-content > h1, .hero-content > .actions { max-width: 30rem; }
+    h1 { margin: 0; font-size: clamp(2rem, 3.2vw, 2.65rem); line-height: 1; letter-spacing: -.04em; }
+    .hero-lede { margin: .65rem 0 0; color: #d8d0cb; font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.5; }
+    .hero-welcome { max-width: 36rem; margin: 1rem 0 0; color: var(--muted); line-height: 1.65; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.1rem; }
+    .button { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; border: 1px solid var(--ember); padding: .75rem 1.05rem; background: rgba(0,0,0,.48); color: var(--text); font-weight: 850; text-decoration: none; }
+    .button.primary { background: var(--ember); color: #09090a; }
+    .button:hover, .button:focus-visible { border-color: var(--ember-light); outline: none; box-shadow: 0 0 0 3px rgba(237, 51, 39, .18); }
+    .welcome-strip { border-block: 1px solid var(--soft-line); background: rgba(255,255,255,.018); }
+    .welcome-grid { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.3rem; padding-block: 1.2rem; }
+    .welcome-grid strong { color: var(--ember-light); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+    .welcome-grid p { max-width: 66rem; margin: 0; color: var(--muted); line-height: 1.55; }
+    .section { padding-block: 2.5rem; }
+    .section.alt { border-block: 1px solid var(--soft-line); background: rgba(255,255,255,.018); }
+    .section-head { max-width: 44rem; margin-bottom: 1rem; }
+    h2 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.3rem); line-height: 1.05; letter-spacing: -.035em; }
+    .section-head > p:not(.eyebrow), .section-lede { color: var(--muted); font-family: Georgia, serif; font-size: 1.08rem; line-height: 1.7; }
+    .voice-layout { display: grid; grid-template-columns: 1fr; gap: .75rem; align-items: stretch; }
+    .voice-list { position: relative; order: 2; display: grid; grid-template-columns: repeat(7, minmax(8rem, 1fr)); gap: .32rem; align-content: start; padding: .4rem 0 .65rem; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-color: var(--ember) #111; }
+    .voice-list::before { content: ""; position: absolute; left: 1.5rem; right: 1.5rem; bottom: .28rem; height: 2px; background: linear-gradient(90deg, transparent, var(--ember) 8%, rgba(237,51,39,.34) 92%, transparent); }
+    .voice-button { position: relative; min-width: 0; min-height: 7.7rem; display: grid; grid-template-columns: 1.65rem minmax(0, 1fr) auto; grid-template-rows: 4.75rem auto; align-items: center; gap: .35rem; overflow: hidden; border: 0; border-block: 1px solid var(--soft-line); background: linear-gradient(145deg, rgba(237,51,39,.08), transparent 42%), #0d0d0e; color: var(--muted); padding: 0 0 .48rem; text-align: left; cursor: pointer; clip-path: polygon(0 3px, 100% 0, 100% calc(100% - 3px), 0 100%); scroll-snap-align: start; transition: transform .18s ease, filter .18s ease, background-color .18s ease; }
+    .voice-button::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: var(--ember); transform: scaleX(0); transform-origin: left; transition: transform .18s ease; }
+    .voice-button:hover, .voice-button:focus-visible { border-color: var(--line); color: var(--text); outline: 3px solid rgba(237,51,39,.18); outline-offset: -3px; }
+    .voice-button:hover img, .voice-button:focus-visible img { transform: scale(1.035); filter: saturate(1.04) contrast(1.08); }
+    .voice-button[aria-pressed="true"] { background: linear-gradient(110deg, rgba(237,51,39,.22), var(--panel)); color: var(--text); filter: drop-shadow(0 .55rem 1rem rgba(237,51,39,.2)); transform: translateY(-3px); }
+    .voice-button[aria-pressed="true"]::after { transform: scaleX(1); }
+    .voice-button img { grid-column: 1 / -1; display: block; width: 100%; height: 4.75rem; object-fit: cover; object-position: center 46%; border-bottom: 1px solid var(--soft-line); filter: saturate(.82) contrast(1.02); transition: transform .18s ease, filter .18s ease; }
+    .voice-button .index { padding-left: .6rem; color: var(--ember-light); font-size: .72rem; font-weight: 900; letter-spacing: .11em; }
+    .voice-button strong { display: block; font-size: .88rem; line-height: 1.15; }
+    .voice-button small { display: block; margin-top: .12rem; color: var(--quiet); font-family: Georgia, serif; font-size: .75rem; line-height: 1.15; }
+    .voice-button .arrow { padding-right: .55rem; color: var(--ember-light); font-size: 1rem; }
+    .spotlight { position: relative; order: 1; min-height: clamp(21rem, 38vw, 31rem); display: flex; align-items: flex-end; overflow: hidden; border: 1px solid var(--line); background: var(--panel); box-shadow: 0 2.2rem 5rem rgba(0,0,0,.58), inset 0 1px rgba(255,255,255,.08), inset 0 -2px rgba(237,51,39,.3); isolation: isolate; }
+    .spotlight-image { position: absolute; inset: 0; z-index: -3; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.96) contrast(1.04); }
+    .spotlight::before { content: ""; display: block; position: absolute; inset: 0; z-index: -2; background: repeating-linear-gradient(108deg, transparent 0 23px, rgba(255,255,255,.018) 24px), linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.77) 33%, rgba(0,0,0,.22) 60%, rgba(0,0,0,.08) 100%), linear-gradient(0deg, rgba(0,0,0,.6), transparent 42%); }
+    .spotlight::after { content: ""; position: absolute; top: 50%; right: 8%; z-index: -1; width: clamp(7.5rem, 14vw, 11rem); aspect-ratio: 1; border: 1px solid rgba(255,118,109,.48); opacity: .58; transform: translateY(-50%) rotate(45deg); transition: border-radius .25s ease, transform .25s ease; }
+    .spotlight[data-voice="outcast"]::after { border-radius: 50%; }
+    .spotlight[data-voice="mind"]::after { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+    .spotlight[data-voice="numbed"]::after { border-style: dashed; transform: translateY(-50%); }
+    .spotlight[data-voice="bonded"]::after { border-radius: 50% 50% 0 50%; }
+    .spotlight[data-voice="written"]::after { transform: translateY(-50%) rotate(45deg) skew(-10deg, -10deg); }
+    .spotlight[data-voice="reclaimed"]::after { border-width: 2px; border-radius: 50%; box-shadow: inset 0 0 0 .8rem #111, inset 0 0 0 .95rem var(--ember), 0 0 4rem rgba(237,51,39,.28); }
+    .spotlight-copy { position: relative; z-index: 1; width: min(42%, 31rem); padding: 1.35rem 1.5rem; background: linear-gradient(90deg, rgba(10,10,11,.98), rgba(10,10,11,.72) 76%, transparent); }
+    .spotlight-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: .85rem; }
+    .spotlight-number, .spotlight-theme { border: 1px solid var(--soft-line); padding: .35rem .5rem; color: var(--ember-light); font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .spotlight h3 { max-width: 18ch; margin: 0; font-size: clamp(1.85rem, 2.8vw, 2.4rem); line-height: 1; letter-spacing: -.035em; }
+    .spotlight-lede { max-width: 32rem; margin: .45rem 0 0; color: #d8d0cb; font-family: Georgia, serif; font-size: 1rem; line-height: 1.5; }
+    .core-voice { margin-top: .8rem; border-top: 1px solid var(--soft-line); padding-top: .75rem; }
+    .core-play-row { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .75rem; }
+    .core-play-button { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ember-light); background: var(--ember); color: #09090a; padding: .65rem .9rem; font-weight: 900; cursor: pointer; }
+    .core-play-button:hover, .core-play-button:focus-visible { background: #ff4439; outline: 3px solid rgba(237,51,39,.25); outline-offset: 2px; }
+    .voice-status { min-width: 0; color: var(--ember-light); font-size: .72rem; font-weight: 850; letter-spacing: .04em; overflow-wrap: anywhere; }
+    .core-audio { display: block; width: 100%; height: 2.5rem; margin-top: .5rem; accent-color: var(--ember); }
+    .voice-transcript { margin-top: .45rem; color: var(--muted); }
+    .voice-transcript summary { min-height: 2.5rem; display: flex; align-items: center; width: max-content; max-width: 100%; color: var(--muted); font-size: .76rem; font-weight: 850; cursor: pointer; text-decoration: underline; text-decoration-color: var(--ember); text-underline-offset: .25rem; }
+    .voice-transcript summary:focus-visible { outline: 3px solid rgba(237,51,39,.32); outline-offset: 2px; }
+    .voice-transcript p { margin: .15rem 0 0; border-left: 2px solid var(--ember); padding-left: .65rem; color: #d8d0cb; font-family: Georgia, serif; font-size: .82rem; line-height: 1.5; }
+    .enter-version { min-height: 2.85rem; display: inline-flex; align-items: center; margin-top: .75rem; border: 1px solid var(--ember); padding: .65rem .85rem; background: rgba(0,0,0,.45); color: var(--text); font-size: .78rem; font-weight: 900; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
+    .enter-version:hover, .enter-version:focus-visible { background: var(--ember); color: #09090a; outline: 3px solid rgba(237,51,39,.22); outline-offset: 2px; }
+    .spotlight.is-changing .spotlight-image { animation: image-arrive .26s ease-out; }
+    .spotlight.is-changing .spotlight-copy { animation: copy-arrive .26s ease-out; }
+    .spotlight.is-playing { box-shadow: 0 2.2rem 5rem rgba(0,0,0,.58), inset 0 1px rgba(255,255,255,.08), inset 0 -3px var(--ember); }
+    .spotlight.is-playing .core-play-button { animation: voice-breathe 1.6s ease-in-out infinite alternate; }
+    @keyframes image-arrive { from { opacity: .35; transform: scale(1.012); } to { opacity: 1; transform: scale(1); } }
+    @keyframes copy-arrive { from { opacity: .55; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes voice-breathe { from { box-shadow: 0 0 0 rgba(237,51,39,0); } to { box-shadow: 0 0 1.4rem rgba(237,51,39,.46); } }
+    .spotlight-prompt { max-width: 38rem; color: var(--muted); line-height: 1.6; }
+    #voices, #purpose-versions { scroll-margin-top: 7.8rem; }
+    #purpose-versions { border: 0; padding-block: 2.5rem; background: radial-gradient(circle at 78% 24%, rgba(237,51,39,.12), transparent 28rem), #080809; }
+    .purpose-banner { position: relative; min-height: 0; aspect-ratio: 3 / 1; display: flex; align-items: flex-end; overflow: hidden; margin: 0 0 .75rem; border: 1px solid var(--line); background: #050505; box-shadow: 0 1.8rem 4rem rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.08), inset 0 -2px rgba(237,51,39,.28); isolation: isolate; }
+    .purpose-banner img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .purpose-banner::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(0,0,0,.92), rgba(0,0,0,.12) 76%), linear-gradient(90deg, rgba(0,0,0,.58), transparent 48%); }
+    .purpose-banner .section-head { margin: 0; padding: 1rem 1.25rem; }
+    .purpose-tagline { margin: .35rem 0 0; color: #e3dad5; font-family: Georgia, serif; font-size: .92rem; line-height: 1.4; }
+    .purpose-layout { display: grid; grid-template-columns: minmax(15rem, .62fr) minmax(0, 1.38fr); gap: .75rem; }
+    .purpose-list { position: relative; display: grid; gap: .32rem; align-content: stretch; }
+    .purpose-list::before { content: ""; position: absolute; top: 1rem; bottom: 1rem; left: 1.1rem; width: 2px; background: linear-gradient(var(--ember), rgba(237,51,39,.16)); }
+    .purpose-button { position: relative; min-height: 5.1rem; display: grid; grid-template-columns: 2.2rem minmax(0,1fr) auto; align-items: center; gap: .65rem; overflow: hidden; border: 1px solid var(--soft-line); background: linear-gradient(110deg, rgba(237,51,39,.08), transparent 54%), #101011; color: var(--muted); padding: .55rem .75rem .55rem .55rem; text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+    .purpose-button::before { content: ""; position: absolute; top: 50%; left: .75rem; z-index: 1; width: 1.7rem; aspect-ratio: 1; border: 2px solid rgba(255,118,109,.55); border-radius: 50%; background: #0a0a0b; box-shadow: 0 0 0 .35rem #101011; transform: translateY(-50%); }
+    .purpose-button .purpose-index { position: relative; z-index: 2; justify-self: center; color: var(--ember-light); font-size: .66rem; font-weight: 950; letter-spacing: .06em; }
+    .purpose-button strong { display: block; color: var(--text); font-size: .96rem; }
+    .purpose-button small { display: block; margin-top: .12rem; color: var(--quiet); font-family: Georgia, serif; font-size: .76rem; line-height: 1.2; }
+    .purpose-button .arrow { color: var(--ember-light); font-size: 1rem; }
+    .purpose-button:hover, .purpose-button:focus-visible { border-color: var(--ember-light); color: var(--text); outline: 3px solid rgba(237,51,39,.22); outline-offset: -3px; transform: translateX(3px); }
+    .purpose-button[aria-pressed="true"] { border-color: var(--line); background: linear-gradient(105deg, rgba(237,51,39,.3), rgba(237,51,39,.07) 72%), #141415; }
+    .purpose-button[aria-pressed="true"]::before { border-color: #0a0a0b; background: var(--ember-light); box-shadow: 0 0 0 .35rem #151516, 0 0 1.2rem rgba(255,118,109,.72); }
+    .purpose-spotlight { position: relative; min-height: clamp(28rem, 45vw, 38rem); display: flex; align-items: flex-end; overflow: hidden; border: 1px solid var(--line); background: #101011; box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,.08), inset 0 -3px rgba(237,51,39,.58); isolation: isolate; }
+    .purpose-spotlight-image { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.97) contrast(1.05); }
+    .purpose-spotlight::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.72) 40%, rgba(0,0,0,.08) 78%), linear-gradient(0deg, rgba(0,0,0,.72), transparent 48%); }
+    .purpose-spotlight::after { content: ""; position: absolute; inset: auto 0 0; z-index: -1; height: 3px; background: linear-gradient(90deg, transparent, var(--ember-light), transparent); box-shadow: 0 0 2rem rgba(237,51,39,.62); }
+    .purpose-copy { width: min(50%, 31rem); padding: clamp(1.15rem, 3vw, 2rem); background: linear-gradient(90deg, rgba(9,9,10,.98), rgba(9,9,10,.72) 78%, transparent); }
+    .purpose-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .85rem; }
+    .purpose-meta span { border: 1px solid var(--soft-line); padding: .35rem .5rem; color: var(--ember-light); font-size: .68rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .purpose-copy h3 { margin: 0; font-size: clamp(2rem, 3.5vw, 3rem); line-height: .95; letter-spacing: -.04em; }
+    .purpose-primary { margin: .55rem 0 0; color: #eee5df; font-family: Georgia, serif; font-size: clamp(1.05rem, 1.8vw, 1.25rem); }
+    .purpose-secondary { margin: .45rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .enter-purpose { min-height: 3rem; display: inline-flex; align-items: center; margin-top: 1rem; border: 1px solid var(--ember-light); padding: .72rem 1rem; background: var(--ember); color: #09090a; font-size: .78rem; font-weight: 950; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
+    .enter-purpose:hover, .enter-purpose:focus-visible { background: var(--ember-light); outline: 3px solid rgba(255,118,109,.3); outline-offset: 2px; }
+    .purpose-spotlight.is-changing .purpose-spotlight-image { animation: image-arrive .26s ease-out; }
+    .purpose-spotlight.is-changing .purpose-copy { animation: copy-arrive .26s ease-out; }
+    .footer { border-top: 1px solid var(--soft-line); padding-block: 1rem; color: var(--muted); font-size: .84rem; }
+    .ghostheart-route { position: relative; border-block: 1px solid var(--line); background: repeating-linear-gradient(105deg, transparent 0 14px, rgba(255,255,255,.018) 15px), #080809; padding-block: 1rem; }
+    .route-mural { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--soft-line); padding: .25rem 0 .8rem; }
+    .route-mural .eyebrow { margin: 0; }
+    .route-mural strong { font-family: Georgia, serif; font-size: clamp(1rem, 2vw, 1.25rem); }
+    .route-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .route-link { min-height: 4.5rem; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-content: center; gap: .08rem .65rem; border-inline-end: 1px solid var(--soft-line); padding: .6rem .9rem; color: var(--muted); text-decoration: none; }
+    .route-link:first-child { border-inline-start: 1px solid var(--soft-line); }
+    .route-node { grid-row: 1 / -1; align-self: center; width: 2rem; aspect-ratio: 1; display: grid; place-items: center; border: 2px solid rgba(237,51,39,.45); border-radius: 50%; background: #0b0b0c; color: var(--ember-light); font-size: .66rem; font-weight: 950; }
+    .route-link strong { color: var(--text); font-size: .92rem; }
+    .route-link small { font-family: Georgia, serif; font-size: .76rem; }
+    .route-link em { display: none; }
+    .route-link[aria-current="page"] .route-node { border-color: var(--ember-light); background: var(--ember); color: #09090a; box-shadow: 0 0 1.5rem rgba(237,51,39,.5); }
+    .route-link:hover .route-node, .route-link:focus-visible .route-node { border-color: var(--ember-light); box-shadow: 0 0 1.2rem rgba(237,51,39,.4); }
+    .route-link:focus-visible { outline: 3px solid rgba(237,51,39,.2); outline-offset: 2px; }
+    .route-home { display: flex; min-height: 2.75rem; width: max-content; align-items: center; margin: .25rem auto 0; color: var(--quiet); font-size: .74rem; font-weight: 800; text-underline-offset: .25rem; }
+    .route-home:hover, .route-home:focus-visible { color: var(--text); outline-color: var(--ember); }
+    .site-link-rail { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem .45rem; border-top: 1px solid var(--soft-line); padding-top: .55rem; }
+    .site-link-rail a { min-height: 2.75rem; display: inline-flex; align-items: center; padding-inline: .55rem; color: var(--quiet); font-size: .7rem; font-weight: 900; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .site-link-rail a:hover, .site-link-rail a:focus-visible { color: var(--text); outline: 3px solid rgba(237,51,39,.22); outline-offset: -3px; }
+    @media (max-width: 1099px) {
+      .voice-list { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(9rem, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .nav-inner { grid-template-columns: auto 1fr; }
+      .brand { justify-self: end; }
+      .nav-signal { display: none; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .door-label span { display: none; }
+      .door-tab { min-height: 3.35rem; justify-content: center; }
+      .hero { min-height: clamp(19rem, 54vw, 24rem); }
+      .hero-image { object-position: 60% 50%; }
+      .hero::before { background: linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.72) 45%, rgba(0,0,0,.28) 100%), linear-gradient(0deg, rgba(5,5,5,.7), transparent 48%); }
+      .purpose-layout { grid-template-columns: minmax(12rem, .55fr) minmax(0, 1.45fr); }
+      .purpose-copy { width: 64%; }
+    }
+    @media (max-width: 759px) {
+      .spotlight { min-height: 19rem; }
+      .spotlight-copy { width: 72%; padding: 1rem; }
+      .spotlight::after { right: 1.5rem; width: 5rem; }
+      .voice-button .arrow { display: none; }
+      .purpose-copy { width: 72%; padding: 1rem; }
+    }
+    @media (max-width: 620px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .door-tab { display: grid; justify-items: center; gap: .25rem; padding-inline: .4rem; text-align: center; }
+      .door-number { font-size: .62rem; }
+      .door-label strong { font-size: .78rem; }
+      .hero { min-height: 21rem; }
+      .hero-image { object-position: 64% 50%; }
+      .hero::before { background: linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.76) 58%, rgba(0,0,0,.42) 100%), linear-gradient(0deg, rgba(5,5,5,.78), transparent 52%); }
+      .hero-content { padding-block: 2.75rem; }
+      .hero-content > p, .hero-content > h1, .hero-content > .actions { max-width: 19rem; }
+      .core-banner { min-height: 0; }
+      .core-banner img { object-position: center; }
+      .voice-list { order: 1; }
+      .spotlight { min-height: 22rem; }
+      .spotlight { order: 2; }
+      .spotlight-image { object-position: 58% center; }
+      .spotlight::before { background: linear-gradient(0deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.66) 50%, rgba(0,0,0,.08) 100%); }
+      .spotlight-copy { width: 100%; background: linear-gradient(0deg, rgba(8,8,9,.98), rgba(8,8,9,.74) 74%, transparent); }
+      .core-play-row { align-items: flex-start; }
+      .voice-status { flex: 1 1 9rem; padding-top: .3rem; }
+      .purpose-banner { aspect-ratio: 16 / 7; }
+      .purpose-banner img { object-fit: contain; }
+      .purpose-layout { grid-template-columns: 1fr; }
+      .purpose-list { grid-auto-flow: column; grid-auto-columns: minmax(12rem, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .4rem; }
+      .purpose-list::before { top: auto; bottom: .15rem; left: 1rem; right: 1rem; width: auto; height: 2px; background: linear-gradient(90deg, var(--ember), rgba(237,51,39,.16)); }
+      .purpose-button { min-height: 4.6rem; scroll-snap-align: start; }
+      .purpose-spotlight { min-height: 27rem; }
+      .purpose-spotlight::before { background: linear-gradient(0deg, rgba(0,0,0,.96), rgba(0,0,0,.68) 52%, rgba(0,0,0,.08) 84%); }
+      .purpose-copy { width: 100%; background: linear-gradient(0deg, rgba(8,8,9,.98), rgba(8,8,9,.72) 78%, transparent); }
+      .route-mural { align-items: flex-start; flex-direction: column; gap: .25rem; }
+      .route-link { min-height: 4.75rem; grid-template-columns: 1fr; grid-template-rows: auto auto; justify-items: center; gap: .15rem; padding-inline: .3rem; text-align: center; }
+      .route-node { grid-row: auto; width: 1.7rem; }
+      .route-link small { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .menu-icon::before, .menu-icon::after, .menu-icon span, .spotlight::after, .voice-button, .voice-button img, .spotlight-image, .spotlight-copy, .purpose-button, .purpose-spotlight-image, .purpose-copy { animation: none !important; transition: none !important; transform: none !important; }
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Versions.html">
+  <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Versions.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to GhostHeart's Versions</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home">Ghost<span>Heart</span></a>
+      <span class="nav-signal">One life. Many versions. One heart.</span>
+    </div>
+    <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
+      <div class="wrap menu-grid">
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a href="index.html#identity">Identity &amp; Oath</a></div>
+        <div class="menu-group"><h2>Three Worlds</h2><a href="GhostHeart_Versions.html" aria-current="page">Versions</a><a href="GhostHeart_Story.html">Story</a><a href="GhostHeart_Angel.html">GhostHeart&rsquo;s Angel</a></div>
+        <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html">Videos</a><a href="GhostHeart_Songs.html">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
+        <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="three-door-rail" aria-label="The three GhostHeart parts">
+    <div class="wrap door-rail-grid">
+      <a class="door-tab" href="#main" aria-current="page"><span class="door-number">01</span><span class="door-label"><strong>Versions</strong><span>The voices within</span></span></a>
+      <a class="door-tab" href="GhostHeart_Story.html"><span class="door-number">02</span><span class="door-label"><strong>Story</strong><span>The life in chapters</span></span></a>
+      <a class="door-tab" href="GhostHeart_Angel.html"><span class="door-number">03</span><span class="door-label"><strong>GhostHeart&rsquo;s Angel</strong><span>The love story beside it</span></span></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/versions/ghostheart-versions-one-heart-many-voices-graffiti-v1.png" alt="Seven faceless GhostHeart figures connected by crimson energy in a black-and-red graffiti mural.">
+      <div class="wrap hero-content">
+        <p class="eyebrow">GhostHeart's Versions</p>
+        <h1 id="hero-title">One heart. Many voices.</h1>
+        <p class="hero-lede">Meet the core Versions—or the purpose that carries GhostHeart forward.</p>
+        <div class="actions"><a class="button" href="#voices">Hear the seven voices ↓</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="voices" aria-labelledby="voices-title">
+      <div class="wrap">
+        <figure class="core-banner">
+          <img src="assets/versions/core/core-versions-seven-voices-graffiti-banner-web-v1.jpg" alt="Seven faceless silhouettes connected through one central crimson heart signal across a black graffiti wall.">
+          <figcaption class="section-head"><p class="eyebrow">Seven core voices</p><h2 id="voices-title">Core Versions</h2><p class="core-tagline">Seven voices. Seven different fires. One heart that refuses to go quiet.</p></figcaption>
+        </figure>
+        <div class="voice-layout">
+          <div class="voice-list" aria-label="Choose a GhostHeart Version">
+            <button class="voice-button" type="button" data-voice="unprotected" aria-controls="voice-spotlight" aria-pressed="true"><img src="assets/versions/core/01-the-unprotected-graffiti-v2.png" alt="" loading="lazy" decoding="async"><span class="index">01</span><span><strong>The Unprotected</strong><small>Safety</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="outcast" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/02-the-outcast-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">02</span><span><strong>The Outcast</strong><small>Belonging</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="mind" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/03-the-mind-at-war-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">03</span><span><strong>The Mind at War</strong><small>Inner voice</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="numbed" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/04-the-numbed-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">04</span><span><strong>The Numbed</strong><small>Presence</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="bonded" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/05-the-bonded-heart-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">05</span><span><strong>The Bonded Heart</strong><small>Connection</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="written" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/06-the-written-off-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">06</span><span><strong>The Written Off</strong><small>Possibility</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="voice-button" type="button" data-voice="reclaimed" aria-controls="voice-spotlight" aria-pressed="false"><img src="assets/versions/core/07-the-reclaimed-self-graffiti-v1.png" alt="" loading="lazy" decoding="async"><span class="index">07</span><span><strong>The Reclaimed Self</strong><small>Authenticity</small></span><span class="arrow" aria-hidden="true">→</span></button>
+          </div>
+
+          <article class="spotlight" id="voice-spotlight" data-voice="unprotected" aria-labelledby="spotlight-title" aria-describedby="spotlight-lede">
+            <img class="spotlight-image" id="spotlight-image" src="assets/versions/core/01-the-unprotected-graffiti-v2.png" alt="An open-handed faceless silhouette stands grounded while crimson signals radiate from one heart across a black graffiti wall.">
+            <div class="spotlight-copy">
+              <div class="spotlight-meta"><span class="spotlight-number" id="spotlight-number">Version 01</span><span class="spotlight-theme" id="spotlight-theme">Theme • Safety</span></div>
+              <h3 id="spotlight-title">The Unprotected</h3>
+              <p class="spotlight-lede" id="spotlight-lede">Safe. Heard. Valued.</p>
+              <div class="core-voice">
+                <div class="core-play-row">
+                  <button class="core-play-button" id="core-play-button" type="button" aria-controls="core-voice-player" aria-label="Play The Unprotected voice">Hear this voice</button>
+                  <span class="voice-status" id="voice-status" role="status" aria-live="polite">The Unprotected voice ready • 0:09</span>
+                </div>
+                <audio class="core-audio" id="core-voice-player" controls preload="metadata" aria-label="The Unprotected voice" aria-describedby="voice-status voice-transcript-text">
+                  <source src="assets/versions/voices/01-the-unprotected-voice-v1.mp3" type="audio/mpeg">
+                  Your browser does not support the Core Version voice player.
+                </audio>
+                <details class="voice-transcript">
+                  <summary>Read the words</summary>
+                  <p id="voice-transcript-text">I stand without armor. Fear can speak, but it does not own this ground. I am safe. I am still here.</p>
+                </details>
+                <a class="enter-version" id="enter-version" href="GhostHeart_Version_Unprotected.html">Enter The Unprotected →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="purpose-versions" aria-labelledby="purpose-title">
+      <div class="wrap">
+        <figure class="purpose-banner">
+          <img src="assets/versions/purpose/purpose-versions-five-ways-forward-graffiti-banner-v1.png" alt="A compass, open circle, heart, sheltering arc, and roots connect through one crimson signal across a black-and-bone graffiti wall.">
+          <figcaption class="section-head"><p class="eyebrow">GhostHeart's five ways forward</p><h2 id="purpose-title">GhostHeart's Purpose Versions</h2><p class="purpose-tagline">Mission. Hope. Father. Brother. Son. Five parts of GhostHeart that turn survival into direction.</p></figcaption>
+        </figure>
+        <div class="purpose-layout">
+          <div class="purpose-list" aria-label="Choose one of GhostHeart's Purpose Versions">
+            <button class="purpose-button" type="button" data-purpose="mission" aria-controls="purpose-spotlight" aria-pressed="true"><span class="purpose-index">01</span><span><strong>Mission</strong><small>Build. Serve. Change.</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="purpose-button" type="button" data-purpose="hope" aria-controls="purpose-spotlight" aria-pressed="false"><span class="purpose-index">02</span><span><strong>Hope</strong><small>Keep moving forward.</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="purpose-button" type="button" data-purpose="father" aria-controls="purpose-spotlight" aria-pressed="false"><span class="purpose-index">03</span><span><strong>Father</strong><small>Love in action.</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="purpose-button" type="button" data-purpose="brother" aria-controls="purpose-spotlight" aria-pressed="false"><span class="purpose-index">04</span><span><strong>Brother</strong><small>Loyalty and connection.</small></span><span class="arrow" aria-hidden="true">→</span></button>
+            <button class="purpose-button" type="button" data-purpose="son" aria-controls="purpose-spotlight" aria-pressed="false"><span class="purpose-index">05</span><span><strong>Son</strong><small>Roots and becoming.</small></span><span class="arrow" aria-hidden="true">→</span></button>
+          </div>
+          <article class="purpose-spotlight" id="purpose-spotlight" data-purpose="mission" aria-labelledby="purpose-spotlight-title" aria-describedby="purpose-primary purpose-secondary">
+            <img class="purpose-spotlight-image" id="purpose-spotlight-image" src="assets/versions/purpose/01-mission-purpose-graffiti-v1.png" alt="A faceless silhouette steps forward as a crimson heart signal becomes a compass, arrow, and rising path.">
+            <div class="purpose-copy">
+              <div class="purpose-meta"><span id="purpose-number">GhostHeart's Purpose 01</span><span>His five ways forward</span></div>
+              <h3 id="purpose-spotlight-title">Mission</h3>
+              <p class="purpose-primary" id="purpose-primary">Build. Serve. Change.</p>
+              <p class="purpose-secondary" id="purpose-secondary">GhostHeart turns survival into work that leaves a door open behind him.</p>
+              <a class="enter-purpose" id="enter-purpose" href="GhostHeart_Version_Mission.html">Enter GhostHeart's Mission →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="ghostheart-route" aria-label="Continue through the three GhostHeart parts">
+      <div class="wrap">
+        <div class="route-mural"><p class="eyebrow">Three doors</p><strong>Versions. Story. Angel.</strong></div>
+        <div class="route-grid">
+          <a class="route-link" href="#main" aria-current="page"><span class="route-node">01</span><strong>Versions</strong><small>The voices within</small><em>You are here</em></a>
+          <a class="route-link" href="GhostHeart_Story.html"><span class="route-node">02</span><strong>Story</strong><small>The life in chapters</small><em>Continue</em></a>
+        <a class="route-link" href="GhostHeart_Angel.html"><span class="route-node">03</span><strong>GhostHeart&rsquo;s Angel</strong><small>The love story beside it</small><em>Continue</em></a>
+        </div>
+        <div class="site-link-rail" aria-label="Explore more of GhostHeart"><a href="GhostHeart_Videos.html">Watch</a><a href="GhostHeart_Songs.html">Listen</a><a href="GhostHeart_Quotes.html">Quotes</a><a href="GhostHeart_Projects.html">Projects</a><a href="GhostHeart_Resources.html">Support</a></div>
+        <a class="route-home" href="index.html#home">Return to GhostHeart</a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="footer"><div class="wrap">GhostHeart&rsquo;s Versions • Twelve voices carried by one heart</div></footer>
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('gateway-menu');
+      const closeMenu = () => { menu.hidden = true; menuButton.setAttribute('aria-expanded', 'false'); };
+      menuButton.addEventListener('click', () => {
+        const opening = menu.hidden;
+        menu.hidden = !opening;
+        menuButton.setAttribute('aria-expanded', String(opening));
+      });
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) closeMenu(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { closeMenu(); menuButton.focus(); } });
+
+      const voices = {
+        unprotected: { number: '01', theme: 'Safety', title: 'The Unprotected', lede: 'Safe. Heard. Valued.', image: 'assets/versions/core/01-the-unprotected-graffiti-v2.png', alt: 'An open-handed faceless silhouette stands grounded while crimson signals radiate from one heart across a black graffiti wall.', audio: 'assets/versions/voices/01-the-unprotected-voice-v1.mp3', duration: '0:09', transcript: 'I stand without armor. Fear can speak, but it does not own this ground. I am safe. I am still here.', page: 'GhostHeart_Version_Unprotected.html' },
+        outcast: { number: '02', theme: 'Belonging', title: 'The Outcast', lede: 'Belong without becoming smaller.', image: 'assets/versions/core/02-the-outcast-graffiti-v1.png', alt: 'A faceless silhouette stands inside an incomplete graffiti circle completed by a crimson ground signal.', audio: 'assets/versions/voices/02-the-outcast-voice-v1.mp3', duration: '0:09', transcript: 'I have stood outside enough doors to know this. Belonging is not permission. I bring my own fire, and I take my place.', page: 'GhostHeart_Version_Outcast.html' },
+        mind: { number: '03', theme: 'Inner voice', title: 'The Mind at War', lede: 'Find steadiness inside the noise.', image: 'assets/versions/core/03-the-mind-at-war-graffiti-v1.png', alt: 'A balanced faceless silhouette centers angular graffiti noise into steady crimson heart pulses.', audio: 'assets/versions/voices/03-the-mind-at-war-voice-v1.mp3', duration: '0:08', transcript: 'The noise knows my name, but it does not command me. One breath. One true thought. I choose which voice leads.', page: 'GhostHeart_Version_Mind_At_War.html' },
+        numbed: { number: '04', theme: 'Presence', title: 'The Numbed', lede: 'Return to the moment at your own pace.', image: 'assets/versions/core/04-the-numbed-graffiti-v1.png', alt: 'Crimson color returns from one heart through the open hands of a faceless silhouette and into the ground.', audio: 'assets/versions/voices/04-the-numbed-voice-v1.mp3', duration: '0:08', transcript: 'I went quiet to make it through. Now the smallest spark is enough. I feel it. I follow it. I return.', page: 'GhostHeart_Version_Numbed.html' },
+        bonded: { number: '05', theme: 'Connection', title: 'The Bonded Heart', lede: 'Love, loyalty, memory, connection.', image: 'assets/versions/core/05-the-bonded-heart-graffiti-v1.png', alt: 'An open crimson ribbon knot travels through the heart and outstretched hand of one faceless silhouette.', audio: 'assets/versions/voices/05-the-bonded-heart-voice-v1.mp3', duration: '0:07', transcript: 'I have loved hard enough to lose my own outline. Never again. I can hold you close without letting go of me.', page: 'GhostHeart_Version_Bonded_Heart.html' },
+        written: { number: '06', theme: 'Possibility', title: 'The Written Off', lede: 'One moment does not define what comes next.', image: 'assets/versions/core/06-the-written-off-graffiti-v1.png', alt: 'A faceless silhouette steps through a cracked charcoal wall into a bright open crimson threshold.', audio: 'assets/versions/voices/06-the-written-off-voice-v1.mp3', duration: '0:10', transcript: 'They counted me out while I was still becoming. Bad call. I am not finished. I am the proof they never saw coming.', page: 'GhostHeart_Version_Written_Off.html' },
+        reclaimed: { number: '07', theme: 'Authenticity', title: 'The Reclaimed Self', lede: 'Fully visible. Fully your own.', image: 'assets/versions/core/07-the-reclaimed-self-graffiti-v1.png', alt: 'A fully upright faceless silhouette stands inside an open graffiti circle with a bold crimson heart and reclaimed contour.', audio: 'assets/versions/voices/07-the-reclaimed-self-voice-v1.mp3', duration: '0:07', transcript: 'I wore borrowed shapes until I forgot my own. They fall away now. This is my voice, my life, and I claim all of it.', page: 'GhostHeart_Version_Reclaimed_Self.html' }
+      };
+      const voiceButtons = [...document.querySelectorAll('.voice-button')];
+      const spotlight = document.getElementById('voice-spotlight');
+      const spotlightNumber = document.getElementById('spotlight-number');
+      const spotlightTheme = document.getElementById('spotlight-theme');
+      const spotlightTitle = document.getElementById('spotlight-title');
+      const spotlightLede = document.getElementById('spotlight-lede');
+      const spotlightImage = document.getElementById('spotlight-image');
+      const coreAudio = document.getElementById('core-voice-player');
+      const corePlayButton = document.getElementById('core-play-button');
+      const voiceStatus = document.getElementById('voice-status');
+      const voiceTranscript = document.getElementById('voice-transcript-text');
+      const enterVersion = document.getElementById('enter-version');
+      let activeVoice = voices.unprotected;
+
+      const resetAudio = () => {
+        coreAudio.pause();
+        spotlight.classList.remove('is-playing');
+        if (Number.isFinite(coreAudio.duration)) coreAudio.currentTime = 0;
+        corePlayButton.textContent = 'Hear this voice';
+      };
+
+      const selectVoice = (key) => {
+        const voice = voices[key];
+        resetAudio();
+        activeVoice = voice;
+        spotlight.dataset.voice = key;
+        spotlightNumber.textContent = 'Version ' + voice.number;
+        spotlightTheme.textContent = 'Theme • ' + voice.theme;
+        spotlightTitle.textContent = voice.title;
+        spotlightLede.textContent = voice.lede;
+        spotlightImage.src = voice.image;
+        spotlightImage.alt = voice.alt;
+        spotlight.classList.remove('is-changing');
+        void spotlight.offsetWidth;
+        spotlight.classList.add('is-changing');
+        coreAudio.src = voice.audio;
+        coreAudio.setAttribute('aria-label', voice.title + ' voice');
+        coreAudio.load();
+        corePlayButton.setAttribute('aria-label', 'Play ' + voice.title + ' voice');
+        voiceStatus.textContent = voice.title + ' voice ready • ' + voice.duration;
+        voiceTranscript.textContent = voice.transcript;
+        enterVersion.href = voice.page;
+        enterVersion.textContent = 'Enter ' + voice.title + ' →';
+        voiceButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.voice === key)));
+      };
+
+      corePlayButton.addEventListener('click', async () => {
+        if (!coreAudio.paused) {
+          coreAudio.pause();
+          coreAudio.currentTime = 0;
+          corePlayButton.textContent = 'Hear this voice';
+          voiceStatus.textContent = activeVoice.title + ' voice stopped.';
+          return;
+        }
+
+        try {
+          await coreAudio.play();
+        } catch (error) {
+          voiceStatus.textContent = 'Playback was blocked. Use the audio controls below.';
+        }
+      });
+
+      coreAudio.addEventListener('loadedmetadata', () => {
+        const seconds = Math.round(coreAudio.duration);
+        const duration = Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
+        voiceStatus.textContent = activeVoice.title + ' voice ready • ' + duration;
+      });
+
+      coreAudio.addEventListener('play', () => {
+        spotlight.classList.add('is-playing');
+        corePlayButton.textContent = 'Stop voice';
+        voiceStatus.textContent = 'Playing ' + activeVoice.title + '.';
+      });
+
+      coreAudio.addEventListener('pause', () => {
+        spotlight.classList.remove('is-playing');
+        if (coreAudio.ended || coreAudio.currentTime === 0) return;
+        corePlayButton.textContent = 'Resume voice';
+        voiceStatus.textContent = activeVoice.title + ' voice paused.';
+      });
+
+      coreAudio.addEventListener('ended', () => {
+        spotlight.classList.remove('is-playing');
+        corePlayButton.textContent = 'Hear this voice again';
+        voiceStatus.textContent = activeVoice.title + ' voice finished.';
+      });
+
+      coreAudio.addEventListener('error', () => {
+        spotlight.classList.remove('is-playing');
+        corePlayButton.textContent = 'Voice unavailable';
+        voiceStatus.textContent = activeVoice.title + ' could not load. Try the audio controls below.';
+      });
+
+      voiceButtons.forEach((button) => {
+        button.addEventListener('click', () => selectVoice(button.dataset.voice));
+        button.addEventListener('focus', () => button.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      });
+
+      const purposes = {
+        mission: { number: '01', title: 'Mission', primary: 'Build. Serve. Change.', secondary: 'GhostHeart turns survival into work that leaves a door open behind him.', image: 'assets/versions/purpose/01-mission-purpose-graffiti-v1.png', alt: 'A faceless silhouette steps forward as a crimson heart signal becomes a compass, arrow, and rising path.', page: 'GhostHeart_Version_Mission.html' },
+        hope: { number: '02', title: 'Hope', primary: 'Keep moving forward.', secondary: 'GhostHeart keeps one ember alive when certainty is gone.', image: 'assets/versions/purpose/02-hope-purpose-graffiti-v1.png', alt: 'A calm faceless silhouette stands beneath an open bone-white circle while a crimson heart signal rises toward the horizon.', page: 'GhostHeart_Version_Hope.html' },
+        father: { number: '03', title: 'Father', primary: 'Love in action.', secondary: 'GhostHeart refuses to repeat absence and builds safety through presence.', image: 'assets/versions/purpose/03-father-purpose-graffiti-v1.png', alt: 'A larger faceless silhouette lowers to the level of a smaller silhouette beneath a steady open protective arc.', page: 'GhostHeart_Version_Father.html' },
+        brother: { number: '04', title: 'Brother', primary: 'Loyalty and connection.', secondary: 'GhostHeart stands beside without possession and tells the truth without abandoning.', image: 'assets/versions/purpose/04-brother-purpose-graffiti-v1.png', alt: 'Two equal-height faceless silhouettes stand side by side as their crimson signals join one forward path.', page: 'GhostHeart_Version_Brother.html' },
+        son: { number: '05', title: 'Son', primary: 'Roots and becoming.', secondary: 'GhostHeart honors his roots without surrendering who he becomes.', image: 'assets/versions/purpose/05-son-purpose-graffiti-v1.png', alt: 'An age-neutral faceless silhouette rises from root-like marks as one crimson heart signal climbs into an open contour.', page: 'GhostHeart_Version_Son.html' }
+      };
+      const purposeButtons = [...document.querySelectorAll('.purpose-button')];
+      const purposeSpotlight = document.getElementById('purpose-spotlight');
+      const purposeNumber = document.getElementById('purpose-number');
+      const purposeTitle = document.getElementById('purpose-spotlight-title');
+      const purposePrimary = document.getElementById('purpose-primary');
+      const purposeSecondary = document.getElementById('purpose-secondary');
+      const purposeImage = document.getElementById('purpose-spotlight-image');
+      const enterPurpose = document.getElementById('enter-purpose');
+
+      const selectPurpose = (key) => {
+        const purpose = purposes[key];
+        if (!purpose) return;
+        purposeSpotlight.dataset.purpose = key;
+        purposeNumber.textContent = "GhostHeart's Purpose " + purpose.number;
+        purposeTitle.textContent = purpose.title;
+        purposePrimary.textContent = purpose.primary;
+        purposeSecondary.textContent = purpose.secondary;
+        purposeImage.src = purpose.image;
+        purposeImage.alt = purpose.alt;
+        enterPurpose.href = purpose.page;
+        enterPurpose.textContent = "Enter GhostHeart's " + purpose.title + " →";
+        purposeSpotlight.classList.remove('is-changing');
+        void purposeSpotlight.offsetWidth;
+        purposeSpotlight.classList.add('is-changing');
+        purposeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.purpose === key)));
+      };
+
+      purposeButtons.forEach((button, index) => {
+        button.addEventListener('click', () => selectPurpose(button.dataset.purpose));
+        button.addEventListener('keydown', (event) => {
+          let targetIndex;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % purposeButtons.length;
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + purposeButtons.length) % purposeButtons.length;
+          if (event.key === 'Home') targetIndex = 0;
+          if (event.key === 'End') targetIndex = purposeButtons.length - 1;
+          if (targetIndex === undefined) return;
+          event.preventDefault();
+          purposeButtons[targetIndex].focus();
+          purposeButtons[targetIndex].click();
+        });
+        button.addEventListener('focus', () => button.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      });
+    })();
+  </script>
+</body>
+</html>

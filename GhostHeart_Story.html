@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostHeart's Story | Chapter Library</title>
+  <meta name="description" content="Enter GhostHeart's Story through its opening film and a growing library of life chapters told through story, song, film, and quote.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GhostHeart">
+  <meta property="og:title" content="GhostHeart's Story | Chapter Library">
+  <meta property="og:description" content="Enter GhostHeart's Story through its opening film and the first chapter, Born Between Worlds.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GhostHeart's Story | Chapter Library">
+  <meta name="twitter:description" content="Enter GhostHeart's Story through its opening film and the first chapter, Born Between Worlds.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --surface: #0d0d0e;
+      --surface-2: #151416;
+      --text: #f7f4f1;
+      --muted: #bdb5ae;
+      --ember: #ed3327;
+      --ember-light: #ff756c;
+      --line: rgba(255, 91, 78, .28);
+      --paper: #e8dfd4;
+      --ink: #171313;
+      --max: 74rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 88% 36%, rgba(237,51,39,.07), transparent 24rem),
+        repeating-linear-gradient(165deg, rgba(255,255,255,.012) 0 1px, transparent 1px 10px),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100%, var(--max)); margin: 0 auto; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
+    .skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; transform: translateY(-180%); background: #f4efe9; color: #080808; padding: .75rem 1rem; font-weight: 900; }
+    .skip-link:focus { transform: translateY(0); }
+
+    .nav { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgba(5,5,5,.92); backdrop-filter: blur(14px); }
+    .nav-inner { min-height: 4rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.25rem; }
+    .menu-toggle { justify-self: start; display: inline-flex; min-height: 2.75rem; align-items: center; gap: .65rem; border: 1px solid var(--line); background: rgba(255,255,255,.02); color: var(--text); padding: .55rem .75rem; font: inherit; font-size: .76rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+    .menu-toggle:hover, .menu-toggle:focus-visible { border-color: var(--ember); background: rgba(237,51,39,.08); outline: none; }
+    .menu-icon { position: relative; width: 1rem; height: .75rem; }
+    .menu-icon::before, .menu-icon::after, .menu-icon span { content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: var(--ember-light); transition: transform .2s ease, top .2s ease, opacity .2s ease; }
+    .menu-icon::before { top: 0; }
+    .menu-icon span { top: 5px; }
+    .menu-icon::after { top: 10px; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 5px; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 5px; transform: rotate(-45deg); }
+    .brand { font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .brand span { color: var(--ember); }
+    .nav-signal { justify-self: end; color: var(--muted); font-family: Georgia, serif; font-size: .82rem; }
+    .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,9,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
+    .gateway-menu[hidden] { display: none; }
+    .menu-grid { display: grid; grid-template-columns: .8fr 1.2fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-block: 2rem; }
+    .menu-group h2 { margin: 0 0 .75rem; color: var(--ember-light); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+    .menu-group a { display: block; border-bottom: 1px solid rgba(255,255,255,.07); padding: .58rem 0; color: var(--muted); font-size: .88rem; font-weight: 750; text-decoration: none; }
+    .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--ember); outline: none; }
+
+    .hero {
+      min-height: clamp(20rem, 38vw, 25rem);
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid var(--line);
+      background: #080808 url("assets/story/story-hero.jpg") center 48% / cover no-repeat;
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.82) 40%, rgba(0,0,0,.32) 72%, rgba(0,0,0,.5) 100%), linear-gradient(0deg, #050505 0%, transparent 58%); }
+    .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: linear-gradient(90deg, var(--ember), transparent 76%); box-shadow: 0 0 1.7rem rgba(237,51,39,.78); }
+    .hero-content { max-width: 43rem; padding-block: clamp(2.75rem, 6vw, 4.15rem); }
+    .eyebrow { margin: 0 0 .65rem; color: var(--ember-light); font-size: .68rem; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 15ch; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.45rem, 5.2vw, 4rem); font-weight: 700; line-height: .94; letter-spacing: -.035em; }
+    .lead { max-width: 50ch; margin: .9rem 0 1.15rem; color: #d7d0cb; font-family: Georgia, "Times New Roman", serif; font-size: clamp(.96rem, 1.3vw, 1.075rem); line-height: 1.55; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; }
+    .primary-link { min-height: 3rem; display: inline-flex; align-items: center; border: 1px solid var(--ember); background: rgba(237,51,39,.14); padding: .7rem .9rem; font-size: .76rem; font-weight: 900; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; }
+    .primary-link:hover { background: var(--ember); color: #120504; }
+    .stamp { display: inline-block; border: 2px solid var(--ember); color: var(--ember-light); padding: .28rem .55rem; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; transform: rotate(-2deg); }
+
+    .pacing { padding-block: 1rem 0; }
+    .pacing-banner { min-height: 6.2rem; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(105deg, rgba(237,51,39,.12), transparent 43%), repeating-linear-gradient(168deg, rgba(255,255,255,.018) 0 1px, transparent 1px 9px), #0b0b0c; padding: 1rem clamp(1rem, 3vw, 1.5rem); }
+    .pacing-banner::after { content: ""; position: absolute; right: -2rem; bottom: .8rem; width: 18rem; height: 2px; background: var(--ember); transform: rotate(-7deg); }
+    .pacing-copy, .pacing-actions { position: relative; z-index: 1; }
+    .pacing-copy h2 { margin: 0; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.15; }
+    .pacing-copy p { margin: .35rem 0 0; color: var(--muted); font-family: Georgia, serif; font-size: .92rem; }
+    .pacing-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .button { min-height: 3rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); background: var(--surface-2); padding: .7rem .85rem; font-size: .75rem; font-weight: 900; letter-spacing: .045em; text-decoration: none; text-transform: uppercase; }
+    .button:hover { border-color: var(--ember); background: rgba(237,51,39,.13); }
+    .button.primary { border-color: var(--ember); background: var(--ember); color: #120504; }
+    .button.primary:hover { background: #ff5b4e; }
+
+    .chapter-feature { padding-block: clamp(2.75rem, 6vw, 4.75rem); }
+    .chapter-shell { position: relative; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 100% 0, rgba(237,51,39,.12), transparent 22rem), repeating-linear-gradient(167deg, rgba(255,255,255,.014) 0 1px, transparent 1px 10px), #0b0b0c; padding: clamp(1rem, 3vw, 1.75rem); }
+    .chapter-shell::after { content: ""; position: absolute; top: 7.25rem; right: -2rem; width: 22rem; height: 2px; background: var(--ember); transform: rotate(-7deg); box-shadow: 0 0 1.2rem rgba(237,51,39,.55); }
+    .chapter-masthead { position: relative; z-index: 1; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 1rem; border-bottom: 1px solid rgba(255,91,78,.22); padding-bottom: 1.25rem; }
+    .chapter-seal { width: clamp(4.25rem, 8vw, 6rem); aspect-ratio: 1; display: grid; place-items: center; background: var(--ember); color: #120504; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: clamp(1.7rem, 4vw, 2.65rem); letter-spacing: .04em; transform: rotate(-2deg); box-shadow: .35rem .35rem 0 #050505; }
+    .chapter-masthead h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: .95; }
+    .chapter-masthead p:last-child { margin: .45rem 0 0; color: var(--muted); font-family: Georgia, serif; font-size: 1rem; }
+    .chapter-parts { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr .9fr .9fr; gap: .8rem; margin-top: 1rem; }
+    .chapter-part { min-width: 0; min-height: 19rem; display: flex; flex-direction: column; border: 1px solid rgba(255,91,78,.2); background: linear-gradient(150deg, #151416, #09090a); padding: clamp(1rem, 2.5vw, 1.35rem); }
+    .part-label { color: var(--ember-light); font-size: .65rem; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+    .chapter-part h3 { margin: 1.8rem 0 .8rem; font-size: clamp(1.2rem, 2vw, 1.55rem); }
+    .read-part p { max-width: 55ch; margin: 0; color: #d8d0ca; font-family: Georgia, "Times New Roman", serif; font-size: 1rem; line-height: 1.7; }
+    .read-part p + p { margin-top: .85rem; }
+    .video-art { aspect-ratio: 16 / 10; overflow: hidden; margin: .9rem 0; border: 1px solid rgba(255,255,255,.08); }
+    .video-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .video-part h3 { margin: 0; }
+    .video-part p { margin: .45rem 0 .8rem; color: var(--muted); font-family: Georgia, serif; font-size: .88rem; line-height: 1.45; }
+    .video-part a { margin-top: auto; color: var(--text); font-size: .72rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; text-underline-offset: .22rem; }
+    .quote-part { justify-content: space-between; background: linear-gradient(160deg, #efe7dc, #cfc3b5); color: var(--ink); transform: rotate(-.25deg); box-shadow: 0 1.2rem 2.5rem rgba(0,0,0,.32); }
+    .quote-part .part-label { color: #a52118; }
+    .quote-part blockquote { margin: 1.8rem 0 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2vw, 1.42rem); font-weight: 700; line-height: 1.38; }
+    .quote-part cite { font-size: .7rem; font-style: normal; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+
+    .welcome { padding-block: 1rem 0; }
+    .welcome-banner { position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(105deg, rgba(237,51,39,.15), transparent 48%), repeating-linear-gradient(168deg, rgba(255,255,255,.018) 0 1px, transparent 1px 9px), #0b0b0c; padding: clamp(1.25rem, 3vw, 2rem); }
+    .welcome-banner::after { content: ""; position: absolute; right: -2rem; bottom: .8rem; width: 21rem; height: 2px; background: var(--ember); transform: rotate(-7deg); box-shadow: 0 0 1rem rgba(237,51,39,.55); }
+    .welcome-banner h2 { position: relative; z-index: 1; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3vw, 2.5rem); }
+    .welcome-banner p:last-child { position: relative; z-index: 1; max-width: 55ch; margin: .55rem 0 0; color: var(--muted); font-family: Georgia, serif; font-size: 1rem; line-height: 1.55; }
+
+    .opening-film { padding-block: 1rem clamp(2.75rem, 6vw, 4.75rem); }
+    .opening-film-shell { overflow: hidden; border: 1px solid var(--line); background: #050505; box-shadow: 0 1.5rem 3rem rgba(0,0,0,.32); }
+    .opening-film-head { position: relative; overflow: hidden; background: linear-gradient(105deg, rgba(237,51,39,.12), transparent 50%), #0b0b0c; padding: clamp(1rem, 3vw, 1.6rem); }
+    .opening-film-head::after { content: ""; position: absolute; right: -2rem; bottom: .7rem; width: 18rem; height: 2px; background: var(--ember); transform: rotate(-7deg); }
+    .opening-film-head h2 { position: relative; z-index: 1; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; }
+    .opening-film-player { margin: 0; background: #000; }
+    .opening-film-player video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: contain; }
+    .opening-film-player figcaption { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid rgba(255,91,78,.2); padding: .7rem .85rem; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .media-access { border-top: 1px solid rgba(255,91,78,.2); background: #0b0b0c; padding: .25rem .85rem .75rem; color: var(--muted); }
+    .media-access summary { min-height: 3rem; display: flex; align-items: center; width: fit-content; color: var(--text); font-size: .78rem; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; cursor: pointer; }
+    .media-access p { max-width: 68ch; margin: .45rem 0 0; font-family: Georgia, "Times New Roman", serif; font-size: .94rem; line-height: 1.6; }
+    .media-access strong { color: var(--text); }
+
+    .library { padding-block: clamp(2.75rem, 6vw, 5rem); }
+    .library-head { display: grid; grid-template-columns: minmax(0, .8fr) minmax(18rem, 1fr); align-items: end; gap: 1.5rem 3rem; margin-bottom: clamp(1.4rem, 4vw, 2.5rem); }
+    .library-head h2 { max-width: 12ch; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4.5vw, 3.7rem); line-height: .94; letter-spacing: -.035em; }
+    .library-intro { max-width: 57ch; margin: 0; color: var(--muted); font-family: Georgia, serif; font-size: clamp(.96rem, 1.4vw, 1.08rem); line-height: 1.65; }
+    .chapter-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(18rem, .92fr); overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 100% 0, rgba(237,51,39,.13), transparent 23rem), repeating-linear-gradient(167deg, rgba(255,255,255,.014) 0 1px, transparent 1px 10px), #0b0b0c; box-shadow: 0 1.6rem 3.5rem rgba(0,0,0,.34); }
+    .chapter-card::after { content: ""; position: absolute; right: -2rem; top: 2rem; width: 19rem; height: 2px; background: var(--ember); transform: rotate(-7deg); box-shadow: 0 0 1rem rgba(237,51,39,.65); }
+    .chapter-cover { position: relative; min-height: 24rem; overflow: hidden; background: #080808; }
+    .chapter-cover img { display: block; width: 100%; height: 100%; min-height: 24rem; object-fit: cover; transition: transform .45s ease; }
+    .chapter-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, rgba(5,5,5,.82)), linear-gradient(0deg, rgba(5,5,5,.65), transparent 45%); pointer-events: none; }
+    .chapter-card:hover .chapter-cover img { transform: scale(1.025); }
+    .chapter-number { position: absolute; z-index: 2; left: 1.1rem; bottom: 1.1rem; width: 4.6rem; aspect-ratio: 1; display: grid; place-items: center; background: var(--ember); color: #120504; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 2rem; transform: rotate(-2deg); box-shadow: .35rem .35rem 0 #050505; }
+    .chapter-card-body { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(1.35rem, 4vw, 3rem); }
+    .status-tag { display: inline-flex; align-items: center; gap: .4rem; border: 1px solid rgba(255,117,108,.5); background: rgba(237,51,39,.1); padding: .36rem .52rem; color: var(--ember-light); font-size: .64rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .status-tag::before { content: ""; width: .45rem; aspect-ratio: 1; border-radius: 50%; background: var(--ember); box-shadow: 0 0 .8rem var(--ember); }
+    .chapter-card h3 { max-width: 12ch; margin: 1.2rem 0 .8rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4vw, 3.4rem); line-height: .94; }
+    .chapter-hook { max-width: 39ch; margin: 0; color: #d9d1cb; font-family: Georgia, serif; font-size: 1rem; line-height: 1.6; }
+    .chapter-meta { margin: 1.2rem 0; color: var(--muted); font-size: .7rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+    .production-banner { position: relative; overflow: hidden; margin-top: 1rem; border: 1px solid var(--line); background: linear-gradient(100deg, rgba(237,51,39,.12), transparent 48%), #0c0c0d; padding: clamp(1.2rem, 3vw, 1.8rem); }
+    .production-banner::after { content: ""; position: absolute; right: -3rem; bottom: .8rem; width: 20rem; height: 2px; background: var(--ember); transform: rotate(-7deg); }
+    .production-banner h3 { position: relative; z-index: 1; margin: 0; font-family: Georgia, serif; font-size: clamp(1.35rem, 2.6vw, 2rem); }
+    .production-banner p:last-child { position: relative; z-index: 1; max-width: 57ch; margin: .5rem 0 0; color: var(--muted); font-family: Georgia, serif; line-height: 1.55; }
+
+    .chapter-film { position: relative; z-index: 1; margin: 1rem 0 0; border: 1px solid rgba(255,91,78,.26); background: #000; box-shadow: 0 1.5rem 3rem rgba(0,0,0,.35); }
+    .film-stage { position: relative; background: #000; }
+    .chapter-film video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: contain; }
+    .film-toggle { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .62rem; position: absolute; z-index: 2; left: 1rem; bottom: 1rem; border: 1px solid rgba(255,255,255,.72); background: rgba(5,5,5,.86); color: #fff; padding: .62rem .78rem; font: inherit; font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .film-toggle:hover { border-color: var(--ember); background: var(--ember); }
+    .play-mark { width: 0; height: 0; border-top: .34rem solid transparent; border-bottom: .34rem solid transparent; border-left: .52rem solid currentColor; }
+    .film-toggle[aria-pressed="true"] .play-mark { width: .52rem; height: .68rem; border: 0; border-left: .18rem solid currentColor; border-right: .18rem solid currentColor; }
+    .film-progress { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,.16); }
+    .film-progress span { display: block; width: 0; height: 100%; background: var(--ember); box-shadow: 0 0 .8rem var(--ember); }
+    .film-note { display: flex; justify-content: space-between; gap: 1rem; margin: 0; border-top: 1px solid rgba(255,91,78,.2); padding: .7rem .85rem; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .chapter-read { position: relative; z-index: 1; max-width: 62ch; margin: clamp(2rem, 5vw, 3.75rem) auto 0; border-left: 3px solid var(--ember); background: linear-gradient(105deg, rgba(237,51,39,.08), transparent 58%); padding: clamp(1.15rem, 3vw, 2rem); }
+    .chapter-read h3 { margin: 1.1rem 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3vw, 2.35rem); }
+    .chapter-read p { margin: 0; color: #d8d0ca; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1rem, 1.4vw, 1.1rem); line-height: 1.78; }
+    .chapter-read p + p { margin-top: 1rem; }
+    .chapter-quote { position: relative; z-index: 1; max-width: 56rem; margin: clamp(2rem, 5vw, 3.5rem) auto 0; overflow: hidden; background: linear-gradient(160deg, #efe7dc, #cfc3b5); color: var(--ink); padding: clamp(1.35rem, 4vw, 2.75rem); transform: rotate(-.25deg); box-shadow: 0 1.2rem 2.5rem rgba(0,0,0,.32); }
+    .chapter-quote .part-label { color: #a52118; }
+    .chapter-quote blockquote { max-width: 39rem; margin: 1.15rem 0 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 2.6vw, 1.85rem); font-weight: 700; line-height: 1.38; }
+    .chapter-quote cite { font-size: .7rem; font-style: normal; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+
+    .closing { padding-block: 0 3rem; }
+    .closing-banner { position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(100deg, rgba(237,51,39,.13), transparent 42%), #0c0c0d; padding: clamp(1.25rem, 3vw, 1.8rem); }
+    .closing-banner::after { content: ""; position: absolute; top: 50%; right: -2rem; width: 16rem; height: 1px; background: var(--ember); transform: rotate(-8deg); box-shadow: 0 0 1.2rem var(--ember); }
+    .closing-banner p { position: relative; z-index: 1; max-width: 48ch; margin: 0; font-family: Georgia, serif; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.4; }
+    .closing-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+    .footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: .82rem; }
+    a:focus-visible, button:focus-visible, video:focus-visible, summary:focus-visible { outline: 2px solid var(--ember-light); outline-offset: 3px; }
+
+    @media (max-width: 980px) { .chapter-parts { grid-template-columns: 1fr 1fr; } .read-part { grid-column: 1 / -1; min-height: 0; } }
+    @media (max-width: 820px) {
+      .nav-inner { grid-template-columns: auto 1fr; }
+      .brand { justify-self: end; }
+      .nav-signal { display: none; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { background-position: 58% 50%; }
+    }
+    @media (max-width: 700px) {
+      .pacing-banner { grid-template-columns: 1fr; }
+      .chapter-parts { grid-template-columns: 1fr; }
+      .read-part { grid-column: auto; }
+      .library-head, .chapter-card { grid-template-columns: 1fr; }
+      .chapter-cover, .chapter-cover img { min-height: 18rem; }
+      .chapter-cover::after { background: linear-gradient(0deg, rgba(5,5,5,.82), transparent 58%); }
+    }
+    @media (max-width: 620px) {
+      .wrap { padding-inline: 1.05rem; }
+      .hero { min-height: 20rem; background-position: 62% 48%; }
+      .hero-content { padding-block: 2.6rem; }
+      .chapter-masthead { align-items: start; }
+      .chapter-part { min-height: 0; }
+    }
+    @media (max-width: 520px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .pacing-actions .button, .closing-actions .button { flex: 1 1 100%; }
+      .chapter-card-body .button { width: 100%; }
+      .chapter-number { width: 4rem; font-size: 1.7rem; }
+    }
+    @media (max-width: 820px) {
+      .opening-film-player figcaption { flex-direction: column; gap: .25rem; }
+    }
+    @media (max-width: 620px) {
+      .film-note { flex-direction: column; gap: .25rem; }
+      .chapter-read { padding-inline: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Story.html">
+  <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Story.html">
+</head>
+<body>
+  <a class="skip-link" href="#chapters">Skip to the chapter library</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home">Ghost<span>Heart</span></a>
+      <span class="nav-signal">One life. Many versions. One heart.</span>
+    </div>
+    <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
+      <div class="wrap menu-grid">
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a href="index.html#identity">Identity &amp; Oath</a></div>
+        <div class="menu-group"><h2>Three Worlds</h2><a href="GhostHeart_Versions.html">Versions</a><a href="GhostHeart_Story.html" aria-current="page">Story</a><a href="GhostHeart_Angel.html">GhostHeart's Angel</a></div>
+        <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html">Videos</a><a href="GhostHeart_Songs.html">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
+        <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <p class="eyebrow">GhostHeart's Story</p>
+        <h1 id="hero-title">A life told one story at a time.</h1>
+        <p class="lead">One life, opened in chapters through story, song, film, and the words that remained.</p>
+        <div class="hero-actions"><a class="primary-link" href="#chapters">Choose a chapter</a><span class="stamp">The story is growing</span></div>
+      </div>
+    </section>
+
+    <section class="welcome" aria-labelledby="welcome-title">
+      <div class="wrap"><div class="welcome-banner">
+        <p class="eyebrow">Welcome</p>
+        <h2 id="welcome-title">Come in as you are.</h2>
+        <p>Every story is allowed to unfold at its own pace. This one begins before the name.</p>
+      </div></div>
+    </section>
+
+    <section class="opening-film" aria-labelledby="opening-film-title">
+      <div class="wrap"><article class="opening-film-shell">
+        <header class="opening-film-head">
+          <p class="eyebrow">Opening film</p>
+          <h2 id="opening-film-title">Heart Before the Name</h2>
+        </header>
+        <figure class="opening-film-player">
+          <video controls playsinline preload="none" poster="assets/story/story-hero.jpg" aria-label="The Heart Before the Name GhostHeart visualizer" aria-describedby="opening-film-access">
+            <source src="assets/story/heart-before-the-name.mp4" type="video/mp4">
+            Your browser does not support the Heart Before the Name visualizer.
+          </video>
+          <figcaption><span>The Heart Before the Name</span><span>GhostHeart visualizer • 4 minutes 54 seconds</span></figcaption>
+        </figure>
+        <details class="media-access" id="opening-film-access">
+          <summary>Transcript and visual description</summary>
+          <p><strong>Transcript status:</strong> This is a music visualizer. No approved lyric transcript or caption track is available, so lyrics or captions are not reproduced here.</p>
+          <p><strong>Poster description:</strong> GhostHeart stands in darkness while ember-red light glows through a cracked heart at the center of his chest.</p>
+          <p><strong>Story alternative:</strong> Chapter One below opens the story through reading, music, film, and a line to carry with you. It is a separate telling, not a synchronized transcript of this visualizer.</p>
+        </details>
+      </article></div>
+    </section>
+
+    <section class="library" id="chapters" aria-labelledby="chapters-title">
+      <div class="wrap">
+        <header class="library-head">
+          <div><p class="eyebrow">The Story Library</p><h2 id="chapters-title">Choose a chapter.</h2></div>
+          <p class="library-intro">Each chapter brings one part of GhostHeart’s story together through reading, music, film, and a line to carry with you. Start at the beginning or open the chapter that finds you.</p>
+        </header>
+
+        <article class="chapter-card" aria-labelledby="chapter-one-title">
+          <a class="chapter-cover" href="story/ch-001-born-between-worlds.html" aria-label="Open Chapter One: Born Between Worlds">
+            <img src="assets/story/born-between-the-worlds.png" alt="A glowing heart suspended between a red world and a blue world" loading="lazy" decoding="async">
+            <span class="chapter-number" aria-hidden="true">01</span>
+          </a>
+          <div class="chapter-card-body">
+            <span class="status-tag">Read now</span>
+            <p class="eyebrow">Chapter 01 · The beginning</p>
+            <h3 id="chapter-one-title">Born Between Worlds</h3>
+            <p class="chapter-hook">Before the name, a small heartbeat learned to live between tenderness and the storms beyond the door.</p>
+            <p class="chapter-meta">4 min read · 6:18 song · chapter film</p>
+            <a class="button primary" href="story/ch-001-born-between-worlds.html" aria-label="Open Chapter One: Born Between Worlds">Open Chapter One</a>
+          </div>
+        </article>
+
+        <aside class="production-banner" aria-labelledby="production-title">
+          <p class="eyebrow">The book continues</p>
+          <h3 id="production-title">More chapters are in production.</h3>
+          <p>GhostHeart’s existing songs, films, and life stories are becoming the next chapters. Each one will open here when it is ready.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="closing" aria-label="More GhostHeart chapters">
+      <div class="wrap"><div class="closing-banner"><p>The Story library will grow without becoming a wall of unfinished pages.</p><div class="closing-actions"><a class="button primary" href="index.html#home">Return home</a></div></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap">GhostHeart's Story · Read. Listen. Watch. Remember.</div></footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('gateway-menu');
+      const setOpen = (open) => { toggle.setAttribute('aria-expanded', String(open)); menu.hidden = !open; };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
+      document.addEventListener('click', (event) => { if (!menu.hidden && !event.target.closest('.nav')) setOpen(false); });
+    })();
+  </script>
+</body>
+</html>

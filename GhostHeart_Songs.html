@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Released Songs | GhostHeart</title>
+  <meta name="description" content="Eight creator-confirmed GhostHeart releases: seventeen tracks about survival, love, grief, anger, and choosing to rise.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GhostHeart">
+  <meta property="og:title" content="Released Songs | GhostHeart">
+  <meta property="og:description" content="Seventeen GhostHeart tracks about survival, love, grief, anger, and choosing to rise.">
+  <meta property="og:image" content="https://www.myghostheart.com/assets/songs/music-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Released Songs | GhostHeart">
+  <meta name="twitter:description" content="Seventeen GhostHeart tracks about survival, love, grief, anger, and choosing to rise.">
+  <meta name="twitter:image" content="https://www.myghostheart.com/assets/songs/music-hero.jpg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --surface: #0d0d0e;
+      --surface-2: #151416;
+      --text: #f7f4f1;
+      --muted: #bdb5ae;
+      --ember: #ed3327;
+      --ember-light: #ff756c;
+      --line: rgba(255, 91, 78, .28);
+      --max: 74rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 82% 28%, rgba(237,51,39,.08), transparent 24rem),
+        repeating-linear-gradient(165deg, rgba(255,255,255,.012) 0 1px, transparent 1px 10px),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100%, var(--max)); margin: 0 auto; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
+    .skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; transform: translateY(-180%); background: #f4efe9; color: #080808; padding: .75rem 1rem; font-weight: 900; }
+    .skip-link:focus { transform: translateY(0); }
+
+    .nav { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgba(5,5,5,.92); backdrop-filter: blur(14px); }
+    .nav-inner { min-height: 4rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.25rem; }
+    .menu-toggle { justify-self: start; display: inline-flex; min-height: 2.75rem; align-items: center; gap: .65rem; border: 1px solid var(--line); background: rgba(255,255,255,.02); color: var(--text); padding: .55rem .75rem; font: inherit; font-size: .76rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+    .menu-toggle:hover, .menu-toggle:focus-visible { border-color: var(--ember); background: rgba(237,51,39,.08); outline: none; }
+    .menu-icon { position: relative; width: 1rem; height: .75rem; }
+    .menu-icon::before, .menu-icon::after, .menu-icon span { content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: var(--ember-light); transition: transform .2s ease, top .2s ease, opacity .2s ease; }
+    .menu-icon::before { top: 0; }
+    .menu-icon span { top: 5px; }
+    .menu-icon::after { top: 10px; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::before { top: 5px; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-icon span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::after { top: 5px; transform: rotate(-45deg); }
+    .brand { font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .brand span { color: var(--ember); }
+    .nav-signal { justify-self: end; color: var(--muted); font-family: Georgia, serif; font-size: .82rem; }
+    .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,9,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
+    .gateway-menu[hidden] { display: none; }
+    .menu-grid { display: grid; grid-template-columns: .8fr 1.2fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-block: 2rem; }
+    .menu-group h2 { margin: 0 0 .75rem; color: var(--ember-light); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+    .menu-group a { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .58rem 0; color: var(--muted); font-size: .88rem; font-weight: 750; text-decoration: none; }
+    .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--ember); outline: none; }
+
+    .hero {
+      min-height: clamp(21rem, 38vw, 27rem);
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid var(--line);
+      background: #080808 url("assets/songs/music-hero.jpg") center 62% / cover no-repeat;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.82) 37%, rgba(0,0,0,.3) 72%, rgba(0,0,0,.46) 100%), linear-gradient(0deg, #050505 0%, transparent 55%);
+    }
+    .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: linear-gradient(90deg, var(--ember), transparent 76%); box-shadow: 0 0 1.7rem rgba(237,51,39,.78); }
+    .hero-content { max-width: 43rem; padding-block: clamp(2.75rem, 6vw, 4.25rem); }
+    .eyebrow { margin: 0 0 .65rem; color: var(--ember-light); font-size: .68rem; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 15ch; margin: 0; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: clamp(2.35rem, 4.7vw, 3.8rem); font-weight: 900; line-height: .92; letter-spacing: .012em; text-transform: uppercase; }
+    .lead { max-width: 50ch; margin: .9rem 0 1.15rem; color: #d7d0cb; font-family: Georgia, "Times New Roman", serif; font-size: clamp(.96rem, 1.4vw, 1.075rem); line-height: 1.52; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; }
+    .primary-link { min-height: 2.75rem; display: inline-flex; align-items: center; border: 1px solid var(--ember); background: rgba(237,51,39,.14); padding: .6rem .85rem; font-size: .76rem; font-weight: 900; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; }
+    .primary-link:hover { background: var(--ember); color: #090909; }
+    .tape { display: inline-block; background: var(--ember); color: #090909; padding: .32rem .62rem; font-size: .66rem; font-weight: 950; letter-spacing: .13em; text-transform: uppercase; transform: rotate(-2deg); box-shadow: .3rem .35rem 0 rgba(0,0,0,.42); }
+
+    .platform-section { padding-block: 1rem 0; }
+    .platform-banner {
+      min-height: 7.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(105deg, rgba(237,51,39,.14), transparent 43%),
+        repeating-linear-gradient(168deg, rgba(255,255,255,.018) 0 1px, transparent 1px 9px),
+        #0b0b0c;
+      padding: 1.15rem clamp(1rem, 3vw, 1.5rem);
+    }
+    .platform-banner::after { content: ""; position: absolute; right: -2rem; bottom: 1rem; width: 18rem; height: 2px; background: var(--ember); transform: rotate(-7deg); box-shadow: 0 0 1rem rgba(237,51,39,.65); }
+    .platform-copy { position: relative; z-index: 1; }
+    .platform-copy h2 { margin: 0; font-size: clamp(1.35rem, 2.3vw, 1.85rem); line-height: 1.05; }
+    .platform-copy p:last-child { margin: .35rem 0 0; color: var(--muted); font-family: Georgia, serif; font-size: .92rem; }
+    .platform-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .55rem; }
+    .button { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); background: var(--surface-2); padding: .62rem .78rem; font-size: .74rem; font-weight: 900; letter-spacing: .045em; text-decoration: none; text-transform: uppercase; }
+    .button:hover { border-color: var(--ember); background: rgba(237,51,39,.13); }
+    .button.primary { border-color: var(--ember); background: var(--ember); color: #090909; }
+    .button.primary:hover { background: #ff5f55; }
+
+    .catalog { padding-block: clamp(2.5rem, 5vw, 4rem); }
+    .catalog-heading { max-width: 45rem; margin-bottom: 1.25rem; }
+    .catalog-heading h2 { margin: 0; font-size: clamp(1.65rem, 2.6vw, 2.3rem); line-height: 1.05; letter-spacing: -.025em; }
+    .catalog-heading p:last-child { margin: .5rem 0 0; color: var(--muted); font-family: Georgia, serif; font-size: .96rem; line-height: 1.5; }
+    .catalog-count { display: inline-block; margin-left: .5rem; color: #89837e; font-size: .68rem; font-weight: 850; letter-spacing: .1em; vertical-align: middle; text-transform: uppercase; }
+    .record-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    .record-card[hidden] { display: none !important; }
+    .record-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      min-height: 10.1rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,91,78,.22);
+      background:
+        radial-gradient(circle at 100% 0, rgba(237,51,39,.08), transparent 10rem),
+        repeating-linear-gradient(165deg, rgba(255,255,255,.012) 0 1px, transparent 1px 9px),
+        linear-gradient(145deg, #151416, #09090a);
+      padding: .78rem;
+      box-shadow: 0 1rem 2.4rem rgba(0,0,0,.2);
+    }
+    .record-card::after { content: ""; position: absolute; right: -.75rem; bottom: 1rem; width: 3.75rem; height: .35rem; background: var(--ember); transform: rotate(-8deg); box-shadow: 0 .48rem 0 rgba(237,51,39,.18); }
+    .cover { position: relative; aspect-ratio: 1; overflow: hidden; align-self: center; background: #090909; }
+    .cover::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.1); box-shadow: inset 0 0 2rem rgba(0,0,0,.2); pointer-events: none; }
+    .cover img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+    .record-card:hover .cover img { transform: scale(1.025); }
+    .record-copy { min-width: 0; display: flex; flex-direction: column; padding: .15rem .35rem .05rem .9rem; }
+    .record-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; margin-bottom: .42rem; color: var(--ember-light); font-size: .66rem; font-weight: 900; letter-spacing: .105em; text-transform: uppercase; }
+    .artist-pick { background: var(--ember); color: #090909; padding: .2rem .38rem; transform: rotate(-1deg); }
+    .record-card h3 { margin: 0; font-size: clamp(1.08rem, 1.45vw, 1.3rem); line-height: 1.12; letter-spacing: -.015em; }
+    .record-card p { margin: .42rem 0 .7rem; color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: .9rem; line-height: 1.46; }
+    .record-card .track-list { margin: .42rem 0 0; color: #eee9e5; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: .72rem; font-weight: 850; letter-spacing: .035em; line-height: 1.5; }
+    .record-card .track-list + p { margin-top: .3rem; }
+    .record-actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: auto; padding-right: 2rem; }
+    .record-actions .button { min-height: 2.75rem; padding: .55rem .68rem; font-size: .68rem; }
+    .archive-toggle-row { display: flex; justify-content: center; margin-top: 1rem; }
+    .archive-toggle { min-height: 44px; border: 1px solid var(--ember); background: rgba(237,51,39,.1); color: var(--paper); padding: .65rem 1rem; font: 900 .75rem/1 Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .archive-toggle:hover { background: var(--ember); color: #090909; }
+
+    .closing { padding-block: 0 3rem; }
+    .closing-banner { position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(100deg, rgba(237,51,39,.13), transparent 42%), #0c0c0d; padding: clamp(1.25rem, 3vw, 1.8rem); }
+    .closing-banner::after { content: ""; position: absolute; top: 50%; right: -2rem; width: 16rem; height: 1px; background: var(--ember); transform: rotate(-8deg); box-shadow: 0 0 1.2rem var(--ember); }
+    .closing-banner p { position: relative; z-index: 1; max-width: 48ch; margin: 0; font-family: Georgia, serif; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.4; }
+    .closing-banner a { position: relative; z-index: 1; display: inline-flex; min-height: 2.75rem; align-items: center; margin-top: .7rem; color: var(--ember-light); font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-underline-offset: .25rem; }
+    .footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: .82rem; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--ember-light); outline-offset: 3px; }
+
+    @media (max-width: 920px) {
+      .record-grid { grid-template-columns: 1fr; }
+      .record-card { grid-template-columns: 8rem minmax(0, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .nav-inner { grid-template-columns: auto 1fr; }
+      .brand { justify-self: end; }
+      .nav-signal { display: none; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { background-position: 58% 60%; }
+      .hero::before { background: linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.75) 62%, rgba(0,0,0,.38) 100%), linear-gradient(0deg, #050505 0%, transparent 58%); }
+    }
+    @media (max-width: 700px) {
+      .platform-banner { grid-template-columns: 1fr; }
+      .platform-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 620px) {
+      .wrap { padding-inline: 1.1rem; }
+      .hero { min-height: 21rem; background-position: 62% 58%; }
+      .hero-content { padding-block: 2.6rem; }
+      h1 { max-width: 13ch; font-size: clamp(2.2rem, 10.5vw, 2.75rem); }
+      .record-card { grid-template-columns: 6.4rem minmax(0, 1fr); min-height: 8.7rem; padding: .68rem; }
+      .record-copy { padding-left: .72rem; }
+      .record-card p { font-size: .88rem; }
+      .record-actions { padding-right: 0; }
+      .record-actions .button { flex: 1 1 auto; }
+    }
+    @media (max-width: 520px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .platform-actions .button { flex: 1 1 100%; }
+    }
+    @media (max-width: 420px) { .record-card { grid-template-columns: 5.75rem minmax(0, 1fr); } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .cover img { transition: none; }
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Songs.html">
+  <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Songs.html">
+</head>
+<body>
+  <a class="skip-link" href="#records">Skip to released songs</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="gateway-menu"><span class="menu-icon" aria-hidden="true"><span></span></span><span>Explore</span></button>
+      <a class="brand" href="index.html#home">Ghost<span>Heart</span></a>
+      <span class="nav-signal">One life. Many versions. One heart.</span>
+    </div>
+    <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
+      <div class="wrap menu-grid">
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a href="index.html#identity">Identity &amp; Oath</a></div>
+        <div class="menu-group"><h2>Three Worlds</h2><a href="GhostHeart_Versions.html">Versions</a><a href="GhostHeart_Story.html">Story</a><a href="GhostHeart_Angel.html">GhostHeart's Angel</a></div>
+        <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html">Videos</a><a href="GhostHeart_Songs.html" aria-current="page">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
+        <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <p class="eyebrow">Released Songs</p>
+        <h1 id="hero-title">Songs for the parts that refused to disappear.</h1>
+        <p class="lead">Every release carries a different version of the same life—anger, grief, love, survival, and the choice to keep going.</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#records">Hear the catalog ↓</a>
+          <span class="tape" aria-hidden="true">Play it loud</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="platform-section" aria-labelledby="platform-title">
+      <div class="wrap">
+        <div class="platform-banner">
+          <div class="platform-copy">
+            <p class="eyebrow">Choose your speakers</p>
+            <h2 id="platform-title">Play it where you already listen.</h2>
+            <p>Start with the song that knows your name.</p>
+          </div>
+          <div class="platform-actions">
+            <a class="button primary" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener noreferrer">GhostHeart on Spotify</a>
+            <a class="button" href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer">GhostHeart on YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="records" aria-labelledby="catalog-title">
+      <div class="wrap">
+        <div class="catalog-heading">
+          <p class="eyebrow">The Record Wall</p>
+          <h2 id="catalog-title">Every release is a door. <span class="catalog-count">8 releases • 17 tracks</span></h2>
+          <p>Pick one. Turn it up. Let it tell you why it is here.</p>
+        </div>
+
+        <div class="record-grid">
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/sunrise-doesnt-ask-for-permission.jpg" alt="Cover artwork for Sunrise Doesn't Ask for Permission" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 01</span><span>Single • 1 track</span></div>
+              <h3>Sunrise Doesn't Ask for Permission</h3>
+              <p>Light returns without waiting for anyone to approve it.</p>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/sunrise-doesnt-ask-for-permission-lyric-20260823.mp4">Watch film</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/the-dad.jpg" alt="Cover artwork for The Dad" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 02</span><span>Single • 1 track</span></div>
+              <h3>The Dad</h3>
+              <p>A promise to become the father the next generation deserves.</p>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/the-dad-official-lyric-v3-20260823.mp4">Watch film</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/rebellion.jpg" alt="Cover artwork for Rebellion" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 03</span><span>Multi-track • 2 tracks</span></div>
+              <h3>Rebellion</h3>
+              <p class="track-list">Tracks: Rebellion • You Can't Change Us</p>
+              <p>The moment survival refuses to stay silent.</p>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/rebellion-graffiti-lyric-20260823.mp4">Watch film</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/what-did-you-take-from-her.jpg" alt="Cover artwork for What Did You Take From Her" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 04</span><span>Multi-track • 2 tracks</span></div>
+              <h3>What Did You Take From Her</h3>
+              <p class="track-list">Tracks: What Did You Take From Her • New Part of Me</p>
+              <p>A reckoning with what pain changed and what it could not erase.</p>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/what-did-you-take-from-her-witness-wall-20260823.mp4">Watch film</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/still.jpg" alt="Cover artwork for Still" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 05</span><span>Multi-track • 3 tracks</span><span class="artist-pick">Artist Pick</span></div>
+              <h3>Still</h3>
+              <p class="track-list">Tracks: Still • Why Didn't You Call • I Still Would</p>
+              <p>The quiet weight of what remains when everything else changes.</p>
+              <div class="record-actions"><a class="button" href="assets/videos/local-20260823/still-viking-music-video-20260823.mp4">Watch film</a><a class="button" href="https://open.spotify.com/album/10vHv1z2uCkLKcDDg508cN" target="_blank" rel="noopener noreferrer">Listen on Spotify</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/heart-of-the-ashes.jpg" alt="Cover artwork for Heart of the Ashes" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 06</span><span>Multi-track • 2 tracks</span></div>
+              <h3>Heart of the Ashes</h3>
+              <p class="track-list">Tracks: Heart of the Ashes • Angels in the Ashes</p>
+              <p>Love, survival, and the heart that remains after the fire.</p>
+              <div class="record-actions"><a class="button" href="https://www.youtube.com/watch?v=Wgdfz9q394U" target="_blank" rel="noopener noreferrer">Watch on YouTube</a><a class="button" href="https://open.spotify.com/album/735SnSg0dfh4T4vShL9Rhu" target="_blank" rel="noopener noreferrer">Listen on Spotify</a></div>
+            </div>
+          </article>
+
+          <article class="record-card" id="human-too">
+            <div class="cover"><img src="assets/songs/human-too.jpg" alt="Cover artwork for Human Too" width="900" height="900" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 07</span><span>Single • 1 track</span><span>Aug 21, 2026</span></div>
+              <h3>Human Too</h3>
+              <p>A song about addiction, judgment, pain, and remembering that a human being is more than a label or a mistake.</p>
+              <div class="record-actions"><a class="button" href="https://www.youtube.com/watch?v=2g9o0jFL0Xc" target="_blank" rel="noopener noreferrer">Watch on YouTube</a><a class="button" href="https://open.spotify.com/album/5BiC5SRSxlB13PSAJlFk88" target="_blank" rel="noopener noreferrer">Listen on Spotify</a></div>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="cover"><img src="assets/songs/ashes-and-embers.jpg" alt="Ashes and Embers cover artwork showing a black revolving door surrounding an ember-red heart" width="800" height="800" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 08</span><span>Album • 5 tracks</span><span>Aug 18, 2026</span></div>
+              <h3>Ashes &amp; Embers</h3>
+              <p>Just Not This Morning • Look at Me • Revolving Door • You Can't Close a Revolving Door • I Got You for Life</p>
+              <div class="record-actions"><a class="button" href="GhostHeart_Videos.html#ashes-and-embers-films">Watch all 5 films</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="archive-toggle-row"><button class="archive-toggle" id="song-archive-toggle" type="button" aria-expanded="false" aria-controls="song-record-grid">View all 8 releases</button></div>
+      </div>
+    </section>
+
+    <section class="closing" aria-label="GhostHeart music invitation">
+      <div class="wrap">
+        <div class="closing-banner">
+          <p>The songs do not ask you to be healed. Only honest.</p>
+          <a href="index.html#home">Return to the GhostHeart world →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap">GhostHeart Released Songs • Eight releases, seventeen tracks, one evolving story</div></footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('gateway-menu');
+      const records = [...document.querySelectorAll('.record-card')];
+      const archiveToggle = document.getElementById('song-archive-toggle');
+      const recordGrid = document.querySelector('.record-grid');
+      if (recordGrid) recordGrid.id = 'song-record-grid';
+      const setArchiveOpen = (open) => {
+        records.forEach((card, index) => { card.hidden = !open && index >= 4; });
+        archiveToggle.setAttribute('aria-expanded', String(open));
+        archiveToggle.textContent = open ? 'Show fewer releases' : 'View all 8 releases';
+      };
+      const hasArchiveTarget = () => records.some((card) => card.id && `#${card.id}` === window.location.hash);
+      setArchiveOpen(hasArchiveTarget());
+      window.addEventListener('hashchange', () => {
+        if (hasArchiveTarget()) setArchiveOpen(true);
+      });
+      archiveToggle.addEventListener('click', () => setArchiveOpen(archiveToggle.getAttribute('aria-expanded') !== 'true'));
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.hidden = !open;
+      };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); }
+      });
+      document.addEventListener('click', (event) => {
+        if (!menu.hidden && !event.target.closest('.nav')) setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
