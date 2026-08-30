@@ -207,8 +207,16 @@ a { color: inherit; }
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, .72fr);
+  gap: clamp(2rem, 5vw, 5.25rem);
+  align-items: center;
   padding-block: clamp(5rem, 10vw, 8rem);
 }
+
+.hero-copy { min-width: 0; }
 
 .eyebrow {
   margin: 0 0 .65rem;
@@ -278,6 +286,165 @@ a { color: inherit; }
 }
 
 .hero-link:hover { background: var(--red); }
+
+.featured-song {
+  width: min(100%, 430px);
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .2);
+  background: rgba(7, 7, 9, .91);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .58), 0 0 46px rgba(226, 55, 63, .11);
+  backdrop-filter: blur(12px);
+}
+
+.featured-song-art {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  border-bottom: 1px solid var(--line);
+  background: #0b0b0d;
+}
+
+.featured-song-art::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(5, 5, 6, .8));
+  content: "";
+  pointer-events: none;
+}
+
+.featured-song-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-song-art > span {
+  position: absolute;
+  z-index: 1;
+  left: 1rem;
+  bottom: .8rem;
+  color: #fff;
+  font-size: .61rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.featured-song-body { padding: 1.1rem; }
+
+.featured-song-kicker {
+  margin: 0 0 .35rem;
+  color: var(--red);
+  font-size: .61rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.featured-song h2 {
+  margin: 0;
+  color: #fff;
+  font: 800 clamp(1.55rem, 2.5vw, 2.15rem)/1 Georgia, serif;
+  letter-spacing: -.035em;
+}
+
+.featured-song-summary {
+  margin: .55rem 0 .8rem;
+  color: #c6c1bb;
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.featured-preview {
+  border-top: 1px solid var(--line);
+  padding-top: .75rem;
+}
+
+.preview-status {
+  margin: 0 0 .35rem;
+  color: var(--gold);
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.featured-preview audio { display: none; }
+
+.preview-controls {
+  display: grid;
+  grid-template-columns: auto minmax(3rem, 1fr) auto;
+  gap: .7rem;
+  align-items: center;
+}
+
+.preview-toggle {
+  min-height: 42px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 999px;
+  padding: .55rem .85rem;
+  background: #202024;
+  color: #fff;
+  font: 900 .65rem/1 "Segoe UI", Arial, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.preview-toggle:hover,
+.preview-toggle[aria-pressed="true"] { border-color: var(--red); background: var(--red-dark); }
+
+.preview-track {
+  position: relative;
+  display: block;
+  height: 3px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .22);
+}
+
+.preview-track > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+}
+
+.preview-time {
+  color: #d4cfc8;
+  font-size: .67rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 850;
+}
+
+.featured-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: .85rem -1.1rem -1.1rem;
+  border-top: 1px solid var(--line);
+}
+
+.featured-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-height: 50px;
+  padding: .65rem .4rem;
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.featured-actions a + a { border-left: 1px solid var(--line); }
+.featured-actions a:hover { background: rgba(255, 255, 255, .07); }
+.featured-actions .featured-own { background: var(--red); }
+.featured-actions .featured-own:hover { background: var(--red-dark); }
 
 .hero-mark {
   position: absolute;
@@ -928,6 +1095,7 @@ a { color: inherit; }
 .discovery-inner a:hover { border-color: var(--gold); background: rgba(211, 170, 101, .08); }
 
 @media (max-width: 900px) {
+  .hero-content { grid-template-columns: minmax(0, 1fr) minmax(300px, .74fr); gap: 1.5rem; }
   .hero-art { inset-inline-start: 28%; opacity: .72; }
   .identity-spread { grid-template-columns: 1fr; }
   .identity-piece + .identity-piece { border-top: 1px solid var(--line); border-left: 0; }
@@ -951,7 +1119,7 @@ a { color: inherit; }
   .brand { justify-self: end; }
   .nav-signal { display: none; }
   .menu-grid { grid-template-columns: 1fr 1fr; gap: 1rem; max-height: calc(100svh - 64px); overflow-y: auto; }
-  .home-hero { min-height: 640px; align-items: end; }
+  .home-hero { min-height: auto; align-items: end; }
   .hero-art {
     inset: 0;
     opacity: .58;
@@ -960,10 +1128,12 @@ a { color: inherit; }
       url("../versions/official-ghostheart.png");
     background-position: 62% center;
   }
-  .hero-content { padding-block: 14rem 4rem; }
+  .hero-content { grid-template-columns: 1fr; gap: 1.15rem; padding-block: 5.25rem 1.3rem; }
+  .featured-song { width: 100%; justify-self: stretch; }
+  .featured-song-art { aspect-ratio: 16 / 5; }
   .home-hero h1 { font-size: clamp(2.35rem, 10.5vw, 2.75rem); }
   .home-hero h1 span { -webkit-text-stroke-width: .7px; }
-  .hero-lede { max-width: 94%; font-size: .96rem; }
+  .hero-lede { display: none; }
   .hero-mark { display: none; }
   .identity-section,
   .path-section,
