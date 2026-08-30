@@ -261,11 +261,32 @@
       <div class="wrap">
         <div class="catalog-heading">
           <p class="eyebrow">The Record Wall</p>
-          <h2 id="catalog-title">Every release is a door. <span class="catalog-count" id="catalog-count">9 releases • 19 tracks</span></h2>
+          <h2 id="catalog-title">Every release is a door. <span class="catalog-count" id="catalog-count">11 releases • 23 tracks</span></h2>
           <p>Pick one. Turn it up. Let it tell you why it is here.</p>
         </div>
 
         <div class="record-grid">
+          <article class="record-card" id="this-is-ghostheart" data-track-count="3">
+            <div class="cover"><img src="https://i.scdn.co/image/ab67616d0000b27337fc55f33c8f9fca6aca07cb" alt="Official Spotify cover artwork for This Is GhostHeart" width="300" height="300" decoding="async" fetchpriority="high"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 11</span><span>Multi-track • 3 tracks</span><span class="artist-pick">Latest release</span></div>
+              <h3>This Is GhostHeart</h3>
+              <p class="track-list">Tracks: This Is GhostHeart • The Angel Who Made GhostHeart • GhostHeart's Oath</p>
+              <p>Three doors into the heart, the Angel, and the oath behind the name.</p>
+              <div class="record-actions"><a class="button" href="https://open.spotify.com/album/7A6HiVbkTYi4Ug1TrMuseU" target="_blank" rel="noopener noreferrer" aria-label="Listen to This Is GhostHeart on Spotify (opens in a new tab)">Listen</a></div>
+            </div>
+          </article>
+
+          <article class="record-card" id="hey-preacher-man" data-track-count="1">
+            <div class="cover"><img src="https://i.scdn.co/image/ab67616d0000b273029070343a922d937f32bf01" alt="Official Spotify cover artwork for Hey Preacher Man" width="300" height="300" loading="lazy" decoding="async"></div>
+            <div class="record-copy">
+              <div class="record-meta"><span>Release 10</span><span>Single • 1 track</span></div>
+              <h3>Hey Preacher Man</h3>
+              <p>A direct answer to the judgment that tried to define a life from the outside.</p>
+              <div class="record-actions"><a class="button" href="https://open.spotify.com/album/47jSQrPpUbmIPEeEpzSVoh" target="_blank" rel="noopener noreferrer" aria-label="Listen to Hey Preacher Man on Spotify (opens in a new tab)">Listen</a></div>
+            </div>
+          </article>
+
           <article class="record-card" id="born-between-two-worlds" data-track-count="2">
             <div class="cover"><img src="assets/songs/born-between-two-worlds.jpg" alt="Official Spotify cover artwork for Born Between Two Worlds" width="300" height="300" decoding="async" fetchpriority="high"></div>
             <div class="record-copy">
@@ -362,7 +383,7 @@
             </div>
           </article>
         </div>
-        <div class="archive-toggle-row"><button class="archive-toggle" id="song-archive-toggle" type="button" aria-expanded="false" aria-controls="song-record-grid">View all 9 releases</button></div>
+        <div class="archive-toggle-row"><button class="archive-toggle" id="song-archive-toggle" type="button" aria-expanded="false" aria-controls="song-record-grid">View all 11 releases</button></div>
       </div>
     </section>
 
@@ -378,7 +399,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p>GhostHeart Released Songs • <span id="footer-catalog-count">Nine releases, nineteen tracks</span>, one evolving story</p>
+      <p>GhostHeart Released Songs • <span id="footer-catalog-count">Eleven releases, twenty-three tracks</span>, one evolving story</p>
       <nav class="official-platforms" aria-label="Official GhostHeart platforms">
         <p class="official-platforms__label">Listen and follow</p>
         <div class="official-platforms__links">
@@ -399,7 +420,7 @@
       const releaseCount = records.length;
       const trackCount = records.reduce((total, card) => total + Number(card.dataset.trackCount || 0), 0);
       const countLabel = `${releaseCount} releases • ${trackCount} tracks`;
-      const numberWords = { 9: 'Nine', 19: 'nineteen' };
+      const numberWords = { 11: 'Eleven', 23: 'twenty-three' };
       const catalogCount = document.getElementById('catalog-count');
       const footerCount = document.getElementById('footer-catalog-count');
       if (catalogCount) catalogCount.textContent = countLabel;
