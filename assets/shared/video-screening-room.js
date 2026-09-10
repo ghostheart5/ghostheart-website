@@ -22,7 +22,7 @@
     if (item.provider === 'youtube') {
       return `<div class="media-player-shell" data-provider="youtube" data-video-key="${item.key}" data-started="false">
         <button class="youtube-preview" type="button" data-video-action="play" aria-label="Play ${item.videoTitle} here">
-          <img src="${youtubeThumbnail(item.youtubeId)}" alt="Official YouTube thumbnail for ${item.videoTitle}" width="480" height="360" loading="lazy" decoding="async">
+          <img src="${item.thumbnail || youtubeThumbnail(item.youtubeId)}" alt="Official YouTube thumbnail for ${item.videoTitle}" width="480" height="360" loading="lazy" decoding="async">
         </button>
         <span class="player-title-strip">${item.title}</span>
         <span class="player-launch" aria-hidden="true">Play here</span>
@@ -44,7 +44,7 @@
       <div class="video-meta">${item.meta.map((value) => `<span>${value}</span>`).join('')}</div>
       <h3>${item.title}</h3>
       <p>${item.description}</p>
-      <div class="button-row"><button class="button${featured ? ' primary' : ''}" type="button" data-video-action="play">Play here</button>${linkMarkup(item.song)}${related}</div>
+      <div class="button-row"><button class="button${featured ? ' primary' : ''}" type="button" data-video-action="play">Play here</button>${item.provider === 'youtube' ? `<a class="button" href="https://www.youtube.com/watch?v=${item.youtubeId}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${item.title} on YouTube (opens in a new tab)">Watch on YouTube ↗</a>` : ''}${linkMarkup(item.song)}${related}</div>
       <p class="player-status" role="status" aria-live="polite">Ready to play on this page.</p>
       <details class="media-access"><summary>Captions and transcript</summary><p>${item.accessibility}</p></details>
       ${relationship}
@@ -102,8 +102,8 @@
 
   const showYoutubeError = (article, item, code) => {
     const shell = article.querySelector('.media-player-shell');
-    shell.innerHTML = `<div class="player-error"><strong>${item.title} cannot play here.</strong><p>YouTube returned error ${code}. If the error is 101 or 150, embedding must be enabled for video ${item.youtubeId}, or an exact approved native file must be hosted by GhostHeart.</p></div>`;
-    playerStatus(article).textContent = `${item.title} is unavailable inside the website.`;
+    shell.innerHTML = `<div class="player-error"><strong>This film could not load here.</strong><p>You can still watch it on the official GhostHeart channel.</p><a href="https://www.youtube.com/watch?v=${item.youtubeId}" target="_blank" rel="noopener noreferrer">Watch ${item.title} on YouTube ↗</a></div>`;
+    playerStatus(article).textContent = `${item.title} could not load. Use Watch on YouTube to continue.`;
   };
 
   const startYoutube = async (article, item) => {
@@ -115,9 +115,10 @@
     }
     const shell = article.querySelector('.media-player-shell');
     const status = playerStatus(article);
+    const preview = shell.querySelector('.youtube-preview');
+    if (!preview) return;
     status.textContent = `Loading ${item.title} inside GhostHeart…`;
     shell.dataset.started = 'true';
-    const preview = shell.querySelector('.youtube-preview');
     const host = document.createElement('div');
     host.className = 'youtube-host';
     host.id = `youtube-${item.key}`;
@@ -171,7 +172,10 @@
   const revealLinkedFilm = () => {
     const target = window.location.hash ? document.getElementById(window.location.hash.slice(1)) : null;
     const card = target?.closest('.video-card');
-    setArchiveOpen(card ? films.indexOf(card) >= 6 : false);
+    const isAlbum = window.location.hash === '#ashes-and-embers-films';
+    setArchiveOpen(isAlbum || (card ? films.indexOf(card) >= 6 : false));
+    const destination = isAlbum ? document.getElementById('film-just-not-this-morning') : card;
+    if (destination) requestAnimationFrame(() => destination.scrollIntoView({ block: 'start' }));
   };
   revealLinkedFilm();
   window.addEventListener('hashchange', revealLinkedFilm);
