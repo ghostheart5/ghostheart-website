@@ -1,0 +1,97 @@
+/* The three GhostHeart paths shared with the official YouTube channel. */
+.gh-container { width: min(calc(100% - 2.5rem), 1180px); margin-inline: auto; }
+.gh-journeys, .gh-new-releases { padding-block: clamp(3rem, 6vw, 5.5rem); border-bottom: 1px solid #ffffff20; }
+.gh-journeys { background: radial-gradient(ellipse at 0 0, #9e202515, transparent 60%), #080809; scroll-margin-top: 5rem; }
+.gh-kicker { margin: 0 0 .7rem; color: #f28d85; font: 800 .7rem/1.5 "Segoe UI", Arial, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.gh-section-head { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem 3rem; margin-bottom: 1.8rem; }
+.gh-section-head h2, .gh-companion h2 { max-width: 25ch; margin: 0; color: #f6f0e7; font: 900 clamp(1.9rem, 3.6vw, 3rem)/1.08 Impact, "Arial Narrow", "Segoe UI", sans-serif; letter-spacing: .015em; text-transform: uppercase; text-wrap: balance; }
+.gh-section-head > p { max-width: 39ch; margin: 0; color: #bcb6af; font: 1rem/1.65 Georgia, serif; }
+.gh-path-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.gh-path { min-width: 0; display: flex; flex-direction: column; border: 1px solid #ffffff26; border-top: 3px solid #d94547; background: #111113; }
+.gh-path--life { border-top-color: #b2a08a; }
+.gh-path--versions { border-top-color: #d7ac65; }
+.gh-path-art { display: block; overflow: hidden; background: #090909; }
+.gh-path-art img { display: block; width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: contain; transition: filter .2s ease; }
+.gh-path-art:hover img { filter: brightness(1.14); }
+.gh-path-copy { display: flex; flex-direction: column; flex: 1; padding: clamp(1rem, 2vw, 1.5rem); }
+.gh-path h3 { margin: 0; color: #f6f0e7; font: 900 clamp(1.28rem, 1.8vw, 1.65rem)/1.17 "Segoe UI", Arial, sans-serif; letter-spacing: -.025em; }
+.gh-path-hook { margin: .55rem 0 0; color: #e5c199 !important; font-style: italic; }
+.gh-path p:not(.gh-kicker), .gh-companion p:not(.gh-kicker) { color: #bfb8b0; font-size: .94rem; line-height: 1.65; }
+.gh-path .gh-actions { display: grid; gap: .45rem; margin-top: auto; padding-top: .6rem; }
+.gh-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+.gh-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .75rem; border: 1px solid #ffffff45; padding: .8rem 1.1rem; background: #19191c; color: #fff; font: 850 .76rem/1.35 "Segoe UI", Arial, sans-serif; letter-spacing: .065em; text-decoration: none; text-transform: uppercase; }
+.gh-button--primary { border-color: #d63139; background: #b6222c; color: #fff; }
+.gh-button:hover { background: #e3c29e; border-color: #e3c29e; color: #0a0a0c; }
+.gh-text-link { display: inline-flex; min-height: 44px; align-items: center; gap: .5rem; color: #eee4d8; font: 750 .82rem/1.5 "Segoe UI", Arial, sans-serif; text-decoration: underline; text-decoration-color: #c55355; text-underline-offset: .35em; }
+.gh-text-link:hover { color: #ffbcb4; }
+.gh-afterword { margin: 1.5rem 0 0; color: #bfb8b0; font: .9rem/1.6 Georgia, serif; }
+.gh-afterword a { display: inline-flex; align-items: center; min-height: 44px; color: #e9c498; text-underline-offset: .3em; }
+.gh-new-releases { background: #0c0b0d; }
+.gh-release-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.gh-release { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; min-width: 0; gap: 1.1rem; padding: 1rem; border: 1px solid #ffffff24; color: inherit; text-decoration: none; background: #131114; }
+.gh-release:hover { border-color: #df6d68; }
+.gh-release img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.gh-release h3 { margin: 0; color: #fff4e8; font: 800 1.45rem/1.14 "Segoe UI", Arial, sans-serif; letter-spacing: -.03em; }
+.gh-release p:not(.gh-kicker) { margin: .7rem 0 .15rem; color: #bfb8b0; font-size: .9rem; line-height: 1.6; }
+.gh-release .gh-kicker { font-size: .62rem; }
+.gh-companion { margin-block: clamp(2rem, 4vw, 3.5rem); }
+.gh-companion-inner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: center; border-block: 1px solid #ffffff2b; padding-block: 1.75rem; }
+.gh-companion img { width: 100%; height: auto; display: block; }
+.gh-companion .gh-actions { align-items: start; }
+.gh-companion .gh-text-link { display: flex; }
+.gh-youtube-home .home-hero { min-height: 640px; }
+.gh-youtube-home .hero-content { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.gh-youtube-home .home-hero h1 { font: 900 clamp(4rem, 7.8vw, 6.6rem)/.9 Impact, "Arial Narrow", "Segoe UI", sans-serif; letter-spacing: .005em; text-transform: uppercase; }
+.gh-youtube-home .home-hero h1 span { color: #f0dfc8; -webkit-text-stroke: 0; }
+.gh-youtube-home .hero-identity { margin-top: 1.5rem; color: #ddd4cc; }
+.gh-youtube-home .hero-lede { max-width: 45ch; margin-top: .7rem; }
+.gh-youtube-home .gh-hero-signal { display: inline-flex; min-height: 44px; align-items: center; margin-top: .65rem; color: #d4b895; font-size: .79rem; text-underline-offset: .3em; }
+.gh-youtube-home .featured-song-art { aspect-ratio: 16 / 9; }
+.gh-youtube-home .featured-song-art::after { background: linear-gradient(0deg, #000c, transparent 28%); }
+.gh-youtube-home .featured-song-art > span { top: .7rem; bottom: auto; background: #080808d9; padding: .3rem .5rem; }
+.gh-youtube-home .hero-mark { display: none; }
+.gh-journeys :focus-visible, .gh-companion :focus-visible, .gh-new-releases :focus-visible, .gh-actions :focus-visible, .gh-hero-signal:focus-visible { outline: 3px solid #fff1b8; outline-offset: 5px; }
+.gh-journeys [id], .gh-companion [id], [id^="film-"], [id^="song-"] { scroll-margin-top: 5rem; }
+.start-shell > .gh-journeys { margin-top: 2.5rem; }
+.start-shell > .gh-journeys .gh-container { width: 100%; }
+.start-shell > .gh-journeys .gh-section-head { display: block; }
+.start-shell > .gh-journeys .gh-section-head > p { max-width: 60ch; margin-top: 1rem; }
+.start-intro h1 { max-width: 20ch; font: 900 clamp(2.8rem, 5.5vw, 4.5rem)/.98 Impact, "Arial Narrow", "Segoe UI", sans-serif; letter-spacing: .005em; text-transform: uppercase; }
+.gh-start-lede { max-width: 62ch; color: #c9c0b6; font-size: 1rem; line-height: 1.65; }
+.player-error a { display: inline-flex; min-height: 44px; align-items: center; color: #ffe1b8; text-underline-offset: .3em; }
+.gh-track-list { margin-top: 1rem; border-top: 1px solid #ffffff25; color: #e8c39f; font-size: .84rem; }
+.gh-track-list summary { min-height: 44px; padding-block: .75rem; cursor: pointer; font-weight: 750; }
+.gh-track-list ol { margin: 0; padding-left: 1.5rem; }
+.gh-track-list a { display: inline-flex; align-items: center; min-height: 44px; color: #e8ded3; text-underline-offset: .3em; }
+@media (max-width: 950px) {
+  .gh-section-head { align-items: start; flex-direction: column; gap: 1rem; }
+  .gh-section-head > p { max-width: 65ch; }
+  .gh-path-grid { gap: .8rem; }
+  .gh-path-copy { padding: 1rem; }
+  .gh-path h3 { font-size: 1.2rem; }
+  .gh-path .gh-button { padding-inline: .5rem; font-size: .68rem; }
+  .gh-release { grid-template-columns: 1fr; }
+  .gh-youtube-home .home-hero { min-height: auto; }
+}
+@media (max-width: 700px) {
+  .gh-container { width: calc(100% - 2rem); }
+  .gh-path-grid, .gh-companion-inner { grid-template-columns: 1fr; }
+  .gh-path-grid { gap: 1.4rem; }
+  .gh-path-copy { padding: 1.4rem; }
+  .gh-path h3 { font-size: 1.55rem; }
+  .gh-path .gh-button { font-size: .76rem; }
+  .gh-path .gh-actions { display: flex; }
+  .gh-companion-inner { gap: 1.5rem; }
+  .gh-youtube-home .home-hero h1 { font-size: clamp(3.7rem, 16vw, 5.5rem); }
+  .gh-youtube-home .hero-content { padding-block: 3rem; }
+}
+@media (max-width: 480px) {
+  .gh-release-grid { grid-template-columns: 1fr; }
+  .gh-path .gh-actions { display: grid; }
+  .gh-companion .gh-button { width: 100%; }
+  .gh-youtube-home .gh-actions { align-items: start; flex-direction: column; gap: .4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .gh-path-art img { transition: none; }
+}
