@@ -1,11 +1,40 @@
-// Public GhostHeart channel films verified September 9, 2026. Unlisted uploads are excluded.
+// Public GhostHeart channel films. Original catalog verified September 9, 2026; featured release added September 13, 2026. Private and unlisted uploads are excluded.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
+  {
+    "key": "i-wont-pretend-to-speak-for-you",
+    "cardId": "film-i-wont-pretend-to-speak-for-you",
+    "featured": true,
+    "meta": [
+      "New release",
+      "You’re Not God"
+    ],
+    "title": "I Won’t Pretend to Speak for You",
+    "videoTitle": "I Won’t Pretend to Speak for You | GhostHeart",
+    "provider": "youtube",
+    "youtubeId": "sOT7xq4SBhk",
+    "description": "One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.",
+    "song": {
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the You’re Not God album",
+      "title": "You’re Not God",
+      "href": "albums/youre-not-god/index.html"
+    },
+    "related": [
+      {
+        "label": "Read the lyrics",
+        "accessibleLabel": "Read the lyrics to I Won’t Pretend to Speak for You",
+        "href": "albums/youre-not-god/lyrics.html"
+      }
+    ],
+    "accessibility": "Use the YouTube player CC control for English lyrics. A full text version is available through the Read the lyrics link.",
+    "thumbnail": "assets/releases/i-wont-pretend-cover.jpg"
+  },
   {
     "key": "hey-preacher-man",
     "cardId": "film-hey-preacher-man",
-    "featured": true,
+    "featured": false,
     "meta": [
-      "Featured film"
+      "You’re Not God"
     ],
     "title": "Hey Preacher Man",
     "videoTitle": "Hey Preacher Man | GhostHeart",

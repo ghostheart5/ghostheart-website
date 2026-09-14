@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Videos | GhostHeart</title>
-  <meta name="description" content="The GhostHeart screening room: 25 public films about survival, love, memory, family, and refusing to disappear.">
+  <meta name="description" content="The GhostHeart screening room: 26 public films about survival, love, memory, family, and refusing to disappear.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GhostHeart">
   <meta property="og:title" content="Videos | GhostHeart">
-  <meta property="og:description" content="The GhostHeart screening room: 25 public films about survival, love, memory, family, and refusing to disappear.">
+  <meta property="og:description" content="The GhostHeart screening room: 26 public films about survival, love, memory, family, and refusing to disappear.">
   <meta property="og:image" content="/assets/videos/screening-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Videos | GhostHeart">
-  <meta name="twitter:description" content="25 GhostHeart films about survival, love, memory, family, and refusing to disappear.">
+  <meta name="twitter:description" content="26 GhostHeart films about survival, love, memory, family, and refusing to disappear.">
   <meta name="twitter:image" content="/assets/videos/screening-hero.jpg">
   <style>
     :root {
@@ -67,6 +67,8 @@
     .menu-group a { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .58rem 0; color: var(--muted); font-size: .88rem; font-weight: 750; text-decoration: none; }
     .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--ember); outline: none; }
 
+    .menu-group a.album-menu-link { color: var(--ember-light); font-weight: 900; }
+
     .hero {
       min-height: clamp(21rem, 38vw, 27rem);
       position: relative;
@@ -115,6 +117,15 @@
     .button:hover { border-color: var(--ember); background: rgba(237,51,39,.13); }
     .button.primary { border-color: var(--ember); background: var(--ember); color: #090909; }
     .button.primary:hover { background: #ff5f55; }
+
+
+    .album-discovery { padding-block: 1.5rem; }
+    .album-discovery-inner { border-block: 1px solid var(--line); padding-block: 1.5rem; }
+    .album-discovery h2 { max-width: 28ch; margin: 0; font-size: clamp(1.65rem, 3vw, 2.4rem); line-height: 1.1; }
+    .album-discovery p:not(.eyebrow) { max-width: 60ch; color: var(--muted); line-height: 1.6; }
+    .album-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+    .album-links a { display: inline-flex; align-items: center; min-height: 44px; padding: .65rem .85rem; border: 1px solid var(--line); text-decoration: none; font-size: .83rem; font-weight: 750; }
+    .album-links a:hover { border-color: var(--ember-light); background: rgba(237,51,39,.12); }
 
     .feature { padding-block: clamp(2.25rem, 5vw, 3.5rem) 1rem; }
     .section-heading { max-width: 45rem; margin-bottom: 1.1rem; }
@@ -226,7 +237,7 @@
     </div>
     <nav class="gateway-menu" id="gateway-menu" aria-label="GhostHeart gateway" hidden>
       <div class="wrap menu-grid">
-        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a></div>
+        <div class="menu-group"><h2>Start</h2><a href="index.html#home">Home</a><a class="album-menu-link" href="albums/index.html">Albums</a></div>
         <div class="menu-group"><h2>Three Paths</h2><a href="GhostHeart_Version_Mission.html">GhostHeart’s Mission</a><a href="GhostHeart_Story.html">Life Before GhostHeart</a><a href="GhostHeart_Versions.html">The Versions of GhostHeart</a><a href="GhostHeart_Angel.html">Meet the Angel</a></div>
         <div class="menu-group"><h2>Creative Archive</h2><a href="GhostHeart_Videos.html" aria-current="page">Videos</a><a href="GhostHeart_Songs.html">Released Songs</a><a href="GhostHeart_Quotes.html">Quotes</a></div>
         <div class="menu-group"><h2>Purpose</h2><a href="GhostHeart_Resources.html">Resources</a><a href="GhostHeart_Projects.html">Projects</a></div>
@@ -237,13 +248,24 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-content">
-        <p class="eyebrow">The Visual Archive</p>
+        <p class="eyebrow">GhostHeart / Music Videos</p>
         <h1 id="hero-title">Some stories have to be seen.</h1>
-        <p class="lead">The mission. The life before the name. The versions that survived. Choose a playlist, or find a film below.</p>
+        <p class="lead">Start with I Won’t Pretend to Speak for You. Then explore nine albums of survival, love, grief, hope, and standing up for the people the world judges.</p>
         <div class="hero-actions">
-          <a class="primary-link" href="#screening-room">Enter the screening room ↓</a>
-          <span class="tape" aria-hidden="true">Lights down</span>
+          <a class="primary-link" href="#film-i-wont-pretend-to-speak-for-you">Watch the new release ↓</a>
+          <a class="primary-link" href="albums/index.html">Explore the nine albums</a>
+          <span class="tape" aria-hidden="true">You’re Not God</span>
         </div>
+      </div>
+    </section>
+
+    <section class="feature" aria-labelledby="feature-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">New release / You’re Not God</p>
+          <h2 id="feature-title">I Won’t Pretend to Speak for You.</h2>
+        </div>
+        <article class="featured-film" id="film-i-wont-pretend-to-speak-for-you" data-media-key="i-wont-pretend-to-speak-for-you"></article>
       </div>
     </section>
 
@@ -260,46 +282,38 @@
       </div>
     </section>
 
-    <section class="gh-journeys" id="watch-paths" aria-labelledby="watch-paths-title">
-      <div class="gh-container"><header class="gh-section-head"><div><p class="gh-kicker">Music / Story / Purpose</p><h2 id="watch-paths-title">Choose your way into the films.</h2></div><p>Start with the mission. Follow the life. Meet the versions. The same three paths on the website and on YouTube.</p></header>
-      <div class="gh-path-grid"><article class="gh-path gh-path--mission">
-          <a class="gh-path-art" href="https://www.youtube.com/playlist?list=PLYsV3gvobtH0" target="_blank" rel="noopener noreferrer" aria-label="Watch GhostHeart&#x27;s Mission on YouTube (opens in a new tab)"><img src="assets/journeys/ghostheart-mission-cover.webp" alt="Protect the Light — GhostHeart playlist artwork" width="1672" height="941" loading="lazy" decoding="async"></a>
-          <div class="gh-path-copy"><p class="gh-kicker">01 / 7 films</p><h3>GhostHeart&#x27;s Mission</h3><p class="gh-path-hook">Protect the Light</p><p>For the judged, the shut out, and the people told to disappear. Songs that stand beside the wounded and defend the light in others.</p>
-            <div class="gh-actions"><a class="gh-button gh-button--primary" href="https://www.youtube.com/playlist?list=PLYsV3gvobtH0" target="_blank" rel="noopener noreferrer" aria-label="Watch the GhostHeart&#x27;s Mission playlist (opens in a new tab)">Watch the playlist <span aria-hidden="true">↗</span></a><a class="gh-text-link" href="GhostHeart_Version_Mission.html">Read the mission <span aria-hidden="true">→</span></a></div>
-          </div>
-        </article><article class="gh-path gh-path--life">
-          <a class="gh-path-art" href="https://www.youtube.com/playlist?list=PLBfWf1kw_MXQ" target="_blank" rel="noopener noreferrer" aria-label="Watch Life Before GhostHeart on YouTube (opens in a new tab)"><img src="assets/journeys/life-before-ghostheart-cover.webp" alt="Before the Fire Had a Name — GhostHeart playlist artwork" width="1672" height="941" loading="lazy" decoding="async"></a>
-          <div class="gh-path-copy"><p class="gh-kicker">02 / 12 films</p><h3>Life Before GhostHeart</h3><p class="gh-path-hook">Before the Fire Had a Name</p><p>The beginnings. The grief. The people who stayed. Follow the life behind the name, from surviving the dark to choosing another morning.</p>
-            <div class="gh-actions"><a class="gh-button gh-button--primary" href="https://www.youtube.com/playlist?list=PLBfWf1kw_MXQ" target="_blank" rel="noopener noreferrer" aria-label="Watch the Life Before GhostHeart playlist (opens in a new tab)">Watch the playlist <span aria-hidden="true">↗</span></a><a class="gh-text-link" href="GhostHeart_Story.html">Begin the story <span aria-hidden="true">→</span></a></div>
-          </div>
-        </article><article class="gh-path gh-path--versions">
-          <a class="gh-path-art" href="https://www.youtube.com/playlist?list=PLRBHbEdRorKw" target="_blank" rel="noopener noreferrer" aria-label="Watch The Versions of GhostHeart on YouTube (opens in a new tab)"><img src="assets/journeys/versions-of-ghostheart-cover.webp" alt="One Heart. Many Voices. — GhostHeart playlist artwork" width="1672" height="941" loading="lazy" decoding="async"></a>
-          <div class="gh-path-copy"><p class="gh-kicker">03 / 5 films</p><h3>The Versions of GhostHeart</h3><p class="gh-path-hook">One Heart. Many Voices.</p><p>The man, the survivor, the protector—and the Angel beside him. Meet the voices one heart learned to carry.</p>
-            <div class="gh-actions"><a class="gh-button gh-button--primary" href="https://www.youtube.com/playlist?list=PLRBHbEdRorKw" target="_blank" rel="noopener noreferrer" aria-label="Watch The Versions of GhostHeart playlist (opens in a new tab)">Watch the playlist <span aria-hidden="true">↗</span></a><a class="gh-text-link" href="GhostHeart_Versions.html">Meet the versions <span aria-hidden="true">→</span></a></div>
-          </div>
-        </article></div>
-      <p class="gh-afterword">There is more to every heart. <a href="GhostHeart_Angel.html">Meet GhostHeart's Angel →</a></p></div>
+    <section class="album-discovery" id="watch-paths" aria-labelledby="watch-paths-title">
+      <div class="wrap"><div class="album-discovery-inner">
+        <p class="eyebrow">Nine albums. One GhostHeart.</p>
+        <h2 id="watch-paths-title">Find the part of your story that lives here.</h2>
+        <p>Survival. Fatherhood. Love. Grief. Hope. The songs belong together for a reason.</p>
+        <a class="button primary" href="albums/index.html">Explore the nine albums</a>
+        <nav class="album-links" aria-label="GhostHeart albums">
+          <a href="albums/broken-man/index.html">Broken Man</a>
+          <a href="albums/ghostheart/index.html">GhostHeart</a>
+          <a href="albums/fatherhood/index.html">FatherHood</a>
+          <a href="albums/ghosthearts-angel/index.html">GhostHearts Angel</a>
+          <a href="albums/human-after-all/index.html">Human After All</a>
+          <a href="albums/love-is-love/index.html">Love is Love</a>
+          <a href="albums/the-ones-we-carry/index.html">The Ones We Carry</a>
+          <a href="albums/uplifting/index.html">UpLifting</a>
+          <a href="albums/youre-not-god/index.html">You’re Not God</a>
+        </nav>
+      </div></div>
     </section>
-    <section class="feature" aria-labelledby="feature-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">Featured film</p>
-          <h2 id="feature-title">Start with Hey Preacher Man.</h2>
-        </div>
-        <article class="featured-film" id="film-hey-preacher-man" data-media-key="hey-preacher-man"></article>
-      </div>
-    </section>
+
 
     <section class="video-catalog" id="screening-room" aria-labelledby="catalog-title">
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">The Screening Room</p>
-          <h2 id="catalog-title">Choose a frame. Follow the story. <span class="catalog-count">25 public films</span></h2>
+          <h2 id="catalog-title">Choose a frame. Follow the story. <span class="catalog-count">26 public films</span></h2>
           <p>Open a film when you are ready. Nothing plays without you.</p>
           <p><strong>Accessibility status:</strong> Use each YouTube player’s CC control for available captions. Each film also has a direct YouTube link.</p>
         </div>
         <h3 id="ashes-and-embers-films" class="visually-hidden">Ashes &amp; Embers films</h3>
         <div class="video-grid" id="video-card-grid">
+          <article id="film-hey-preacher-man" data-media-key="hey-preacher-man"></article>
           <article id="film-that-aint-holy" data-media-key="that-aint-holy"></article>
           <article id="film-you-cant-change-us-20260906" data-media-key="you-cant-change-us-20260906"></article>
           <article id="film-this-is-ghostheart" data-media-key="this-is-ghostheart"></article>
@@ -325,7 +339,7 @@
           <article id="film-i-got-you-for-life" data-media-key="i-got-you-for-life"></article>
           <article id="film-you-made-me-a-part-of-me" data-media-key="you-made-me-a-part-of-me"></article>
         </div>
-        <div class="archive-toggle-row"><button class="archive-toggle" id="video-archive-toggle" type="button" aria-expanded="false" aria-controls="video-card-grid">View all 24 films</button></div>
+        <div class="archive-toggle-row"><button class="archive-toggle" id="video-archive-toggle" type="button" aria-expanded="false" aria-controls="video-card-grid">View all 25 films</button></div>
       </div>
     </section>
 
@@ -333,13 +347,13 @@
       <p class="eyebrow">Continue through GhostHeart</p>
       <h2 id="videos-continue-title">Follow a film back to its song.</h2>
       <p>Keep listening, read the life behind the songs, or join the Signal for the next release.</p>
-      <div class="continuation-actions"><a class="button primary" href="GhostHeart_Songs.html#records">Explore released songs</a><a class="button" href="GhostHeart_Story.html#chapters">Read the story</a><a class="button" href="index.html#join-the-signal">Join the Signal</a></div>
+      <div class="continuation-actions"><a class="button primary" href="albums/index.html">Explore the nine albums</a><a class="button" href="GhostHeart_Songs.html#records">Browse the release archive</a><a class="button" href="GhostHeart_Story.html#chapters">Read the story</a><a class="button" href="index.html#join-the-signal">Join the Signal</a></div>
       <a class="continuation-back" href="index.html#home">Return to the GhostHeart world</a>
     </aside>
   </main>
 
-  <footer class="footer"><div class="wrap">GhostHeart Screening Room • 25 public films</div></footer>
-  <script src="assets/data/ghostheart-video-catalog.js?v=20260909"></script>
+  <footer class="footer"><div class="wrap">GhostHeart Screening Room • 26 public films</div></footer>
+  <script src="assets/data/ghostheart-video-catalog.js?v=20260913"></script>
   <script src="assets/shared/video-screening-room.js?v=20260909"></script>
   <script>
     (() => {
