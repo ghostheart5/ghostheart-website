@@ -11,12 +11,16 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#080808">
+  <style>
+    .nav a.album-menu-link { display: inline-flex; align-items: center; min-height: 44px; padding: .6rem .8rem; border: 1px solid #ff756c; color: #ff756c; font-weight: 900; text-decoration: none; }
+    .nav a.album-menu-link:focus-visible { outline: 2px solid #ff756c; outline-offset: 3px; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to message</a>
   <header class="nav">
     <div class="wrap nav-inner">
-      <span aria-hidden="true"></span>
+      <nav aria-label="Explore GhostHeart"><a class="album-menu-link" href="albums/index.html">Albums</a></nav>
       <a class="brand" href="index.html#home" aria-label="GhostHeart home">Ghost<span>Heart</span></a>
       <span class="nav-signal">The signal can be found again.</span>
     </div>
