@@ -1,9 +1,30 @@
-// Public GhostHeart channel films. Original catalog verified September 9, 2026; featured release added September 13, 2026. Private and unlisted uploads are excluded.
+// Website selection reviewed September 14, 2026. Source channel uploads are unchanged.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
+  {
+    "key": "the-heart-that-fought-for-me",
+    "cardId": "film-the-heart-that-fought-for-me",
+    "featured": true,
+    "meta": [
+      "Music video",
+      "4:35"
+    ],
+    "title": "The Heart That Fought for Me",
+    "videoTitle": "The Heart That Fought for Me — GhostHeart",
+    "provider": "youtube",
+    "youtubeId": "nHF8Zn6j05I",
+    "description": "The latest GhostHeart music video.",
+    "song": {
+      "label": "Explore the music",
+      "href": "GhostHeart_Songs.html"
+    },
+    "related": [],
+    "accessibility": "Use the YouTube player CC control for available captions.",
+    "thumbnail": "assets/videos/youtube/nHF8Zn6j05I.jpg"
+  },
   {
     "key": "i-wont-pretend-to-speak-for-you",
     "cardId": "film-i-wont-pretend-to-speak-for-you",
-    "featured": true,
+    "featured": false,
     "meta": [
       "New release",
       "You’re Not God"
@@ -70,7 +91,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/pJFJXPAiPto.jpg"
+    "thumbnail": "assets/videos/youtube/pJFJXPAiPto.jpg",
+    "featured": false
   },
   {
     "key": "you-cant-change-us-20260906",
@@ -91,7 +113,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/oRzkEBDVccM.jpg"
+    "thumbnail": "assets/videos/youtube/oRzkEBDVccM.jpg",
+    "featured": false
   },
   {
     "key": "this-is-ghostheart",
@@ -111,7 +134,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/kF1Cc_GB6AM.jpg"
+    "thumbnail": "assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "featured": false
   },
   {
     "key": "the-angel-who-made-ghostheart",
@@ -131,7 +155,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/jvHS5j00FL4.jpg"
+    "thumbnail": "assets/videos/youtube/jvHS5j00FL4.jpg",
+    "featured": false
   },
   {
     "key": "ghosthearts-oath",
@@ -151,27 +176,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/DQcl28CHE_o.jpg"
-  },
-  {
-    "key": "born-between-two-worlds",
-    "cardId": "film-born-between-two-worlds",
-    "title": "Born Between Two Worlds",
-    "videoTitle": "Born Between Two Worlds | GhostHeart",
-    "provider": "youtube",
-    "youtubeId": "i6nqR4nzcSQ",
-    "description": "Chapter One. The beginning of the life behind GhostHeart.",
-    "meta": [
-      "Life Before GhostHeart"
-    ],
-    "song": {
-      "label": "Find the song",
-      "title": "Born Between Two Worlds",
-      "href": "GhostHeart_Songs.html#born-between-two-worlds"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/i6nqR4nzcSQ.jpg"
+    "thumbnail": "assets/videos/youtube/DQcl28CHE_o.jpg",
+    "featured": false
   },
   {
     "key": "the-man-beneath-the-moon",
@@ -191,34 +197,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/_mUU-toMlM8.jpg"
-  },
-  {
-    "key": "human-too",
-    "cardId": "film-human-too",
-    "meta": [
-      "Film 02"
-    ],
-    "title": "Human Too",
-    "videoTitle": "Human Too | GhostHeart (Official Graffiti Lyric Video)",
-    "provider": "youtube",
-    "youtubeId": "2g9o0jFL0Xc",
-    "description": "Judgment makes people disappear. This film asks us to see the person before the label.",
-    "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Human Too",
-      "title": "Human Too",
-      "href": "GhostHeart_Songs.html#song-human-too"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/2g9o0jFL0Xc.jpg"
+    "thumbnail": "assets/videos/youtube/_mUU-toMlM8.jpg",
+    "featured": false
   },
   {
     "key": "angel-in-the-ashes",
     "cardId": "film-angel-in-the-ashes",
     "meta": [
-      "Film 03"
+      "GhostHeart film"
     ],
     "title": "Angel in the Ashes",
     "videoTitle": "Angel in the Ashes | GhostHeart + The Angel (Official Widescreen Video)",
@@ -238,13 +224,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/rSZT1Nd4Xlk.jpg"
+    "thumbnail": "assets/videos/youtube/rSZT1Nd4Xlk.jpg",
+    "featured": false
   },
   {
     "key": "what-did-you-take-from-her",
     "cardId": "film-what-did-you-take-from-her",
     "meta": [
-      "Film 04"
+      "GhostHeart film"
     ],
     "title": "What Did You Take From Her",
     "videoTitle": "What Did You Take From Her",
@@ -259,13 +246,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "SkILbypDhxQ",
-    "thumbnail": "assets/videos/youtube/SkILbypDhxQ.jpg"
+    "thumbnail": "assets/videos/youtube/SkILbypDhxQ.jpg",
+    "featured": false
   },
   {
     "key": "heart-of-the-ashes",
     "cardId": "film-heart-of-the-ashes",
     "meta": [
-      "Film 05"
+      "GhostHeart film"
     ],
     "title": "Heart of the Ashes",
     "videoTitle": "Heart of the Ashes | GhostHeart (Official Graffiti Lyric Video)",
@@ -280,13 +268,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/Wgdfz9q394U.jpg"
+    "thumbnail": "assets/videos/youtube/Wgdfz9q394U.jpg",
+    "featured": false
   },
   {
     "key": "sunrise-doesnt-ask-for-permission",
     "cardId": "film-sunrise-doesnt-ask-for-permission",
     "meta": [
-      "Film 06"
+      "GhostHeart film"
     ],
     "title": "Sunrise Doesn't Ask for Permission",
     "videoTitle": "Sunrise Doesn't Ask for Permission",
@@ -301,56 +290,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "wxm8Qt6li4A",
-    "thumbnail": "assets/videos/youtube/wxm8Qt6li4A.jpg"
-  },
-  {
-    "key": "still",
-    "cardId": "film-still",
-    "meta": [
-      "Film 07"
-    ],
-    "title": "Still",
-    "videoTitle": "Still",
-    "provider": "youtube",
-    "description": "The quiet weight of what remains when everything else changes.",
-    "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Still",
-      "title": "Still",
-      "href": "GhostHeart_Songs.html#song-still"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "youtubeId": "ki9zjFVppNo",
-    "thumbnail": "assets/videos/youtube/ki9zjFVppNo.jpg"
-  },
-  {
-    "key": "you-cant-change-us",
-    "cardId": "film-you-cant-change-us",
-    "meta": [
-      "Original version",
-      "3:55"
-    ],
-    "title": "You Can't Change Us",
-    "videoTitle": "You Can't Change Us | GhostHeart (Official Music Video)",
-    "provider": "youtube",
-    "youtubeId": "YAq3cI1gJbM",
-    "description": "A refusal to surrender identity for someone else's comfort.",
-    "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: You Can't Change Us",
-      "title": "You Can't Change Us",
-      "href": "GhostHeart_Songs.html#song-you-cant-change-us"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/YAq3cI1gJbM.jpg"
+    "thumbnail": "assets/videos/youtube/wxm8Qt6li4A.jpg",
+    "featured": false
   },
   {
     "key": "why-didnt-you-call",
     "cardId": "film-why-didnt-you-call",
     "meta": [
-      "Film 09"
+      "GhostHeart film"
     ],
     "title": "Why Didn't You Call?",
     "videoTitle": "Why Didn't You Call? | GhostHeart (Official Lyric Video)",
@@ -365,13 +312,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/YHp4i52smhk.jpg"
+    "thumbnail": "assets/videos/youtube/YHp4i52smhk.jpg",
+    "featured": false
   },
   {
     "key": "the-dad",
     "cardId": "film-the-dad",
     "meta": [
-      "Film 10"
+      "GhostHeart film"
     ],
     "title": "The Dad I Never Had",
     "videoTitle": "The Dad I Never Had | GhostHeart (Official Lyric Video)",
@@ -384,46 +332,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "href": "GhostHeart_Songs.html#song-the-dad"
     },
     "related": [],
-    "relationship": {
-      "kicker": "Related GhostHeart Version",
-      "title": "Father",
-      "copy": "Love in action: presence, protection, and the refusal to repeat absence.",
-      "link": {
-        "label": "Explore Father",
-        "accessibleLabel": "Explore the Father Version",
-        "href": "GhostHeart_Version_Father.html"
-      }
-    },
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "cBNxq4y1ahU",
-    "thumbnail": "assets/videos/youtube/cBNxq4y1ahU.jpg"
-  },
-  {
-    "key": "rebellion",
-    "cardId": "film-rebellion",
-    "meta": [
-      "Film 12"
-    ],
-    "title": "Rebellion",
-    "videoTitle": "Rebellion",
-    "provider": "youtube",
-    "description": "Survival stops asking permission.",
-    "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Rebellion",
-      "title": "Rebellion",
-      "href": "GhostHeart_Songs.html#song-rebellion"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "youtubeId": "bWj0CI8FmKw",
-    "thumbnail": "assets/videos/youtube/bWj0CI8FmKw.jpg"
+    "thumbnail": "assets/videos/youtube/cBNxq4y1ahU.jpg",
+    "featured": false
   },
   {
     "key": "i-still-would",
     "cardId": "film-i-still-would",
     "meta": [
-      "Film 13"
+      "GhostHeart film"
     ],
     "title": "I Still Would",
     "videoTitle": "I Still Would | GhostHeart (Official Graffiti Lyric Video)",
@@ -438,7 +356,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/2z1IUv-Hamc.jpg"
+    "thumbnail": "assets/videos/youtube/2z1IUv-Hamc.jpg",
+    "featured": false
   },
   {
     "key": "just-not-this-morning",
@@ -460,7 +379,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "XWmMYqkvdzg",
-    "thumbnail": "assets/videos/youtube/XWmMYqkvdzg.jpg"
+    "thumbnail": "assets/videos/youtube/XWmMYqkvdzg.jpg",
+    "featured": false
   },
   {
     "key": "look-at-me",
@@ -482,7 +402,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "nVC1kB0MREA",
-    "thumbnail": "assets/videos/youtube/nVC1kB0MREA.jpg"
+    "thumbnail": "assets/videos/youtube/nVC1kB0MREA.jpg",
+    "featured": false
   },
   {
     "key": "revolving-door",
@@ -504,7 +425,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "n4pT8kquCLw",
-    "thumbnail": "assets/videos/youtube/n4pT8kquCLw.jpg"
+    "thumbnail": "assets/videos/youtube/n4pT8kquCLw.jpg",
+    "featured": false
   },
   {
     "key": "you-cant-close-a-revolving-door",
@@ -526,7 +448,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "9_BGWCgWjE8",
-    "thumbnail": "assets/videos/youtube/9_BGWCgWjE8.jpg"
+    "thumbnail": "assets/videos/youtube/9_BGWCgWjE8.jpg",
+    "featured": false
   },
   {
     "key": "i-got-you-for-life",
@@ -548,26 +471,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "QkcN_aryYOk",
-    "thumbnail": "assets/videos/youtube/QkcN_aryYOk.jpg"
-  },
-  {
-    "key": "you-made-me-a-part-of-me",
-    "cardId": "film-you-made-me-a-part-of-me",
-    "title": "You Made Me a Part of Me",
-    "videoTitle": "You Made Me a Part of Me | GhostHeart",
-    "provider": "youtube",
-    "youtubeId": "qBGsrBXUaIs",
-    "description": "An official GhostHeart music video from the wider film collection.",
-    "meta": [
-      "From the film collection"
-    ],
-    "song": {
-      "label": "Explore released songs",
-      "title": "You Made Me a Part of Me",
-      "href": "GhostHeart_Songs.html#records"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/qBGsrBXUaIs.jpg"
+    "thumbnail": "assets/videos/youtube/QkcN_aryYOk.jpg",
+    "featured": false
   }
-].map(Object.freeze));
+]);
