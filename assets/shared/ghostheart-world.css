@@ -13,3 +13,10 @@ html{scroll-padding-top:6rem;scroll-behavior:smooth}body.ghx-site{margin:0;color
 @media(max-width:360px){.ghx-primary{display:none}.ghx-bar{justify-content:space-between}.ghx-site .ghx-menu-toggle{flex-shrink:0}.ghx-menu-grid{gap:1rem}.ghx-menu a{font-size:.85rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation:none!important;transition:none!important}}
 .ghx-site .signup-section{color:#f5f2ed}.ghx-site .signup-layout p,.ghx-site .signal-signup-form p{color:#bfc0c2}.ghx-site .signup-layout .kicker{color:#ff8477}.ghx-site .signal-signup-form label{color:#f5f2ed}
+/* The identity-first Start Here page uses the same spacious image treatment as home. */
+.ghx-site .start-hero .release-art img{aspect-ratio:1;object-fit:contain;background:#08090a;border-color:var(--ghx-line)}
+.ghx-site .start-hero h1{overflow-wrap:normal;font-size:clamp(2.7rem,5.5vw,5rem)}
+.ghx-site #album-spotlight h2{margin-bottom:1.2rem}
+.ghx-site #remember .ghx-lead{max-width:64ch}
+.ghx-site a.skip-link,.ghx-site a.skip-link:hover{color:var(--ghx-bg);background:var(--ghx-white)}
+@media(max-width:700px){.ghx-site .start-hero h1{font-size:clamp(2.6rem,10vw,4rem)}.ghx-site .start-hero .release-art{max-width:520px;align-self:center}}

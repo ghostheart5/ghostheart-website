@@ -1,9 +1,63 @@
-// Website selection reviewed September 14, 2026. Source channel uploads are unchanged.
+// GhostHeart-first website selection. Public replacement IDs verified in YouTube Studio September 23, 2026.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
+  {
+    "key": "this-is-ghostheart",
+    "cardId": "film-this-is-ghostheart",
+    "title": "This Is GhostHeart",
+    "videoTitle": "This Is GhostHeart | GhostHeart",
+    "provider": "youtube",
+    "youtubeId": "kF1Cc_GB6AM",
+    "description": "The name, the scars, and the reason a hidden heart chose to be seen.",
+    "meta": [
+      "01 · Meet GhostHeart"
+    ],
+    "song": {
+      "label": "Read the story",
+      "accessibleLabel": "Read the story — This Is GhostHeart",
+      "title": "This Is GhostHeart",
+      "href": "GhostHeart_Story.html"
+    },
+    "related": [
+      {
+        "href": "albums/ghostheart/index.html#this-is-ghostheart",
+        "label": "GhostHeart album"
+      }
+    ],
+    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
+    "thumbnail": "assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "featured": true
+  },
+  {
+    "key": "ghosthearts-oath",
+    "cardId": "film-ghosthearts-oath",
+    "title": "GhostHeart's Oath",
+    "videoTitle": "GhostHeart's Oath | GhostHeart",
+    "provider": "youtube",
+    "youtubeId": "DQcl28CHE_o",
+    "description": "The promise to protect the light in others.",
+    "meta": [
+      "02 · The promise"
+    ],
+    "song": {
+      "label": "Explore the mission",
+      "accessibleLabel": "Explore the mission — GhostHeart's Oath",
+      "title": "GhostHeart's Oath",
+      "href": "GhostHeart_Version_Mission.html"
+    },
+    "related": [
+      {
+        "href": "albums/ghostheart/index.html#ghosthearts-oath",
+        "label": "GhostHeart album"
+      }
+    ],
+    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
+    "thumbnail": "assets/videos/youtube/DQcl28CHE_o.jpg",
+    "featured": true
+  },
   {
     "key": "the-heart-that-fought-for-me",
     "cardId": "film-the-heart-that-fought-for-me",
-    "featured": true,
+    "featured": false,
     "meta": [
       "Music video",
       "4:35"
@@ -12,12 +66,19 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "videoTitle": "The Heart That Fought for Me — GhostHeart",
     "provider": "youtube",
     "youtubeId": "nHF8Zn6j05I",
-    "description": "The latest GhostHeart music video.",
+    "description": "A film from the larger GhostHeart story.",
     "song": {
       "label": "Explore the music",
+      "accessibleLabel": "Explore the music — The Heart That Fought for Me",
+      "title": "The Heart That Fought for Me",
       "href": "GhostHeart_Songs.html"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "GhostHeart_Story.html",
+        "label": "Explore the story"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions.",
     "thumbnail": "assets/videos/youtube/nHF8Zn6j05I.jpg"
   },
@@ -26,25 +87,24 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "cardId": "film-i-wont-pretend-to-speak-for-you",
     "featured": false,
     "meta": [
-      "New release",
+      "Current album spotlight",
       "You’re Not God"
     ],
     "title": "I Won’t Pretend to Speak for You",
     "videoTitle": "I Won’t Pretend to Speak for You | GhostHeart",
     "provider": "youtube",
-    "youtubeId": "sOT7xq4SBhk",
+    "youtubeId": "z-FRCpG9vfw",
     "description": "One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.",
     "song": {
       "label": "Explore the album",
-      "accessibleLabel": "Explore the You’re Not God album",
-      "title": "You’re Not God",
-      "href": "albums/youre-not-god/index.html"
+      "accessibleLabel": "Explore the album — I Won’t Pretend to Speak for You",
+      "title": "I Won’t Pretend to Speak for You",
+      "href": "albums/youre-not-god/index.html#i-wont-pretend-to-speak-for-you"
     },
     "related": [
       {
-        "label": "Read the lyrics",
-        "accessibleLabel": "Read the lyrics to I Won’t Pretend to Speak for You",
-        "href": "albums/youre-not-god/lyrics.html"
+        "href": "albums/youre-not-god/lyrics.html",
+        "label": "Read the lyrics"
       }
     ],
     "accessibility": "Use the YouTube player CC control for English lyrics. A full text version is available through the Read the lyrics link.",
@@ -60,13 +120,13 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "title": "Hey Preacher Man",
     "videoTitle": "Hey Preacher Man | GhostHeart",
     "provider": "youtube",
-    "youtubeId": "JGTwfFrej-M",
+    "youtubeId": "2SEng4dmgUc",
     "description": "A direct answer to the judgment that tried to define a life from the outside.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Hey Preacher Man",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Hey Preacher Man",
       "title": "Hey Preacher Man",
-      "href": "GhostHeart_Songs.html#hey-preacher-man"
+      "href": "albums/youre-not-god/index.html#hey-preacher-man"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -78,16 +138,17 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "title": "That Ain't Holy",
     "videoTitle": "That Ain't Holy | GhostHeart",
     "provider": "youtube",
-    "youtubeId": "pJFJXPAiPto",
+    "youtubeId": "ptYn4vh6DCQ",
     "description": "Mercy should not check your pockets at the door. A father-and-son story about poverty, dignity, and who gets judged.",
     "meta": [
-      "September 6 single",
-      "4:45"
+      "You’re Not God",
+      "Lyric video"
     ],
     "song": {
-      "label": "Find the song",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — That Ain't Holy",
       "title": "That Ain't Holy",
-      "href": "GhostHeart_Songs.html#song-that-aint-holy"
+      "href": "albums/youre-not-god/index.html#that-aint-holy"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -107,34 +168,14 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "5:30"
     ],
     "song": {
-      "label": "Find the song",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — You Can't Change Us — September 6 Version",
       "title": "You Can't Change Us — September 6 Version",
-      "href": "GhostHeart_Songs.html#song-you-cant-change-us-20260906"
+      "href": "albums/love-is-love/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "thumbnail": "assets/videos/youtube/oRzkEBDVccM.jpg",
-    "featured": false
-  },
-  {
-    "key": "this-is-ghostheart",
-    "cardId": "film-this-is-ghostheart",
-    "title": "This Is GhostHeart",
-    "videoTitle": "This Is GhostHeart | GhostHeart",
-    "provider": "youtube",
-    "youtubeId": "kF1Cc_GB6AM",
-    "description": "The name, the scars, and the reason a hidden heart chose to be seen.",
-    "meta": [
-      "The Versions of GhostHeart"
-    ],
-    "song": {
-      "label": "Find the song",
-      "title": "This Is GhostHeart",
-      "href": "GhostHeart_Songs.html#this-is-ghostheart"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/kF1Cc_GB6AM.jpg",
     "featured": false
   },
   {
@@ -149,34 +190,19 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "The Versions of GhostHeart"
     ],
     "song": {
-      "label": "Find the song",
+      "label": "Meet the Angel",
+      "accessibleLabel": "Meet the Angel — The Angel Who Made GhostHeart",
       "title": "The Angel Who Made GhostHeart",
-      "href": "GhostHeart_Songs.html#song-the-angel-who-made-ghostheart"
+      "href": "GhostHeart_Angel.html"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "albums/ghosthearts-angel/index.html",
+        "label": "Explore the album"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "thumbnail": "assets/videos/youtube/jvHS5j00FL4.jpg",
-    "featured": false
-  },
-  {
-    "key": "ghosthearts-oath",
-    "cardId": "film-ghosthearts-oath",
-    "title": "GhostHeart's Oath",
-    "videoTitle": "GhostHeart's Oath | GhostHeart",
-    "provider": "youtube",
-    "youtubeId": "DQcl28CHE_o",
-    "description": "The promise to protect the light in others.",
-    "meta": [
-      "GhostHeart's Mission"
-    ],
-    "song": {
-      "label": "Find the song",
-      "title": "GhostHeart's Oath",
-      "href": "GhostHeart_Songs.html#song-ghosthearts-oath"
-    },
-    "related": [],
-    "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/DQcl28CHE_o.jpg",
     "featured": false
   },
   {
@@ -191,9 +217,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "Life Before GhostHeart"
     ],
     "song": {
-      "label": "Find the song",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — The Man Beneath the Moon",
       "title": "The Man Beneath the Moon",
-      "href": "GhostHeart_Songs.html#song-the-man-beneath-the-moon"
+      "href": "albums/broken-man/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -212,15 +239,15 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "rSZT1Nd4Xlk",
     "description": "The official widescreen film for “Angels in the Ashes”: mercy enters the fire, and GhostHeart chooses to rise beside the Angel.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Angels in the Ashes",
-      "title": "Angels in the Ashes",
-      "href": "GhostHeart_Songs.html#song-angels-in-the-ashes"
+      "label": "Read their story",
+      "accessibleLabel": "Read their story — Angel in the Ashes",
+      "title": "Angel in the Ashes",
+      "href": "GhostHeart_Angel.html"
     },
     "related": [
       {
-        "label": "Meet the Angel",
-        "href": "GhostHeart_Angel.html#angel-story"
+        "href": "albums/ghosthearts-angel/index.html",
+        "label": "Explore the album"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -238,10 +265,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "A reckoning with what pain changed—and what it could not erase.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: What Did You Take From Her",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — What Did You Take From Her",
       "title": "What Did You Take From Her",
-      "href": "GhostHeart_Songs.html#song-what-did-you-take-from-her"
+      "href": "albums/human-after-all/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -261,10 +288,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "Wgdfz9q394U",
     "description": "Love, survival, and the heart that remains after the fire.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Heart of the Ashes",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Heart of the Ashes",
       "title": "Heart of the Ashes",
-      "href": "GhostHeart_Songs.html#song-heart-of-the-ashes"
+      "href": "albums/ghostheart/index.html#heart-of-the-ashes"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -282,10 +309,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "Light returns without waiting for anyone to approve it.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Sunrise Doesn't Ask for Permission",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Sunrise Doesn't Ask for Permission",
       "title": "Sunrise Doesn't Ask for Permission",
-      "href": "GhostHeart_Songs.html#song-sunrise-doesnt-ask-for-permission"
+      "href": "albums/uplifting/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -305,10 +332,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "YHp4i52smhk",
     "description": "The questions that arrive after distance and silence.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Why Didn't You Call?",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Why Didn't You Call?",
       "title": "Why Didn't You Call?",
-      "href": "GhostHeart_Songs.html#song-why-didnt-you-call"
+      "href": "albums/the-ones-we-carry/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -327,11 +354,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "description": "A promise to become the father the next generation deserves.",
     "song": {
       "label": "Find the song",
-      "accessibleLabel": "Find the song: The Dad",
-      "title": "The Dad",
+      "accessibleLabel": "Find the song — The Dad I Never Had",
+      "title": "The Dad I Never Had",
       "href": "GhostHeart_Songs.html#song-the-dad"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "GhostHeart_Version_Father.html",
+        "label": "The father’s purpose"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "cBNxq4y1ahU",
     "thumbnail": "assets/videos/youtube/cBNxq4y1ahU.jpg",
@@ -349,10 +381,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "2z1IUv-Hamc",
     "description": "Memory keeps what distance cannot.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: I Still Would",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — I Still Would",
       "title": "I Still Would",
-      "href": "GhostHeart_Songs.html#song-i-still-would"
+      "href": "albums/the-ones-we-carry/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -371,10 +403,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "Survival answers the dark with one more morning.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Just Not This Morning",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Just Not This Morning",
       "title": "Just Not This Morning",
-      "href": "GhostHeart_Songs.html#song-just-not-this-morning"
+      "href": "albums/the-ones-we-carry/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -394,10 +426,10 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "A demand to be seen clearly instead of reduced to a wound.",
     "song": {
-      "label": "Find the song",
-      "accessibleLabel": "Find the song: Look at Me",
+      "label": "Explore the album",
+      "accessibleLabel": "Explore the album — Look at Me",
       "title": "Look at Me",
-      "href": "GhostHeart_Songs.html#song-look-at-me"
+      "href": "albums/broken-man/index.html"
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -418,11 +450,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "description": "The cycle keeps turning until somebody chooses a different way through.",
     "song": {
       "label": "Find the song",
-      "accessibleLabel": "Find the song: Revolving Door",
+      "accessibleLabel": "Find the song — Revolving Door",
       "title": "Revolving Door",
       "href": "GhostHeart_Songs.html#song-revolving-door"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "GhostHeart_Story.html",
+        "label": "Explore the story"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "n4pT8kquCLw",
     "thumbnail": "assets/videos/youtube/n4pT8kquCLw.jpg",
@@ -441,11 +478,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "description": "Some endings keep moving until the truth finally breaks the pattern.",
     "song": {
       "label": "Find the song",
-      "accessibleLabel": "Find the song: You Can't Close a Revolving Door",
+      "accessibleLabel": "Find the song — You Can't Close a Revolving Door",
       "title": "You Can't Close a Revolving Door",
       "href": "GhostHeart_Songs.html#song-you-cant-close-a-revolving-door"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "GhostHeart_Story.html",
+        "label": "Explore the story"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "9_BGWCgWjE8",
     "thumbnail": "assets/videos/youtube/9_BGWCgWjE8.jpg",
@@ -464,11 +506,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "description": "A promise that stays when fear, distance, and fire try to leave.",
     "song": {
       "label": "Find the song",
-      "accessibleLabel": "Find the song: I Got You for Life",
+      "accessibleLabel": "Find the song — I Got You for Life",
       "title": "I Got You for Life",
       "href": "GhostHeart_Songs.html#song-i-got-you-for-life"
     },
-    "related": [],
+    "related": [
+      {
+        "href": "GhostHeart_Story.html",
+        "label": "Explore the story"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "QkcN_aryYOk",
     "thumbnail": "assets/videos/youtube/QkcN_aryYOk.jpg",
