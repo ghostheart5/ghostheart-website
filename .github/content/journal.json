@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "this-is-ghostheart",
+    "title": "This is GhostHeart.",
+    "category": "The story",
+    "published": "2026-09-25T16:13:00+00:00",
+    "summary": "The name, the scars, and the reason a hidden heart chose to be seen.",
+    "image": "/assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "paragraphs": [
+      "GhostHeart is one lived story told through music, film, words, and visual storytelling. The music is a way into the larger story.",
+      "The heart survived. Then it chose a purpose.",
+      "GhostHeart begins with a life. It reaches toward people who need to feel seen, find their footing, and take their next step."
+    ],
+    "links": [
+      {"label": "Read the story", "url": "/GhostHeart_Story.html"},
+      {"label": "Watch This Is GhostHeart", "url": "https://www.youtube.com/watch?v=kF1Cc_GB6AM"}
+    ],
+    "sources": ["index.html", "start/index.html"]
+  },
+  {
+    "slug": "ghosthearts-oath",
+    "title": "GhostHeart’s Oath",
+    "category": "The promise",
+    "published": "2026-09-25T16:12:00+00:00",
+    "summary": "The promise to protect the light in others.",
+    "image": "/assets/videos/youtube/DQcl28CHE_o.jpg",
+    "paragraphs": [
+      "Meet the heart behind the name. Then hear the promise it chose to carry.",
+      "The promise to protect the light in others.",
+      "What survived can help someone rise."
+    ],
+    "links": [
+      {"label": "Explore the mission", "url": "/GhostHeart_Version_Mission.html"},
+      {"label": "Watch GhostHeart’s Oath", "url": "https://www.youtube.com/watch?v=DQcl28CHE_o"}
+    ],
+    "sources": ["index.html", "start/index.html"]
+  },
+  {
+    "slug": "youre-not-god",
+    "title": "You’re Not God",
+    "category": "Album spotlight",
+    "published": "2026-09-25T16:11:00+00:00",
+    "summary": "You can have your beliefs. You do not get to play God.",
+    "image": "/assets/releases/i-wont-pretend-cover.jpg",
+    "paragraphs": [
+      "YOU’RE NOT GOD is for everyone who has been judged, shamed, controlled, or cast aside by people claiming they speak for heaven.",
+      "This album is not an attack on faith. It is a confrontation with hypocrisy—the preacher demanding purity while hiding their own sins, the believer using scripture as a weapon, and anyone who mistakes personal hatred for God’s voice.",
+      "From That Ain’t Holy to Hey Preacher Man, these songs expose what happens when love is replaced by fear, compassion becomes control, and religion is used to excuse cruelty.",
+      "No human gets to decide whose life has value, whose love is real, or who deserves grace. You can stand behind a pulpit, a title, or a crowd—but you are still human."
+    ],
+    "links": [
+      {"label": "Explore the album", "url": "/albums/youre-not-god/index.html"},
+      {"label": "Read the lyrics", "url": "/albums/youre-not-god/lyrics.html"}
+    ],
+    "sources": ["albums/youre-not-god/index.html"]
+  }
+]

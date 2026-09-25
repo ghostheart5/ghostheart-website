@@ -20,6 +20,11 @@ jobs:
       - name: Validate production site tree
         run: python3 .github/scripts/validate_site.py
 
+      - name: Check journal pages and RSS match their source
+        run: |
+          python3 .github/scripts/build_journal.py
+          git diff --exit-code -- journal/
+
       - name: Check JavaScript syntax
         shell: bash
         run: |
