@@ -1,12 +1,12 @@
-// GhostHeart-first website selection. Public replacement IDs verified in YouTube Studio September 23, 2026.
+// GhostHeart-first website selection. Public replacement IDs verified in YouTube Studio September 24, 2026.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
   {
     "key": "this-is-ghostheart",
     "cardId": "film-this-is-ghostheart",
     "title": "This Is GhostHeart",
-    "videoTitle": "This Is GhostHeart | GhostHeart",
+    "videoTitle": "This Is GhostHeart | The Story Behind the Songs (Official Trailer)",
     "provider": "youtube",
-    "youtubeId": "kF1Cc_GB6AM",
+    "youtubeId": "AOCRvtz92JM",
     "description": "The name, the scars, and the reason a hidden heart chose to be seen.",
     "meta": [
       "01 · Meet GhostHeart"
@@ -24,16 +24,16 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "thumbnail": "assets/videos/youtube/AOCRvtz92JM.jpg",
     "featured": true
   },
   {
     "key": "ghosthearts-oath",
     "cardId": "film-ghosthearts-oath",
     "title": "GhostHeart's Oath",
-    "videoTitle": "GhostHeart's Oath | GhostHeart",
+    "videoTitle": "GhostHeart’s Oath | Official Lyric Video",
     "provider": "youtube",
-    "youtubeId": "DQcl28CHE_o",
+    "youtubeId": "mBAsUNX3vHQ",
     "description": "The promise to protect the light in others.",
     "meta": [
       "02 · The promise"
@@ -51,8 +51,28 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/DQcl28CHE_o.jpg",
+    "thumbnail": "assets/videos/youtube/mBAsUNX3vHQ.jpg",
     "featured": true
+  },
+  {
+    "key": "human-too-remake",
+    "cardId": "film-human-too-remake",
+    "featured": false,
+    "meta": ["Human Too · Cinematic remake"],
+    "title": "Human Too",
+    "videoTitle": "Human Too | A GhostHeart Cinematic Remake",
+    "provider": "youtube",
+    "youtubeId": "ARCFOZSOC_o",
+    "description": "A new cinematic version of Human Too—a GhostHeart song about addiction, judgment, pain, and the person behind every label.",
+    "song": {
+      "label": "Explore Human After All",
+      "accessibleLabel": "Explore Human After All — Human Too",
+      "title": "Human Too",
+      "href": "albums/human-after-all/index.html"
+    },
+    "related": [{"href": "start/index.html", "label": "Enter the GhostHeart story"}],
+    "accessibility": "Use the YouTube player CC control for available captions.",
+    "thumbnail": "assets/videos/youtube/ARCFOZSOC_o.jpg"
   },
   {
     "key": "the-heart-that-fought-for-me",

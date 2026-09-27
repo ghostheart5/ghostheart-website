@@ -20,3 +20,56 @@ html{scroll-padding-top:6rem;scroll-behavior:smooth}body.ghx-site{margin:0;color
 .ghx-site #remember .ghx-lead{max-width:64ch}
 .ghx-site a.skip-link,.ghx-site a.skip-link:hover{color:var(--ghx-bg);background:var(--ghx-white)}
 @media(max-width:700px){.ghx-site .start-hero h1{font-size:clamp(2.6rem,10vw,4rem)}.ghx-site .start-hero .release-art{max-width:520px;align-self:center}}
+
+/* GhostHeart visual direction update: Love in the Ruins. */
+:root{
+  --ghx-bg:#060607;
+  --ghx-panel:#101012;
+  --ghx-white:#f3eee7;
+  --ghx-muted:#aaa5a2;
+  --ghx-red:#d6101d;
+  --ghx-soft:#ff4a4f;
+  --ghx-line:#3a2527;
+  --red:#a30e18;
+  --ember:#d6101d;
+  --ember-light:#ff4a4f;
+}
+body.ghx-site{background:#060607;color:var(--ghx-white)}
+.ghx-site .ghx-header{background:#060607ed;border-bottom-color:#4a1d21}
+.ghx-site .ghx-hero{
+  background:
+    linear-gradient(90deg,#060607f7 0%,#060607df 33%,#06060758 72%,#06060712 100%),
+    url('../images/brand/ghostheart-world-wide.png') center right/cover no-repeat;
+  border-bottom-color:#5a1b20;
+}
+.ghx-site .ghx-hero-art{display:none}
+.ghx-site .ghx-hero-grid{grid-template-columns:minmax(0,1fr);min-height:720px}
+.ghx-site .ghx-hero-copy{max-width:620px;padding-block:6rem}
+.ghx-site .ghx-hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.06em;text-shadow:0 3px 20px #000}
+.ghx-site .ghx-hero h1 span,.ghx-site h1 span,.ghx-site .ghx-section h2 span,.ghx-purpose h2 span{color:#ff3e47}
+.ghx-site .ghx-brand{font-family:Georgia,'Times New Roman',serif;letter-spacing:.02em}
+.ghx-site h2,.ghx-site h3{font-family:Georgia,'Times New Roman',serif}
+.ghx-site .primary{background:#b70f1b;border-color:#f04a4f}
+.ghx-site .primary:hover{background:#d6101d}
+.ghx-site .ghx-manifesto{background:#0e0b0c;border-bottom-color:#4a1d21}
+.ghx-site .ghx-manifesto b,.ghx-site .ghx-kicker,.ghx-site .kicker,.ghx-site .ghx-brand span{color:#ff4a4f}
+.ghx-story-hero,.ghx-films-hero{
+  background-image:
+    linear-gradient(90deg,#060607f7 8%,#060607ba 53%,#06060720 100%),
+    url('../images/brand/ghostheart-world-wide.png');
+  background-size:cover;
+  background-position:center;
+}
+.ghx-site .start-hero .release-art img{
+  content:url('../images/brand/ghostheart-world-circle.png');
+  object-fit:contain;
+  background:#060607;
+}
+.ghx-site .ghx-film .film-frame{border-color:#4a2529}
+.ghx-site .ghx-film .film-play{border-color:#ffaaa8;background:#060607e8}
+.ghx-site .ghx-purpose{background:radial-gradient(ellipse at 5% 90%,#8f101c45,transparent 65%),#100b0d;border-color:#5a1b20}
+@media(max-width:700px){
+  .ghx-site .ghx-hero{background-position:58% center}
+  .ghx-site .ghx-hero-grid{min-height:650px}
+  .ghx-site .ghx-hero-copy{padding-block:4.5rem 3rem}
+}
