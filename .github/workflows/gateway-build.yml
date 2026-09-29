@@ -1,52 +1,10 @@
-name: Build and verify GhostHeart gateway
+name: Original gateway builder (superseded)
 on:
-  push:
-    branches: [codex/ghostheart-batch1-batch2-repairs-20260824]
-    paths:
-      - .github/scripts/build_gateway.py
-      - .github/scripts/test_gateway.cjs
-      - .github/workflows/gateway-build.yml
-      - assets/shared/gateway-v2.css
-      - assets/shared/gateway-v2.js
-      - assets/angel/gh-1829-approved-wingless.webp
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  gateway:
+  explain:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: codex/ghostheart-batch1-batch2-repairs-20260824
-      - name: Install pinned build dependencies
-        run: |
-          python3 -m pip install --disable-pip-version-check Pillow==11.3.0
-          npm install --prefix /tmp/gh-browser --no-audit --no-fund playwright@1.55.1
-          /tmp/gh-browser/node_modules/.bin/playwright install --with-deps chromium
-      - name: Generate the approved public pages
-        run: |
-          python3 .github/scripts/build_gateway.py
-          python3 .github/scripts/build_journal.py
-      - name: Validate website and JavaScript
-        run: |
-          python3 .github/scripts/validate_site.py
-          find assets -name '*.js' -type f -print0 | xargs -0 -n1 node --check
-      - name: Test desktop, mobile, reading and signup routing
-        env:
-          NODE_PATH: /tmp/gh-browser/node_modules
-        run: |
-          python3 -m http.server 8765 > /tmp/ghostheart-server.log 2>&1 &
-          SERVER_PID=$!
-          trap 'kill "$SERVER_PID"' EXIT
-          node .github/scripts/test_gateway.cjs
-      - name: Save tested output on the existing repair branch
-        run: |
-          git config user.name 'GhostHeart Website Build'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- '*.html' '*.xml' 'assets/images/web-v2' '.github/content/journal.json' '.github/scripts/build_journal.py' '.github/GATEWAY_STATUS.md' '.github/email/welcome-draft.html.txt' '.github/evidence/gateway-v2'
-          if ! git diff --cached --quiet; then
-            git commit -m 'Build verified cinematic gateway, public introduction and signup path'
-            git push origin HEAD:codex/ghostheart-batch1-batch2-repairs-20260824
-          fi
+      - run: echo 'Use the Finish and verify GhostHeart website workflow. It runs the original gateway generator and final reconciliation together. This old entry point never overwrites the finished site.'

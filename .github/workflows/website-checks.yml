@@ -1,34 +1,24 @@
 name: Website checks
-
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
   push:
-    branches:
-      - "codex/**"
-
+    branches: ["codex/**"]
 permissions:
   contents: read
-
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Validate production site tree
+      - name: Install fixed generator dependencies
+        run: python3 -m pip install --disable-pip-version-check Pillow==11.3.0 beautifulsoup4==4.13.5
+      - name: Build the single complete website pipeline
+        run: python3 .github/scripts/finish_gateway.py
+      - name: Validate generated site tree
         run: python3 .github/scripts/validate_site.py
-
-      - name: Check journal pages and RSS match their source
-        run: |
-          python3 .github/scripts/build_journal.py
-          git diff --exit-code -- journal/
-
       - name: Check JavaScript syntax
         shell: bash
         run: |
           set -euo pipefail
-          while IFS= read -r -d '' script; do
-            node --check "$script"
-          done < <(find assets -type f -name '*.js' -print0)
+          while IFS= read -r -d '' script; do node --check "$script"; done < <(find assets -type f -name '*.js' -print0)

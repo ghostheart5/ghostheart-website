@@ -1,0 +1,52 @@
+name: Finish and verify GhostHeart website
+on:
+  push:
+    branches: [codex/ghostheart-batch1-batch2-repairs-20260824]
+    paths:
+      - .github/scripts/finish_gateway.py
+      - .github/scripts/test_finish.cjs
+      - .github/workflows/gateway-finalize.yml
+      - assets/shared/library-v3.css
+      - assets/shared/library-v3.js
+permissions:
+  contents: read
+concurrency:
+  group: ghostheart-finish-existing-branch
+  cancel-in-progress: false
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/ghostheart-batch1-batch2-repairs-20260824
+      - name: Install fixed build dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check Pillow==11.3.0 beautifulsoup4==4.13.5
+          npm install --prefix /tmp/gh-browser --no-audit --no-fund playwright@1.55.1
+          /tmp/gh-browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Generate completed public site
+        run: python3 .github/scripts/finish_gateway.py
+      - name: Validate all local pages and JavaScript
+        run: |
+          python3 .github/scripts/validate_site.py
+          find assets -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+      - name: Browser acceptance tests with external requests intercepted
+        env:
+          NODE_PATH: /tmp/gh-browser/node_modules
+        run: |
+          python3 -m http.server 8765 > /tmp/ghostheart-finish-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          node .github/scripts/test_finish.cjs
+      - name: Save tested output to existing repair branch
+        run: |
+          git config user.name 'GhostHeart Website Build'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html' '*.xml' 'assets' '.github/content' '.github/scripts/build_journal.py' '.github/GATEWAY_STATUS.md' '.github/email' '.github/evidence/site-finish'
+          if ! git diff --cached --quiet; then
+            git commit -m 'Finish searchable GhostHeart libraries, collection connections and quote accessibility'
+            git push origin HEAD:codex/ghostheart-batch1-batch2-repairs-20260824
+          fi
