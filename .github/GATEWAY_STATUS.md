@@ -4,4 +4,4 @@ Public website scope: searchable film and recording libraries; current Rebellion
 
 Mailchimp: authentication blocker persists. Existing audience and form destination retained. Prepared welcome templates include provider footer/unsubscribe merge tags. Welcome activation, sending-domain verification, subscriber confirmation, delivered email, unsubscribes, newsletter scheduling and social scheduling are NOT verified or activated. No real signup or email send occurs in browser tests.
 
-Build command: python3 .github/scripts/finish_gateway.py. This runs the existing gateway and journal generators plus final legacy reconciliation. Rebuilds use .github/content/site-library.json, preserving the exact public quotes, recording cards and collection inputs.
+Build command: python3 .github/scripts/build_site.py. This runs the existing gateway and journal generators plus final legacy reconciliation. Rebuilds use .github/content/site-library.json, preserving the exact public quotes, recording cards and collection inputs.
