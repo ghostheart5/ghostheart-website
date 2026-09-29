@@ -4,8 +4,9 @@
     "title": "This is GhostHeart.",
     "category": "The story",
     "published": "2026-09-25T16:13:00+00:00",
+    "updated": "2026-09-28T19:57:59-05:00",
     "summary": "The name, the scars, and the reason a hidden heart chose to be seen.",
-    "image": "/assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "image": "/assets/videos/youtube/AOCRvtz92JM.jpg",
     "paragraphs": [
       "GhostHeart is one lived story told through music, film, words, and visual storytelling. The music is a way into the larger story.",
       "The heart survived. Then it chose a purpose.",
@@ -13,7 +14,7 @@
     ],
     "links": [
       {"label": "Read the story", "url": "/GhostHeart_Story.html"},
-      {"label": "Watch This Is GhostHeart", "url": "https://www.youtube.com/watch?v=kF1Cc_GB6AM"}
+      {"label": "Watch This Is GhostHeart", "url": "https://www.youtube.com/watch?v=AOCRvtz92JM"}
     ],
     "sources": ["index.html", "start/index.html"]
   },
@@ -22,8 +23,9 @@
     "title": "GhostHeart’s Oath",
     "category": "The promise",
     "published": "2026-09-25T16:12:00+00:00",
+    "updated": "2026-09-28T19:57:59-05:00",
     "summary": "The promise to protect the light in others.",
-    "image": "/assets/videos/youtube/DQcl28CHE_o.jpg",
+    "image": "/assets/videos/youtube/mBAsUNX3vHQ.jpg",
     "paragraphs": [
       "Meet the heart behind the name. Then hear the promise it chose to carry.",
       "The promise to protect the light in others.",
@@ -31,7 +33,7 @@
     ],
     "links": [
       {"label": "Explore the mission", "url": "/GhostHeart_Version_Mission.html"},
-      {"label": "Watch GhostHeart’s Oath", "url": "https://www.youtube.com/watch?v=DQcl28CHE_o"}
+      {"label": "Watch GhostHeart’s Oath", "url": "https://www.youtube.com/watch?v=mBAsUNX3vHQ"}
     ],
     "sources": ["index.html", "start/index.html"]
   },

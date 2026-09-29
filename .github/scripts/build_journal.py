@@ -48,7 +48,7 @@ def shell(title, description, path, body, image, article=None):
     if article:
         data = {'@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': article['title'],
                 'description': article['summary'], 'datePublished': article['published'],
-                'dateModified': article['published'], 'mainEntityOfPage': BASE + path,
+                'dateModified': article.get('updated', article['published']), 'mainEntityOfPage': BASE + path,
                 'image': BASE + image, 'author': {'@type': 'Organization', 'name': 'GhostHeart', 'url': BASE + '/'}}
         structured = '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace('<', '\\u003c') + '</script>'
     return f'''<!DOCTYPE html>
@@ -103,7 +103,7 @@ rss = ET.Element('rss', {'version': '2.0'})
 channel = ET.SubElement(rss, 'channel')
 for tag, value in [('title', 'GhostHeart Journal'), ('link', BASE + '/journal/'),
                    ('description', 'Song stories, films, and notes from the world of GhostHeart.'), ('language', 'en-us'),
-                   ('lastBuildDate', format_datetime(date(POSTS[0]))), ('copyright', '2026 GhostHeart')]:
+                   ('lastBuildDate', format_datetime(max(datetime.fromisoformat(post.get('updated', post['published'])) for post in POSTS))), ('copyright', '2026 GhostHeart')]:
     ET.SubElement(channel, tag).text = value
 ET.SubElement(channel, '{http://www.w3.org/2005/Atom}link', {'href': BASE + '/journal/feed.xml', 'rel': 'self', 'type': 'application/rss+xml'})
 for post in POSTS:
