@@ -72,8 +72,8 @@ a { color: inherit; }
 .project { display: grid; grid-template-columns: minmax(280px, .72fr) 1.28fr; min-height: 420px; border: 1px solid var(--line); background: #111216; }
 .project + .project { margin-top: 2rem; }
 .project-art { min-height: 320px; position: relative; overflow: hidden; isolation: isolate; }
-.chronospark .project-art { background: radial-gradient(circle at 58% 48%, rgba(255,173,51,.3), transparent 27%), linear-gradient(145deg, #1a110b, #0c0d0f 72%); }
-.chronospark .project-art::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .37; background-image: linear-gradient(rgba(255,173,51,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,173,51,.22) 1px, transparent 1px); background-size: 42px 42px; transform: perspective(500px) rotateX(54deg) scale(1.4) translateY(20%); }
+.axiomara .project-art { background: radial-gradient(circle at 58% 48%, rgba(255,173,51,.3), transparent 27%), linear-gradient(145deg, #1a110b, #0c0d0f 72%); }
+.axiomara .project-art::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .37; background-image: linear-gradient(rgba(255,173,51,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,173,51,.22) 1px, transparent 1px); background-size: 42px 42px; transform: perspective(500px) rotateX(54deg) scale(1.4) translateY(20%); }
 .art-code { position: absolute; top: 1.6rem; left: 1.6rem; font-family: Georgia, serif; color: rgba(238,234,223,.2); font-size: 4rem; font-weight: 700; letter-spacing: -.08em; line-height: 1; }
 .clock { position: absolute; width: min(56%, 260px); aspect-ratio: 1; left: 50%; top: 48%; border: 2px solid rgba(255,173,51,.72); border-radius: 50%; transform: translate(-50%, -50%) rotate(-8deg); box-shadow: 0 0 0 18px rgba(255,173,51,.05), 0 0 70px rgba(255,79,36,.2); }
 .clock::before, .clock::after { content: ""; position: absolute; inset: 14%; border: 1px dashed rgba(238,234,223,.28); border-radius: 50%; }

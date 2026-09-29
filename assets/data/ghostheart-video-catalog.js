@@ -1,4 +1,4 @@
-// GhostHeart-first website selection. Public replacement IDs verified in YouTube Studio September 24, 2026.
+// Current public film references. Rebuild pages through finish_gateway.py.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
   {
     "key": "this-is-ghostheart",
@@ -58,7 +58,9 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "key": "human-too-remake",
     "cardId": "film-human-too-remake",
     "featured": false,
-    "meta": ["Human Too · Cinematic remake"],
+    "meta": [
+      "Human Too · Cinematic remake"
+    ],
     "title": "Human Too",
     "videoTitle": "Human Too | A GhostHeart Cinematic Remake",
     "provider": "youtube",
@@ -70,7 +72,12 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "title": "Human Too",
       "href": "albums/human-after-all/index.html"
     },
-    "related": [{"href": "start/index.html", "label": "Enter the GhostHeart story"}],
+    "related": [
+      {
+        "href": "start/index.html",
+        "label": "Enter the GhostHeart story"
+      }
+    ],
     "accessibility": "Use the YouTube player CC control for available captions.",
     "thumbnail": "assets/videos/youtube/ARCFOZSOC_o.jpg"
   },
@@ -107,7 +114,6 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "cardId": "film-i-wont-pretend-to-speak-for-you",
     "featured": false,
     "meta": [
-      "Current album spotlight",
       "You’re Not God"
     ],
     "title": "I Won’t Pretend to Speak for You",
@@ -206,9 +212,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "youtubeId": "jvHS5j00FL4",
     "description": "The love that recognized the fire before GhostHeart knew its name.",
-    "meta": [
-      "The Versions of GhostHeart"
-    ],
+    "meta": [],
     "song": {
       "label": "Meet the Angel",
       "accessibleLabel": "Meet the Angel — The Angel Who Made GhostHeart",
@@ -232,7 +236,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "videoTitle": "The Man Beneath the Moon | GhostHeart",
     "provider": "youtube",
     "youtubeId": "_mUU-toMlM8",
-    "description": "The public film with the corrected vocal ending.",
+    "description": "A GhostHeart film about the life behind the name.",
     "meta": [
       "Life Before GhostHeart"
     ],
@@ -380,8 +384,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [
       {
-        "href": "GhostHeart_Version_Father.html",
-        "label": "The father’s purpose"
+        "href": "GhostHeart_Story.html",
+        "label": "Continue the story"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -539,6 +543,26 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
     "youtubeId": "QkcN_aryYOk",
     "thumbnail": "assets/videos/youtube/QkcN_aryYOk.jpg",
+    "featured": false
+  },
+  {
+    "key": "rebellion",
+    "cardId": "film-rebellion",
+    "title": "Rebellion",
+    "videoTitle": "GhostHeart – Rebellion (Official Music Video) | Love Is Not Rebellion",
+    "youtubeId": "FaT_Ibrs9Y0",
+    "provider": "youtube",
+    "description": "Love doesn’t ask permission to exist.",
+    "meta": [
+      "Official music video"
+    ],
+    "song": {
+      "label": "Explore Love is Love",
+      "href": "albums/love-is-love/index.html#rebellion"
+    },
+    "related": [],
+    "accessibility": "Use the YouTube player CC control for available captions.",
+    "thumbnail": "assets/videos/youtube/FaT_Ibrs9Y0.jpg",
     "featured": false
   }
 ]);

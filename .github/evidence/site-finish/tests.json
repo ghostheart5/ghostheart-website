@@ -1,0 +1,602 @@
+{
+  "status": "passed",
+  "layoutChecks": 116,
+  "layouts": [
+    {
+      "path": "/",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Resources.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Privacy.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Quotes.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Videos.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Songs.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Versions.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Version_Mission.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/signup/check-your-inbox.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/signup/confirmed.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/broken-man/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghostheart/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghosthearts-angel/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/fatherhood/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/human-after-all/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/love-is-love/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/the-ones-we-carry/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/uplifting/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/albums/youre-not-god/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Resources.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Privacy.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Quotes.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Videos.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Songs.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Versions.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Version_Mission.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/signup/check-your-inbox.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/signup/confirmed.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/broken-man/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghostheart/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghosthearts-angel/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/fatherhood/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/human-after-all/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/love-is-love/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/the-ones-we-carry/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/uplifting/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/albums/youre-not-god/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Resources.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Privacy.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Quotes.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Videos.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Songs.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Versions.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Version_Mission.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/signup/check-your-inbox.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/signup/confirmed.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/broken-man/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghostheart/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghosthearts-angel/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/fatherhood/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/human-after-all/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/love-is-love/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/the-ones-we-carry/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/uplifting/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/albums/youre-not-god/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Resources.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Privacy.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Quotes.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Videos.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Songs.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Versions.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Version_Mission.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/signup/check-your-inbox.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/signup/confirmed.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/broken-man/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghostheart/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/ghosthearts-angel/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/fatherhood/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/human-after-all/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/love-is-love/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/the-ones-we-carry/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/uplifting/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/albums/youre-not-god/index.html",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "exactQuotesPreserved": 17,
+  "originalRecordingLinksPreserved": true,
+  "angelBeforeFatherhood": true,
+  "rebellionAndHumanTooConnected": true,
+  "fatherhoodHasTheDad": true,
+  "searchAndDeepLinks": true,
+  "quoteCopyAndFocus": true,
+  "readingBookmarkOptInAndRemoval": true,
+  "noJavaScriptContent": true,
+  "emptyEmailRejected": true,
+  "signupRequestIntercepted": true,
+  "actualSignupSent": false,
+  "emailDeliveryVerified": false,
+  "newsletterActivated": false,
+  "fullExternalVideoPlaybackTested": false,
+  "browserErrors": []
+}

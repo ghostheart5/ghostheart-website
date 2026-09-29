@@ -1,0 +1,976 @@
+{
+  "schema": 1,
+  "source_commit": "988283c66051f75f08aba5fac0abbfe235b5ff89",
+  "collections": {
+    "broken-man": {
+      "title": "Broken Man",
+      "description": "The strength hidden inside people the world has written off.",
+      "paragraphs": [
+        "<p>BROKEN MAN is an album about the battles people carry in silence—addiction, abuse, grief, shame, mental illness, and the fight to survive yourself.</p>",
+        "<p>This isn’t a request for sympathy, and it isn’t pain competing against pain. These songs tell the truth about being broken, what it takes to keep going, and the strength hidden inside people the world has written off.</p>",
+        "<p>If one song helps someone feel understood—or gives them enough strength to make it through another day—then this album has done what it was created to do.</p>",
+        "<p>Welcome to BROKEN MAN.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "the-man-beneath-the-moon",
+          "title": "The Man Beneath the Moon",
+          "meta": "Fixed Vocal Ending",
+          "links": [
+            {
+              "url": "/albums/broken-man/index.html#watch-the-man-beneath-the-moon",
+              "label": "Watch ▶ The Man Beneath the Moon"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=_mUU-toMlM8",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "_mUU-toMlM8"
+        },
+        {
+          "id": "look-at-me",
+          "title": "Look at Me",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/broken-man/index.html#watch-look-at-me",
+              "label": "Watch ▶ Look at Me"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=nVC1kB0MREA",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "nVC1kB0MREA"
+        }
+      ]
+    },
+    "ghostheart": {
+      "title": "GhostHeart",
+      "description": "The name, the scars, and the heart behind GhostHeart.",
+      "paragraphs": [
+        "<p>The name, the scars, and the heart behind GhostHeart.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "heart-of-the-ashes",
+          "title": "Heart of the Ashes",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/ghostheart/index.html#watch-heart-of-the-ashes",
+              "label": "Watch ▶ Heart of the Ashes"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Wgdfz9q394U",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "Wgdfz9q394U"
+        },
+        {
+          "id": "this-is-ghostheart",
+          "title": "This Is GhostHeart",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/ghostheart/index.html#watch-this-is-ghostheart",
+              "label": "Watch ▶ This Is GhostHeart"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=AOCRvtz92JM",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "AOCRvtz92JM"
+        },
+        {
+          "id": "ghosthearts-oath",
+          "title": "GhostHeart’s Oath",
+          "meta": "I Protect the Light",
+          "links": [
+            {
+              "url": "/albums/ghostheart/index.html#watch-ghosthearts-oath",
+              "label": "Watch ▶ GhostHeart’s Oath"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=mBAsUNX3vHQ",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "mBAsUNX3vHQ"
+        }
+      ]
+    },
+    "ghosthearts-angel": {
+      "title": "GhostHearts Angel",
+      "description": "I got you for life.",
+      "paragraphs": [
+        "<p>GHOSTHEART’S ANGEL is the love story behind GhostHeart—the story of the person who saw the heart beneath the scars and never asked it to hide.</p>",
+        "<p>These songs are about finding love in the ashes, choosing each other through every battle, and building something real when the world gives you every reason to break. From Pretty Girl to Nine Years and Counting, every song holds a piece of our story—the laughter, loyalty, chaos, healing, promises, and quiet moments that made forever feel possible.</p>",
+        "<p>This isn’t a perfect fairytale. It’s a real love that was tested, stood against the world, and kept choosing one promise:</p>",
+        "<p>I got you for life.</p>",
+        "<p>GhostHeart may have been shaped by pain, but GhostHeart’s Angel helped turn that pain into purpose.</p>",
+        "<p>This is for my angel—the one who walked into the ashes, held my heart without fear, and helped me become GhostHeart.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "angel-in-the-ashes",
+          "title": "Angel in the Ashes",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/ghosthearts-angel/index.html#watch-angel-in-the-ashes",
+              "label": "Watch ▶ Angel in the Ashes"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=rSZT1Nd4Xlk",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "rSZT1Nd4Xlk"
+        },
+        {
+          "id": "the-angel-who-made-ghostheart",
+          "title": "The Angel Who Made GhostHeart",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/ghosthearts-angel/index.html#watch-the-angel-who-made-ghostheart",
+              "label": "Watch ▶ The Angel Who Made GhostHeart"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=jvHS5j00FL4",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "jvHS5j00FL4"
+        }
+      ]
+    },
+    "fatherhood": {
+      "title": "FatherHood",
+      "description": "What we inherit, what we refuse to pass down, and the love we choose to give.",
+      "paragraphs": [
+        "<p>FATHERHOOD is the story of what we inherit from our fathers, what we refuse to pass down, and the love we choose to give our children.</p>",
+        "<p>These songs carry every side of being a dad—the fear, responsibility, sacrifice, mistakes, pride, protection, and moments that make everything worth it. It is about breaking cycles and becoming the father I needed while learning to be the father my children deserve.</p>",
+        "<p>This album isn’t about being perfect. It’s about showing up, loving without limits, admitting when you’re wrong, and leaving your children more light than pain.</p>",
+        "<p>Every song is part confession, part promise, and part legacy.</p>",
+        "<p>This is FATHERHOOD.</p>"
+      ],
+      "tracks": []
+    },
+    "human-after-all": {
+      "title": "Human After All",
+      "description": "No label tells the whole story.",
+      "paragraphs": [
+        "<p>HUMAN AFTERALL is for everyone who has ever been reduced to a label—the addicted, abused, judged, mentally ill, outcast, broken, or written off.</p>",
+        "<p>Behind every mistake, scar, relapse, diagnosis, and bad decision is a human being with a story most people never stopped to hear.</p>",
+        "<p>These songs don’t excuse the damage people cause. They refuse to believe that pain, failure, or the worst chapter of someone’s life erases their humanity. They speak for survivors learning to feel again, people fighting battles in silence, and anyone trying to become more than what they have done—or what was done to them.</p>",
+        "<p>No label tells the whole story. We are imperfect, wounded, learning, and still trying.</p>",
+        "<p>We are Human Afterall.</p>",
+        "<p>This album doesn’t ask you to look away from the truth. It asks you to look closer.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "human-too",
+          "title": "Human Too",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/GhostHeart_Songs.html#human-too",
+              "label": "Find the recording ↗"
+            }
+          ],
+          "video": null
+        },
+        {
+          "id": "what-did-you-take-from-her",
+          "title": "What Did You Take From Her?",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/human-after-all/index.html#watch-what-did-you-take-from-her",
+              "label": "Watch ▶ What Did You Take From Her?"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=SkILbypDhxQ",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "SkILbypDhxQ"
+        }
+      ]
+    },
+    "love-is-love": {
+      "title": "Love is Love",
+      "description": "Love doesn’t ask permission to exist. Love is love.",
+      "paragraphs": [
+        "<p>LOVE IS LOVE is an album for every heart that has ever been told its love was wrong.</p>",
+        "<p>These songs ask one simple question: If love is honest, loyal, compassionate, and built to last, why should it be judged by who is holding hands?</p>",
+        "<p>Love that protects, forgives, remains faithful, and creates a home does not become less real—or less sacred—because someone else refuses to understand it.</p>",
+        "<p>This album isn’t asking for permission or approval. It is refusing to let judgment speak louder than truth. Love is not a label, a political argument, or a rule written by people who have never lived your story.</p>",
+        "<p>“They call it rebellion when you love who you want.”</p>",
+        "<p>Maybe the greatest rebellion is choosing love anyway.</p>",
+        "<p>Love doesn’t ask permission to exist. Love is love.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "rebellion",
+          "title": "Rebellion",
+          "meta": "Graffiti Lyric Video",
+          "links": [
+            {
+              "url": "/GhostHeart_Songs.html#song-rebellion",
+              "label": "Find the recording ↗"
+            }
+          ],
+          "video": null
+        },
+        {
+          "id": "you-cant-change-us",
+          "title": "You Can’t Change Us",
+          "meta": "Official Music Video",
+          "links": [
+            {
+              "url": "/albums/love-is-love/index.html#watch-you-cant-change-us",
+              "label": "Watch ▶ You Can’t Change Us"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=oRzkEBDVccM",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "oRzkEBDVccM"
+        }
+      ]
+    },
+    "the-ones-we-carry": {
+      "title": "The Ones We Carry",
+      "description": "They were here. They were loved. They still matter.",
+      "paragraphs": [
+        "<p>THE ONES WE CARRY is for the people we have lost to suicide—and those left behind carrying the love, questions, anger, guilt, and memories.</p>",
+        "<p>They were more than the way they died. They were laughter, dreams, flaws, kindness, private battles, ordinary moments, and entire lives. These songs remember the people behind the loss and the love that does not disappear when someone is gone.</p>",
+        "<p>This album does not romanticize suicide or pretend grief has simple answers. It gives a voice to everything left in the silence—the signs we wish we had noticed, the words we wish we had said, and the painful work of continuing to live while carrying someone who can no longer walk beside us.</p>",
+        "<p>We carry their names.<br/>We carry their stories.<br/>We carry their light.</p>",
+        "<p>They were here. They were loved. They still matter.</p>",
+        "<p class=\"support-note\">If you are struggling, please tell someone today. In the United States, call or text 988 for free, confidential crisis support. If you are elsewhere, contact your local crisis service or emergency number.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "still",
+          "title": "Still",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/GhostHeart_Songs.html#song-still",
+              "label": "Find the recording ↗"
+            }
+          ],
+          "video": null
+        },
+        {
+          "id": "why-didnt-you-call",
+          "title": "Why Didn’t You Call?",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/the-ones-we-carry/index.html#watch-why-didnt-you-call",
+              "label": "Watch ▶ Why Didn’t You Call?"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=YHp4i52smhk",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "YHp4i52smhk"
+        },
+        {
+          "id": "i-still-would",
+          "title": "I Still Would",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/the-ones-we-carry/index.html#watch-i-still-would",
+              "label": "Watch ▶ I Still Would"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=2z1IUv-Hamc",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "2z1IUv-Hamc"
+        },
+        {
+          "id": "just-not-this-morning",
+          "title": "Just Not This Morning",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/the-ones-we-carry/index.html#watch-just-not-this-morning",
+              "label": "Watch ▶ Just Not This Morning"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=XWmMYqkvdzg",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "XWmMYqkvdzg"
+        }
+      ]
+    },
+    "uplifting": {
+      "title": "UpLifting",
+      "description": "Your worst day does not get to write your ending.",
+      "paragraphs": [
+        "<p>UPLIFTING is music for the days when you need to remember that your story isn’t over.</p>",
+        "<p>These songs don’t pretend life is easy or that pain disappears when you smile. They come from surviving the darkness and discovering that hope isn’t the absence of struggle—it’s choosing to rise while still carrying the scars.</p>",
+        "<p>Whether you’re rebuilding your life, fighting a battle nobody sees, or simply searching for enough strength to take the next step, this playlist is here to remind you:</p>",
+        "<p>You are still here.<br/>You are still becoming.<br/>You still have light left to give.</p>",
+        "<p>Your worst day does not get to write your ending.</p>",
+        "<p>The sunrise doesn’t ask for permission—and neither should you.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "sunrise-doesnt-ask-for-permission",
+          "title": "Sunrise Doesn’t Ask for Permission",
+          "meta": "GhostHeart",
+          "links": [
+            {
+              "url": "/albums/uplifting/index.html#watch-sunrise-doesnt-ask-for-permission",
+              "label": "Watch ▶ Sunrise Doesn’t Ask for Permission"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=wxm8Qt6li4A",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "wxm8Qt6li4A"
+        }
+      ]
+    },
+    "youre-not-god": {
+      "title": "You're Not God",
+      "description": "You can have your beliefs. You do not get to play God.",
+      "paragraphs": [
+        "<p>YOU’RE NOT GOD is for everyone who has been judged, shamed, controlled, or cast aside by people claiming they speak for heaven.</p>",
+        "<p>This album is not an attack on faith. It is a confrontation with hypocrisy—the preacher demanding purity while hiding their own sins, the believer using scripture as a weapon, and anyone who mistakes personal hatred for God’s voice.</p>",
+        "<p>From That Ain’t Holy to Hey Preacher Man, these songs expose what happens when love is replaced by fear, compassion becomes control, and religion is used to excuse cruelty.</p>",
+        "<p>No human gets to decide whose life has value, whose love is real, or who deserves grace. You can stand behind a pulpit, a title, or a crowd—but you are still human.</p>",
+        "<p>If your faith requires cruelty, that ain’t holy.<br/>If your God sounds exactly like your hate, maybe that’s your voice.</p>",
+        "<p>You can have your beliefs. You do not get to play God.</p>",
+        "<p>This is YOU’RE NOT GOD.</p>"
+      ],
+      "tracks": [
+        {
+          "id": "i-wont-pretend-to-speak-for-you",
+          "title": "I Won’t Pretend to Speak for You",
+          "meta": "Official Lyric Video",
+          "links": [
+            {
+              "url": "/albums/youre-not-god/index.html#watch-i-wont-pretend-to-speak-for-you",
+              "label": "Watch ▶ I Won’t Pretend to Speak for You"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=z-FRCpG9vfw",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "z-FRCpG9vfw"
+        },
+        {
+          "id": "hey-preacher-man",
+          "title": "Hey Preacher Man",
+          "meta": "Official Graffiti Lyric Video",
+          "links": [
+            {
+              "url": "/albums/youre-not-god/index.html#watch-hey-preacher-man",
+              "label": "Watch ▶ Hey Preacher Man"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=2SEng4dmgUc",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "2SEng4dmgUc"
+        },
+        {
+          "id": "that-aint-holy",
+          "title": "That Ain’t Holy",
+          "meta": "Official Lyric Video",
+          "links": [
+            {
+              "url": "/albums/youre-not-god/index.html#watch-that-aint-holy",
+              "label": "Watch ▶ That Ain’t Holy"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ptYn4vh6DCQ",
+              "label": "YouTube ↗"
+            }
+          ],
+          "video": "ptYn4vh6DCQ"
+        }
+      ]
+    }
+  },
+  "legacy_ids": {
+    "GhostHeart_Version_Unprotected.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-unprotected"
+    ],
+    "GhostHeart_Version_Son.html": [
+      "gateway-menu",
+      "purpose-main",
+      "purpose-experience",
+      "purpose-experience-title"
+    ],
+    "GhostHeart_Projects.html": [
+      "gateway-menu",
+      "main-content",
+      "hero-title",
+      "mission-title",
+      "projects",
+      "projects-title",
+      "axiomara",
+      "chronospark-title",
+      "chronospark-mission",
+      "shadowfire-title",
+      "shadowfire-mission",
+      "closing-title"
+    ],
+    "GhostHeart_Quotes.html": [
+      "gateway-menu",
+      "main-content",
+      "hero-title",
+      "quote-archive",
+      "vault-title",
+      "quote-search",
+      "clear-search",
+      "result-count",
+      "quote-grid",
+      "copy-status",
+      "show-more"
+    ],
+    "GhostHeart_Resources.html": [
+      "resources-redesign",
+      "gateway-menu",
+      "resources-main",
+      "page-title",
+      "urgent-title",
+      "catalog-title",
+      "result-status",
+      "resource-grid",
+      "r01",
+      "r02",
+      "r03",
+      "r04",
+      "r05",
+      "r06",
+      "r07",
+      "r08",
+      "r09",
+      "r10",
+      "r11",
+      "r12",
+      "r13",
+      "r14",
+      "r15",
+      "r16",
+      "before-title"
+    ],
+    "GhostHeart_Version_Reclaimed_Self.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-reclaimed_self"
+    ],
+    "GhostHeart_Version_Mind_At_War.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-mind_at_war"
+    ],
+    "GhostHeart_Version_Outcast.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-outcast"
+    ],
+    "GhostHeart_Angel.html": [
+      "gateway-menu",
+      "main-content",
+      "join-the-signal",
+      "angel-email",
+      "angel-note"
+    ],
+    "index.html": [
+      "gateway-menu",
+      "main-content",
+      "home",
+      "films",
+      "film-AOCRvtz92JM",
+      "film-mBAsUNX3vHQ",
+      "join-the-signal",
+      "signal-email",
+      "signal-note"
+    ],
+    "GhostHeart_Version_Hope.html": [
+      "gateway-menu",
+      "purpose-main",
+      "purpose-experience",
+      "purpose-experience-title"
+    ],
+    "GhostHeart_Versions.html": [
+      "gateway-menu",
+      "main",
+      "hero-title",
+      "voices",
+      "voices-title",
+      "voice-spotlight",
+      "spotlight-image",
+      "spotlight-number",
+      "spotlight-theme",
+      "spotlight-title",
+      "spotlight-lede",
+      "voice-status",
+      "core-voice-player",
+      "voice-transcript-text",
+      "purpose-versions",
+      "purpose-title",
+      "purpose-spotlight",
+      "purpose-spotlight-image",
+      "purpose-number",
+      "purpose-spotlight-title",
+      "purpose-primary",
+      "purpose-secondary",
+      "versions-playlist-title"
+    ],
+    "GhostHeart_Version_Father.html": [
+      "gateway-menu",
+      "purpose-main",
+      "purpose-experience",
+      "purpose-experience-title"
+    ],
+    "GhostHeart_Homepage.html": [],
+    "GhostHeart_Story.html": [
+      "gateway-menu",
+      "main-content",
+      "join-the-signal",
+      "story-email",
+      "story-note"
+    ],
+    "GhostHeart_Version_Mission.html": [
+      "gateway-menu",
+      "purpose-main",
+      "mission-playlist-title",
+      "purpose-experience",
+      "purpose-experience-title"
+    ],
+    "GhostHeart_Version_Numbed.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-numbed"
+    ],
+    "GhostHeart_Songs.html": [
+      "gateway-menu",
+      "main-content",
+      "hero-title",
+      "i-wont-pretend-to-speak-for-you",
+      "new-release-title",
+      "music-paths",
+      "music-paths-title",
+      "platform-title",
+      "records",
+      "catalog-title",
+      "catalog-count",
+      "song-that-aint-holy",
+      "song-you-cant-change-us-20260906",
+      "hey-preacher-man",
+      "this-is-ghostheart",
+      "song-the-angel-who-made-ghostheart",
+      "song-ghosthearts-oath",
+      "song-the-man-beneath-the-moon",
+      "song-sunrise-doesnt-ask-for-permission",
+      "song-the-dad",
+      "song-rebellion",
+      "song-you-cant-change-us",
+      "song-what-did-you-take-from-her",
+      "song-new-part-of-me",
+      "song-still",
+      "song-why-didnt-you-call",
+      "song-i-still-would",
+      "song-heart-of-the-ashes",
+      "song-angels-in-the-ashes",
+      "human-too",
+      "song-human-too",
+      "song-just-not-this-morning",
+      "song-look-at-me",
+      "song-revolving-door",
+      "song-you-cant-close-a-revolving-door",
+      "song-i-got-you-for-life",
+      "song-archive-toggle"
+    ],
+    "GhostHeart_Privacy.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "404.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "GhostHeart_Version_Written_Off.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-written_off"
+    ],
+    "GhostHeart_Version_Brother.html": [
+      "gateway-menu",
+      "purpose-main",
+      "purpose-experience",
+      "purpose-experience-title"
+    ],
+    "GhostHeart_Videos.html": [
+      "gateway-menu",
+      "main-content",
+      "films",
+      "film-search",
+      "film-results",
+      "film-this-is-ghostheart",
+      "film-ghosthearts-oath",
+      "film-human-too-remake",
+      "film-the-heart-that-fought-for-me",
+      "film-i-wont-pretend-to-speak-for-you",
+      "film-hey-preacher-man",
+      "film-that-aint-holy",
+      "film-you-cant-change-us-20260906",
+      "film-the-angel-who-made-ghostheart",
+      "film-the-man-beneath-the-moon",
+      "film-angel-in-the-ashes",
+      "film-what-did-you-take-from-her",
+      "film-heart-of-the-ashes",
+      "film-sunrise-doesnt-ask-for-permission",
+      "film-why-didnt-you-call",
+      "film-the-dad",
+      "film-i-still-would",
+      "film-just-not-this-morning",
+      "film-look-at-me",
+      "film-revolving-door",
+      "film-you-cant-close-a-revolving-door",
+      "film-i-got-you-for-life",
+      "film-empty"
+    ],
+    "GhostHeart_Version_Bonded_Heart.html": [
+      "gateway-menu",
+      "version-main",
+      "voice-title",
+      "version-voice-status",
+      "version-voice-player",
+      "signal-title",
+      "reasoning-title-bonded_heart"
+    ],
+    "journal/ghosthearts-oath.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "journal/youre-not-god.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "journal/this-is-ghostheart.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "journal/how-we-got-here.html": [
+      "gateway-menu",
+      "main-content",
+      "film-AOCRvtz92JM",
+      "film-mBAsUNX3vHQ"
+    ],
+    "journal/index.html": [
+      "gateway-menu",
+      "main-content",
+      "entries"
+    ],
+    "ghostheart-website/resources.html": [],
+    "ghostheart-website/projects.html": [],
+    "ghostheart-website/story.html": [],
+    "ghostheart-website/videos.html": [],
+    "ghostheart-website/human-too.html": [],
+    "ghostheart-website/join.html": [],
+    "ghostheart-website/quotes.html": [],
+    "ghostheart-website/index.html": [],
+    "ghostheart-website/music.html": [],
+    "story/ch-001-born-between-worlds.html": [],
+    "start/index.html": [
+      "gateway-menu",
+      "main-content",
+      "film-AOCRvtz92JM",
+      "film-mBAsUNX3vHQ",
+      "join-the-signal",
+      "start-email",
+      "start-note"
+    ],
+    "signup/check-your-inbox.html": [
+      "gateway-menu",
+      "main-content",
+      "confirmation-title",
+      "email-help-title"
+    ],
+    "signup/confirmed.html": [
+      "gateway-menu",
+      "main-content",
+      "confirmation-title",
+      "what-next-title"
+    ],
+    "live/index.html": [
+      "gateway-menu",
+      "main-content",
+      "join-the-signal",
+      "live-email",
+      "live-note"
+    ],
+    "albums/index.html": [
+      "gateway-menu",
+      "main-content",
+      "album-search",
+      "search-status"
+    ],
+    "music/index.html": [
+      "gateway-menu",
+      "main-content",
+      "film-AOCRvtz92JM",
+      "film-mBAsUNX3vHQ"
+    ],
+    "follow/index.html": [
+      "gateway-menu",
+      "main-content",
+      "follow-email",
+      "follow-note"
+    ],
+    "albums/uplifting/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "sunrise-doesnt-ask-for-permission",
+      "watch",
+      "watch-sunrise-doesnt-ask-for-permission"
+    ],
+    "albums/ghostheart/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "heart-of-the-ashes",
+      "this-is-ghostheart",
+      "ghosthearts-oath",
+      "watch",
+      "watch-heart-of-the-ashes",
+      "watch-this-is-ghostheart",
+      "watch-ghosthearts-oath"
+    ],
+    "albums/the-ones-we-carry/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "still",
+      "why-didnt-you-call",
+      "i-still-would",
+      "just-not-this-morning",
+      "watch",
+      "watch-why-didnt-you-call",
+      "watch-i-still-would",
+      "watch-just-not-this-morning"
+    ],
+    "albums/human-after-all/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "human-too",
+      "what-did-you-take-from-her",
+      "watch",
+      "watch-what-did-you-take-from-her"
+    ],
+    "albums/youre-not-god/lyrics.html": [
+      "gateway-menu",
+      "main-content"
+    ],
+    "albums/youre-not-god/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "i-wont-pretend-to-speak-for-you",
+      "hey-preacher-man",
+      "that-aint-holy",
+      "watch",
+      "watch-i-wont-pretend-to-speak-for-you",
+      "watch-hey-preacher-man",
+      "watch-that-aint-holy",
+      "remember",
+      "remember-title"
+    ],
+    "albums/love-is-love/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "rebellion",
+      "you-cant-change-us",
+      "watch",
+      "watch-you-cant-change-us"
+    ],
+    "albums/ghosthearts-angel/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "angel-in-the-ashes",
+      "the-angel-who-made-ghostheart",
+      "watch",
+      "watch-angel-in-the-ashes",
+      "watch-the-angel-who-made-ghostheart"
+    ],
+    "albums/fatherhood/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks"
+    ],
+    "albums/broken-man/index.html": [
+      "gateway-menu",
+      "main-content",
+      "about",
+      "tracks",
+      "the-man-beneath-the-moon",
+      "look-at-me",
+      "watch",
+      "watch-the-man-beneath-the-moon",
+      "watch-look-at-me"
+    ]
+  },
+  "quotes": [
+    "Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.",
+    "You can’t fight what you don’t face.",
+    "When the promise breaks, the heart must carry it.",
+    "They call it rebellion when you love who you want.",
+    "You can’t close a revolving door, but you can get out.",
+    "You can burn every bridge behind you, but ashes don’t rebuild paths.",
+    "When the fire dies, silence becomes the loudest scream.",
+    "I gave my life so yours could live—the heart that glows is the one that gave.",
+    "Some bonds burn brighter... until they consume you.",
+    "Everyone has something to say, but gets real quiet when it’s their turn.",
+    "It doesn’t matter what they say; they couldn’t handle it anyway.",
+    "I can’t draw or sing, but these are my words, and I say what I mean.",
+    "Strength is quiet until it roars.",
+    "Even broken steel remembers first.",
+    "Love doesn’t ask permission to exist.",
+    "Truth dances in silence.",
+    "Reflection is rebellion."
+  ],
+  "recordings": [
+    {
+      "id": "song-that-aint-holy",
+      "title": "That Ain't Holy",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-that-aint-holy\"><div class=\"cover\"><img alt=\"Official GhostHeart visualizer artwork for That Ain't Holy\" decoding=\"async\" height=\"360\" loading=\"lazy\" src=\"/assets/videos/youtube/pJFJXPAiPto.jpg\" width=\"480\"/></div><div class=\"record-copy\"><div class=\"record-meta\"><span>Single / 1 track</span><span>Sep 6, 2026</span><span>September release</span></div><h3>That Ain't Holy</h3><p>A father-and-son story about poverty, dignity, and mercy.</p><div class=\"record-actions\"><a class=\"button\" href=\"https://www.youtube.com/watch?v=ptYn4vh6DCQ\" rel=\"noopener noreferrer\" target=\"_blank\">Watch the lyric video</a><a class=\"button\" href=\"https://www.youtube.com/watch?v=nVWDTJfJht8\" rel=\"noopener noreferrer\" target=\"_blank\">Listen to the release</a></div></div></article>",
+      "tracks": 1
+    },
+    {
+      "id": "song-you-cant-change-us-20260906",
+      "title": "You Can't Change Us",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-you-cant-change-us-20260906\"><div class=\"cover\"><img alt=\"Official GhostHeart visualizer artwork for You Can't Change Us\" decoding=\"async\" height=\"360\" loading=\"lazy\" src=\"/assets/videos/youtube/oRzkEBDVccM.jpg\" width=\"480\"/></div><div class=\"record-copy\"><div class=\"record-meta\"><span>Single / 1 track</span><span>Sep 6, 2026</span><span>September release</span></div><h3>You Can't Change Us</h3><p>The September 6 single: a new 5:30 version. The original 3:55 recording remains on Rebellion.</p><div class=\"record-actions\"><a class=\"button\" href=\"https://www.youtube.com/watch?v=oRzkEBDVccM\" rel=\"noopener noreferrer\" target=\"_blank\">Watch the visualizer</a><a class=\"button\" href=\"https://www.youtube.com/watch?v=JBTBWeIwLV4\" rel=\"noopener noreferrer\" target=\"_blank\">Listen to the release</a></div></div></article>",
+      "tracks": 1
+    },
+    {
+      "id": "hey-preacher-man",
+      "title": "Hey Preacher Man",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"hey-preacher-man\">\n<div class=\"cover\"><img alt=\"Official Spotify cover artwork for Hey Preacher Man\" decoding=\"async\" fetchpriority=\"high\" height=\"300\" src=\"https://i.scdn.co/image/ab67616d0000b273029070343a922d937f32bf01\" width=\"300\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 10</span><span>Single • 1 track</span><span>You’re Not God</span></div>\n<h3>Hey Preacher Man</h3>\n<p>A direct answer to the judgment that tried to define a life from the outside.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch Hey Preacher Man on YouTube (opens in a new tab)\" class=\"button\" href=\"https://www.youtube.com/watch?v=2SEng4dmgUc\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to Hey Preacher Man on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/47jSQrPpUbmIPEeEpzSVoh\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
+      "tracks": 1
+    },
+    {
+      "id": "this-is-ghostheart",
+      "title": "This Is GhostHeart",
+      "html": "<article class=\"record-card\" data-track-count=\"3\" id=\"this-is-ghostheart\">\n<div class=\"cover\"><img alt=\"Official Spotify cover artwork for This Is GhostHeart\" decoding=\"async\" height=\"300\" loading=\"lazy\" src=\"https://i.scdn.co/image/ab67616d0000b27337fc55f33c8f9fca6aca07cb\" width=\"300\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 11</span><span>Multi-track • 3 tracks</span><span class=\"artist-pick\">Identity / Angel / Oath</span></div>\n<h3>This Is GhostHeart</h3>\n<p class=\"track-list\">Tracks: This Is GhostHeart • <span id=\"song-the-angel-who-made-ghostheart\">The Angel Who Made GhostHeart</span> • <span id=\"song-ghosthearts-oath\">GhostHeart's Oath</span></p>\n<p>Three doors into the heart, the Angel, and the oath behind the name.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to This Is GhostHeart on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/7A6HiVbkTYi4Ug1TrMuseU\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 3 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=GuJgU0QxQLI\" rel=\"noopener noreferrer\" target=\"_blank\">This Is GhostHeart <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=sSthfVLW3gE\" rel=\"noopener noreferrer\" target=\"_blank\">The Angel Who Made GhostHeart <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=mU8hixRrgKM\" rel=\"noopener noreferrer\" target=\"_blank\">GhostHeart's Oath <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 3
+    },
+    {
+      "id": "song-the-man-beneath-the-moon",
+      "title": "The Man Beneath the Moon",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-man-beneath-the-moon\"><div class=\"cover\"><img alt=\"The Man Beneath the Moon artwork\" loading=\"lazy\" src=\"/assets/videos/youtube/_mUU-toMlM8.jpg\"/></div><div class=\"record-copy\"><p class=\"eyebrow\">Recording</p><h3>The Man Beneath the Moon</h3><p>A GhostHeart recording.</p><div class=\"record-actions\"><a class=\"button\" href=\"/GhostHeart_Videos.html#film-the-man-beneath-the-moon\">Watch the film</a></div></div></article>",
+      "tracks": 1
+    },
+    {
+      "id": "song-sunrise-doesnt-ask-for-permission",
+      "title": "Sunrise Doesn't Ask for Permission",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-sunrise-doesnt-ask-for-permission\">\n<div class=\"cover\"><img alt=\"Cover artwork for Sunrise Doesn't Ask for Permission\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/sunrise-doesnt-ask-for-permission.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 01</span><span>Single • 1 track</span></div>\n<h3>Sunrise Doesn't Ask for Permission</h3>\n<p>Light returns without waiting for anyone to approve it.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch Sunrise Doesn't Ask for Permission film\" class=\"button\" href=\"https://www.youtube.com/watch?v=wxm8Qt6li4A\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to Sunrise Doesn't Ask for Permission on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/0bEFEG24JJtcjQns6PIGP7\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
+      "tracks": 1
+    },
+    {
+      "id": "song-the-dad",
+      "title": "The Dad",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-dad\">\n<div class=\"cover\"><img alt=\"Cover artwork for The Dad\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/the-dad.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 02</span><span>Single • 1 track</span></div>\n<h3>The Dad</h3>\n<p>A promise to become the father the next generation deserves.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch The Dad film\" class=\"button\" href=\"https://www.youtube.com/watch?v=cBNxq4y1ahU\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to The Dad on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3Tj0tECUm0Wg9AuVkIOQLs\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
+      "tracks": 1
+    },
+    {
+      "id": "song-rebellion",
+      "title": "Rebellion",
+      "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-rebellion\">\n<div class=\"cover\"><img alt=\"Cover artwork for Rebellion\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/rebellion.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 03</span><span>Multi-track • 2 tracks</span></div>\n<h3>Rebellion</h3>\n<p class=\"track-list\">Tracks: Rebellion • <span id=\"song-you-cant-change-us\">You Can't Change Us</span></p>\n<p>The moment survival refuses to stay silent.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Rebellion on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/7jkKCwKlYjadMvBsJokvDq\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=i0a2Pltn9sM\" rel=\"noopener noreferrer\" target=\"_blank\">Rebellion <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=AJOGVvetmYY\" rel=\"noopener noreferrer\" target=\"_blank\">You Can't Change Us — original 3:55 version <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 2
+    },
+    {
+      "id": "song-what-did-you-take-from-her",
+      "title": "What Did You Take From Her",
+      "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-what-did-you-take-from-her\">\n<div class=\"cover\"><img alt=\"Cover artwork for What Did You Take From Her\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/what-did-you-take-from-her.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 04</span><span>Multi-track • 2 tracks</span></div>\n<h3>What Did You Take From Her</h3>\n<p class=\"track-list\">Tracks: What Did You Take From Her • <span id=\"song-new-part-of-me\">New Part of Me</span></p>\n<p>A reckoning with what pain changed and what it could not erase.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch What Did You Take From Her film\" class=\"button\" href=\"https://www.youtube.com/watch?v=SkILbypDhxQ\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to What Did You Take From Her on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/2OdIWfDuaCGITzk1gx8eJm\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=1NSKNlEpdKA\" rel=\"noopener noreferrer\" target=\"_blank\">What Did You Take From Her <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=a-j77XE3Pl0\" rel=\"noopener noreferrer\" target=\"_blank\">New Part of Me <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 2
+    },
+    {
+      "id": "song-still",
+      "title": "Still",
+      "html": "<article class=\"record-card\" data-track-count=\"3\" id=\"song-still\">\n<div class=\"cover\"><img alt=\"Cover artwork for Still\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/still.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 05</span><span>Multi-track • 3 tracks</span><span class=\"artist-pick\">Artist Pick</span></div>\n<h3>Still</h3>\n<p class=\"track-list\">Tracks: Still • <span id=\"song-why-didnt-you-call\">Why Didn't You Call</span> • <span id=\"song-i-still-would\">I Still Would</span></p>\n<p>The quiet weight of what remains when everything else changes.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Still on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/10vHv1z2uCkLKcDDg508cN\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 3 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=-gdLKBRDHXw\" rel=\"noopener noreferrer\" target=\"_blank\">Still <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=kMzxK2lRT9k\" rel=\"noopener noreferrer\" target=\"_blank\">Why Didn't You Call <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=b5xr2FxlCRY\" rel=\"noopener noreferrer\" target=\"_blank\">I Still Would <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 3
+    },
+    {
+      "id": "song-heart-of-the-ashes",
+      "title": "Heart of the Ashes",
+      "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-heart-of-the-ashes\">\n<div class=\"cover\"><img alt=\"Cover artwork for Heart of the Ashes\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/heart-of-the-ashes.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 06</span><span>Multi-track • 2 tracks</span></div>\n<h3>Heart of the Ashes</h3>\n<p class=\"track-list\">Tracks: Heart of the Ashes • <span id=\"song-angels-in-the-ashes\">Angels in the Ashes</span></p>\n<p>Love, survival, and the heart that remains after the fire.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch Heart of the Ashes on YouTube (opens in a new tab)\" class=\"button\" href=\"https://www.youtube.com/watch?v=Wgdfz9q394U\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to Heart of the Ashes on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/735SnSg0dfh4T4vShL9Rhu\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=rVKB421psic\" rel=\"noopener noreferrer\" target=\"_blank\">Heart of the Ashes <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=QMKI0gMLKPY\" rel=\"noopener noreferrer\" target=\"_blank\">Angels in the Ashes <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 2
+    },
+    {
+      "id": "human-too",
+      "title": "Human Too",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"human-too\">\n<span aria-hidden=\"true\" id=\"song-human-too\"></span>\n<div class=\"cover\"><img alt=\"Cover artwork for Human Too\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/human-too.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 07</span><span>Single • 1 track</span><span>Aug 21, 2026</span></div>\n<h3>Human Too</h3>\n<p>A song about addiction, judgment, pain, and remembering that a human being is more than a label or a mistake.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Human Too on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/5BiC5SRSxlB13PSAJlFk88\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
+      "tracks": 1
+    },
+    {
+      "id": "song-just-not-this-morning",
+      "title": "Ashes & Embers",
+      "html": "<article class=\"record-card\" data-track-count=\"5\" id=\"song-just-not-this-morning\">\n<div class=\"cover\"><img alt=\"Ashes and Embers cover artwork showing a black revolving door surrounding an ember-red heart\" decoding=\"async\" height=\"800\" loading=\"lazy\" src=\"/assets/songs/ashes-and-embers.jpg\" width=\"800\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 08</span><span>Album • 5 tracks</span><span>Aug 18, 2026</span></div>\n<h3>Ashes &amp; Embers</h3>\n<p>Just Not This Morning • <span id=\"song-look-at-me\">Look at Me</span> • <span id=\"song-revolving-door\">Revolving Door</span> • <span id=\"song-you-cant-close-a-revolving-door\">You Can't Close a Revolving Door</span> • <span id=\"song-i-got-you-for-life\">I Got You for Life</span></p>\n<div class=\"record-actions\"><a aria-label=\"Watch all five Ashes and Embers films\" class=\"button\" href=\"/GhostHeart_Videos.html#film-hey-preacher-man\">Watch</a><a aria-label=\"Listen to Ashes and Embers on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3vovZ08vmdjsAZNun6rmq7\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 5 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=9pI_nXdjTR4\" rel=\"noopener noreferrer\" target=\"_blank\">Just Not This Morning <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=kYOkJn-AlyI\" rel=\"noopener noreferrer\" target=\"_blank\">Look at Me <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=1uThHaD_HaA\" rel=\"noopener noreferrer\" target=\"_blank\">Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=C-v0URkntUQ\" rel=\"noopener noreferrer\" target=\"_blank\">You Can't Close a Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=xR6egEJgTv4\" rel=\"noopener noreferrer\" target=\"_blank\">I Got You for Life <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 5
+    }
+  ]
+}
