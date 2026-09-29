@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "layoutChecks": [
+    {
+      "path": "/",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 360,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Story.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Angel.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/start/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/music/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/live/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/follow/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/journal/index.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/journal/how-we-got-here.html",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/GhostHeart_Projects.html",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "playerInsertionAndClose": true,
+  "bookmarkOptInAndRemoval": true,
+  "nativeEmailValidation": true,
+  "signupRequestIntercepted": true,
+  "actualSignupSent": false,
+  "emailDeliveryVerified": false,
+  "mailchimpAutomationActivated": false,
+  "noJavaScriptReading": true,
+  "browserErrors": []
+}

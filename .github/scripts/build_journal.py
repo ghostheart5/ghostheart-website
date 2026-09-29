@@ -61,6 +61,8 @@ def shell(title, description, path, body, image, article=None):
 <link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/shared/journal.css"/>
 <script defer src="/assets/shared/ghostheart-world.js"></script>
+<link rel="stylesheet" href="/assets/shared/gateway-v2.css"/>
+<script defer src="/assets/shared/gateway-v2.js"></script>
 <meta property="og:type" content="{'article' if article else 'website'}"/><meta property="og:site_name" content="GhostHeart"/>
 <meta property="og:title" content="{escape(title, quote=True)}"/><meta property="og:description" content="{escape(description, quote=True)}"/>
 <meta property="og:url" content="{BASE}{path}"/><meta property="og:image" content="{BASE}{image}"/>
@@ -70,6 +72,12 @@ def shell(title, description, path, body, image, article=None):
 <main id="main-content">{body}</main>{FOOTER}
 </body></html>
 '''
+
+
+
+def gateway_extra(post):
+    if not post.get("gateway_films"): return ""
+    return '<section class="g-reading-extra" aria-label="Films connected to this introduction"><p class="g-kicker">The name and the promise</p><div class="g-films"><article class="g-film" id="film-AOCRvtz92JM"><div class="g-player"><button type="button" data-video-id="AOCRvtz92JM" data-video-title="This Is GhostHeart" aria-label="Load film: This Is GhostHeart"><img src="/assets/videos/youtube/AOCRvtz92JM.jpg" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>This Is GhostHeart</h3><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><a class="g-link" href="https://www.youtube.com/watch?v=AOCRvtz92JM" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article><article class="g-film" id="film-mBAsUNX3vHQ"><div class="g-player"><button type="button" data-video-id="mBAsUNX3vHQ" data-video-title="GhostHeart’s Oath" aria-label="Load film: GhostHeart’s Oath"><img src="/assets/videos/youtube/mBAsUNX3vHQ.jpg" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>GhostHeart’s Oath</h3><p>The promise to protect the light in others.</p><a class="g-link" href="https://www.youtube.com/watch?v=mBAsUNX3vHQ" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article></div></section><div class="g-bookmark"><button type="button" data-save-reading>Save my place on this device</button><button type="button" data-forget-reading>Clear saved place</button><p role="status" data-reading-status></p></div>'
 
 first = POSTS[0]
 feature = f'''<article class="journal-feature">{art(first, True)}<div><p class="ghx-kicker">From the journal</p>{meta(first)}
@@ -92,7 +100,7 @@ for post in POSTS:
     paragraphs = ''.join(f'<p>{escape(paragraph)}</p>' for paragraph in post['paragraphs'])
     body = f'''<div class="ghx-wrap"><article class="journal-article"><a class="journal-back journal-link" href="/journal/">← GhostHeart Journal</a>
 <header>{meta(post)}<h1>{escape(post['title'])}</h1><p class="journal-deck">{escape(post['summary'])}</p></header>
-{art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Continue the story">
+{art(post)}<div class="journal-prose">{paragraphs}</div>{gateway_extra(post)}<section class="journal-continue" aria-label="Continue the story">
 <h2>Stay with the story.</h2><div class="ghx-actions">{links}</div></section>
 <nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All journal entries ↗</a><a href="/index.html#join-the-signal">Join the Signal ↗</a></nav>
 </article></div>'''
