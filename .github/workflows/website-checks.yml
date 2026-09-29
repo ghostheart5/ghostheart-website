@@ -14,7 +14,7 @@ jobs:
       - name: Install fixed generator dependencies
         run: python3 -m pip install --disable-pip-version-check Pillow==11.3.0 beautifulsoup4==4.13.5
       - name: Build the single complete website pipeline
-        run: python3 .github/scripts/finish_gateway.py
+        run: python3 .github/scripts/build_site.py
       - name: Validate generated site tree
         run: python3 .github/scripts/validate_site.py
       - name: Check JavaScript syntax

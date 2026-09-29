@@ -3,11 +3,18 @@ on:
   push:
     branches: [codex/ghostheart-batch1-batch2-repairs-20260824]
     paths:
+      - .github/scripts/build_site.py
       - .github/scripts/finish_gateway.py
+      - .github/scripts/build_gateway.py
+      - .github/scripts/build_journal.py
       - .github/scripts/test_finish.cjs
       - .github/workflows/gateway-finalize.yml
+      - .github/content/**
+      - assets/shared/gateway-v2.css
+      - assets/shared/gateway-v2.js
       - assets/shared/library-v3.css
       - assets/shared/library-v3.js
+      - assets/data/ghostheart-video-catalog.js
 permissions:
   contents: read
 concurrency:
@@ -28,7 +35,21 @@ jobs:
           npm install --prefix /tmp/gh-browser --no-audit --no-fund playwright@1.55.1
           /tmp/gh-browser/node_modules/.bin/playwright install --with-deps chromium
       - name: Generate completed public site
-        run: python3 .github/scripts/finish_gateway.py
+        run: python3 .github/scripts/build_site.py
+      - name: Verify deterministic regeneration
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, subprocess
+          def fingerprints():
+              return {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('.').rglob('*') if p.is_file() and '.git' not in p.parts and p.suffix in {'.html','.css','.js','.xml','.json'}}
+          before=fingerprints()
+          subprocess.run(['python3','.github/scripts/build_site.py'],check=True)
+          after=fingerprints()
+          changed=[p for p in set(before)|set(after) if before.get(p)!=after.get(p)]
+          assert not changed, 'Non-deterministic output: '+repr(changed)
+          print('PASS: a second complete build produces identical public code and content.')
+          PY
       - name: Validate all local pages and JavaScript
         run: |
           python3 .github/scripts/validate_site.py
@@ -47,6 +68,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- '*.html' '*.xml' 'assets' '.github/content' '.github/scripts/build_journal.py' '.github/GATEWAY_STATUS.md' '.github/email' '.github/evidence/site-finish'
           if ! git diff --cached --quiet; then
-            git commit -m 'Finish searchable GhostHeart libraries, collection connections and quote accessibility'
+            git commit -m 'Preserve featured recording and verify complete website regeneration'
             git push origin HEAD:codex/ghostheart-batch1-batch2-repairs-20260824
           fi
