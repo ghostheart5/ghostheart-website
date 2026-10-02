@@ -90,7 +90,7 @@ body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kick
 <div class="ghx-actions"><a href="#entries">Read the journal ↓</a><a href="/follow/index.html">Follow by email ↗</a></div></header>
 <section aria-label="Journal entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
 <aside class="journal-follow"><p class="ghx-kicker">Keep a little light close</p><h2>Carry the next page with you.</h2>
-<p>Follow the journal in your feed reader, or join the Signal for GhostHeart updates by email.</p><div class="ghx-actions">
+<p>Join the Signal for GhostHeart updates by email, including new journal entries as they are published.</p><div class="ghx-actions">
 <a class="primary" href="/index.html#join-the-signal">Join the Signal</a><a class="secondary" href="/follow/index.html">Follow by email</a></div></aside></div>'''
 write('journal/index.html', shell('Journal', 'Song stories, films, and notes from the world of GhostHeart.', '/journal/', body, first['image']))
 
