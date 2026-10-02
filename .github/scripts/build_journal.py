@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build static journal pages and RSS from one source. Run from any directory."""
+"""Build static journal pages and the backend journal feed from one source. Run from any directory."""
 from datetime import datetime
 from email.utils import format_datetime
 from html import escape
@@ -56,7 +56,6 @@ def shell(title, description, path, body, image, article=None):
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{escape(title)} | GhostHeart</title><meta name="description" content="{escape(description, quote=True)}"/>
 <link rel="canonical" href="{BASE}{path}"/><link rel="icon" href="/favicon.ico"/>
-<link rel="alternate" type="application/rss+xml" title="GhostHeart Journal" href="/journal/feed.xml"/>
 <link rel="stylesheet" href="/assets/shared/release-site.css"/>
 <link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/shared/journal.css"/>
@@ -88,11 +87,11 @@ entries = ''.join(f'''<article class="journal-entry"><span class="journal-number
 <a class="journal-link" href="{post_path(post)}">Read the entry ↗</a></div>{art(post, True)}</article>''' for i, post in enumerate(POSTS[1:], 2))
 body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kicker">GhostHeart / Journal</p>
 <h1>Words from<br/>the heart.</h1><p class="ghx-lead">Song stories, films, and notes from the world of GhostHeart. A place to stay with the words.</p>
-<div class="ghx-actions"><a href="#entries">Read the journal ↓</a><a href="/journal/feed.xml">Follow via RSS ↗</a></div></header>
+<div class="ghx-actions"><a href="#entries">Read the journal ↓</a><a href="/follow/index.html">Follow by email ↗</a></div></header>
 <section aria-label="Journal entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
 <aside class="journal-follow"><p class="ghx-kicker">Keep a little light close</p><h2>Carry the next page with you.</h2>
 <p>Follow the journal in your feed reader, or join the Signal for GhostHeart updates by email.</p><div class="ghx-actions">
-<a class="primary" href="/index.html#join-the-signal">Join the Signal</a><a class="secondary" href="/journal/feed.xml">RSS feed</a></div></aside></div>'''
+<a class="primary" href="/index.html#join-the-signal">Join the Signal</a><a class="secondary" href="/follow/index.html">Follow by email</a></div></aside></div>'''
 write('journal/index.html', shell('Journal', 'Song stories, films, and notes from the world of GhostHeart.', '/journal/', body, first['image']))
 
 for post in POSTS:
@@ -125,4 +124,4 @@ for post in POSTS:
     ET.SubElement(item, 'description').text = description
 ET.indent(rss)
 write('journal/feed.xml', '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(rss, encoding='unicode') + '\n')
-print(f'Built journal index, {len(POSTS)} entries, and RSS feed.')
+print(f'Built journal index, {len(POSTS)} entries, and backend feed.')

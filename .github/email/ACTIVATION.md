@@ -16,6 +16,6 @@ Confirm the account/audience, existing subscriber status, opt-in configuration, 
 End-to-end evidence must distinguish: form submitted, pending contact, confirmation received, subscription confirmed, welcome received, link opened, unsubscribe recorded. A visit to signup/confirmed.html is not a verified subscriber. Use only an owner-approved test address.
 
 ## Story updates
-Use the live RSS /journal/feed.xml only for approved published entries. Preserve slugs and original publication dates to avoid duplicate sends. No campaign schedule or recurring send is activated by this build. Confirm actual account capability and cadence before enabling. Do not add a paid plan or service.
+Use the backend journal feed /journal/feed.xml only for approved published entries if a connected service still requires it. Preserve slugs and original publication dates to avoid duplicate sends. No campaign schedule or recurring send is activated by this build. Confirm actual account capability and cadence before enabling. Do not add a paid plan or service.
 
 Official instructions: https://mailchimp.com/help/enable-or-disable-final-welcome-email/ ; https://mailchimp.com/help/set-signup-preferences/ ; https://mailchimp.com/help/set-up-email-domain-authentication/
