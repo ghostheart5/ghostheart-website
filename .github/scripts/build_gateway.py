@@ -26,20 +26,20 @@ FOOTER = '''<footer class="ghx-footer gateway-footer"><div class="gateway-bar"><
 
 # Web derivatives only; retain the approved original artworks untouched.
 artdir = ROOT/'assets/images/web-v2'; artdir.mkdir(parents=True, exist_ok=True)
-source = ROOT/'assets/images/brand/ghostheart-world-wide.png'
+source = ROOT/'assets/images/brand/awakening-banner-v1.png'
 SIZES = {}
 with Image.open(source) as original:
     original = original.convert('RGB'); W,H = original.size
     for width in (640, 960, 1440):
         image = original.copy(); image.thumbnail((width, round(width*H/W)), Image.Resampling.LANCZOS)
-        image.save(artdir/f'ghostheart-{width}.webp', 'WEBP', quality=80, method=6)
+        image.save(artdir/f'awakening-{width}-v1.webp', 'WEBP', quality=80, method=6)
         SIZES[width] = image.width
-ART = '/assets/images/web-v2/ghostheart-1440.webp'
+ART = '/assets/images/web-v2/awakening-1440-v1.webp'
 ANGEL = '/assets/angel/gh-1829-approved-wingless.webp'
 HAS_ANGEL = (ROOT/ANGEL.lstrip('/')).is_file()
 
 def picture(cls='g-art', priority=False):
-    return f'<img class="{cls}" src="{ART}" srcset="/assets/images/web-v2/ghostheart-640.webp {SIZES[640]}w, /assets/images/web-v2/ghostheart-960.webp {SIZES[960]}w, {ART} {SIZES[1440]}w" sizes="(max-width: 760px) 100vw, 58vw" width="{W}" height="{H}" alt="The GhostHeart world: shadowed figures with glowing crimson hearts beneath a red moon" {"fetchpriority=high" if priority else "loading=lazy"}/>'
+    return f'<img class="{cls}" src="{ART}" srcset="/assets/images/web-v2/awakening-640-v1.webp {SIZES[640]}w, /assets/images/web-v2/awakening-960-v1.webp {SIZES[960]}w, {ART} {SIZES[1440]}w" sizes="(max-width: 760px) 100vw, 58vw" width="{W}" height="{H}" alt="GhostHeart in a black beanie and glasses beside the GhostHeart Studios wordmark against a crimson city skyline" {"fetchpriority=high" if priority else "loading=lazy"}/>'
 
 def film(vid, title, copy):
     return f'''<article class="g-film" id="film-{vid}"><div class="g-player"><button type="button" data-video-id="{vid}" data-video-title="{escape(title, quote=True)}" aria-label="Load film: {escape(title, quote=True)}"><img src="/assets/videos/youtube/{vid}.jpg" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>{escape(title)}</h3><p>{escape(copy)}</p><a class="g-link" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article>'''
