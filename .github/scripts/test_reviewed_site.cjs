@@ -1,5 +1,6 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
 
 (async () => {
   const browser = await chromium.launch({
@@ -42,7 +43,29 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.resource:visible').count(), 16);
   await page.goto('http://127.0.0.1:8765/albums/index.html');
   assert.equal(await page.locator('audio').count(), 11);
+  await page.goto('http://127.0.0.1:8765/GhostHeart_Privacy.html');
+  const privacyMenu = page.locator('header.ghx-header .ghx-menu-toggle');
+  for (const expected of ['true', 'false', 'true']) {
+    await privacyMenu.click();
+    assert.equal(await privacyMenu.getAttribute('aria-expanded'), expected, 'Privacy Explore repeated clicks');
+  }
+  await page.keyboard.press('Escape');
+  assert.equal(await privacyMenu.getAttribute('aria-expanded'), 'false');
+
+  // Python's simple server does not use custom 404.html, so serve that exact
+  // document at a nested missing URL to exercise browser URL resolution.
+  await context.route('http://127.0.0.1:8765/nested/missing/page', route => route.fulfill({
+    status: 404, contentType: 'text/html', body: fs.readFileSync('404.html', 'utf8')
+  }));
+  const missing = await page.goto('http://127.0.0.1:8765/nested/missing/page', { waitUntil: 'load' });
+  assert.equal(missing.status(), 404);
+  assert.equal(await page.locator('link[href="/assets/shared/ghostheart-world.css"]').count(), 1);
+  const missingMenu = page.locator('header.ghx-header .ghx-menu-toggle');
+  await missingMenu.click();
+  assert.equal(await missingMenu.getAttribute('aria-expanded'), 'true', 'Nested 404 Explore opens');
+  await page.locator('a.hero-link').click();
+  assert.equal(new URL(page.url()).pathname, '/index.html', 'Nested 404 returns to root Home');
   assert.equal(errors.length, 0, errors.join('\n'));
   await browser.close();
-  console.log('PASS browser: 9 key pages at mobile and desktop widths, navigation, Resources filters, 11 audio players');
+  console.log('PASS browser: key pages, repeated Privacy Explore clicks, nested 404 recovery, Resources filters, 11 audio players');
 })().catch(error => { console.error(error); process.exit(1); });
