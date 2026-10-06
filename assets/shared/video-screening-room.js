@@ -59,6 +59,14 @@
     }
     article.className = item.featured ? 'featured-film' : 'video-card';
     article.innerHTML = `${shellMarkup(item)}${copyMarkup(item, item.featured)}`;
+    const previewImage = article.querySelector('.youtube-preview img');
+    if (previewImage) previewImage.addEventListener('error', () => {
+      previewImage.hidden = true;
+      previewImage.removeAttribute('src');
+      const fallback = document.createElement('span');
+      fallback.textContent = 'Thumbnail unavailable — video link remains available';
+      previewImage.parentNode.prepend(fallback);
+    }, { once: true });
     const video = article.querySelector('video');
     if (!video) return;
     video.addEventListener('loadedmetadata', () => {

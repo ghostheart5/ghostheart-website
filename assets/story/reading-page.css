@@ -1,0 +1,11 @@
+.reading-hero { padding: clamp(5rem, 11vw, 8rem) 0 clamp(2.5rem, 6vw, 4.5rem); background: radial-gradient(circle at 78% 18%, rgba(167, 24, 18, .2), transparent 28rem); }
+.reading-hero h1 { max-width: 12ch; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 8vw, 6.8rem); line-height: .94; letter-spacing: -.055em; }
+.reading-shell { width: min(calc(100% - 2rem), 72rem); margin: 0 auto; padding-bottom: clamp(4rem, 9vw, 7rem); }
+.reading-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem); gap: clamp(2rem, 7vw, 6rem); align-items: start; }
+.reading-prose { border-left: 3px solid var(--ember, #ed3327); background: linear-gradient(120deg, rgba(237, 51, 39, .06), transparent 28rem), #111; padding: clamp(1.25rem, 4vw, 2.5rem); box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, .3); }
+.reading-prose p { max-width: 65ch; margin: 0; color: #ddd5cf; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.05rem, 1.5vw, 1.18rem); line-height: 1.75; }
+.reading-prose p + p { margin-top: 1.15em; }
+.sunday-note { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 1.25rem; }
+.sunday-note p:last-child { margin: .65rem 0 0; color: #ddd5cf; font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; line-height: 1.6; }
+.reading-back { margin-top: 2rem; }
+@media (max-width: 760px) { .reading-layout { grid-template-columns: 1fr; } .sunday-note { order: -1; } }

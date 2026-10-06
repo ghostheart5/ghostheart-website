@@ -39,7 +39,7 @@ body.ghx-site{background:#060607;color:var(--ghx-white)}
 .ghx-site .ghx-hero{
   background:
     linear-gradient(90deg,#060607f7 0%,#060607df 33%,#06060758 72%,#06060712 100%),
-    url('../images/brand/awakening-banner-v1.png') center right/cover no-repeat;
+    url('../images/brand/ghostheart-world-wide.png') center right/cover no-repeat;
   border-bottom-color:#5a1b20;
 }
 .ghx-site .ghx-hero-art{display:none}
@@ -56,12 +56,12 @@ body.ghx-site{background:#060607;color:var(--ghx-white)}
 .ghx-story-hero,.ghx-films-hero{
   background-image:
     linear-gradient(90deg,#060607f7 8%,#060607ba 53%,#06060720 100%),
-    url('../images/brand/awakening-banner-v1.png');
+    url('../images/brand/ghostheart-world-wide.png');
   background-size:cover;
   background-position:center;
 }
 .ghx-site .start-hero .release-art img{
-  content:url('../images/brand/awakening-portrait-v1.png');
+  content:url('../images/brand/ghostheart-world-circle.png');
   object-fit:contain;
   background:#060607;
 }

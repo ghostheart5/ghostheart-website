@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "campaign": "The Awakening",
+  "written_opening": "How We Got Here",
+  "sunday": {
+    "text": "Sunday, October 11, 2026 at 10:00 a.m. Central. Viewing link and platform to be confirmed.",
+    "platform": null,
+    "url": null,
+    "time": "10:00",
+    "first_date": "2026-10-11"
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Cruel",
+      "route": "/awakening/cruel.html",
+      "status": "draft",
+      "ready": false,
+      "approval": null,
+      "source_key": "cruel",
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 2,
+      "title": "I'm Not",
+      "route": "/awakening/im-not.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 3,
+      "title": "Papa Didn't Raise a Fool",
+      "route": "/awakening/papa-didnt-raise-a-fool.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 4,
+      "title": "She Got to Me",
+      "route": "/awakening/she-got-to-me.html",
+      "status": "preserved_unapproved",
+      "ready": false,
+      "approval": null,
+      "source_key": "wife",
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 5,
+      "title": "This Is GhostHeart",
+      "route": "/awakening/this-is-ghostheart.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 6,
+      "title": "GhostHeart's Oath",
+      "route": "/awakening/ghosthearts-oath.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 7,
+      "title": "You Can Be GhostHeart Too",
+      "route": "/awakening/you-can-be-ghostheart-too.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 8,
+      "title": "One Heart Many Voices",
+      "route": "/awakening/one-heart-many-voices.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+/* GhostHeart Awakening — approved 2026 visual canon. */
+:root{
+  --canon-black:#050506;
+  --canon-charcoal:#111113;
+  --canon-ash:#d8d4cc;
+  --canon-bone:#f0ece4;
+  --canon-crimson:#8f101c;
+  --canon-red:#d71920;
+  --canon-wine:#4a1119;
+  --canon-gray:#766f6b;
+}
+body.ghx-site{
+  background:
+    radial-gradient(circle at 86% 8%,rgba(143,16,28,.14),transparent 28rem),
+    linear-gradient(180deg,#050506,#0b090a 42%,#050506);
+  color:var(--canon-bone);
+}
+body.ghx-site:before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;
+  background-image:repeating-linear-gradient(115deg,transparent 0 29px,rgba(255,255,255,.025) 30px 31px);
+}
+.ghx-site .ghx-header{background:rgba(5,5,6,.92);border-color:#3f2024}
+.ghx-site .ghx-brand{font-family:Impact,'Arial Narrow',sans-serif;letter-spacing:.035em;text-transform:uppercase}
+.ghx-site .ghx-brand span{color:var(--canon-bone)}
+.ghx-site .ghx-brand i{color:var(--canon-red);text-shadow:0 0 18px var(--canon-red)}
+.ghx-site .ghx-primary a{letter-spacing:.14em}
+.ghx-site .ghx-primary a:hover,.ghx-site .ghx-primary a[aria-current=page]{color:#ff555a}
+.canon-hero{
+  position:relative;isolation:isolate;min-height:clamp(650px,78vh,850px);display:grid;align-items:center;
+  border-bottom:1px solid #511a20;overflow:hidden;
+  background:url('../images/canon/ghostheart-awakening-hero.png') center/cover no-repeat;
+}
+.canon-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#050506 0%,rgba(5,5,6,.94) 34%,rgba(5,5,6,.38) 66%,rgba(5,5,6,.08))}
+.canon-hero:after{content:"";position:absolute;inset:auto 0 0;height:32%;z-index:-1;background:linear-gradient(transparent,#050506)}
+.canon-hero__copy{max-width:650px;padding-block:8rem 6rem}
+.canon-hero__mark{margin:0 0 1.1rem;color:#ff555a;font:800 .72rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase}
+.ghx-site .canon-hero h1{margin:0;max-width:10ch;font:900 clamp(4.2rem,8vw,8rem)/.86 Impact,'Arial Narrow',sans-serif;letter-spacing:.015em;text-transform:uppercase;text-shadow:0 4px 34px #000}
+.ghx-site .canon-hero h1 span{display:block;color:var(--canon-red);font-family:'Arial Black',Impact,sans-serif;font-style:italic;transform:rotate(-1deg);text-shadow:0 0 28px rgba(215,25,32,.35)}
+.canon-hero__line{max-width:34ch;margin:1.7rem 0 0;color:#fff;font-size:clamp(1.2rem,1.7vw,1.6rem);font-weight:700}
+.canon-hero__note{max-width:52ch;color:#c5c0ba}
+.canon-band{border-block:1px solid #3f2024;background:#0e0b0c}
+.canon-band .ghx-wrap{display:flex;justify-content:center;gap:clamp(.8rem,3vw,3rem);padding:1rem 0;color:#bbb4ae;font:800 .66rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.canon-band b{color:var(--canon-red);font-size:1rem}
+.canon-section{padding-block:clamp(4rem,7vw,7rem)}
+.canon-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.65fr);gap:2rem;align-items:end;margin-bottom:2.4rem}
+.canon-heading .ghx-kicker{margin-bottom:.65rem}
+.ghx-site .canon-heading h2{margin:0;font:800 clamp(2.5rem,5vw,5rem)/.95 Impact,'Arial Narrow',sans-serif;letter-spacing:.02em;text-transform:uppercase}
+.canon-heading>p{margin:0;color:#b9b4af;max-width:44ch}
+.canon-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#4a1b20;border:1px solid #4a1b20}
+.canon-path{position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:1.7rem;color:#fff;text-decoration:none;overflow:hidden;background:#0b0b0c}
+.canon-path:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080809f5 8%,#08080999 58%,#08080930),var(--path-image) center/cover no-repeat;transition:transform .35s,filter .35s;z-index:0}
+.canon-path:after{content:"";position:absolute;left:1.7rem;right:1.7rem;bottom:1.25rem;height:2px;background:linear-gradient(90deg,var(--canon-red),transparent);transform-origin:left;transition:transform .3s}
+.canon-path>*{position:relative;z-index:1}
+.canon-path:hover:before{transform:scale(1.035);filter:brightness(1.12)}
+.canon-path__number{color:#ff555a;font:800 .65rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.2em}
+.ghx-site .canon-path h3{margin:.55rem 0 .35rem;font:800 2rem/1 Impact,'Arial Narrow',sans-serif;letter-spacing:.035em;text-transform:uppercase}
+.canon-path p{margin:0 0 1.3rem;color:#d1ccc7;font-size:.9rem}
+.canon-media-grid{display:grid;grid-template-columns:1.45fr repeat(2,minmax(0,.72fr));gap:1rem}
+.canon-media{position:relative;min-width:0;border:1px solid #3b2b2e;background:#0d0d0f;overflow:hidden;text-decoration:none}
+.canon-media--feature{grid-row:span 2}
+.canon-media__image{position:relative;overflow:hidden;background:#080809;aspect-ratio:16/9}
+.canon-media--feature .canon-media__image{height:100%;min-height:460px;aspect-ratio:auto}
+.canon-media__image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s,filter .25s}
+.canon-media:hover img{transform:scale(1.025);filter:brightness(1.1)}
+.canon-media__shade{position:absolute;inset:0;background:linear-gradient(0deg,#050506f4,transparent 62%)}
+.canon-media__play{position:absolute;left:1rem;bottom:1rem;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#d71920;color:#fff;border:1px solid #ff6d70;font-size:1rem}
+.canon-media__copy{position:absolute;z-index:1;left:1.2rem;right:1.2rem;bottom:1rem;padding-left:4.2rem}
+.canon-media__copy span{color:#ff7377;font:800 .58rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.ghx-site .canon-media__copy h3{margin:.2rem 0 0;font:800 clamp(1.15rem,2vw,2rem)/1 Impact,'Arial Narrow',sans-serif;letter-spacing:.03em;text-transform:uppercase}
+.canon-media--feature .canon-media__copy{padding-left:4.7rem}
+.canon-media--feature .canon-media__copy h3{font-size:clamp(2.2rem,4vw,4.2rem)}
+.canon-release-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem}
+.canon-release{min-width:0;text-decoration:none;background:#0e0e10;border-bottom:2px solid #521920;transition:transform .25s,border-color .25s}
+.canon-release:hover{transform:translateY(-4px);border-color:var(--canon-red)}
+.canon-release img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.canon-release div{padding:1rem}
+.canon-release span{font-size:.6rem;color:#ff656a;letter-spacing:.14em;text-transform:uppercase}
+.ghx-site .canon-release h3{margin:.3rem 0 0;font-size:1.05rem;line-height:1.16}
+.canon-oath{position:relative;overflow:hidden;border-block:1px solid #4a1b20;background:linear-gradient(90deg,#0a090af5,#0a090a99),url('../videos/youtube/G6_x8P5R1pA.jpg') center/cover no-repeat}
+.canon-oath .ghx-wrap{padding-block:6rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.ghx-site .canon-oath h2{margin:0;font:800 clamp(3rem,6vw,6rem)/.92 Impact,'Arial Narrow',sans-serif;text-transform:uppercase}
+.canon-oath h2 span{display:block;color:#ff555a}
+.canon-oath p{color:#d0cbc5;max-width:46ch}
+.ghx-site .signup-section{background:radial-gradient(circle at 15% 50%,rgba(215,25,32,.14),transparent 28rem),#080708;border-top:1px solid #4a1b20}
+.ghx-site .signup-layout h2{font-family:Impact,'Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.ghx-site .signal-input-row input{background:#0e0e10;border-color:#554044}
+.ghx-site .signal-input-row button{background:var(--canon-red);border:1px solid #ff676b}
+.canon-page-hero{position:relative;min-height:580px;display:grid;align-items:end;overflow:hidden;border-bottom:1px solid #4a1b20;background:url('../images/canon/ghostheart-awakening-hero.png') center/cover no-repeat}
+.canon-page-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050506f8 0%,#050506cb 45%,#05050628),linear-gradient(0deg,#050506,transparent 45%)}
+.canon-page-hero .ghx-wrap{position:relative;padding-block:8rem 5rem}
+.ghx-site .canon-page-hero h1{margin:.5rem 0 1.2rem;max-width:9ch;font:900 clamp(4rem,8vw,8rem)/.88 Impact,'Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.canon-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.canon-chapter{padding:2rem;background:linear-gradient(145deg,#141215,#09090a);border:1px solid #3d292c}
+.canon-chapter span{color:#ff656a;font:800 .66rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.18em}
+.ghx-site .canon-chapter h2{font:800 2rem/1 Impact,'Arial Narrow',sans-serif;text-transform:uppercase}
+.canon-chapter p{color:#bbb5b0}
+.ghx-site .ghx-story-hero{
+  background-image:linear-gradient(90deg,#050506f8 0%,#050506c7 50%,#05050622 100%),url('../images/canon/ghostheart-awakening-hero.png');
+  background-size:cover;background-position:center;border-bottom-color:#4a1b20
+}
+.ghx-site .ghx-films-hero{
+  background-image:linear-gradient(90deg,#050506f5 0%,#050506a8 55%,#05050622 100%),url('../videos/youtube/9sbFgjM_SDE.jpg');
+  background-size:cover;background-position:center;border-bottom-color:#4a1b20
+}
+.ghx-site .start-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,#050506f5,#05050675),url('../images/canon/ghostheart-awakening-hero.png') center/cover no-repeat;border-bottom:1px solid #4a1b20}
+.ghx-site .start-hero .release-art{display:none}
+.ghx-site .start-hero .release-grid{grid-template-columns:minmax(0,700px);min-height:650px;align-items:center}
+.ghx-site .start-hero h1{font-family:Impact,'Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.025em}
+@media(max-width:980px){.canon-media-grid{grid-template-columns:1fr 1fr}.canon-media--feature{grid-column:1/-1;grid-row:auto}.canon-media--feature .canon-media__image{min-height:400px}.canon-release-grid{grid-template-columns:repeat(3,1fr)}.canon-paths{grid-template-columns:1fr}.canon-path{min-height:250px}.canon-chapters{grid-template-columns:1fr}.canon-oath .ghx-wrap{grid-template-columns:1fr}}
+@media(max-width:700px){.ghx-site .ghx-primary{display:none}.ghx-site .ghx-bar{justify-content:space-between}.canon-hero{min-height:720px;background-position:62% center}.canon-hero:before{background:linear-gradient(90deg,#050506f5 0%,#050506c9 65%,#05050640),linear-gradient(0deg,#050506 0%,transparent 40%)}.canon-hero__copy{padding:7rem 0 4rem}.ghx-site .canon-hero h1{font-size:clamp(3.7rem,18vw,6rem)}.canon-heading{grid-template-columns:1fr}.canon-media-grid{grid-template-columns:1fr}.canon-media--feature{grid-column:auto}.canon-media--feature .canon-media__image{min-height:360px}.canon-release-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem}.canon-release{flex:0 0 72%;scroll-snap-align:start}.canon-band .ghx-wrap{font-size:.52rem;gap:.55rem}.canon-band b{display:none}.canon-page-hero{min-height:620px;background-position:60% center}.canon-page-hero:before{background:linear-gradient(90deg,#050506f4,#0505068f),linear-gradient(0deg,#050506,transparent)}.ghx-site .canon-page-hero h1{font-size:clamp(3.8rem,16vw,6rem)}}
+@media(prefers-reduced-motion:reduce){.canon-path:before,.canon-media img,.canon-release{transition:none!important}}
