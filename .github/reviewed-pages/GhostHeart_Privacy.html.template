@@ -59,16 +59,5 @@
 </div>
 </main>
 <footer class="ghx-footer"><div class="ghx-wrap"><div class="ghx-footer-top"><a class="ghx-brand" href="index.html">GHOST<span>HEART</span></a><p>One life. Many versions. One heart.</p></div><nav aria-label="Official GhostHeart profiles"><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank">YouTube ↗</a><a href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank">TikTok ↗</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank">Spotify ↗</a><a href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank">Instagram ↗</a></nav><div class="ghx-footer-bottom"><span>© 2026 GhostHeart</span><a href="GhostHeart_Privacy.html">Privacy</a><a href="GhostHeart_Resources.html">Support &amp; resources</a><a href="index.html#join-the-signal">Stay Connected</a></div></div></footer>
-<script>
-    (() => {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('gateway-menu');
-      const setOpen = (open) => { toggle.setAttribute('aria-expanded', String(open)); menu.hidden = !open; };
-      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
-      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
-      document.addEventListener('click', (event) => { if (!menu.hidden && !event.target.closest('.nav')) setOpen(false); });
-    })();
-  </script>
 </body>
 </html>

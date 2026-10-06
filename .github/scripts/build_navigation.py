@@ -35,7 +35,9 @@ def build_header(path):
     if active:
         header = header.replace(f'href="{active}"', f'aria-current="page" href="{active}"', 1)
     depth = len(path.relative_to(ROOT).parts) - 1
-    prefix = '../' * depth
+    # GitHub Pages serves 404.html at the missing URL, which can be nested.
+    # Its navigation must resolve from the site root rather than that URL.
+    prefix = '/' if rel == '404.html' else '../' * depth
     return re.sub(r'(href|src)="/([^"]*)"', lambda m: f'{m.group(1)}="{prefix}{m.group(2)}"', header)
 
 changed = 0

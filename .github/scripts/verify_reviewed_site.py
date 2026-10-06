@@ -28,6 +28,14 @@ for path in ROOT.rglob("*.html"):
         checks += 1
 assert checks >= 44, checks
 
+missing_page = page("404.html")
+for element in missing_page.select("[href], [src]"):
+    for name in ("href", "src"):
+        url = element.get(name)
+        if url and not url.startswith(("https://", "http://", "#")):
+            assert url.startswith("/"), (name, url)
+assert not page("GhostHeart_Privacy.html").select("script:not([src])")
+
 story = page("GhostHeart_Story.html")
 assert story.select_one("h1")
 assert story.select_one('a[href*="GhostHeart_Angel.html"]')
