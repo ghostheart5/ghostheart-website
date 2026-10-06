@@ -1,12 +1,12 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Angel.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Privacy.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Projects.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Story.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Version_Mission.html</loc>
@@ -38,11 +38,11 @@
   </url>
   <url>
     <loc>https://www.myghostheart.com/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/start/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/albums/</loc>
@@ -89,35 +89,37 @@
     <lastmod>2026-09-29</lastmod>
   </url>
   <url>
+    <loc>https://www.myghostheart.com/music/</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.myghostheart.com/live/</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.myghostheart.com/follow/</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <!-- JOURNAL-GENERATED:START -->
+  <url>
     <loc>https://www.myghostheart.com/journal/</loc>
     <lastmod>2026-09-28</lastmod>
   </url>
   <url>
+    <loc>https://www.myghostheart.com/journal/how-we-got-here-archive.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
     <loc>https://www.myghostheart.com/journal/this-is-ghostheart.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/journal/ghosthearts-oath.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/journal/youre-not-god.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
-  <url>
-    <loc>https://www.myghostheart.com/music/</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://www.myghostheart.com/live/</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://www.myghostheart.com/follow/</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://www.myghostheart.com/journal/how-we-got-here.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
+  <!-- JOURNAL-GENERATED:END -->
 </urlset>

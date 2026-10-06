@@ -1,0 +1,22 @@
+.story-reading { max-width: 76rem; }
+.story-reading-hero { padding: clamp(3rem, 7vw, 5rem) 0 2.5rem; border-bottom: 1px solid var(--ghx-line); }
+.story-reading-hero h1 { max-width: 12ch; margin: .4rem 0 1.4rem; font: 400 clamp(3.2rem, 7vw, 6.4rem)/.98 Georgia, serif; letter-spacing: -.045em; }
+.story-reading-hero .ghx-lead { max-width: 50ch; }
+.story-reading-banner { margin: 2.5rem 0 0; overflow: hidden; border: 1px solid var(--ghx-line); background: #09090b; }
+.story-reading-banner img { display: block; width: 100%; height: clamp(12rem, 29vw, 21rem); object-fit: cover; object-position: center 53%; }
+.story-reading-copy { max-width: 68ch; padding: clamp(2.5rem, 6vw, 4rem) 0; font: clamp(1.12rem, 1.5vw, 1.25rem)/1.8 Georgia, serif; color: #e9e4df; }
+.story-reading-copy p { margin: 0 0 1.4em; }
+.story-reading-next { display: flex; flex-wrap: wrap; gap: .8rem 2rem; padding: 2rem 0 2.5rem; border-top: 1px solid var(--ghx-line); }
+.story-reading-next a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; }
+.story-reading-help, .story-reading-follow { margin: 0 0 2.5rem; }
+.story-reading-help { border-left: 3px solid #e45044; background: #181516; padding: 1.15rem 1.5rem; }
+.story-reading-help h2 { margin: 0 0 .4rem; font: 600 clamp(1.15rem, 1.8vw, 1.5rem)/1.25 Georgia, serif; }
+.story-reading-help p { margin: 0 0 .35rem; max-width: 65ch; font-size: .95rem; line-height: 1.55; color: #e1d9d5; }
+.story-reading-help-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; }
+.story-reading-help .story-reading-boundary { margin: .35rem 0 0; font-size: .78rem; color: #c7bdba; }
+.story-reading-follow { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.5rem; padding: 1.1rem 0; border-top: 1px solid var(--ghx-line); }
+.story-reading-follow h2 { margin: 0 0 .25rem; font: 600 clamp(1.15rem, 1.8vw, 1.5rem)/1.25 Georgia, serif; }
+.story-reading-follow p { margin: 0; max-width: 55ch; font-size: .95rem; color: #d6ceca; }
+.story-reading-follow-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .55rem 1rem; border: 1px solid #db5554; background: #431b20; color: #fff; font-weight: 700; text-decoration: none; }
+.story-reading-live { margin: 0 0 2rem; color: #bbb4b0; font-size: .9rem; }
+@media (max-width: 700px) { .story-reading-banner img { height: 13rem; } }

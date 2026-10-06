@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "note": "Owner-approved website listening selection. Preview MP3s were transcoded from owner WAV files; campaign display titles retain the approved order and recording-title variants are shown.",
+  "groups": [
+    {
+      "id": "awakening",
+      "title": "GhostHeart's Awakening",
+      "description": "Eight songs in the owner's approved order.",
+      "tracks": [
+        {
+          "title": "Cruel",
+          "audio": "/assets/music/preview/awakening-01-cruel.mp3",
+          "youtube": "https://www.youtube.com/watch?v=9sbFgjM_SDE"
+        },
+        {
+          "title": "I'm Not",
+          "recording_title": "I'm Not Staying Silent",
+          "audio": "/assets/music/preview/awakening-02-im-not-staying-silent.mp3",
+          "youtube": null
+        },
+        {
+          "title": "Papa Didn't Raise a Fool",
+          "recording_title": "Papa Didn't Raise No Fool",
+          "audio": "/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3",
+          "youtube": null
+        },
+        {
+          "title": "She Got to Me",
+          "audio": "/assets/music/preview/awakening-04-she-got-to-me.mp3",
+          "youtube": null
+        },
+        {
+          "title": "This Is GhostHeart",
+          "audio": "/assets/music/preview/awakening-05-this-is-ghostheart.mp3",
+          "youtube": null
+        },
+        {
+          "title": "GhostHeart's Oath",
+          "audio": "/assets/music/preview/awakening-06-ghosthearts-oath.mp3",
+          "youtube": "https://www.youtube.com/watch?v=mBAsUNX3vHQ"
+        },
+        {
+          "title": "You Can Be GhostHeart Too",
+          "audio": "/assets/music/preview/awakening-07-you-can-be-ghostheart-too.mp3",
+          "youtube": null
+        },
+        {
+          "title": "One Heart Many Voices",
+          "audio": "/assets/music/preview/awakening-08-one-heart-many-voices.mp3",
+          "youtube": null
+        }
+      ]
+    },
+    {
+      "id": "youre-not-god",
+      "title": "You're Not God",
+      "description": "The three songs listed on the existing You're Not God album page.",
+      "tracks": [
+        {
+          "title": "I Won't Pretend to Speak for You",
+          "audio": "/assets/music/preview/youre-not-god-01-i-wont-pretend.mp3",
+          "youtube": "https://www.youtube.com/watch?v=z-FRCpG9vfw"
+        },
+        {
+          "title": "Hey Preacher Man",
+          "audio": "/assets/music/preview/youre-not-god-02-hey-preacher-man.mp3",
+          "youtube": "https://www.youtube.com/watch?v=2SEng4dmgUc"
+        },
+        {
+          "title": "That Ain't Holy",
+          "audio": "/assets/music/preview/youre-not-god-03-that-aint-holy.mp3",
+          "youtube": "https://www.youtube.com/watch?v=ptYn4vh6DCQ"
+        }
+      ]
+    }
+  ]
+}

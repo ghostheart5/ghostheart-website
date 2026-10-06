@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "text": "Real help • Your choice You don’t have to figure this out alone. Choose what feels closest. You can call, text, chat, or read first. There is no perfect way to begin. U.S.-based starting points. Availability and eligibility can vary. Call 988 Text 988 Immediate danger — Call 911",
+      "links": [
+        "sms:988",
+        "tel:911",
+        "tel:988"
+      ]
+    },
+    "urgent": {
+      "text": "Need support right now? Choose the option that fits what is happening—not what you think you are supposed to choose. Talk with a crisis counselor For emotional distress, thoughts of suicide, or concern about someone else. Call, text, or chat with a trained crisis counselor. Call 988 Text 988 Chat with 988 988 confidentiality Get emergency response For an urgent threat to life or safety, a serious medical emergency, fire, or a crime in progress. Call 911 911 information Not sure which fits? 988 is for emotional support and crisis de-escalation. 911 is for urgent threats to life or physical safety, serious medical emergencies, fire, or crimes in progress.",
+      "links": [
+        "https://988lifeline.org/confidentiality/",
+        "https://chat.988lifeline.org/",
+        "https://www.911.gov/calling-911/frequently-asked-questions/",
+        "sms:988",
+        "tel:911",
+        "tel:988"
+      ]
+    },
+    "catalog_head": {
+      "text": "Start where you are What feels closest today? You do not need a diagnosis or the perfect words. Pick one place to start, or show every option.",
+      "links": []
+    },
+    "before": {
+      "text": "Your privacy • Your choice Before you reach out It is okay to ask what will happen next and how your information may be used before you share your story. What “confidential” means at 988 You can receive support without giving your name or location. Confidential does not mean anonymous: 988 may receive your phone number or chat IP address, calls may be monitored or recorded for quality assurance, and information can be shared in limited circumstances such as imminent risk or when required by law. Read 988’s privacy policy Need to leave this page quickly? Internet, call, and text activity can sometimes be monitored and may not be completely erasable. Use a safer device if you can. Clear history only if doing so will not raise suspicion. Leave this page Technology-safety guidance Opens Weather.gov in this tab. It does not erase browser, call, or text history.",
+      "links": [
+        "https://988lifeline.org/confidentiality/",
+        "https://www.thehotline.org/resources/how-to-clear-search-history-and-other-tech-safety-tips/",
+        "https://www.weather.gov/"
+      ]
+    }
+  },
+  "cards": {
+    "r01": {
+      "text": "Immediate 911 Emergency Services For an urgent threat to life or safety, a serious medical emergency, fire, or a crime in progress. Crisis Call 911 911.gov",
+      "links": [
+        "https://www.911.gov/",
+        "tel:911"
+      ],
+      "tags": "crisis"
+    },
+    "r02": {
+      "text": "Crisis support 988 Suicide & Crisis Lifeline Emotional support for you or someone you care about by call, text, or chat. Crisis Call 988 Text 988 Chat",
+      "links": [
+        "https://chat.988lifeline.org/",
+        "sms:988",
+        "tel:988"
+      ],
+      "tags": "crisis mental"
+    },
+    "r03": {
+      "text": "Child safety Childhelp National Child Abuse Hotline Questions or support about child abuse. A counselor can listen and help explain possible next steps, 24/7. Youth Call 800-422-4453 Text 800-422-4453 (send GO) Childhelp",
+      "links": [
+        "https://childhelphotline.org/",
+        "sms:18004224453",
+        "tel:18004224453"
+      ],
+      "tags": "safety youth"
+    },
+    "r04": {
+      "text": "Relationship safety National Domestic Violence Hotline Support for relationship abuse, safety planning, and finding local services. Safety Call 800-799-SAFE Text START to 88788 Chat & options",
+      "links": [
+        "https://www.thehotline.org/get-help/",
+        "sms:88788",
+        "tel:18007997233"
+      ],
+      "tags": "start safety"
+    },
+    "r05": {
+      "text": "Sexual violence RAINN National Sexual Assault Hotline Support after sexual assault or abuse—for survivors and people who care about them, 24/7. Safety Call 800-656-HOPE Text HOPE to 64673 Chat & options",
+      "links": [
+        "https://rainn.org/help-and-healing/hotline/",
+        "sms:64673",
+        "tel:18006564673"
+      ],
+      "tags": "safety"
+    },
+    "r06": {
+      "text": "Treatment SAMHSA Find Help Find treatment and support for mental health, drug, or alcohol concerns. No diagnosis is required to start looking. Mental health Open SAMHSA Find Help",
+      "links": [
+        "https://www.samhsa.gov/find-help"
+      ],
+      "tags": "start mental"
+    },
+    "r07": {
+      "text": "Information NAMI HelpLine Information, practical guidance, and peer-informed support for mental health questions. This is not a crisis line. Mental health Call 800-950-NAMI Text NAMI to 62640 Hours & options",
+      "links": [
+        "https://www.nami.org/nami-helpline/",
+        "sms:62640",
+        "tel:18009506264"
+      ],
+      "tags": "start mental"
+    },
+    "r08": {
+      "text": "Bullying StopBullying.gov Clear steps for young people, parents, and educators responding to bullying or cyberbullying. Youth Open official guidance",
+      "links": [
+        "https://www.stopbullying.gov/"
+      ],
+      "tags": "safety youth"
+    },
+    "r09": {
+      "text": "Local essentials 211 Find local help with food, housing, bills, transportation, health care, and other basic needs. Basic needs Call 211 Find your local 211",
+      "links": [
+        "https://www.211.org/",
+        "tel:211"
+      ],
+      "tags": "start housing"
+    },
+    "r10": {
+      "text": "Housing HUD Housing Counseling Connect with a HUD-approved counselor about renting, homeownership, foreclosure, or homelessness. Housing Find HUD counseling",
+      "links": [
+        "https://www.hud.gov/counseling"
+      ],
+      "tags": "housing"
+    },
+    "r11": {
+      "text": "Legal Legal Services Corporation Find nonprofit civil legal-aid organizations serving low-income people with civil legal problems. Legal aid Find civil legal aid",
+      "links": [
+        "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help"
+      ],
+      "tags": "housing"
+    },
+    "r12": {
+      "text": "Child welfare Child Welfare Information Gateway Federal information about child abuse reporting, prevention, foster care, adoption, and family support. This is not a crisis line. Families Open the official gateway",
+      "links": [
+        "https://www.childwelfare.gov/"
+      ],
+      "tags": "safety youth"
+    },
+    "r13": {
+      "text": "LGBTQ+ youth The Trevor Project Free, confidential, 24/7 crisis support for LGBTQ+ young people by call, text, or chat. LGBTQ+ Call 866-488-7386 Text START to 678-678 Chat & options",
+      "links": [
+        "https://www.thetrevorproject.org/get-help/",
+        "sms:678678",
+        "tel:18664887386"
+      ],
+      "tags": "crisis lgbtq"
+    },
+    "r14": {
+      "text": "Trans peer support Trans Lifeline Peer support from trans people for trans and questioning people, even when you are not in crisis. Check current hours. Trans Call 877-565-8860 Hours & privacy",
+      "links": [
+        "https://translifeline.org/hotline/",
+        "tel:18775658860"
+      ],
+      "tags": "mental lgbtq"
+    },
+    "r15": {
+      "text": "Veterans crisis Veterans Crisis Line 24/7 crisis support for Veterans, service members, and people who care about them. VA enrollment is not required. Veterans Call 988, then press 1 Text 838255 Chat & options",
+      "links": [
+        "https://www.veteranscrisisline.net/",
+        "sms:838255",
+        "tel:988"
+      ],
+      "tags": "crisis veterans"
+    },
+    "r16": {
+      "text": "Veterans housing National Call Center for Homeless Veterans Housing help for Veterans who are homeless or may lose their housing, and for people supporting them, 24/7. Veterans Call 877-424-3838 VA housing help",
+      "links": [
+        "https://department.va.gov/homeless/nationalcallcenter/",
+        "tel:18774243838"
+      ],
+      "tags": "housing veterans"
+    }
+  },
+  "boundary": "GhostHeart does not ask you to enter personal details on this page. GhostHeart is not a crisis, medical, legal, housing, or emergency-response service; these links connect to outside organizations with their own services and privacy rules.",
+  "main_links": [
+    "https://988lifeline.org/confidentiality/",
+    "https://988lifeline.org/confidentiality/",
+    "https://chat.988lifeline.org/",
+    "https://chat.988lifeline.org/",
+    "https://childhelphotline.org/",
+    "https://department.va.gov/homeless/nationalcallcenter/",
+    "https://rainn.org/help-and-healing/hotline/",
+    "https://translifeline.org/hotline/",
+    "https://www.211.org/",
+    "https://www.911.gov/",
+    "https://www.911.gov/calling-911/frequently-asked-questions/",
+    "https://www.childwelfare.gov/",
+    "https://www.hud.gov/counseling",
+    "https://www.lsc.gov/about-lsc/what-legal-aid/i-need-legal-help",
+    "https://www.nami.org/nami-helpline/",
+    "https://www.samhsa.gov/find-help",
+    "https://www.stopbullying.gov/",
+    "https://www.thehotline.org/get-help/",
+    "https://www.thehotline.org/resources/how-to-clear-search-history-and-other-tech-safety-tips/",
+    "https://www.thetrevorproject.org/get-help/",
+    "https://www.veteranscrisisline.net/",
+    "https://www.weather.gov/",
+    "sms:18004224453",
+    "sms:62640",
+    "sms:64673",
+    "sms:678678",
+    "sms:838255",
+    "sms:88788",
+    "sms:988",
+    "sms:988",
+    "sms:988",
+    "tel:18004224453",
+    "tel:18006564673",
+    "tel:18007997233",
+    "tel:18009506264",
+    "tel:18664887386",
+    "tel:18774243838",
+    "tel:18775658860",
+    "tel:211",
+    "tel:911",
+    "tel:911",
+    "tel:911",
+    "tel:988",
+    "tel:988",
+    "tel:988",
+    "tel:988"
+  ]
+}

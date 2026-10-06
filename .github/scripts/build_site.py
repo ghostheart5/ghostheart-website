@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Canonical complete build, including preservation of the previous featured recording."""
 from pathlib import Path
-import json, runpy
+import json, runpy, shutil
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
+shutil.copyfile(ROOT/'.github/gateway-inputs/build_journal.py',ROOT/'.github/scripts/build_journal.py')
 source=ROOT/'.github/content/site-library.json'
 if not source.exists():runpy.run_path(str(ROOT/'.github/scripts/finish_gateway.py'))
 data=json.loads(source.read_text(encoding='utf-8'))
@@ -25,3 +26,4 @@ assert {r['id'] for r in data['recordings']} <= {r['id'] for r in soup.select('.
 status=ROOT/'.github/GATEWAY_STATUS.md'
 status.write_text(status.read_text().replace('Build command: python3 .github/scripts/finish_gateway.py.','Build command: python3 .github/scripts/build_site.py.'),encoding='utf-8')
 print('Complete build preserved the earlier featured recording as well as the archive.')
+runpy.run_path(str(ROOT/'.github/scripts/build_reviewed_site.py'))
