@@ -21,11 +21,13 @@ jobs:
         run: |
           python3 .github/scripts/test_awakening.py
           python3 .github/scripts/verify_reviewed_site.py
+          python3 .github/scripts/verify_world_review.py
       - name: Check JavaScript syntax
         shell: bash
         run: |
           set -euo pipefail
           while IFS= read -r -d '' script; do node --check "$script"; done < <(find assets -type f -name '*.js' -print0)
+          node .github/scripts/test_vault_filters.cjs
       - name: Install browser for local page checks
         run: |
           npm install --prefix /tmp/gh-browser --no-audit --no-fund playwright@1.55.1

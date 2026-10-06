@@ -164,25 +164,25 @@ for existing_article in (ROOT / 'journal').glob('*.html'):
     if existing_article.name != 'index.html' and existing_article.name not in public_article_names:
         existing_article.unlink()
 
-feature = f'''<article class="journal-feature">{art(first, True)}<div><p class="ghx-kicker">From the blog</p>{meta(first)}
-<h2><a href="{post_path(first)}">{escape(first['title'])}</a></h2><p>{escape(first['summary'])}</p>
-<a class="journal-link" href="{post_path(first)}">Read the entry ↗</a></div></article>'''
+blog_posts = [post for post in POSTS if post['slug'] != 'how-we-got-here']
+blog_first = blog_posts[0]
+feature = f'''<article class="journal-feature">{art(blog_first, True)}<div><p class="ghx-kicker">From the blog</p>{meta(blog_first)}
+<h2><a href="{post_path(blog_first)}">{escape(blog_first['title'])}</a></h2><p>{escape(blog_first['summary'])}</p>
+<a class="journal-link" href="{post_path(blog_first)}">Read the entry</a></div></article>'''
 entries = ''.join(f'''<article class="journal-entry"><span class="journal-number" aria-hidden="true">{i:02}</span><div>{meta(post)}
 <h2><a href="{post_path(post)}">{escape(post['title'])}</a></h2><p>{escape(post['summary'])}</p>
-<a class="journal-link" href="{post_path(post)}">Read the entry ↗</a></div>{art(post, True)}</article>''' for i, post in enumerate(POSTS[1:], 2))
+<a class="journal-link" href="{post_path(post)}">Read the entry</a></div>{art(post, True)}</article>''' for i, post in enumerate(blog_posts[1:], 2))
 body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kicker">GhostHeart / Blog</p>
-<h1>Words from<br/>the heart.</h1><p class="ghx-lead">Song stories, films, and notes from the world of GhostHeart. A place to stay with the words.</p>
-<div class="ghx-actions"><a href="#entries">Read the blog ↓</a><a href="/journal/feed.xml">Follow via RSS ↗</a></div></header>
+<h1>Words from<br/>the heart.</h1><p class="ghx-lead">Dated reflections on approved songs, films, and the work around them. New writing will appear here when it is ready.</p>
+<div class="ghx-actions"><a href="#entries">Read the blog</a><a href="/GhostHeart_Story.html">Enter My World</a></div></header>
 <div class="journal-highlights"><section class="journal-highlight" aria-labelledby="quote-title"><p class="ghx-kicker">Quote of the day</p><h2 id="quote-title">A line to carry.</h2>
-<blockquote data-daily-quote>{escape(QUOTES[0])}</blockquote><p class="highlight-source">GhostHeart · <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></section>
+<blockquote data-daily-quote>{escape(QUOTES[0])}</blockquote><p class="highlight-source">GhostHeart | <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></section>
 <section class="journal-highlight journal-live" aria-labelledby="live-title"><p class="ghx-kicker">Next Sunday Live</p><h2 id="live-title">{escape(LIVE['title'])}</h2>
-<p class="highlight-working">Working title</p><p><time datetime="{LIVE['starts_at']}">Sunday, October 11, 2026 · 10:00 a.m. Central</time></p>
+<p class="highlight-working">Planned Live; platform and viewing link pending</p><p><time datetime="{LIVE['starts_at']}">Sunday, October 11, 2026 at 10:00 a.m. Central</time></p>
 <p>Viewing link and platform will be added when confirmed.</p><a href="/live/index.html">Readings &amp; Live details</a></section></div>
-<section aria-label="Journal entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
-<aside class="journal-follow"><p class="ghx-kicker">Keep a little light close</p><h2>Carry the next page with you.</h2>
-<p>Follow the journal in your feed reader, or get GhostHeart updates by email.</p><div class="ghx-actions">
-<a class="primary" href="/index.html#join-the-signal">Follow by email</a><a class="secondary" href="/journal/feed.xml">RSS feed</a></div></aside></div>'''
-write('journal/index.html', shell('Blog', 'Song stories, films, and notes from the world of GhostHeart.', '/journal/', body, first['image']))
+<section aria-label="Dated blog entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
+<aside class="journal-follow" aria-labelledby="archive-title"><p class="ghx-kicker">Earlier public introduction</p><h2 id="archive-title">How We Got Here</h2><p>The original introduction remains available in the archive. The current reading path begins at Enter My World.</p><div class="ghx-actions"><a class="primary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="/journal/how-we-got-here-archive.html">Read the archived introduction</a></div></aside></div>'''
+write('journal/index.html', shell('Blog', 'Dated reflections on approved GhostHeart songs, films, and creative work.', '/journal/', body, blog_first['image']))
 daily_js = '''(() => {
   const target = document.querySelector('[data-daily-quote]');
   if (!target) return;
@@ -201,19 +201,21 @@ for post in POSTS:
         # Preserve the public introduction URL while the Story page becomes its reading destination.
         write('journal/how-we-got-here.html', '''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Journal archive | GhostHeart</title><meta name="description" content="Read the earlier public introduction in the GhostHeart Journal archive."/>
-<link rel="canonical" href="https://www.myghostheart.com/journal/how-we-got-here-archive.html"/>
-<meta http-equiv="refresh" content="0; url=/journal/how-we-got-here-archive.html"/></head>
-<body><main><h1>Journal archive</h1><p>This earlier introduction is in <a href="/journal/how-we-got-here-archive.html">the Journal archive</a>.</p></main></body></html>
+<title>Enter My World | GhostHeart</title><meta name="description" content="Continue to the current public Story reading, Enter My World."/>
+<link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Story.html"/>
+<meta http-equiv="refresh" content="0; url=/GhostHeart_Story.html"/></head>
+<body><main><h1>Enter My World</h1><p>Continue to <a href="/GhostHeart_Story.html">the current Story reading</a>. The <a href="/journal/how-we-got-here-archive.html">earlier introduction</a> is preserved in the Journal archive.</p></main></body></html>
 ''')
     links = ''.join(f'<a class="{"secondary" if i else "primary"}" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for i, link in enumerate(post['links']))
+    related = ('/albums/index.html#youre-not-god' if post['slug'] == 'youre-not-god' else '/albums/index.html#awakening')
+    related_links = f'<a class="secondary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="{related}">Listen to related songs</a>'
     paragraphs = ''.join(f'<p>{escape(paragraph)}</p>' for paragraph in post['paragraphs'])
-    body = f'''<div class="ghx-wrap"><article class="journal-article"><a class="journal-back journal-link" href="/journal/">← GhostHeart Journal</a>
+    body = f'''<div class="ghx-wrap"><article class="journal-article"><a class="journal-back journal-link" href="/journal/">GhostHeart Blog</a>
 <header>{meta(post)}<h1>{escape(post['title'])}</h1><p class="journal-deck">{escape(post['summary'])}</p></header>
-{art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Continue the story">
-<h2>Stay with the story.</h2><div class="ghx-actions">{links}</div></section>
-<nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All journal entries ↗</a><a href="/index.html#join-the-signal">Follow by email ↗</a></nav>
-<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}" data-comment-status="pending"><h2 id="comments-title">Conversation</h2><p>Comments are being connected to GhostHeart Studios. Posting is not available yet.</p></section>
+{art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Related reading and music">
+<h2>Continue with the story and music.</h2><div class="ghx-actions">{links}{related_links}</div></section>
+<nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All blog entries</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav>
+<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}" data-comment-status="pending"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. A future conversation space will hold posts for moderation before they appear. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>
 </article></div>'''
     write(post_path(post).lstrip('/'), shell(post['title'], post['summary'], post_path(post), body, post['image'], post))
 

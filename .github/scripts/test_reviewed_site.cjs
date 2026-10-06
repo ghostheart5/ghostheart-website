@@ -26,7 +26,7 @@ const fs = require('node:fs');
       assert.equal(response.status(), 200, path);
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
-      assert.deepEqual(tabs.map(value => value.trim()), ['Awakening', 'Music', 'Readings', 'Projects'], path + ' tabs');
+      assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'The Awakening', 'Enter My World', 'Music'], path + ' tabs');
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' overflow at ' + width);
       const menu = page.locator('header.ghx-header .ghx-menu-toggle');
       await menu.click();

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>GhostHeart’s Awakening | GhostHeart</title><meta content="Survival matters. So does what a person chooses to carry forward." name="description"/>
+<link href="https://www.myghostheart.com/GhostHeart_Story.html" rel="canonical"/><link href="/favicon.ico" rel="icon"/>
+<link href="/journal/feed.xml" rel="alternate" title="GhostHeart Journal" type="application/rss+xml"/>
+<link href="/assets/shared/release-site.css" rel="stylesheet"/>
+<link href="/assets/shared/ghostheart-world.css" rel="stylesheet"/>
+<link href="/assets/shared/journal.css" rel="stylesheet"/><link href="/assets/story/story-reading.css" rel="stylesheet"/>
+<script defer="" src="/assets/shared/ghostheart-world.js"></script>
+<meta content="website" property="og:type"/><meta content="GhostHeart" property="og:site_name"/>
+<meta content="GhostHeart’s Awakening" property="og:title"/><meta content="Survival matters. So does what a person chooses to carry forward." property="og:description"/>
+<meta content="https://www.myghostheart.com/GhostHeart_Story.html" property="og:url"/><meta content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/shared/gateway-v2.css" rel="stylesheet"/><link href="/assets/shared/library-v3.css" rel="stylesheet"/><script defer="" src="/assets/shared/library-v3.js"></script></head><body class="ghx-site">
+<a class="skip-link" href="#main-content">Skip to content</a><header class="nav ghx-header gateway-header" data-nav-owner="shared"><div class="gateway-bar"><a aria-current="location" aria-label="GhostHeart home" class="ghx-brand" href="/index.html">GHOST<span>HEART</span><i aria-hidden="true">✦</i></a><nav aria-label="Main navigation" class="gateway-primary"><a href="/GhostHeart_Story.html">Story</a><a href="/music/index.html">Music &amp; films</a><a href="/live/index.html">Sunday Live</a><a href="/GhostHeart_Version_Mission.html">Mission</a></nav><a aria-label="Follow GhostHeart by email" class="gateway-follow" href="/follow/index.html">Follow by email</a><button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button></div><nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="gateway-menu-grid"><div><h2>Enter the story</h2><a href="/journal/how-we-got-here.html">Begin here</a><a href="/GhostHeart_Story.html">The story</a><a href="/GhostHeart_Angel.html">GhostHeart and His Angel</a><a href="/journal/index.html">From the journal</a></div><div><h2>Watch. Listen. Carry it.</h2><a href="/music/index.html">Music &amp; films</a><a href="/GhostHeart_Videos.html">All films</a><a href="/GhostHeart_Songs.html">Released recordings</a><a href="/GhostHeart_Quotes.html">Words to carry</a></div><div><h2>Stay connected</h2><a href="/live/index.html">Sunday readings</a><a href="/follow/index.html">Email updates</a><a href="/GhostHeart_Projects.html#axiomara">Axiomara &amp; projects</a><a href="/GhostHeart_Resources.html">Find support</a></div></div></nav></header>
+<noscript id="no-script-navigation"><nav aria-label="Navigation without JavaScript" class="l-nojs-nav"><a href="/GhostHeart_Story.html">Story</a><a href="/music/index.html">Music &amp; films</a><a href="/follow/index.html">Follow by email</a><a href="/GhostHeart_Resources.html">Find support</a></nav></noscript><main id="main-content"><div class="ghx-wrap story-reading">
+<header class="story-reading-hero"><p class="ghx-kicker">The Story</p>
+<h1>GhostHeart’s Awakening.</h1>
+<p class="ghx-lead">Survival matters. So does what a person chooses to carry forward.</p>
+<figure class="story-reading-banner"><img alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon" height="1440" src="/assets/story/ghostheart-awakening-banner.png" width="2560"/></figure>
+</header>
+<div aria-label="The heart behind GhostHeart" class="story-reading-copy">
+<p>Survival matters. So does what a person chooses to carry forward. GhostHeart turns toward people who have been reduced to a label, judged from a distance, or written off before their story was heard. Seeing their humanity does not mean looking away from the truth or excusing harm. It means refusing to let one word tell the whole story.</p>
+<p>That is where the name meets the promise. This Is GhostHeart introduces the heart behind the music. GhostHeart’s Oath gives that heart a direction: protect the light in others. These songs are ways into the story, and you can begin with either one.</p>
+<p>Love belongs here too. GhostHeart and His Angel is the relationship story within this world—the person who saw the heart beneath the scars and never asked it to hide. It has its own place alongside the music and the life behind it.</p>
+<p>You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer. No one has to disclose their own pain to belong here.</p>
+</div>
+<nav aria-label="Continue the story" class="story-reading-next">
+<a href="/journal/">Read the Blog</a>
+<a href="/GhostHeart_Angel.html">GhostHeart and His Angel</a>
+</nav>
+<aside aria-labelledby="story-help-title" class="story-reading-help"><h2 id="story-help-title">Help &amp; Resources</h2><p>Find U.S. organizations offering help with mental health, safety, housing and other practical needs.</p><a class="story-reading-help-link" href="/GhostHeart_Resources.html">Find support resources</a><p class="story-reading-boundary">GhostHeart shares resources; it does not provide crisis or professional services.</p></aside>
+<p class="story-reading-live"><strong>Next Sunday Live:</strong> <a href="/live/index.html">The Awakening Welcome</a> (working title), <time datetime="2026-10-11T10:00:00-05:00">October 11 at 10:00 a.m. Central</time>. Viewing link and platform are pending.</p>
+<aside aria-labelledby="story-follow-title" class="story-reading-follow"><div><h2 id="story-follow-title">Stay Connected</h2><p>New music, stories and updates from GhostHeart.</p></div><a class="story-reading-follow-link" href="/index.html#join-the-signal">Keep Me Updated</a></aside>
+</div></main><footer class="ghx-footer gateway-footer"><div class="gateway-bar"><a class="ghx-brand" href="/index.html">GHOST<span>HEART</span></a><p>One story. Still unfolding.</p></div><nav aria-label="Official GhostHeart profiles"><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank">YouTube ↗</a><a href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank">TikTok ↗</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank">Spotify ↗</a><a href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank">Instagram ↗</a></nav><div class="gateway-footnote"><span>© 2026 GhostHeart</span><a href="/GhostHeart_Privacy.html">Privacy</a><a href="/GhostHeart_Resources.html">Find support</a><a href="/follow/index.html">Follow by email</a></div></footer>
+</body></html>

@@ -4,7 +4,9 @@
   const canon = document.createElement('link');
   canon.rel = 'stylesheet';
   canon.href = new URL('ghostheart-awakening.css', document.currentScript.src).href;
-  document.head.appendChild(canon);
+  const reviewTheme = document.querySelector('link[href$="review-theme.css"]');
+  if (reviewTheme) reviewTheme.before(canon);
+  else document.head.appendChild(canon);
 })();
 
 // Load website analytics only on the public GhostHeart domain, not local previews.

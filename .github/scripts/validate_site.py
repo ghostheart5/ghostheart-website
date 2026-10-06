@@ -205,12 +205,19 @@ def main() -> int:
 
     homepage = (ROOT / "index.html").read_text(encoding="utf-8")
     decoded_homepage = homepage.replace("&amp;", "&")
-    if MAILCHIMP_ACTION not in decoded_homepage:
-        errors.append("Homepage is missing the approved Mailchimp form action")
-    if not re.search(r'<input\b[^>]*\bname=["\']EMAIL["\'][^>]*\brequired\b', homepage, re.IGNORECASE):
-        errors.append("Mailchimp email input must be required")
-    if 'name="b_a7ab330423f3b936c48b8d8ba_880e8056a6"' not in homepage:
-        errors.append("Mailchimp honeypot field is missing")
+    if '<form' in homepage:
+        if MAILCHIMP_ACTION not in decoded_homepage:
+            errors.append("Homepage form is missing the approved Mailchimp action")
+        if not re.search(r'<input\b[^>]*\bname=["\']EMAIL["\'][^>]*\brequired\b', homepage, re.IGNORECASE):
+            errors.append("Mailchimp email input must be required")
+        if 'name="b_a7ab330423f3b936c48b8d8ba_880e8056a6"' not in homepage:
+            errors.append("Mailchimp honeypot field is missing")
+    elif not all(value in homepage for value in (
+        'signup and delivery are not confirmed yet',
+        'https://www.youtube.com/@GhostHeart-M95RTK',
+        'https://www.tiktok.com/@ghosthearted1',
+    )):
+        errors.append("Homepage without signup must show verified social links and honest email status")
 
     for relative, destination in LEGACY_REDIRECTS.items():
         text = (ROOT / relative).read_text(encoding="utf-8")

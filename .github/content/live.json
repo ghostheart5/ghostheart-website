@@ -1,7 +1,9 @@
 {
-  "title": "The Awakening Welcome",
-  "title_status": "working title",
+  "title": "The Awakening Begins",
+  "title_status": "owner selected",
   "kind": "Sunday Live",
+  "planned_passage_title": "I'm a Nobody, Are You a Nobody Too?",
+  "planned_passage_text_status": "not provided",
   "starts_at": "2026-10-11T10:00:00-05:00",
   "time_zone": "America/Chicago",
   "platform": null,

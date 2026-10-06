@@ -1,0 +1,61 @@
+/* Review-only GhostHeart GAME-PUNK layer. Loaded after each page's legacy CSS. */
+:root {
+  --ghx-bg: #09090b;
+  --ghx-panel: #141316;
+  --ghx-white: #f7f1ed;
+  --ghx-muted: #c9bdbb;
+  --ghx-red: #d33b43;
+  --ghx-soft: #ff7975;
+  --ghx-line: #65343b;
+  --ghx-ember: #f06462;
+}
+body.ghx-site { background: var(--ghx-bg); color: var(--ghx-white); font-family: 'Segoe UI', Arial, sans-serif; }
+.ghx-site .ghx-header { border-bottom: 2px solid #7a3039; background: #08080bea; }
+.ghx-site .ghx-brand { font-weight: 950; letter-spacing: -.06em; }
+.ghx-site .ghx-primary a[aria-current="page"], .ghx-site .ghx-menu a[aria-current="page"] { color: #ffaaa1; }
+.ghx-site .ghx-menu { background: #101014; border-top-color: #63323a; }
+.ghx-site .ghx-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 850px; gap: 2rem; }
+.ghx-site .ghx-menu h2 { color: #ff918c; }
+.ghx-site .ghx-menu a { border-bottom-color: #553039; }
+.ghx-site main :is(h1,h2,h3) { font-family: 'Arial Black','Segoe UI',Arial,sans-serif; font-style: normal; font-weight: 900; }
+.ghx-site main h1 { letter-spacing: -.055em; line-height: .98; text-transform: uppercase; }
+.ghx-site main h2 { letter-spacing: -.04em; line-height: 1.08; }
+.ghx-site main h3 { letter-spacing: -.025em; line-height: 1.15; }
+.ghx-site main :is(h1,h2) em { color: #ff8981; font-style: normal; }
+.ghx-site main :is(.ghx-kicker,.g-kicker,.kicker,.world-section-label,.vault-type,.projects-index,.journal-meta) { color: #f38f8b; font-family: 'Segoe UI',Arial,sans-serif; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.ghx-site main :is(.world-page,.projects-page,.vault-page) { color: var(--ghx-white); }
+.ghx-site main :is(.world-hero,.vault-hero,.music-hero,.journal-hero,.readings-page,.projects-intro,.g-page-top) { border-color: #68303a; }
+.ghx-site main :is(.world-prose,.music-group,.world-finish,.projects-future,.projects-close) { border-color: #61323a; }
+.ghx-site main :is(.music-track,.vault-item,.vault-latest-grid article,.home-discovery-card,.journal-highlight,.readings-event,.journal-comments,.projects-future-grid article,.projects-shadow-frame,.g-film,.journal-feature,.journal-entry) {
+  border-color: #743a43;
+  border-radius: 2px;
+  box-shadow: 0 10px 24px #0003;
+}
+.ghx-site main :is(.music-track,.vault-item,.vault-latest-grid article,.journal-highlight,.readings-event,.journal-comments,.projects-future-grid article,.g-film) { background-color: #151317; }
+.ghx-site main :is(.home-discovery-card,.vault-item,.journal-highlight,.readings-event,.projects-future-grid article) { border-left: 3px solid #c73b46; }
+.ghx-site main :is(.ghx-lead,.projects-lead,.world-lead,.journal-deck) { color: #e1d4cf; }
+.ghx-site main :is(.primary,.g-button,.projects-button,.home-discovery-card>a) {
+  background: #ac303b;
+  border: 1px solid #ef6b69;
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Segoe UI',Arial,sans-serif;
+  font-weight: 850;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.ghx-site main :is(.primary,.g-button,.projects-button,.home-discovery-card>a):hover { background: #cf3d47; color: #fff; }
+.ghx-site main :is(.secondary,.music-jump a,.music-youtube,.vault-filters button,.vault-search-row button,.projects-close-links a) {
+  border-color: #8a4c53;
+  border-radius: 2px;
+}
+.ghx-site main :is(input[type="search"],select) { background: #111115; border-color: #97606a; border-radius: 2px; color: #fff; }
+.ghx-site main :is(.vault-filters button[aria-pressed="true"],.catalog .filter[aria-pressed="true"]) { background: #d95056; border-color: #f0837c; color: #08090b; }
+.ghx-site #resources-main :is(.urgent-card,.resource,.before-card,.hero-panel) { border-color: #78404a; border-radius: 2px; box-shadow: none; }
+.ghx-site footer { background: #0c0b0e; border-top: 2px solid #6f3039; color: #e9ded9; }
+.ghx-site footer a { color: #f4c0b8; }
+@media (max-width: 700px) {
+  .ghx-site .ghx-menu-grid { grid-template-columns: 1fr; gap: .5rem; padding-block: 1rem; }
+  .ghx-site main h1 { letter-spacing: -.045em; }
+}

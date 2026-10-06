@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GhostHeart’s Awakening | GhostHeart</title><meta name="description" content="Survival matters. So does what a person chooses to carry forward."/>
+<title>Enter My World | GhostHeart</title><meta name="description" content="Behind the Scars: the public introduction to the life and purpose behind GhostHeart."/>
 <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Story.html"/><link rel="icon" href="/favicon.ico"/>
 <link rel="alternate" type="application/rss+xml" title="GhostHeart Journal" href="/journal/feed.xml"/>
 <link rel="stylesheet" href="/assets/shared/release-site.css"/>
 <link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
-<link rel="stylesheet" href="/assets/shared/journal.css"/><link rel="stylesheet" href="/assets/story/story-reading.css"/>
+<link rel="stylesheet" href="/assets/shared/journal.css"/><link rel="stylesheet" href="/assets/story/story-reading.css"/><link rel="stylesheet" href="/assets/story/world-review.css"/>
 
 <script defer src="/assets/shared/ghostheart-world.js"></script>
 
 <meta property="og:type" content="website"/><meta property="og:site_name" content="GhostHeart"/>
-<meta property="og:title" content="GhostHeart’s Awakening"/><meta property="og:description" content="Survival matters. So does what a person chooses to carry forward."/>
+<meta property="og:title" content="Enter My World"/><meta property="og:description" content="Behind the Scars: the public introduction to the life and purpose behind GhostHeart."/>
 <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Story.html"/><meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 </head><body class="ghx-site">
 <a class="skip-link" href="#main-content">Skip to content</a><header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a aria-current="page" href="/GhostHeart_Story.html">Awakening</a><a href="/albums/index.html">Music</a><a href="/live/index.html">Readings</a><a href="/GhostHeart_Projects.html">Projects</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button></div>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/albums/index.html">Music</a></nav>
+<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
+<a class="ghx-help-link" href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>Read &amp; share</h2><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quotes</a></div>
-<div><h2>Find support</h2><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
-<div><h2>Go deeper</h2><a href="/GhostHeart_Angel.html">GhostHeart and His Angel</a></div>
-<div><h2>Stay connected</h2><a href="/index.html#join-the-signal">Stay Connected</a></div>
+<div><h2>Go deeper</h2><a href="/GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="/vault/">GhostHeart's Vault</a></div>
+<div><h2>Explore</h2><a href="/journal/">Blog</a><a href="/live/">Lives &amp; Readings</a><a href="/GhostHeart_Projects.html">Projects</a><a href="/follow/">Stay Connected</a></div>
 </div></nav></header>
-<main id="main-content"><div class="ghx-wrap story-reading">
-<header class="story-reading-hero"><p class="ghx-kicker">The Story</p>
-<h1>GhostHeart&rsquo;s Awakening.</h1>
-<p class="ghx-lead">Survival matters. So does what a person chooses to carry forward.</p>
-<figure class="story-reading-banner"><img src="/assets/story/ghostheart-awakening-banner.png" width="2560" height="1440" alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon"/></figure>
-</header>
-<div class="story-reading-copy" aria-label="The heart behind GhostHeart">
+<main id="main-content" class="world-page">
+<section class="world-hero ghx-wrap" aria-labelledby="world-title"><div class="world-hero-grid">
+<div class="world-hero-copy"><p class="ghx-kicker">One lived story / many voices</p><h1 id="world-title">Enter My World.</h1>
+<p class="world-lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
+<p>The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
+<nav class="world-jump" aria-label="In this reading"><a href="#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a></nav></div>
+<figure class="world-hero-art"><img src="/assets/story/ghostheart-awakening-banner.png" width="2560" height="1440" alt="GhostHeart beneath storm clouds with crimson light over a city horizon"/></figure>
+</div></section>
+<section class="world-prose ghx-wrap" id="behind-the-scars" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading">
 <p>Survival matters. So does what a person chooses to carry forward. GhostHeart turns toward people who have been reduced to a label, judged from a distance, or written off before their story was heard. Seeing their humanity does not mean looking away from the truth or excusing harm. It means refusing to let one word tell the whole story.</p>
-<p>That is where the name meets the promise. This Is GhostHeart introduces the heart behind the music. GhostHeart&rsquo;s Oath gives that heart a direction: protect the light in others. These songs are ways into the story, and you can begin with either one.</p>
-<p>Love belongs here too. GhostHeart and His Angel is the relationship story within this world&mdash;the person who saw the heart beneath the scars and never asked it to hide. It has its own place alongside the music and the life behind it.</p>
-<p>You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer. No one has to disclose their own pain to belong here.</p>
-</div>
-<nav class="story-reading-next" aria-label="Continue the story">
-<a href="/journal/">Read the Blog</a>
-<a href="/GhostHeart_Angel.html">GhostHeart and His Angel</a>
-</nav>
-<aside class="story-reading-help" aria-labelledby="story-help-title"><h2 id="story-help-title">Help &amp; Resources</h2><p>Find U.S. organizations offering help with mental health, safety, housing and other practical needs.</p><a class="story-reading-help-link" href="/GhostHeart_Resources.html">Find support resources</a><p class="story-reading-boundary">GhostHeart shares resources; it does not provide crisis or professional services.</p></aside>
-<p class="story-reading-live"><strong>Next Sunday Live:</strong> <a href="/live/index.html">The Awakening Welcome</a> (working title), <time datetime="2026-10-11T10:00:00-05:00">October 11 at 10:00 a.m. Central</time>. Viewing link and platform are pending.</p>
-<aside class="story-reading-follow" aria-labelledby="story-follow-title"><div><h2 id="story-follow-title">Stay Connected</h2><p>New music, stories and updates from GhostHeart.</p></div><a class="story-reading-follow-link" href="/index.html#join-the-signal">Keep Me Updated</a></aside>
-</div></main><footer class="ghx-footer"><div class="ghx-wrap"><div class="ghx-footer-top"><a class="ghx-brand" href="/index.html">GHOST<span>HEART</span></a><p>Real stories. Real people. Same heart.</p></div><nav aria-label="Official GhostHeart profiles"><a href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a href="https://www.instagram.com/ghostheart131517/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></nav><div class="ghx-footer-bottom"><span>© 2026 GhostHeart</span><a href="/GhostHeart_Privacy.html">Privacy</a><a href="/GhostHeart_Resources.html">Support</a><a href="/index.html#join-the-signal">Follow by email</a></div></div></footer>
+<p>The music gives those experiences a voice. The films give them a world. The Versions reveal the ways one person learned to carry what happened. The cracked heart stays at the center. It survived and chose a purpose.</p>
+<p>That is where the name meets the promise. <em>This Is GhostHeart</em> introduces the heart behind the work. <em>GhostHeart's Oath</em> gives that heart a direction: protect the light in others. The songs open the door; the life behind them is still unfolding.</p>
+<div class="world-inline-links"><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart</a><a href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath</a></div>
+</div></div></section>
+<section class="world-prose world-love-teaser ghx-wrap" aria-labelledby="love-teaser-title"><div class="world-section-label">The relationship behind the work</div><div class="world-prose-grid"><div><h2 id="love-teaser-title">The Woman Behind the Scenes</h2></div><div class="world-reading"><p>She saw the heart beneath the scars and never asked it to hide. Her love helped shape the man he is today. That story has its own space here, alongside the music and the life behind it.</p><a class="world-plain-link" href="/woman-behind-the-scenes/">Read The Woman Behind the Scenes</a></div></div></section>
+<section class="world-finish ghx-wrap" aria-labelledby="world-next-title"><div><p class="ghx-kicker">Stay with what speaks to you</p><h2 id="world-next-title">Take the next step at your own pace.</h2><p>You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer. No one has to disclose their own pain to belong here.</p></div><nav aria-label="Keep exploring"><a href="/vault/">Explore GhostHeart's Vault</a><a href="/journal/">Read the Blog</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav></section>
+<aside class="world-bottom ghx-wrap"><p><strong>Next Sunday Live:</strong> <a href="/live/">The Awakening Begins</a> (planned Live), <time datetime="2026-10-11T10:00:00-05:00">October 11 at 10:00 a.m. Central</time>. Viewing link and platform are pending.</p><a href="/index.html#join-the-signal">Stay Connected</a></aside>
+</main><footer class="ghx-footer"><div class="ghx-wrap"><div class="ghx-footer-top"><a class="ghx-brand" href="/index.html">GHOST<span>HEART</span></a><p>Real stories. Real people. Same heart.</p></div><nav aria-label="Official GhostHeart profiles"><a href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a href="https://www.instagram.com/ghostheart131517/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></nav><div class="ghx-footer-bottom"><span>© 2026 GhostHeart</span><a href="/GhostHeart_Privacy.html">Privacy</a><a href="/GhostHeart_Resources.html">Support</a><a href="/index.html#join-the-signal">Stay Connected</a></div></div></footer>
 </body></html>

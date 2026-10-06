@@ -32,10 +32,17 @@ for name in (
     "build_readings.py",
     "build_projects.py",
     "build_journal.py",
-    "build_navigation.py",
 ):
     runpy.run_path(str(ROOT / ".github/scripts" / name), run_name="__main__")
 
+# Journal generation also writes the former Story route. Restore the reviewed
+# reading before navigation normalization so a complete rebuild retains it.
+shutil.copyfile(TEMPLATES / "GhostHeart_Story.html.template", ROOT / "GhostHeart_Story.html")
+shutil.copyfile(TEMPLATES / "awakening/index.html.template", ROOT / "awakening/index.html")
+runpy.run_path(str(ROOT / ".github/scripts/build_navigation.py"), run_name="__main__")
+
 archive = ROOT / "journal/how-we-got-here-archive.html"
 shutil.copyfile(TEMPLATES / "journal/how-we-got-here-archive.html.template", archive)
+runpy.run_path(str(ROOT / ".github/scripts/build_vault_review.py"))
+runpy.run_path(str(ROOT / ".github/scripts/build_review_theme.py"))
 print("Applied owner-reviewed pages after preserving the existing gateway archive.")

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.myghostheart.com/GhostHeart_Angel.html</loc>
-    <lastmod>2026-09-29</lastmod>
-  </url>
-  <url>
     <loc>https://www.myghostheart.com/GhostHeart_Privacy.html</loc>
     <lastmod>2026-09-29</lastmod>
   </url>
@@ -22,10 +18,6 @@
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Songs.html</loc>
-    <lastmod>2026-09-29</lastmod>
-  </url>
-  <url>
-    <loc>https://www.myghostheart.com/GhostHeart_Story.html</loc>
     <lastmod>2026-09-29</lastmod>
   </url>
   <url>
@@ -100,7 +92,6 @@
     <loc>https://www.myghostheart.com/follow/</loc>
     <lastmod>2026-09-29</lastmod>
   </url>
-  <!-- JOURNAL-GENERATED:START -->
   <url>
     <loc>https://www.myghostheart.com/journal/</loc>
     <lastmod>2026-09-28</lastmod>
@@ -121,5 +112,16 @@
     <loc>https://www.myghostheart.com/journal/youre-not-god.html</loc>
     <lastmod>2026-09-25</lastmod>
   </url>
-  <!-- JOURNAL-GENERATED:END -->
+  <url>
+    <loc>https://www.myghostheart.com/GhostHeart_Story.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.myghostheart.com/vault/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.myghostheart.com/woman-behind-the-scenes/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
 </urlset>

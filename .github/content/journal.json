@@ -4,7 +4,7 @@
     "title": "How We Got Here",
     "category": "Public introduction",
     "published": "2026-09-28T12:00:00+00:00",
-    "summary": "Before the first chapter: the name, the promise, and a reason to keep the door open for someone else.",
+    "summary": "An earlier public introduction: the name, the promise, and a reason to keep the door open for someone else.",
     "image": "/assets/videos/youtube/kF1Cc_GB6AM.jpg",
     "paragraphs": [
       "This is an introduction to GhostHeart, not an excerpt from the book. The deeper life story will unfold through selected pages. Begin here with the purpose behind it.",
@@ -12,16 +12,24 @@
       "The heart survived. Then it chose a purpose.",
       "Survival matters. So does what a person chooses to carry forward. GhostHeart turns toward people who have been reduced to a label, judged from a distance, or written off before their story was heard. Seeing their humanity does not mean looking away from the truth or excusing harm. It means refusing to let one word tell the whole story.",
       "That is where the name meets the promise. This Is GhostHeart introduces the heart behind the work. GhostHeart’s Oath gives that heart a direction: protect the light in others. The films below belong together, but you can begin with either one.",
-      "Love belongs here too. GhostHeart and His Angel is the relationship story within this larger world—the person who saw the heart beneath the scars and never asked it to hide. It has its own place, alongside the music and the life behind it.",
+      "Love belongs here too. The Woman Behind the Scenes is the relationship story within this larger world—the person who saw the heart beneath the scars and never asked it to hide. It has its own place, alongside the music and the life behind it.",
       "You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer. No one has to disclose their own pain to belong here.",
-      "The first chapter of the written book is How We Got Here. This public beginning stops before those private chapters. Sunday readings will connect selected pages to the work unfolding around them; reading details will be announced when they are confirmed.",
+      "The written book carries a deeper life story. This public beginning stops before those private pages. Sunday readings will connect selected pages to the work unfolding around them; reading details will be announced when they are confirmed.",
       "For now, meet the name. Hear the promise. Then choose what you want to carry forward."
     ],
     "links": [
-      {"label": "GhostHeart and His Angel", "url": "/GhostHeart_Angel.html"},
-      {"label": "Find support", "url": "/GhostHeart_Resources.html"}
+      {
+        "label": "The Woman Behind the Scenes",
+        "url": "/woman-behind-the-scenes/"
+      },
+      {
+        "label": "Find support",
+        "url": "/GhostHeart_Resources.html"
+      }
     ],
-    "sources": ["public /journal/how-we-got-here.html (retrieved 2026-10-05)"]
+    "sources": [
+      "public /journal/how-we-got-here.html (retrieved 2026-10-05)"
+    ]
   },
   {
     "slug": "this-is-ghostheart",
@@ -36,10 +44,19 @@
       "GhostHeart begins with a life. It reaches toward people who need to feel seen, find their footing, and take their next step."
     ],
     "links": [
-      {"label": "Read the story", "url": "/GhostHeart_Story.html"},
-      {"label": "Watch This Is GhostHeart", "url": "https://www.youtube.com/watch?v=kF1Cc_GB6AM"}
+      {
+        "label": "Read the story",
+        "url": "/GhostHeart_Story.html"
+      },
+      {
+        "label": "Watch This Is GhostHeart",
+        "url": "https://www.youtube.com/watch?v=kF1Cc_GB6AM"
+      }
     ],
-    "sources": ["index.html", "start/index.html"]
+    "sources": [
+      "index.html",
+      "start/index.html"
+    ]
   },
   {
     "slug": "ghosthearts-oath",
@@ -54,10 +71,19 @@
       "What survived can help someone rise."
     ],
     "links": [
-      {"label": "Explore the mission", "url": "/GhostHeart_Version_Mission.html"},
-      {"label": "Watch GhostHeart’s Oath", "url": "https://www.youtube.com/watch?v=DQcl28CHE_o"}
+      {
+        "label": "Explore the mission",
+        "url": "/GhostHeart_Version_Mission.html"
+      },
+      {
+        "label": "Watch GhostHeart’s Oath",
+        "url": "https://www.youtube.com/watch?v=DQcl28CHE_o"
+      }
     ],
-    "sources": ["index.html", "start/index.html"]
+    "sources": [
+      "index.html",
+      "start/index.html"
+    ]
   },
   {
     "slug": "youre-not-god",
@@ -73,9 +99,17 @@
       "No human gets to decide whose life has value, whose love is real, or who deserves grace. You can stand behind a pulpit, a title, or a crowd—but you are still human."
     ],
     "links": [
-      {"label": "Explore the album", "url": "/albums/youre-not-god/index.html"},
-      {"label": "Read the lyrics", "url": "/albums/youre-not-god/lyrics.html"}
+      {
+        "label": "Explore the album",
+        "url": "/albums/youre-not-god/index.html"
+      },
+      {
+        "label": "Read the lyrics",
+        "url": "/albums/youre-not-god/lyrics.html"
+      }
     ],
-    "sources": ["albums/youre-not-god/index.html"]
+    "sources": [
+      "albums/youre-not-god/index.html"
+    ]
   }
 ]

@@ -15,7 +15,8 @@ def page(path):
     return BeautifulSoup((ROOT / path).read_text(encoding="utf-8"), "html.parser")
 
 
-nav = ["Awakening", "Music", "Readings", "Projects"]
+nav = ["Home", "The Awakening", "Enter My World", "Music"]
+explore = {"Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Stay Connected"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:
@@ -25,6 +26,14 @@ for path in ROOT.rglob("*.html"):
     if primary:
         actual = [link.get_text(" ", strip=True) for link in primary.select("a")]
         assert actual == nav, (path, actual)
+        toggle = soup.select_one('header.ghx-header button[aria-controls="gateway-menu"]')
+        assert toggle and toggle.get_text(" ", strip=True).startswith("Explore")
+        assert toggle.get("aria-expanded") == "false"
+        assert soup.select_one('header.ghx-header a.ghx-help-link').get_text(" ", strip=True) == "Help & Resources"
+        menu = soup.select_one('header.ghx-header nav#gateway-menu')
+        assert menu and {a.get_text(" ", strip=True) for a in menu.select("a")} == explore
+        styles = [a.get("href", "") for a in soup.select('link[rel="stylesheet"]')]
+        assert styles and styles[-1].endswith('/assets/shared/review-theme.css'), path
         checks += 1
 assert checks >= 44, checks
 
@@ -38,7 +47,10 @@ assert not page("GhostHeart_Privacy.html").select("script:not([src])")
 
 story = page("GhostHeart_Story.html")
 assert story.select_one("h1")
-assert story.select_one('a[href*="GhostHeart_Angel.html"]')
+assert story.select_one('a[href="/woman-behind-the-scenes/"]')
+assert story.select_one('#behind-the-scars')
+assert story.select_one('h1').get_text(' ', strip=True) == 'Enter My World.'
+assert page('GhostHeart_Angel.html').select_one('a[href="/woman-behind-the-scenes/"]')
 assert story.select_one('a[href*="GhostHeart_Resources.html"]')
 assert (ROOT / "journal/how-we-got-here-archive.html").is_file()
 
