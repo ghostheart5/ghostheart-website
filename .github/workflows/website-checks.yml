@@ -28,6 +28,7 @@ jobs:
           set -euo pipefail
           while IFS= read -r -d '' script; do node --check "$script"; done < <(find assets -type f -name '*.js' -print0)
           node .github/scripts/test_vault_filters.cjs
+          node .github/scripts/test_blog_comments.cjs
       - name: Install browser for local page checks
         run: |
           npm install --prefix /tmp/gh-browser --no-audit --no-fund playwright@1.55.1

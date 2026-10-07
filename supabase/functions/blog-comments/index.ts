@@ -1,5 +1,5 @@
-// Public blog conversation endpoint. Deploy only after the restricted database
-// role, RLS policies, and GHOSTHEART_COMMENTS_DB_URL secret are installed.
+// Public blog conversation endpoint for the existing ghostheart_blog schema.
+// Deploy only after its approved restricted login, RLS policies, and secret exist.
 import postgres from 'npm:postgres@3.4.7'
 
 const origin = 'https://www.myghostheart.com'
@@ -35,11 +35,12 @@ Deno.serve(async (request) => {
     if (request.method === 'GET') {
       const post = url.searchParams.get('post')
       if (!post || !allowedPosts.has(post)) return reply({ error: 'Unknown post' }, 400)
+      const thread = `journal:${post}`
       const comments = await sql`
-        select id, display_name, body, created_at
+        select id, display_name, body, approved_at
         from ghostheart_blog.comments
-        where post_slug = ${post} and status = 'approved'
-        order by created_at desc
+        where thread = ${thread} and status = 'approved'
+        order by approved_at desc
         limit 50
       `
       return reply({ comments })
@@ -50,7 +51,8 @@ Deno.serve(async (request) => {
     }
     const raw = await request.text()
     if (raw.length > 4000) return reply({ error: 'Comment too long' }, 413)
-    const input = JSON.parse(raw)
+    let input
+    try { input = JSON.parse(raw) } catch { return reply({ error: 'Invalid JSON' }, 400) }
     if (typeof input !== 'object' || input === null || Array.isArray(input)) {
       return reply({ error: 'Invalid comment' }, 400)
     }
@@ -58,13 +60,14 @@ Deno.serve(async (request) => {
     const post = input.post
     const name = typeof input.name === 'string' ? input.name.trim() : ''
     const body = typeof input.body === 'string' ? input.body.trim() : ''
-    if (!allowedPosts.has(post) || name.length < 1 || name.length > 60 ||
-        body.length < 1 || body.length > 2000) {
+    if (!allowedPosts.has(post) || name.length < 2 || name.length > 60 ||
+        body.length < 10 || body.length > 1000 || input.consent !== true) {
       return reply({ error: 'Check the post, name, and comment length' }, 400)
     }
+    const thread = `journal:${post}`
     await sql`
-      insert into ghostheart_blog.comments (post_slug, display_name, body)
-      values (${post}, ${name}, ${body})
+      insert into ghostheart_blog.comments (thread, display_name, body)
+      values (${thread}, ${name}, ${body})
     `
     return reply({ pending: true }, 202)
   } catch (error) {

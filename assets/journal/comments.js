@@ -37,6 +37,7 @@
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ post, name: form.elements.namedItem('name').value,
           body: form.elements.namedItem('body').value,
+          consent: form.elements.namedItem('consent').checked,
           website: form.elements.namedItem('website').value }),
       })
       if (!response.ok) throw new Error('Submission failed')

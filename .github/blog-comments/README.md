@@ -1,30 +1,37 @@
-# GhostHeart blog comments readiness
+# GhostHeart blog comments reconciliation
 
-This is a review draft. The production site keeps comments closed until the
-GhostHeart Studios backend has been configured and tested end to end. The
-database project is `pgqaqqliefpofsktjhjq`. No Axiomara database is involved.
+**Draft PR only. Keep deployment on hold.** GhostHeart Studios project
+`pgqaqqliefpofsktjhjq` already contains a private `ghostheart_blog` schema,
+with `comments`, `attempts`, `moderation_events`, and `retention_state` tables.
+The existing NOLOGIN roles are `ghostheart_blog_api`,
+`ghostheart_blog_moderator`, and `ghostheart_blog_retention`. This PR proposes no
+parallel table or API role, and touches no Axiomara data.
 
-## Approval gate
+The existing comments table uses a `thread` such as
+`journal:this-is-ghostheart`, bigint ID, `display_name` of 2–60 characters,
+`body` of 10–1000 characters, `consent_at`, `status`, and `approved_at`.
+Submitted comments default to pending; only approved rows can be returned.
+The form requires explicit consent before submission and renders returned text
+with `textContent`.
 
-Obtain owner approval to create one persistent PostgreSQL LOGIN role named
-`ghostheart_comments_api` in GhostHeart Studios. Give it only USAGE on the
-private `ghostheart_blog` schema and SELECT of approved comments plus INSERT of
-pending comments on `ghostheart_blog.comments`. It receives no permissions on
-any `studio_*` table, no UPDATE/DELETE, and no schema creation privileges.
-Create a strong generated password, store its pooler connection URL in the
-Supabase Edge Function secret `GHOSTHEART_COMMENTS_DB_URL`, and never put either
-value in this repository, public JavaScript, or chat output.
+## Restricted login handoff
 
-After approval, create the role and password through a secure administrator
-session, review and apply `schema-proposal.sql` to this project, deploy the
-`blog-comments` Edge Function with public invocation (`verify_jwt = false`),
-and add the secret. The function accepts only the public website Origin and a
-fixed list of existing blog posts, validates lengths, and returns only approved
-comments. Browser output uses `textContent`. New comments default to `pending`
-and require a project administrator to mark them approved in Supabase.
+The owner approved one persistent login named `ghostheart_comments_api` for
+inserting pending comments and reading approved comments. A secure owner-entry
+step must generate its password and place its pooler URL in the Supabase Edge
+Function secret `GHOSTHEART_COMMENTS_DB_URL`. Never enter the password or URL in
+Git, chat, shell commands, SQL tool arguments, or agent-visible output.
+`access-proposal.sql` shows the minimal table/column and sequence privileges
+plus RLS policies that login would need. Review them against the existing
+Studio work before applying. Do **not** grant membership in
+`ghostheart_blog_api`: that role also accesses `attempts` and
+`retention_state`, beyond this approval.
 
-Before publishing the website form, test an anonymous submission, confirm it
-does not appear publicly, approve it in Supabase, confirm it then appears only
-on its own post, and confirm the restricted role cannot read pending comments
-or touch any `studio_*` table. Verify CORS and the production page after deploy.
-The public site remains unchanged until those checks pass.
+The draft function does not yet enforce durable submission rate limits. The
+existing `attempts` table could support that with narrowly scoped SELECT and
+INSERT on `attempts` (and a non-public marker secret), but this is additional
+persistent access and requires a separate approval and implementation. Keep
+public posting closed until abuse controls and the moderation workflow are
+resolved, then deploy the function and run end-to-end tests: pending submission
+is hidden, approval makes it visible only on the correct post, rejected content
+stays hidden, and the restricted login cannot access any `studio_*` table.

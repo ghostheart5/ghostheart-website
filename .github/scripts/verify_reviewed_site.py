@@ -92,6 +92,9 @@ for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god", "how-we-
     assert article.select_one('[data-comment-status="open"]')
     assert article.select_one('.journal-comments form')
     assert article.select_one('script[src="/assets/journal/comments.js"]')
+    assert article.select_one('input[name="name"][minlength="2"][maxlength="60"][required]')
+    assert article.select_one('textarea[name="body"][minlength="10"][maxlength="1000"][required]')
+    assert article.select_one('input[name="consent"][type="checkbox"][required]')
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]
