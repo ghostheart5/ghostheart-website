@@ -125,7 +125,7 @@ def shell(title, description, path, body, image, article=None):
 <link rel="stylesheet" href="/assets/shared/journal.css"/>{'<link rel="stylesheet" href="/assets/story/story-reading.css"/>' if path == '/GhostHeart_Story.html' else ''}
 {'<link rel="stylesheet" href="/assets/journal/highlights.css"/>' if path.startswith('/journal/') else ''}
 <script defer src="/assets/shared/ghostheart-world.js"></script>
-{'<script defer src="/assets/journal/daily-quote.js"></script>' if path == '/journal/' else ''}
+{'<script defer src="/assets/journal/daily-quote.js"></script>' if path == '/journal/' else ''}{'<script defer src="/assets/journal/comments.js"></script>' if article else ''}
 <meta property="og:type" content="{'article' if article else 'website'}"/><meta property="og:site_name" content="GhostHeart"/>
 <meta property="og:title" content="{escape(title, quote=True)}"/><meta property="og:description" content="{escape(description, quote=True)}"/>
 <meta property="og:url" content="{BASE}{path}"/><meta property="og:image" content="{BASE}{image}"/>
@@ -215,7 +215,7 @@ for post in POSTS:
 {art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Related reading and music">
 <h2>Continue with the story and music.</h2><div class="ghx-actions">{links}{related_links}</div></section>
 <nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All blog entries</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav>
-<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}" data-comment-status="pending"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. A future conversation space will hold posts for moderation before they appear. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>
+<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}" data-comment-status="open"><h2 id="comments-title">Conversation</h2><p>Comments appear after review. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p><div data-comment-list aria-live="polite">Loading comments…</div><form><label for="comment-name">Name shown publicly</label><input id="comment-name" name="name" maxlength="60" required/><label for="comment-body">Comment</label><textarea id="comment-body" name="body" maxlength="2000" required></textarea><div class="comment-honeypot" aria-hidden="true"><label for="comment-website">Website</label><input id="comment-website" name="website" tabindex="-1" autocomplete="off"/></div><button type="submit">Submit for review</button><p data-comment-feedback role="status" aria-live="polite"></p></form></section>
 </article></div>'''
     write(post_path(post).lstrip('/'), shell(post['title'], post['summary'], post_path(post), body, post['image'], post))
 
