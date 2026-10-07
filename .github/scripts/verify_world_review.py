@@ -26,7 +26,7 @@ start = page("start/index.html")
 follow = page("follow/index.html")
 
 assert story.select_one("h1").get_text(" ", strip=True) == "Enter My World."
-assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars"
+assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars — The Awakening"
 assert story.select_one('a[href="/woman-behind-the-scenes/"]')
 assert story.select_one('a[href="/journal/"]')
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
