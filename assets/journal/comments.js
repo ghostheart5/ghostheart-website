@@ -40,6 +40,10 @@
           consent: form.elements.namedItem('consent').checked,
           website: form.elements.namedItem('website').value }),
       })
+      if (response.status === 429) {
+        status.textContent = 'Please wait an hour before sending another comment.'
+        return
+      }
       if (!response.ok) throw new Error('Submission failed')
       form.reset()
       status.textContent = 'Thank you. Your comment is waiting for review.'

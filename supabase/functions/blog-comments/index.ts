@@ -11,7 +11,21 @@ const allowedPosts = new Set([
 ])
 const databaseUrl = Deno.env.get('GHOSTHEART_COMMENTS_DB_URL')
 if (!databaseUrl) throw new Error('GHOSTHEART_COMMENTS_DB_URL is required')
+const markerSecret = Deno.env.get('GHOSTHEART_COMMENT_MARKER_KEY')
+if (!markerSecret || markerSecret.length < 32) throw new Error('GHOSTHEART_COMMENT_MARKER_KEY is required')
 const sql = postgres(databaseUrl, { max: 1, idle_timeout: 10, connect_timeout: 5, prepare: false })
+const markerKey = crypto.subtle.importKey('raw', new TextEncoder().encode(markerSecret),
+  { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'])
+
+async function markerFor(request: Request) {
+  // Use the last proxy-added address. Launch testing must verify that the
+  // Supabase gateway appends or overwrites this value, not merely forwards it.
+  const address = request.headers.get('x-forwarded-for')?.split(',').at(-1)?.trim()
+  if (!address || !/^[0-9a-fA-F:.]{3,64}$/.test(address)) return null
+  const signature = await crypto.subtle.sign('HMAC', await markerKey,
+    new TextEncoder().encode(`ghostheart-blog-v1:${address}`))
+  return [...new Uint8Array(signature)].map(byte => byte.toString(16).padStart(2, '0')).join('')
+}
 
 function reply(data: unknown, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -64,11 +78,25 @@ Deno.serve(async (request) => {
         body.length < 10 || body.length > 1000 || input.consent !== true) {
       return reply({ error: 'Check the post, name, and comment length' }, 400)
     }
+    const marker = await markerFor(request)
+    if (!marker) return reply({ error: 'Could not verify submission source' }, 400)
     const thread = `journal:${post}`
-    await sql`
-      insert into ghostheart_blog.comments (thread, display_name, body)
-      values (${thread}, ${name}, ${body})
-    `
+    const accepted = await sql.begin(async (tx) => {
+      // Serialize concurrent submissions from the same marker before counting.
+      await tx`select pg_advisory_xact_lock(hashtextextended(${marker}, 0))`
+      const [{ total }] = await tx`
+        select count(*)::int as total from ghostheart_blog.attempts
+        where marker = ${marker} and attempted_at > now() - interval '1 hour'
+      `
+      if (total >= 5) return false
+      await tx`insert into ghostheart_blog.attempts (marker) values (${marker})`
+      await tx`
+        insert into ghostheart_blog.comments (thread, display_name, body)
+        values (${thread}, ${name}, ${body})
+      `
+      return true
+    })
+    if (!accepted) return reply({ error: 'Please wait before commenting again' }, 429)
     return reply({ pending: true }, 202)
   } catch (error) {
     console.error('Blog comments request failed', error)
