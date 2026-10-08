@@ -15,7 +15,7 @@ const fs = require('node:fs');
   const errors = [];
   page.on('pageerror', error => errors.push(String(error)));
   const paths = [
-    '/', '/GhostHeart_Story.html', '/GhostHeart_Angel.html',
+    '/', '/GhostHeart_Story.html', '/woman-behind-the-scenes/',
     '/albums/index.html', '/live/index.html', '/live/my-promise.html',
     '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/journal/index.html'
   ];

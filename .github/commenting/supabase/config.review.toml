@@ -1,0 +1,5 @@
+# REVIEW DRAFT, deliberately outside an active supabase/config.toml.
+# Public visitor GET/POST calls carry no Supabase JWT. This setting is needed
+# only after the separate abuse, database, privacy, and retention gates pass.
+[functions.blog-comments]
+verify_jwt = false

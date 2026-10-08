@@ -89,7 +89,9 @@ posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="u
 assert len(posts) == 4
 for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
     article = page(f"journal/{slug}.html")
-    assert article.select_one('[data-comment-status="pending"]')
+    assert article.select_one(f'[data-comment-thread="journal:{slug}"]')
+    assert article.select_one('script[src="/assets/journal/comments-config.js"]')
+    assert article.select_one('script[src="/assets/journal/comments.js"]')
     assert not article.select(".journal-comments form")
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
