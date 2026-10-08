@@ -126,6 +126,7 @@ def shell(title, description, path, body, image, article=None):
 {'<link rel="stylesheet" href="/assets/journal/highlights.css"/>' if path.startswith('/journal/') else ''}
 <script defer src="/assets/shared/ghostheart-world.js"></script>
 {'<script defer src="/assets/journal/daily-quote.js"></script>' if path == '/journal/' else ''}
+{'<script defer src="/assets/journal/comments-config.js"></script><script defer src="/assets/journal/comments.js"></script>' if article else ''}
 <meta property="og:type" content="{'article' if article else 'website'}"/><meta property="og:site_name" content="GhostHeart"/>
 <meta property="og:title" content="{escape(title, quote=True)}"/><meta property="og:description" content="{escape(description, quote=True)}"/>
 <meta property="og:url" content="{BASE}{path}"/><meta property="og:image" content="{BASE}{image}"/>
@@ -215,7 +216,7 @@ for post in POSTS:
 {art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Related reading and music">
 <h2>Continue with the story and music.</h2><div class="ghx-actions">{links}{related_links}</div></section>
 <nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All blog entries</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav>
-<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}" data-comment-status="pending"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. A future conversation space will hold posts for moderation before they appear. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>
+<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>
 </article></div>'''
     write(post_path(post).lstrip('/'), shell(post['title'], post['summary'], post_path(post), body, post['image'], post))
 
