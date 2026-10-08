@@ -87,10 +87,14 @@ assert main.select_one(".urgent").sourceline < main.select_one(".catalog").sourc
 
 posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="utf-8"))
 assert len(posts) == 4
-for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
+for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god", "how-we-got-here-archive"):
     article = page(f"journal/{slug}.html")
-    assert article.select_one('[data-comment-status="pending"]')
-    assert not article.select(".journal-comments form")
+    assert article.select_one('[data-comment-status="open"]')
+    assert article.select_one('.journal-comments form')
+    assert article.select_one('script[src="/assets/journal/comments.js"]')
+    assert article.select_one('input[name="name"][minlength="2"][maxlength="60"][required]')
+    assert article.select_one('textarea[name="body"][minlength="10"][maxlength="1000"][required]')
+    assert article.select_one('input[name="consent"][type="checkbox"][required]')
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]

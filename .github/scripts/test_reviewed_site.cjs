@@ -15,7 +15,7 @@ const fs = require('node:fs');
   const errors = [];
   page.on('pageerror', error => errors.push(String(error)));
   const paths = [
-    '/', '/GhostHeart_Story.html', '/GhostHeart_Angel.html',
+    '/', '/GhostHeart_Story.html', '/woman-behind-the-scenes/',
     '/albums/index.html', '/live/index.html', '/live/my-promise.html',
     '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/journal/index.html'
   ];
@@ -35,6 +35,9 @@ const fs = require('node:fs');
       assert.equal(await menu.getAttribute('aria-expanded'), 'false', path + ' menu close');
     }
   }
+  await page.goto('http://127.0.0.1:8765/GhostHeart_Angel.html', { waitUntil: 'load' });
+  await page.waitForURL('**/woman-behind-the-scenes/');
+  assert.equal(await page.locator('h1').count(), 1, 'Angel alias destination heading');
   await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
   assert.equal(await page.locator('.resource:visible').count(), 16);
   await page.locator('[data-filter="start"]').click();
