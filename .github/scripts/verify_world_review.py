@@ -45,7 +45,10 @@ assert len(films.select("[id^=film-][hidden]")) >= 18
 assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
 assert start.select_one('a[href="/albums/index.html#youre-not-god"]')
-assert not start.select("form") and not follow.select("form") and not home.select("form")
+assert not start.select("form") and not home.select("form")
+form = follow.select_one("form.signal-signup-form")
+assert form and form.get("method") == "post" and "list-manage.com/subscribe/post" in form["action"]
+assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
 live = page("live/index.html")
 assert live.select_one("#next-live-title").get_text(" ", strip=True) == "The Awakening Begins"
 assert "I'm a Nobody, Are You a Nobody Too?" in live.get_text(" ", strip=True)
