@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 def replace_unverified_signup(soup):
     """Keep a social connection path while email delivery remains unverified."""
     replacement = '''<section class="g-section" id="join-the-signal"><div class="g-wrap"><h2>Stay Connected.</h2>
-<p>Find new work on GhostHeart's verified public profiles. Email updates are being set up; signup and delivery are not confirmed yet.</p>
+<p>Find new work on GhostHeart's verified public profiles. Email updates are available on the <a href="/follow/">Stay Connected page</a>.</p>
 <div class="ghx-actions"><a href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener noreferrer">YouTube</a>
 <a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener noreferrer">TikTok</a>
 <a href="https://www.instagram.com/ghostheart131517/" target="_blank" rel="noopener noreferrer">Instagram</a></div></div></section>'''

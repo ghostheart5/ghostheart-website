@@ -213,11 +213,11 @@ def main() -> int:
         if 'name="b_a7ab330423f3b936c48b8d8ba_880e8056a6"' not in homepage:
             errors.append("Mailchimp honeypot field is missing")
     elif not all(value in homepage for value in (
-        'signup and delivery are not confirmed yet',
+        'href="/follow/"',
         'https://www.youtube.com/@GhostHeart-M95RTK',
         'https://www.tiktok.com/@ghosthearted1',
     )):
-        errors.append("Homepage without signup must show verified social links and honest email status")
+        errors.append("Homepage without signup must link to the email form and verified social profiles")
 
     for relative, destination in LEGACY_REDIRECTS.items():
         text = (ROOT / relative).read_text(encoding="utf-8")
