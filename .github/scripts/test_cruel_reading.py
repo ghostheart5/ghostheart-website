@@ -36,6 +36,8 @@ else:
     assert rendered == paragraphs, 'Rendered body differs from exact owner text'
     assert not article.select('form, [data-comment-thread]')
     assert not article.select('script[src*="comments"]')
+    music_actions = article.select('.journal-continue a[href="/albums/#track-cruel"]')
+    assert len(music_actions) == 1, 'Duplicate Cruel listening CTA'
     assert article.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com'+ROUTE
     for tag in article.select('main a[href], main img[src]'):
         url = tag.get('href') or tag.get('src')
