@@ -9,43 +9,52 @@
       "tracks": [
         {
           "title": "Cruel",
+          "id": "track-cruel",
           "audio": "/assets/music/preview/awakening-01-cruel.mp3",
           "youtube": "https://www.youtube.com/watch?v=9sbFgjM_SDE"
         },
         {
           "title": "I'm Not",
+          "id": "track-im-not",
           "recording_title": "I'm Not Staying Silent",
           "audio": "/assets/music/preview/awakening-02-im-not-staying-silent.mp3",
           "youtube": null
         },
         {
           "title": "Papa Didn't Raise a Fool",
+          "id": "track-papa-didnt-raise-a-fool",
           "recording_title": "Papa Didn't Raise No Fool",
           "audio": "/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3",
           "youtube": null
         },
         {
           "title": "She Got to Me",
+          "id": "track-she-got-to-me",
           "audio": "/assets/music/preview/awakening-04-she-got-to-me.mp3",
           "youtube": null
         },
         {
           "title": "This Is GhostHeart",
+          "id": "track-this-is-ghostheart",
           "audio": "/assets/music/preview/awakening-05-this-is-ghostheart.mp3",
-          "youtube": null
+          "youtube": "https://www.youtube.com/watch?v=AOCRvtz92JM",
+          "youtube_label": "Watch trailer"
         },
         {
           "title": "GhostHeart's Oath",
+          "id": "track-ghosthearts-oath",
           "audio": "/assets/music/preview/awakening-06-ghosthearts-oath.mp3",
           "youtube": "https://www.youtube.com/watch?v=mBAsUNX3vHQ"
         },
         {
           "title": "You Can Be GhostHeart Too",
+          "id": "track-you-can-be-ghostheart-too",
           "audio": "/assets/music/preview/awakening-07-you-can-be-ghostheart-too.mp3",
           "youtube": null
         },
         {
           "title": "One Heart Many Voices",
+          "id": "track-one-heart-many-voices",
           "audio": "/assets/music/preview/awakening-08-one-heart-many-voices.mp3",
           "youtube": null
         }
@@ -58,16 +67,19 @@
       "tracks": [
         {
           "title": "I Won't Pretend to Speak for You",
+          "id": "track-i-wont-pretend-to-speak-for-you",
           "audio": "/assets/music/preview/youre-not-god-01-i-wont-pretend.mp3",
           "youtube": "https://www.youtube.com/watch?v=z-FRCpG9vfw"
         },
         {
           "title": "Hey Preacher Man",
+          "id": "track-hey-preacher-man",
           "audio": "/assets/music/preview/youre-not-god-02-hey-preacher-man.mp3",
           "youtube": "https://www.youtube.com/watch?v=2SEng4dmgUc"
         },
         {
           "title": "That Ain't Holy",
+          "id": "track-that-aint-holy",
           "audio": "/assets/music/preview/youre-not-god-03-that-aint-holy.mp3",
           "youtube": "https://www.youtube.com/watch?v=ptYn4vh6DCQ"
         }

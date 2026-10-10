@@ -16,24 +16,56 @@ const fs = require('node:fs');
   page.on('pageerror', error => errors.push(String(error)));
   const paths = [
     '/', '/GhostHeart_Story.html', '/woman-behind-the-scenes/',
-    '/albums/index.html', '/live/index.html', '/live/my-promise.html',
+    '/albums/index.html', '/vault/', '/live/index.html', '/live/my-promise.html',
     '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/journal/index.html'
   ];
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     for (const path of paths) {
-      const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'domcontentloaded' });
+      const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'load' });
       assert.equal(response.status(), 200, path);
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
       assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'The Awakening', 'Enter My World', 'Music'], path + ' tabs');
-      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' overflow at ' + width);
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
+      assert.equal(overflow, false, path + ' overflow at ' + width);
       const menu = page.locator('header.ghx-header .ghx-menu-toggle');
       await menu.click();
       assert.equal(await menu.getAttribute('aria-expanded'), 'true', path + ' menu open');
       await page.keyboard.press('Escape');
       assert.equal(await menu.getAttribute('aria-expanded'), 'false', path + ' menu close');
     }
+    await page.goto('http://127.0.0.1:8765/vault/');
+    const videoFilter = page.locator('[data-vault-filter="videos"]');
+    await videoFilter.focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await videoFilter.getAttribute('aria-pressed'), 'true');
+    assert.equal(await page.locator('.vault-item:visible').count(), 6);
+    await page.locator('#vault-search').fill('cruel');
+    assert.equal(await page.locator('.vault-item:visible').count(), 3);
+    const cruel = page.locator('.vault-item[data-vault-kind="videos"]:visible a');
+    assert.equal(await cruel.getAttribute('href'), 'https://www.youtube.com/watch?v=9sbFgjM_SDE');
+    assert.equal(await cruel.innerText(), 'Watch full video');
+    await page.locator('#vault-clear').click();
+    assert.equal(await page.locator('.vault-item:visible').count(), 3);
+    await page.locator('[data-vault-filter="songs"]').click();
+    const songLinks = await page.locator('.vault-item:visible a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+    assert.equal(songLinks.length, 11);
+    for (const href of songLinks) {
+      await page.goto('http://127.0.0.1:8765' + href);
+      const target = page.locator(new URL(page.url()).hash);
+      assert.equal(await target.count(), 1, href);
+      const bounds = await target.boundingBox();
+      const headerBounds = await page.locator('header.ghx-header').boundingBox();
+      assert.ok(bounds.y >= headerBounds.y + headerBounds.height - 1, href + ' visible below sticky header');
+      assert.ok(bounds.y < 900, href + ' fragment in viewport');
+      assert.equal(await target.locator('audio').count(), 1);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
+    }
+    const trailer = page.locator('#track-this-is-ghostheart a');
+    assert.equal(await trailer.getAttribute('href'), 'https://www.youtube.com/watch?v=AOCRvtz92JM');
+    assert.equal(await trailer.innerText(), 'Watch trailer');
+    assert.equal(await trailer.getAttribute('aria-label'), 'Watch trailer: This Is GhostHeart on YouTube');
   }
   await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
   assert.equal(await page.locator('.resource:visible').count(), 16);

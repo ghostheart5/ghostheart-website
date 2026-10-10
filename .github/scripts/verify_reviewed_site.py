@@ -56,7 +56,7 @@ assert (ROOT / "journal/how-we-got-here-archive.html").is_file()
 
 music = page("albums/index.html")
 assert len(music.select("audio")) == 11
-assert len(music.select(".music-youtube")) == 5
+assert len(music.select(".music-youtube")) == 6
 audio = list((ROOT / "assets/music/preview").glob("*.mp3"))
 assert len(audio) == 11 and all(track.stat().st_size > 1_000_000 for track in audio)
 assert max(track.stat().st_size for track in audio) < 100_000_000

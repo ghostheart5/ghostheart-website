@@ -24,6 +24,9 @@ def build(check=False):
     assert [g['id'] for g in groups] == ['awakening', 'youre-not-god']
     assert [t['title'] for t in groups[0]['tracks']] == AWAKENING
     assert [t['title'] for t in groups[1]['tracks']] == YNG
+    track_ids = [t['id'] for g in groups for t in g['tracks']]
+    assert len(set(track_ids)) == len(track_ids)
+    assert all(re.fullmatch(r'track-[a-z0-9]+(?:-[a-z0-9]+)*', value) for value in track_ids)
     home = (ROOT / 'index.html').read_text(encoding='utf-8')
     header = shell_piece(re.search(r'<header\b.*?</header>', home, re.S).group())
     header = header.replace('<a href="/albums/index.html">Music</a>', '<a aria-current="page" href="/albums/index.html">Music</a>')
@@ -42,11 +45,14 @@ def build(check=False):
                           'Your browser does not support this audio player.</audio>')
             else:
                 player = '<p class="music-unavailable">Audio for this exact track is being verified.</p>'
+            youtube_label = track.get('youtube_label', 'YouTube ↗')
+            accessible_label = (f'{youtube_label}: {track["title"]} on YouTube'
+                                if track.get('youtube_label') else f'Open {track["title"]} on YouTube')
             youtube = (f'<a class="music-youtube" href="{escape(track["youtube"], quote=True)}" target="_blank" rel="noopener noreferrer"'
-                       f' aria-label="Open {escape(track["title"], quote=True)} on YouTube">YouTube ↗</a>') if track['youtube'] else ''
+                       f' aria-label="{escape(accessible_label, quote=True)}">{escape(youtube_label)}</a>') if track['youtube'] else ''
             recording_note = (f'<p class="music-recording-title">Audio recording: {escape(track["recording_title"])}</p>'
                               if track.get('recording_title') else '')
-            rows.append(f'<li class="music-track"><div class="music-track-heading"><span class="music-number">{number:02d}</span>'
+            rows.append(f'<li class="music-track" id="{escape(track["id"], quote=True)}"><div class="music-track-heading"><span class="music-number">{number:02d}</span>'
                         f'<h3>{escape(track["title"])}</h3>{youtube}</div>{recording_note}{player}</li>')
         sections.append(f'<section class="music-group" id="{group["id"]}" aria-labelledby="{group["id"]}-title">'
                         f'<div class="music-group-head"><p class="ghx-kicker">{len(group["tracks"])} songs</p>'

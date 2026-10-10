@@ -57,7 +57,19 @@ assert not live.select_one('time')
 
 counts = {kind: len(vault.select(f'.vault-item[data-vault-kind="{kind}"]'))
           for kind in ("songs", "videos", "shorts", "quotes")}
-assert counts == {"songs": 11, "videos": 5, "shorts": 5, "quotes": 17}, counts
+assert counts == {"songs": 11, "videos": 6, "shorts": 5, "quotes": 17}, counts
+music = page('albums/index.html')
+ids = [element['id'] for element in music.select('[id]')]
+assert len(ids) == len(set(ids)), 'Duplicate Music IDs'
+for card in vault.select('.vault-item[data-vault-kind="songs"]'):
+    href = card.select_one('a')['href']
+    assert href.startswith('/albums/#track-'), href
+    target = music.find(id=href.split('#', 1)[1])
+    assert target and target.select_one('h3').get_text() == card.select_one('h2').get_text(), href
+trailer = music.select_one('#track-this-is-ghostheart a')
+assert trailer['href'] == 'https://www.youtube.com/watch?v=AOCRvtz92JM'
+assert trailer.get_text() == 'Watch trailer'
+assert vault.select_one('.vault-item[data-vault-kind="videos"] a[href="https://www.youtube.com/watch?v=9sbFgjM_SDE"]')
 assert len(vault.select('.vault-item[data-vault-featured="true"]')) == 3
 assert {button["data-vault-filter"] for button in vault.select("[data-vault-filter]")} == {
     "featured", "songs", "videos", "shorts", "quotes", "all"
@@ -93,4 +105,4 @@ assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
 for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "start/index.html", "follow/index.html"):
     assert page(relative).select_one('link[href="/assets/shared/review-theme.css"]'), relative
-print("PASS World review: Home Vault/Lives paths, scoped 38-item Vault, reading aliases, shared theme")
+print("PASS World review: paused Lives, scoped 39-item Vault, exact track fragments, trailer label, reading aliases, shared theme")
