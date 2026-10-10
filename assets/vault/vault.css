@@ -45,4 +45,5 @@
 .vault-live-note a { color: #f3bd8b; }
 @media (max-width: 900px) { .vault-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vault-latest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .vault-grid, .vault-latest-grid { grid-template-columns: 1fr; } .vault-hero { padding-top: 3.5rem; } }
+@media (max-width: 600px) { .vault-hero h1 { font-size: clamp(2rem, 10vw, 3.7rem); } }
 @media (max-width: 700px) { .home-discovery { grid-template-columns:1fr; } }

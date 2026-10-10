@@ -47,8 +47,12 @@ for group in manifest['groups']:
     for track in group['tracks']:
         title = track['title']
         items.append(dict(kind='songs', title=title, description=f"From {group['title']}.",
-                          href=f"/albums/#{group['id']}", action='Listen in Music',
+                          href=f"/albums/#{track['id']}", action='Listen in Music',
                           search=f"{title} {group['title']}", featured=title == 'Cruel'))
+
+items.append(dict(kind='videos', title='Cruel', description='The full public music video.',
+                  href='https://www.youtube.com/watch?v=9sbFgjM_SDE', action='Watch full video',
+                  search='Cruel The Awakening full music video', featured=False))
 
 films = replace_unverified_signup(BeautifulSoup((ROOT / 'GhostHeart_Videos.html').read_text(encoding='utf-8'), 'html.parser'))
 approved_video_ids = {
@@ -112,7 +116,7 @@ for index, quote in enumerate(library['quotes'], 1):
     items.append(dict(kind='quotes', title=f"Quote {index:02}", description=quote,
                       href=f"/GhostHeart_Quotes.html#quote-{index:02}", action='View in Quote Vault',
                       search=quote, featured=index == 1))
-assert len(library['quotes']) == 17 and len(items) == 38
+assert len(library['quotes']) == 17 and len(items) == 39
 
 
 def card(item):
@@ -141,7 +145,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta nam
 <div class="vault-filters" aria-label="Filter the Vault"><button type="button" data-vault-filter="featured" aria-pressed="true">Featured</button><button type="button" data-vault-filter="songs" aria-pressed="false">Songs</button><button type="button" data-vault-filter="videos" aria-pressed="false">Videos</button><button type="button" data-vault-filter="shorts" aria-pressed="false">Shorts</button><button type="button" data-vault-filter="quotes" aria-pressed="false">Quotes</button><button type="button" data-vault-filter="all" aria-pressed="false">All</button></div>
 <p id="vault-count" class="vault-count" role="status" aria-live="polite">3 featured selections shown.</p>
 <div class="vault-grid">{cards}</div><p id="vault-empty" class="vault-empty" hidden>No matches. Try another title or theme.</p>
-<p class="vault-source-note">Songs open Music, films open the existing film collection, Shorts open their public YouTube pages, and quotes open the Quote Vault. No downloads are offered here.</p>
+<p class="vault-source-note">Songs open Music, videos open the film collection or their public YouTube pages, Shorts open their public YouTube pages, and quotes open the Quote Vault. No downloads are offered here.</p>
 <noscript><p><a href="/albums/">Music</a> · <a href="/GhostHeart_Videos.html">Films</a> · <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></noscript></section></main>{footer}</body></html>\n'''
 output = ROOT / 'vault/index.html'
 output.parent.mkdir(parents=True, exist_ok=True)
@@ -156,7 +160,7 @@ home_latest = f'''<section class="vault-latest ghx-wrap" aria-labelledby="latest
 home_paths = f'''<section class="home-discovery ghx-wrap" aria-label="Explore GhostHeart’s Vault">
 <article class="home-discovery-card" id="home-vault" aria-labelledby="home-vault-title"><p class="ghx-kicker">The collection</p><h2 id="home-vault-title">GhostHeart's Vault</h2>
 <p>Find a song, film, Short, or quote that stays with you.</p>
-<p class="home-discovery-meta">11 songs · 5 films · 5 Shorts · 17 quotes</p><a href="/vault/">Explore GhostHeart's Vault</a></article>
+<p class="home-discovery-meta">11 songs · 6 videos · 5 Shorts · 17 quotes</p><a href="/vault/">Explore GhostHeart's Vault</a></article>
 <article class="home-discovery-card" id="home-lives" aria-labelledby="home-lives-title"><p class="ghx-kicker">Planned Sunday Live</p><h2 id="home-lives-title">Lives &amp; Readings</h2>
 <p><strong>{escape(live['title'])}</strong> is planned for <time datetime="{escape(live['starts_at'], quote=True)}">October 11, 2026 at 10:00 a.m. Central</time>. The platform, viewing link, and replay are pending.</p>
 <a href="/live/">Lives &amp; Readings details</a></article></section>'''
@@ -189,4 +193,4 @@ for url in sorted(targets - {'https://www.myghostheart.com/GhostHeart_Angel.html
     ET.SubElement(entry, f'{{{ns}}}lastmod').text = '2026-10-06'
 ET.indent(site_map, space='  ')
 sitemap_path.write_text('<?xml version="1.0" encoding="utf-8"?>\n' + ET.tostring(site_map, encoding='unicode') + '\n', encoding='utf-8', newline='\n')
-print(f"Built scoped Vault from {len(items)} public links: 11 songs, 5 films, 5 verified Shorts, 17 quotes")
+print(f"Built scoped Vault from {len(items)} public links: 11 songs, 6 videos, 5 verified Shorts, 17 quotes")

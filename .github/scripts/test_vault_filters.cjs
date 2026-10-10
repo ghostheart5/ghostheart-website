@@ -10,7 +10,7 @@ const cards = [...html.matchAll(/<article class="vault-item" data-vault-kind="([
     dataset: { vaultKind: match[1], vaultFeatured: match[2], vaultSearch: match[3] },
     hidden: match[4].includes(' hidden'),
   }));
-assert.equal(cards.length, 38);
+assert.equal(cards.length, 39);
 
 function element(dataset = {}) {
   return {
@@ -36,7 +36,7 @@ const root = {
 const script = fs.readFileSync(path.join(rootDir, 'assets/vault/vault.js'), 'utf8');
 vm.runInNewContext(script, { document: { querySelector() { return root; } } });
 assert.equal(cards.filter((card) => !card.hidden).length, 3);
-for (const [kind, expected] of [['songs', 11], ['videos', 5], ['shorts', 5], ['quotes', 17], ['all', 38]]) {
+for (const [kind, expected] of [['songs', 11], ['videos', 6], ['shorts', 5], ['quotes', 17], ['all', 39]]) {
   buttons.find((button) => button.dataset.vaultFilter === kind).handlers.click();
   assert.equal(cards.filter((card) => !card.hidden).length, expected, kind);
   assert.equal(buttons.find((button) => button.dataset.vaultFilter === kind).attrs['aria-pressed'], 'true');
@@ -50,4 +50,4 @@ assert.equal(cards.filter((card) => !card.hidden).length, 0);
 assert.equal(empty.hidden, false);
 clear.handlers.click();
 assert.equal(cards.filter((card) => !card.hidden).length, 3);
-console.log('PASS Vault filters: 38 scoped items, category counts, search, empty state, clear');
+console.log('PASS Vault filters: 39 scoped items, category counts, search, empty state, clear');
