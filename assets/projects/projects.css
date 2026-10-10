@@ -2,4 +2,4 @@
 
 .ghx-site .projects-button{color:#fff!important}
 .ghx-site .projects-button:hover,.ghx-site .projects-button:focus-visible{background:#cf3d47}
-@media(max-width:600px){.projects-intro h1{font-size:clamp(2.25rem,11vw,4.1rem)}}
+@media(max-width:600px){.projects-intro h1{font-size:clamp(2.25rem,11vw,4.1rem)}.projects-feature-main h2,.projects-shadow h2{font-size:clamp(2rem,10vw,3.1rem)}.projects-future h2,.projects-close h2{font-size:clamp(2rem,9.5vw,2.8rem)}}

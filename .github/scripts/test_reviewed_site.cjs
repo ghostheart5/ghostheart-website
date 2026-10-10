@@ -92,6 +92,9 @@ const fs = require('node:fs');
     await page.setViewportSize({ width, height: 900 });
     await page.goto('http://127.0.0.1:8765/GhostHeart_Projects.html');
     assert.equal(await page.locator('h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Projects title fits ' + width);
+    for (const heading of await page.locator('main h1, main h2, main h3').all()) {
+      assert.equal(await heading.evaluate(e=>{const r=document.createRange();r.selectNodeContents(e);const b=r.getBoundingClientRect();return b.x>=0&&b.right<=innerWidth;}),true,'Projects heading fits '+width+': '+await heading.innerText());
+    }
     const button = page.locator('.projects-button');
     for (const state of ['normal', 'hover', 'focus']) {
       if (state === 'hover') await button.hover();
