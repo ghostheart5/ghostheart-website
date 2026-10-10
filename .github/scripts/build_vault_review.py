@@ -109,7 +109,7 @@ for title, video_id in public_shorts:
                       description='From The Awakening.' if awakening else "From That Ain't Holy / You're Not God.",
                       href=f'https://www.youtube.com/shorts/{video_id}', action='Watch the Short',
                       search=title + (" Awakening" if awakening else " That Ain't Holy You're Not God"),
-                      related_href='/albums/index.html#awakening' if awakening else '/albums/index.html#youre-not-god',
+                      related_href='/albums/#track-cruel' if awakening else '/albums/#track-that-aint-holy',
                       featured=False))
 
 for index, quote in enumerate(library['quotes'], 1):
@@ -138,6 +138,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta nam
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/><link rel="stylesheet" href="/assets/vault/vault.css"/>
 <script defer src="/assets/shared/ghostheart-world.js"></script><script defer src="/assets/vault/vault.js"></script>
 <meta property="og:type" content="website"/><meta property="og:site_name" content="GhostHeart"/><meta property="og:title" content="GhostHeart’s Vault"/><meta property="og:url" content="https://www.myghostheart.com/vault/"/>
+<meta property="og:description" content="Explore GhostHeart songs, films, and quotes already shared with the public."/><meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/><meta property="og:image:alt" content="GhostHeart Awakening artwork"/><meta name="twitter:card" content="summary_large_image"/>
 </head><body class="ghx-site"><a class="skip-link" href="#main-content">Skip to content</a>{header}
 <main id="main-content" class="vault-page"><section class="vault-hero ghx-wrap"><p class="ghx-kicker">A growing collection</p><h1>GhostHeart’s Vault.</h1><p>Songs, films, and words already shared. Start with a few, or find what speaks to you.</p>
 <div class="vault-hero-links"><a href="/GhostHeart_Story.html">Enter My World</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></div></section>

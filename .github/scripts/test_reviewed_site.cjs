@@ -88,6 +88,26 @@ const fs = require('node:fs');
     assert.equal(await trailer.getAttribute('aria-label'), 'Watch trailer: This Is GhostHeart on YouTube');
   }
   await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('http://127.0.0.1:8765/GhostHeart_Projects.html');
+    assert.equal(await page.locator('h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Projects title fits ' + width);
+    const button = page.locator('.projects-button');
+    for (const state of ['normal', 'hover', 'focus']) {
+      if (state === 'hover') await button.hover();
+      if (state === 'focus') { await page.mouse.move(0,0); await button.focus(); }
+      const ratio = await button.evaluate(element => {
+        const style=getComputedStyle(element);
+        const luminance=value=>value.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
+        const a=luminance(style.color),b=luminance(style.backgroundColor);
+        return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+      });
+      assert.ok(ratio>=4.5, 'Projects button contrast ' + state + ': ' + ratio);
+    }
+    assert.ok((await button.boundingBox()).height>=44);
+    assert.equal(await button.evaluate(e=>e.matches(':focus-visible')&&parseFloat(getComputedStyle(e).outlineWidth)>=3),true);
+  }
+  await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
   assert.equal(await page.locator('.resource:visible').count(), 16);
   await page.locator('[data-filter="start"]').click();
   assert.ok((await page.locator('.resource:visible').count()) < 16);
