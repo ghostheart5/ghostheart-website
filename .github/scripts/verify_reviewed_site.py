@@ -16,7 +16,7 @@ def page(path):
 
 
 nav = ["Home", "The Awakening", "Enter My World", "Music"]
-explore = {"Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Stay Connected"}
+explore = {"Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Projects", "Stay Connected"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:

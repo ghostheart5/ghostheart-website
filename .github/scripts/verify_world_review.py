@@ -50,10 +50,10 @@ form = follow.select_one("form.signal-signup-form")
 assert form and form.get("method") == "post" and "list-manage.com/subscribe/post" in form["action"]
 assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
 live = page("live/index.html")
-assert live.select_one("#next-live-title").get_text(" ", strip=True) == "The Awakening Begins"
-assert "I'm a Nobody, Are You a Nobody Too?" in live.get_text(" ", strip=True)
-assert live.select_one("#live-replay") and "No replay available yet" in live.select_one("#live-replay").get_text(" ", strip=True)
-assert live.select_one('a[href="/live/my-promise.html"]')
+assert "No Live sessions are currently scheduled." in live.get_text(" ", strip=True)
+assert not live.select_one("#next-live-title")
+assert not live.select_one("#live-replay")
+assert not live.select_one('time')
 
 counts = {kind: len(vault.select(f'.vault-item[data-vault-kind="{kind}"]'))
           for kind in ("songs", "videos", "shorts", "quotes")}
@@ -76,8 +76,19 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
 assert home.select_one("#latest [data-daily-quote]")
 assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "GhostHeart's Vault"
 assert home.select_one('#home-vault a[href="/vault/"]')
-assert home.select_one("#home-lives h2").get_text(" ", strip=True) == "Lives & Readings"
-assert home.select_one('#home-lives a[href="/live/"]')
+assert not home.select_one("#home-lives")
+assert not home.select_one('a[href="/live/"]')
+for path in ROOT.rglob('*.html'):
+    if '.git' in path.parts or '.github' in path.parts:
+        continue
+    document = page(path.relative_to(ROOT))
+    for link in document.select('a[href]'):
+        target = link['href'].replace('../', '').lstrip('/')
+        assert target not in {'live/', 'live/index.html'}, (path, link)
+    text = document.get_text(' ', strip=True)
+    assert 'The Awakening Begins' not in text, path
+    assert 'Next Sunday Live' not in text, path
+    assert 'Sunday readings will connect' not in text, path
 assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
 for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "start/index.html", "follow/index.html"):

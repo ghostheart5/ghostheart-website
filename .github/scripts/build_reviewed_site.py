@@ -45,4 +45,5 @@ archive = ROOT / "journal/how-we-got-here-archive.html"
 shutil.copyfile(TEMPLATES / "journal/how-we-got-here-archive.html.template", archive)
 runpy.run_path(str(ROOT / ".github/scripts/build_vault_review.py"))
 runpy.run_path(str(ROOT / ".github/scripts/build_review_theme.py"))
+runpy.run_path(str(ROOT / ".github/scripts/apply_live_visibility.py"), run_name="__main__")
 print("Applied owner-reviewed pages after preserving the existing gateway archive.")
