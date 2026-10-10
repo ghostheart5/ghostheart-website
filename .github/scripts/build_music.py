@@ -55,7 +55,7 @@ def build(check=False):
     body = f'''<div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">GhostHeart / Music</p>
 <h1>Listen to the songs.</h1><p class="ghx-lead">Start with GhostHeart's Awakening or You're Not God. Play the audio here, then follow a song to YouTube when a matching video is available.</p>
 <nav class="music-jump" aria-label="Music groups"><a href="#awakening">GhostHeart's Awakening</a><a href="#youre-not-god">You're Not God</a></nav></header>
-{''.join(sections)}<p class="music-scope">These are the two groups in this review. The other recordings remain in the archive while the Music page is being settled.</p></div>'''
+{''.join(sections)}</div>'''
     html = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Music | GhostHeart</title><meta name="description" content="Listen to GhostHeart's Awakening and You're Not God."/>
 <link rel="canonical" href="https://www.myghostheart.com/albums/"/>

@@ -26,6 +26,7 @@ def apply():
             new = re.sub(r'<a class="reading-back" href="/live/">.*?</a>', '<a class="reading-back" href="/GhostHeart_Story.html">Enter My World</a>', new)
             new = new.replace('<a href="/live/">Return to Readings &amp; Live</a>', '<a href="/GhostHeart_Story.html">Return to My World</a>')
         new = re.sub(r'<article\b[^>]*\bid="home-lives"[^>]*>.*?</article>', '', new, flags=re.S)
+        new = new.replace('aria-label="Explore Vault and Lives"', 'aria-label="Explore GhostHeart\u2019s Vault"')
         new = re.sub(r'<section\b[^>]*class="journal-highlight journal-live"[^>]*>.*?</section>', '', new, flags=re.S)
         new = re.sub(r'<p\b[^>]*>\s*<strong>Next Sunday Live:</strong>.*?</p>', '', new, flags=re.S)
         new = new.replace('The next planned Sunday Live is October 11, 2026 at 10:00 a.m. Central. The viewing platform and link are pending.', '')
