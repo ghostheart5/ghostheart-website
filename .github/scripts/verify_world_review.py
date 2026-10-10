@@ -31,6 +31,9 @@ assert story.select_one('a[href="/woman-behind-the-scenes/"]')
 assert story.select_one('a[href="/journal/"]')
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
 assert love.select_one("h1").get_text(" ", strip=True) == "The Woman Behind the Scenes."
+assert love.select_one('a[href="/albums/#track-she-got-to-me"]')
+for relative, fragment in [('journal/this-is-ghostheart.html', 'track-this-is-ghostheart'), ('journal/ghosthearts-oath.html', 'track-ghosthearts-oath')]:
+    assert page(relative).select_one(f'a[href="/albums/#{fragment}"]').get_text() == 'Listen to the song'
 assert "GhostHeart and His Angel" not in story.get_text(" ", strip=True)
 assert "GhostHeart and His Angel" not in love.get_text(" ", strip=True)
 assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
@@ -49,6 +52,17 @@ assert not start.select("form") and not home.select("form")
 form = follow.select_one("form.signal-signup-form")
 assert form and form.get("method") == "post" and "list-manage.com/subscribe/post" in form["action"]
 assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
+assert 'You?ll' not in follow.get_text()
+assert 'approved' not in follow.select_one('meta[name="description"]')['content']
+for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behind-the-scenes/'), ('vault/index.html', '/vault/'), ('albums/index.html', '/albums/')]:
+    document = page(relative)
+    assert document.select_one('meta[property="og:url"]')['content'] == document.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com' + canonical
+    for property_name in ['og:title', 'og:description', 'og:image']:
+        assert len(document.select(f'meta[property="{property_name}"]')) == 1
+    image_url = document.select_one('meta[property="og:image"]')['content']
+    assert image_url == 'https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png'
+    assert (ROOT / image_url.removeprefix('https://www.myghostheart.com/')).is_file()
+    assert document.select_one('meta[name="twitter:card"]')['content'] == 'summary_large_image'
 live = page("live/index.html")
 assert "No Live sessions are currently scheduled." in live.get_text(" ", strip=True)
 assert not live.select_one("#next-live-title")
@@ -76,8 +90,9 @@ assert {button["data-vault-filter"] for button in vault.select("[data-vault-filt
 }
 assert all(card.select_one("a[href]") for card in vault.select(".vault-item"))
 assert not vault.select("a[download]")
-assert all(card.select_one('a[href="/albums/index.html#youre-not-god"]') for card in
+assert all(card.select_one('a[href="/albums/#track-that-aint-holy"]') for card in
            vault.select('.vault-item[data-vault-kind="shorts"]')[1:])
+assert vault.select('.vault-item[data-vault-kind="shorts"]')[0].select_one('a[href="/albums/#track-cruel"]')
 assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a[href^="https://www.youtube.com/shorts/"]')} == {
     'https://www.youtube.com/shorts/2fq-XQxtFuo',
     'https://www.youtube.com/shorts/ofU09J3bkHI',

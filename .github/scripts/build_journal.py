@@ -208,8 +208,11 @@ for post in POSTS:
 <body><main><h1>Enter My World</h1><p>Continue to <a href="/GhostHeart_Story.html">the current Story reading</a>. The <a href="/journal/how-we-got-here-archive.html">earlier introduction</a> is preserved in the Journal archive.</p></main></body></html>
 ''')
     links = ''.join(f'<a class="{"secondary" if i else "primary"}" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for i, link in enumerate(post['links']))
-    related = ('/albums/index.html#youre-not-god' if post['slug'] == 'youre-not-god' else '/albums/index.html#awakening')
-    related_links = f'<a class="secondary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="{related}">Listen to related songs</a>'
+    related_tracks = {'this-is-ghostheart': 'track-this-is-ghostheart', 'ghosthearts-oath': 'track-ghosthearts-oath'}
+    related = ('/albums/#' + related_tracks[post['slug']] if post['slug'] in related_tracks else
+               '/albums/index.html#youre-not-god' if post['slug'] == 'youre-not-god' else '/albums/index.html#awakening')
+    related_label = 'Listen to the song' if post['slug'] in related_tracks else 'Listen to related songs'
+    related_links = f'<a class="secondary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="{related}">{related_label}</a>'
     paragraphs = ''.join(f'<p>{escape(paragraph)}</p>' for paragraph in post['paragraphs'])
     body = f'''<div class="ghx-wrap"><article class="journal-article"><a class="journal-back journal-link" href="/journal/">GhostHeart Blog</a>
 <header>{meta(post)}<h1>{escape(post['title'])}</h1><p class="journal-deck">{escape(post['summary'])}</p></header>
