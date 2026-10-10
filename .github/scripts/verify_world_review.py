@@ -85,7 +85,11 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
     'https://www.youtube.com/shorts/bkm3czEmk5g',
     'https://www.youtube.com/shorts/5b43JyYmIts',
 }
-assert home.select_one("#latest [data-daily-quote]")
+assert home.select_one("#home-vault [data-daily-quote]")
+assert home.select_one('#latest audio source')['src'] == '/assets/music/preview/awakening-01-cruel.mp3'
+assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
+assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
+assert [section.get('id') for section in home.select('main > section')][:4] == ['home', 'latest', 'home-story', 'join-the-signal']
 assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "GhostHeart's Vault"
 assert home.select_one('#home-vault a[href="/vault/"]')
 assert not home.select_one("#home-lives")

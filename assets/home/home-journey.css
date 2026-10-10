@@ -1,0 +1,12 @@
+.ghx-site #home .canon-hero__line { max-width: 48ch; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.6; }
+.ghx-site #home .canon-hero__note { color: #e1d4cf; margin-bottom: .75rem; }
+.home-feature, .home-story { padding-block: clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid #65343b; scroll-margin-top: 7rem; }
+.home-feature h2, .home-story h2 { max-width: 28ch; margin: .4rem 0 1.2rem; font-size: clamp(2rem, 4vw, 3rem); }
+.home-feature p, .home-story p { max-width: 56ch; color: #e1d4cf; }
+.home-feature audio { display: block; width: 100%; max-width: 40rem; margin: 1.5rem 0; }
+.home-feature .ghx-actions, .home-story .ghx-actions { flex-wrap: wrap; }
+.ghx-site #join-the-signal p { max-width: 56ch; color: #e1d4cf; }
+.ghx-site #join-the-signal p a { display: inline-flex; align-items: center; min-height: 44px; color: #f4c0b8; }
+.home-quote { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #65343b; }
+.home-quote blockquote { margin: 0; color: #e1d4cf; line-height: 1.65; }
+@media (max-width: 700px) { .ghx-site #home h1 span { font-size: clamp(2.3rem, 11.5vw, 5rem); } }

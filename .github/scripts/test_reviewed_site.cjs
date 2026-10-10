@@ -21,6 +21,26 @@ const fs = require('node:fs');
   ];
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
+    await page.goto('http://127.0.0.1:8765/');
+    assert.equal(await page.locator('.canon-hero__line').innerText(), 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.');
+    assert.equal(await page.locator('.canon-hero__note').innerText(), 'Meet the man behind GhostHeart.');
+    assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
+    assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.slice(0,4).map(section => section.id)), ['home', 'latest', 'home-story', 'join-the-signal']);
+    assert.equal(await page.locator('audio[autoplay], main form').count(), 0);
+    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, #join-the-signal a');
+    for (const link of await journeyLinks.all()) {
+      const box = await link.boundingBox();
+      assert.ok(box.height >= 44, 'Homepage touch target ' + await link.innerText());
+      await link.focus();
+      assert.equal(await link.evaluate(element => element.matches(':focus-visible') && parseFloat(getComputedStyle(element).outlineWidth) >= 3), true, 'Visible keyboard focus');
+    }
+    await page.locator('#home a[href="#latest"]').focus();
+    await page.keyboard.press('Enter');
+    assert.equal(new URL(page.url()).hash, '#latest');
+    await page.locator('#latest a[href="#home-story"]').focus();
+    await page.keyboard.press('Enter');
+    assert.equal(new URL(page.url()).hash, '#home-story');
+    assert.equal(await page.locator('#latest source').getAttribute('src'), '/assets/music/preview/awakening-01-cruel.mp3');
     for (const path of paths) {
       const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'load' });
       assert.equal(response.status(), 200, path);
