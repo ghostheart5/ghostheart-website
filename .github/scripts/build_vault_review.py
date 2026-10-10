@@ -83,7 +83,7 @@ for card in films.select('.g-film[id]'):
 assert approved_video_ids <= public_video_ids and len(public_video_ids) == 23
 film_intro = films.select_one('main .g-lead')
 if film_intro:
-    film_intro.string = "Only films tied clearly to The Awakening and You're Not God are in this review selection. Players load when you choose."
+    film_intro.string = "Films from The Awakening and You're Not God. Players load when you choose."
 (ROOT / 'GhostHeart_Videos.html').write_text(str(films), encoding='utf-8', newline='\n')
 quotes_path = ROOT / 'GhostHeart_Quotes.html'
 quotes_page = replace_unverified_signup(BeautifulSoup(quotes_path.read_text(encoding='utf-8'), 'html.parser'))
@@ -141,7 +141,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta nam
 <div class="vault-filters" aria-label="Filter the Vault"><button type="button" data-vault-filter="featured" aria-pressed="true">Featured</button><button type="button" data-vault-filter="songs" aria-pressed="false">Songs</button><button type="button" data-vault-filter="videos" aria-pressed="false">Videos</button><button type="button" data-vault-filter="shorts" aria-pressed="false">Shorts</button><button type="button" data-vault-filter="quotes" aria-pressed="false">Quotes</button><button type="button" data-vault-filter="all" aria-pressed="false">All</button></div>
 <p id="vault-count" class="vault-count" role="status" aria-live="polite">3 featured selections shown.</p>
 <div class="vault-grid">{cards}</div><p id="vault-empty" class="vault-empty" hidden>No matches. Try another title or theme.</p>
-<p class="vault-source-note">Songs open Music, films open the existing film collection, Shorts open their public YouTube pages, and quotes open the Quote Vault. Only The Awakening and You’re Not God songs, films, and Shorts are shown while other media are reviewed. No downloads are offered here.</p>
+<p class="vault-source-note">Songs open Music, films open the existing film collection, Shorts open their public YouTube pages, and quotes open the Quote Vault. No downloads are offered here.</p>
 <noscript><p><a href="/albums/">Music</a> · <a href="/GhostHeart_Videos.html">Films</a> · <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></noscript></section></main>{footer}</body></html>\n'''
 output = ROOT / 'vault/index.html'
 output.parent.mkdir(parents=True, exist_ok=True)
@@ -149,13 +149,13 @@ output.write_text(page, encoding='utf-8', newline='\n')
 
 home_latest = f'''<section class="vault-latest ghx-wrap" aria-labelledby="latest-title" id="latest"><div class="vault-latest-head"><p class="ghx-kicker">From GhostHeart</p><h2 id="latest-title">A story. A song. A line.</h2><p>Start with what speaks to you; the selections here are curated by hand.</p></div><div class="vault-latest-grid">
 <article><span>Start reading</span><h3>Behind the Scars</h3><p>The public beginning of the life behind GhostHeart.</p><a href="/GhostHeart_Story.html#behind-the-scars">Enter My World</a></article>
-<article><span>Featured song</span><h3>Cruel</h3><p>From the approved GhostHeart’s Awakening listening sequence.</p><a href="/albums/index.html#awakening">Listen in Music</a></article>
+<article><span>Featured song</span><h3>Cruel</h3><p>From GhostHeart’s Awakening.</p><a href="/albums/index.html#awakening">Listen in Music</a></article>
 <article><span>Today’s quote</span><blockquote data-daily-quote>{escape(library['quotes'][0])}</blockquote><a href="/GhostHeart_Quotes.html">Explore the Quote Vault</a></article>
 <article><span>Featured film</span><h3>This Is GhostHeart</h3><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch the film</a></article>
 </div><div class="vault-latest-next"><a href="/journal/">Read the Blog</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></div></section>'''
-home_paths = f'''<section class="home-discovery ghx-wrap" aria-label="Explore Vault and Lives">
-<article class="home-discovery-card" id="home-vault" aria-labelledby="home-vault-title"><p class="ghx-kicker">The approved collection</p><h2 id="home-vault-title">GhostHeart's Vault</h2>
-<p>Find a song, film, Short, or quote that stays with you. Music and moving images here are limited to The Awakening and You're Not God while other work is reviewed.</p>
+home_paths = f'''<section class="home-discovery ghx-wrap" aria-label="Explore GhostHeart’s Vault">
+<article class="home-discovery-card" id="home-vault" aria-labelledby="home-vault-title"><p class="ghx-kicker">The collection</p><h2 id="home-vault-title">GhostHeart's Vault</h2>
+<p>Find a song, film, Short, or quote that stays with you.</p>
 <p class="home-discovery-meta">11 songs · 5 films · 5 Shorts · 17 quotes</p><a href="/vault/">Explore GhostHeart's Vault</a></article>
 <article class="home-discovery-card" id="home-lives" aria-labelledby="home-lives-title"><p class="ghx-kicker">Planned Sunday Live</p><h2 id="home-lives-title">Lives &amp; Readings</h2>
 <p><strong>{escape(live['title'])}</strong> is planned for <time datetime="{escape(live['starts_at'], quote=True)}">October 11, 2026 at 10:00 a.m. Central</time>. The platform, viewing link, and replay are pending.</p>
