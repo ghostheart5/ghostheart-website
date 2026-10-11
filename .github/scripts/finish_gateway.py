@@ -171,6 +171,13 @@ if not any('listening-room.css' in str(x.get('href','')) for x in parse(read('Gh
  songs_doc=parse(read('GhostHeart_Songs.html'))
  songs_doc.head.append(songs_doc.new_tag('link',attrs={'rel':'stylesheet','href':'/assets/music/listening-room.css'}))
  write('GhostHeart_Songs.html',str(songs_doc))
+generated_song_page=parse(read('GhostHeart_Songs.html'))
+generated_players=generated_song_page.select('#existing-audio audio')
+expected_audio=[track['audio'] for group in music_data['groups'] for track in group['tracks'] if track.get('audio')]
+actual_audio=[player.select_one('source')['src'] for player in generated_players]
+assert len(generated_players)==11 and actual_audio==expected_audio
+assert all(player.has_attr('controls') and player.get('preload')=='none' for player in generated_players)
+assert len({player.parent['id'] for player in generated_players})==11
 # Existing legacy music reveals are replaced by the accessible generic hash handler.
 songs=read('GhostHeart_Songs.html');songs=songs.replace('</main>','<!-- hasArchiveTarget: library-v3.js reveals deep-linked recording entries. --></main>');write('GhostHeart_Songs.html',songs)
 
