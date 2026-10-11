@@ -27,3 +27,5 @@ status=ROOT/'.github/GATEWAY_STATUS.md'
 status.write_text(status.read_text().replace('Build command: python3 .github/scripts/finish_gateway.py.','Build command: python3 .github/scripts/build_site.py.'),encoding='utf-8')
 print('Complete build preserved the earlier featured recording as well as the archive.')
 runpy.run_path(str(ROOT/'.github/scripts/build_reviewed_site.py'))
+music_builder=runpy.run_path(str(ROOT/'.github/scripts/build_music.py'))
+music_builder['build'](check=True)
