@@ -137,6 +137,22 @@ page('albums/index.html','Explore the collections','GhostHeart music grouped by 
 # Film and recording libraries are generated, searchable, and remain readable without JavaScript.
 filmgrid='<div class="g-films">'+''.join(film(f) for f in films)+'</div>'
 page('GhostHeart_Videos.html','Films','Watch GhostHeart films and follow their connections to the music and story.',HEAD('Music & films / Watch','Stay with<br/><em>the story.</em>','Choose a film. Players load only when you choose; direct YouTube links remain available.')+'<section class="g-section"><div class="g-wrap">'+searchable(filterbar('Find a film','Search film titles…')+filmgrid,'films')+'</div></section>'+FOLLOW('films'))
+music_data=json.loads(read('.github/content/music.json'))
+preview_sections=''
+preview_track_count=0
+for group in music_data['groups']:
+ tracks=[t for t in group['tracks'] if t.get('audio')]
+ if not tracks:continue
+ preview_track_count+=len(tracks)
+ rows=''
+ for number,track in enumerate(tracks,1):
+  title=escape(track['title']); audio=escape(track['audio'],quote=True)
+  recording_note=f'<p class="music-recording-title">Audio recording: {escape(track["recording_title"])}</p>' if track.get('recording_title') else ''
+  rows+=f'<li class="music-track" id="preview-{escape(track["id"],quote=True)}"><div class="music-track-heading"><span class="music-number">{number:02d}</span><h3>{title}</h3></div>{recording_note}<audio controls preload="none" aria-label="Play {escape(track["title"],quote=True)}"><source src="{audio}" type="audio/mpeg"/>Your browser does not support this audio player.</audio></li>'
+ preview_sections+=f'<section class="music-group" aria-labelledby="existing-{escape(group["id"],quote=True)}-title"><div class="music-group-head"><p class="ghx-kicker">{len(tracks)} songs</p><h3 id="existing-{escape(group["id"],quote=True)}-title">{escape(group["title"])}</h3></div><ol class="music-tracks">{rows}</ol></section>'
+preview_nav='<nav class="music-jump" aria-label="Song audio"><a href="#existing-audio">Listen to existing song previews</a></nav>'
+preview_html=f'<section class="g-section" id="existing-audio" aria-labelledby="existing-audio-title"><div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">Existing website audio</p><h2 id="existing-audio-title">Play the song previews</h2><p class="ghx-lead">These player controls reuse the same public preview recordings already on the Music page. They remain previews; this catalog adds access to the existing files without replacing a recording.</p></header>{preview_sections}</div></section>'
+assert preview_track_count==11, f'Expected the existing 11 public previews, found {preview_track_count}'
 recordhtml=''
 for r in data['recordings']:
  card=parse(r['html']).select_one('.record-card')
@@ -150,7 +166,18 @@ for r in data['recordings']:
   actions=card.select_one('.record-actions')
   if actions:actions.append(parse(L('/GhostHeart_Videos.html#'+bykey[target]['cardId'],'Watch current film ↗')).a)
  recordhtml+=str(card)
-page('GhostHeart_Songs.html','Released recordings','Original GhostHeart singles and multi-track releases, with their existing listening links and related films.',HEAD('Music & films / Listen','The recordings.<br/><em>The stories they carry.</em>','Original releases and listening links. Different recordings remain distinct; nothing has been re-released or merged.')+f'<section class="g-section"><div class="g-wrap"><p id="catalog-count">{len(data["recordings"])} release and recording entries · {sum(r["tracks"] for r in data["recordings"])} listed tracks</p>'+searchable(filterbar('Find a recording','Search titles…')+'<div class="l-recordings">'+recordhtml+'</div>','recordings')+'</div></section>'+FOLLOW('recordings'))
+page('GhostHeart_Songs.html','Released recordings','Original GhostHeart singles and multi-track releases, with their existing listening links and related films.',HEAD('Music & films / Listen','The recordings.<br/><em>The stories they carry.</em>','Original releases and listening links. Different recordings remain distinct; nothing has been re-released or merged.')+preview_nav+preview_html+f'<section class="g-section"><div class="g-wrap"><p id="catalog-count">{len(data["recordings"])} release and recording entries · {sum(r["tracks"] for r in data["recordings"])} listed tracks</p>'+searchable(filterbar('Find a recording','Search titles…')+'<div class="l-recordings">'+recordhtml+'</div>','recordings')+'</div></section>'+FOLLOW('recordings'))
+if not any('listening-room.css' in str(x.get('href','')) for x in parse(read('GhostHeart_Songs.html')).head.select('link[rel="stylesheet"]')):
+ songs_doc=parse(read('GhostHeart_Songs.html'))
+ songs_doc.head.append(songs_doc.new_tag('link',attrs={'rel':'stylesheet','href':'/assets/music/listening-room.css'}))
+ write('GhostHeart_Songs.html',str(songs_doc))
+generated_song_page=parse(read('GhostHeart_Songs.html'))
+generated_players=generated_song_page.select('#existing-audio audio')
+expected_audio=[track['audio'] for group in music_data['groups'] for track in group['tracks'] if track.get('audio')]
+actual_audio=[player.select_one('source')['src'] for player in generated_players]
+assert len(generated_players)==11 and actual_audio==expected_audio
+assert all(player.has_attr('controls') and player.get('preload')=='none' for player in generated_players)
+assert len({player.parent['id'] for player in generated_players})==11
 # Existing legacy music reveals are replaced by the accessible generic hash handler.
 songs=read('GhostHeart_Songs.html');songs=songs.replace('</main>','<!-- hasArchiveTarget: library-v3.js reveals deep-linked recording entries. --></main>');write('GhostHeart_Songs.html',songs)
 
