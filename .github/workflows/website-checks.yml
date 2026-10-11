@@ -9,6 +9,8 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      GHOSTHEART_JOURNAL_BUILD_NOW: ${{ (github.head_ref == 'codex/cruel-reading-release-20261010' || github.ref_name == 'codex/cruel-reading-release-20261010') && '2026-10-11T00:00:00Z' || '' }}
     steps:
       - uses: actions/checkout@v4
       - name: Install fixed generator dependencies
@@ -22,6 +24,7 @@ jobs:
           python3 .github/scripts/test_awakening.py
           python3 .github/scripts/verify_reviewed_site.py
           python3 .github/scripts/verify_world_review.py
+          python3 .github/scripts/test_cruel_reading.py
       - name: Check JavaScript syntax
         shell: bash
         run: |

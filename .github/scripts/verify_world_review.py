@@ -40,7 +40,7 @@ assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woma
 assert love_alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert "Survival matters" in archive.get_text(" ", strip=True)
 assert awakening.select_one("h1").get_text(" ", strip=True) == "The Awakening."
-assert len(blog.select("#entries article")) == 3
+assert len(blog.select("#entries article")) == 4
 assert blog.select_one('a[href="/journal/how-we-got-here-archive.html"]')
 assert page("journal/how-we-got-here.html").select_one('meta[http-equiv="refresh"]')["content"].endswith("/GhostHeart_Story.html")
 assert len(films.select(".g-film[id]")) == 5

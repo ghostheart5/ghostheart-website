@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 from html import escape
 import json
+import os
 from pathlib import Path
 import re
 from urllib.parse import urljoin
@@ -19,6 +20,7 @@ def arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--now',
+        default=os.environ.get('GHOSTHEART_JOURNAL_BUILD_NOW') or None,
         help='ISO 8601 build time used for deterministic checks. Defaults to current UTC time.',
     )
     return parser.parse_args()
@@ -126,7 +128,7 @@ def shell(title, description, path, body, image, article=None):
 {'<link rel="stylesheet" href="/assets/journal/highlights.css"/>' if path.startswith('/journal/') else ''}
 <script defer src="/assets/shared/ghostheart-world.js"></script>
 {'<script defer src="/assets/journal/daily-quote.js"></script>' if path == '/journal/' else ''}
-{'<script defer src="/assets/journal/comments-config.js"></script><script defer src="/assets/journal/comments.js"></script>' if article else ''}
+{'<script defer src="/assets/journal/comments-config.js"></script><script defer src="/assets/journal/comments.js"></script>' if article and article.get('comments_enabled', True) else ''}
 <meta property="og:type" content="{'article' if article else 'website'}"/><meta property="og:site_name" content="GhostHeart"/>
 <meta property="og:title" content="{escape(title, quote=True)}"/><meta property="og:description" content="{escape(description, quote=True)}"/>
 <meta property="og:url" content="{BASE}{path}"/><meta property="og:image" content="{BASE}{image}"/>
@@ -208,18 +210,21 @@ for post in POSTS:
 <body><main><h1>Enter My World</h1><p>Continue to <a href="/GhostHeart_Story.html">the current Story reading</a>. The <a href="/journal/how-we-got-here-archive.html">earlier introduction</a> is preserved in the Journal archive.</p></main></body></html>
 ''')
     links = ''.join(f'<a class="{"secondary" if i else "primary"}" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for i, link in enumerate(post['links']))
-    related_tracks = {'this-is-ghostheart': 'track-this-is-ghostheart', 'ghosthearts-oath': 'track-ghosthearts-oath'}
+    related_tracks = {'cruel-something-needs-to-change': 'track-cruel', 'this-is-ghostheart': 'track-this-is-ghostheart', 'ghosthearts-oath': 'track-ghosthearts-oath'}
     related = ('/albums/#' + related_tracks[post['slug']] if post['slug'] in related_tracks else
                '/albums/index.html#youre-not-god' if post['slug'] == 'youre-not-god' else '/albums/index.html#awakening')
     related_label = 'Listen to the song' if post['slug'] in related_tracks else 'Listen to related songs'
-    related_links = f'<a class="secondary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="{related}">{related_label}</a>'
+    related_links = '<a class="secondary" href="/GhostHeart_Story.html">Enter My World</a>'
+    if not any(link['url'] == related for link in post['links']):
+        related_links += f'<a class="secondary" href="{related}">{related_label}</a>'
     paragraphs = ''.join(f'<p>{escape(paragraph)}</p>' for paragraph in post['paragraphs'])
+    comments = f'''<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>''' if post.get('comments_enabled', True) else ''
     body = f'''<div class="ghx-wrap"><article class="journal-article"><a class="journal-back journal-link" href="/journal/">GhostHeart Blog</a>
 <header>{meta(post)}<h1>{escape(post['title'])}</h1><p class="journal-deck">{escape(post['summary'])}</p></header>
 {art(post)}<div class="journal-prose">{paragraphs}</div><section class="journal-continue" aria-label="Related reading and music">
 <h2>Continue with the story and music.</h2><div class="ghx-actions">{links}{related_links}</div></section>
 <nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All blog entries</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav>
-<section class="journal-comments" aria-labelledby="comments-title" data-comment-thread="journal:{escape(post['slug'], quote=True)}"><h2 id="comments-title">Conversation</h2><p>Comments are not open yet. Please keep personal details out of public comments; for urgent support, use <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p></section>
+{comments}
 </article></div>'''
     write(post_path(post).lstrip('/'), shell(post['title'], post['summary'], post_path(post), body, post['image'], post))
 
