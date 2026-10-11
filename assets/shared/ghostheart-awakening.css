@@ -28,10 +28,8 @@ body.ghx-site:before{
 .canon-hero{
   position:relative;isolation:isolate;min-height:clamp(650px,78vh,850px);display:grid;align-items:center;
   border-bottom:1px solid #511a20;overflow:hidden;
-  background:url('../images/canon/ghostheart-awakening-hero.png') center/cover no-repeat;
+  background:#090909;
 }
-.canon-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#050506 0%,rgba(5,5,6,.94) 34%,rgba(5,5,6,.38) 66%,rgba(5,5,6,.08))}
-.canon-hero:after{content:"";position:absolute;inset:auto 0 0;height:32%;z-index:-1;background:linear-gradient(transparent,#050506)}
 .canon-hero__copy{max-width:650px;padding-block:8rem 6rem}
 .canon-hero__mark{margin:0 0 1.1rem;color:#ff555a;font:800 .72rem/1.4 'Arial Narrow',Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase}
 .ghx-site .canon-hero h1{margin:0;max-width:10ch;font:900 clamp(4.2rem,8vw,8rem)/.86 Impact,'Arial Narrow',sans-serif;letter-spacing:.015em;text-transform:uppercase;text-shadow:0 4px 34px #000}
@@ -107,5 +105,5 @@ body.ghx-site:before{
 .ghx-site .start-hero .release-grid{grid-template-columns:minmax(0,700px);min-height:650px;align-items:center}
 .ghx-site .start-hero h1{font-family:Impact,'Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.025em}
 @media(max-width:980px){.canon-media-grid{grid-template-columns:1fr 1fr}.canon-media--feature{grid-column:1/-1;grid-row:auto}.canon-media--feature .canon-media__image{min-height:400px}.canon-release-grid{grid-template-columns:repeat(3,1fr)}.canon-paths{grid-template-columns:1fr}.canon-path{min-height:250px}.canon-chapters{grid-template-columns:1fr}.canon-oath .ghx-wrap{grid-template-columns:1fr}}
-@media(max-width:700px){.ghx-site .ghx-primary{display:none}.ghx-site .ghx-bar{justify-content:space-between}.canon-hero{min-height:720px;background-position:62% center}.canon-hero:before{background:linear-gradient(90deg,#050506f5 0%,#050506c9 65%,#05050640),linear-gradient(0deg,#050506 0%,transparent 40%)}.canon-hero__copy{padding:7rem 0 4rem}.ghx-site .canon-hero h1{font-size:clamp(3.7rem,18vw,6rem)}.canon-heading{grid-template-columns:1fr}.canon-media-grid{grid-template-columns:1fr}.canon-media--feature{grid-column:auto}.canon-media--feature .canon-media__image{min-height:360px}.canon-release-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem}.canon-release{flex:0 0 72%;scroll-snap-align:start}.canon-band .ghx-wrap{font-size:.52rem;gap:.55rem}.canon-band b{display:none}.canon-page-hero{min-height:620px;background-position:60% center}.canon-page-hero:before{background:linear-gradient(90deg,#050506f4,#0505068f),linear-gradient(0deg,#050506,transparent)}.ghx-site .canon-page-hero h1{font-size:clamp(3.8rem,16vw,6rem)}}
+@media(max-width:700px){.ghx-site .ghx-primary{display:none}.ghx-site .ghx-bar{justify-content:space-between}.canon-hero{min-height:720px}.canon-hero__copy{padding:7rem 0 4rem}.ghx-site .canon-hero h1{font-size:clamp(3.7rem,18vw,6rem)}.canon-heading{grid-template-columns:1fr}.canon-media-grid{grid-template-columns:1fr}.canon-media--feature{grid-column:auto}.canon-media--feature .canon-media__image{min-height:360px}.canon-release-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem}.canon-release{flex:0 0 72%;scroll-snap-align:start}.canon-band .ghx-wrap{font-size:.52rem;gap:.55rem}.canon-band b{display:none}.canon-page-hero{min-height:620px;background-position:60% center}.canon-page-hero:before{background:linear-gradient(90deg,#050506f4,#0505068f),linear-gradient(0deg,#050506,transparent)}.ghx-site .canon-page-hero h1{font-size:clamp(3.8rem,16vw,6rem)}}
 @media(prefers-reduced-motion:reduce){.canon-path:before,.canon-media img,.canon-release{transition:none!important}}
