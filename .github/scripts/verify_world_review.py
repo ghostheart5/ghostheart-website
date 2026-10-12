@@ -2,6 +2,8 @@
 """Check the local World/Vault review draft after a full site build."""
 
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
+import json
 
 from bs4 import BeautifulSoup
 
@@ -43,8 +45,67 @@ assert awakening.select_one("h1").get_text(" ", strip=True) == "The Awakening."
 assert len(blog.select("#entries article")) == 4
 assert blog.select_one('a[href="/journal/how-we-got-here-archive.html"]')
 assert page("journal/how-we-got-here.html").select_one('meta[http-equiv="refresh"]')["content"].endswith("/GhostHeart_Story.html")
-assert len(films.select(".g-film[id]")) == 5
-assert len(films.select("[id^=film-][hidden]")) >= 18
+# A fragment must identify a visible player card, not only a compatibility span.
+expected_films = {
+    'film-this-is-ghostheart': 'AOCRvtz92JM',
+    'film-ghosthearts-oath': 'mBAsUNX3vHQ',
+    'film-i-wont-pretend-to-speak-for-you': 'z-FRCpG9vfw',
+    'film-hey-preacher-man': '2SEng4dmgUc',
+    'film-that-aint-holy': 'ptYn4vh6DCQ',
+    'film-the-dad': 'cBNxq4y1ahU',
+    'film-human-too-remake': 'ARCFOZSOC_o',
+    'film-the-man-beneath-the-moon': '_mUU-toMlM8',
+    'film-rebellion': 'FaT_Ibrs9Y0',
+    'film-just-not-this-morning': 'XWmMYqkvdzg',
+    'film-look-at-me': 'nVC1kB0MREA',
+    'film-cruel': '9sbFgjM_SDE',
+}
+actual_films = {card['id']: card for card in films.select('.g-film[id]')}
+assert set(actual_films) == set(expected_films), set(actual_films)
+for card_id, video_id in expected_films.items():
+    card = actual_films[card_id]
+    assert card.name == 'article' and not card.has_attr('hidden'), card_id
+    assert card.select_one('h3') and card.select_one(f'button[data-video-id="{video_id}"]'), card_id
+    assert card.select_one(f'a[href="https://www.youtube.com/watch?v={video_id}"]'), card_id
+    assert (ROOT / card.select_one('.g-player img')['src'].lstrip('/')).is_file(), card_id
+retained_film_aliases = films.select('.g-films > span[id^=film-][hidden]')
+assert len(retained_film_aliases) == 12
+assert all(not alias.select('button, iframe, a') for alias in retained_film_aliases)
+assert 'cinematic remake' in actual_films['film-human-too-remake'].get_text(' ', strip=True)
+assert "Why You Should Never Judge Someone's Worst Day" in actual_films['film-human-too-remake'].get_text(' ', strip=True)
+assert 'Fixed vocal ending' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)
+recordings = page('GhostHeart_Songs.html')
+# Preserve the public preview fragments as usable rows, not hidden aliases.
+preview_tracks = [track for group in json.loads((ROOT / '.github/content/music.json').read_text(encoding='utf-8'))['groups']
+                  for track in group['tracks'] if track.get('audio')]
+assert len(preview_tracks) == 11
+assert {row['id'] for row in recordings.select('#existing-audio li.music-track[id]')} == {
+    'song-audio-' + track['id'] for track in preview_tracks
+}, 'Published preview fragments changed'
+for track in preview_tracks:
+    row = recordings.select_one('#song-audio-' + track['id'] + '.music-track')
+    assert row and row.name == 'li' and not row.has_attr('hidden'), track['id']
+    assert not any(parent.has_attr('hidden') for parent in row.parents), track['id']
+    assert row.select_one('h3').get_text() == track['title'], track['id']
+    player = row.select_one('audio[controls][preload="none"]')
+    assert player and player.select_one('source')['src'] == track['audio'], track['id']
+for link in recordings.select('.record-card a[href*="GhostHeart_Videos.html#"]'):
+    fragment = urlsplit(link['href']).fragment
+    assert fragment in actual_films, (link, 'Recording action targets a hidden or absent film')
+assert recordings.select_one('#song-the-dad .record-actions a[href="https://www.youtube.com/watch?v=cBNxq4y1ahU"]')
+for record_id, film_id in [('human-too', 'film-human-too-remake'), ('song-the-man-beneath-the-moon', 'film-the-man-beneath-the-moon'), ('song-rebellion', 'film-rebellion')]:
+    assert recordings.select_one(f'#{record_id} .record-actions a[href="/GhostHeart_Videos.html#{film_id}"]')
+ashes = recordings.select_one('#song-just-not-this-morning')
+assert not ashes.select_one('a[href*="#film-hey-preacher-man"]')
+assert 'all five' not in str(ashes).lower()
+assert {urlsplit(link['href']).fragment for link in ashes.select('.record-actions a[href*="GhostHeart_Videos.html#"]')} == {'film-just-not-this-morning', 'film-look-at-me'}
+assert [parse_qs(urlsplit(link['href']).query)['v'][0] for link in ashes.select('.gh-track-list li a')] == ['9pI_nXdjTR4', 'kYOkJn-AlyI', '1uThHaD_HaA', 'C-v0URkntUQ', 'xR6egEJgTv4']
+assert 'original 3:55 version' in recordings.select_one('#song-rebellion').get_text(' ', strip=True)
+assert 'new 5:30 version' in recordings.select_one('#song-you-cant-change-us-20260906').get_text(' ', strip=True)
+assert 're-released or merged' not in recordings.get_text(' ', strip=True)
+assert 'reuse the same public preview' not in recordings.get_text(' ', strip=True)
+assert recordings.select_one('#released-recordings h2').get_text(' ', strip=True) == 'Released recordings archive'
+assert recordings.select_one('.music-jump a[href="/albums/index.html"]').get_text() == 'Featured listening collections'
 assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
 assert start.select_one('a[href="/albums/index.html#youre-not-god"]')
@@ -73,6 +134,11 @@ counts = {kind: len(vault.select(f'.vault-item[data-vault-kind="{kind}"]'))
           for kind in ("songs", "videos", "shorts", "quotes")}
 assert counts == {"songs": 11, "videos": 6, "shorts": 5, "quotes": 17}, counts
 music = page('albums/index.html')
+assert music.select_one('a[href="/GhostHeart_Songs.html#released-recordings"]').get_text() == 'Released recordings archive'
+assert music.select_one('a[href="/GhostHeart_Videos.html"]').get_text() == 'Films'
+assert 'Featured listening collections' in music.select_one('.music-hero').get_text(' ', strip=True)
+for relative in ['journal/this-is-ghostheart.html', 'journal/ghosthearts-oath.html']:
+    assert 'Short song introduction' in page(relative).select_one('.journal-meta').get_text(' ', strip=True)
 ids = [element['id'] for element in music.select('[id]')]
 assert len(ids) == len(set(ids)), 'Duplicate Music IDs'
 for card in vault.select('.vault-item[data-vault-kind="songs"]'):
@@ -116,6 +182,7 @@ for path in ROOT.rglob('*.html'):
     for link in document.select('a[href]'):
         target = link['href'].replace('../', '').lstrip('/')
         assert target not in {'live/', 'live/index.html'}, (path, link)
+        assert not any(label in link.get_text(' ', strip=True) for label in ['GhostHeart and His Angel', 'Meet the Angel']), (path, link)
     text = document.get_text(' ', strip=True)
     assert 'The Awakening Begins' not in text, path
     assert 'Next Sunday Live' not in text, path

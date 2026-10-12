@@ -2,6 +2,22 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
+// Freeze the public preview URLs and mappings from commit 8931b364. A rebuild
+// must retain these fragments on the actual playable rows, not hidden aliases.
+const recordingsPreviewFragments = [
+  ['song-audio-track-cruel', 'Cruel', '/assets/music/preview/awakening-01-cruel.mp3'],
+  ['song-audio-track-im-not', "I'm Not", '/assets/music/preview/awakening-02-im-not-staying-silent.mp3'],
+  ['song-audio-track-papa-didnt-raise-a-fool', "Papa Didn't Raise a Fool", '/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3'],
+  ['song-audio-track-she-got-to-me', 'She Got to Me', '/assets/music/preview/awakening-04-she-got-to-me.mp3'],
+  ['song-audio-track-this-is-ghostheart', 'This Is GhostHeart', '/assets/music/preview/awakening-05-this-is-ghostheart.mp3'],
+  ['song-audio-track-ghosthearts-oath', "GhostHeart's Oath", '/assets/music/preview/awakening-06-ghosthearts-oath.mp3'],
+  ['song-audio-track-you-can-be-ghostheart-too', 'You Can Be GhostHeart Too', '/assets/music/preview/awakening-07-you-can-be-ghostheart-too.mp3'],
+  ['song-audio-track-one-heart-many-voices', 'One Heart Many Voices', '/assets/music/preview/awakening-08-one-heart-many-voices.mp3'],
+  ['song-audio-track-i-wont-pretend-to-speak-for-you', "I Won't Pretend to Speak for You", '/assets/music/preview/youre-not-god-01-i-wont-pretend.mp3'],
+  ['song-audio-track-hey-preacher-man', 'Hey Preacher Man', '/assets/music/preview/youre-not-god-02-hey-preacher-man.mp3'],
+  ['song-audio-track-that-aint-holy', "That Ain't Holy", '/assets/music/preview/youre-not-god-03-that-aint-holy.mp3']
+];
+
 (async () => {
   const browser = await chromium.launch({
     headless: true,
@@ -87,6 +103,41 @@ const fs = require('node:fs');
     assert.equal(await trailer.innerText(), 'Watch trailer');
     assert.equal(await trailer.getAttribute('aria-label'), 'Watch trailer: This Is GhostHeart on YouTube');
   }
+  for (const width of [320, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const [id, title, src] of recordingsPreviewFragments) {
+      const href = '/GhostHeart_Songs.html#' + id;
+      const label = href + ' at ' + width;
+      // Exercise opening a shared deep link, not only a same-document hash change.
+      await page.goto('about:blank');
+      const response = await page.goto('http://127.0.0.1:8765' + href, { waitUntil: 'load' });
+      assert.equal(response.status(), 200, label + ' response');
+      assert.equal(new URL(page.url()).hash, '#' + id, label + ' preserved URL');
+      assert.equal(await page.locator('#' + id).count(), 1, label + ' unique fragment');
+      const target = page.locator('li.music-track#' + id);
+      assert.equal(await target.count(), 1, label + ' playable row');
+      assert.equal(await target.isVisible(), true, label + ' visible row');
+      assert.equal(await target.locator('h3').innerText(), title, label + ' matching title');
+      assert.equal(await target.locator('audio').count(), 1, label + ' audio player');
+      const audio = target.locator('audio');
+      assert.equal(await audio.evaluate(element => element.controls), true, label + ' native controls');
+      assert.equal(await audio.getAttribute('preload'), 'none', label + ' no preloading');
+      assert.equal(await audio.locator('source').count(), 1, label + ' single audio source');
+      assert.equal(await audio.locator('source').getAttribute('src'), src, label + ' matching audio');
+      await page.waitForFunction(selector => {
+        const bounds = document.querySelector(selector).getBoundingClientRect();
+        const header = document.querySelector('header.ghx-header').getBoundingClientRect();
+        return bounds.y >= header.bottom - 1 && bounds.bottom <= innerHeight + 1;
+      }, 'li.music-track#' + id, { timeout: 3000 });
+      const bounds = await target.boundingBox();
+      const headerBounds = await page.locator('header.ghx-header').boundingBox();
+      assert.ok(bounds.width > 0 && bounds.height > 0, label + ' rendered row');
+      assert.ok(bounds.y >= headerBounds.y + headerBounds.height - 1, label + ' below sticky header');
+      assert.ok(bounds.y + bounds.height <= 901, label + ' complete row in viewport');
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, label + ' no horizontal overflow');
+    }
+  }
+  console.log('PASS browser: all 11 original Released recordings preview fragments at 320 and 1440 pixels');
   await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 900 });

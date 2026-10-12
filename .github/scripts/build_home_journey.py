@@ -32,7 +32,7 @@ def build():
     signup.select_one('h2').string = 'Stay connected.'
     for previous in signup.select('.home-email-action'):
         previous.decompose()
-    signup.select_one('h2 + p').replace_with(BeautifulSoup('<p>Choose email updates or follow GhostHeart on the public profiles below. Joining is optional.</p>', 'html.parser').p)
+    signup.select_one('h2 + p').replace_with(BeautifulSoup('<p>Follow new GhostHeart music, stories, and films through email updates or the public profiles below. Joining is optional.</p>', 'html.parser').p)
     signup.select_one('h2 + p').insert_after(BeautifulSoup('<div class="ghx-actions home-email-action"><a class="secondary" href="/follow/">Follow by email</a></div>', 'html.parser'))
     discovery = main.select_one('.home-discovery')
     quote = main.select_one('[data-daily-quote]')

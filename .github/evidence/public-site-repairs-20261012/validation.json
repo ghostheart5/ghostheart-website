@@ -1,0 +1,333 @@
+{
+  "base": "8931b364c584f0ed9f332ee7e0b9bd8658f204af",
+  "passed": {
+    "site_validation": {
+      "html_pages": 64,
+      "published_files": 258,
+      "errors": 0
+    },
+    "awakening_tests": 8,
+    "reviewed_navigation_shells": 49,
+    "asset_javascript_syntax_checks": 13,
+    "browser_layout": {
+      "cases": 30,
+      "failed": [],
+      "widths": [
+        320,
+        390,
+        640,
+        768,
+        1440
+      ]
+    },
+    "film_navigation": [
+      {
+        "fragment": "film-the-dad",
+        "directHref": "https://www.youtube.com/watch?v=cBNxq4y1ahU",
+        "actualVideo": "cBNxq4y1ahU",
+        "expectedVideo": "cBNxq4y1ahU",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "The Dad I Never Had",
+          "y": 195.90625,
+          "height": 421.625
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/cBNxq4y1ahU?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-human-too-remake",
+        "actualVideo": "ARCFOZSOC_o",
+        "expectedVideo": "ARCFOZSOC_o",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "Human Too",
+          "y": 196.28125,
+          "height": 472.625
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/ARCFOZSOC_o?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-the-man-beneath-the-moon",
+        "actualVideo": "_mUU-toMlM8",
+        "expectedVideo": "_mUU-toMlM8",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "The Man Beneath the Moon",
+          "y": 349.78125,
+          "height": 396.125
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/_mUU-toMlM8?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-rebellion",
+        "actualVideo": "FaT_Ibrs9Y0",
+        "expectedVideo": "FaT_Ibrs9Y0",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "Rebellion",
+          "y": 350.28125,
+          "height": 396.125
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/FaT_Ibrs9Y0?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-just-not-this-morning",
+        "actualVideo": "XWmMYqkvdzg",
+        "expectedVideo": "XWmMYqkvdzg",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "Just Not This Morning",
+          "y": 349.53125,
+          "height": 396.125
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/XWmMYqkvdzg?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-look-at-me",
+        "actualVideo": "nVC1kB0MREA",
+        "expectedVideo": "nVC1kB0MREA",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "Look at Me",
+          "y": 195.65625,
+          "height": 421.625
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/nVC1kB0MREA?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      },
+      {
+        "fragment": "film-cruel",
+        "actualVideo": "9sbFgjM_SDE",
+        "expectedVideo": "9sbFgjM_SDE",
+        "data": {
+          "isFilm": true,
+          "display": "block",
+          "heading": "Cruel",
+          "y": 350.40625,
+          "height": 396.125
+        },
+        "loaded": "https://www.youtube-nocookie.com/embed/9sbFgjM_SDE?rel=0&playsinline=1",
+        "closed": true,
+        "focusReturned": true,
+        "passed": true
+      }
+    ],
+    "archive_navigation": [
+      {
+        "width": 320,
+        "url": "http://127.0.0.1:4178/GhostHeart_Songs.html#released-recordings",
+        "text": "Released recordings archive",
+        "y": 151.296875,
+        "headerBottom": 108.375,
+        "passed": true
+      },
+      {
+        "width": 390,
+        "url": "http://127.0.0.1:4178/GhostHeart_Songs.html#released-recordings",
+        "text": "Released recordings archive",
+        "y": 150.75,
+        "headerBottom": 70,
+        "passed": true
+      },
+      {
+        "width": 640,
+        "url": "http://127.0.0.1:4178/GhostHeart_Songs.html#released-recordings",
+        "text": "Released recordings archive",
+        "y": 150.796875,
+        "headerBottom": 70,
+        "passed": true
+      }
+    ],
+    "signup_local_validity": [
+      {
+        "value": "",
+        "valid": false,
+        "valueMissing": true,
+        "typeMismatch": false,
+        "submits": 0
+      },
+      {
+        "value": "not-an-email",
+        "valid": false,
+        "valueMissing": false,
+        "typeMismatch": true,
+        "submits": 0
+      },
+      {
+        "value": "qa@example.test",
+        "valid": true,
+        "valueMissing": false,
+        "typeMismatch": false,
+        "submits": 1
+      }
+    ],
+    "signup_limit": "Valid input was intercepted locally with preventDefault; no provider submit, confirmation email, delivery, unsubscribe or anti-spam behavior tested.",
+    "local_audio_playback": [
+      {
+        "label": "Cruel",
+        "before": 0,
+        "currentTime": 1.298012,
+        "paused": false,
+        "readyState": 4,
+        "duration": 272.96,
+        "error": null,
+        "src": "http://127.0.0.1:4178/assets/music/preview/awakening-01-cruel.mp3",
+        "pausedAfter": true,
+        "passed": true
+      },
+      {
+        "label": "Hey Preacher Man",
+        "before": 0,
+        "currentTime": 1.3431,
+        "paused": false,
+        "readyState": 4,
+        "duration": 289.216,
+        "error": null,
+        "src": "http://127.0.0.1:4178/assets/music/preview/youre-not-god-02-hey-preacher-man.mp3",
+        "pausedAfter": true,
+        "passed": true
+      }
+    ],
+    "preservation": {
+      "base": "8931b364c584f0ed9f332ee7e0b9bd8658f204af",
+      "repeat_build": "PASS",
+      "code_content_files_identical_after_repeat_build": 120,
+      "artwork_and_media_files_unchanged": 151,
+      "collections_unchanged": 9,
+      "quotes_unchanged": 17,
+      "recording_titles_ids_track_counts_unchanged": 14,
+      "journal_entries_prose_dates_slugs_links_unchanged": 5
+    },
+    "final_320_gutter_focus": {
+      "heading": {
+        "left": 18,
+        "right": 285.984375,
+        "viewport": 320,
+        "passed": true
+      },
+      "keys": [
+        {
+          "text": "Song previews",
+          "href": "#existing-audio",
+          "focused": true,
+          "visibleFocus": true,
+          "outlineWidth": "3px",
+          "left": 18,
+          "right": 161.3125,
+          "outlineLeft": 10,
+          "outlineRight": 169.3125,
+          "height": 49.96875,
+          "viewport": 320,
+          "passed": true
+        },
+        {
+          "text": "Released recordings archive",
+          "href": "#released-recordings",
+          "focused": true,
+          "visibleFocus": true,
+          "outlineWidth": "3px",
+          "left": 18,
+          "right": 260.703125,
+          "outlineLeft": 10,
+          "outlineRight": 268.703125,
+          "height": 49.96875,
+          "viewport": 320,
+          "passed": true
+        },
+        {
+          "text": "Featured listening collections",
+          "href": "/albums/index.html",
+          "focused": true,
+          "visibleFocus": true,
+          "outlineWidth": "3px",
+          "left": 18,
+          "right": 272.125,
+          "outlineLeft": 10,
+          "outlineRight": 280.125,
+          "height": 49.96875,
+          "viewport": 320,
+          "passed": true
+        },
+        {
+          "text": "Films",
+          "href": "/GhostHeart_Videos.html",
+          "focused": true,
+          "visibleFocus": true,
+          "outlineWidth": "3px",
+          "left": 18,
+          "right": 91.109375,
+          "outlineLeft": 10,
+          "outlineRight": 99.109375,
+          "height": 49.96875,
+          "viewport": 320,
+          "passed": true
+        }
+      ],
+      "overflow": false,
+      "pageErrors": [],
+      "localFailures": []
+    },
+    "legacy_preview_anchors": {
+      "original_fragments": [
+        "song-audio-track-cruel",
+        "song-audio-track-im-not",
+        "song-audio-track-papa-didnt-raise-a-fool",
+        "song-audio-track-she-got-to-me",
+        "song-audio-track-this-is-ghostheart",
+        "song-audio-track-ghosthearts-oath",
+        "song-audio-track-you-can-be-ghostheart-too",
+        "song-audio-track-one-heart-many-voices",
+        "song-audio-track-i-wont-pretend-to-speak-for-you",
+        "song-audio-track-hey-preacher-man",
+        "song-audio-track-that-aint-holy"
+      ],
+      "widths": [
+        320,
+        1440
+      ],
+      "browser_cases": 22,
+      "result": "PASS all old fragments directly identify unique visible matching preview rows below the header, with original titles and MP3 sources, audio controls and no overflow",
+      "negative_regression": "New semantic verifier failed on 032782f output; corrected generated output passes",
+      "full_browser_suite": "PASS"
+    }
+  },
+  "browser_errors": [],
+  "local_resource_failures": [],
+  "zoom_limit": "640 CSS px is reflow-equivalent to a 1280 CSS px viewport at 200% browser zoom. Native browser zoom and OS scaling not exercised.",
+  "untested": [
+    "Real Mailchimp signup/confirmation/delivery/unsubscribe/provider behavior",
+    "Physical devices and native browser/OS zoom",
+    "Audible quality/full duration of audio",
+    "Production deployment"
+  ],
+  "remaining_public_playback": {
+    "attempted": "cBNxq4y1ahU",
+    "observed_initial_current_time_seconds": 41.123,
+    "outcome": "Partial playback, then provider reset/error; stable end-to-end playback UNVERIFIED under restricted read-only retrieval filter",
+    "request_boundary": "Allowed exact video-byte and player-metadata retrieval, including streaming retrieval POSTs; analytics/account/notification/other POSTs blocked",
+    "other_six_repaired_uploads_playback": "UNTESTED"
+  }
+}

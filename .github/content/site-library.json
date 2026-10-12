@@ -923,12 +923,18 @@
       "id": "this-is-ghostheart",
       "title": "This Is GhostHeart",
       "html": "<article class=\"record-card\" data-track-count=\"3\" id=\"this-is-ghostheart\">\n<div class=\"cover\"><img alt=\"Official Spotify cover artwork for This Is GhostHeart\" decoding=\"async\" height=\"300\" loading=\"lazy\" src=\"https://i.scdn.co/image/ab67616d0000b27337fc55f33c8f9fca6aca07cb\" width=\"300\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 11</span><span>Multi-track • 3 tracks</span><span class=\"artist-pick\">Identity / Angel / Oath</span></div>\n<h3>This Is GhostHeart</h3>\n<p class=\"track-list\">Tracks: This Is GhostHeart • <span id=\"song-the-angel-who-made-ghostheart\">The Angel Who Made GhostHeart</span> • <span id=\"song-ghosthearts-oath\">GhostHeart's Oath</span></p>\n<p>Three doors into the heart, the Angel, and the oath behind the name.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to This Is GhostHeart on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/7A6HiVbkTYi4Ug1TrMuseU\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 3 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=GuJgU0QxQLI\" rel=\"noopener noreferrer\" target=\"_blank\">This Is GhostHeart <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=sSthfVLW3gE\" rel=\"noopener noreferrer\" target=\"_blank\">The Angel Who Made GhostHeart <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=mU8hixRrgKM\" rel=\"noopener noreferrer\" target=\"_blank\">GhostHeart's Oath <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
-      "tracks": 3
+      "tracks": 3,
+      "related_films": [
+        {
+          "key": "this-is-ghostheart",
+          "label": "Watch the story trailer"
+        }
+      ]
     },
     {
       "id": "song-the-man-beneath-the-moon",
       "title": "The Man Beneath the Moon",
-      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-man-beneath-the-moon\"><div class=\"cover\"><img alt=\"The Man Beneath the Moon artwork\" loading=\"lazy\" src=\"/assets/videos/youtube/_mUU-toMlM8.jpg\"/></div><div class=\"record-copy\"><p class=\"eyebrow\">Recording</p><h3>The Man Beneath the Moon</h3><p>A GhostHeart recording.</p><div class=\"record-actions\"><a class=\"button\" href=\"/GhostHeart_Videos.html#film-the-man-beneath-the-moon\">Watch the film</a></div></div></article>",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-man-beneath-the-moon\"><div class=\"cover\"><img alt=\"The Man Beneath the Moon artwork\" loading=\"lazy\" src=\"/assets/videos/youtube/_mUU-toMlM8.jpg\"/></div><div class=\"record-copy\"><p class=\"eyebrow\">Recording</p><h3>The Man Beneath the Moon</h3><p>A GhostHeart recording.</p><div class=\"record-actions\"><a class=\"button\" href=\"/GhostHeart_Videos.html#film-the-man-beneath-the-moon\">Watch the fixed vocal ending video</a></div></div></article>",
       "tracks": 1
     },
     {
@@ -940,14 +946,20 @@
     {
       "id": "song-the-dad",
       "title": "The Dad",
-      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-dad\">\n<div class=\"cover\"><img alt=\"Cover artwork for The Dad\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/the-dad.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 02</span><span>Single • 1 track</span></div>\n<h3>The Dad</h3>\n<p>A promise to become the father the next generation deserves.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch The Dad film\" class=\"button\" href=\"https://www.youtube.com/watch?v=cBNxq4y1ahU\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to The Dad on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3Tj0tECUm0Wg9AuVkIOQLs\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
+      "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"song-the-dad\">\n<div class=\"cover\"><img alt=\"Cover artwork for The Dad\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/the-dad.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 02</span><span>Single • 1 track</span></div>\n<h3>The Dad</h3>\n<p>A promise to become the father the next generation deserves.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch The Dad I Never Had lyric video on YouTube (opens in a new tab)\" class=\"button\" href=\"https://www.youtube.com/watch?v=cBNxq4y1ahU\" rel=\"noopener noreferrer\" target=\"_blank\">Watch The Dad I Never Had (lyric video)</a><a aria-label=\"Listen to The Dad on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3Tj0tECUm0Wg9AuVkIOQLs\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
       "tracks": 1
     },
     {
       "id": "song-rebellion",
       "title": "Rebellion",
       "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-rebellion\">\n<div class=\"cover\"><img alt=\"Cover artwork for Rebellion\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/rebellion.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 03</span><span>Multi-track • 2 tracks</span></div>\n<h3>Rebellion</h3>\n<p class=\"track-list\">Tracks: Rebellion • <span id=\"song-you-cant-change-us\">You Can't Change Us</span></p>\n<p>The moment survival refuses to stay silent.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Rebellion on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/7jkKCwKlYjadMvBsJokvDq\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=i0a2Pltn9sM\" rel=\"noopener noreferrer\" target=\"_blank\">Rebellion <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=AJOGVvetmYY\" rel=\"noopener noreferrer\" target=\"_blank\">You Can't Change Us — original 3:55 version <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
-      "tracks": 2
+      "tracks": 2,
+      "related_films": [
+        {
+          "key": "rebellion",
+          "label": "Watch Rebellion (music video)"
+        }
+      ]
     },
     {
       "id": "song-what-did-you-take-from-her",
@@ -971,13 +983,96 @@
       "id": "human-too",
       "title": "Human Too",
       "html": "<article class=\"record-card\" data-track-count=\"1\" id=\"human-too\">\n<span aria-hidden=\"true\" id=\"song-human-too\"></span>\n<div class=\"cover\"><img alt=\"Cover artwork for Human Too\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/human-too.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 07</span><span>Single • 1 track</span><span>Aug 21, 2026</span></div>\n<h3>Human Too</h3>\n<p>A song about addiction, judgment, pain, and remembering that a human being is more than a label or a mistake.</p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Human Too on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/5BiC5SRSxlB13PSAJlFk88\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n</div>\n</article>",
-      "tracks": 1
+      "tracks": 1,
+      "related_films": [
+        {
+          "key": "human-too-remake",
+          "label": "Watch the cinematic remake"
+        }
+      ]
     },
     {
       "id": "song-just-not-this-morning",
       "title": "Ashes & Embers",
-      "html": "<article class=\"record-card\" data-track-count=\"5\" id=\"song-just-not-this-morning\">\n<div class=\"cover\"><img alt=\"Ashes and Embers cover artwork showing a black revolving door surrounding an ember-red heart\" decoding=\"async\" height=\"800\" loading=\"lazy\" src=\"/assets/songs/ashes-and-embers.jpg\" width=\"800\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 08</span><span>Album • 5 tracks</span><span>Aug 18, 2026</span></div>\n<h3>Ashes &amp; Embers</h3>\n<p>Just Not This Morning • <span id=\"song-look-at-me\">Look at Me</span> • <span id=\"song-revolving-door\">Revolving Door</span> • <span id=\"song-you-cant-close-a-revolving-door\">You Can't Close a Revolving Door</span> • <span id=\"song-i-got-you-for-life\">I Got You for Life</span></p>\n<div class=\"record-actions\"><a aria-label=\"Watch all five Ashes and Embers films\" class=\"button\" href=\"/GhostHeart_Videos.html#film-hey-preacher-man\">Watch</a><a aria-label=\"Listen to Ashes and Embers on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3vovZ08vmdjsAZNun6rmq7\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 5 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=9pI_nXdjTR4\" rel=\"noopener noreferrer\" target=\"_blank\">Just Not This Morning <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=kYOkJn-AlyI\" rel=\"noopener noreferrer\" target=\"_blank\">Look at Me <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=1uThHaD_HaA\" rel=\"noopener noreferrer\" target=\"_blank\">Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=C-v0URkntUQ\" rel=\"noopener noreferrer\" target=\"_blank\">You Can't Close a Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=xR6egEJgTv4\" rel=\"noopener noreferrer\" target=\"_blank\">I Got You for Life <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
-      "tracks": 5
+      "html": "<article class=\"record-card\" data-track-count=\"5\" id=\"song-just-not-this-morning\">\n<div class=\"cover\"><img alt=\"Ashes and Embers cover artwork showing a black revolving door surrounding an ember-red heart\" decoding=\"async\" height=\"800\" loading=\"lazy\" src=\"/assets/songs/ashes-and-embers.jpg\" width=\"800\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 08</span><span>Album • 5 tracks</span><span>Aug 18, 2026</span></div>\n<h3>Ashes &amp; Embers</h3>\n<p>Just Not This Morning • <span id=\"song-look-at-me\">Look at Me</span> • <span id=\"song-revolving-door\">Revolving Door</span> • <span id=\"song-you-cant-close-a-revolving-door\">You Can't Close a Revolving Door</span> • <span id=\"song-i-got-you-for-life\">I Got You for Life</span></p>\n<div class=\"record-actions\"><a aria-label=\"Listen to Ashes and Embers on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/3vovZ08vmdjsAZNun6rmq7\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 5 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=9pI_nXdjTR4\" rel=\"noopener noreferrer\" target=\"_blank\">Just Not This Morning <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=kYOkJn-AlyI\" rel=\"noopener noreferrer\" target=\"_blank\">Look at Me <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=1uThHaD_HaA\" rel=\"noopener noreferrer\" target=\"_blank\">Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=C-v0URkntUQ\" rel=\"noopener noreferrer\" target=\"_blank\">You Can't Close a Revolving Door <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=xR6egEJgTv4\" rel=\"noopener noreferrer\" target=\"_blank\">I Got You for Life <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "tracks": 5,
+      "related_films": [
+        {
+          "key": "just-not-this-morning",
+          "label": "Watch Just Not This Morning"
+        },
+        {
+          "key": "look-at-me",
+          "label": "Watch Look at Me"
+        }
+      ]
     }
-  ]
+  ],
+  "public_film_repairs": {
+    "the-dad": {
+      "youtubeId": "cBNxq4y1ahU",
+      "videoTitle": "The Dad I Never Had | GhostHeart (Official Lyric Video)",
+      "meta": [
+        "Lyric video"
+      ]
+    },
+    "human-too-remake": {
+      "youtubeId": "ARCFOZSOC_o",
+      "videoTitle": "Why You Should Never Judge Someone's Worst Day",
+      "meta": [
+        "Human Too cinematic remake",
+        "YouTube title: Why You Should Never Judge Someone's Worst Day"
+      ]
+    },
+    "the-man-beneath-the-moon": {
+      "youtubeId": "_mUU-toMlM8",
+      "videoTitle": "The Man Beneath the Moon | GhostHeart (Official Music Video - Fixed Vocal Ending)",
+      "meta": [
+        "Fixed vocal ending"
+      ]
+    },
+    "rebellion": {
+      "youtubeId": "FaT_Ibrs9Y0",
+      "videoTitle": "GhostHeart - Rebellion (Official Music Video) | Love Is Not Rebellion",
+      "meta": [
+        "Official music video"
+      ]
+    },
+    "just-not-this-morning": {
+      "youtubeId": "XWmMYqkvdzg",
+      "videoTitle": "Just Not This Morning | GhostHeart (Official Song)",
+      "meta": [
+        "Ashes & Embers",
+        "Track 01"
+      ]
+    },
+    "look-at-me": {
+      "youtubeId": "nVC1kB0MREA",
+      "videoTitle": "Look at Me: The Part of You That Still Wants to Be Seen",
+      "meta": [
+        "Ashes & Embers",
+        "Track 02"
+      ]
+    },
+    "cruel": {
+      "cardId": "film-cruel",
+      "title": "Cruel",
+      "videoTitle": "Why The World Is Getting So CRUEL | GhostHeart Official Music Video",
+      "youtubeId": "9sbFgjM_SDE",
+      "provider": "youtube",
+      "description": "The full public music video.",
+      "meta": [
+        "GhostHeart's Awakening",
+        "Official music video"
+      ],
+      "song": {
+        "label": "Listen to Cruel",
+        "href": "albums/index.html#track-cruel"
+      },
+      "related": [],
+      "accessibility": "Use the YouTube player CC control for available captions.",
+      "thumbnail": "assets/story/ghostheart-awakening-banner.png",
+      "featured": false
+    }
+  }
 }
