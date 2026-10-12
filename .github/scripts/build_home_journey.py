@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[2]
 INTRO = 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
+EMAIL_PROMISE = 'New songs, the stories behind them, and the next GhostHeart chapter—sent when they’re ready.'
 
 def build():
     path = ROOT / 'index.html'
@@ -29,10 +30,10 @@ def build():
 <div class="ghx-actions"><a class="primary" href="{escape(cruel['youtube'], quote=True)}" target="_blank" rel="noopener noreferrer">Watch full video</a><a class="secondary" href="/albums/#{cruel['id']}">Listen in Music</a><a class="secondary" href="#home-story">Read the life behind the music</a></div></section>''', 'html.parser').section
     story = BeautifulSoup('''<section class="home-story ghx-wrap" id="home-story" aria-labelledby="home-story-title"><p class="ghx-kicker">Enter My World</p><h2 id="home-story-title">Behind the Scars — The Awakening.</h2><p>The public beginning of the life behind GhostHeart.</p><div class="ghx-actions"><a class="primary" href="/GhostHeart_Story.html#behind-the-scars">Read Behind the Scars</a></div></section>''', 'html.parser').section
     signup = main.select_one('#join-the-signal')
-    signup.select_one('h2').string = 'Stay connected.'
+    signup.select_one('h2').string = 'Stay with the story.'
     for previous in signup.select('.home-email-action'):
         previous.decompose()
-    signup.select_one('h2 + p').replace_with(BeautifulSoup('<p>Follow new GhostHeart music, stories, and films through email updates or the public profiles below. Joining is optional.</p>', 'html.parser').p)
+    signup.select_one('h2 + p').string = EMAIL_PROMISE
     signup.select_one('h2 + p').insert_after(BeautifulSoup('<div class="ghx-actions home-email-action"><a class="secondary" href="/follow/">Follow by email</a></div>', 'html.parser'))
     discovery = main.select_one('.home-discovery')
     quote = main.select_one('[data-daily-quote]')
@@ -51,6 +52,14 @@ def build():
     if not soup.select_one('link[href="/assets/home/home-journey.css"]'):
         soup.select_one('link[href="/assets/shared/review-theme.css"]').insert_before(BeautifulSoup('<link rel="stylesheet" href="/assets/home/home-journey.css"/>', 'html.parser'))
     path.write_text(str(soup), encoding='utf-8', newline='\n')
+    follow_path = ROOT / 'follow/index.html'
+    follow = BeautifulSoup(follow_path.read_text(encoding='utf-8'), 'html.parser')
+    heading = follow.select_one('#email-signup-title')
+    heading.string = 'Stay with the story.'
+    heading.find_next_sibling('p').string = EMAIL_PROMISE
+    for description in follow.select('meta[name="description"], meta[property="og:description"]'):
+        description['content'] = EMAIL_PROMISE
+    follow_path.write_text(str(follow), encoding='utf-8', newline='\n')
     print('Applied approved homepage: introduction, Cruel, public story, optional connection; support and collection retained')
 
 if __name__ == '__main__':

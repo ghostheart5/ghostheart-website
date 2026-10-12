@@ -1,7 +1,7 @@
-.ghx-site #home .canon-hero__line { max-width: 48ch; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.6; }
+.ghx-site #home .canon-hero__line { max-width: 46ch; font-size: 1.125rem; line-height: 1.6; }
 .ghx-site #home .canon-hero__note { color: #e1d4cf; margin-bottom: .75rem; }
 .home-feature, .home-story { padding-block: clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid #65343b; scroll-margin-top: 7rem; }
-.home-feature h2, .home-story h2 { max-width: 28ch; margin: .4rem 0 1.2rem; font-size: clamp(2rem, 4vw, 3rem); }
+.home-feature h2, .home-story h2 { max-width: 28ch; margin: .4rem 0 1.2rem; font-size: 3rem; }
 .home-feature p, .home-story p { max-width: 56ch; color: #e1d4cf; }
 .home-feature audio { display: block; width: 100%; max-width: 40rem; margin: 1.5rem 0; }
 .home-feature .ghx-actions, .home-story .ghx-actions { flex-wrap: wrap; }
@@ -10,24 +10,36 @@
 .home-quote { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #65343b; }
 .home-quote blockquote { margin: 0; color: #e1d4cf; line-height: 1.65; }
 .ghx-site #home.canon-hero {
+  min-height: 0;
   background:
-    linear-gradient(90deg, rgba(5,5,6,.94) 0%, rgba(5,5,6,.78) 38%, rgba(5,5,6,.26) 76%, rgba(5,5,6,.18) 100%),
-    linear-gradient(0deg, rgba(5,5,6,.76) 0%, rgba(5,5,6,.08) 48%, rgba(5,5,6,.22) 100%),
-    url('../story/ghostheart-scars-rooftop-rain.png') center 46% / cover no-repeat;
+    linear-gradient(90deg, rgba(5,5,6,.12) 0%, rgba(5,5,6,.3) 30%, rgba(5,5,6,.97) 51%, #050506 100%),
+    url('../story/ghostheart-scars-rooftop-rain.png') left 42% / cover no-repeat;
 }
-.ghx-site #home h1 { font-size: clamp(3.8rem, 5vw, 5.5rem); }
-.ghx-site #home .canon-hero__copy { position: relative; z-index: 1; }
-@media (max-width: 700px) { .ghx-site #home h1 span { font-size: clamp(2.3rem, 11.5vw, 5rem); } }
+.ghx-site #home > .ghx-wrap { display: flex; justify-content: flex-end; width: min(1200px, calc(100% - 3rem)); }
+.ghx-site #home .canon-hero__copy { position: relative; z-index: 1; width: 48%; max-width: 580px; padding-block: 4rem; }
+.ghx-site #home h1 { font-size: 4.5rem; letter-spacing: 0; line-height: 1.05; }
+.ghx-site #home h1 span { font-size: inherit; letter-spacing: 0; transform: none; font-style: normal; }
+.ghx-site #home .canon-hero__mark { letter-spacing: 0; }
+.ghx-site #home .ghx-actions { align-items: center; gap: .75rem 1rem; }
+.ghx-site #home .ghx-actions a { letter-spacing: 0; }
+.ghx-site #home .ghx-actions .secondary { background: transparent; border-color: transparent; padding-inline: 0; text-decoration: underline; text-underline-offset: .25em; }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .ghx-site #home h1 { font-size: 3.25rem; }
+  .ghx-site #home h1 span { font-size: 2.5rem; }
+  .ghx-site #home .canon-hero__copy { width: 54%; }
+}
 @media (max-width: 700px) {
   .ghx-site #home.canon-hero {
-    background-image:
-      linear-gradient(90deg, rgba(5,5,6,.88) 0%, rgba(5,5,6,.68) 62%, rgba(5,5,6,.34) 100%),
-      linear-gradient(0deg, rgba(5,5,6,.84) 0%, rgba(5,5,6,.18) 56%, rgba(5,5,6,.4) 100%),
-      url('../story/ghostheart-scars-rooftop-rain.png');
-    background-size: auto 100%;
-    background-position: 26% center;
-    background-repeat: no-repeat;
+    background:
+      linear-gradient(0deg, #050506 5%, rgba(5,5,6,.94) 65%, rgba(5,5,6,.52) 100%),
+      url('../story/ghostheart-scars-rooftop-rain.png') left center / auto 100% no-repeat;
   }
-  .ghx-site #home h1 { font-size: clamp(3.2rem, 15vw, 4.25rem); }
-  .ghx-site #home h1 span { font-size: clamp(2.15rem, 10vw, 2.55rem); }
+  .ghx-site #home > .ghx-wrap { width: calc(100% - 2rem); }
+  .ghx-site #home .canon-hero__copy { width: 100%; padding-block: 3rem 2.5rem; }
+  .ghx-site #home h1 { font-size: 3rem; }
+  .ghx-site #home h1 span { font-size: 2.5rem; }
+  .home-feature h2, .home-story h2 { font-size: 2rem; }
+}
+@media (max-width: 360px) {
+  .ghx-site #home h1 span { font-size: 2rem; }
 }
