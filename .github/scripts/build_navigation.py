@@ -45,6 +45,27 @@ def build_header(path):
     prefix = '/' if rel == '404.html' else '../' * depth
     return re.sub(r'(href|src)="/([^"]*)"', lambda m: f'{m.group(1)}="{prefix}{m.group(2)}"', header)
 
+
+def refresh_current_relationship_links(text):
+    """Use the current character name in navigation, preserving release titles."""
+    def story_link(match):
+        link = match.group(0)
+        link = link.replace('GhostHeart and His Angel', "GhostHeart's Rebel")
+        link = link.replace('Meet the Angel', "Meet GhostHeart's Rebel")
+        return link.replace('/GhostHeart_Angel.html', '/woman-behind-the-scenes/')
+
+    text = re.sub(r'<a\b[^>]*href="/GhostHeart_Angel\.html"[^>]*>.*?</a>',
+                  story_link, text, flags=re.S | re.I)
+
+    # These point to a thematic website collection, rather than a release.
+    # Leave the collection URL, heading, artwork, prose and song names intact.
+    def collection_link(match):
+        return re.sub(r"GhostHeart(?:'|’|&#x27;|&#39;|&apos;)s Angel", 'Relationship songs', match.group(0))
+
+    return re.sub(r'<a\b[^>]*href="/albums/ghosthearts-angel/index\.html"[^>]*>.*?</a>',
+                  collection_link, text, flags=re.S | re.I)
+
+
 changed = 0
 for path in ROOT.rglob('*.html'):
     if '.github' in path.parts:
@@ -52,8 +73,10 @@ for path in ROOT.rglob('*.html'):
     relative = path.relative_to(ROOT).as_posix()
     old = path.read_text(encoding='utf-8')
     new, count = PATTERN.subn(lambda _: build_header(path), old, count=1)
-    if count and new != old:
+    if count:
         new = new.replace('>Join the Heartbeat<', '>Stay Connected<').replace('>Join the Signal<', '>Stay Connected<')
+        new = refresh_current_relationship_links(new)
+    if new != old:
         path.write_text(new, encoding='utf-8', newline='\n')
         changed += 1
 print('Updated navigation on', changed, 'HTML pages')

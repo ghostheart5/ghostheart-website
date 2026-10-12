@@ -62,6 +62,9 @@ approved_video_ids = {
     '2SEng4dmgUc',  # Hey Preacher Man / You're Not God
     'ptYn4vh6DCQ',  # That Ain't Holy / You're Not God
 }
+# The Vault stays a small curated selection. The Films page also includes the
+# existing uploads verified for the October 12 recording-link repairs.
+film_page_video_ids = approved_video_ids | {entry['youtubeId'] for entry in library['public_film_repairs'].values()}
 public_video_ids = set()
 for card in films.select('.g-film[id]'):
     direct = card.select_one('a[href^="https://www.youtube.com/watch?v="]')
@@ -73,21 +76,24 @@ for card in films.select('.g-film[id]'):
     assert video_id and video_id == player['data-video-id']
     assert video_id not in public_video_ids
     public_video_ids.add(video_id)
-    if video_id not in approved_video_ids:
+    if video_id not in film_page_video_ids:
         # Keep old fragment URLs resolvable without placing unreviewed media
         # into the audience-facing collection.
         card.replace_with(BeautifulSoup(f'<span id="{card["id"]}" hidden></span>', 'html.parser'))
         continue
-    description = card.select_one('h3 + p')
+    if video_id not in approved_video_ids:
+        continue  # Keep the separate Vault selection and its existing counts.
+    description = card.select_one('h3 + p:not(.g-small)') or card.select_one('h3 + p + p')
     title_text = title.get_text(' ', strip=True)
     desc_text = description.get_text(' ', strip=True) if description else ''
     items.append(dict(kind='videos', title=title_text, description=desc_text,
                       href=f"/GhostHeart_Videos.html#{card['id']}", action='Watch the film',
                       search=f"{title_text} {desc_text}", featured=video_id == 'AOCRvtz92JM'))
-assert approved_video_ids <= public_video_ids and len(public_video_ids) == 23
+assert film_page_video_ids <= public_video_ids and len(public_video_ids) == 24
+assert len(films.select(".g-film[id]")) == len(film_page_video_ids)
 film_intro = films.select_one('main .g-lead')
 if film_intro:
-    film_intro.string = "Films from The Awakening and You're Not God. Players load when you choose."
+    film_intro.string = "Selected GhostHeart music videos, lyric videos, and cinematic remakes. Players load when you choose."
 (ROOT / 'GhostHeart_Videos.html').write_text(str(films), encoding='utf-8', newline='\n')
 quotes_path = ROOT / 'GhostHeart_Quotes.html'
 quotes_page = replace_unverified_signup(BeautifulSoup(quotes_path.read_text(encoding='utf-8'), 'html.parser'))

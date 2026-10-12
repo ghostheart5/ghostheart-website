@@ -88,6 +88,15 @@ for f in films:
  if f['key']=='the-man-beneath-the-moon':f['description']='A GhostHeart film about the life behind the name.'
  for rel in f.get('related',[]):
   if 'GhostHeart_Version' in rel.get('href',''):rel.update(href='GhostHeart_Story.html',label='Continue the story')
+# Verified public uploads already used by this site. Keep public titles and
+# recording versions explicit; Cruel reuses the existing approved artwork.
+for key, details in data.get('public_film_repairs', {}).items():
+ existing=next((f for f in films if f['key']==key),None)
+ if existing:
+  assert existing['youtubeId']==details['youtubeId'], f'Unexpected video change: {key}'
+  existing.update(details)
+ else:
+  films.append(dict(details,key=key))
 write('assets/data/ghostheart-video-catalog.js','// Current public film references. Rebuild pages through finish_gateway.py.\nwindow.GHOSTHEART_VIDEO_CATALOG = Object.freeze('+json.dumps(films,ensure_ascii=False,indent=2)+');\n')
 byid={f['youtubeId']:f for f in films}
 bykey={f['key']:f for f in films}
@@ -95,9 +104,10 @@ bykey={f['key']:f for f in films}
 def film(f,card_id=None):
  vid=f['youtubeId'];assert re.fullmatch(r'[\w-]{11}',vid)
  title=f['title'];desc=f.get('description','');ident=card_id or f['cardId']
+ version=f'<p class="g-small">{escape(" · ".join(f["meta"]))}</p>' if f.get('meta') else ''
  links=[]
  if f.get('song',{}).get('href'):links.append(L(local(f['song']['href'],'index.html'),escape(f['song'].get('label','Continue the story'))+' ↗'))
- return f'<article class="g-film" id="{escape(ident)}" data-library-item data-search="{escape(title+" "+desc,quote=True)}"><div class="g-player"><button type="button" data-video-id="{vid}" data-video-title="{escape(title,quote=True)}" aria-label="Load film: {escape(title,quote=True)}"><img src="/{f["thumbnail"].lstrip("/")}" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>{escape(title)}</h3><p>{escape(desc)}</p><div class="g-actions"><a class="g-link" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>{"".join(links)}</div></article>'
+ return f'<article class="g-film" id="{escape(ident)}" data-library-item data-search="{escape(title+" "+desc+" "+" ".join(f.get("meta",[])),quote=True)}"><div class="g-player"><button type="button" data-video-id="{vid}" data-video-title="{escape(f.get("videoTitle",title),quote=True)}" aria-label="Load film: {escape(title,quote=True)}"><img src="/{f["thumbnail"].lstrip("/")}" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>{escape(title)}</h3>{version}<p>{escape(desc)}</p><div class="g-actions"><a class="g-link" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>{"".join(links)}</div></article>'
 
 # Link missing existing work without asserting a new streaming-platform release.
 collections=copy.deepcopy(data['collections'])
@@ -110,7 +120,6 @@ for slug,coll in collections.items():
  for t in coll['tracks']:
   if t['id']=='human-too':t['video']='ARCFOZSOC_o'
   if t['id']=='rebellion':t['video']='FaT_Ibrs9Y0'
-  if 'Fixed Vocal Ending' in t.get('meta',''):t['meta']=''
   # Retain actual recording links and links into the recording archive, not redundant old watch fragments.
   t['links']=[a for a in t['links'] if 'youtube.com/watch' not in a['url'] and '#watch-' not in a['url']]
  cards='';items=''
@@ -126,7 +135,7 @@ for slug,coll in collections.items():
  body+=f'<section class="g-section"><div class="g-wrap l-collection-intro"><img src="{image}" width="1672" height="941" alt="GhostHeart artwork for {escape(coll["title"],quote=True)}"/><div><p class="g-status">{len(coll["tracks"])} linked {"song" if len(coll["tracks"])==1 else "songs"}</p><p>This website collection connects songs by their story. See Released recordings for their original release formats.</p><div class="g-actions">{L("#tracks","Explore the songs ↓","g-button")}{L("/GhostHeart_Songs.html","Released recordings ↗")}</div></div></div></section>'
  body+=f'<section class="g-section" id="about"><div class="g-wrap l-prose"><h2>Behind the music.</h2>{paragraphs}</div></section><section class="g-section" id="tracks"><div class="g-wrap"><h2>Stay with a song.</h2><ol class="l-track-list">{items}</ol></div></section>'
  if cards:body+=f'<section class="g-section g-dark" id="watch"><div class="g-wrap"><h2>The films.</h2><div class="g-films">{cards}</div></div></section>'
- body+=f'<nav class="g-wrap l-collection-nav" aria-label="More collections">{L("/albums/"+previous+"/index.html","← "+escape(collections[previous]["title"]))}{L("/albums/index.html","All collections")}{L("/albums/"+nxt+"/index.html",escape(collections[nxt]["title"])+" →")}</nav>'+FOLLOW('collection')
+ body+=f'<nav class="g-wrap l-collection-nav" aria-label="More collections">{L("/albums/"+previous+"/index.html","← "+escape(collections[previous]["title"]))}{L("/albums/index.html","Featured Music")}{L("/albums/"+nxt+"/index.html",escape(collections[nxt]["title"])+" →")}</nav>'+FOLLOW('collection')
  page(f'albums/{slug}/index.html',coll['title']+' · Collection',coll['description'],body,image)
 
 indexcards=''
@@ -136,7 +145,7 @@ page('albums/index.html','Explore the collections','GhostHeart music grouped by 
 
 # Film and recording libraries are generated, searchable, and remain readable without JavaScript.
 filmgrid='<div class="g-films">'+''.join(film(f) for f in films)+'</div>'
-page('GhostHeart_Videos.html','Films','Watch GhostHeart films and follow their connections to the music and story.',HEAD('Music & films / Watch','Stay with<br/><em>the story.</em>','Choose a film. Players load only when you choose; direct YouTube links remain available.')+'<section class="g-section"><div class="g-wrap">'+searchable(filterbar('Find a film','Search film titles…')+filmgrid,'films')+'</div></section>'+FOLLOW('films'))
+page('GhostHeart_Videos.html','Films','Watch selected GhostHeart music videos, lyric videos, and cinematic remakes, with links to their music and story.',HEAD('Music & films / Watch','Stay with<br/><em>the story.</em>','Choose a film. Players load only when you choose; direct YouTube links remain available.')+'<section class="g-section"><div class="g-wrap">'+searchable(filterbar('Find a film','Search film titles…')+filmgrid,'films')+'</div></section>'+FOLLOW('films'))
 music_data=json.loads(read('.github/content/music.json'))
 preview_sections=''
 preview_track_count=0
@@ -150,27 +159,30 @@ for group in music_data['groups']:
   recording_note=f'<p class="music-recording-title">Audio recording: {escape(track["recording_title"])}</p>' if track.get('recording_title') else ''
   rows+=f'<li class="music-track" id="preview-{escape(track["id"],quote=True)}"><div class="music-track-heading"><span class="music-number">{number:02d}</span><h3>{title}</h3></div>{recording_note}<audio controls preload="none" aria-label="Play {escape(track["title"],quote=True)}"><source src="{audio}" type="audio/mpeg"/>Your browser does not support this audio player.</audio></li>'
  preview_sections+=f'<section class="music-group" aria-labelledby="existing-{escape(group["id"],quote=True)}-title"><div class="music-group-head"><p class="ghx-kicker">{len(tracks)} songs</p><h3 id="existing-{escape(group["id"],quote=True)}-title">{escape(group["title"])}</h3></div><ol class="music-tracks">{rows}</ol></section>'
-preview_nav='<nav class="music-jump" aria-label="Song audio"><a href="#existing-audio">Listen to existing song previews</a></nav>'
-preview_html=f'<section class="g-section" id="existing-audio" aria-labelledby="existing-audio-title"><div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">Existing website audio</p><h2 id="existing-audio-title">Play the song previews</h2><p class="ghx-lead">These player controls reuse the same public preview recordings already on the Music page. They remain previews; this catalog adds access to the existing files without replacing a recording.</p></header>{preview_sections}</div></section>'
+preview_nav='<nav class="music-jump g-wrap" aria-label="Recording archive sections"><a href="#existing-audio">Song previews</a><a href="#released-recordings">Released recordings archive</a><a href="/albums/index.html">Featured listening collections</a><a href="/GhostHeart_Videos.html">Films</a></nav>'
+preview_html=f'<section class="g-section" id="existing-audio" aria-labelledby="existing-audio-title"><div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">Featured song previews</p><h2 id="existing-audio-title">Play the song previews</h2><p class="ghx-lead">Eleven previews from GhostHeart&#39;s Awakening and You&#39;re Not God. Find original singles, multi-track releases, and their listening links in the archive below.</p></header>{preview_sections}</div></section>'
 assert preview_track_count==11, f'Expected the existing 11 public previews, found {preview_track_count}'
 recordhtml=''
 for r in data['recordings']:
  card=parse(r['html']).select_one('.record-card')
- card['data-library-item']='';card['data-search']=txt(card)
+ card['data-library-item']=''
  for el in card.select('.record-meta span'):
   if re.fullmatch(r'Release\s+\d+',txt(el)):el.decompose()
  for el in card.select('.record-actions a'):
   el['class']=['g-button' if 'primary' in el.get('class',[]) else 'g-link']
- target={'song-rebellion':'rebellion','human-too':'human-too-remake','song-the-dad':'the-dad','this-is-ghostheart':'this-is-ghostheart'}.get(r['id'])
- if target and not any('GhostHeart_Videos.html#'+bykey[target]['cardId'] in a['href'] for a in card.select('a[href]')):
+ for related in r.get('related_films',[]):
+  target=bykey[related['key']]
+  href='/GhostHeart_Videos.html#'+target['cardId']
   actions=card.select_one('.record-actions')
-  if actions:actions.append(parse(L('/GhostHeart_Videos.html#'+bykey[target]['cardId'],'Watch current film ↗')).a)
+  if actions and not card.select_one('a[href="'+href+'"]'):actions.append(parse(L(href,escape(related['label']))).a)
+ card['data-search']=txt(card)
  recordhtml+=str(card)
-page('GhostHeart_Songs.html','Released recordings','Original GhostHeart singles and multi-track releases, with their existing listening links and related films.',HEAD('Music & films / Listen','The recordings.<br/><em>The stories they carry.</em>','Original releases and listening links. Different recordings remain distinct; nothing has been re-released or merged.')+preview_nav+preview_html+f'<section class="g-section"><div class="g-wrap"><p id="catalog-count">{len(data["recordings"])} release and recording entries · {sum(r["tracks"] for r in data["recordings"])} listed tracks</p>'+searchable(filterbar('Find a recording','Search titles…')+'<div class="l-recordings">'+recordhtml+'</div>','recordings')+'</div></section>'+FOLLOW('recordings'))
-if not any('listening-room.css' in str(x.get('href','')) for x in parse(read('GhostHeart_Songs.html')).head.select('link[rel="stylesheet"]')):
- songs_doc=parse(read('GhostHeart_Songs.html'))
+page('GhostHeart_Songs.html','Released recordings','Browse original GhostHeart singles, multi-track releases, and distinct recording versions, with listening links and related films.',HEAD('Music & films / Listen','The recordings.<br/><em>The stories they carry.</em>','Original singles, multi-track releases, and distinct recording versions.')+preview_nav+preview_html+f'<section class="g-section" id="released-recordings" aria-labelledby="released-recordings-title"><div class="g-wrap"><h2 id="released-recordings-title">Released recordings archive</h2><p id="catalog-count">{len(data["recordings"])} release and recording entries · {sum(r["tracks"] for r in data["recordings"])} listed tracks</p>'+searchable(filterbar('Find a recording','Search titles…')+'<div class="l-recordings">'+recordhtml+'</div>','recordings')+'</div></section>'+FOLLOW('recordings'))
+songs_doc=parse(read('GhostHeart_Songs.html'))
+songs_doc.select_one('.g-page-top')['class'].append('recordings-hero')
+if not any('listening-room.css' in str(x.get('href','')) for x in songs_doc.head.select('link[rel="stylesheet"]')):
  songs_doc.head.append(songs_doc.new_tag('link',attrs={'rel':'stylesheet','href':'/assets/music/listening-room.css'}))
- write('GhostHeart_Songs.html',str(songs_doc))
+write('GhostHeart_Songs.html',str(songs_doc))
 generated_song_page=parse(read('GhostHeart_Songs.html'))
 generated_players=generated_song_page.select('#existing-audio audio')
 expected_audio=[track['audio'] for group in music_data['groups'] for track in group['tracks'] if track.get('audio')]

@@ -59,10 +59,11 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "cardId": "film-human-too-remake",
     "featured": false,
     "meta": [
-      "Human Too · Cinematic remake"
+      "Human Too cinematic remake",
+      "YouTube title: Why You Should Never Judge Someone's Worst Day"
     ],
     "title": "Human Too",
-    "videoTitle": "Human Too | A GhostHeart Cinematic Remake",
+    "videoTitle": "Why You Should Never Judge Someone's Worst Day",
     "provider": "youtube",
     "youtubeId": "ARCFOZSOC_o",
     "description": "A new cinematic version of Human Too—a GhostHeart song about addiction, judgment, pain, and the person behind every label.",
@@ -233,12 +234,12 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "key": "the-man-beneath-the-moon",
     "cardId": "film-the-man-beneath-the-moon",
     "title": "The Man Beneath the Moon",
-    "videoTitle": "The Man Beneath the Moon | GhostHeart",
+    "videoTitle": "The Man Beneath the Moon | GhostHeart (Official Music Video - Fixed Vocal Ending)",
     "provider": "youtube",
     "youtubeId": "_mUU-toMlM8",
     "description": "A GhostHeart film about the life behind the name.",
     "meta": [
-      "Life Before GhostHeart"
+      "Fixed vocal ending"
     ],
     "song": {
       "label": "Explore the album",
@@ -370,7 +371,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "key": "the-dad",
     "cardId": "film-the-dad",
     "meta": [
-      "GhostHeart film"
+      "Lyric video"
     ],
     "title": "The Dad I Never Had",
     "videoTitle": "The Dad I Never Had | GhostHeart (Official Lyric Video)",
@@ -423,7 +424,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "Track 01"
     ],
     "title": "Just Not This Morning",
-    "videoTitle": "Just Not This Morning",
+    "videoTitle": "Just Not This Morning | GhostHeart (Official Song)",
     "provider": "youtube",
     "description": "Survival answers the dark with one more morning.",
     "song": {
@@ -446,7 +447,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "Track 02"
     ],
     "title": "Look at Me",
-    "videoTitle": "Look at Me",
+    "videoTitle": "Look at Me: The Part of You That Still Wants to Be Seen",
     "provider": "youtube",
     "description": "A demand to be seen clearly instead of reduced to a wound.",
     "song": {
@@ -549,7 +550,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "key": "rebellion",
     "cardId": "film-rebellion",
     "title": "Rebellion",
-    "videoTitle": "GhostHeart – Rebellion (Official Music Video) | Love Is Not Rebellion",
+    "videoTitle": "GhostHeart - Rebellion (Official Music Video) | Love Is Not Rebellion",
     "youtubeId": "FaT_Ibrs9Y0",
     "provider": "youtube",
     "description": "Love doesn’t ask permission to exist.",
@@ -564,5 +565,26 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "accessibility": "Use the YouTube player CC control for available captions.",
     "thumbnail": "assets/videos/youtube/FaT_Ibrs9Y0.jpg",
     "featured": false
+  },
+  {
+    "cardId": "film-cruel",
+    "title": "Cruel",
+    "videoTitle": "Why The World Is Getting So CRUEL | GhostHeart Official Music Video",
+    "youtubeId": "9sbFgjM_SDE",
+    "provider": "youtube",
+    "description": "The full public music video.",
+    "meta": [
+      "GhostHeart's Awakening",
+      "Official music video"
+    ],
+    "song": {
+      "label": "Listen to Cruel",
+      "href": "albums/index.html#track-cruel"
+    },
+    "related": [],
+    "accessibility": "Use the YouTube player CC control for available captions.",
+    "thumbnail": "assets/story/ghostheart-awakening-banner.png",
+    "featured": false,
+    "key": "cruel"
   }
 ]);

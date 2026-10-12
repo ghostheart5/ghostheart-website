@@ -58,15 +58,15 @@ def build(check=False):
                         f'<div class="music-group-head"><p class="ghx-kicker">{len(group["tracks"])} songs</p>'
                         f'<h2 id="{group["id"]}-title">{escape(group["title"])}</h2><p>{escape(group["description"])}</p></div>'
                         f'<ol class="music-tracks">{"".join(rows)}</ol></section>')
-    body = f'''<div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">GhostHeart / Music</p>
-<h1>Listen to the songs.</h1><p class="ghx-lead">Start with GhostHeart's Awakening or You're Not God. Play the audio here, then follow a song to YouTube when a matching video is available.</p>
-<nav class="music-jump" aria-label="Music groups"><a href="#awakening">GhostHeart's Awakening</a><a href="#youre-not-god">You're Not God</a></nav></header>
+    body = f'''<div class="music-page ghx-wrap"><header class="music-hero"><p class="ghx-kicker">Music / Featured listening collections</p>
+<h1>Listen to the songs.</h1><p class="ghx-lead">Eleven song previews from GhostHeart's Awakening and You're Not God. Explore the Released recordings archive for original singles, multi-track releases, and distinct versions.</p>
+<nav class="music-jump" aria-label="Music collections and archive"><a href="/GhostHeart_Songs.html#released-recordings">Released recordings archive</a><a href="/GhostHeart_Videos.html">Films</a><a href="#awakening">GhostHeart's Awakening</a><a href="#youre-not-god">You're Not God</a></nav></header>
 {''.join(sections)}</div>'''
     html = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Music | GhostHeart</title><meta name="description" content="Listen to GhostHeart's Awakening and You're Not God."/>
+<title>Music | GhostHeart</title><meta name="description" content="Explore two featured GhostHeart listening collections with eleven song previews, plus the Released recordings archive and Films."/>
 <link rel="canonical" href="https://www.myghostheart.com/albums/"/>
 <meta property="og:type" content="website"/><meta property="og:site_name" content="GhostHeart"/><meta property="og:title" content="Music | GhostHeart"/>
-<meta property="og:description" content="Listen to GhostHeart's Awakening and You're Not God."/><meta property="og:url" content="https://www.myghostheart.com/albums/"/>
+<meta property="og:description" content="Explore two featured GhostHeart listening collections with eleven song previews, plus the Released recordings archive and Films."/><meta property="og:url" content="https://www.myghostheart.com/albums/"/>
 <meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/><meta property="og:image:alt" content="GhostHeart Awakening artwork"/><meta name="twitter:card" content="summary_large_image"/>
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/music/listening-room.css"/><script defer src="/assets/shared/ghostheart-world.js"></script>

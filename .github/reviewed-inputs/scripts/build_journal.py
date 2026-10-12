@@ -176,7 +176,7 @@ entries = ''.join(f'''<article class="journal-entry"><span class="journal-number
 <h2><a href="{post_path(post)}">{escape(post['title'])}</a></h2><p>{escape(post['summary'])}</p>
 <a class="journal-link" href="{post_path(post)}">Read the entry</a></div>{art(post, True)}</article>''' for i, post in enumerate(blog_posts[1:], 2))
 body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kicker">GhostHeart / Blog</p>
-<h1>Words from<br/>the heart.</h1><p class="ghx-lead">Dated reflections on songs, films, and the work around them. New writing will appear here when it is ready.</p>
+<h1>Words from<br/>the heart.</h1><p class="ghx-lead">Song introductions, album notes and longer reflections from GhostHeart. New writing will appear here when it is ready.</p>
 <div class="ghx-actions"><a href="#entries">Read the blog</a><a href="/GhostHeart_Story.html">Enter My World</a></div></header>
 <div class="journal-highlights"><section class="journal-highlight" aria-labelledby="quote-title"><p class="ghx-kicker">Quote of the day</p><h2 id="quote-title">A line to carry.</h2>
 <blockquote data-daily-quote>{escape(QUOTES[0])}</blockquote><p class="highlight-source">GhostHeart | <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></section>
@@ -185,7 +185,7 @@ body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kick
 <p>Viewing link and platform will be added when confirmed.</p><a href="/live/index.html">Readings &amp; Live details</a></section></div>
 <section aria-label="Dated blog entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
 <aside class="journal-follow" aria-labelledby="archive-title"><p class="ghx-kicker">Earlier public introduction</p><h2 id="archive-title">How We Got Here</h2><p>The original introduction remains available in the archive. The current reading path begins at Enter My World.</p><div class="ghx-actions"><a class="primary" href="/GhostHeart_Story.html">Enter My World</a><a class="secondary" href="/journal/how-we-got-here-archive.html">Read the archived introduction</a></div></aside></div>'''
-write('journal/index.html', shell('Blog', 'Dated reflections on GhostHeart songs, films, and creative work.', '/journal/', body, blog_first['image']))
+write('journal/index.html', shell('Blog', 'Song introductions, album notes and longer reflections from GhostHeart.', '/journal/', body, blog_first['image']))
 daily_js = '''(() => {
   const target = document.querySelector('[data-daily-quote]');
   if (!target) return;
