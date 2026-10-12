@@ -1,0 +1,171 @@
+{
+  "repository": "ghostheart5/ghostheart-website",
+  "base": "6000b1c3a69554f88c276f59ebd44aabff931a91",
+  "branch": "codex/collection-scope-sharing-20261012",
+  "completed_at": "2026-10-12T21:39:58.927640+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "repeat-build",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "deterministic-generated-files",
+      "status": "PASS",
+      "files": 122,
+      "differences": []
+    },
+    {
+      "check": "preservation",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "validate_site",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "test_awakening",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "verify_reviewed_site",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "verify_world_review",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "test_cruel_reading",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-1",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-2",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-3",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-4",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-5",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-6",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-7",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-8",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-9",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-10",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-11",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-12",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "js-syntax-13",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "vault-filters",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "diff-check",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "changed_paths": [
+    ".github/content/site-library.json",
+    ".github/evidence/collection-scope-sharing-20261012/README.md",
+    ".github/evidence/collection-scope-sharing-20261012/changed-paths.txt",
+    ".github/evidence/collection-scope-sharing-20261012/preservation.json",
+    ".github/evidence/collection-scope-sharing-20261012/validation.json",
+    ".github/reviewed-pages/woman-behind-the-scenes/index.html.template",
+    ".github/scripts/build_vault_review.py",
+    ".github/scripts/finish_gateway.py",
+    ".github/scripts/verify_world_review.py",
+    "GhostHeart_Videos.html",
+    "albums/broken-man/index.html",
+    "albums/fatherhood/index.html",
+    "albums/ghostheart/index.html",
+    "albums/human-after-all/index.html",
+    "albums/love-is-love/index.html",
+    "albums/the-ones-we-carry/index.html",
+    "albums/uplifting/index.html",
+    "albums/youre-not-god/index.html",
+    "assets/data/ghostheart-video-catalog.js",
+    "assets/vault/vault.css",
+    "vault/index.html",
+    "woman-behind-the-scenes/index.html"
+  ],
+  "public_file_sha256": {
+    "GhostHeart_Videos.html": "e456c66f55ed9b5673745cc9be34a6e1b7752e2f2ea3233dcfc8676e5569e43d",
+    "albums/broken-man/index.html": "ca7aafd2cc13029ebaabbeb3fd0445da022c8ee32d4dbad3bed9a4dd8c96629a",
+    "albums/fatherhood/index.html": "0c8983fa44e9cff6eb6bd4462d1c678a2a4479c96ba50a4b64fda71df51f7671",
+    "albums/ghostheart/index.html": "e630597730dcb3ad25cbada16e5359ce72c6ce2dc0706a68fc20c0f5ab00fc43",
+    "albums/human-after-all/index.html": "54d67b7dbb9f1bad2141850cb2ef8efec8bf5a749647e550c6bb9ae8064fd916",
+    "albums/love-is-love/index.html": "28e1cb4db227fba1a8bf4b3e2ce18a16353d6fc06083d70ad5a8f79b2e3fecf3",
+    "albums/the-ones-we-carry/index.html": "95399fa5a1c08d81aeb217155a4aea76d2735c6724efbf45c09870cd7316535f",
+    "albums/uplifting/index.html": "29d81311560dfa92d426c6fb7aad4805d259e851e2430cca6635c92cffbca827",
+    "albums/youre-not-god/index.html": "e785ae45feacc3802ce504d46980f8b52a9d016330f59a4f4128b82b223635c2",
+    "assets/data/ghostheart-video-catalog.js": "871283dd38b0e9c5dd35646b829268f6f3f357c6048c00dfc38e95f92bf24d69",
+    "assets/vault/vault.css": "1edfdbd832eb6c5e6abba41c5b97623e6dfe71796f4ca42bc91202eb9a38b676",
+    "vault/index.html": "fe7ab1aa3712b1fdf6c0a834afe05f3c345d6704da852bdeefe3641fc6ad6cc8",
+    "woman-behind-the-scenes/index.html": "4bd192e6339e778132cd8f572a4bed970f8cb5d719cd613a3f81bab38ffe4852"
+  },
+  "limits": [
+    "No deployment",
+    "No real signup or email",
+    "No streamed provider playback",
+    "No physical-device or screen-reader certification",
+    "No real social-platform preview/cache verification"
+  ]
+}

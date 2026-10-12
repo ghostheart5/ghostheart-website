@@ -5,6 +5,8 @@
 .vault-hero > p:not(.ghx-kicker) { max-width: 46ch; color: #d9cbc7; font-size: clamp(1.12rem, 1.6vw, 1.35rem); line-height: 1.6; }
 .vault-hero-links, .vault-latest-next { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 2rem; }
 .vault-hero-links a, .vault-latest-next a { display: inline-flex; align-items: center; min-height: 44px; color: #f3bd8b; font-weight: 700; text-underline-offset: .25em; }
+.vault-hero-links .vault-films-link { padding: .65rem 1rem; border: 1px solid #8f6560; border-radius: 4px; background: #27191c; text-decoration: none; }
+.vault-hero-links .vault-films-link:hover { background: #392328; }
 .vault-library { padding-block: clamp(2.5rem, 5vw, 5rem) 6rem; }
 .vault-controls label { display: block; margin-bottom: .7rem; font-weight: 700; }
 .vault-search-row { display: flex; gap: .6rem; max-width: 42rem; }

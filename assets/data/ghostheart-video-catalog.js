@@ -20,7 +20,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [
       {
         "href": "albums/ghostheart/index.html#this-is-ghostheart",
-        "label": "GhostHeart album"
+        "label": "GhostHeart collection"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -47,7 +47,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [
       {
         "href": "albums/ghostheart/index.html#ghosthearts-oath",
-        "label": "GhostHeart album"
+        "label": "GhostHeart collection"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -123,8 +123,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "z-FRCpG9vfw",
     "description": "One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — I Won’t Pretend to Speak for You",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — I Won’t Pretend to Speak for You",
       "title": "I Won’t Pretend to Speak for You",
       "href": "albums/youre-not-god/index.html#i-wont-pretend-to-speak-for-you"
     },
@@ -150,8 +150,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "2SEng4dmgUc",
     "description": "A direct answer to the judgment that tried to define a life from the outside.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Hey Preacher Man",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Hey Preacher Man",
       "title": "Hey Preacher Man",
       "href": "albums/youre-not-god/index.html#hey-preacher-man"
     },
@@ -172,8 +172,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "Lyric video"
     ],
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — That Ain't Holy",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — That Ain't Holy",
       "title": "That Ain't Holy",
       "href": "albums/youre-not-god/index.html#that-aint-holy"
     },
@@ -195,8 +195,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "5:30"
     ],
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — You Can't Change Us — September 6 Version",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — You Can't Change Us — September 6 Version",
       "title": "You Can't Change Us — September 6 Version",
       "href": "albums/love-is-love/index.html"
     },
@@ -223,7 +223,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [
       {
         "href": "albums/ghosthearts-angel/index.html",
-        "label": "Explore the album"
+        "label": "Explore the collection"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -242,8 +242,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "Fixed vocal ending"
     ],
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — The Man Beneath the Moon",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — The Man Beneath the Moon",
       "title": "The Man Beneath the Moon",
       "href": "albums/broken-man/index.html"
     },
@@ -272,7 +272,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "related": [
       {
         "href": "albums/ghosthearts-angel/index.html",
-        "label": "Explore the album"
+        "label": "Explore the collection"
       }
     ],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
@@ -290,8 +290,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "A reckoning with what pain changed—and what it could not erase.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — What Did You Take From Her",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — What Did You Take From Her",
       "title": "What Did You Take From Her",
       "href": "albums/human-after-all/index.html"
     },
@@ -313,8 +313,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "Wgdfz9q394U",
     "description": "Love, survival, and the heart that remains after the fire.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Heart of the Ashes",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Heart of the Ashes",
       "title": "Heart of the Ashes",
       "href": "albums/ghostheart/index.html#heart-of-the-ashes"
     },
@@ -334,8 +334,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "Light returns without waiting for anyone to approve it.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Sunrise Doesn't Ask for Permission",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Sunrise Doesn't Ask for Permission",
       "title": "Sunrise Doesn't Ask for Permission",
       "href": "albums/uplifting/index.html"
     },
@@ -357,8 +357,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "YHp4i52smhk",
     "description": "The questions that arrive after distance and silence.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Why Didn't You Call?",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Why Didn't You Call?",
       "title": "Why Didn't You Call?",
       "href": "albums/the-ones-we-carry/index.html"
     },
@@ -406,8 +406,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "youtubeId": "2z1IUv-Hamc",
     "description": "Memory keeps what distance cannot.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — I Still Would",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — I Still Would",
       "title": "I Still Would",
       "href": "albums/the-ones-we-carry/index.html"
     },
@@ -428,8 +428,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "Survival answers the dark with one more morning.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Just Not This Morning",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Just Not This Morning",
       "title": "Just Not This Morning",
       "href": "albums/the-ones-we-carry/index.html"
     },
@@ -451,8 +451,8 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "A demand to be seen clearly instead of reduced to a wound.",
     "song": {
-      "label": "Explore the album",
-      "accessibleLabel": "Explore the album — Look at Me",
+      "label": "Explore the collection",
+      "accessibleLabel": "Explore the collection — Look at Me",
       "title": "Look at Me",
       "href": "albums/broken-man/index.html"
     },

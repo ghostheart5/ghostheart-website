@@ -4,6 +4,7 @@
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -121,9 +122,13 @@ for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behin
     for property_name in ['og:title', 'og:description', 'og:image']:
         assert len(document.select(f'meta[property="{property_name}"]')) == 1
     image_url = document.select_one('meta[property="og:image"]')['content']
-    assert image_url == 'https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png'
+    expected_image = 'ghostheart-rebel-in-the-rain.png' if relative == 'woman-behind-the-scenes/index.html' else 'ghostheart-awakening-banner.png'
+    assert image_url == 'https://www.myghostheart.com/assets/story/' + expected_image
     assert (ROOT / image_url.removeprefix('https://www.myghostheart.com/')).is_file()
     assert document.select_one('meta[name="twitter:card"]')['content'] == 'summary_large_image'
+assert love.select_one('meta[property="og:image:alt"]')['content'] == love.select_one('.world-approved-art img')['alt']
+assert love.select_one('meta[property="og:image:width"]')['content'] == '1374'
+assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
 live = page("live/index.html")
 assert "No Live sessions are currently scheduled." in live.get_text(" ", strip=True)
 assert not live.select_one("#next-live-title")
@@ -133,6 +138,26 @@ assert not live.select_one('time')
 counts = {kind: len(vault.select(f'.vault-item[data-vault-kind="{kind}"]'))
           for kind in ("songs", "videos", "shorts", "quotes")}
 assert counts == {"songs": 11, "videos": 6, "shorts": 5, "quotes": 17}, counts
+assert vault.select_one('.vault-hero .ghx-kicker').get_text() == 'A selected collection'
+vault_films_link = vault.select_one('.vault-hero-links > a.vault-films-link[href="/GhostHeart_Videos.html"]')
+assert vault_films_link and vault_films_link.get_text() == 'Browse Films'
+assert not any(parent.name == 'noscript' or parent.has_attr('hidden') for parent in vault_films_link.parents)
+for card in films.select('.g-film[id]'):
+    for link in card.select('.g-actions a[href^="/albums/"]'):
+        assert 'Explore the album' not in link.get_text(), (card['id'], link)
+library = json.loads((ROOT / '.github/content/site-library.json').read_text(encoding='utf-8'))
+collection_paths = {f'/albums/{slug}/index.html' for slug in library['collections']}
+catalog_text = (ROOT / 'assets/data/ghostheart-video-catalog.js').read_text(encoding='utf-8')
+catalog = json.loads(re.search(r'Object\.freeze\((\[.*\])\);', catalog_text, re.S).group(1))
+for film in catalog:
+    for link in [film.get('song', {})] + film.get('related', []):
+        if '/' + urlsplit(link.get('href', '')).path.lstrip('/') in collection_paths:
+            assert link.get('label') not in {'Explore the album', 'GhostHeart album'}, film['key']
+            assert not link.get('accessibleLabel', '').startswith('Explore the album '), film['key']
+for slug in ['broken-man', 'fatherhood', 'human-after-all', 'love-is-love', 'the-ones-we-carry', 'youre-not-god']:
+    collection = page(f'albums/{slug}/index.html')
+    prose = collection.select_one('#about .l-prose').get_text(' ', strip=True).lower()
+    assert not any(phrase in prose for phrase in ['is an album', 'this album']), slug
 music = page('albums/index.html')
 assert music.select_one('a[href="/GhostHeart_Songs.html#released-recordings"]').get_text() == 'Released recordings archive'
 assert music.select_one('a[href="/GhostHeart_Videos.html"]').get_text() == 'Films'
