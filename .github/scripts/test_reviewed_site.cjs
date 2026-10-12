@@ -1,6 +1,7 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
 
 // Freeze the public preview URLs and mappings from commit 8931b364. A rebuild
 // must retain these fragments on the actual playable rows, not hidden aliases.
@@ -37,7 +38,7 @@ const recordingsPreviewFragments = [
   ];
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('http://127.0.0.1:8765/');
+    await page.goto(base + '/');
     assert.equal(await page.locator('.canon-hero__line').innerText(), 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.');
     assert.equal(await page.locator('.canon-hero__note').innerText(), 'Meet the man behind GhostHeart.');
     assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
@@ -58,7 +59,7 @@ const recordingsPreviewFragments = [
     assert.equal(new URL(page.url()).hash, '#home-story');
     assert.equal(await page.locator('#latest source').getAttribute('src'), '/assets/music/preview/awakening-01-cruel.mp3');
     for (const path of paths) {
-      const response = await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'load' });
+      const response = await page.goto(base + path, { waitUntil: 'load' });
       assert.equal(response.status(), 200, path);
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
@@ -71,7 +72,7 @@ const recordingsPreviewFragments = [
       await page.keyboard.press('Escape');
       assert.equal(await menu.getAttribute('aria-expanded'), 'false', path + ' menu close');
     }
-    await page.goto('http://127.0.0.1:8765/vault/');
+    await page.goto(base + '/vault/');
     const videoFilter = page.locator('[data-vault-filter="videos"]');
     await videoFilter.focus();
     await page.keyboard.press('Enter');
@@ -88,7 +89,7 @@ const recordingsPreviewFragments = [
     const songLinks = await page.locator('.vault-item:visible a').evaluateAll(links => links.map(link => link.getAttribute('href')));
     assert.equal(songLinks.length, 11);
     for (const href of songLinks) {
-      await page.goto('http://127.0.0.1:8765' + href);
+      await page.goto(base + href);
       const target = page.locator(new URL(page.url()).hash);
       assert.equal(await target.count(), 1, href);
       const bounds = await target.boundingBox();
@@ -110,7 +111,7 @@ const recordingsPreviewFragments = [
       const label = href + ' at ' + width;
       // Exercise opening a shared deep link, not only a same-document hash change.
       await page.goto('about:blank');
-      const response = await page.goto('http://127.0.0.1:8765' + href, { waitUntil: 'load' });
+      const response = await page.goto(base + href, { waitUntil: 'load' });
       assert.equal(response.status(), 200, label + ' response');
       assert.equal(new URL(page.url()).hash, '#' + id, label + ' preserved URL');
       assert.equal(await page.locator('#' + id).count(), 1, label + ' unique fragment');
@@ -138,10 +139,10 @@ const recordingsPreviewFragments = [
     }
   }
   console.log('PASS browser: all 11 original Released recordings preview fragments at 320 and 1440 pixels');
-  await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
+  await page.goto(base + '/GhostHeart_Resources.html');
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('http://127.0.0.1:8765/GhostHeart_Projects.html');
+    await page.goto(base + '/GhostHeart_Projects.html');
     assert.equal(await page.locator('h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Projects title fits ' + width);
     for (const heading of await page.locator('main h1, main h2, main h3').all()) {
       assert.equal(await heading.evaluate(e=>{const r=document.createRange();r.selectNodeContents(e);const b=r.getBoundingClientRect();return b.x>=0&&b.right<=innerWidth;}),true,'Projects heading fits '+width+': '+await heading.innerText());
@@ -161,15 +162,15 @@ const recordingsPreviewFragments = [
     assert.ok((await button.boundingBox()).height>=44);
     assert.equal(await button.evaluate(e=>e.matches(':focus-visible')&&parseFloat(getComputedStyle(e).outlineWidth)>=3),true);
   }
-  await page.goto('http://127.0.0.1:8765/GhostHeart_Resources.html');
+  await page.goto(base + '/GhostHeart_Resources.html');
   assert.equal(await page.locator('.resource:visible').count(), 16);
   await page.locator('[data-filter="start"]').click();
   assert.ok((await page.locator('.resource:visible').count()) < 16);
   await page.locator('[data-filter="all"]').click();
   assert.equal(await page.locator('.resource:visible').count(), 16);
-  await page.goto('http://127.0.0.1:8765/albums/index.html');
+  await page.goto(base + '/albums/index.html');
   assert.equal(await page.locator('audio').count(), 11);
-  await page.goto('http://127.0.0.1:8765/GhostHeart_Privacy.html');
+  await page.goto(base + '/GhostHeart_Privacy.html');
   const privacyMenu = page.locator('header.ghx-header .ghx-menu-toggle');
   for (const expected of ['true', 'false', 'true']) {
     await privacyMenu.click();
@@ -180,10 +181,10 @@ const recordingsPreviewFragments = [
 
   // Python's simple server does not use custom 404.html, so serve that exact
   // document at a nested missing URL to exercise browser URL resolution.
-  await context.route('http://127.0.0.1:8765/nested/missing/page', route => route.fulfill({
+  await context.route(base + '/nested/missing/page', route => route.fulfill({
     status: 404, contentType: 'text/html', body: fs.readFileSync('404.html', 'utf8')
   }));
-  const missing = await page.goto('http://127.0.0.1:8765/nested/missing/page', { waitUntil: 'load' });
+  const missing = await page.goto(base + '/nested/missing/page', { waitUntil: 'load' });
   assert.equal(missing.status(), 404);
   assert.equal(await page.locator('link[href="/assets/shared/ghostheart-world.css"]').count(), 1);
   const missingMenu = page.locator('header.ghx-header .ghx-menu-toggle');

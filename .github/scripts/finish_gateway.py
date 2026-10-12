@@ -111,12 +111,17 @@ write('assets/data/ghostheart-video-catalog.js','// Current public film referenc
 byid={f['youtubeId']:f for f in films}
 bykey={f['key']:f for f in films}
 
-def film(f,card_id=None):
+def film(f,card_id=None,collection_path=None):
  vid=f['youtubeId'];assert re.fullmatch(r'[\w-]{11}',vid)
  title=f['title'];desc=f.get('description','');ident=card_id or f['cardId']
  version=f'<p class="g-small">{escape(" · ".join(f["meta"]))}</p>' if f.get('meta') else ''
  links=[]
- if f.get('song',{}).get('href'):links.append(L(local(f['song']['href'],'index.html'),escape(f['song'].get('label','Continue the story'))+' ↗'))
+ if f.get('song',{}).get('href'):
+  destination=local(f['song']['href'],'index.html')
+  if collection_path and urlsplit(destination).path==collection_path:
+   links.append(L('#tracks','Back to the song list'))
+  else:
+   links.append(L(destination,escape(f['song'].get('label','Continue the story'))+' ↗'))
  return f'<article class="g-film" id="{escape(ident)}" data-library-item data-search="{escape(title+" "+desc+" "+" ".join(f.get("meta",[])),quote=True)}"><div class="g-player"><button type="button" data-video-id="{vid}" data-video-title="{escape(f.get("videoTitle",title),quote=True)}" aria-label="Load film: {escape(title,quote=True)}"><img src="/{f["thumbnail"].lstrip("/")}" width="1280" height="720" loading="lazy" alt=""/><span class="g-play" aria-hidden="true">▶</span><span class="g-play-label">Load film</span></button></div><button class="g-close" type="button" hidden>Close player</button><h3>{escape(title)}</h3>{version}<p>{escape(desc)}</p><div class="g-actions"><a class="g-link" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>{"".join(links)}</div></article>'
 
 # Link missing existing work without asserting a new streaming-platform release.
@@ -136,7 +141,9 @@ for slug,coll in collections.items():
  for t in coll['tracks']:
   action=''.join(L(a['url'],escape(a['label'])) for a in t['links'])
   if t['video']:
-   f=byid[t['video']];action=L('#watch-'+t['id'],'Watch film ↓','g-button')+action;cards+=film(f,'watch-'+t['id'])
+   f=byid[t['video']];action=L('#watch-'+t['id'],'Watch film ↓','g-button')+action
+   collection_path=f'/albums/{slug}/index.html' if slug in {'broken-man','the-ones-we-carry'} else None
+   cards+=film(f,'watch-'+t['id'],collection_path)
   items+=f'<li id="{t["id"]}"><div><p class="g-small">{escape(t.get("meta",""))}</p><h3>{escape(t["title"])}</h3></div><div class="g-actions">{action}</div></li>'
  idx=ORDER.index(slug);previous=ORDER[(idx-1)%len(ORDER)];nxt=ORDER[(idx+1)%len(ORDER)]
  image=ANGEL if slug=='ghosthearts-angel' else ART
