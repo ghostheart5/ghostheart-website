@@ -214,7 +214,7 @@
     "preservation": {
       "base": "8931b364c584f0ed9f332ee7e0b9bd8658f204af",
       "repeat_build": "PASS",
-      "code_content_files_identical_after_repeat_build": 119,
+      "code_content_files_identical_after_repeat_build": 120,
       "artwork_and_media_files_unchanged": 151,
       "collections_unchanged": 9,
       "quotes_unchanged": 17,
@@ -289,6 +289,29 @@
       "overflow": false,
       "pageErrors": [],
       "localFailures": []
+    },
+    "legacy_preview_anchors": {
+      "original_fragments": [
+        "song-audio-track-cruel",
+        "song-audio-track-im-not",
+        "song-audio-track-papa-didnt-raise-a-fool",
+        "song-audio-track-she-got-to-me",
+        "song-audio-track-this-is-ghostheart",
+        "song-audio-track-ghosthearts-oath",
+        "song-audio-track-you-can-be-ghostheart-too",
+        "song-audio-track-one-heart-many-voices",
+        "song-audio-track-i-wont-pretend-to-speak-for-you",
+        "song-audio-track-hey-preacher-man",
+        "song-audio-track-that-aint-holy"
+      ],
+      "widths": [
+        320,
+        1440
+      ],
+      "browser_cases": 22,
+      "result": "PASS all old fragments directly identify unique visible matching preview rows below the header, with original titles and MP3 sources, audio controls and no overflow",
+      "negative_regression": "New semantic verifier failed on 032782f output; corrected generated output passes",
+      "full_browser_suite": "PASS"
     }
   },
   "browser_errors": [],

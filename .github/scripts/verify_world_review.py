@@ -3,6 +3,7 @@
 
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
+import json
 
 from bs4 import BeautifulSoup
 
@@ -74,6 +75,20 @@ assert 'cinematic remake' in actual_films['film-human-too-remake'].get_text(' ',
 assert "Why You Should Never Judge Someone's Worst Day" in actual_films['film-human-too-remake'].get_text(' ', strip=True)
 assert 'Fixed vocal ending' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)
 recordings = page('GhostHeart_Songs.html')
+# Preserve the public preview fragments as usable rows, not hidden aliases.
+preview_tracks = [track for group in json.loads((ROOT / '.github/content/music.json').read_text(encoding='utf-8'))['groups']
+                  for track in group['tracks'] if track.get('audio')]
+assert len(preview_tracks) == 11
+assert {row['id'] for row in recordings.select('#existing-audio li.music-track[id]')} == {
+    'song-audio-' + track['id'] for track in preview_tracks
+}, 'Published preview fragments changed'
+for track in preview_tracks:
+    row = recordings.select_one('#song-audio-' + track['id'] + '.music-track')
+    assert row and row.name == 'li' and not row.has_attr('hidden'), track['id']
+    assert not any(parent.has_attr('hidden') for parent in row.parents), track['id']
+    assert row.select_one('h3').get_text() == track['title'], track['id']
+    player = row.select_one('audio[controls][preload="none"]')
+    assert player and player.select_one('source')['src'] == track['audio'], track['id']
 for link in recordings.select('.record-card a[href*="GhostHeart_Videos.html#"]'):
     fragment = urlsplit(link['href']).fragment
     assert fragment in actual_films, (link, 'Recording action targets a hidden or absent film')

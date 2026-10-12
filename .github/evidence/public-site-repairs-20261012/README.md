@@ -32,7 +32,7 @@ Read-only YouTube oEmbed responses identified all seven uploads as GhostHeart's 
 
 ## Passed
 
-- Canonical `build_site.py` full build; repeat-build fingerprints identical for 119 HTML/CSS/JS/JSON/XML files.
+- Canonical `build_site.py` full build; repeat-build fingerprints identical for 120 HTML/CSS/JS/JSON/XML files, including the recorded validation artifact.
 - `validate_site.py`: 64 HTML pages, 258 published files, 406.5 MiB, zero validation errors. This checks local assets/fragments, not external-provider availability.
 - `test_awakening.py`: eight tests. `verify_reviewed_site.py`: 49 navigation shells, 11 MP3s, 15 exact reading paragraphs, 16 unchanged resource cards, five journal entries. `test_cruel_reading.py`: exact approved title and 21 paragraphs. `verify_world_review.py`: repaired visible film destinations, scope/version distinctions, navigation labels, existing Vault and reading boundaries. `test_vault_filters.cjs`: all 39 scoped items/category/search behaviors.
 - Node syntax checks for all 13 asset JavaScript files; `git diff --check`.
@@ -59,3 +59,9 @@ The isolated checkout and local preview do not establish a changed live website.
 ## Local evidence
 
 The allocated workspace retains `evidence/preservation.json`, `evidence/verify_preservation.py`, and `evidence/browser-qa/` results/scripts/screenshots. Current preview: `http://127.0.0.1:4178/`; pinned baseline preview: `http://127.0.0.1:4179/`. These are local previews, not public deployment links. `validation.json` summarizes the measured outcomes and `changed-paths.txt` records the exact repair paths.
+
+## Preview fragment compatibility correction
+
+Independent review of the first repair head, `032782f9c83e1b5debbf4f6360ad3b6da7c6adca`, found that regeneration replaced all eleven public `song-audio-track-*` fragments with `preview-track-*` fragments. The first review checks missed this compatibility regression. The correction restores the original IDs directly on the matching visible `li.music-track` rows; no empty compatibility spans are used. Titles, recording-title distinctions, and audio sources remain the same.
+
+The new fast verifier failed on the first-head output with `Published preview fragments changed`, then passed after rebuilding the corrected generator. The persistent browser test freezes every original fragment/title/MP3 mapping from the pre-repair base and checks each destination at 320 and 1440px, including visible matching content, audio controls, viewport position below the header, and overflow. All 22 cases and the full existing browser suite pass. The full build, local tree validator, reviewed/world/Cruel checks, repeat generation and media/prose preservation were rerun for this correction. The PR now has 45 changed paths, including the browser regression test.

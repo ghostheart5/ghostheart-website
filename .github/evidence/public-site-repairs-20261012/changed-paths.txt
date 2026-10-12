@@ -16,6 +16,7 @@
 .github/scripts/build_navigation.py
 .github/scripts/build_vault_review.py
 .github/scripts/finish_gateway.py
+.github/scripts/test_reviewed_site.cjs
 .github/scripts/verify_world_review.py
 albums/broken-man/index.html
 albums/fatherhood/index.html
