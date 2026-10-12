@@ -97,6 +97,16 @@ for key, details in data.get('public_film_repairs', {}).items():
   existing.update(details)
  else:
   films.append(dict(details,key=key))
+collection_paths={f'/albums/{slug}/index.html' for slug in data['collections']}
+for f in films:
+ for link in [f.get('song',{})]+f.get('related',[]):
+  if urlsplit(local(link.get('href',''),'index.html')).path in collection_paths:
+   if link.get('label')=='Explore the album':
+    link['label']='Explore the collection'
+   elif link.get('label')=='GhostHeart album':
+    link['label']='GhostHeart collection'
+   if link.get('accessibleLabel','').startswith('Explore the album '):
+    link['accessibleLabel']=link['accessibleLabel'].replace('Explore the album ','Explore the collection ',1)
 write('assets/data/ghostheart-video-catalog.js','// Current public film references. Rebuild pages through finish_gateway.py.\nwindow.GHOSTHEART_VIDEO_CATALOG = Object.freeze('+json.dumps(films,ensure_ascii=False,indent=2)+');\n')
 byid={f['youtubeId']:f for f in films}
 bykey={f['key']:f for f in films}

@@ -1,0 +1,183 @@
+{
+  "passed": 79,
+  "failed": 0,
+  "pageErrors": [],
+  "localFailures": [],
+  "limits": [
+    "All provider requests were blocked; iframe lifecycle and public destination strings checked, no YouTube playback.",
+    "Signup field signatures compared without filling or submitting; real email, unsubscribe and provider behavior untested.",
+    "Viewport reflow covers320/390/640/768/1440CSSpx; native browser zoom, physical mobile device and screenreader not exercised.",
+    "Metadata image dimensions/full pixels inspected locally; actual social-provider crop/cache preview untested."
+  ],
+  "binding": {
+    "startedAt": "2026-10-12T21:42:11.590Z",
+    "finishedAt": "2026-10-12T21:42:27.786Z",
+    "head": "6000b1c3a69554f88c276f59ebd44aabff931a91",
+    "branch": "codex/collection-scope-sharing-20261012",
+    "workingTreeFileHashes": [
+      {
+        "path": ".github/content/site-library.json",
+        "sha256": "63d418553b49fb7fa8a56b59480a09df132c17d4c8d106fc2da81d3c453d664f"
+      },
+      {
+        "path": ".github/reviewed-pages/woman-behind-the-scenes/index.html.template",
+        "sha256": "0c7a39e6951a3796c6f0a579a91f0c67ed2c3df644cbba22ef0adb72cabb86a5"
+      },
+      {
+        "path": ".github/scripts/build_vault_review.py",
+        "sha256": "5f4b4a371b0d2c5f2c3c7246c38f0f783c85e2c99d518edfa1509310929eb76f"
+      },
+      {
+        "path": ".github/scripts/finish_gateway.py",
+        "sha256": "180cdeeb8a5666984cecb23b8580703010377a120d9342dfb0aa4451022c6a3a"
+      },
+      {
+        "path": ".github/scripts/verify_world_review.py",
+        "sha256": "83b85edd1a823a31e85b0c239a048fe85ad7d0096e51f9d0fb295065dc0ea268"
+      },
+      {
+        "path": "GhostHeart_Videos.html",
+        "sha256": "e456c66f55ed9b5673745cc9be34a6e1b7752e2f2ea3233dcfc8676e5569e43d"
+      },
+      {
+        "path": "albums/broken-man/index.html",
+        "sha256": "ca7aafd2cc13029ebaabbeb3fd0445da022c8ee32d4dbad3bed9a4dd8c96629a"
+      },
+      {
+        "path": "albums/fatherhood/index.html",
+        "sha256": "0c8983fa44e9cff6eb6bd4462d1c678a2a4479c96ba50a4b64fda71df51f7671"
+      },
+      {
+        "path": "albums/ghostheart/index.html",
+        "sha256": "e630597730dcb3ad25cbada16e5359ce72c6ce2dc0706a68fc20c0f5ab00fc43"
+      },
+      {
+        "path": "albums/human-after-all/index.html",
+        "sha256": "54d67b7dbb9f1bad2141850cb2ef8efec8bf5a749647e550c6bb9ae8064fd916"
+      },
+      {
+        "path": "albums/love-is-love/index.html",
+        "sha256": "28e1cb4db227fba1a8bf4b3e2ce18a16353d6fc06083d70ad5a8f79b2e3fecf3"
+      },
+      {
+        "path": "albums/the-ones-we-carry/index.html",
+        "sha256": "95399fa5a1c08d81aeb217155a4aea76d2735c6724efbf45c09870cd7316535f"
+      },
+      {
+        "path": "albums/uplifting/index.html",
+        "sha256": "29d81311560dfa92d426c6fb7aad4805d259e851e2430cca6635c92cffbca827"
+      },
+      {
+        "path": "albums/youre-not-god/index.html",
+        "sha256": "e785ae45feacc3802ce504d46980f8b52a9d016330f59a4f4128b82b223635c2"
+      },
+      {
+        "path": "assets/data/ghostheart-video-catalog.js",
+        "sha256": "871283dd38b0e9c5dd35646b829268f6f3f357c6048c00dfc38e95f92bf24d69"
+      },
+      {
+        "path": "assets/vault/vault.css",
+        "sha256": "1edfdbd832eb6c5e6abba41c5b97623e6dfe71796f4ca42bc91202eb9a38b676"
+      },
+      {
+        "path": "vault/index.html",
+        "sha256": "fe7ab1aa3712b1fdf6c0a834afe05f3c345d6704da852bdeefe3641fc6ad6cc8"
+      },
+      {
+        "path": "woman-behind-the-scenes/index.html",
+        "sha256": "4bd192e6339e778132cd8f572a4bed970f8cb5d719cd613a3f81bab38ffe4852"
+      }
+    ],
+    "review_evidence_files_excluded_from_runtime_binding": true
+  },
+  "catalog_classification_check": "PASS across 24 records and 19 known thematic links",
+  "existing_repository_browser_suite": "PASS, including 22 original recordings-preview fragment cases",
+  "checks": [
+    "layout-scroll-keyboard /vault/ 320",
+    "selectedVault-prominentFilms 320",
+    "Vault-keyboard-to12Films 320",
+    "layout-scroll-keyboard /woman-behind-the-scenes/ 320",
+    "relationship-existingRebel-metadata 320",
+    "layout-scroll-keyboard /vault/ 390",
+    "selectedVault-prominentFilms 390",
+    "Vault-keyboard-to12Films 390",
+    "layout-scroll-keyboard /woman-behind-the-scenes/ 390",
+    "relationship-existingRebel-metadata 390",
+    "layout-scroll-keyboard /vault/ 640",
+    "selectedVault-prominentFilms 640",
+    "Vault-keyboard-to12Films 640",
+    "layout-scroll-keyboard /woman-behind-the-scenes/ 640",
+    "relationship-existingRebel-metadata 640",
+    "layout-scroll-keyboard /vault/ 768",
+    "selectedVault-prominentFilms 768",
+    "Vault-keyboard-to12Films 768",
+    "layout-scroll-keyboard /woman-behind-the-scenes/ 768",
+    "relationship-existingRebel-metadata 768",
+    "layout-scroll-keyboard /vault/ 1440",
+    "selectedVault-prominentFilms 1440",
+    "Vault-keyboard-to12Films 1440",
+    "layout-scroll-keyboard /woman-behind-the-scenes/ 1440",
+    "relationship-existingRebel-metadata 1440",
+    "Films-search-load-close Cruel",
+    "Films-clear Cruel",
+    "Films-search-load-close Human Too",
+    "Films-clear Human Too",
+    "thematic-Films-visible-and-accessible-collection-labels",
+    "thematic-nav-preserved broken-man",
+    "factual-collection-nouns broken-man",
+    "thematic-nav-preserved fatherhood",
+    "factual-collection-nouns fatherhood",
+    "thematic-nav-preserved human-after-all",
+    "factual-collection-nouns human-after-all",
+    "thematic-nav-preserved love-is-love",
+    "factual-collection-nouns love-is-love",
+    "thematic-nav-preserved the-ones-we-carry",
+    "factual-collection-nouns the-ones-we-carry",
+    "thematic-nav-preserved youre-not-god",
+    "factual-collection-nouns youre-not-god",
+    "thematic-nav-preserved ghostheart",
+    "unrelated-thematic-prose-preserved ghostheart",
+    "thematic-nav-preserved uplifting",
+    "unrelated-thematic-prose-preserved uplifting",
+    "thematic-nav-preserved ghosthearts-angel",
+    "unrelated-thematic-prose-preserved ghosthearts-angel",
+    "legacy-preview song-audio-track-cruel 320",
+    "legacy-preview song-audio-track-im-not 320",
+    "legacy-preview song-audio-track-papa-didnt-raise-a-fool 320",
+    "legacy-preview song-audio-track-she-got-to-me 320",
+    "legacy-preview song-audio-track-this-is-ghostheart 320",
+    "legacy-preview song-audio-track-ghosthearts-oath 320",
+    "legacy-preview song-audio-track-you-can-be-ghostheart-too 320",
+    "legacy-preview song-audio-track-one-heart-many-voices 320",
+    "legacy-preview song-audio-track-i-wont-pretend-to-speak-for-you 320",
+    "legacy-preview song-audio-track-hey-preacher-man 320",
+    "legacy-preview song-audio-track-that-aint-holy 320",
+    "genuine-recording-titles-preserved 320",
+    "homepage-Cruel-Explore-preserved 320",
+    "honest-Live-empty 320",
+    "legacy-preview song-audio-track-cruel 1440",
+    "legacy-preview song-audio-track-im-not 1440",
+    "legacy-preview song-audio-track-papa-didnt-raise-a-fool 1440",
+    "legacy-preview song-audio-track-she-got-to-me 1440",
+    "legacy-preview song-audio-track-this-is-ghostheart 1440",
+    "legacy-preview song-audio-track-ghosthearts-oath 1440",
+    "legacy-preview song-audio-track-you-can-be-ghostheart-too 1440",
+    "legacy-preview song-audio-track-one-heart-many-voices 1440",
+    "legacy-preview song-audio-track-i-wont-pretend-to-speak-for-you 1440",
+    "legacy-preview song-audio-track-hey-preacher-man 1440",
+    "legacy-preview song-audio-track-that-aint-holy 1440",
+    "genuine-recording-titles-preserved 1440",
+    "homepage-Cruel-Explore-preserved 1440",
+    "honest-Live-empty 1440",
+    "signup-form-signature-unchanged-no-fill",
+    "no-page-JS-errors",
+    "no-local-resource-failures"
+  ],
+  "external_requests_blocked": true,
+  "homepage_proposal": {
+    "separate_from_production": true,
+    "passed_checks": 12,
+    "failed_checks": 0,
+    "preview": "http://127.0.0.1:8768/homepage-proposal.html"
+  }
+}
