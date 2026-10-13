@@ -57,8 +57,11 @@ def build():
     main.clear()
     for section in sections:
         main.append(section)
-    if not soup.select_one('link[href="/assets/home/home-journey.css"]'):
-        soup.select_one('link[href="/assets/shared/review-theme.css"]').insert_before(BeautifulSoup('<link rel="stylesheet" href="/assets/home/home-journey.css"/>', 'html.parser'))
+    home_style = soup.select_one('link[href^="/assets/home/home-journey.css"]')
+    if home_style:
+        home_style['href'] = '/assets/home/home-journey.css?v=art-v1'
+    else:
+        soup.select_one('link[href="/assets/shared/review-theme.css"]').insert_before(BeautifulSoup('<link rel="stylesheet" href="/assets/home/home-journey.css?v=art-v1"/>', 'html.parser'))
     path.write_text(str(soup), encoding='utf-8', newline='\n')
     follow_path = ROOT / 'follow/index.html'
     follow = BeautifulSoup(follow_path.read_text(encoding='utf-8'), 'html.parser')
