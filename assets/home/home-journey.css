@@ -13,7 +13,7 @@
   min-height: 0;
   background:
     linear-gradient(90deg, rgba(5,5,6,.12) 0%, rgba(5,5,6,.3) 30%, rgba(5,5,6,.97) 51%, #050506 100%),
-    url('../story/ghostheart-scars-rooftop-rain.png') left 42% / cover no-repeat;
+    url('../story/ghostheart-scars-rooftop-rain-desktop-v1.webp') left 42% / cover no-repeat;
 }
 .ghx-site #home > .ghx-wrap { display: flex; justify-content: flex-end; width: min(1200px, calc(100% - 3rem)); }
 .ghx-site #home .canon-hero__copy { position: relative; z-index: 1; width: 48%; max-width: 580px; padding-block: 4rem; }
@@ -32,7 +32,7 @@
   .ghx-site #home.canon-hero {
     background:
       linear-gradient(0deg, #050506 5%, rgba(5,5,6,.94) 65%, rgba(5,5,6,.52) 100%),
-      url('../story/ghostheart-scars-rooftop-rain.png') left center / auto 100% no-repeat;
+      url('../story/ghostheart-scars-rooftop-rain-mobile-v1.webp') left center / auto 100% no-repeat;
   }
   .ghx-site #home > .ghx-wrap { width: calc(100% - 2rem); }
   .ghx-site #home .canon-hero__copy { width: 100%; padding-block: 3rem 2.5rem; }
