@@ -12,6 +12,14 @@ EMAIL_PROMISE = 'New songs, the stories behind them, and the next GhostHeart cha
 def build():
     path = ROOT / 'index.html'
     soup = BeautifulSoup(path.read_text(encoding='utf-8'), 'html.parser')
+    for label, media in [('mobile', '(max-width: 700px)'), ('desktop', '(min-width: 701px)')]:
+        href = f'/assets/story/ghostheart-scars-rooftop-rain-{label}-v1.webp'
+        if not soup.select_one(f'link[rel="preload"][href="{href}"]'):
+            preload = soup.new_tag('link', attrs={
+                'rel': 'preload', 'as': 'image', 'type': 'image/webp',
+                'href': href, 'media': media, 'fetchpriority': 'high',
+            })
+            soup.head.append(preload)
     main = soup.select_one('main')
     hero = main.select_one('#home')
     hero.select_one('.canon-hero__line').string = INTRO
