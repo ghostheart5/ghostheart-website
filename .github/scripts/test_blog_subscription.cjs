@@ -32,6 +32,8 @@ module.exports = async (page, base) => {
       assert.equal(await form.locator('.g-form-status').innerText(), '');
       assert.equal(await page.locator('[data-comment-thread], script[src*="/assets/journal/comments"]').count(), 0);
       assert.equal(await page.locator('footer a').filter({ hasText: /^(Stay Connected|Follow by email)$/ }).getAttribute('href'), '/follow/');
+      const emailLinks = await page.locator('a').filter({ hasText: /^(Stay Connected|Follow by email)(?: ↗)?$/ }).evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
+      assert.ok(emailLinks.every(href => href === '/follow/'), 'Direct email links including archive arrow label');
       assert.equal(await page.locator('.journal-signup-fallback a').getAttribute('href'), '/follow/');
       const ids = await page.locator('[id]').evaluateAll(nodes => nodes.map(node => node.id));
       assert.equal(ids.length, new Set(ids).size, 'Duplicate IDs');

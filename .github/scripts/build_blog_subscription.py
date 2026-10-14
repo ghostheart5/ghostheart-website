@@ -71,7 +71,7 @@ for path in sorted((ROOT / "journal").glob("*.html")):
         for meta in doc.select('meta[name="description"], meta[property="og:description"]'):
             meta["content"] = "Writing about the thoughts behind GhostHeart’s songs and the questions they leave."
     for link in doc.select("a[href]"):
-        if link.get_text(" ", strip=True) in {"Stay Connected", "Follow by email"}:
+        if link.get_text(" ", strip=True) in {"Stay Connected", "Follow by email", "Follow by email ↗"}:
             link["href"] = "/follow/"
     theme = doc.select_one('link[href="/assets/shared/review-theme.css"]')
     assert theme, path
