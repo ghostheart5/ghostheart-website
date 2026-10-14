@@ -5,7 +5,7 @@ const path = require('node:path');
 
 const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8772';
 const evidence = process.env.GHOSTHEART_TEST_EVIDENCE_DIR;
-const promise = 'New songs, the stories behind them, and the next GhostHeart chapter\u2014sent when they\u2019re ready.';
+const promise = 'Music, writing and the stories behind them\u2014shared when they\u2019re ready.';
 
 (async () => {
   const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_EXECUTABLE || undefined });

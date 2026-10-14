@@ -192,6 +192,7 @@ const recordingsPreviewFragments = [
   assert.equal(await missingMenu.getAttribute('aria-expanded'), 'true', 'Nested 404 Explore opens');
   await page.locator('a.hero-link').click();
   assert.equal(new URL(page.url()).pathname, '/index.html', 'Nested 404 returns to root Home');
+  await require('./test_blog_subscription.cjs')(page, base);
   assert.equal(errors.length, 0, errors.join('\n'));
   await browser.close();
   console.log('PASS browser: key pages, repeated Privacy Explore clicks, nested 404 recovery, Resources filters, 11 audio players');
