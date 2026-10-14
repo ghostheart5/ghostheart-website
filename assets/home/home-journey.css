@@ -6,6 +6,7 @@
 .home-feature audio { display: block; width: 100%; max-width: 40rem; margin: 1.5rem 0; }
 .home-feature .ghx-actions, .home-story .ghx-actions { flex-wrap: wrap; }
 .ghx-site #join-the-signal p { max-width: 56ch; color: #e1d4cf; }
+.ghx-site #join-the-signal .signup-layout > * { min-width: 0; }
 .ghx-site #join-the-signal p a { display: inline-flex; align-items: center; min-height: 44px; color: #f4c0b8; }
 .home-quote { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #65343b; }
 .home-quote blockquote { margin: 0; color: #e1d4cf; line-height: 1.65; }
@@ -37,6 +38,7 @@
   .ghx-site #home .canon-hero__copy { width: 100%; padding-block: 3rem 2.5rem; }
   .ghx-site #home h1 { font-size: clamp(1.875rem, 7vw, 2.5rem); }
   .home-feature h2, .home-story h2 { font-size: 2rem; }
+  .ghx-site #join-the-signal h2 { font-size: 2rem; overflow-wrap: anywhere; }
 }
 .home-mission { padding-block: clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid #65343b; scroll-margin-top: 7rem; }
 .ghx-site #join-the-signal { scroll-margin-top: 7rem; }

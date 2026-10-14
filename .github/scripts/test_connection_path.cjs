@@ -54,7 +54,18 @@ module.exports = async (page, base) => {
     }
     for (const route of ['/', '/live/', '/live/my-promise.html', '/follow/']) {
       await page.goto(base + route);
-      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, route + ' overflow');
+      await page.evaluate(() => document.fonts.ready);
+      const reflow = await page.evaluate(() => ({
+        viewport: innerWidth, scrollWidth: document.documentElement.scrollWidth,
+        offenders: [...document.querySelectorAll('main *')].map(node => {
+          const box = node.getBoundingClientRect();
+          const style = getComputedStyle(node);
+          return { tag: node.tagName, id: node.id, className: node.className,
+            text: node.textContent.trim().slice(0, 90), left: box.left, right: box.right,
+            font: style.font, display: style.display };
+        }).filter(node => node.display !== 'none' && (node.right > innerWidth + 1 || node.left < -1))
+      }));
+      assert.ok(reflow.scrollWidth <= width + 1, route + ' overflow at ' + width + ': ' + JSON.stringify(reflow));
       assert.doesNotMatch(await page.locator('body').innerText(), /Join the Signal|Follow the Signal|GhostHeart Signal/);
       results.push({ route, width, overflow: false, signalBranding: false });
     }
