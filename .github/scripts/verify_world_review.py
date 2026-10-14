@@ -130,7 +130,9 @@ assert love.select_one('meta[property="og:image:alt"]')['content'] == love.selec
 assert love.select_one('meta[property="og:image:width"]')['content'] == '1374'
 assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
 live = page("live/index.html")
-assert "No Live sessions are currently scheduled." in live.get_text(" ", strip=True)
+assert "Next Live: announcement pending." in live.get_text(" ", strip=True)
+assert live.select_one('a[href="/live/my-promise.html"]')
+assert live.select_one('a[href="/follow/"]')
 assert not live.select_one("#next-live-title")
 assert not live.select_one("#live-replay")
 assert not live.select_one('time')
@@ -195,18 +197,22 @@ assert home.select_one("#home-vault [data-daily-quote]")
 assert home.select_one('#latest audio source')['src'] == '/assets/music/preview/awakening-01-cruel.mp3'
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
-assert [section.get('id') for section in home.select('main > section')][:4] == ['home', 'latest', 'home-story', 'join-the-signal']
+assert [section.get('id') for section in home.select('main > section')][:5] == ['home', 'latest', 'home-story', 'mission-board', 'join-the-signal']
 assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "GhostHeart's Vault"
 assert home.select_one('#home-vault a[href="/vault/"]')
 assert not home.select_one("#home-lives")
-assert not home.select_one('a[href="/live/"]')
+assert home.select_one('#mission-board a[href="/live/"]')
+assert not home.select_one('#mission-board form')
+assert home.select_one('#mission-board a[href="/GhostHeart_Resources.html"]')
+live_source = json.loads((ROOT / '.github/content/live.json').read_text(encoding='utf-8'))
+assert live_source['public_enabled'] is False and live_source['public_path_enabled'] is True
+assert live_source['starts_at'] == '2026-10-11T10:00:00-05:00'
 for path in ROOT.rglob('*.html'):
     if '.git' in path.parts or '.github' in path.parts:
         continue
     document = page(path.relative_to(ROOT))
     for link in document.select('a[href]'):
         target = link['href'].replace('../', '').lstrip('/')
-        assert target not in {'live/', 'live/index.html'}, (path, link)
         assert not any(label in link.get_text(' ', strip=True) for label in ['GhostHeart and His Angel', 'Meet the Angel']), (path, link)
     text = document.get_text(' ', strip=True)
     assert 'The Awakening Begins' not in text, path
@@ -216,4 +222,4 @@ assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
 for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "start/index.html", "follow/index.html"):
     assert page(relative).select_one('link[href="/assets/shared/review-theme.css"]'), relative
-print("PASS World review: paused Lives, scoped 39-item Vault, exact track fragments, trailer label, reading aliases, shared theme")
+print("PASS World review: visible pending Lives, scoped 39-item Vault, exact track fragments, trailer label, reading aliases, shared theme")

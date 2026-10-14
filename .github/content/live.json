@@ -1,5 +1,6 @@
 {
   "public_enabled": false,
+  "public_path_enabled": true,
   "title": "The Awakening Begins",
   "title_status": "owner selected",
   "kind": "Sunday Live",

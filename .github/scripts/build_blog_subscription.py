@@ -6,7 +6,8 @@ import json
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[2]
-EMAIL_VALUE = "Music, writing and the stories behind them—shared when they’re ready."
+CONNECTION = json.loads((ROOT / '.github/content/connection.json').read_text(encoding='utf-8'))
+EMAIL_VALUE = CONNECTION['benefits']
 SIGNUP_NOTE = 'You’ll finish signup in a new Mailchimp tab. Confirm through the email it sends. Unsubscribe anytime. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.'
 follow_path = ROOT / "follow/index.html"
 follow = BeautifulSoup(follow_path.read_text(encoding="utf-8"), "html.parser")
@@ -20,8 +21,8 @@ def signup(placement):
     ident = "blog-" + placement + "-signup"
     section = BeautifulSoup(
         f'<section class="journal-signup" aria-labelledby="{ident}-title">'
-        f'<h2 id="{ident}-title">Stay with the story.</h2>'
-        f'<p>{EMAIL_VALUE}</p></section>', "html.parser").section
+        f'<h2 id="{ident}-title">{CONNECTION["heading"]}</h2>'
+        f'<p>{EMAIL_VALUE}</p><p class="connection-optional">{CONNECTION["optional"]}</p></section>', "html.parser").section
     form = copy.deepcopy(provider_form)
     field = form.select_one('input[name="EMAIL"]')
     previous = field["id"]
@@ -32,7 +33,7 @@ def signup(placement):
     note["id"] = ident + "-note"
     note.clear()
     note.append(BeautifulSoup(SIGNUP_NOTE, "html.parser"))
-    form.select_one('button[type="submit"]').string = "Send me updates"
+    form.select_one('button[type="submit"]').string = CONNECTION['button']
     form.select_one(".g-form-status").clear()
     section.append(form)
     section.append(BeautifulSoup(
@@ -83,12 +84,24 @@ for path in sorted((ROOT / "journal").glob("*.html")):
     path.write_text(str(doc), encoding="utf-8", newline="\n")
 
 heading = follow.select_one("#email-signup-title")
+heading.string = CONNECTION['heading']
 heading.find_next_sibling("p").string = EMAIL_VALUE
-provider_form.select_one('button[type="submit"]').string = "Send me updates"
+for previous in heading.parent.select('.connection-optional'):
+    previous.decompose()
+heading.find_next_sibling('p').insert_after(BeautifulSoup(
+    f'<p class="connection-optional">{CONNECTION["optional"]}</p>', 'html.parser'))
+provider_form.select_one('button[type="submit"]').string = CONNECTION['button']
 note = provider_form.select_one("#follow-note")
 note.clear()
 note.append(BeautifulSoup(SIGNUP_NOTE, "html.parser"))
 for meta in follow.select('meta[name="description"], meta[property="og:description"]'):
     meta["content"] = EMAIL_VALUE
 follow_path.write_text(str(follow), encoding="utf-8", newline="\n")
+legacy_path = ROOT / 'ghostheart-website/join.html'
+legacy = BeautifulSoup(legacy_path.read_text(encoding='utf-8'), 'html.parser')
+legacy.title.string = CONNECTION['heading']
+legacy.select_one('meta[name="description"]')['content'] = EMAIL_VALUE
+legacy.select_one('h1').string = CONNECTION['heading']
+legacy.select_one('main a').string = CONNECTION['button']
+legacy_path.write_text(str(legacy), encoding='utf-8', newline='\n')
 print("Applied blog reading order, optional signup forms and direct email route; discussion remains closed.")
