@@ -89,10 +89,9 @@ posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="u
 assert len(posts) == 5
 for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
     article = page(f"journal/{slug}.html")
-    assert article.select_one(f'[data-comment-thread="journal:{slug}"]')
-    assert article.select_one('script[src="/assets/journal/comments-config.js"]')
-    assert article.select_one('script[src="/assets/journal/comments.js"]')
-    assert not article.select(".journal-comments form")
+    assert not article.select('[data-comment-thread]'), "Closed Conversation invitation must stay absent"
+    assert not article.select('script[src*="/assets/journal/comments"]'), "No public comment activation"
+    assert len(article.select("form.signal-signup-form")) == 1
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]

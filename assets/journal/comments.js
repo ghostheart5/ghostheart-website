@@ -24,7 +24,7 @@
   const list = make('ol', 'journal-comment-list');
   list.setAttribute('aria-label', 'Approved comments');
   const form = make('form', 'journal-comment-form');
-  const intro = make('p', '', 'Share a thought about this entry. Comments are held for review before they appear. Please avoid personal or crisis details.');
+  const intro = make('p', '', 'You’re welcome to leave a thought about this post. Comments are reviewed before they appear here. Please leave out private information or crisis details.');
   const label = (title, control) => {
     const wrapper = make('label');
     wrapper.append(make('span', '', title), control);
@@ -43,9 +43,10 @@
   trapLabel.className = 'journal-comment-trap';
   const consent = make('input');
   consent.type = 'checkbox'; consent.required = true;
-  const consentLabel = label('I agree that my chosen name and comment will be stored for review and, if approved, displayed publicly. A short-lived address-derived marker helps limit abuse.', consent);
+  const consentLabel = label('I’m okay with my comment and the name I enter being saved for review and published here if approved.', consent);
   consentLabel.className = 'journal-comment-consent';
   const privacy = make('p');
+  privacy.append('A temporary code made from your connection address helps limit spam and abuse. It is deleted after two days. ');
   privacy.append('Read the ', Object.assign(make('a', '', 'privacy notice'), { href: '/GhostHeart_Privacy.html' }), '. For urgent support, use ', Object.assign(make('a', '', 'Help & Resources'), { href: '/GhostHeart_Resources.html' }), '.');
   const button = make('button', '', 'Submit for review');
   button.type = 'submit';

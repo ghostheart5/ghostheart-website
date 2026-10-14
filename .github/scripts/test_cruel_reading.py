@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SLUG = 'cruel-something-needs-to-change'
 ROUTE = '/journal/' + SLUG + '.html'
 SOURCE = ROOT / '.github/reviewed-inputs/content/cruel-reading.txt'
-EXPECTED_SHA = '66233e7ef339b0b9838cb0c839c97041345b0e9d8e8a6e39e08e42b09caf0776'
+EXPECTED_SHA = '6b6c074b85b70685907000a42a80a606611b3a7e179a2d285a6ef9644f135b4d'
 raw = SOURCE.read_bytes()
 assert hashlib.sha256(raw).hexdigest() == EXPECTED_SHA, 'Approved reading bytes changed'
 title, *paragraphs = raw.decode('utf-8').strip().split('\n\n')
@@ -34,7 +34,8 @@ else:
     assert article.select_one('article.journal-article h1').get_text() == title
     rendered = [p.get_text() for p in article.select('.journal-prose > p')]
     assert rendered == paragraphs, 'Rendered body differs from exact owner text'
-    assert not article.select('form, [data-comment-thread]')
+    assert not article.select('[data-comment-thread]')
+    assert len(article.select('form.signal-signup-form')) == 1
     assert not article.select('script[src*="comments"]')
     music_actions = article.select('.journal-continue a[href="/albums/#track-cruel"]')
     assert len(music_actions) == 1, 'Duplicate Cruel listening CTA'
