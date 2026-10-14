@@ -68,16 +68,12 @@ module.exports = async (page, base) => {
       results.push({ route, width, overflow: false, providerPreserved: true, focusVisible: true });
     }
   }
-  // Text/element zoom in addition to the 320 CSS-pixel reflow checks.
-  await page.setViewportSize({ width: 1280, height: 900 });
-  await page.goto(base + routes[1]);
-  await page.evaluate(() => { document.documentElement.style.zoom = '4'; });
-  await page.locator('.journal-signup').scrollIntoViewIfNeeded();
-  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, '400% CSS zoom overflow');
-  await page.evaluate(() => { document.documentElement.style.zoom = ''; });
+  // The 320 CSS-pixel checks cover the width equivalent to 1280px at 400% zoom:
+  // https://www.w3.org/WAI/WCAG22/Understanding/reflow.html
+  // CSS zoom alone does not change viewport media queries and is not browser zoom.
   if (evidence) fs.writeFileSync(path.join(evidence, 'blog-results.json'), JSON.stringify({
-    results, cssZoom: '400% passed', signupSubmitted: false,
-    limits: ['CSS zoom plus 320px reflow, not a manual native browser-zoom audit', 'No provider, email or subscriber-state test']
+    results, reflow: '320 CSS pixels passed', signupSubmitted: false,
+    limits: ['Equivalent reflow width; manual native browser zoom untested', 'No provider, email or subscriber-state test']
   }, null, 2));
-  console.log('PASS blog subscription: 24 route/viewport checks; reading order, provider, focus, 400% CSS zoom; zero submissions');
+  console.log('PASS blog subscription: 24 route/viewport checks; reading order, provider, focus, 320px reflow; zero submissions');
 };
