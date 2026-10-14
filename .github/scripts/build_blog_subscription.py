@@ -52,7 +52,8 @@ for path in sorted((ROOT / "journal").glob("*.html")):
     if article:
         article.select_one(".journal-prose").insert_after(signup(path.stem))
         # Discussion remains pending its separate release review.
-        if path.stem in closed_threads:
+        slug = "how-we-got-here" if path.stem == "how-we-got-here-archive" else path.stem
+        if slug in closed_threads:
             for closed in doc.select(".journal-comments"):
                 closed.decompose()
             for script in doc.select('script[src*="/assets/journal/comments"]'):
