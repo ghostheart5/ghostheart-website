@@ -14,7 +14,7 @@
 <meta property="og:title" content="Enter My World"/><meta property="og:description" content="Behind the Scars: the public introduction to the life and purpose behind GhostHeart."/>
 <meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Story.html"/><meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-</head><body class="ghx-site">
+<link rel="stylesheet" href="/assets/story/reading-layout.css"/></head><body class="ghx-site">
 <a class="skip-link" href="#main-content">Skip to content</a><header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
 <nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/albums/index.html">Music</a></nav>
@@ -24,7 +24,7 @@
 <div><h2>Go deeper</h2><a href="/GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="/vault/">GhostHeart's Vault</a></div>
 <div><h2>Explore</h2><a href="/journal/">Blog</a><a href="/live/">Lives &amp; Readings</a><a href="/GhostHeart_Projects.html">Projects</a><a href="/follow/">Stay Connected</a></div>
 </div></nav></header>
-<main id="main-content" class="world-page">
+<main id="main-content" class="world-page reading-layout">
 <section class="world-hero ghx-wrap" aria-labelledby="world-title"><div class="world-hero-grid">
 <div class="world-hero-copy"><p class="ghx-kicker">One lived story / many voices</p><h1 id="world-title">Enter My World.</h1>
 <p class="world-lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
@@ -32,10 +32,10 @@
 <nav class="world-jump" aria-label="In this reading"><a href="#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a></nav></div>
 <figure class="world-hero-art"><img src="/assets/story/ghostheart-awakening-banner.png" width="2560" height="1440" alt="GhostHeart beneath storm clouds with crimson light over a city horizon"/></figure>
 </div></section>
-<section class="world-prose ghx-wrap" id="behind-the-scars" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><figure class="world-approved-art"><img src="/assets/story/ghostheart-scars-rooftop-rain.png" width="1672" height="941" loading="lazy" decoding="async" alt="GhostHeart sits on a rooftop overlooking a city, with a glowing red heart and messages about scars and belonging."/></figure><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars — The Awakening</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading">
+<section class="world-prose ghx-wrap" id="behind-the-scars" tabindex="-1" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars — The Awakening</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading reading-body"><div class="reading-opening"><div class="reading-opening-copy">
 <p>I kept seeing people treated like they were nothing.</p>
 <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
-<p>And I had plenty to say about it.</p>
+<p>And I had plenty to say about it.</p></div><figure class="world-approved-art"><img src="/assets/story/ghostheart-scars-rooftop-rain.png" width="1672" height="941" loading="lazy" decoding="async" alt="GhostHeart sits on a rooftop overlooking a city, with a glowing red heart and messages about scars and belonging."/></figure></div><div class="reading-continuation">
 <p>If I’d been there, I would’ve said something. I would’ve stood up for them. I’d find time to help at a shelter. Make a stand. Do something that mattered.</p>
 <p>I kept saying it.</p>
 <p>I got angry at the news, the schools, the government. Why the hell was this happening? Why was it allowed? People were supposed to be protected. Every one of them.</p>
@@ -57,7 +57,7 @@
 <p>But if I help one person, then I did something.</p>
 <p>I finally did more than sit there and wish somebody would.</p>
 <div class="world-inline-links"><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart</a><a href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath</a></div>
-</div></div></section>
+</div></div></div></section>
 <section class="world-prose world-love-teaser ghx-wrap" aria-labelledby="love-teaser-title"><div class="world-section-label">The relationship behind the work</div><div class="world-prose-grid"><div><h2 id="love-teaser-title">The Woman Behind the Scenes</h2></div><div class="world-reading"><p>She saw the heart beneath the scars and never asked it to hide. Her love helped shape the man he is today. That story has its own space here, alongside the music and the life behind it.</p><a class="world-plain-link" href="/woman-behind-the-scenes/">Read The Woman Behind the Scenes</a></div></div></section>
 <section class="world-finish ghx-wrap" aria-labelledby="world-next-title"><div><p class="ghx-kicker">Stay with what speaks to you</p><h2 id="world-next-title">Take the next step at your own pace.</h2><p>You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer. No one has to disclose their own pain to belong here.</p></div><nav aria-label="Keep exploring"><a href="/vault/">Explore GhostHeart's Vault</a><a href="/journal/">Read the Blog</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a></nav></section>
 <aside class="world-bottom ghx-wrap"><p><strong>Next Sunday Live:</strong> <a href="/live/">The Awakening Begins</a> (planned Live), <time datetime="2026-10-11T10:00:00-05:00">October 11 at 10:00 a.m. Central</time>. Viewing link and platform are pending.</p><a href="/index.html#join-the-signal">Stay Connected</a></aside>
