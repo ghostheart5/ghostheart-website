@@ -25,6 +25,8 @@ module.exports = async (page, base) => {
     for (const fragment of ['#mission-board', '#join-the-signal']) {
       await page.locator('#home a[href="' + fragment + '"]').focus();
       await page.keyboard.press('Enter');
+      // The same-page jump reaches Playwright's URL a moment after the key press; wait for it instead of racing it.
+      await page.waitForURL(url => url.hash === fragment, { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
       assert.equal(new URL(page.url()).hash, fragment);
       const box = await page.locator(fragment).boundingBox();
       const header = await page.locator('header.ghx-header').boundingBox();

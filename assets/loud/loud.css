@@ -11,7 +11,7 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .display{font-family:Anton,Impact,"Arial Narrow",sans-serif;text-transform:uppercase;line-height:.84;letter-spacing:-.01em;font-weight:400}
 .mark{font-family:"Permanent Marker",cursive}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.13;mix-blend-mode:overlay;
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;
   background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAnIGhlaWdodD0nMTYwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nLjg1JyBudW1PY3RhdmVzPSczJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsdGVyPSd1cmwoI24pJy8+PC9zdmc+")}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:91;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
 
@@ -83,7 +83,7 @@ footer{padding:40px clamp(16px,4vw,48px) 120px;display:flex;flex-wrap:wrap;gap:2
 @media(max-width:1180px){.onair{display:none}.nav ul{gap:18px}}
 
 /* Approved site header (shared navigation) in the LOUD style */
-header.ghx-header{position:fixed;top:0;left:0;right:0;z-index:80;display:block;padding:0;background:linear-gradient(rgba(5,5,5,.94),rgba(5,5,5,.78));border-bottom:2px solid rgba(232,0,28,.5);backdrop-filter:blur(6px);mix-blend-mode:normal}
+header.ghx-header{position:fixed;top:0;left:0;right:0;z-index:80;display:block;padding:0;background:linear-gradient(rgba(5,5,5,.94),rgba(5,5,5,.78));border-bottom:2px solid rgba(232,0,28,.5)}
 header.ghx-header .ghx-bar{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);padding:12px max(16px,4vw);flex-wrap:wrap}
 header.ghx-header .ghx-brand{font-family:Anton,Impact,sans-serif;font-size:28px;letter-spacing:.02em;color:var(--bone);margin-right:auto}
 header.ghx-header .ghx-brand span{color:var(--blood)}
