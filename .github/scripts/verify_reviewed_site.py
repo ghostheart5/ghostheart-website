@@ -33,7 +33,7 @@ for path in ROOT.rglob("*.html"):
         menu = soup.select_one('header.ghx-header nav#gateway-menu')
         assert menu and {a.get_text(" ", strip=True) for a in menu.select("a")} == explore
         styles = [a.get("href", "") for a in soup.select('link[rel="stylesheet"]')]
-        assert styles and (styles[-1].endswith('/assets/shared/review-theme.css') or styles[-1] == '/assets/loud/loud.css'), path  # LOUD redesign routes end with loud.css
+        assert styles and (styles[-1].endswith('/assets/shared/review-theme.css') or styles[-1] in ('/assets/loud/loud.css', '/assets/loud/loud-skin.css')), path  # LOUD redesign routes end with loud.css; skinned routes with loud-skin.css
         checks += 1
 assert checks >= 44, checks
 
