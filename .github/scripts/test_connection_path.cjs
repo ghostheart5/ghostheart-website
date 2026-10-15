@@ -9,7 +9,8 @@ module.exports = async (page, base) => {
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(base + '/');
-    assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'discover ghostheart.\nbecome part of the change.');
+    // Owner decision 2026-10-14 (LOUD redesign): homepage headline is "Too Human to Stay Quiet."
+    assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
       ['Discover GhostHeart', 'Follow the Story', 'Be Part of the Mission']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
@@ -24,6 +25,8 @@ module.exports = async (page, base) => {
     for (const fragment of ['#mission-board', '#join-the-signal']) {
       await page.locator('#home a[href="' + fragment + '"]').focus();
       await page.keyboard.press('Enter');
+      // The same-page jump reaches Playwright's URL a moment after the key press; wait for it instead of racing it.
+      await page.waitForURL(url => url.hash === fragment, { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
       assert.equal(new URL(page.url()).hash, fragment);
       const box = await page.locator(fragment).boundingBox();
       const header = await page.locator('header.ghx-header').boundingBox();

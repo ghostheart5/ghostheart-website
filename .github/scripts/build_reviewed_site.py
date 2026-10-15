@@ -49,3 +49,4 @@ runpy.run_path(str(ROOT / ".github/scripts/apply_live_visibility.py"), run_name=
 runpy.run_path(str(ROOT / ".github/scripts/build_home_journey.py"), run_name="__main__")
 runpy.run_path(str(ROOT / ".github/scripts/build_blog_subscription.py"), run_name="__main__")
 print("Applied owner-reviewed pages after preserving the existing gateway archive.")
+runpy.run_path(str(ROOT / ".github/scripts/apply_loud_design.py"), run_name="__main__")

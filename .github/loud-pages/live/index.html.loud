@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--@inject-all head > meta[property], head > meta[name^="twitter:"], head > link[rel="canonical"]-->
+<meta name="description" content="GhostHeart Live: The World Is Watching pilot, Lives and Readings.">
+<title>The World Is Watching | GhostHeart Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/loud/loud.css">
+<style>
+/* broadcast hero */
+.bhero{position:relative;min-height:100svh;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:clamp(24px,4vw,60px);padding:120px clamp(16px,4vw,48px) 90px;overflow:hidden;isolation:isolate;background:var(--void)}
+@media(max-width:900px){.bhero{grid-template-columns:1fr}}
+.bhero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.07;background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 6px);animation:static .25s steps(3) infinite}
+.bhero .giant{position:absolute;z-index:-2;left:0;bottom:-3vw;font-size:26vw;color:transparent;-webkit-text-stroke:2px rgba(232,0,28,.3);white-space:nowrap;animation:slide 50s linear infinite}
+.bhero h1{font-size:clamp(76px,12vw,210px);margin-top:18px}
+.bhero h1 .r{color:var(--blood);display:inline-block;text-shadow:3px 0 var(--glitch),-3px 0 var(--hot);animation:glitch 3.2s infinite steps(1)}
+.status{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+.status span{border:2px solid var(--bone);padding:8px 12px;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.pending{font-size:18px;max-width:560px;margin:-8px 0 26px;color:#d8d4cc}.pending a{color:var(--hot);text-decoration:underline}
+.status span.red{background:var(--blood);border-color:var(--blood);color:var(--void)}
+.crt{position:relative;aspect-ratio:242/265;border:6px solid var(--bone);background:#000;overflow:hidden;box-shadow:0 0 0 14px var(--void),0 0 0 18px #222,0 0 90px rgba(232,0,28,.45);transform:rotate(1.5deg)}
+.crt .shot{position:absolute;inset:0;background-image:var(--ref);background-repeat:no-repeat;background-size:473.1% auto;background-position:100% 44.6%;filter:contrast(1.35);animation:flick 4s infinite steps(1)}
+.crt::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(255,255,255,.06) 50%);background-size:100% 4px;pointer-events:none}
+.crt .rec{position:absolute;top:14px;left:14px;display:flex;gap:8px;align-items:center;font-weight:700;letter-spacing:.2em;font-size:13px;background:rgba(0,0,0,.7);padding:6px 10px;z-index:2}
+.crt .rec i{width:10px;height:10px;border-radius:50%;background:var(--ash)}
+.crt .ch{position:absolute;top:14px;right:14px;font-family:Anton,Impact,sans-serif;font-size:30px;color:var(--bone);z-index:2;text-shadow:2px 0 var(--glitch)}
+.crt .lower{position:absolute;left:0;right:0;bottom:0;z-index:2;background:var(--blood);color:var(--void);font-family:Anton,Impact,sans-serif;font-size:clamp(20px,2.4vw,30px);padding:12px 16px;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+.crt .lower span{display:inline-block;animation:slide 12s linear infinite}
+@keyframes flick{0%,96%,100%{opacity:1;transform:none}97%{opacity:.6;transform:translateX(-4px)}98%{opacity:1;transform:translateX(3px)}}
+
+/* scene */
+.scene{background:var(--blood);color:var(--void)}
+.scene-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
+@media(max-width:900px){.scene-wrap{grid-template-columns:1fr}}
+.stage{position:relative;aspect-ratio:4/5;background:var(--void);border:6px solid var(--void);overflow:hidden;box-shadow:14px 14px 0 var(--ember)}
+.stage .light{position:absolute;inset:12% 22% 0;background:radial-gradient(60% 70% at 50% 60%,#ffd9de,var(--hot) 35%,var(--ember) 70%,transparent);opacity:0;transition:opacity .8s .3s}
+.stage .frame{position:absolute;inset:12% 22% 0;border:6px solid #333;border-bottom:none}
+.stage .panel{position:absolute;top:12%;bottom:0;width:28%;background:repeating-linear-gradient(90deg,#141414 0 12px,#1b1b1b 12px 14px);transition:transform 1s cubic-bezier(.7,0,.2,1)}
+.stage .pl{left:22%;transform-origin:left}
+.stage .pr{right:22%;transform-origin:right}
+.stage .knob{position:absolute;top:58%;left:calc(50% - 24px);width:10px;height:10px;border-radius:50%;background:var(--blood);box-shadow:0 0 10px var(--blood);transition:opacity .3s}
+.stage .beam{position:absolute;left:50%;bottom:0;width:6px;height:0;translate:-50% 0;background:linear-gradient(var(--hot),transparent);box-shadow:0 0 30px 10px rgba(255,31,61,.55);transition:height 1s}
+.stage .rings{position:absolute;left:50%;top:18%;translate:-50% -50%;width:40px;height:40px;opacity:0}
+.stage .rings i{position:absolute;inset:0;border:3px solid var(--hot);border-radius:50%}
+.stage .tag{position:absolute;left:0;right:0;bottom:0;margin:0;background:var(--bone);color:var(--void);font-family:Anton,Impact,sans-serif;font-size:clamp(22px,2.6vw,34px);padding:12px 16px;text-transform:uppercase;max-width:none}
+.stage .no{position:absolute;top:12px;right:14px;color:var(--ash);font-weight:700;letter-spacing:.2em;font-size:12px}
+.stage[data-route=door] .pl{transform:perspective(900px) rotateY(-80deg)}
+.stage[data-route=door] .pr{transform:perspective(900px) rotateY(80deg)}
+.stage[data-route=door] .light{opacity:1}
+.stage[data-route=door] .knob{opacity:0}
+.stage[data-route=signal] .beam{height:85%}
+.stage[data-route=signal] .rings{opacity:1}
+.stage[data-route=signal] .rings i{animation:ring 1.6s infinite}
+.stage[data-route=signal] .rings i:nth-child(2){animation-delay:.5s}
+.stage[data-route=signal] .rings i:nth-child(3){animation-delay:1s}
+@keyframes ring{from{transform:scale(.4);opacity:1}to{transform:scale(6);opacity:0}}
+.scene h2{font-size:clamp(70px,10vw,170px)}
+.scene h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
+.scene .lead{font-size:clamp(18px,2vw,24px);font-weight:700;margin:20px 0 26px;max-width:540px}
+.choices{display:grid;gap:14px}
+.choices button{display:grid;grid-template-columns:70px 1fr auto;align-items:center;text-align:left;background:var(--void);color:var(--bone);font-family:Anton,Impact,sans-serif;font-size:clamp(30px,3.6vw,50px);text-transform:uppercase;padding:16px 22px;box-shadow:8px 8px 0 var(--bone);transition:.12s}
+.choices button span{color:var(--blood);font-size:.6em}
+.choices button:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--bone)}
+.choices button[aria-pressed=true]{background:var(--bone);color:var(--void);box-shadow:8px 8px 0 var(--void)}
+.result{margin-top:28px;border-top:3px solid var(--void);padding-top:18px;min-height:110px}
+.result p{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,4vw,56px);text-transform:uppercase;line-height:.9}
+.result span{display:block;margin-top:10px;font-size:18px;font-weight:500;max-width:520px}
+.note{margin-top:18px;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+
+/* the show */
+.show{background:var(--void)}
+.show h2{font-size:clamp(70px,11vw,180px)}
+.show h2 .r{color:var(--blood)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:4px solid var(--bone)}
+@media(max-width:900px){.steps{grid-template-columns:1fr}}
+.step{padding:30px 26px 40px 0;border-right:4px solid #222}
+.step:last-child{border-right:none}
+.step b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(90px,10vw,160px);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--blood);display:block}
+.step h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,3.6vw,52px);text-transform:uppercase;margin:14px 0 8px;line-height:.9}
+.step p{color:#c9c6c1;font-size:18px}
+.step:hover b{color:var(--blood)}
+.fine{margin-top:40px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:space-between}
+.fine .pill{border:3px dashed var(--blood);padding:14px 18px;font-weight:700;max-width:560px}
+details{max-width:560px;border:2px solid #333;padding:16px 18px}
+details summary{cursor:pointer;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;list-style:none;display:flex;justify-content:space-between}
+details summary::after{content:"+";color:var(--blood);font-size:20px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:#c9c6c1}
+
+/* readings */
+.readings{background:var(--bone);color:var(--void)}
+.read-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,440px);gap:clamp(24px,4vw,60px);align-items:end}
+@media(max-width:900px){.read-grid{grid-template-columns:1fr}}
+.readings h2{font-size:clamp(90px,15vw,250px)}
+.readings h2 span{color:var(--blood)}
+.readings .lead{font-size:clamp(20px,2.2vw,28px);font-weight:700;margin:18px 0 28px;max-width:520px}
+.sunday{background:var(--void);color:var(--bone);padding:30px;box-shadow:14px 14px 0 var(--blood);transform:rotate(-1.5deg);min-width:0;max-width:100%}
+.sunday small{display:block;font-weight:700;letter-spacing:.2em;font-size:12px;color:var(--hot)}
+.sunday h2{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(26px,2.3vw,38px);overflow-wrap:normal;hyphens:none;text-transform:uppercase;line-height:.88;margin:12px 0}
+.sunday p{font-size:17px;margin-top:8px}
+.sunday .mark a{color:var(--hot);text-decoration:underline}
+.sunday strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(38px,3.8vw,62px);overflow-wrap:anywhere;text-transform:uppercase;line-height:.88;margin:12px 0}
+.sunday .mark{font-size:22px;color:var(--bone)}
+
+.meanwhile{background:var(--blood);color:var(--void);text-align:center}
+.meanwhile h2{font-size:clamp(70px,12vw,200px)}
+.meanwhile h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
+.meanwhile .ctas{justify-content:center;margin-top:40px}
+.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
+.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
+.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
+.sitefoot p{color:var(--ash);margin-top:8px}
+.sitefoot nav{display:flex;flex-direction:column;gap:8px}
+.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.sitefoot nav a:hover{color:var(--hot)}
+.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<!--@inject header.ghx-header-->
+
+<main id="main-content">
+<header class="bhero">
+  <div class="giant display">TRANSMISSION TRANSMISSION TRANSMISSION</div>
+  <div>
+    <span class="kicker">✶ GhostHeart Live / Pilot in development</span>
+    <h1 class="display">The World<br>Is <span class="r">Watching.</span></h1>
+    <p class="tag">A story on the edge. A choice that changes it.</p>
+    <div class="status"><span class="red">Pilot in development</span><span>Date to be announced</span></div>
+
+    <div class="ctas"><a class="btn red" href="#scene">Try the scene ↓</a><a class="btn ghost" href="#show">What the show is</a></div>
+  </div>
+  <div class="crt" role="img" aria-label="Broadcast monitor showing GhostHeart, hood up">
+    <div class="shot"></div>
+    <div class="rec"><i></i>OFF AIR · STANDBY</div>
+    <div class="ch">GH/001</div>
+    <div class="lower"><span>TRANSMISSION INCOMING ✶ STAY IN THE SIGNAL ✶ TRANSMISSION INCOMING ✶ STAY IN THE SIGNAL ✶ </span></div>
+  </div>
+</header>
+
+<div class="tape"><div><span>CHANGE THE SCENE</span><span>YOUR CHOICE</span><span>✶ GHOSTHEART LIVE ✶</span><span>ONE DOOR</span><span>CHANGE THE SCENE</span><span>YOUR CHOICE</span><span>✶ GHOSTHEART LIVE ✶</span><span>ONE DOOR</span></div></div>
+
+<section class="scene" id="scene">
+  <div class="label"><span>Try a Scene / A proposed moment from the pilot</span><span class="num">01</span></div>
+  <div class="scene-wrap">
+    <div class="stage" id="stage" data-route="none" aria-hidden="true">
+      <div class="light"></div><div class="frame"></div>
+      <div class="panel pl"></div><div class="panel pr"></div><div class="knob"></div>
+      <div class="beam"></div><div class="rings"><i></i><i></i><i></i></div>
+      <span class="no">GH / 001</span>
+      <p class="tag" id="stageLabel">The door is closed.</p>
+    </div>
+    <div>
+      <h2 class="display rv">One Door.<br><span>Two Ways<br>Forward.</span></h2>
+      <p class="lead">Someone is on the other side. GhostHeart can open the door — or send a signal for another way in.</p>
+      <div class="choices">
+        <button data-branch="door" aria-pressed="false" aria-controls="result"><span>01</span>Open the door<b>↗</b></button>
+        <button data-branch="signal" aria-pressed="false" aria-controls="result"><span>02</span>Send the signal<b>↗</b></button>
+      </div>
+      <div class="result" id="result" role="status" aria-live="polite"><p id="rTitle">Choose a direction.</p><span id="rCopy">This scene is yours to explore.</span></div>
+      <p class="note">Scene preview only. These choices do not submit a vote.</p>
+    </div>
+  </div>
+</section>
+
+<section class="show" id="show">
+  <div class="label"><span>The Planned Show</span><span class="num">02</span></div>
+  <h2 class="display rv">The Music Hits.<br><span class="r">The Story Turns.</span></h2>
+  <div class="steps">
+    <div class="step rv"><b>01</b><h3>A world opens.</h3><p>Enter the first scene.</p></div>
+    <div class="step rv"><b>02</b><h3>You change its course.</h3><p>Two prepared choices shape what comes next.</p></div>
+    <div class="step rv"><b>03</b><h3>The song takes over.</h3><p>A music moment carries the story to its cliffhanger.</p></div>
+  </div>
+  <div class="fine">
+    <p class="pill">A proposed 20-minute pilot. The date and viewing link will appear here when confirmed.</p>
+    <details><summary>How the audience choices are planned to work</summary><p>Both story branches are prepared before the show. If no votes arrive, an announced default path keeps the story moving. Live voting and notifications are still in development.</p></details>
+  </div>
+</section>
+
+<section class="readings">
+  <div class="label"><span>Lives &amp; Readings</span><span class="num">03</span></div>
+  <div class="read-grid">
+    <div>
+      <h2 class="display rv" id="promise-title">My<br><span>Promise.</span></h2>
+      <p class="lead">A promise to keep learning, listening, and choosing care.</p>
+      <a class="btn red" href="/live/my-promise.html">Read My Promise</a>
+    </div>
+    <section class="sunday rv" aria-labelledby="live-status-title">
+      <small>LIVES</small>
+      <h2 id="live-status-title">Next Live: announcement pending.</h2>
+      <p>No upcoming Live date or viewing link is confirmed yet.</p>
+      <p class="mark"><a href="/follow/">Be Part of GhostHeart</a> for the announcement when details are ready.</p>
+    </section>
+  </div>
+</section>
+
+<section class="meanwhile">
+  <h2 class="display rv">While the Next<br>Scene <span>Is Built…</span></h2>
+  <div class="ctas">
+    <a class="btn dark" href="/music/">Hear the music ↗</a>
+    <a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="https://www.youtube.com/@GhostHeart-M95RTK">Follow on YouTube ↗</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="sitefoot">
+  <div class="fcols">
+    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quote Vault</a></nav>
+    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+  </div>
+  <p class="fcopy">© 2026 GhostHeart Studios</p>
+</footer>
+
+<script>
+const branches={
+  door:{title:'The door opens.',label:'The way in is open.',copy:'GhostHeart makes room. The person outside can step into the story — and the next scene begins inside.'},
+  signal:{title:'The signal goes out.',label:'Someone answers.',copy:'GhostHeart lights the signal. An answer comes from beyond the room. The next scene follows a different way in.'}
+};
+document.querySelectorAll('[data-branch]').forEach(b=>b.addEventListener('click',()=>{
+  const k=b.dataset.branch,r=branches[k];
+  document.querySelectorAll('[data-branch]').forEach(o=>o.setAttribute('aria-pressed',String(o===b)));
+  document.getElementById('stage').dataset.route=k;
+  document.getElementById('stageLabel').textContent=r.label;
+  document.getElementById('rTitle').textContent=r.title;
+  document.getElementById('rCopy').textContent=r.copy;
+}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<script src="/assets/shared/ghostheart-world.js"></script>
+<script src="/assets/loud/loud.js"></script>
+</body>
+</html>
