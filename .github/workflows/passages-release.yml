@@ -1,0 +1,50 @@
+name: Release Passages (Saturdays 7 PM Central)
+# Rebuilds the site just after 7 PM Central every Saturday and commits any Passage
+# whose file is `status: ready` and whose date has passed. Cron is UTC: 00:05 Sunday
+# is 7:05 PM CDT, 01:05 Sunday is 7:05 PM CST, so both daylight-saving states are covered.
+on:
+  schedule:
+    - cron: "5 0 * * 0"
+    - cron: "5 1 * * 0"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: passages-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install fixed generator dependencies
+        run: python3 -m pip install --disable-pip-version-check Pillow==11.3.0 beautifulsoup4==4.13.5
+      - name: Build the site
+        run: |
+          python3 .github/scripts/build_site.py
+          git checkout -- .github/GATEWAY_STATUS.md
+      - name: Validate before publishing
+        run: |
+          python3 .github/scripts/validate_site.py
+          python3 .github/scripts/verify_reviewed_site.py
+          python3 .github/scripts/verify_world_review.py
+      - name: Commit any newly released Passage
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing new to release."; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Release Passages scheduled for $(TZ=America/Chicago date '+%a %b %-d, %Y %-I:%M %p %Z')"
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Ask GitHub Pages to publish
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request not accepted; the push will still publish."

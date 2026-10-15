@@ -66,6 +66,16 @@
 .p .when b{color:var(--blood);font-weight:400}
 a.p{color:inherit;text-decoration:none}
 .p.open:focus-visible{outline:3px solid var(--bone);outline-offset:4px}
+.reading .r-hero h1{font-size:clamp(64px,10vw,170px)}
+.r-body{max-width:740px;margin:0 auto;padding:30px clamp(16px,4vw,48px) 10px;font-size:clamp(19px,1.6vw,22px);line-height:1.7;color:#e6e2da}
+.r-body p{margin-bottom:1.1em}
+.r-body .pull{margin:1.3em 0;padding:22px;background:var(--blood);color:var(--void);font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(30px,4vw,54px);line-height:.95}
+.r-end{max-width:740px;margin:0 auto;padding:10px clamp(16px,4vw,48px) 90px}
+.r-end .pair{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border:3px solid #262626;background:#0b0b0b;padding:18px;margin-bottom:22px}
+.r-end .pair small{display:block;font-weight:700;letter-spacing:.2em;font-size:11px;color:var(--ash);text-transform:uppercase}
+.r-end .pair strong{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;text-transform:uppercase}
+.r-end .pair audio{flex:1 1 240px;min-width:0}
+.r-end .care{color:var(--ash);margin-bottom:22px}
 .sched-note{margin-top:26px;color:var(--ash);max-width:720px}
 </style>
 </head>
@@ -90,8 +100,9 @@ a.p{color:inherit;text-decoration:none}
 </header>
 
 <section style="padding-top:60px">
-  <div class="label"><span>Every Passage / newest first</span><span class="num">09</span></div>
+  <div class="label"><span>Every Passage / newest first</span><span class="num" id="passageCount">09</span></div>
   <div class="list" id="list">
+  <!--PASSAGES-LIST:START-->
   <div class="p locked" id="p09" data-at="2026-12-05T19:00:00-06:00" data-title="One Heart, Many Voices" data-day="Sat, Dec 5">
     <span class="no">09</span>
     <div><div class="meta">Coming · The reading for the song</div><h2>One Heart, Many Voices</h2><div class="when">Sat, Dec 5 · <b>7 PM CT</b></div></div>
@@ -134,9 +145,10 @@ a.p{color:inherit;text-decoration:none}
   </div>
   <a class="p open latest" id="p01" href="/journal/cruel-something-needs-to-change.html" data-at="2026-10-10T19:00:00-05:00">
     <span class="no">01</span>
-    <div><div class="meta"><span class="live">Out now</span> · The reading for the song</div><h2>Cruel</h2><div class="when">Sat, Oct 10 · <b>7 PM CT</b></div></div>
+    <div><div class="meta"><span class="live">New · Out now</span> · The reading for the song</div><h2>Cruel</h2><div class="when">Sat, Oct 10 · <b>7 PM CT</b></div></div>
     <span class="act">Read ↗</span>
   </a>
+  <!--PASSAGES-LIST:END-->
   </div>
   <p class="sched-note">Dates are Saturdays at 7 PM Central. A Passage opens here once it’s finished; if one needs more time, it stays locked until it’s ready.</p>
 </section>
@@ -175,6 +187,7 @@ a.p{color:inherit;text-decoration:none}
   });
   const next = locked.find(card => Date.parse(card.dataset.at) > now);
   const box = document.getElementById('nextDrop');
+  if (!box) return;
   if (next) box.innerHTML = 'NEXT PASSAGE <b>' + next.id.slice(1) + ' · ' + next.dataset.title + '</b> ' + next.dataset.day.toUpperCase() + ' · 7 PM CT';
   else box.innerHTML = '<b>MORE PASSAGES COMING</b>';
 })();

@@ -98,24 +98,21 @@ for source in sorted(PAGES.rglob("*.html.loud")):
 
 print("Applied LOUD redesign pages:", count)
 
-# Passages (owner-dated October 14, 2026) is a new route; list it in the sitemap once.
-sitemap = ROOT / "sitemap.xml"
-if (ROOT / "passages/index.html").exists() and sitemap.exists():
-    value = sitemap.read_text(encoding="utf-8")
-    loc = "<loc>https://www.myghostheart.com/passages/</loc>"
-    if loc not in value:
-        value = value.replace("</urlset>", "  <url>\n    " + loc + "\n    <lastmod>2026-10-14</lastmod>\n  </url>\n</urlset>", 1)
-        sitemap.write_text(value, encoding="utf-8", newline="\n")
+# Passages list and reading pages come from .github/content/passages (see build_passages.py).
+import runpy
+runpy.run_path(str(ROOT / ".github/scripts/build_passages.py"), run_name="__main__")
 
 # LOUD skin (owner request October 14, 2026): restyle these approved pages in place,
 # keeping their content and layout exactly as generated.
-SKIN_ROUTES = [
-    "awakening/index.html",
-    "albums/index.html",
-    "woman-behind-the-scenes/index.html",
-    "GhostHeart_Projects.html",
-    "GhostHeart_Resources.html",
-]
+# Every other published page (owner: "finish everything"), except redirect stubs
+# and pages that already carry the full LOUD redesign.
+SKIN_ROUTES = sorted(
+    str(path.relative_to(ROOT)).replace("\\", "/")
+    for path in ROOT.rglob("*.html")
+    if ".github" not in path.parts and "node_modules" not in path.parts
+    and 'http-equiv="refresh"' not in (text := path.read_text(encoding="utf-8"))
+    and "GhostHeart LOUD redesign" not in text
+)
 SKIN_HEAD = (
     '<link rel="preconnect" href="https://fonts.googleapis.com">'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -128,8 +125,11 @@ for route in SKIN_ROUTES:
     value = page.read_text(encoding="utf-8")
     if "/assets/loud/loud-skin.css" not in value:
         value = value.replace("</head>", SKIN_HEAD + "</head>", 1)
-        value = re.sub(r'<body class="([^"]*)"', lambda m: '<body class="%s loud-skin"' % m.group(1), value, count=1)
-        assert "loud-skin\"" in value or 'loud-skin"' in value, route
+        if re.search(r"<body\b[^>]*\bclass=\"", value):
+            value = re.sub(r'(<body\b[^>]*\bclass=")([^"]*)"', lambda m: '%s%s loud-skin"' % (m.group(1), m.group(2)), value, count=1)
+        else:
+            value = re.sub(r"<body\b", '<body class="loud-skin"', value, count=1)
+        assert re.search(r'<body\b[^>]*loud-skin', value), route
         page.write_text(value, encoding="utf-8")
     skinned += 1
 print("Applied LOUD skin pages:", skinned)
