@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://www.myghostheart.com/passages/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="Passages | GhostHeart">
+<meta property="og:description" content="Passages: the reading behind each song on The Awakening. A new one Saturdays at 7 PM Central.">
+<meta property="og:url" content="https://www.myghostheart.com/passages/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Passages: the reading behind each song on The Awakening. A new one Saturdays at 7 PM Central.">
+<title>Passages | GhostHeart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/loud/loud.css">
+<style>
+.pg-hero{position:relative;padding:calc(var(--hdr,110px) + 40px) clamp(16px,4vw,48px) 70px;overflow:hidden;isolation:isolate;background:radial-gradient(100% 90% at 85% 10%,#3a0008,var(--void) 60%)}
+.pg-hero .giant{position:absolute;z-index:-1;right:-3vw;bottom:-4vw;font-size:22vw;color:transparent;-webkit-text-stroke:2px rgba(232,0,28,.28);white-space:nowrap}
+.pg-hero h1{font-size:clamp(80px,14vw,230px);margin-top:18px}
+.pg-hero h1 .r{color:var(--blood);display:inline-block;text-shadow:3px 0 var(--glitch),-3px 0 var(--hot);animation:glitch 3.2s infinite steps(1)}
+.pg-hero .tag{max-width:640px}
+.next-drop{display:inline-flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:10px;background:var(--bone);color:var(--void);padding:14px 18px;font-weight:700;letter-spacing:.06em;transform:rotate(-1deg)}
+.next-drop b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;letter-spacing:.02em;color:var(--blood)}
+
+.list{display:grid;gap:18px}
+.p{display:grid;grid-template-columns:clamp(90px,12vw,170px) 1fr auto;gap:clamp(14px,3vw,36px);align-items:center;padding:clamp(18px,2.5vw,30px);border:3px solid #262626;background:#0b0b0b;transition:.14s;text-align:left;width:100%}
+@media(max-width:700px){.p{grid-template-columns:1fr}}
+.p .no{font-family:Anton,Impact,sans-serif;font-size:clamp(70px,9vw,140px);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--blood)}
+.p .meta{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.p .meta .live{color:var(--hot)}
+.p h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,5vw,78px);line-height:.88;text-transform:uppercase;margin:8px 0}
+.p .tease{font-family:"Permanent Marker",cursive;font-size:clamp(18px,2vw,24px);color:#d8d4cc}
+.p .act{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;padding:14px 20px;border:3px solid var(--blood);color:var(--blood);white-space:nowrap}
+.p.open{cursor:pointer}
+.p.open:hover{border-color:var(--blood);transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood)}
+.p.open:hover .no{color:var(--blood)}
+.p.open:hover .act{background:var(--blood);color:var(--void)}
+.p.locked{opacity:.75}
+.p.locked .act{border-color:#444;color:var(--ash)}
+.p.latest{border-color:var(--blood)}
+.p.latest .act{background:var(--blood);color:var(--void)}
+
+.how{background:var(--bone);color:var(--void)}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:4px solid var(--void);border-left:4px solid var(--void)}
+@media(max-width:800px){.how-grid{grid-template-columns:1fr}}
+.how-grid div{padding:26px;border-right:4px solid var(--void);border-bottom:4px solid var(--void)}
+.how-grid b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,3.6vw,52px);text-transform:uppercase;line-height:.9;margin-bottom:10px}
+.how-grid p{font-size:18px}
+
+.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
+.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
+.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
+.sitefoot p{color:var(--ash);margin-top:8px}
+.sitefoot nav{display:flex;flex-direction:column;gap:8px}
+.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.sitefoot nav a:hover{color:var(--hot)}
+.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+
+.p .when{font-family:Anton,Impact,sans-serif;font-size:clamp(22px,2.2vw,30px);text-transform:uppercase;color:var(--bone);margin-top:6px}
+.p .when b{color:var(--blood);font-weight:400}
+a.p{color:inherit;text-decoration:none}
+.p.open:focus-visible{outline:3px solid var(--bone);outline-offset:4px}
+.sched-note{margin-top:26px;color:var(--ash);max-width:720px}
+</style>
+</head>
+<body>
+<!--@inject-from live/index.html header.ghx-header-->
+
+<main>
+<header class="pg-hero">
+  <div class="giant display">PASSAGES</div>
+  <span class="kicker">✶ The story behind each song</span>
+  <h1 class="display">Pass<span class="r">ages.</span></h1>
+  <p class="tag">One reading for each song on The Awakening. Short. Dated. A new one Saturdays at 7 PM Central.</p>
+  <div class="next-drop" id="nextDrop">NEXT PASSAGE <b>02 · I’m Not</b> SAT, OCT 17 · 7 PM CT</div>
+</header>
+
+<section style="padding-top:60px">
+  <div class="label"><span>Every Passage / newest first</span><span class="num">09</span></div>
+  <div class="list" id="list">
+  <div class="p locked" id="p09" data-at="2026-12-05T19:00:00-06:00" data-title="One Heart, Many Voices" data-day="Sat, Dec 5">
+    <span class="no">09</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>One Heart, Many Voices</h2><div class="when">Sat, Dec 5 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Dec 5</span>
+  </div>
+  <div class="p locked" id="p08" data-at="2026-11-28T19:00:00-06:00" data-title="You Can Be GhostHeart Too" data-day="Sat, Nov 28">
+    <span class="no">08</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>You Can Be GhostHeart Too</h2><div class="when">Sat, Nov 28 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Nov 28</span>
+  </div>
+  <div class="p locked" id="p07" data-at="2026-11-21T19:00:00-06:00" data-title="GhostHeart’s Oath" data-day="Sat, Nov 21">
+    <span class="no">07</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>GhostHeart’s Oath</h2><div class="when">Sat, Nov 21 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Nov 21</span>
+  </div>
+  <div class="p locked" id="p06" data-at="2026-11-14T19:00:00-06:00" data-title="This Is GhostHeart" data-day="Sat, Nov 14">
+    <span class="no">06</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>This Is GhostHeart</h2><div class="when">Sat, Nov 14 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Nov 14</span>
+  </div>
+  <div class="p locked" id="p05" data-at="2026-11-07T19:00:00-06:00" data-title="She Got to Me" data-day="Sat, Nov 7">
+    <span class="no">05</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>She Got to Me</h2><div class="when">Sat, Nov 7 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Nov 7</span>
+  </div>
+  <div class="p locked" id="p04" data-at="2026-10-31T19:00:00-05:00" data-title="Papa Didn’t Raise No Fool" data-day="Sat, Oct 31">
+    <span class="no">04</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>Papa Didn’t Raise No Fool</h2><div class="when">Sat, Oct 31 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Oct 31</span>
+  </div>
+  <div class="p locked" id="p03" data-at="2026-10-24T19:00:00-05:00" data-title="It’s Not the 1950s" data-day="Sat, Oct 24">
+    <span class="no">03</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>It’s Not the 1950s</h2><div class="when">Sat, Oct 24 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Oct 24</span>
+  </div>
+  <div class="p locked" id="p02" data-at="2026-10-17T19:00:00-05:00" data-title="I’m Not" data-day="Sat, Oct 17">
+    <span class="no">02</span>
+    <div><div class="meta">Coming · The reading for the song</div><h2>I’m Not</h2><div class="when">Sat, Oct 17 · <b>7 PM CT</b></div></div>
+    <span class="act">🔒 Oct 17</span>
+  </div>
+  <a class="p open latest" id="p01" href="/journal/cruel-something-needs-to-change.html" data-at="2026-10-10T19:00:00-05:00">
+    <span class="no">01</span>
+    <div><div class="meta"><span class="live">Out now</span> · The reading for the song</div><h2>Cruel</h2><div class="when">Sat, Oct 10 · <b>7 PM CT</b></div></div>
+    <span class="act">Read ↗</span>
+  </a>
+  </div>
+  <p class="sched-note">Dates are Saturdays at 7 PM Central. A Passage opens here once it’s finished; if one needs more time, it stays locked until it’s ready.</p>
+</section>
+
+<section class="how">
+  <div class="label"><span>How Passages work</span><span class="num">✶</span></div>
+  <div class="how-grid">
+    <div><b>Short.</b><p>Each one takes a few minutes. Read it on a break.</p></div>
+    <div><b>Saturdays.</b><p>A new Passage is planned each Saturday at 7 PM Central. Come back to keep going.</p></div>
+    <div><b>Paired.</b><p>Every Passage goes with the song it belongs to.</p></div>
+  </div>
+  <p style="margin-top:30px;font-weight:700;max-width:720px">Some parts of the story are hard to hear. You can pause, step away, or skip a Passage. You don't owe anyone your pain.</p>
+</section>
+</main>
+
+<footer class="sitefoot">
+  <div class="fcols">
+    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/passages/">Passages</a><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quote Vault</a></nav>
+    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+  </div>
+  <p class="fcopy">© 2026 GhostHeart Studios</p>
+</footer>
+
+<script>
+// Locked Passages only open when their finished text is linked in this page. After a date passes, the card says it's being finished.
+(() => {
+  const now = Date.now();
+  const locked = [...document.querySelectorAll('.p.locked')].reverse();
+  locked.forEach(card => {
+    if (Date.parse(card.dataset.at) <= now) {
+      card.querySelector('.meta').textContent = 'Being finished · check back soon';
+      card.querySelector('.act').textContent = 'Soon';
+    }
+  });
+  const next = locked.find(card => Date.parse(card.dataset.at) > now);
+  const box = document.getElementById('nextDrop');
+  if (next) box.innerHTML = 'NEXT PASSAGE <b>' + next.id.slice(1) + ' · ' + next.dataset.title + '</b> ' + next.dataset.day.toUpperCase() + ' · 7 PM CT';
+  else box.innerHTML = '<b>MORE PASSAGES COMING</b>';
+})();
+</script>
+<script src="/assets/shared/ghostheart-world.js"></script>
+<script src="/assets/loud/loud.js"></script>
+</body>
+</html>

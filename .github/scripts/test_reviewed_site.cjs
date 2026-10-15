@@ -53,9 +53,11 @@ const recordingsPreviewFragments = [
     }
     await page.locator('#home a[href="#join-the-signal"]').focus();
     await page.keyboard.press('Enter');
+    await page.waitForURL(url => url.hash === '#join-the-signal', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#join-the-signal');
     await page.locator('#latest a[href="#home-story"]').focus();
     await page.keyboard.press('Enter');
+    await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#home-story');
     assert.equal(await page.locator('#latest source').getAttribute('src'), '/assets/music/preview/awakening-01-cruel.mp3');
     for (const path of paths) {

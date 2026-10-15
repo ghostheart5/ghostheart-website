@@ -97,3 +97,39 @@ for source in sorted(PAGES.rglob("*.html.loud")):
     count += 1
 
 print("Applied LOUD redesign pages:", count)
+
+# Passages (owner-dated October 14, 2026) is a new route; list it in the sitemap once.
+sitemap = ROOT / "sitemap.xml"
+if (ROOT / "passages/index.html").exists() and sitemap.exists():
+    value = sitemap.read_text(encoding="utf-8")
+    loc = "<loc>https://www.myghostheart.com/passages/</loc>"
+    if loc not in value:
+        value = value.replace("</urlset>", "  <url>\n    " + loc + "\n    <lastmod>2026-10-14</lastmod>\n  </url>\n</urlset>", 1)
+        sitemap.write_text(value, encoding="utf-8", newline="\n")
+
+# LOUD skin (owner request October 14, 2026): restyle these approved pages in place,
+# keeping their content and layout exactly as generated.
+SKIN_ROUTES = [
+    "awakening/index.html",
+    "albums/index.html",
+    "woman-behind-the-scenes/index.html",
+    "GhostHeart_Projects.html",
+    "GhostHeart_Resources.html",
+]
+SKIN_HEAD = (
+    '<link rel="preconnect" href="https://fonts.googleapis.com">'
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    '<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">'
+    '<link rel="stylesheet" href="/assets/loud/loud-skin.css">'
+)
+skinned = 0
+for route in SKIN_ROUTES:
+    page = ROOT / route
+    value = page.read_text(encoding="utf-8")
+    if "/assets/loud/loud-skin.css" not in value:
+        value = value.replace("</head>", SKIN_HEAD + "</head>", 1)
+        value = re.sub(r'<body class="([^"]*)"', lambda m: '<body class="%s loud-skin"' % m.group(1), value, count=1)
+        assert "loud-skin\"" in value or 'loud-skin"' in value, route
+        page.write_text(value, encoding="utf-8")
+    skinned += 1
+print("Applied LOUD skin pages:", skinned)

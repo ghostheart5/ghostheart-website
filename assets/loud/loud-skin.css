@@ -1,0 +1,78 @@
+/* LOUD skin (October 14, 2026): restyles existing approved pages in place.
+   Colors, type and edges only. Layout, sizes and content are left to each page's own CSS,
+   so crisis buttons, filters and players keep working exactly as before. */
+body.loud-skin{
+  --void:#050505;--blood:#e8001c;--hot:#ff1f3d;--bone:#f4f1ea;--ash:#8d8a86;
+  --ghx-bg:#050505;--ghx-panel:#0b0b0b;--ghx-white:#f4f1ea;--ghx-muted:#c9c6c1;--ghx-red:#e8001c;--ghx-soft:#ff1f3d;--ghx-line:#3a0a12;--ghx-ember:#ff1f3d;
+  --ink:#f4f1ea;--red:#e8001c;--red-dark:#7a000f;--panel:#0b0b0b;--panel-strong:#0b0b0b;--line:#2a2a2a;
+  background:radial-gradient(90% 60% at 85% 0%,#3a0008,transparent 60%),#050505;
+  color:var(--bone);
+  font-family:"Space Grotesk",system-ui,sans-serif;
+}
+body.loud-skin::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px)}
+
+/* Headlines: loud condensed caps */
+body.loud-skin main :is(h1,h2),body.loud-skin :is(.hero,.urgent,.catalog,.before) :is(h1,h2){
+  font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-style:normal;text-transform:uppercase;letter-spacing:0;line-height:.9;color:var(--bone)
+}
+body.loud-skin main h1,body.loud-skin .hero h1{font-size:clamp(2.8rem,4.8vw,6rem);text-shadow:4px 4px 0 var(--blood);overflow-wrap:break-word;max-width:none}
+body.loud-skin main :is(.world-hero-grid,.world-hero-copy){min-width:0}
+body.loud-skin main h2{font-size:clamp(2.2rem,5.4vw,4.6rem)}
+body.loud-skin main h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+body.loud-skin main :is(h1,h2) em{color:var(--blood);font-style:normal}
+
+/* Kickers and labels */
+body.loud-skin main :is(.ghx-kicker,.kicker,.world-section-label,.projects-index,.eyebrow,.card-kicker,.music-number){color:var(--blood);font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+
+/* Body copy */
+body.loud-skin main :is(p,li){color:#d9d5ce}
+body.loud-skin main :is(.world-lead,.ghx-lead,.lede,.projects-lead){color:var(--bone);font-weight:500}
+body.loud-skin main a{text-decoration-color:var(--blood);text-underline-offset:.22em}
+body.loud-skin main a:hover{color:var(--hot)}
+
+/* Panels and cards: square, heavy edges */
+body.loud-skin main :is(.music-track,.music-group,.world-prose,.world-finish,.world-hero,.projects-future-grid article,.projects-shadow-frame,.projects-axiomara,.projects-boundary,.projects-close,.resource,.urgent-card,.before-card,.boundary,.hero-panel,.music-hero,.projects-intro){
+  border-radius:0!important;border-color:#2a2a2a;box-shadow:none
+}
+body.loud-skin main :is(.music-track,.resource,.projects-future-grid article,.before-card){background:#0b0b0b;border-width:3px;border-style:solid}
+body.loud-skin main :is(.music-track,.resource,.projects-future-grid article):hover{border-color:var(--blood)}
+body.loud-skin main :is(.urgent-card){border:3px solid var(--blood);background:linear-gradient(145deg,#3a0008,#0b0b0b)}
+body.loud-skin main :is(.boundary,.projects-boundary){border-left:6px solid var(--blood);background:#140306}
+body.loud-skin main :is(.world-hero-art,.world-approved-art) img{border:4px solid var(--blood);box-shadow:12px 12px 0 #000}
+
+/* Buttons: blocky, high contrast. Sizes stay as each page sets them. */
+body.loud-skin main :is(.primary,.button.primary,.projects-button,.gh-button--primary,.crisis-primary){
+  border-radius:0!important;background:var(--hot)!important;color:#050505!important;border:3px solid var(--hot)!important;font-weight:800;text-transform:uppercase;letter-spacing:.04em
+}
+body.loud-skin main :is(.secondary,.button:not(.primary):not(.crisis-primary),.filter,.back){
+  border-radius:0!important;background:transparent;color:var(--bone);border:2px solid var(--bone);font-weight:700
+}
+body.loud-skin main :is(.primary,.button,.projects-button,.secondary,.filter):hover{transform:none;background:var(--bone)!important;color:#050505!important;border-color:var(--bone)!important}
+body.loud-skin main .filter[aria-pressed="true"]{background:var(--hot);color:#050505;border-color:var(--blood)}
+body.loud-skin main :is(.tag,.tags span){border-radius:0}
+body.loud-skin main :is(input,select,textarea){border-radius:0}
+
+/* Shared site header, recolored (its position and layout stay as each page has it) */
+body.loud-skin header.ghx-header{background:linear-gradient(rgba(5,5,5,.96),rgba(5,5,5,.88));border-bottom:2px solid rgba(232,0,28,.6)}
+body.loud-skin header.ghx-header .ghx-brand{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.02em;color:var(--bone)}
+body.loud-skin header.ghx-header .ghx-brand span{color:var(--blood)}
+body.loud-skin header.ghx-header .ghx-primary a{font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bone)}
+body.loud-skin header.ghx-header .ghx-primary a:hover,body.loud-skin header.ghx-header .ghx-primary a[aria-current]{color:var(--hot)}
+body.loud-skin header.ghx-header .ghx-menu-toggle{font-family:Anton,Impact,sans-serif;text-transform:uppercase;color:var(--bone);border:2px solid var(--bone);border-radius:0;background:transparent}
+body.loud-skin header.ghx-header .ghx-menu-toggle[aria-expanded=true]{background:var(--blood);border-color:var(--blood);color:#050505}
+body.loud-skin header.ghx-header .ghx-help-link{font-family:Anton,Impact,sans-serif;text-transform:uppercase;background:var(--bone);color:#050505;border-radius:0}
+body.loud-skin header.ghx-header .ghx-menu{background:#050505;border-top:4px solid var(--blood)}
+body.loud-skin header.ghx-header .ghx-menu h2{color:var(--ash)}
+body.loud-skin header.ghx-header .ghx-menu a{font-family:Anton,Impact,sans-serif;text-transform:uppercase;color:var(--bone)}
+body.loud-skin header.ghx-header .ghx-menu a:hover,body.loud-skin header.ghx-header .ghx-menu a[aria-current]{color:var(--blood)}
+
+/* Help & Resources has its own top bar */
+body.loud-skin .nav{background:rgba(5,5,5,.94);border-bottom:2px solid rgba(232,0,28,.6);backdrop-filter:none}
+body.loud-skin .brand{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.04em}
+
+/* Footer */
+body.loud-skin footer{border-top:4px solid var(--blood)}
+
+/* Focus stays strong everywhere */
+body.loud-skin :is(a,button,input,select,summary):focus-visible{outline:3px solid var(--hot)!important;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){body.loud-skin *{transition:none!important}}
