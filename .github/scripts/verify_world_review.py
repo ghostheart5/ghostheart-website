@@ -221,5 +221,7 @@ for path in ROOT.rglob('*.html'):
 assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
 for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "start/index.html", "follow/index.html"):
-    assert page(relative).select_one('link[href="/assets/shared/review-theme.css"]'), relative
+    # LOUD redesign (2026-10-14): redesigned routes use the LOUD stylesheet instead of the review theme.
+    document = page(relative)
+    assert document.select_one('link[href="/assets/shared/review-theme.css"]') or document.select_one('link[href="/assets/loud/loud.css"]'), relative
 print("PASS World review: visible pending Lives, scoped 39-item Vault, exact track fragments, trailer label, reading aliases, shared theme")

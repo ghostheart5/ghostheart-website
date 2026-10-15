@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--@inject-all head > meta[property], head > meta[name^="twitter:"], head > link[rel="canonical"]-->
+<meta name="description" content="Real help, your choice: U.S. crisis and support resources from GhostHeart.">
+<title>Help &amp; Resources | GhostHeart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/resources/resources-refresh.css">
+<link rel="stylesheet" href="/assets/loud/loud.css">
+<style>
+body{cursor:auto}
+body::before,body::after{display:none}
+.exit{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:16px;z-index:99;font-family:Anton,Impact,sans-serif;font-size:20px;text-transform:uppercase;background:var(--bone);color:var(--void);padding:12px 18px;border:3px solid var(--void);box-shadow:6px 6px 0 var(--blood)}
+.hhero{padding:140px clamp(16px,4vw,48px) 50px;background:var(--void)}
+.hhero h1{font-size:clamp(56px,9vw,150px);max-width:13ch}
+.hhero h1 span{color:var(--blood)}
+.hhero p{font-size:clamp(19px,2vw,24px);max-width:640px;margin-top:20px}
+.hhero .fine{color:var(--ash);font-size:15px;margin-top:10px}
+.now{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 clamp(16px,4vw,48px) 60px;background:var(--void)}
+@media(max-width:800px){.now{grid-template-columns:1fr}}
+.urgent{padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:12px}
+.urgent.c988{background:var(--blood);color:var(--void)}
+.urgent.c911{background:var(--bone);color:var(--void)}
+.urgent small{font-weight:700;letter-spacing:.2em;font-size:12px;text-transform:uppercase}
+.urgent h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(46px,5.4vw,84px);line-height:.88;text-transform:uppercase}
+.urgent p{font-size:18px;font-weight:500}
+.urgent .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.urgent .acts a{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;background:var(--void);color:var(--bone);padding:14px 20px}
+.urgent .acts a.alt{background:transparent;color:var(--void);border:3px solid var(--void)}
+.which{grid-column:1/-1;border:2px solid #333;padding:18px 20px;color:#d8d4cc;font-size:17px}
+.list{background:var(--bone);color:var(--void)}
+.list h2{font-size:clamp(56px,8vw,130px)}
+.list h2 span{color:var(--blood)}
+.list .intro{font-size:clamp(18px,1.8vw,22px);max-width:640px;margin:16px 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chips button{font-weight:700;font-size:14px;letter-spacing:.06em;padding:10px 14px;border:2px solid var(--void);text-transform:uppercase}
+.chips button[aria-pressed=true]{background:var(--void);color:var(--bone)}
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.svc article{background:#fff;border:3px solid var(--void);padding:20px;display:flex;flex-direction:column;gap:10px}
+.svc small{font-weight:700;letter-spacing:.18em;font-size:11px;text-transform:uppercase;color:var(--ember)}
+.svc h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(28px,2.4vw,36px);line-height:.95;text-transform:uppercase}
+.svc p{font-size:16px;line-height:1.45}
+.svc .acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.svc .acts a{font-weight:700;font-size:14px;padding:9px 12px;border:2px solid var(--void)}
+.svc .acts a:first-child{background:var(--void);color:var(--bone)}
+.svc .acts a:hover{background:var(--blood);color:var(--void);border-color:var(--blood)}
+.svc article[hidden]{display:none}
+.privacy{background:var(--void)}
+.privacy .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,50px)}
+@media(max-width:800px){.privacy .cols{grid-template-columns:1fr}}
+.privacy h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(32px,3.2vw,48px);text-transform:uppercase;margin-bottom:12px}
+.privacy p{color:#d8d4cc;font-size:17px;line-height:1.55}
+.privacy a.l{display:inline-block;margin-top:14px;font-weight:700;color:var(--hot);text-decoration:underline}
+.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
+.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
+.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
+.sitefoot p{color:var(--ash);margin-top:8px}
+.sitefoot nav{display:flex;flex-direction:column;gap:8px}
+.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.sitefoot nav a:hover{color:var(--hot)}
+.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+/* approved resources content, LOUD type and color, still calm */
+#resources-main{background:var(--void)}
+#resources-main h1{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.88;font-size:clamp(52px,8vw,130px);letter-spacing:-.01em}
+#resources-main h2{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(40px,5vw,80px)}
+#resources-main h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(26px,2.4vw,34px);letter-spacing:.01em}
+#resources-main .eyebrow,#resources-main .card-kicker{color:var(--hot);letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+#resources-main .hero{padding-top:110px}
+#resources-main .urgent-card.crisis{background:var(--blood);color:var(--void);border-color:var(--blood)}
+#resources-main .urgent-card.crisis p,#resources-main .urgent-card.crisis h3{color:var(--void)}
+#resources-main .urgent-card.emergency{background:var(--bone);color:var(--void)}
+#resources-main .urgent-card.emergency p,#resources-main .urgent-card.emergency h3{color:var(--void)}
+#resources-main .button{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.03em;border-radius:0}
+#resources-main .button.crisis-action,#resources-main .button.crisis-primary{background:var(--void);color:var(--bone);border-color:var(--void)}
+#resources-main .hero .button.crisis-action{background:var(--blood);color:var(--void);border-color:var(--blood)}
+#resources-main .resource{border-radius:0;border:3px solid #262626}
+#resources-main .resource:hover{border-color:var(--blood)}
+#resources-main .filter{border-radius:0;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+#resources-main .filter[aria-pressed=true]{background:var(--blood);color:var(--void);border-color:var(--blood)}
+</style>
+</head>
+<body>
+<a class="exit" href="https://www.weather.gov/">Leave this page ✕</a>
+<!--@inject header.ghx-header-->
+
+<!--@inject #resources-main-->
+
+<footer class="sitefoot">
+  <div class="fcols">
+    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quote Vault</a></nav>
+    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+  </div>
+  <p class="fcopy">© 2026 GhostHeart Studios</p>
+</footer>
+
+<!--@inject-all script:not([src])-->
+<script src="/assets/shared/ghostheart-world.js"></script>
+<script src="/assets/loud/loud.js"></script>
+</body>
+</html>
