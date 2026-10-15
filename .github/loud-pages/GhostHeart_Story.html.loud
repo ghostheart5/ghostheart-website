@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/story/reading-layout.css"/>
 <link rel="stylesheet" href="/assets/loud/loud.css">
 <style>
 .progress{display:none;position:fixed;top:0;left:0;height:5px;width:0;background:var(--blood);z-index:96;box-shadow:0 0 12px var(--blood)}
@@ -95,9 +96,11 @@
 .story-ctas{display:flex;flex-wrap:wrap;gap:14px;padding:0 max(16px,4vw) 80px;max-width:1100px;margin:0 auto}
 </style>
 </head>
-<body>
+<body class="reading-layout">
+<a class="skip-link" href="#behind-the-scars">Skip to reading</a>
 <div class="progress" id="progress"></div>
 <!--@inject header.ghx-header-->
+<main id="main-content">
 
 <header class="phero">
   <div class="giant display">ENTER MY WORLD ENTER MY WORLD ENTER MY WORLD</div>
@@ -107,7 +110,7 @@
     <h1 class="display">Enter<br><span class="o">My</span> <span class="r">World.</span></h1>
     <p class="lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
     <p class="lead">The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
-    <div class="ctas" style="margin-top:26px"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a></div>
+    <div class="ctas"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a></div>
   </div>
 </header>
 
@@ -144,6 +147,7 @@
   <div class="ctas" style="margin-top:30px"><a class="btn red" href="/follow/">Stay Connected ↗</a></div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
@@ -155,8 +159,8 @@
 </footer>
 
 <script>
-const bar=document.getElementById('progress'),essay=document.getElementById('scars');
-addEventListener('scroll',()=>{const r=essay.getBoundingClientRect();const p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));bar.style.width=(p*100)+'%'},{passive:true});
+const bar=document.getElementById('progress'),essay=document.getElementById('behind-the-scars');
+addEventListener('scroll',()=>{const r=essay.getBoundingClientRect();const p=Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));bar.style.width=(p*100)+'%'},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>

@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/story/reading-layout.css"/>
 <link rel="stylesheet" href="/assets/loud/loud.css">
 <style>
 .progress{display:none;position:fixed;top:0;left:0;height:5px;width:0;background:var(--blood);z-index:96;box-shadow:0 0 12px var(--blood)}
@@ -103,7 +104,8 @@
 .story-ctas{display:flex;flex-wrap:wrap;gap:14px;padding:0 max(16px,4vw) 80px;max-width:1100px;margin:0 auto}
 </style>
 </head>
-<body>
+<body class="reading-layout">
+<a class="skip-link" href="#behind-the-scars">Skip to reading</a>
 <div class="progress" id="progress"></div>
 <header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="index.html">GHOST<span>HEART</span></a>
@@ -114,6 +116,7 @@
 <div><h2>Go deeper</h2><a href="GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="vault/">GhostHeart's Vault</a></div>
 <div><h2>Explore</h2><a href="journal/">Blog</a><a href="live/">Lives &amp; Readings</a><a href="GhostHeart_Projects.html">Projects</a><a href="follow/">Stay Connected</a></div>
 </div></nav></header>
+<main id="main-content">
 
 <header class="phero">
   <div class="giant display">ENTER MY WORLD ENTER MY WORLD ENTER MY WORLD</div>
@@ -123,16 +126,16 @@
     <h1 class="display">Enter<br><span class="o">My</span> <span class="r">World.</span></h1>
     <p class="lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
     <p class="lead">The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
-    <div class="ctas" style="margin-top:26px"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a></div>
+    <div class="ctas"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a></div>
   </div>
 </header>
 
 <div class="tape"><div><span>NOT ONE WOUND</span><span>NOT ONE LABEL</span><span>✶ STILL HERE ✶</span><span>THE AWAKENING</span><span>NOT ONE WOUND</span><span>NOT ONE LABEL</span><span>✶ STILL HERE ✶</span><span>THE AWAKENING</span></div></div>
 
-<section class="world-prose ghx-wrap" id="behind-the-scars" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><figure class="world-approved-art"><img src="/assets/story/ghostheart-scars-rooftop-rain.png" width="1672" height="941" loading="lazy" decoding="async" alt="GhostHeart sits on a rooftop overlooking a city, with a glowing red heart and messages about scars and belonging."/></figure><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars — The Awakening</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading">
+<section class="world-prose ghx-wrap" id="behind-the-scars" tabindex="-1" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars — The Awakening</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading reading-body"><div class="reading-opening"><div class="reading-opening-copy">
 <p>I kept seeing people treated like they were nothing.</p>
 <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
-<p>And I had plenty to say about it.</p>
+<p>And I had plenty to say about it.</p></div><figure class="world-approved-art"><img src="/assets/story/ghostheart-scars-rooftop-rain.png" width="1672" height="941" loading="lazy" decoding="async" alt="GhostHeart sits on a rooftop overlooking a city, with a glowing red heart and messages about scars and belonging."/></figure></div><div class="reading-continuation">
 <p>If I’d been there, I would’ve said something. I would’ve stood up for them. I’d find time to help at a shelter. Make a stand. Do something that mattered.</p>
 <p>I kept saying it.</p>
 <p>I got angry at the news, the schools, the government. Why the hell was this happening? Why was it allowed? People were supposed to be protected. Every one of them.</p>
@@ -154,7 +157,7 @@
 <p>But if I help one person, then I did something.</p>
 <p>I finally did more than sit there and wish somebody would.</p>
 <div class="world-inline-links"><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart</a><a href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath</a></div>
-</div></div></section>
+</div></div></div></section>
 <div class="slam-wrap"><div class="slam red"><span class="rv">But if I help one person, then I did <em>something.</em></span></div></div>
 <div class="story-ctas"><a class="btn red" href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart ↗</a><a class="btn ghost" href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath ↗</a></div>
 
@@ -185,6 +188,7 @@
   <div class="ctas" style="margin-top:30px"><a class="btn red" href="/follow/">Stay Connected ↗</a></div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
@@ -196,8 +200,8 @@
 </footer>
 
 <script>
-const bar=document.getElementById('progress'),essay=document.getElementById('scars');
-addEventListener('scroll',()=>{const r=essay.getBoundingClientRect();const p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));bar.style.width=(p*100)+'%'},{passive:true});
+const bar=document.getElementById('progress'),essay=document.getElementById('behind-the-scars');
+addEventListener('scroll',()=>{const r=essay.getBoundingClientRect();const p=Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));bar.style.width=(p*100)+'%'},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
