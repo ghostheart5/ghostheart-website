@@ -12,9 +12,9 @@ module.exports = async (page, base) => {
     // Owner decision 2026-10-14 (LOUD redesign): homepage headline is "Too Human to Stay Quiet."
     assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
-      ['Discover GhostHeart', 'Follow the Story', 'Be Part of the Mission']);
+      ['Discover GhostHeart', 'Get email updates', 'Be Part of the Mission']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
-      ['/GhostHeart_Story.html', '#join-the-signal', '#mission-board']);
+      ['/GhostHeart_Story.html', '/follow/#email-signup-title', '#mission-board']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
     assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
@@ -22,7 +22,7 @@ module.exports = async (page, base) => {
     assert.equal(await page.locator('.home-email-action a').textContent(), 'Keep Me Connected');
     assert.match(await page.locator('#join-the-signal').innerText(), /confirmed Live announcements/);
     assert.match(await page.locator('#join-the-signal').innerText(), /Free and optional/);
-    for (const fragment of ['#mission-board', '#join-the-signal']) {
+    for (const fragment of ['#mission-board']) {
       await page.locator('#home a[href="' + fragment + '"]').focus();
       await page.keyboard.press('Enter');
       // The same-page jump reaches Playwright's URL a moment after the key press; wait for it instead of racing it.

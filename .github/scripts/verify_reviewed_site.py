@@ -34,7 +34,9 @@ for path in ROOT.rglob("*.html"):
         assert menu and {a.get_text(" ", strip=True) for a in menu.select("a")} == explore
         styles = [a.get("href", "") for a in soup.select('link[rel="stylesheet"]')]
         relative = path.relative_to(ROOT).as_posix()
-        if relative == 'GhostHeart_Story.html' or relative.startswith('passages/'):
+        if relative == 'GhostHeart_Story.html':
+            assert styles[-3:] == ['/assets/loud/loud.css', '/assets/shared/compact-readings.css', '/assets/story/story-bottom-compact.css'], path
+        elif relative.startswith('passages/'):
             assert styles[-2:] == ['/assets/loud/loud.css', '/assets/shared/compact-readings.css'], path
         else:
             assert styles and (styles[-1].endswith('/assets/shared/review-theme.css') or styles[-1] in ('/assets/loud/loud.css', '/assets/loud/loud-skin.css')), path

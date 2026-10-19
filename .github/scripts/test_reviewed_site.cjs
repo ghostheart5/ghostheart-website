@@ -51,10 +51,11 @@ const recordingsPreviewFragments = [
       await link.focus();
       assert.equal(await link.evaluate(element => element.matches(':focus-visible') && parseFloat(getComputedStyle(element).outlineWidth) >= 3), true, 'Visible keyboard focus');
     }
-    await page.locator('#home a[href="#join-the-signal"]').focus();
+    await page.locator('#home a[href="/follow/#email-signup-title"]').focus();
     await page.keyboard.press('Enter');
-    await page.waitForURL(url => url.hash === '#join-the-signal', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
-    assert.equal(new URL(page.url()).hash, '#join-the-signal');
+    await page.waitForURL(url => url.hash === '#email-signup-title', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
+    assert.equal(new URL(page.url()).hash, '#email-signup-title');
+    await page.goto(base + '/');
     await page.locator('#latest a[href="#home-story"]').focus();
     await page.keyboard.press('Enter');
     await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
@@ -202,6 +203,7 @@ const recordingsPreviewFragments = [
   await require('./test_blog_subscription.cjs')(page, base);
   await require('./test_connection_path.cjs')(page, base);
   await require('./test_compact_readings.cjs')(page, base);
+  await require('./test_visible_email.cjs')(page, base);
   assert.equal(errors.length, 0, errors.join('\n'));
   await browser.close();
   console.log('PASS browser: key pages, repeated Privacy Explore clicks, nested 404 recovery, Resources filters, 11 audio players');

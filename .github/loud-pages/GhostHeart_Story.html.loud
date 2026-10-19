@@ -96,6 +96,7 @@
 .story-ctas{display:flex;flex-wrap:wrap;gap:14px;padding:0 max(16px,4vw) 80px;max-width:1100px;margin:0 auto}
 </style>
 <link rel="stylesheet" href="/assets/shared/compact-readings.css">
+<link rel="stylesheet" href="/assets/story/story-bottom-compact.css">
 </head>
 <body class="reading-layout">
 <a class="skip-link" href="#behind-the-scars">Skip to reading</a>
@@ -111,7 +112,7 @@
     <h1 class="display">Enter<br><span class="o">My</span> <span class="r">World.</span></h1>
     <p class="lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
     <p class="lead">The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
-    <div class="ctas"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a></div>
+    <div class="ctas"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a><a class="btn ghost email-entry" href="/follow/#email-signup-title">Get email updates</a></div>
   </div>
 </header>
 
