@@ -1,0 +1,57 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+module.exports = async (page, base) => {
+  for (const width of [320, 390, 1440]) {
+    await page.setViewportSize({width, height:900});
+    await page.goto(base + '/GhostHeart_Story.html#behind-the-scars');
+    const toggle = page.locator('#behind-the-scars > .world-prose-grid .reading-toggle').first();
+    assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
+    assert.equal(await page.locator('.reading-continuation').isVisible(), false);
+    const compactHeight = await page.locator('#behind-the-scars').evaluate(e=>e.offsetHeight);
+    await toggle.focus();
+    assert.equal(await toggle.evaluate(e=>e.matches(':focus-visible') && parseFloat(getComputedStyle(e).outlineWidth)>=3),true);
+    await page.keyboard.press('Enter');
+    assert.equal(await toggle.getAttribute('aria-expanded'),'true');
+    assert.equal(await page.locator('.reading-continuation').isVisible(),true);
+    assert.ok(await page.locator('#behind-the-scars').evaluate(e=>e.offsetHeight)>compactHeight+500);
+    await page.locator('.reading-continuation .reading-toggle').focus();
+    await page.keyboard.press('Space');
+    assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+    assert.equal(await toggle.evaluate(e=>e===document.activeElement),true);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    const dir=process.env.GHOSTHEART_TEST_EVIDENCE_DIR;
+    if(dir){fs.mkdirSync(dir,{recursive:true});await page.locator('#behind-the-scars').screenshot({path:path.join(dir,`compact-story-${width}.png`)});}
+    await page.goto(base + '/passages/');
+    assert.equal(await page.locator('details.p').count(),9);
+    assert.equal(await page.locator('details.p[open]').count(),0);
+    const summary=page.locator('#p02 summary');
+    await summary.focus();
+    assert.equal(await summary.evaluate(e=>e.matches(':focus-visible')&&parseFloat(getComputedStyle(e).outlineWidth)>=3),true);
+    await page.keyboard.press('Enter');
+    assert.equal(await page.locator('#p02').evaluate(e=>e.open),true);
+    await page.keyboard.press('Tab');
+    assert.equal(await page.locator('#p02 a').evaluate(e=>e===document.activeElement),true);
+    assert.equal(await page.locator('#p02 a').getAttribute('href'),'/passages/im-not.html');
+    await page.locator('#p03 summary').focus();await page.keyboard.press('Space');
+    await page.waitForFunction(()=>!document.querySelector('#p02').open);
+    assert.equal(await page.locator('#p03 a').count(),0);
+    await page.locator('#p03 summary').press('Space');
+    assert.equal(await page.locator('#p03').evaluate(e=>e.open),false);
+    await page.goto(base + '/passages/#p01');
+    assert.equal(await page.locator('#p01').evaluate(e=>e.open),true);
+    assert.equal(await page.locator('#p01 a').getAttribute('href'),'/journal/cruel-something-needs-to-change.html');
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    if(dir)await page.locator('#list').screenshot({path:path.join(dir,`compact-passages-${width}.png`)});
+  }
+  const nojs = await page.context().browser().newContext({javaScriptEnabled:false});
+  await nojs.route('https://**/*',route=>route.abort());
+  const fallback = await nojs.newPage();
+  await fallback.goto(base + '/GhostHeart_Story.html');
+  assert.equal(await fallback.locator('.reading-continuation').isVisible(),true);
+  await fallback.goto(base + '/passages/');
+  await fallback.locator('#p02 summary').click();
+  assert.equal(await fallback.locator('#p02 a').isVisible(),true);
+  await nojs.close();
+  console.log('PASS compact readings: three viewports, keyboard, focus return, expanded state, accordion, deep links, locked entries, no overflow');
+};
