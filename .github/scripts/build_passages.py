@@ -63,6 +63,8 @@ latest = open_ones[-1] if open_ones else None
 def card(p: dict) -> str:
     when = f'<div class="when">{escape(p["day"])} · <b>7 PM CT</b></div>'
     title = escape(p["title"])
+    if p.get("release_label") and p["open"]:
+        when = f'<div class="when">{escape(p["release_label"])}</div>'
     if p["open"]:
         teaser = f'<p class="tease">{escape(p["teaser"])}</p>' if p.get("teaser") else ""
         new = "New · " if p is latest else ""
@@ -91,9 +93,10 @@ INDEX.write_text(index, encoding="utf-8")
 
 
 def paragraph(text: str) -> str:
-    text = " ".join(line.strip() for line in text.splitlines())
     if text.startswith("> "):
-        return f'    <p class="pull">{escape(text[2:].strip())}</p>'
+        text = " ".join(line.strip().removeprefix("> ") for line in text.splitlines())
+        return f'    <p class="pull">{escape(text)}</p>'
+    text = " ".join(line.strip() for line in text.splitlines())
     return f"    <p>{escape(text)}</p>"
 
 
@@ -129,6 +132,10 @@ def reading_page(p: dict) -> str:
             f'  <p class="care">Some parts of the story are hard to hear. You can pause or step away. '
             f'If you need support now, see <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p>\n'
             f'  <div class="ctas">{"".join(nav)}</div>\n</section>\n</main>')
+    if p.get("release_label"):
+        main = re.sub(r'<span class="kicker">.*?</span>',
+                      lambda _: f'<span class="kicker">Passage {p["number"]} — {escape(p["release_label"])}</span>',
+                      main, count=1)
     return re.sub(r"<main>.*?</main>", lambda _: main, page, count=1, flags=re.S)
 
 

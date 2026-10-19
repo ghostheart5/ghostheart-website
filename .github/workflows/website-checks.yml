@@ -26,6 +26,7 @@ jobs:
           python3 .github/scripts/verify_world_review.py
           python3 .github/scripts/test_cruel_reading.py
           python3 .github/scripts/test_compact_homepage.py
+          python3 .github/scripts/test_im_not_release.py
       - name: Check JavaScript syntax
         shell: bash
         run: |
