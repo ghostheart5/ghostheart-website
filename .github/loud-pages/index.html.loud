@@ -80,7 +80,7 @@ section{position:relative;padding:clamp(90px,12vw,160px) clamp(16px,4vw,48px)}
 .music{background:var(--blood);color:var(--void)}
 .music .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
 @media(max-width:900px){.music .wrap{grid-template-columns:1fr}}
-.music h2{font-size:clamp(88px,21vw,340px)}
+.music h2{font-size:clamp(60px,7vw,104px);overflow-wrap:break-word}
 .music h2 em{font-style:normal;color:var(--bone);text-shadow:6px 6px 0 var(--void)}
 .music .line{font-size:clamp(22px,2.6vw,34px);font-weight:700;margin:16px 0 28px}
 .player{background:var(--void);color:var(--bone);padding:22px;display:flex;align-items:center;gap:18px;box-shadow:14px 14px 0 var(--ember)}
@@ -93,7 +93,7 @@ section{position:relative;padding:clamp(90px,12vw,160px) clamp(16px,4vw,48px)}
 .player strong{font-family:Anton;font-size:28px;letter-spacing:.03em}
 .cover{position:relative;display:block;aspect-ratio:16/10;background:#000 center/cover;border:6px solid var(--void);box-shadow:-14px 14px 0 var(--void);transform:rotate(2deg);transition:.2s}
 .cover:hover{transform:rotate(0) scale(1.02)}
-.cover::after{content:"WATCH THE FILM ↗";position:absolute;left:-6px;bottom:-6px;background:var(--void);color:var(--bone);font-family:Anton;font-size:22px;padding:10px 16px}
+.cover::after{content:"WATCH THE PREVIEW ↗";position:absolute;left:-6px;bottom:-6px;background:var(--void);color:var(--bone);font-family:Anton;font-size:22px;padding:10px 16px}
 .tracks{list-style:none;margin-top:50px;border-top:3px solid var(--void)}
 .tracks li a{display:grid;grid-template-columns:70px 1fr auto;align-items:center;padding:18px 0;border-bottom:3px solid var(--void);font-family:Anton;font-size:clamp(28px,4.4vw,58px);text-transform:uppercase;transition:.12s}
 .tracks li a span{font-size:.5em;opacity:.6}
@@ -245,20 +245,15 @@ html{scroll-padding-top:var(--hdr,96px)}
 </section>
 <div class="tape"><div><span>LOUD HEART</span><span>OPEN DOOR</span><span>✶ GHOSTHEART ✶</span><span>TOO HUMAN</span><span>LOUD HEART</span><span>OPEN DOOR</span><span>✶ GHOSTHEART ✶</span><span>TOO HUMAN</span></div></div>
 <section class="music" id="latest"><span id="music"></span>
-<div class="label"><span>The Music / From The Awakening</span><span class="num">01</span></div>
+<div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
 <div class="wrap">
 <div class="rv">
-<h2 class="display">Cruel<em>.</em></h2>
-<p class="line">The world can be cruel. Turn it up anyway.</p>
+<h2 class="display">It's Not the 1950s<em>.</em></h2>
+<p class="line">Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
       <p class="jump"><a href="#home-story">Meet the man behind the music ↓</a></p>
-<div class="player" id="player">
-<button aria-label="Play Cruel preview" class="play" id="playBtn"><svg viewbox="0 0 24 24"><path d="M7 4v16l13-8z"></path></svg></button>
-<div><small>Now playing</small><strong>CRUEL</strong><small>GhostHeart / The Awakening</small></div>
-<div aria-hidden="true" class="bars"></div>
-<audio id="aud" preload="none"><source src="/assets/music/preview/awakening-01-cruel.mp3" type="audio/mpeg"/></audio>
+<div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=LPIHyzh4k_4">Watch the preview</a></div>
 </div>
-</div>
-<a aria-label="Watch the Cruel film" class="cover rv" href="/GhostHeart_Videos.html" style="background-image:url('/assets/videos/youtube/9sbFgjM_SDE.jpg')"></a>
+<a aria-label="Watch It's Not the 1950s preview" class="cover rv" href="https://www.youtube.com/watch?v=LPIHyzh4k_4" style="display:grid;place-items:center;background:var(--blood);color:var(--void);font:clamp(28px,5vw,64px) Anton;text-align:center;text-decoration:none">Watch the preview</a>
 </div>
 <ul class="tracks rv">
 <li><a href="/music/#listen"><span>02</span>I'm Not Staying Silent<span>↗</span></a></li>
@@ -310,10 +305,6 @@ html{scroll-padding-top:var(--hdr,96px)}
 <p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
 <script>
-const bars=document.querySelector('.bars');for(let i=0;i<28;i++){const b=document.createElement('i');b.style.animationDelay=(Math.random()*.6)+'s';b.style.height=(15+Math.random()*50)+'%';bars.appendChild(b)}
-const aud=document.getElementById('aud'),pl=document.getElementById('player'),btn=document.getElementById('playBtn');
-btn.addEventListener('click',()=>{if(aud.paused){aud.play().catch(()=>{});pl.classList.add('on')}else{aud.pause();pl.classList.remove('on')}});
-aud.addEventListener('ended',()=>pl.classList.remove('on'));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>

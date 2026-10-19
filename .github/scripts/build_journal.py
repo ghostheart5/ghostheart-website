@@ -194,7 +194,13 @@ daily_js = '''(() => {
     timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit'
   }).formatToParts(new Date()).filter(p => p.type !== 'literal').map(p => [p.type, Number(p.value)]));
   const day = Math.floor(Date.UTC(parts.year, parts.month - 1, parts.day) / 86400000);
-  target.textContent = quotes[((day % quotes.length) + quotes.length) % quotes.length];
+  const index = ((day % quotes.length) + quotes.length) % quotes.length;
+  target.textContent = quotes[index];
+  const number = String(index + 1).padStart(2, '0');
+  const counter = document.getElementById('qn');
+  const link = document.getElementById('qlink');
+  if (counter) counter.textContent = number;
+  if (link) link.href = '/GhostHeart_Quotes.html#quote-' + number;
 })();
 '''.replace('__QUOTES__', json.dumps(QUOTES, ensure_ascii=False))
 write('assets/journal/daily-quote.js', daily_js)

@@ -95,12 +95,12 @@
   <h1 class="display">Stay With<br>the <span class="r">Story.</span></h1>
   <p class="tag">Music videos, lyric videos and cinematic remakes. Twelve films. Pick one.</p>
   <div class="feature">
-    <a class="thumb" href="https://www.youtube.com/watch?v=9sbFgjM_SDE" style="background-image:url('/assets/videos/youtube/9sbFgjM_SDE.jpg')" aria-label="Watch Cruel on YouTube"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <a class="thumb" href="https://www.youtube.com/watch?v=LPIHyzh4k_4" style="display:grid;place-items:center;background:var(--blood)" aria-label="Watch It's Not the 1950s preview"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
     <div>
-      <small>Now showing · GhostHeart's Awakening · Official music video</small>
-      <h2>Cruel.</h2>
-      <p>The full public music video. The world can be cruel.</p>
-      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=9sbFgjM_SDE">▶ Watch Cruel</a><a class="btn ghost" href="/music/#listen">Listen to Cruel</a></div>
+      <small>FEATURED NOW</small>
+      <h2>It's Not the 1950s</h2>
+      <p>Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=LPIHyzh4k_4">Watch the preview</a></div>
     </div>
   </div>
 </header>
