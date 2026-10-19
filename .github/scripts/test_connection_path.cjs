@@ -17,7 +17,7 @@ module.exports = async (page, base) => {
       ['/GhostHeart_Story.html', '#join-the-signal', '#mission-board']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
-    assert.match(await page.locator('#mission-board').innerText(), /The next campaign is in the works/);
+    assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
     assert.equal(await page.locator('#join-the-signal h2').textContent(), 'Be Part of GhostHeart');
     assert.equal(await page.locator('.home-email-action a').textContent(), 'Keep Me Connected');
     assert.match(await page.locator('#join-the-signal').innerText(), /confirmed Live announcements/);
