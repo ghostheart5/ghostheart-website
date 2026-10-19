@@ -65,18 +65,19 @@ def card(p: dict) -> str:
     title = escape(p["title"])
     if p.get("release_label") and p["open"]:
         when = f'<div class="when">{escape(p["release_label"])}</div>'
+    state = "open" if p["open"] else "locked"
+    latest_class = " latest" if p is latest else ""
     if p["open"]:
         teaser = f'<p class="tease">{escape(p["teaser"])}</p>' if p.get("teaser") else ""
         new = "New · " if p is latest else ""
-        return (f'  <a class="p open{" latest" if p is latest else ""}" id="p{p["number"]}" href="{p["href"]}" data-at="{p["date"]}">\n'
-                f'    <span class="no">{p["number"]}</span>\n'
-                f'    <div><div class="meta"><span class="live">{new}Out now</span> · The reading for the song</div><h2>{title}</h2>{when}{teaser}</div>\n'
-                f'    <span class="act">Read ↗</span>\n  </a>')
-    short = p["at"].strftime("%b ") + str(p["at"].day)
-    return (f'  <div class="p locked" id="p{p["number"]}" data-at="{p["date"]}" data-title="{title}" data-day="{escape(p["day"])}">\n'
-            f'    <span class="no">{p["number"]}</span>\n'
-            f'    <div><div class="meta">Coming · The reading for the song</div><h2>{title}</h2>{when}</div>\n'
-            f'    <span class="act">🔒 {short}</span>\n  </div>')
+        panel = (f'<div class="meta"><span class="live">{new}Out now</span> · The reading for the song</div>'
+                 f'{teaser}<a class="btn red" href="{p["href"]}">Read Passage {p["number"]}</a>')
+    else:
+        panel = '<div class="meta">Coming · The reading for the song</div><span class="act">Not yet available</span>'
+    return (f'<details name="passage-readings" class="p {state}{latest_class}" id="p{p["number"]}" data-at="{p["date"]}" '
+            f'data-title="{title}" data-day="{escape(p["day"])}">'
+            f'<summary><span class="no">{p["number"]}</span><div><h2>{title}</h2>{when}</div></summary>'
+            f'<div class="passage-panel">{panel}</div></details>')
 
 
 index = INDEX.read_text(encoding="utf-8")

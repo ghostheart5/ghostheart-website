@@ -41,11 +41,11 @@ def main():
             route = fixture / "passages/im-not.html"
             assert route.exists() == opened
             index = BeautifulSoup((fixture / "passages/index.html").read_text(encoding="utf-8"), "html.parser")
-            assert (index.select_one("#p02").name == "a") == opened
+            assert (index.select_one("#p02 a[href='/passages/im-not.html']") is not None) == opened
             assert ("/passages/im-not.html" in (fixture / "sitemap.xml").read_text()) == opened
             future_open = (future_meta["status"].strip() == "ready" and
                            datetime.fromisoformat(instant.replace("Z", "+00:00")) >= datetime.fromisoformat(future_meta["date"].strip()))
-            assert (index.select_one("#p03").name == "a") == future_open
+            assert (index.select_one("#p03 a[href='/passages/its-not-the-1950s.html']") is not None) == future_open
             assert (fixture / "passages/its-not-the-1950s.html").exists() == future_open
             if opened:
                 page = BeautifulSoup(route.read_text(encoding="utf-8"), "html.parser")
