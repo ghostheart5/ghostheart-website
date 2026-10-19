@@ -233,6 +233,51 @@ html{scroll-padding-top:var(--hdr,96px)}
 #home-story .ghx-actions{margin:20px 0 0;display:flex;flex-wrap:wrap;gap:12px}
 #home-story .ghx-actions a{display:inline-flex;align-items:center;min-height:52px;font-family:Anton,Impact,sans-serif;font-size:20px;text-transform:uppercase;padding:10px 20px;border:3px solid var(--bone)}
 #home-story .ghx-actions a:hover{background:var(--bone);color:var(--void)}
+/* COMPACT PASS 2026-10-18 — same LOUD look, less scrolling */
+section{padding:clamp(48px,6vw,88px) clamp(16px,4vw,48px)}
+.label{margin-bottom:clamp(20px,3vw,36px)}
+.label .num{font-size:clamp(36px,4.5vw,60px)}
+.hero{min-height:auto}
+.hero-copy{padding:96px clamp(16px,4vw,48px) clamp(36px,6vh,64px)}
+.hero .figure{height:min(86svh,820px)}
+h1{font-size:clamp(54px,8.5vw,136px)}
+.tag{margin:14px 0 20px}
+.btn,#home .ghx-actions a{font-size:19px;padding:12px 22px;min-height:48px}
+.music h2{font-size:clamp(46px,5.5vw,84px)}
+.music .line{font-size:clamp(19px,2vw,26px);margin:10px 0 18px}
+.tracks{margin-top:28px}
+.tracks li a{padding:10px 0;font-size:clamp(22px,2.8vw,38px)}
+.man h2{font-size:clamp(50px,7vw,116px)}
+.scars{margin-top:28px;max-width:1100px}
+.scar .img{aspect-ratio:4/5}
+.creed{margin-top:28px;font-size:clamp(28px,3.4vw,50px)}
+#mission-board{padding:clamp(48px,6vw,88px) max(16px,4vw)}
+#mission-board h2{font-size:clamp(42px,5.8vw,92px);max-width:18ch}
+#mission-board .mission-board-grid{margin-top:26px}
+#mission-board article{padding:18px}
+#mission-board h3{font-size:clamp(26px,2.4vw,36px)}
+.heart-not-done{font-size:clamp(50px,8vw,132px);padding:clamp(40px,6vw,72px) max(16px,4vw) 0}
+#join-the-signal{padding:28px max(16px,4vw) clamp(48px,6vw,88px)}
+#join-the-signal h2{font-size:clamp(38px,4.6vw,72px)}
+.vault-h2{font-size:clamp(46px,6vw,96px);margin-bottom:14px}
+.dq{margin-bottom:22px}
+.door{min-height:180px;padding:20px}
+.door .n{font-size:56px}
+.door h3{font-size:clamp(32px,3.6vw,56px)}
+.manifesto blockquote{font-size:clamp(36px,5.4vw,86px);max-width:20ch}
+.manifesto .sig{margin-top:18px}
+.phero{min-height:auto;padding:110px clamp(16px,4vw,48px) clamp(36px,6vh,64px)}
+.phero h1{font-size:clamp(54px,8.5vw,136px)}
+.phero .figure{height:min(86svh,820px)}
+.signal h2{font-size:clamp(56px,9vw,150px)}
+.live h2{font-size:clamp(56px,8vw,130px)}
+.sitefoot{padding:36px max(16px,4vw) 72px}
+@media(max-width:700px){
+  section,#mission-board{padding:44px 16px}
+  h1,.phero h1{font-size:clamp(46px,13vw,64px)}
+  .door{min-height:140px}
+  .scars{gap:10px}
+}
 </style>
 </head>
 <body>
