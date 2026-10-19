@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify exact approved public text, honest release date, and no future release."""
 from pathlib import Path
+from datetime import datetime
 import hashlib
 import os
 import re
@@ -23,6 +24,8 @@ def main():
     assert f"title: {TITLE}\n" in header
     assert "date: 2026-10-19T02:25:44-05:00\n" in header
     expected = [" ".join(line.removeprefix("> ").strip() for line in p.splitlines()) for p in re.split(r"\n\s*\n", body)]
+    future = (ROOT / ".github/content/passages/03-its-not-the-1950s.md").read_text(encoding="utf-8").split("---", 2)[1]
+    future_meta = dict(line.split(":", 1) for line in future.splitlines() if ":" in line)
     with tempfile.TemporaryDirectory(prefix="ghostheart-im-not-test-") as directory:
         fixture = Path(directory)
         for name in [".github/scripts/build_passages.py", "passages/index.html", "sitemap.xml"]:
@@ -40,8 +43,10 @@ def main():
             index = BeautifulSoup((fixture / "passages/index.html").read_text(encoding="utf-8"), "html.parser")
             assert (index.select_one("#p02").name == "a") == opened
             assert ("/passages/im-not.html" in (fixture / "sitemap.xml").read_text()) == opened
-            assert index.select_one("#p03").name == "div"
-            assert not (fixture / "passages/its-not-the-1950s.html").exists()
+            future_open = (future_meta["status"].strip() == "ready" and
+                           datetime.fromisoformat(instant.replace("Z", "+00:00")) >= datetime.fromisoformat(future_meta["date"].strip()))
+            assert (index.select_one("#p03").name == "a") == future_open
+            assert (fixture / "passages/its-not-the-1950s.html").exists() == future_open
             if opened:
                 page = BeautifulSoup(route.read_text(encoding="utf-8"), "html.parser")
                 assert page.select_one("h1").get_text() == TITLE
@@ -49,7 +54,7 @@ def main():
                 assert "Source and review handoff" not in page.get_text()
                 assert "Released Oct 19, 2026" in page.select_one(".kicker").get_text()
                 assert "7 PM" not in page.select_one(".kicker").get_text()
-            print(f"PASS {instant}: approved I'm Not {'open' if opened else 'locked'}; 1950s unpublished")
+            print(f"PASS {instant}: approved I'm Not {'open' if opened else 'locked'}; 1950s {'open at gate' if future_open else 'unpublished'}")
 
 
 if __name__ == "__main__":
