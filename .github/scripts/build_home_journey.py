@@ -31,7 +31,7 @@ def build():
     note['id'] = 'home-story-explanation'
     actions = hero.select_one('.ghx-actions')
     actions.clear()
-    actions.append(BeautifulSoup('<a class="primary" href="/GhostHeart_Story.html" aria-describedby="home-story-explanation">Discover GhostHeart</a><a class="secondary" href="#join-the-signal">Follow the Story</a><a class="secondary" href="#mission-board">Be Part of the Mission</a>', 'html.parser'))
+    actions.append(BeautifulSoup('<a class="primary" href="/GhostHeart_Story.html" aria-describedby="home-story-explanation">Discover GhostHeart</a><a class="secondary" href="/follow/#email-signup-title">Get email updates</a><a class="secondary" href="#mission-board">Be Part of the Mission</a>', 'html.parser'))
     manifest = json.loads((ROOT / '.github/content/music.json').read_text(encoding='utf-8'))
     cruel = manifest['groups'][0]['tracks'][0]
     assert cruel['title'] == 'Cruel' and cruel['youtube'] == 'https://www.youtube.com/watch?v=9sbFgjM_SDE'

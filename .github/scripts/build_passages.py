@@ -127,7 +127,8 @@ def reading_page(p: dict) -> str:
                  f'<audio controls preload="none"><source src="/assets/music/preview/{escape(p["audio"], quote=True)}" type="audio/mpeg"></audio></div>\n')
     main = (f'<main class="reading">\n<header class="pg-hero r-hero">\n'
             f'  <span class="kicker">✶ Passage {p["number"]} · {escape(p["day"])} · 7 PM CT</span>\n'
-            f'  <h1 class="display">{escape(p["title"])}</h1>\n</header>\n'
+            f'  <h1 class="display">{escape(p["title"])}</h1>\n'
+            '<div class="ctas"><a class="btn ghost email-entry" href="/follow/#email-signup-title">Get email updates</a></div>\n</header>\n'
             f'<article class="r-body">\n' + "\n".join(paragraph(x) for x in p["paragraphs"]) + "\n</article>\n"
             f'<section class="r-end">\n{audio}'
             f'  <p class="care">Some parts of the story are hard to hear. You can pause or step away. '
