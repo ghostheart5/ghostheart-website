@@ -36,9 +36,6 @@
     reveal();
   }
   const rows = [...document.querySelectorAll('details.p')];
-  rows.forEach(row => row.addEventListener('toggle', () => {
-    if (row.open) rows.forEach(other => { if (other !== row) other.open = false; });
-  }));
   const revealPassage = () => {
     const row = rows.find(item => '#' + item.id === location.hash);
     if (row) { row.open = true; row.scrollIntoView(); }

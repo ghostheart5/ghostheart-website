@@ -25,6 +25,11 @@ module.exports = async (page, base) => {
     await page.goto(base + '/passages/');
     assert.equal(await page.locator('details.p').count(),9);
     assert.equal(await page.locator('details.p[open]').count(),0);
+    // Native grouping must also hold when openings happen before queued toggle events.
+    await page.evaluate(()=>{document.querySelector('#p02').open=true;document.querySelector('#p03').open=true;});
+    assert.equal(await page.locator('#p02').evaluate(e=>e.open),false);
+    assert.equal(await page.locator('#p03').evaluate(e=>e.open),true);
+    await page.locator('#p03').evaluate(e=>e.open=false);
     const summary=page.locator('#p02 summary');
     await summary.focus();
     assert.equal(await summary.evaluate(e=>e.matches(':focus-visible')&&parseFloat(getComputedStyle(e).outlineWidth)>=3),true);

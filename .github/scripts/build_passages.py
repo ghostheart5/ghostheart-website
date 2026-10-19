@@ -74,7 +74,7 @@ def card(p: dict) -> str:
                  f'{teaser}<a class="btn red" href="{p["href"]}">Read Passage {p["number"]}</a>')
     else:
         panel = '<div class="meta">Coming · The reading for the song</div><span class="act">Not yet available</span>'
-    return (f'<details class="p {state}{latest_class}" id="p{p["number"]}" data-at="{p["date"]}" '
+    return (f'<details name="passage-readings" class="p {state}{latest_class}" id="p{p["number"]}" data-at="{p["date"]}" '
             f'data-title="{title}" data-day="{escape(p["day"])}">'
             f'<summary><span class="no">{p["number"]}</span><div><h2>{title}</h2>{when}</div></summary>'
             f'<div class="passage-panel">{panel}</div></details>')
