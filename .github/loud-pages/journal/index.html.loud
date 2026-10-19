@@ -100,7 +100,7 @@
 
 <section class="qotd">
   <div class="label"><span>Quote of the day / a line to carry</span><span class="num" id="qn">✶</span></div>
-  <blockquote id="qotd">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
+  <blockquote id="qotd" data-daily-quote>Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
   <div class="row"><a class="btn red" href="/GhostHeart_Quotes.html" id="qlink">Open the Quote Vault ↗</a><a class="btn dark" href="/follow/">Get new entries</a></div>
 </section>
 
@@ -113,11 +113,7 @@
   </div>
   <p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
-<script>
-const Q=["Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.","You can’t fight what you don’t face.","When the promise breaks, the heart must carry it.","They call it rebellion when you love who you want.","You can’t close a revolving door, but you can get out.","You can burn every bridge behind you, but ashes don’t rebuild paths.","When the fire dies, silence becomes the loudest scream.","I gave my life so yours could live—the heart that glows is the one that gave.","Some bonds burn brighter... until they consume you.","Everyone has something to say, but gets real quiet when it’s their turn.","It doesn’t matter what they say; they couldn’t handle it anyway.","I can’t draw or sing, but these are my words, and I say what I mean.","Strength is quiet until it roars.","Even broken steel remembers first.","Love doesn’t ask permission to exist.","Truth dances in silence.","Reflection is rebellion."];
-const d=new Date(),i=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5)%Q.length;
-document.getElementById('qotd').textContent=Q[i];const n=String(i+1).padStart(2,'0');document.getElementById('qn').textContent=n;document.getElementById('qlink').href='/GhostHeart_Quotes.html#quote-'+n;
-</script>
+<script src="/assets/journal/daily-quote.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
 </body>

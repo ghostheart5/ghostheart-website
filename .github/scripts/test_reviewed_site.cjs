@@ -59,7 +59,12 @@ const recordingsPreviewFragments = [
     await page.keyboard.press('Enter');
     await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#home-story');
-    assert.equal(await page.locator('#latest source').getAttribute('src'), '/assets/music/preview/awakening-01-cruel.mp3');
+    const preview = page.locator('#latest .ctas a');
+    assert.equal(await preview.count(), 1, 'One featured preview CTA');
+    assert.equal((await preview.textContent()).trim(), 'Watch the preview');
+    assert.equal(await preview.getAttribute('href'), 'https://www.youtube.com/watch?v=LPIHyzh4k_4');
+    assert.equal(await page.locator('#latest .label span').first().innerText(), 'FEATURED NOW');
+    assert.equal(await page.locator('#latest audio, #latest source').count(), 0, 'Featured preview does not play the previous song');
     for (const path of paths) {
       const response = await page.goto(base + path, { waitUntil: 'load' });
       assert.equal(response.status(), 200, path);
