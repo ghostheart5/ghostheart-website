@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/home/rebellion.css"/>
 <link href="/assets/loud/loud.css" rel="stylesheet"/>
 <style>
 :root{color-scheme:dark;
@@ -343,11 +344,24 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 <article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: announcement pending.</p><a href="/live/">Lives &amp; Readings</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
 <div class="heart-not-done" aria-hidden="true">This Heart Isn't <span>Done.</span></div>
+<aside class="rebellion-invite" aria-labelledby="rebellion-title">
+<p class="rebellion-eyebrow">Still here. Still connected.</p>
+<h2 id="rebellion-title">Join the Heart Rebellion.</h2>
+<p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
+<div class="rebellion-actions"><a class="rebellion-primary" href="/follow/#email-signup-title">Join by email ↗</a><a href="#home-vault">Find your next song, film or quote ↓</a></div>
+<p class="rebellion-note">Free and optional. Unsubscribe anytime.</p>
+</aside>
 <section class="signup-section" id="join-the-signal"><div class="site-wrap signup-layout"><div><p class="kicker">Stay connected</p><h2>Be Part of GhostHeart</h2><p>New chapters, stories behind the music, confirmed Live announcements, and ways to take part—when there’s something ready to share.</p><p class="connection-optional">Free and optional. Unsubscribe anytime.</p><div class="ghx-actions home-email-action"><a class="secondary" href="/follow/">Keep Me Connected</a></div></div><nav aria-label="GhostHeart social profiles" class="ghx-actions"><a class="primary" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank">YouTube</a><a class="secondary" href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank">TikTok</a><a class="secondary" href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank">Instagram</a><a class="secondary" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank">Spotify</a></nav></div></section>
 <section class="doors" id="home-vault"><span id="vault"></span>
 <div class="label"><span>Pick your way in</span><span class="num">04</span></div>
 <h2 class="display vault-h2">GhostHeart's Vault</h2>
+<p class="rebellion-return">Come back for a different line each day, revisit a film, or explore the published stories.</p>
+<p class="rebellion-eyebrow">A line for today · <span id="qn">01</span> / 17</p>
 <blockquote class="dq" data-daily-quote="">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
+<div class="rebellion-actions quote-actions"><a id="qlink" href="/GhostHeart_Quotes.html#quote-01">Open this quote ↗</a><button type="button" data-home-copy hidden>Copy quote</button><button type="button" data-home-share hidden>Share quote</button></div>
+<p id="home-share-status" class="rebellion-note" role="status" aria-live="polite"></p>
+<div id="home-share-fallback" hidden><label for="home-share-text">Select and copy this quote and its link:</label><textarea id="home-share-text" readonly rows="4"></textarea></div>
+
 <div class="door-grid">
 <a class="door" href="/music/"><span class="n">01</span><div><h3>Hear<br/>GhostHeart</h3><p>Every song. Every album.</p></div></a>
 <a class="door" href="/GhostHeart_Videos.html"><span class="n">02</span><div><h3>Enter the<br/>Screen</h3><p>Films &amp; shorts</p></div></a>
@@ -377,6 +391,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script src="/assets/journal/daily-quote.js"></script>
+<script src="/assets/home/rebellion.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
 </body>

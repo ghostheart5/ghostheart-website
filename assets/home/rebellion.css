@@ -1,0 +1,17 @@
+.rebellion-invite{margin:24px max(16px,4vw) 0;padding:clamp(20px,3vw,36px);border:2px solid var(--blood);border-left:8px solid var(--blood);background:var(--void);color:var(--bone)}
+.rebellion-eyebrow{font:700 12px/1.5 "Space Grotesk",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.rebellion-invite h2{font:400 clamp(32px,4.6vw,64px)/1.05 Anton,Impact,sans-serif;text-transform:uppercase;margin:12px 0}
+.rebellion-invite>p:not(.rebellion-eyebrow),.rebellion-return{font:400 17px/1.6 "Space Grotesk",sans-serif;max-width:65ch}
+.rebellion-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0 12px}
+.rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border:2px solid currentColor;color:inherit;background:transparent;font:700 15px/1.4 "Space Grotesk",sans-serif;text-decoration:none;cursor:pointer}
+.rebellion-actions .rebellion-primary{background:var(--blood);border-color:var(--blood);color:var(--void)}
+.rebellion-actions :is(a,button):hover{box-shadow:4px 4px 0 currentColor}
+.rebellion-actions :is(a,button):focus-visible,#home-share-text:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.rebellion-note{font:400 14px/1.6 "Space Grotesk",sans-serif}
+#home-vault{scroll-margin-top:100px}
+#home-share-status:empty{display:none}
+#home-share-fallback{max-width:65ch;margin:18px 0}
+#home-share-text{display:block;width:100%;box-sizing:border-box;margin-top:8px;padding:12px;border:2px solid currentColor;background:var(--void);color:var(--bone);font:400 16px/1.5 "Space Grotesk",sans-serif}
+.rebellion-actions [hidden],#home-share-fallback[hidden]{display:none}
+@media(max-width:480px){.rebellion-actions{align-items:stretch}.rebellion-actions a{width:100%;box-sizing:border-box}.rebellion-invite{padding:20px 16px}}
+@media(max-width:700px){#home-vault{scroll-margin-top:180px}}

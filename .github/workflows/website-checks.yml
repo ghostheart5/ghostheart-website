@@ -46,3 +46,4 @@ jobs:
           SERVER_PID=$!
           trap 'kill "$SERVER_PID"' EXIT
           node .github/scripts/test_reviewed_site.cjs
+          node .github/scripts/test_home_rebellion.cjs
