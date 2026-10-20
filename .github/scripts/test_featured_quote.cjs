@@ -48,9 +48,13 @@ for(const file of ['index.html','GhostHeart_Videos.html']) {
  assert(html.includes('FEATURED NOW'));
  assert(html.includes("It's Not the 1950s"));
  assert(html.includes('Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.'));
- assert(html.includes('https://www.youtube.com/watch?v=LPIHyzh4k_4'));
- assert(html.includes('Watch the preview'));
+ assert(html.includes('https://www.youtube.com/watch?v=RtFTIssLd0s'));
+ assert(html.includes('Watch the full film'));
+ assert(!/watch the preview/i.test(html));
 }
+const start=fs.readFileSync('start/index.html','utf8');
+assert(start.includes('href="https://www.youtube.com/watch?v=RtFTIssLd0s">It’s Not the 1950s — Watch the full film</a>'));
+for (const href of ['/GhostHeart_Story.html', '/albums/index.html#awakening', '/albums/index.html#youre-not-god']) assert(start.includes('href="'+href+'"'));
 const films=fs.readFileSync('GhostHeart_Videos.html','utf8');
 assert(films.includes('id="film-cruel"'));
 assert(films.includes('data-video-id="9sbFgjM_SDE"'));

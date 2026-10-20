@@ -62,8 +62,8 @@ const recordingsPreviewFragments = [
     assert.equal(new URL(page.url()).hash, '#home-story');
     const preview = page.locator('#latest .ctas a');
     assert.equal(await preview.count(), 1, 'One featured preview CTA');
-    assert.equal((await preview.textContent()).trim(), 'Watch the preview');
-    assert.equal(await preview.getAttribute('href'), 'https://www.youtube.com/watch?v=LPIHyzh4k_4');
+    assert.equal((await preview.textContent()).trim(), 'Watch the full film');
+    assert.equal(await preview.getAttribute('href'), 'https://www.youtube.com/watch?v=RtFTIssLd0s');
     assert.equal(await page.locator('#latest .label span').first().innerText(), 'FEATURED NOW');
     assert.equal(await page.locator('#latest audio, #latest source').count(), 0, 'Featured preview does not play the previous song');
     for (const path of paths) {
