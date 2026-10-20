@@ -95,12 +95,12 @@
   <h1 class="display">Stay With<br>the <span class="r">Story.</span></h1>
   <p class="tag">Music videos, lyric videos and cinematic remakes. Twelve films. Pick one.</p>
   <div class="feature">
-    <a class="thumb" href="https://www.youtube.com/watch?v=LPIHyzh4k_4" style="display:grid;place-items:center;background:var(--blood)" aria-label="Watch It's Not the 1950s preview"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <a class="thumb" href="https://www.youtube.com/watch?v=RtFTIssLd0s" style="display:grid;place-items:center;background:var(--blood)" aria-label="Watch It's Not the 1950s full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
     <div>
       <small>FEATURED NOW</small>
       <h2>It's Not the 1950s</h2>
       <p>Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
-      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=LPIHyzh4k_4">Watch the preview</a></div>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=RtFTIssLd0s">Watch the full film</a></div>
     </div>
   </div>
 </header>

@@ -93,7 +93,7 @@ section{position:relative;padding:clamp(90px,12vw,160px) clamp(16px,4vw,48px)}
 .player strong{font-family:Anton;font-size:28px;letter-spacing:.03em}
 .cover{position:relative;display:block;aspect-ratio:16/10;background:#000 center/cover;border:6px solid var(--void);box-shadow:-14px 14px 0 var(--void);transform:rotate(2deg);transition:.2s}
 .cover:hover{transform:rotate(0) scale(1.02)}
-.cover::after{content:"WATCH THE PREVIEW ↗";position:absolute;left:-6px;bottom:-6px;background:var(--void);color:var(--bone);font-family:Anton;font-size:22px;padding:10px 16px}
+.cover::after{content:"WATCH THE FULL FILM ↗";position:absolute;left:-6px;bottom:-6px;background:var(--void);color:var(--bone);font-family:Anton;font-size:22px;padding:10px 16px}
 .tracks{list-style:none;margin-top:50px;border-top:3px solid var(--void)}
 .tracks li a{display:grid;grid-template-columns:70px 1fr auto;align-items:center;padding:18px 0;border-bottom:3px solid var(--void);font-family:Anton;font-size:clamp(28px,4.4vw,58px);text-transform:uppercase;transition:.12s}
 .tracks li a span{font-size:.5em;opacity:.6}
@@ -296,9 +296,9 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 <h2 class="display">It's Not the 1950s<em>.</em></h2>
 <p class="line">Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
       <p class="jump"><a href="#home-story">Meet the man behind the music ↓</a></p>
-<div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=LPIHyzh4k_4">Watch the preview</a></div>
+<div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=RtFTIssLd0s">Watch the full film</a></div>
 </div>
-<a aria-label="Watch It's Not the 1950s preview" class="cover rv" href="https://www.youtube.com/watch?v=LPIHyzh4k_4" style="display:grid;place-items:center;background:var(--blood);color:var(--void);font:clamp(28px,5vw,64px) Anton;text-align:center;text-decoration:none">Watch the preview</a>
+<a aria-label="Watch It's Not the 1950s full film" class="cover rv" href="https://www.youtube.com/watch?v=RtFTIssLd0s" style="display:grid;place-items:center;background:var(--blood);color:var(--void);font:clamp(28px,5vw,64px) Anton;text-align:center;text-decoration:none">Watch the full film</a>
 </div>
 <ul class="tracks rv">
 <li><a href="/music/#listen"><span>02</span>I'm Not Staying Silent<span>↗</span></a></li>

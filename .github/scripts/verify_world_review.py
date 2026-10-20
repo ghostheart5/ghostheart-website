@@ -195,8 +195,8 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
 }
 assert home.select_one("#home-vault [data-daily-quote]")
 assert home.select_one('#latest .label span').get_text() == 'FEATURED NOW'
-assert home.select_one('#latest .ctas a')['href'] == 'https://www.youtube.com/watch?v=LPIHyzh4k_4'
-assert home.select_one('#latest .ctas a').get_text() == 'Watch the preview'
+assert home.select_one('#latest .ctas a')['href'] == 'https://www.youtube.com/watch?v=RtFTIssLd0s'
+assert home.select_one('#latest .ctas a').get_text() == 'Watch the full film'
 assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'

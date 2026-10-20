@@ -46,7 +46,7 @@ def main():
             )
             rebuilt = (fixture / "index.html").read_text(encoding="utf-8")
             assert compact_css(rebuilt) == expected, f"Rebuild {run} lost or changed compact CSS"
-            assert 'https://www.youtube.com/watch?v=LPIHyzh4k_4' in rebuilt
+            assert 'https://www.youtube.com/watch?v=RtFTIssLd0s' in rebuilt
             assert "FEATURED NOW" in rebuilt
             if previous is not None:
                 assert rebuilt == previous, "Second LOUD build changed homepage output"
