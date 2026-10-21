@@ -52,7 +52,7 @@ def build():
 <div class="mission-board-grid">
 <article><h3>Latest chapter</h3><p>Behind the Scars — The Awakening.</p><a href="/GhostHeart_Story.html#behind-the-scars">Read the public beginning</a><a href="/journal/">Explore the stories behind the songs</a></article>
 <article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
-<article><h3>Coming next</h3><p>{escape(CONNECTION['campaign'])}</p><p>Next Live: announcement pending.</p><a href="/live/">Lives &amp; Readings</a></article>
+<article><h3>Coming next</h3><p>{escape(CONNECTION['campaign'])}</p><p>Next Live: announcement pending.</p><p>Live day: Sunday.</p><a href="/live/">Lives &amp; Readings</a></article>
 </div><p class="mission-participation">{escape(CONNECTION['participation'])}</p></section>''', 'html.parser').section
     discovery = main.select_one('.home-discovery')
     quote = main.select_one('[data-daily-quote]')

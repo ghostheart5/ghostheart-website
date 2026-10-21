@@ -271,6 +271,37 @@ h1{font-size:clamp(54px,8.5vw,136px)}
   .door{min-height:140px}
   .scars{gap:10px}
 }
+/* HOMEPAGE SCALE 2026-10-21 — align with compact inner pages */
+section,#mission-board{padding:32px max(16px,4vw)}
+.label{margin-bottom:18px}.label .num{font-size:32px}
+.hero-copy{padding:calc(var(--hdr,96px) + 20px) max(16px,4vw) 28px;max-width:1000px}
+.hero .figure{height:100%;max-height:560px}
+h1{font-size:clamp(40px,5vw,72px);line-height:.95}
+.tag,.music .line{font-size:18px;line-height:1.5;margin:12px 0}
+.btn,#home .ghx-actions a{font-size:16px;padding:10px 16px;min-height:44px}
+.music h2,.man h2,.vault-h2{font-size:clamp(34px,4vw,56px);line-height:1.05}
+.tracks{margin-top:20px}.tracks li a{font-size:clamp(18px,2vw,28px);padding:10px 0}
+.scars{margin-top:20px;gap:18px}.scar .img{aspect-ratio:4/3;max-height:240px}
+.creed{font-size:clamp(22px,2.6vw,36px);margin-top:20px}
+#mission-board h2{font-size:clamp(30px,3.4vw,48px);line-height:1.1;max-width:28ch}
+#mission-board h3{font-size:26px;line-height:1.1}
+#mission-board .mission-board-grid{margin-top:20px}
+.heart-not-done{font-size:clamp(32px,4vw,56px);padding:28px max(16px,4vw) 0}
+#join-the-signal{padding:24px max(16px,4vw) 32px}
+#join-the-signal h2{font-size:clamp(30px,3.4vw,48px);line-height:1.1}
+#join-the-signal .ghx-actions a{font-size:16px;min-height:44px;padding:10px 14px}
+.rebellion-invite{padding:20px}.rebellion-invite h2{font-size:clamp(28px,3.2vw,44px)}
+.door{min-height:130px;padding:16px}.door .n{font-size:32px}.door h3{font-size:clamp(24px,2.5vw,36px);line-height:1}
+.manifesto blockquote{font-size:clamp(28px,3.2vw,46px);line-height:1.1;max-width:30ch}
+@media(max-width:700px){section,#mission-board{padding:28px 16px}.hero-copy{padding:calc(var(--hdr,96px) + 16px) 16px 24px}.door{min-height:110px}.scars{gap:16px}.scar .img{max-height:200px}}
+.door-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sitefoot{padding:28px max(16px,4vw);font-size:15px}.sitefoot .fcols{gap:20px}.sitefoot b{font-size:26px}.sitefoot nav a{display:inline-flex;align-items:center;min-height:44px}.sitefoot nav{gap:0}.sitefoot .fcopy{margin-top:20px}
+@media(max-width:700px){.door-grid{grid-template-columns:1fr}.door{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;min-height:100px}.door h3 br{display:none}.door h3{font-size:24px}.door h3 br::after{content:" "}}
+.hero{padding:0}.canon-hero__line{font-size:17px;line-height:1.5;margin-top:14px}.canon-hero__note{font-size:18px}.tag{font-size:17px}
+.scars{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}.scar .img{max-height:180px}.scar span{position:static;display:flex;align-items:center;min-height:44px;font-size:17px;line-height:1.3}
+#mission-board article{padding:14px;gap:6px}#mission-board article p{font-size:16px;line-height:1.5}
+#join-the-signal p{font-size:16px;line-height:1.4}
+#mission-board article:last-child{align-self:start;padding:12px;gap:4px}#mission-board article:last-child p{line-height:1.35}
 </style>
 </head>
 <body>
@@ -309,11 +340,9 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 </section>
 <section class="man" id="home-story"><span id="story"></span>
 <div class="label"><span>Behind the Name / Real life. Fictional reflection.</span><span class="num">03</span></div>
-<h2 class="display rv"><a href="/GhostHeart_Story.html#behind-the-scars">The Man<br/>Behind <span class="o">The</span> Heart.</a></h2>
+<h2 class="display rv">The Man<br/>Behind <span class="o">The</span> Heart.</h2>
 <div class="scars">
-<a class="scar c3 rv" href="/GhostHeart_Story.html">Continue the story ↗</a>
-<a class="scar c1 rv" href="/GhostHeart_Story.html"><div class="img"></div><span>The Heart</span></a>
-<a class="scar c2 rv" href="/GhostHeart_Story.html#behind-the-scars"><div class="img"></div><span>The Scars</span></a>
+<a class="scar c1 rv" href="/GhostHeart_Story.html#behind-the-scars"><div class="img"></div><span>Read Behind the Scars</span></a>
 <a class="scar c4 rv" href="/journal/"><div class="img"></div><span>The Journal</span></a>
 </div>
 <div class="creed rv"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
@@ -331,7 +360,7 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 <!--@inject #join-the-signal-->
 <section class="doors" id="home-vault"><span id="vault"></span>
 <div class="label"><span>Pick your way in</span><span class="num">04</span></div>
-<h2 class="display vault-h2">GhostHeart's Vault</h2>
+<h2 class="display vault-h2">The Vault</h2>
 <p class="rebellion-return">Come back for a different line each day, revisit a film, or explore the published stories.</p>
 <p class="rebellion-eyebrow">A line for today · <span id="qn">01</span> / 17</p>
 <blockquote class="dq" data-daily-quote="">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
@@ -340,12 +369,11 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 <div id="home-share-fallback" hidden><label for="home-share-text">Select and copy this quote and its link:</label><textarea id="home-share-text" readonly rows="4"></textarea></div>
 
 <div class="door-grid">
-<a class="door" href="/music/"><span class="n">01</span><div><h3>Hear<br/>GhostHeart</h3><p>Every song. Every album.</p></div></a>
-<a class="door" href="/GhostHeart_Videos.html"><span class="n">02</span><div><h3>Enter the<br/>Screen</h3><p>Films &amp; shorts</p></div></a>
-<a class="door" href="/journal/"><span class="n">03</span><div><h3>Turn the<br/>Page</h3><p>Stories &amp; journal</p></div></a>
-<a class="door" href="/GhostHeart_Quotes.html"><span class="n">04</span><div><h3>Take a Line<br/>With You</h3><p>Words that hit</p></div></a>
+<a class="door" href="/music/"><span class="n">01</span><div><h3>Hear<br/> GhostHeart</h3><p>Every song. Every album.</p></div></a>
+<a class="door" href="/GhostHeart_Videos.html"><span class="n">02</span><div><h3>Enter the<br/> Screen</h3><p>Films &amp; shorts</p></div></a>
+<a class="door" href="/journal/"><span class="n">03</span><div><h3>Turn the<br/> Page</h3><p>Stories &amp; journal</p></div></a>
 </div>
-<div class="ctas" style="margin-top:30px"><a class="btn red" href="/vault/">Open the full Vault ↗</a></div>
+<div class="ctas" style="margin-top:30px"><a class="btn red" href="/vault/">Explore The Vault: music, films &amp; quotes ↗</a></div>
 </section>
 <section class="manifesto">
 <svg aria-hidden="true" class="crack" viewbox="0 0 100 90"><path d="M50 88 8 46C-6 32 2 6 24 6c11 0 20 7 26 16 6-9 15-16 26-16 22 0 30 26 16 40Z" fill="#050505"></path><path d="M50 22 42 40l12 8-10 14 8 10" fill="none" stroke="#e8001c" stroke-width="3"></path></svg>
@@ -358,7 +386,7 @@ h1{font-size:clamp(54px,8.5vw,136px)}
 <div class="fcols">
 <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
 <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quote Vault</a></nav>
+<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a></nav>
 <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
 </div>
 <p class="fcopy">© 2026 GhostHeart Studios</p>

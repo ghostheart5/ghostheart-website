@@ -50,7 +50,7 @@ module.exports = async (page, base) => {
       await page.keyboard.press('Tab');
       assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('href')), '/GhostHeart_Privacy.html');
       if (route === '/journal/') {
-        assert.equal(await page.locator('h1').textContent(), 'Behind the songs.');
+        assert.equal(await page.locator('h1').textContent(), 'The GhostHeart Blog.');
         assert.equal(await page.locator('.journal-feature').evaluate(node => Boolean(node.compareDocumentPosition(document.querySelector('.journal-highlights')) & Node.DOCUMENT_POSITION_FOLLOWING)), true);
       } else {
         assert.equal(await page.locator('.journal-prose').evaluate(node => node.nextElementSibling.classList.contains('journal-signup')), true);

@@ -22,6 +22,20 @@ module.exports = async (page, base) => {
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     const dir=process.env.GHOSTHEART_TEST_EVIDENCE_DIR;
     if(dir){fs.mkdirSync(dir,{recursive:true});await page.locator('#behind-the-scars').screenshot({path:path.join(dir,`compact-story-${width}.png`)});}
+    await page.goto(base + '/woman-behind-the-scenes/');
+    const womanToggle = page.locator('.reading-body > .reading-toggle');
+    const womanReading = page.locator('#woman-full-reading');
+    assert.equal(await womanToggle.getAttribute('aria-expanded'), 'false');
+    assert.equal(await womanReading.isVisible(), false);
+    await womanToggle.focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await womanToggle.getAttribute('aria-expanded'), 'true');
+    assert.equal(await womanReading.isVisible(), true);
+    await womanReading.locator('.reading-toggle').focus();
+    await page.keyboard.press('Space');
+    assert.equal(await womanReading.isVisible(), false);
+    assert.equal(await womanToggle.evaluate(e=>e===document.activeElement), true);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth), true);
     await page.goto(base + '/passages/');
     assert.equal(await page.locator('details.p').count(),9);
     assert.equal(await page.locator('details.p[open]').count(),0);
@@ -53,6 +67,8 @@ module.exports = async (page, base) => {
   await nojs.route('https://**/*',route=>route.abort());
   const fallback = await nojs.newPage();
   await fallback.goto(base + '/GhostHeart_Story.html');
+  assert.equal(await fallback.locator('.reading-continuation').isVisible(),true);
+  await fallback.goto(base + '/woman-behind-the-scenes/');
   assert.equal(await fallback.locator('.reading-continuation').isVisible(),true);
   await fallback.goto(base + '/passages/');
   await fallback.locator('#p02 summary').click();

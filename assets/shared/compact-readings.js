@@ -1,8 +1,7 @@
 /* Progressive enhancement: complete prose remains available without JavaScript. */
 (() => {
-  const continuation = document.querySelector('#behind-the-scars .reading-continuation');
-  if (continuation) {
-    continuation.id = 'scars-full-reading';
+  document.querySelectorAll('#behind-the-scars .reading-continuation, .love-page .reading-continuation').forEach(continuation => {
+    continuation.id = continuation.closest('.love-page') ? 'woman-full-reading' : 'scars-full-reading';
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'reading-toggle';
@@ -34,7 +33,7 @@
     };
     addEventListener('hashchange', reveal);
     reveal();
-  }
+  });
   const rows = [...document.querySelectorAll('details.p')];
   const revealPassage = () => {
     const row = rows.find(item => '#' + item.id === location.hash);

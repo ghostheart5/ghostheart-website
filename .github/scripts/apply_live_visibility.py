@@ -20,7 +20,7 @@ def apply():
             pending = '''<main id="main-content"><div class="ghx-wrap readings-page">
 <p class="ghx-kicker">GhostHeart / Lives &amp; Readings</p><h1>Lives &amp; Readings.</h1>
 <section class="readings-event" aria-labelledby="live-status-title"><h2 id="live-status-title">Next Live: announcement pending.</h2>
-<p>No upcoming Live date or viewing link is confirmed yet.</p><p><a href="/follow/">Be Part of GhostHeart</a> for the announcement when details are ready.</p></section>
+<p>No upcoming Live date or viewing link is confirmed yet.</p><p>Live day: Sunday. The next date, time and viewing platform are still to be confirmed.</p><p><a href="/follow/">Be Part of GhostHeart</a> for the announcement when details are ready.</p></section>
 <section class="readings-event" aria-labelledby="promise-title"><p class="ghx-kicker">Read now</p><h2 id="promise-title">My Promise</h2><p>A promise to keep learning, listening, and choosing care.</p><a href="/live/my-promise.html">Read My Promise</a></section>
 <p><a href="/GhostHeart_Story.html">Enter My World</a> or <a href="/journal/">read the Blog</a>.</p>
 </div></main>'''
