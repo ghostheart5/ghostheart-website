@@ -201,7 +201,11 @@ assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
 assert [section.get('id') for section in home.select('main > section')][:5] == ['home', 'latest', 'home-story', 'mission-board', 'join-the-signal']
-assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "GhostHeart's Vault"
+assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "The Vault"
+assert not home.select('#home-vault .door[href="/GhostHeart_Quotes.html"], .sitefoot a[href="/GhostHeart_Quotes.html"]')
+assert len(home.select('#home-story a[href^="/GhostHeart_Story.html"]')) == 1
+assert 'Live day: Sunday.' in home.get_text()
+
 assert home.select_one('#home-vault a[href="/vault/"]')
 assert not home.select_one("#home-lives")
 assert home.select_one('#mission-board a[href="/live/"]')

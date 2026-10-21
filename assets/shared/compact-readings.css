@@ -1,6 +1,6 @@
 .reading-toggle{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;margin:12px 0 24px;border:3px solid var(--blood);background:var(--blood);color:var(--void);font:inherit;font-weight:700;cursor:pointer;scroll-margin-top:calc(var(--hdr,110px) + 24px)}
 .reading-toggle:focus-visible,details.p>summary:focus-visible,details.p .btn:focus-visible{outline:3px solid var(--bone);outline-offset:5px}
-#behind-the-scars .reading-continuation[hidden]{display:none}
+:is(#behind-the-scars,.love-page) .reading-continuation[hidden]{display:none}
 details.p{display:block;padding:0;opacity:1;scroll-margin-top:calc(var(--hdr,110px) + 24px)}
 details.p>summary{display:grid;grid-template-columns:32px minmax(0,1fr) 24px;gap:12px;align-items:center;min-height:64px;padding:16px;cursor:pointer;list-style:none}
 details.p>summary::-webkit-details-marker{display:none}
@@ -18,4 +18,8 @@ details.p.open:hover .no{color:var(--blood)}
 details.p .act{display:inline-block;border:0;padding:0;font:inherit;color:var(--ash);white-space:normal}
 details.p.latest .act,details.p.open:hover .act{background:none;color:var(--ash)}
 @media(max-width:400px){details.p>summary{gap:8px;padding:12px}details.p .passage-panel{padding-left:52px}}
-@media print{#behind-the-scars .reading-continuation[hidden]{display:block}.reading-toggle{display:none}}
+@media print{:is(#behind-the-scars,.love-page) .reading-continuation[hidden]{display:block}.reading-toggle{display:none}}
+
+.love-page .reading-body > .reading-toggle{grid-column:1;grid-row:2;justify-self:start}
+.love-page.reading-layout .reading-continuation{grid-row:3}
+.love-page.reading-layout .reading-opening .world-approved-art{grid-row:1 / span 3}

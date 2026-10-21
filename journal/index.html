@@ -68,6 +68,21 @@
 .journal-signup .g-honeypot{position:absolute;left:-5000px}
 .journal-signup a{text-decoration:underline}
 .journal-signup button:focus-visible,.journal-signup input:focus-visible{outline:3px solid var(--void);outline-offset:3px}
+/* Compact entry index; article prose, dates and routes are unchanged. */
+section{padding:32px max(16px,4vw)}
+.bhero{padding:calc(var(--hdr,96px) + 20px) max(16px,4vw) 28px}
+.bhero h1{font-size:clamp(36px,4.8vw,64px);line-height:1.05;margin-top:12px}
+.bhero .tag,.journal-purpose{font-size:17px;line-height:1.5;max-width:70ch;margin:12px 0}
+.label{margin-bottom:18px}.label .num{font-size:32px}
+.btn{font-size:16px;min-height:44px;padding:10px 14px}
+.lead-post{grid-template-columns:minmax(160px,240px) 1fr;padding:20px;gap:24px;box-shadow:6px 6px 0 var(--bone)}
+.lead-post h2{font-size:clamp(28px,3vw,42px);line-height:1.1}.lead-post p{font-size:17px;line-height:1.5;margin-bottom:16px}
+.posts{margin-top:24px}.posts a{grid-template-columns:40px 1fr auto;padding:16px 0;gap:16px}.posts .no{font-size:28px}.posts h3{font-size:clamp(24px,2.3vw,32px);line-height:1.15}.posts p{font-size:16px;line-height:1.5}.posts .go{font-size:16px;padding:10px}
+.journal-signup{margin:24px 0;padding:20px;box-shadow:6px 6px 0 var(--blood)}.journal-signup h2{font-size:clamp(28px,3vw,40px);line-height:1.1}.journal-signup button{font-size:16px}
+.archive{margin-top:24px;padding:18px}.archive h3{font-size:28px}.archive p{font-size:16px;line-height:1.5}
+.qotd blockquote{font-size:clamp(26px,3vw,42px);line-height:1.2;max-width:32ch}.qotd .row{margin-top:18px}
+.sitefoot{padding:28px max(16px,4vw)}.sitefoot b{font-size:26px}.sitefoot nav a{display:inline-flex;align-items:center;min-height:44px}.sitefoot nav{gap:0}
+@media(max-width:700px){.lead-post{grid-template-columns:1fr}.lead-post .thumb{max-width:240px;width:100%;aspect-ratio:16/7}.posts a{grid-template-columns:28px 1fr;gap:12px}.posts .go{display:none}section{padding:28px 16px}}
 </style>
 </head>
 <body>
@@ -84,7 +99,8 @@
 <header class="bhero">
   <div class="giant display">BEHIND THE SONGS</div>
   <span class="kicker">✶ GhostHeart / Blog</span>
-  <h1 class="display">Behind the <span class="r">songs.</span></h1>
+  <h1 class="display">The GhostHeart <span class="r">Blog.</span></h1>
+  <p class="journal-purpose">Readings and short notes behind the songs. Choose an entry below by title and date.</p>
   <p class="tag">The songs don’t tell you everything. Here I write about the thoughts behind them and the questions they leave with me.</p>
 <div class="ctas"><a class="btn ghost email-entry" href="/follow/#email-signup-title">Get email updates</a></div>
 </header>
@@ -118,14 +134,14 @@
 <section class="qotd">
   <div class="label"><span>Quote of the day / a line to carry</span><span class="num" id="qn">✶</span></div>
   <blockquote id="qotd" data-daily-quote>Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
-  <div class="row"><a class="btn red" href="/GhostHeart_Quotes.html" id="qlink">Open the Quote Vault ↗</a><a class="btn dark" href="/follow/">Get new entries</a></div>
+  <div class="row"><a class="btn red" href="/GhostHeart_Quotes.html" id="qlink">Open this quote ↗</a><a class="btn dark" href="/follow/">Get new entries</a></div>
 </section>
 
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
     <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
-    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Quotes.html">Quote Vault</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a></nav>
     <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
   </div>
   <p class="fcopy">© 2026 GhostHeart Studios</p>
