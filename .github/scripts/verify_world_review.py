@@ -218,6 +218,13 @@ for path in ROOT.rglob('*.html'):
     if '.git' in path.parts or '.github' in path.parts:
         continue
     document = page(path.relative_to(ROOT))
+    # Shared navigation has one Vault destination; quote deep links in content remain valid.
+    for navigation in document.select('header, footer'):
+        vault_links = navigation.select('a[href="/vault/"]')
+        if vault_links:
+            assert not navigation.select('a[href="/GhostHeart_Quotes.html"]'), (path, 'duplicate Vault navigation')
+            if navigation.name == 'footer':
+                assert len(vault_links) == 1, (path, 'duplicate Vault footer')
     for link in document.select('a[href]'):
         target = link['href'].replace('../', '').lstrip('/')
         assert not any(label in link.get_text(' ', strip=True) for label in ['GhostHeart and His Angel', 'Meet the Angel']), (path, link)
