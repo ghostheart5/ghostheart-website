@@ -139,7 +139,7 @@ details p{margin-top:12px;color:#c9c6c1}
     <div class="shot"></div>
     <div class="rec"><i></i>OFF AIR · STANDBY</div>
     <div class="ch">GH/001</div>
-    <div class="lower"><span>TRANSMISSION INCOMING ✶ STAY IN THE SIGNAL ✶ TRANSMISSION INCOMING ✶ STAY IN THE SIGNAL ✶ </span></div>
+    <div class="lower"><span>TRANSMISSION INCOMING ✶ STAY CONNECTED ✶ TRANSMISSION INCOMING ✶ STAY CONNECTED ✶ </span></div>
   </div>
 </header>
 
@@ -157,10 +157,10 @@ details p{margin-top:12px;color:#c9c6c1}
     </div>
     <div>
       <h2 class="display rv">One Door.<br><span>Two Ways<br>Forward.</span></h2>
-      <p class="lead">Someone is on the other side. GhostHeart can open the door — or send a signal for another way in.</p>
+      <p class="lead">Someone is on the other side. GhostHeart can open the door — or reach out for another way in.</p>
       <div class="choices">
         <button data-branch="door" aria-pressed="false" aria-controls="result"><span>01</span>Open the door<b>↗</b></button>
-        <button data-branch="signal" aria-pressed="false" aria-controls="result"><span>02</span>Send the signal<b>↗</b></button>
+        <button data-branch="signal" aria-pressed="false" aria-controls="result"><span>02</span>Reach out<b>↗</b></button>
       </div>
       <div class="result" id="result" role="status" aria-live="polite"><p id="rTitle">Choose a direction.</p><span id="rCopy">This scene is yours to explore.</span></div>
       <p class="note">Scene preview only. These choices do not submit a vote.</p>
@@ -223,7 +223,7 @@ details p{margin-top:12px;color:#c9c6c1}
 <script>
 const branches={
   door:{title:'The door opens.',label:'The way in is open.',copy:'GhostHeart makes room. The person outside can step into the story — and the next scene begins inside.'},
-  signal:{title:'The signal goes out.',label:'Someone answers.',copy:'GhostHeart lights the signal. An answer comes from beyond the room. The next scene follows a different way in.'}
+  signal:{title:'The message goes out.',label:'Someone answers.',copy:'GhostHeart reaches out. An answer comes from beyond the room. The next scene follows a different way in.'}
 };
 document.querySelectorAll('[data-branch]').forEach(b=>b.addEventListener('click',()=>{
   const k=b.dataset.branch,r=branches[k];

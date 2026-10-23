@@ -347,7 +347,7 @@ h1{font-size:clamp(40px,5vw,72px);line-height:.95}
 </div>
 <div class="creed rv"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
 </section>
-<div class="tape alt"><div><span>THE WORLD IS WATCHING</span><span>STAY IN THE SIGNAL</span><span>THE WORLD IS WATCHING</span><span>STAY IN THE SIGNAL</span><span>THE WORLD IS WATCHING</span><span>STAY IN THE SIGNAL</span></div></div>
+<div class="tape alt"><div><span>THE WORLD IS WATCHING</span><span>STAY CONNECTED</span><span>THE WORLD IS WATCHING</span><span>STAY CONNECTED</span><span>THE WORLD IS WATCHING</span><span>STAY CONNECTED</span></div></div>
 <!--@inject #mission-board-->
 <div class="heart-not-done" aria-hidden="true">This Heart Isn't <span>Done.</span></div>
 <aside class="rebellion-invite" aria-labelledby="rebellion-title">

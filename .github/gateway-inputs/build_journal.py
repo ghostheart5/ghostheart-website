@@ -90,8 +90,8 @@ body = f'''<div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kick
 <div class="ghx-actions"><a href="#entries">Read the journal ↓</a><a href="/follow/index.html">Follow by email ↗</a></div></header>
 <section aria-label="Journal entries" id="entries">{feature}<div class="journal-list">{entries}</div></section>
 <aside class="journal-follow"><p class="ghx-kicker">Keep a little light close</p><h2>Carry the next page with you.</h2>
-<p>Join the Signal for GhostHeart updates by email, including new journal entries as they are published.</p><div class="ghx-actions">
-<a class="primary" href="/index.html#join-the-signal">Join the Signal</a><a class="secondary" href="/follow/index.html">Follow by email</a></div></aside></div>'''
+<p>Get GhostHeart updates by email, including new journal entries as they are published.</p><div class="ghx-actions">
+<a class="primary" href="/index.html#join-the-signal">Stay Connected</a><a class="secondary" href="/follow/index.html">Follow by email</a></div></aside></div>'''
 write('journal/index.html', shell('Journal', 'Song stories, films, and notes from the world of GhostHeart.', '/journal/', body, first['image']))
 
 for post in POSTS:
@@ -101,7 +101,7 @@ for post in POSTS:
 <header>{meta(post)}<h1>{escape(post['title'])}</h1><p class="journal-deck">{escape(post['summary'])}</p></header>
 {art(post)}<div class="journal-prose">{paragraphs}</div>{gateway_extra(post)}<section class="journal-continue" aria-label="Continue the story">
 <h2>Stay with the story.</h2><div class="ghx-actions">{links}</div></section>
-<nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All journal entries ↗</a><a href="/index.html#join-the-signal">Join the Signal ↗</a></nav>
+<nav class="journal-next ghx-actions" aria-label="More from GhostHeart"><a href="/journal/">All journal entries ↗</a><a href="/index.html#join-the-signal">Stay Connected ↗</a></nav>
 </article></div>'''
     write(post_path(post).lstrip('/'), shell(post['title'], post['summary'], post_path(post), body, post['image'], post))
 
