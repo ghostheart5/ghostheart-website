@@ -35,8 +35,8 @@ module.exports = async (page, base) => {
     await page.locator('#mission-board a[href="/live/"]').focus();
     await Promise.all([page.waitForURL(base + '/live/'), page.keyboard.press('Enter')]);
     assert.equal(new URL(page.url()).pathname, '/live/');
-    assert.equal(await page.locator('#live-status-title').textContent(), 'Next Live: announcement pending.');
-    assert.match(await page.locator('main').innerText(), /No upcoming Live date or viewing link is confirmed yet/);
+    assert.equal(await page.locator('#live-status-title').textContent(), 'Next Live: Sunday, November 1, 2026.');
+    assert.match(await page.locator('main').innerText(), /The next GhostHeart Live is this Sunday/);
     assert.equal(await page.locator('main time, #live-replay, main iframe').count(), 0);
     assert.doesNotMatch(await page.locator('main').innerText(), /October 11|The Awakening Begins|I'm a Nobody|Watch Live|weekly|every Sunday/i);
     const menu = page.locator('header.ghx-header .ghx-menu-toggle');

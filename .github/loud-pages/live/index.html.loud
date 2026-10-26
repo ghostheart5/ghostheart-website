@@ -192,9 +192,9 @@ details p{margin-top:12px;color:#c9c6c1}
     </div>
     <section class="sunday rv" aria-labelledby="live-status-title">
       <small>LIVES</small>
-      <h2 id="live-status-title">Next Live: announcement pending.</h2>
-      <p>No upcoming Live date or viewing link is confirmed yet.</p><p>Live day: Sunday. The next date, time and viewing platform are still to be confirmed.</p>
-      <p class="mark"><a href="/follow/">Be Part of GhostHeart</a> for the announcement when details are ready.</p>
+      <h2 id="live-status-title">Next Live: Sunday, November 1, 2026.</h2>
+      <p>The next GhostHeart Live is this Sunday.</p><p>Live day: Sunday. The time and viewing link will be posted here.</p>
+      <p class="mark"><a href="/follow/">Be Part of GhostHeart</a> to get the time and link when they’re ready.</p>
     </section>
   </div>
 </section>

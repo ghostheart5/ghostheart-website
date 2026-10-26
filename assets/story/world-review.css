@@ -51,3 +51,6 @@
 .world-tracklist { margin: 0 0 1rem; padding-left: 1.6rem; }
 .world-tracklist li { margin: 0; }
 .world-tracklist a { display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-weight: 650; text-underline-offset: .25em; }
+.world-track-date { display: block; color: #b8b0a6; font: 500 .85rem/1.5 system-ui, sans-serif; }
+.world-track-date a { display: inline-block; padding: .2rem 0 .5rem; color: inherit; font-weight: 500; }
+.world-tracklist a:first-child { min-height: 32px; }
