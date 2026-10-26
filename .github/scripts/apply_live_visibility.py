@@ -19,8 +19,8 @@ def apply():
         if path.relative_to(ROOT).as_posix() == 'live/index.html':
             pending = '''<main id="main-content"><div class="ghx-wrap readings-page">
 <p class="ghx-kicker">GhostHeart / Lives &amp; Readings</p><h1>Lives &amp; Readings.</h1>
-<section class="readings-event" aria-labelledby="live-status-title"><h2 id="live-status-title">Next Live: Sunday, November 1, 2026.</h2>
-<p>The next GhostHeart Live is this Sunday.</p><p>Live day: Sunday. The time and viewing link will be posted here.</p><p><a href="/follow/">Be Part of GhostHeart</a> to get the time and link when they’re ready.</p></section>
+<section class="readings-event" aria-labelledby="live-status-title"><h2 id="live-status-title">Next Live: Sunday, November 1, 2026, 10:00 a.m. Central.</h2>
+<p>The next GhostHeart Live is this Sunday on TikTok: <a href="https://www.tiktok.com/@ghosthearted1">watch at @ghosthearted1</a>.</p><p>Live day: Sunday, 10:00 a.m. Central.</p><p><a href="/follow/">Be Part of GhostHeart</a> to hear about the next one.</p></section>
 <section class="readings-event" aria-labelledby="promise-title"><p class="ghx-kicker">Read now</p><h2 id="promise-title">My Promise</h2><p>A promise to keep learning, listening, and choosing care.</p><a href="/live/my-promise.html">Read My Promise</a></section>
 <p><a href="/GhostHeart_Story.html">Enter My World</a> or <a href="/journal/">read the Blog</a>.</p>
 </div></main>'''
@@ -30,7 +30,7 @@ def apply():
 </div></main>'''
             new = re.sub(r'<main\b.*?</main>', pending if PATH_VISIBLE else hidden, new, count=1, flags=re.S)
             title = 'Lives &amp; Readings' if PATH_VISIBLE else 'Live sessions'
-            description = 'GhostHeart readings and Live announcements. Next Live: Sunday, November 1, 2026.' if PATH_VISIBLE else 'No Live sessions are currently scheduled.'
+            description = 'GhostHeart readings and Live announcements. Next Live: Sunday, November 1, 2026, 10:00 a.m. Central, on TikTok.' if PATH_VISIBLE else 'No Live sessions are currently scheduled.'
             new = new.replace('<title>Readings | GhostHeart</title>', f'<title>{title} | GhostHeart</title>')
             new = new.replace('Readings and Sunday Live updates from GhostHeart.', description)
         if not PATH_VISIBLE and path.relative_to(ROOT).as_posix() == 'live/my-promise.html':
