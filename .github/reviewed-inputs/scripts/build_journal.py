@@ -143,7 +143,7 @@ story_body = '''<div class="ghx-wrap story-reading">
 <header class="story-reading-hero"><p class="ghx-kicker">The Story</p>
 <h1>GhostHeart&rsquo;s Awakening.</h1>
 <p class="ghx-lead">Survival matters. So does what a person chooses to carry forward.</p>
-<figure class="story-reading-banner"><img src="/assets/story/ghostheart-awakening-banner.png" width="2560" height="1440" alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon"/></figure>
+<figure class="story-reading-banner"><img src="/assets/story/ghostheart-awakening-banner.webp" width="2560" height="1440" alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon"/></figure>
 </header>
 <div class="story-reading-copy" aria-label="The heart behind GhostHeart">
 <p>Survival matters. So does what a person chooses to carry forward. GhostHeart turns toward people who have been reduced to a label, judged from a distance, or written off before their story was heard. Seeing their humanity does not mean looking away from the truth or excusing harm. It means refusing to let one word tell the whole story.</p>
@@ -159,7 +159,7 @@ story_body = '''<div class="ghx-wrap story-reading">
 <p class="story-reading-live"><strong>Next Sunday Live:</strong> <a href="/live/index.html">The Awakening Welcome</a> (working title), <time datetime="2026-10-11T10:00:00-05:00">October 11 at 10:00 a.m. Central</time>. Viewing link and platform are pending.</p>
 <aside class="story-reading-follow" aria-labelledby="story-follow-title"><div><h2 id="story-follow-title">Stay Connected</h2><p>New music, stories and updates from GhostHeart.</p></div><a class="story-reading-follow-link" href="/index.html#join-the-signal">Keep Me Updated</a></aside>
 </div>'''
-write('GhostHeart_Story.html', shell('GhostHeart’s Awakening', 'Survival matters. So does what a person chooses to carry forward.', '/GhostHeart_Story.html', story_body, '/assets/story/ghostheart-awakening-banner.png'))
+write('GhostHeart_Story.html', shell('GhostHeart’s Awakening', 'Survival matters. So does what a person chooses to carry forward.', '/GhostHeart_Story.html', story_body, '/assets/story/ghostheart-awakening-banner.webp'))
 
 first = POSTS[0]
 public_article_names = {f"{post['slug']}.html" for post in POSTS} | {'how-we-got-here-archive.html'}

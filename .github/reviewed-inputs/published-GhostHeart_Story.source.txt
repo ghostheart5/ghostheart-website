@@ -19,7 +19,7 @@
 <header class="story-reading-hero"><p class="ghx-kicker">The Story</p>
 <h1>GhostHeart’s Awakening.</h1>
 <p class="ghx-lead">Survival matters. So does what a person chooses to carry forward.</p>
-<figure class="story-reading-banner"><img alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon" height="1440" src="/assets/story/ghostheart-awakening-banner.png" width="2560"/></figure>
+<figure class="story-reading-banner"><img alt="GhostHeart sits beneath storm clouds beside the GhostHeart Studios mark, with crimson light over a city horizon" height="1440" src="/assets/story/ghostheart-awakening-banner.webp" width="2560"/></figure>
 </header>
 <div aria-label="The heart behind GhostHeart" class="story-reading-copy">
 <p>Survival matters. So does what a person chooses to carry forward. GhostHeart turns toward people who have been reduced to a label, judged from a distance, or written off before their story was heard. Seeing their humanity does not mean looking away from the truth or excusing harm. It means refusing to let one word tell the whole story.</p>
