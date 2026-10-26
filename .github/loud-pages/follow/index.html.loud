@@ -72,6 +72,7 @@
 </head>
 <body>
 <!--@inject header.ghx-header-->
+<main id="main-content">
 
 <header class="shero">
   <div class="giant display">STAY CONNECTED STAY CONNECTED</div>
@@ -112,6 +113,7 @@
   </div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>

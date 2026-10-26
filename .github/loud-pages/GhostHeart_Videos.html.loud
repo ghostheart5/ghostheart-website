@@ -88,6 +88,7 @@
 </head>
 <body>
 <!--@inject header.ghx-header-->
+<main id="main-content">
 
 <!--@inject-all main > span.l-anchor-alias-->
 <header class="fhero">
@@ -117,6 +118,7 @@
   <div class="ctas" style="justify-content:center;margin-top:36px"><a class="btn dark" href="https://www.youtube.com/@GhostHeart-M95RTK">Follow on YouTube ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/follow/">Stay Connected</a></div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
