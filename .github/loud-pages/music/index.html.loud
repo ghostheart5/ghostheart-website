@@ -83,10 +83,12 @@
 .sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
 .sitefoot nav a:hover{color:var(--hot)}
 .sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
 <!--@inject header.ghx-header-->
+<main id="main-content">
 
 <header class="phero">
   <div class="giant display">TURN IT UP TURN IT UP TURN IT UP TURN IT UP</div>
@@ -105,7 +107,7 @@
 <div class="tape"><div><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
 
 <section class="films" id="films">
-  <div class="label"><span>The Films / Lights down</span><span class="num">01</span></div>
+  <div class="label"><span>The Films / Lights down</span><span class="num">01</span></div><h2 class="vh">The films</h2>
   <div class="film-grid">
     <a class="film rv" href="https://www.youtube.com/watch?v=AOCRvtz92JM">
       <div class="thumb" style="background-image:url('/assets/videos/youtube/AOCRvtz92JM.jpg')"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></div>
@@ -146,7 +148,7 @@
 </section>
 
 <section class="vault">
-  <div class="label"><span>Go Deeper / Everything else</span><span class="num">03</span></div>
+  <div class="label"><span>Go Deeper / Everything else</span><span class="num">03</span></div><h2 class="vh">Go deeper</h2>
   <div class="door-grid">
     <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br>Film</h3><p>Films &amp; shorts</p></div></a>
     <a class="door" href="/GhostHeart_Songs.html"><span class="n">02</span><div><h3>The<br>Archive</h3><p>Released recordings · singles · versions</p></div></a>
@@ -160,6 +162,7 @@
   <div class="ctas"><a class="btn dark" href="/live/">The World Is Watching ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>

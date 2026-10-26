@@ -76,3 +76,15 @@ body.loud-skin footer{border-top:4px solid var(--blood)}
 /* Focus stays strong everywhere */
 body.loud-skin :is(a,button,input,select,summary):focus-visible{outline:3px solid var(--hot)!important;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){body.loud-skin *{transition:none!important}}
+
+/* Readability floor (audit 2026-10-26): no text under 12px, no tap target under 24px.
+   Kept last so it wins over page styles; sizes only, colors and layout unchanged. */
+html body .ghx-header .menu-toggle,html body .ghx-help-link,html body .ghx-primary a,html body .ghx-kicker,
+html body .world-section-label,html body .ghx-footer-bottom span,html body .ghx-footer-bottom a,
+html body .projects-status,html body .projects-signal p,html body .projects-future-grid article span,
+html body .eyebrow,html body .card-kicker,html body .tags .tag,html body .g-kicker,
+html body .fcols nav span,html body .deck .now small,html body .socials a small,
+html body .g-play-label,html body .g-small,html body .qgrid small,html body .vault-type{font-size:12px!important}
+html body .ghx-brand,html body .g-actions .g-link{display:inline-flex;align-items:center;min-height:24px}
+html body .fcols nav a{display:flex;align-items:center;min-height:24px}
+html body .fine details summary{min-height:24px}

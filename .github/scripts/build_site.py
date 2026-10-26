@@ -28,3 +28,4 @@ status.write_text(status.read_text().replace('Build command: python3 .github/scr
 print('Complete build preserved the earlier featured recording as well as the archive.')
 runpy.run_path(str(ROOT/'.github/scripts/build_reviewed_site.py'))
 runpy.run_path(str(ROOT/'.github/scripts/apply_platform_directory.py'))
+runpy.run_path(str(ROOT/'.github/scripts/apply_share_meta.py'))

@@ -51,6 +51,7 @@
 </head>
 <body>
 <!--@inject header.ghx-header-->
+<main id="main-content">
 
 <header class="stage" id="stage">
   <div class="big-no" id="bigNo" aria-hidden="true">01</div>
@@ -76,6 +77,7 @@
   <div class="ctas" style="justify-content:center;margin-top:36px"><a class="btn red" href="/vault/">Open the full Vault</a><a class="btn dark" href="/GhostHeart_Story.html">Enter My World</a></div>
 </section>
 
+</main>
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
