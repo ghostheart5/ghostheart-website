@@ -583,7 +583,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions.",
-    "thumbnail": "assets/story/ghostheart-awakening-banner.png",
+    "thumbnail": "assets/story/ghostheart-awakening-banner.webp",
     "featured": false,
     "key": "cruel"
   }
