@@ -1,0 +1,39 @@
+name: myghostheart.com is up
+
+# Every 15 minutes, checks three key public pages (audit 2026-10-26: nothing alerted on an outage).
+# A failed run makes GitHub email the repository owner. Read-only.
+on:
+  schedule:
+    - cron: "3,18,33,48 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uptime-site
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check the home, follow and music pages
+        run: |
+          set -u
+          check() {
+            ok=0
+            for path in / /follow/ /music/; do
+              code=$(curl -sSL -o /dev/null -w '%{http_code}' --max-time 20 "https://www.myghostheart.com$path" || echo "000")
+              echo "$path -> $code"
+              [ "$code" = "200" ] || ok=1
+            done
+            return $ok
+          }
+          for attempt in 1 2 3; do
+            if check; then echo "myghostheart.com is up."; exit 0; fi
+            [ "$attempt" -lt 3 ] && sleep 45
+          done
+          echo "::error::myghostheart.com did not load correctly 3 times in a row."
+          exit 1
