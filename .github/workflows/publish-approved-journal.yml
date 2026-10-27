@@ -1,0 +1,124 @@
+name: Publish approved GhostHeart journal entry
+
+on:
+  repository_dispatch:
+    types:
+      - publish_journal
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ghostheart-site-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NOTIFY_WEBHOOK_URL: ${{ secrets.GHOSTHEART_NOTIFY_WEBHOOK }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the live website branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Import the exact approved post
+        id: import
+        env:
+          GHOSTHEART_JOURNAL_POST_JSON: ${{ toJson(github.event.client_payload.post) }}
+        run: python3 .github/scripts/import_journal_dispatch.py
+
+      - name: Build the public journal surfaces
+        if: steps.import.outputs.changed == 'true'
+        run: python3 .github/scripts/build_journal.py
+
+      - name: Validate the complete website tree
+        if: steps.import.outputs.changed == 'true'
+        run: python3 .github/scripts/validate_site.py
+
+      - name: Commit the generated website update
+        if: steps.import.outputs.changed == 'true'
+        id: commit
+        env:
+          JOURNAL_SLUG: ${{ steps.import.outputs.slug }}
+        run: |
+          git config user.name "GhostHeart Website Automation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/content/journal.json index.html journal sitemap.xml
+          git commit -m "Publish journal: ${JOURNAL_SLUG}"
+          git push origin HEAD:main
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare the public Pages artifact
+        if: steps.import.outputs.changed == 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/ghostheart-site"
+          rsync -a \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '/story/GhostHeart_How_We_Got_Here_Reading_01.md' \
+            --exclude '.gitignore' \
+            --exclude 'README.md' \
+            ./ "$RUNNER_TEMP/ghostheart-site/"
+
+      - name: Configure GitHub Pages
+        if: steps.import.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload the public site artifact
+        if: steps.import.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/ghostheart-site
+
+      - name: Deploy the website
+        if: steps.import.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Notify Teams and email after deployment
+        if: steps.import.outputs.changed == 'true' && success() && env.NOTIFY_WEBHOOK_URL != ''
+        env:
+          JOURNAL_SLUG: ${{ steps.import.outputs.slug }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          PUBLISHED_COMMIT: ${{ steps.commit.outputs.sha }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n \
+            --arg event "journal_published" \
+            --arg status "success" \
+            --arg slug "$JOURNAL_SLUG" \
+            --arg page_url "$PAGE_URL" \
+            --arg run_url "$RUN_URL" \
+            --arg commit "$PUBLISHED_COMMIT" \
+            '{event:$event,status:$status,slug:$slug,page_url:$page_url,run_url:$run_url,commit:$commit}' \
+            > "$RUNNER_TEMP/ghostheart-notification.json"
+          curl --fail-with-body --retry 3 --silent --show-error \
+            -H 'Content-Type: application/json' \
+            --data-binary "@$RUNNER_TEMP/ghostheart-notification.json" \
+            "$NOTIFY_WEBHOOK_URL"
+
+      - name: Notify Teams and email after a failure
+        if: failure() && env.NOTIFY_WEBHOOK_URL != ''
+        env:
+          JOURNAL_SLUG: ${{ steps.import.outputs.slug }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n \
+            --arg event "journal_publish_failed" \
+            --arg status "failure" \
+            --arg slug "${JOURNAL_SLUG:-unknown}" \
+            --arg run_url "$RUN_URL" \
+            '{event:$event,status:$status,slug:$slug,run_url:$run_url}' \
+            > "$RUNNER_TEMP/ghostheart-notification.json"
+          curl --fail-with-body --retry 3 --silent --show-error \
+            -H 'Content-Type: application/json' \
+            --data-binary "@$RUNNER_TEMP/ghostheart-notification.json" \
+            "$NOTIFY_WEBHOOK_URL"

@@ -1,0 +1,22 @@
+{
+  "slug": "permanent-lowercase-slug",
+  "title": "Approved journal title",
+  "category": "Story category",
+  "published": "2026-10-01T09:00:00-05:00",
+  "summary": "Approved one-sentence summary.",
+  "image": "/assets/images/existing-public-image.jpg",
+  "paragraphs": [
+    "Approved first paragraph.",
+    "Approved second paragraph."
+  ],
+  "links": [
+    {
+      "label": "Continue the story",
+      "url": "/GhostHeart_Story.html"
+    }
+  ],
+  "sources": [
+    "Founder-approved GhostHeart copy"
+  ],
+  "status": "approved"
+}

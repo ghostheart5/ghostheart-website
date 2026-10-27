@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.myghostheart.com/awakening/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
     <loc>https://www.myghostheart.com/GhostHeart_Angel.html</loc>
     <lastmod>2026-08-24</lastmod>
   </url>
@@ -26,7 +30,11 @@
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Story.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.myghostheart.com/story/how-we-got-here.html</loc>
+    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://www.myghostheart.com/GhostHeart_Version_Bonded_Heart.html</loc>
@@ -103,6 +111,7 @@
   <url><loc>https://www.myghostheart.com/albums/uplifting/</loc><lastmod>2026-09-13</lastmod></url>
   <url><loc>https://www.myghostheart.com/albums/youre-not-god/</loc><lastmod>2026-09-13</lastmod></url>
   <url><loc>https://www.myghostheart.com/albums/youre-not-god/lyrics.html</loc><lastmod>2026-09-13</lastmod></url>
+  <!-- JOURNAL-GENERATED:START -->
   <url>
     <loc>https://www.myghostheart.com/journal/</loc>
     <lastmod>2026-09-25</lastmod>
@@ -119,4 +128,5 @@
     <loc>https://www.myghostheart.com/journal/youre-not-god.html</loc>
     <lastmod>2026-09-25</lastmod>
   </url>
+  <!-- JOURNAL-GENERATED:END -->
 </urlset>

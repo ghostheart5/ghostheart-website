@@ -1,0 +1,103 @@
+name: Deploy GhostHeart website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ghostheart-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      NOTIFY_WEBHOOK_URL: ${{ secrets.GHOSTHEART_NOTIFY_WEBHOOK }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the approved website
+        uses: actions/checkout@v4
+
+      - name: Validate the production site tree
+        run: python3 .github/scripts/validate_site.py
+
+      - name: Verify journal pages and discovery files match their source
+        run: |
+          python3 .github/scripts/build_journal.py
+          git diff --exit-code -- index.html journal/ sitemap.xml
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' script; do
+            node --check "$script"
+          done < <(find assets -type f -name '*.js' -print0)
+
+      - name: Prepare the public Pages artifact
+        run: |
+          mkdir -p "$RUNNER_TEMP/ghostheart-site"
+          rsync -a \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '/story/GhostHeart_How_We_Got_Here_Reading_01.md' \
+            --exclude '.gitignore' \
+            --exclude 'README.md' \
+            ./ "$RUNNER_TEMP/ghostheart-site/"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the public site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/ghostheart-site
+
+      - name: Deploy the website
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Notify Teams and email after deployment
+        if: success() && env.NOTIFY_WEBHOOK_URL != ''
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n \
+            --arg event "website_deployed" \
+            --arg status "success" \
+            --arg page_url "$PAGE_URL" \
+            --arg run_url "$RUN_URL" \
+            --arg commit "$GITHUB_SHA" \
+            '{event:$event,status:$status,page_url:$page_url,run_url:$run_url,commit:$commit}' \
+            > "$RUNNER_TEMP/ghostheart-notification.json"
+          curl --fail-with-body --retry 3 --silent --show-error \
+            -H 'Content-Type: application/json' \
+            --data-binary "@$RUNNER_TEMP/ghostheart-notification.json" \
+            "$NOTIFY_WEBHOOK_URL"
+
+      - name: Notify Teams and email after a failure
+        if: failure() && env.NOTIFY_WEBHOOK_URL != ''
+        env:
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n \
+            --arg event "website_deploy_failed" \
+            --arg status "failure" \
+            --arg run_url "$RUN_URL" \
+            --arg commit "$GITHUB_SHA" \
+            '{event:$event,status:$status,run_url:$run_url,commit:$commit}' \
+            > "$RUNNER_TEMP/ghostheart-notification.json"
+          curl --fail-with-body --retry 3 --silent --show-error \
+            -H 'Content-Type: application/json' \
+            --data-binary "@$RUNNER_TEMP/ghostheart-notification.json" \
+            "$NOTIFY_WEBHOOK_URL"

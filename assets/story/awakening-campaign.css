@@ -1,0 +1,19 @@
+/* Campaign additions only; retain the shared Awakening palette and navigation. */
+.campaign-site .reading-hero h1 { max-width: 13ch; }
+.campaign-site .ghx-kicker { color: #ff7377; }
+.campaign-subtitle { color: #ddd5cf; font: 1.4rem/1.5 Georgia, serif; }
+.campaign-coming { color: #ddd5cf; margin: 0; }
+.campaign-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem); gap: clamp(2rem, 7vw, 6rem); }
+.campaign-order { list-style: none; padding: 0; margin: 2rem 0 0; border-top: 1px solid #513039; }
+.campaign-order li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid #513039; }
+.campaign-number { color: #ff7377; font: 700 .85rem/2 Arial, sans-serif; }
+.campaign-order h3 { margin: 0; font: 600 clamp(1.15rem, 2vw, 1.6rem)/1.4 Georgia, serif; overflow-wrap: anywhere; }
+.campaign-order a { color: #f0ece4; text-underline-offset: .2em; }
+.campaign-order p { color: #c5bcb6; margin: .35rem 0 0; font-size: .9rem; }
+.campaign-review { border-bottom: 1px solid #b68c46; background: #302418; color: #ffe2ad; padding: 1rem; text-align: center; line-height: 1.5; }
+.campaign-status { max-width: 65ch; color: #ffe2ad; line-height: 1.7; padding: 1rem 0; }
+.campaign-pagination { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-block: 1px solid #513039; margin-top: 2.5rem; padding-block: 1.25rem; }
+.campaign-pagination a { display: block; max-width: 100%; padding: .5rem; color: #f0ece4; font: 1.15rem/1.6 Georgia, serif; overflow-wrap: anywhere; }
+.campaign-pagination span { display: block; color: #ff7377; font: 700 .75rem/1.6 Arial, sans-serif; }
+.campaign-site a:focus-visible, .campaign-site button:focus-visible, .campaign-site input:focus-visible { outline: 3px solid #ffe2ad; outline-offset: 4px; }
+@media (max-width: 760px) { .campaign-overview { grid-template-columns: 1fr; } .campaign-overview .sunday-note { order: 0; } .campaign-site .reading-layout .sunday-note { order: 0; } }

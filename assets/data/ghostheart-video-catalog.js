@@ -1,5 +1,29 @@
-// GhostHeart-first website selection. Public replacement IDs verified in YouTube Studio September 24, 2026.
+// GhostHeart-first website selection. Public IDs reconciled with the official channel feed September 28, 2026.
 window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
+  {
+    "key":"cruel-official-video","cardId":"film-cruel-official-video","title":"CRUEL — The World Can Be Cruel","videoTitle":"CRUEL — The World Can Be Cruel | GhostHeart Official Music Video","provider":"youtube","youtubeId":"9sbFgjM_SDE","description":"A GhostHeart Awakening film about what cruelty does—and what remains human afterward.","meta":["New release","GhostHeart Awakening"],"song":{"label":"Enter The Awakening","accessibleLabel":"Enter The Awakening — CRUEL","title":"CRUEL","href":"awakening/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/9sbFgjM_SDE.jpg","featured":false
+  },
+  {
+    "key":"heart-of-the-ashes-20260927","cardId":"film-heart-of-the-ashes-20260927","title":"Heart of the Ashes","videoTitle":"Heart of the Ashes — GhostHeart (Official Music Video)","provider":"youtube","youtubeId":"G6_x8P5R1pA","description":"The new official film: the world burned, but the heart remained.","meta":["New release","Official music video"],"song":{"label":"Explore the GhostHeart album","accessibleLabel":"Explore the GhostHeart album — Heart of the Ashes","title":"Heart of the Ashes","href":"albums/ghostheart/index.html#heart-of-the-ashes"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/G6_x8P5R1pA.jpg","featured":false
+  },
+  {
+    "key":"rebellion-official-video","cardId":"film-rebellion-official-video","title":"Rebellion","videoTitle":"GhostHeart – Rebellion (Official Music Video) | Love Is Not Rebellion","provider":"youtube","youtubeId":"FaT_Ibrs9Y0","description":"Love is not rebellion. The new official GhostHeart film.","meta":["New release","Love Is Love"],"song":{"label":"Explore Love Is Love","accessibleLabel":"Explore Love Is Love — Rebellion","title":"Rebellion","href":"albums/love-is-love/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/FaT_Ibrs9Y0.jpg","featured":false
+  },
+  {
+    "key":"take-a-seat-short-20260927","cardId":"film-take-a-seat-short-20260927","title":"Take a Seat","videoTitle":"TAKE A SEAT — This Is GhostHeart | #Shorts #music","provider":"youtube","youtubeId":"fH8TGZXCGpE","description":"A GhostHeart Short about making room for someone who needs it.","meta":["New Short","This Is GhostHeart"],"song":{"label":"Start here","accessibleLabel":"Start here — Take a Seat","title":"Take a Seat","href":"start/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/fH8TGZXCGpE.jpg","featured":false
+  },
+  {
+    "key":"love-is-not-rebellion-short","cardId":"film-love-is-not-rebellion-short","title":"Love Is Not Rebellion","videoTitle":"LOVE IS NOT REBELLION — Rebellion | GhostHeart #Shorts","provider":"youtube","youtubeId":"AtslojalVI0","description":"A short declaration from Rebellion.","meta":["New Short","Love Is Love"],"song":{"label":"Explore Love Is Love","accessibleLabel":"Explore Love Is Love — Love Is Not Rebellion","title":"Love Is Not Rebellion","href":"albums/love-is-love/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/AtslojalVI0.jpg","featured":false
+  },
+  {
+    "key":"we-wont-let-go-short","cardId":"film-we-wont-let-go-short","title":"We Won't Let Go","videoTitle":"WE WON’T LET GO — Rebellion | GhostHeart #Shorts","provider":"youtube","youtubeId":"GV8z2DoFTfE","description":"A GhostHeart Short about staying together when the world pulls apart.","meta":["New Short","Love Is Love"],"song":{"label":"Explore Love Is Love","accessibleLabel":"Explore Love Is Love — We Won't Let Go","title":"We Won't Let Go","href":"albums/love-is-love/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/GV8z2DoFTfE.jpg","featured":false
+  },
+  {
+    "key":"just-for-holding-hands-short","cardId":"film-just-for-holding-hands-short","title":"Just for Holding Hands","videoTitle":"JUST FOR HOLDING HANDS — Rebellion | GhostHeart #Shorts","provider":"youtube","youtubeId":"bZhGER80hDA","description":"A GhostHeart Short about love, judgment, and staying visible.","meta":["New Short","Love Is Love"],"song":{"label":"Explore Love Is Love","accessibleLabel":"Explore Love Is Love — Just for Holding Hands","title":"Just for Holding Hands","href":"albums/love-is-love/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/bZhGER80hDA.jpg","featured":false
+  },
+  {
+    "key":"take-a-seat-short-20260924","cardId":"film-take-a-seat-short-20260924","title":"Take a Seat","videoTitle":"Take a Seat | This Is GhostHeart #Shorts","provider":"youtube","youtubeId":"V2xxNzBN1CA","description":"The first public Take a Seat Short.","meta":["Short","This Is GhostHeart"],"song":{"label":"Start here","accessibleLabel":"Start here — Take a Seat","title":"Take a Seat","href":"start/index.html"},"related":[],"accessibility":"Use the YouTube player CC control for available captions.","thumbnail":"assets/videos/youtube/V2xxNzBN1CA.jpg","featured":false
+  },
   {
     "key": "this-is-ghostheart",
     "cardId": "film-this-is-ghostheart",

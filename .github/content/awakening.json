@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "campaign": "The Awakening",
+  "written_opening": "How We Got Here",
+  "provenance": {
+    "kind": "working manifest derived from owner-supplied handoff and DOCX",
+    "handoff": "CODEX_Awakening_Campaign_Handoff.md",
+    "master": "GhostHeart_The_Awakening_Campaign_Master.docx",
+    "referenced_manifest": "Awakening_Campaign_Manifest.json",
+    "referenced_manifest_received": false,
+    "master_markdown_received": false,
+    "note": "Latest direct owner request establishes exact order and excludes other tracks. Proposed cadence and prose are not approvals."
+  },
+  "sunday": {
+    "text": "Sunday readings — details coming soon.",
+    "platform": null,
+    "url": null,
+    "time": null,
+    "first_date": null
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Cruel",
+      "route": "/awakening/cruel.html",
+      "status": "draft",
+      "ready": false,
+      "approval": null,
+      "source_key": "cruel",
+      "source_name": "Awakening_01_Cruel_Story_Draft.md",
+      "source_sha256": "0457e5754d547587460224ea39f5fc473d6ffd52e429552ad6104f572334003c",
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 2,
+      "title": "I'm Not",
+      "route": "/awakening/im-not.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 3,
+      "title": "Papa Didn't Raise a Fool",
+      "route": "/awakening/papa-didnt-raise-a-fool.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 4,
+      "title": "She Got to Me",
+      "route": "/awakening/she-got-to-me.html",
+      "status": "preserved_unapproved",
+      "ready": false,
+      "approval": null,
+      "source_key": "wife",
+      "source_name": "GhostHeart_How_We_Got_Here_Reading_01.md",
+      "source_sha256": "2ed05936d89be83f0c29b988882b18ca9c120f445037af6b7a45af7e3b68bdb8",
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 5,
+      "title": "This Is GhostHeart",
+      "route": "/awakening/this-is-ghostheart.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 6,
+      "title": "GhostHeart's Oath",
+      "route": "/awakening/ghosthearts-oath.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 7,
+      "title": "You Can Be GhostHeart Too",
+      "route": "/awakening/you-can-be-ghostheart-too.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    },
+    {
+      "number": 8,
+      "title": "One Heart Many Voices",
+      "route": "/awakening/one-heart-many-voices.html",
+      "status": "unwritten",
+      "ready": false,
+      "approval": null,
+      "source_key": null,
+      "source_name": null,
+      "source_sha256": null,
+      "media": {
+        "lyrics_path": null,
+        "audio_path": null,
+        "song_url": null,
+        "reading_replay_url": null,
+        "art_path": null
+      }
+    }
+  ]
+}
