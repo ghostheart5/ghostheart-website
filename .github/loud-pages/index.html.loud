@@ -352,5 +352,6 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 <script src="/assets/home/heartbeat/arrival.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
+<script defer src="/assets/shared/next-live.js"></script>
 </body>
 </html>

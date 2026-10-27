@@ -130,7 +130,8 @@ assert love.select_one('meta[property="og:image:alt"]')['content'] == love.selec
 assert love.select_one('meta[property="og:image:width"]')['content'] == '1374'
 assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
 live = page("live/index.html")
-assert "Next Live: Sunday, November 1, 2026, 10:00 a.m. Central." in live.get_text(" ", strip=True)
+assert " ".join(live.select_one("#live-status-title").get_text().split()) == "Next Live: Sunday, November 1, 2026, 10:00 a.m. Central."
+assert live.select_one("#live-status-title [data-live-until][data-live-after]")
 assert live.select_one('a[href="/live/my-promise.html"]')
 assert live.select_one('a[href="/follow/"]')
 assert not live.select_one("#next-live-title")
