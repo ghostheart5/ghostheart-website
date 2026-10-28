@@ -20,6 +20,8 @@ body.loud-skin main :is(.world-hero-grid,.world-hero-copy){min-width:0}
 body.loud-skin main h2{font-size:clamp(2.2rem,5.4vw,4.6rem)}
 body.loud-skin main h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.01em;line-height:1.05}
 body.loud-skin main :is(h1,h2) em{color:var(--blood);font-style:normal}
+/* Keep the Projects promise crisp: a same-color 4px h1 shadow merged these red glyphs. */
+body.loud-skin #projects-title em{color:var(--hot);text-shadow:none}
 
 /* Kickers and labels */
 body.loud-skin main :is(.ghx-kicker,.kicker,.world-section-label,.projects-index,.eyebrow,.card-kicker,.music-number){color:var(--blood);font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
