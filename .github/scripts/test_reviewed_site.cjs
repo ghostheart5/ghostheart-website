@@ -71,7 +71,7 @@ const recordingsPreviewFragments = [
       assert.equal(response.status(), 200, path);
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
-      assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'The Awakening', 'Enter My World', 'Music'], path + ' tabs');
+      assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'The Awakening', 'Enter My World', 'Music', 'I’m Here to Help'], path + ' tabs');
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, path + ' overflow at ' + width);
       const menu = page.locator('header.ghx-header .ghx-menu-toggle');

@@ -25,7 +25,7 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/albums/index.html">Music</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/albums/index.html">Music</a><a href="/here-to-help/">I’m Here to Help</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">

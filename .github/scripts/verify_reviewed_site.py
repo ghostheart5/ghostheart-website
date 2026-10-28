@@ -15,7 +15,7 @@ def page(path):
     return BeautifulSoup((ROOT / path).read_text(encoding="utf-8"), "html.parser")
 
 
-nav = ["Home", "The Awakening", "Enter My World", "Music"]
+nav = ["Home", "The Awakening", "Enter My World", "Music", "I’m Here to Help"]
 explore = {"Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Stay Connected"}
 checks = 0
 for path in ROOT.rglob("*.html"):
