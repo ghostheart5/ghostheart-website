@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--@inject-all head > meta[property], head > meta[name^="twitter:"], head > link[rel="canonical"]-->
+<meta name="description" content="Things I built that you can use. Case files for GhostHeart Studios apps: Axiomara on Google Play, plus what is still in the workshop.">
+<meta name="theme-color" content="#050505">
+<title>The Workshop | GhostHeart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/loud/loud.css">
+<style>
+/* THE WORKSHOP 2026-10-27 — app showcase as case files. */
+:root{--void:#050505;--coal:#0e0b0b;--blood:#e8001c;--hot:#ff2d4b;--bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);--mono:"Space Mono",ui-monospace,Menlo,monospace}
+body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
+.mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* hero */
+.whero{padding:calc(var(--hdr,96px) + clamp(40px,8vw,90px)) max(16px,4vw) clamp(40px,6vw,70px);position:relative;overflow:hidden;isolation:isolate;border-bottom:4px solid var(--blood)}
+.whero .giant{position:absolute;z-index:-1;left:0;bottom:-3vw;font-size:24vw;color:transparent;-webkit-text-stroke:2px rgba(232,0,28,.22);white-space:nowrap;animation:slide 50s linear infinite}
+.whero h1{font-size:clamp(64px,13vw,200px);margin-top:20px}
+.whero h1 span{color:var(--blood)}
+.whero .intro{font-size:clamp(20px,2.4vw,30px);font-weight:700;max-width:760px;margin-top:22px}
+.whero .sub{color:var(--ash);max-width:640px;margin-top:12px}
+.docket{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;list-style:none}
+.docket a{display:inline-flex;gap:10px;align-items:center;border:2px solid var(--line);padding:10px 14px;font-size:13px;min-height:44px}
+.docket a b{color:var(--hot);font-weight:700}
+.docket a:hover,.docket a:focus-visible{border-color:var(--hot);outline:none}
+
+/* case files */
+.cases{padding:clamp(50px,8vw,100px) max(16px,4vw);display:grid;gap:clamp(56px,8vw,96px)}
+.case{position:relative;scroll-margin-top:calc(var(--hdr,96px) + 16px)}
+.case-tab{display:inline-flex;align-items:baseline;gap:14px;background:var(--coal);border:2px solid var(--line);border-bottom:none;padding:12px 18px 10px;font-size:13px;color:var(--ash)}
+.case-tab b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:30px;letter-spacing:.02em;color:var(--bone);line-height:1}
+.case-body{background:var(--coal);border:2px solid var(--line);border-top:4px solid var(--blood);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);padding:clamp(22px,4vw,52px);position:relative;
+  background-image:repeating-linear-gradient(0deg,transparent 0 35px,rgba(244,239,230,.035) 35px 36px)}
+@media(max-width:860px){.case-body{grid-template-columns:1fr}}
+.case-meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12px;color:var(--ash);border-bottom:1px dashed var(--line);padding-bottom:14px}
+.stamp{display:inline-block;margin:24px 0 6px;font-family:var(--mono);font-weight:700;font-size:clamp(14px,1.6vw,17px);letter-spacing:.14em;text-transform:uppercase;color:var(--hot);border:3px double var(--hot);padding:8px 14px;transform:rotate(-3deg);transform-origin:left center;mix-blend-mode:screen}
+.stamp.live{color:#f4efe6;border-color:#f4efe6;background:var(--blood);mix-blend-mode:normal}
+.case h2{font-size:clamp(46px,6.4vw,92px);margin-top:16px;overflow-wrap:break-word}
+.case h2 span{color:var(--blood)}
+.facts{margin:26px 0 0;display:grid;gap:14px}
+.facts div{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;align-items:baseline;border-left:4px solid var(--blood);padding:4px 0 4px 16px}
+@media(max-width:560px){.facts div{grid-template-columns:1fr}}
+.facts dt{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash)}
+.facts dd{font-size:clamp(20px,2.1vw,26px);font-weight:700;line-height:1.25}
+.case .notes{margin-top:22px;color:#d8d3ca;max-width:62ch}
+.case .notes + .notes{margin-top:12px}
+.case .fine{margin-top:16px;font-size:12px;color:var(--ash);line-height:1.6}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;align-items:center}
+.play{display:inline-flex;align-items:center;gap:14px;background:var(--bone);color:var(--void);border:3px solid var(--bone);padding:12px 24px;box-shadow:8px 8px 0 var(--blood);transition:.15s;min-height:56px}
+.play span{display:flex;flex-direction:column;line-height:1.05}
+.play small{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.play strong{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+.play:hover,.play:focus-visible{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--blood);outline:none}
+.textlink{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--hot);border-bottom:2px solid currentColor;padding:10px 0 4px}
+.textlink:hover,.textlink:focus-visible{color:var(--bone);outline:none}
+
+/* exhibits (screenshot slots) */
+.exhibit{margin:0;align-self:start;border:2px solid var(--line);background:#080606;padding:18px;position:relative;overflow:hidden}
+.exhibit figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin-top:14px;line-height:1.6}
+.exhibit .tag-x{display:inline-block;margin-bottom:6px;background:var(--blood);color:var(--void);font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.14em;padding:5px 9px;text-transform:uppercase}
+.signals{list-style:none;display:grid;gap:0;margin-top:8px}
+.signals li{padding:18px 4px;border-bottom:1px dashed var(--line)}
+.signals li:last-child{border-bottom:none}
+.signals small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--hot);text-transform:uppercase}
+.signals strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(26px,2.8vw,36px);text-transform:uppercase;line-height:1.02;margin-top:6px}
+.icon-shot{display:grid;place-items:center;padding:clamp(18px,4vw,40px);background:radial-gradient(circle at 50% 45%,rgba(232,0,28,.16),transparent 60%)}
+.icon-shot img{width:min(220px,60%);height:auto;border-radius:22%;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+
+/* sealed file */
+.case.sealed .case-body{border-top-color:var(--ash)}
+.sealed .redact{display:grid;gap:12px;padding:12px 4px;position:relative}
+.sealed .redact i{display:block;height:18px;background:var(--bone);opacity:.9}
+.sealed .redact i:nth-child(2){width:82%}.sealed .redact i:nth-child(3){width:64%}.sealed .redact i:nth-child(4){width:90%}.sealed .redact i:nth-child(5){width:48%}
+.sealed .marks{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.sealed .marks span{font-family:Anton,Impact,sans-serif;font-size:24px;text-transform:uppercase;border:2px solid var(--line);padding:4px 12px;color:var(--ash)}
+.seal-tape{position:absolute;left:-26px;right:-26px;top:50%;margin-top:-17px;transform:rotate(-6deg);background:var(--blood);color:var(--void);font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.26em;text-transform:uppercase;white-space:nowrap;overflow:hidden;padding:8px 0;border-block:3px solid var(--void);text-align:center;pointer-events:none}
+
+/* close */
+.wclose{padding:clamp(50px,8vw,100px) max(16px,4vw);background:var(--bone);color:var(--void)}
+.wclose h2{font-size:clamp(48px,7vw,104px)}
+.wclose p{max-width:640px;margin-top:16px;font-weight:500}
+.wclose .ctas{margin-top:28px}
+.wclose .btn.dark{color:var(--bone)}
+
+.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
+.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
+.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
+.sitefoot p{color:var(--ash);margin-top:8px}
+.sitefoot nav{display:flex;flex-direction:column;gap:8px}
+.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.sitefoot nav a:hover{color:var(--hot)}
+.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:560px){body{font-size:17px}.case-tab b{font-size:26px}}
+</style>
+</head>
+<body>
+<!--@inject header.ghx-header-->
+<main id="main-content">
+
+<header class="whero">
+  <div class="giant display" aria-hidden="true">THE WORKSHOP THE WORKSHOP</div>
+  <span class="kicker">✶ GhostHeart Studios / The Workshop</span>
+  <h1 class="display">The <span>Workshop.</span></h1>
+  <p class="intro">Things I built that you can use.</p>
+  <p class="sub">Every app gets a case file: the problem it takes on, and the one move it helps you make. If it isn’t ready, the file stays sealed.</p>
+  <ul class="docket mono" aria-label="Case files on this page">
+    <li><a href="#axiomara"><b>001</b> Axiomara · Live</a></li>
+    <li><a href="#shadow-fire"><b>002</b> Shadow Fire · Sealed</a></li>
+    <li><a href="#deal-vector"><b>003</b> Deal Vector · In development</a></li>
+  </ul>
+</header>
+
+<div class="cases wrap">
+
+<article class="case" id="axiomara" aria-labelledby="axiomara-name">
+  <div class="case-tab mono">Case file <b>001</b></div>
+  <div class="case-body">
+    <div>
+      <div class="case-meta mono"><span>Subject: Android app</span><span>Filed by GhostHeart Studios</span></div>
+      <p class="stamp live">Live on Google Play</p>
+      <h2 class="display" id="axiomara-name">Axiomara<span aria-hidden="true">.</span></h2>
+      <dl class="facts">
+        <div><dt>The problem</dt><dd>Everything feels urgent.</dd></div>
+        <div><dt>The one move</dt><dd>Find one move you can actually make.</dd></div>
+      </dl>
+      <p class="notes">Axiomara brings goals, tasks, time, energy, notes, and the context you choose into planning you can inspect. Ask what to do next, make the step smaller, or compare paths before you decide.</p>
+      <p class="notes">It is designed to help a crowded day feel more manageable and to leave the choice in your hands.</p>
+      <div class="actions">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.ghostheart5.chronospark" target="_blank" rel="noopener noreferrer" aria-label="Get Axiomara on Google Play (opens in a new tab)">
+          <span><small>Get it on</small><strong>Google Play ↗</strong></span>
+        </a>
+      </div>
+      <p class="fine mono">A planning and decision tool for adults; it does not replace professional or emergency support.</p>
+    </div>
+    <figure class="exhibit">
+      <span class="tag-x">Exhibit A</span>
+      <ul class="signals">
+        <li><small>Bring the reality</small><strong>Goals. Time. Energy.</strong></li>
+        <li><small>See the reason</small><strong>A move you can inspect.</strong></li>
+        <li><small>Keep the control</small><strong>Accept it. Change it. Choose again.</strong></li>
+      </ul>
+      <figcaption>How it works, from the case notes.</figcaption>
+    </figure>
+  </div>
+</article>
+
+<article class="case sealed" id="shadow-fire" aria-labelledby="shadow-fire-name">
+  <div class="case-tab mono">Case file <b>002</b></div>
+  <div class="case-body">
+    <div>
+      <div class="case-meta mono"><span>Subject: Writing &amp; reflection</span><span>Status: sealed</span></div>
+      <p class="stamp">In the workshop</p>
+      <h2 class="display" id="shadow-fire-name">Shadow Fire<span aria-hidden="true">.</span></h2>
+      <dl class="facts">
+        <div><dt>The problem</dt><dd>What you carry needs a private place.</dd></div>
+        <div><dt>The one move</dt><dd>Decide what belongs in your story.</dd></div>
+      </dl>
+      <p class="notes">Being built around writing and guided reflection, a Life Book for the pages someone chooses to keep, and Vault controls for reviewing their own records.</p>
+      <p class="fine mono">In development. There is no public download or live service here yet.</p>
+    </div>
+    <figure class="exhibit" aria-label="Sealed exhibit">
+      <span class="tag-x">Exhibit B</span>
+      <div class="redact" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><div class="seal-tape">Sealed · In the workshop · Sealed · In the workshop · Sealed</div></div>
+      <div class="marks" aria-hidden="true"><span>Write</span><span>Reflect</span><span>Choose</span></div>
+      <figcaption>Sealed until it’s ready. Nothing to download yet.</figcaption>
+    </figure>
+  </div>
+</article>
+
+<article class="case" id="deal-vector" aria-labelledby="deal-vector-name">
+  <div class="case-tab mono">Case file <b>003</b></div>
+  <div class="case-body">
+    <div>
+      <div class="case-meta mono"><span>Subject: Android calculator</span><span>Formerly FlipMath</span></div>
+      <p class="stamp">In development</p>
+      <h2 class="display" id="deal-vector-name">Deal Vector<span aria-hidden="true">.</span></h2>
+      <dl class="facts">
+        <div><dt>The problem</dt><dd>Not knowing what is left after the costs, before you commit to a resale deal.</dd></div>
+        <div><dt>The one move</dt><dd>Run the numbers before you commit.</dd></div>
+      </dl>
+      <p class="notes">Enter your expected sale price, what you paid and shipping. Offline USD estimates, before selling fees.</p>
+      <p class="fine mono">Public release and availability are still pending. No download is offered yet.</p>
+      <div class="actions"><a class="textlink" href="/apps/deal-vector/">Open the Deal Vector file →</a></div>
+    </div>
+    <figure class="exhibit">
+      <span class="tag-x">Exhibit C</span>
+      <div class="icon-shot"><img src="/apps/deal-vector/assets/deal-vector-icon.png" alt="Deal Vector app icon" width="512" height="512" loading="lazy"></div>
+      <figcaption>App icon. Generated artwork, not a screenshot.</figcaption>
+    </figure>
+  </div>
+</article>
+
+</div>
+
+<section class="wclose">
+  <div class="wrap">
+    <h2 class="display">More on the bench.</h2>
+    <p>New files open when something is ready to use. Get a note when one does.</p>
+    <div class="ctas"><a class="btn dark" href="/follow/">Stay Connected</a><a class="btn dark" href="/GhostHeart_Projects.html">Where the studio is headed</a></div>
+  </div>
+</section>
+
+</main>
+<footer class="sitefoot">
+  <div class="fcols">
+    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/workshop/" aria-current="page">The Workshop</a></nav>
+    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+  </div>
+  <p class="fcopy">© 2026 GhostHeart Studios</p>
+</footer>
+
+<script src="/assets/shared/ghostheart-world.js"></script>
+<script src="/assets/loud/loud.js"></script>
+</body>
+</html>

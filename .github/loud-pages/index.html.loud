@@ -296,6 +296,8 @@ main>section,main>aside{position:relative}
 <a class="hb-card rv" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank"><small>Spotify</small><strong>Turn it up</strong><span>The recordings, for the listen you keep coming back to.</span><em>Listen ↗</em></a>
 <a class="hb-card rv" href="https://music.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank"><small>YouTube Music</small><strong>Audio only</strong><span>Every song without the picture, for the drive and the headphones.</span><em>Play ↗</em></a>
 <a class="hb-card rv" href="https://suno.com/@ghostheart131517" rel="noopener noreferrer" target="_blank"><small>Suno</small><strong>The listening room</strong><span>Selected songs from the GhostHeart world.</span><em>Step in ↗</em></a>
+<a class="hb-card rv" href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=social&amp;utm_campaign=wake-the-heart&amp;utm_content=follow_substack" rel="noopener noreferrer" target="_blank"><small>Substack</small><strong>Too Human to Stay Quiet</strong><span>The long version of GhostHeart’s story, one chapter at a time.</span><em>Read ↗</em></a>
+<a class="hb-card rv" href="/workshop/"><small>The Workshop</small><strong>Apps &amp; tools</strong><span>Things I built that you can use.</span><em>Open the files →</em></a>
 <a class="hb-card home rv" href="/follow/"><small>myghostheart.com</small><strong>Home base</strong><span>Everything in one place, plus a note from me when something’s ready.</span><em>Stay connected →</em></a>
 </div>
 </div>
@@ -321,7 +323,7 @@ main>section,main>aside{position:relative}
 <div class="door-grid">
 <a class="door" href="/music/"><span class="n">01</span><div><h3>Music &amp; films</h3><p>Every song. Every film. Turn it up.</p></div></a>
 <a class="door" href="/GhostHeart_Story.html"><span class="n">02</span><div><h3>The story</h3><p>The life behind the name, chapter by chapter.</p></div></a>
-<a class="door" href="/GhostHeart_Projects.html"><span class="n">03</span><div><h3>Apps &amp; tools</h3><p>Things I built that you can use.</p></div></a>
+<a class="door" href="/workshop/"><span class="n">03</span><div><h3>The Workshop</h3><p>Things I built that you can use.</p></div></a>
 </div>
 <div class="ctas"><a class="btn red" href="/vault/">Explore The Vault: music, films &amp; quotes ↗</a></div>
 </div>
@@ -338,7 +340,7 @@ main>section,main>aside{position:relative}
 <div class="fcols">
 <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
 <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/GhostHeart_Projects.html">Apps &amp; tools</a></nav>
+<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/workshop/">The Workshop</a></nav>
 <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
 </div>
 <p class="fcopy">© 2026 GhostHeart Studios</p>
