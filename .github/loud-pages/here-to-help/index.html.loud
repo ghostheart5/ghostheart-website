@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--@inject-all head > meta[property], head > meta[name^="twitter:"], head > link[rel="canonical"]-->
+<meta name="description" content="Hire GhostHeart Studios: a custom song written from your story ($50 founding price, delivered in 7 days), plus office and production help.">
+<meta name="theme-color" content="#050505">
+<title>I'm Here to Help | GhostHeart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/loud/loud.css">
+<style>
+/* I'M HERE TO HELP 2026-10-28 — owner decision OWNER-BLUEPRINT-20261028.
+   Offers, prices and delivery are copied exactly from GHOSTHEART_BLUEPRINT.md. */
+:root{--void:#050505;--coal:#0e0b0b;--blood:#e8001c;--hot:#ff2d4b;--bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);--mono:"Space Mono",ui-monospace,Menlo,monospace}
+body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
+.mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto}
+.sec{padding:clamp(50px,8vw,100px) max(16px,4vw)}
+.sec h2{font-size:clamp(44px,6.4vw,92px);overflow-wrap:break-word}
+.sec h2 span{color:var(--blood)}
+.lead{font-size:clamp(19px,2vw,24px);max-width:760px;margin-top:18px;color:#d8d3ca}
+
+/* hero */
+.hhero{padding:calc(var(--hdr,96px) + clamp(40px,8vw,90px)) max(16px,4vw) clamp(40px,6vw,70px);position:relative;overflow:hidden;isolation:isolate;border-bottom:4px solid var(--blood)}
+.hhero .giant{position:absolute;z-index:-1;left:0;bottom:-3vw;font-size:22vw;color:transparent;-webkit-text-stroke:2px rgba(232,0,28,.22);white-space:nowrap;animation:slide 50s linear infinite}
+.hhero h1{font-size:clamp(60px,12vw,190px);margin-top:20px}
+.hhero h1 span{color:var(--blood)}
+.hhero .intro{font-size:clamp(20px,2.4vw,30px);font-weight:700;max-width:800px;margin-top:22px}
+.hhero .sub{color:#d8d3ca;max-width:680px;margin-top:14px}
+.hhero .ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+
+/* offers */
+.offers{display:grid;gap:clamp(40px,6vw,72px);margin-top:clamp(30px,5vw,56px)}
+.offer{background:var(--coal);border:2px solid var(--line);border-top:4px solid var(--blood);padding:clamp(22px,4vw,52px);scroll-margin-top:calc(var(--hdr,96px) + 16px)}
+.offer-tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+.offer h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(38px,5vw,68px);line-height:.95;margin-top:10px}
+.offer h3 span{color:var(--blood)}
+.offer .notes{margin-top:18px;color:#d8d3ca;max-width:66ch}
+.price-big{display:inline-flex;align-items:baseline;gap:12px;margin-top:22px;border:3px double var(--hot);padding:10px 16px;transform:rotate(-2deg);transform-origin:left center}
+.price-big b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,5vw,60px);color:var(--bone);line-height:1}
+.price-big small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hot)}
+.facts{margin:26px 0 0;display:grid;gap:14px}
+.facts div{display:grid;grid-template-columns:170px 1fr;gap:6px 18px;align-items:baseline;border-left:4px solid var(--blood);padding:4px 0 4px 16px}
+@media(max-width:560px){.facts div{grid-template-columns:1fr}}
+.facts dt{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash)}
+.facts dd{font-size:clamp(18px,1.9vw,23px);font-weight:700;line-height:1.3}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px;margin-top:24px;list-style:none}
+.cols li{border:1px solid var(--line);padding:16px 18px}
+.cols li strong{display:block;font-size:19px}
+.cols li span{display:block;color:var(--ash);margin-top:6px;font-size:16px}
+.price-table{width:100%;border-collapse:collapse;margin-top:26px;font-size:clamp(16px,1.7vw,19px)}
+.price-table th,.price-table td{text-align:left;padding:14px 10px;border-bottom:1px dashed var(--line);vertical-align:top}
+.price-table th{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);font-weight:700}
+.price-table td:last-child{font-weight:700;white-space:nowrap;text-align:right}
+.price-table th:last-child{text-align:right}
+.hold{margin-top:22px;border-left:4px solid var(--ash);padding:6px 0 6px 16px;color:#d8d3ca;max-width:66ch}
+.hold b{color:var(--bone)}
+.soon{border-top-color:var(--ash)}
+.soon .stamp-soon{display:inline-block;margin-top:16px;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot);border:3px double var(--hot);padding:8px 14px;transform:rotate(-3deg)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;margin-top:clamp(30px,5vw,50px);list-style:none;counter-reset:step}
+.steps li{counter-increment:step;background:var(--coal);border:2px solid var(--line);padding:26px 24px 24px;position:relative}
+.steps li::before{content:"0" counter(step);font-family:Anton,Impact,sans-serif;font-size:56px;line-height:1;color:var(--blood);display:block}
+.steps li strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;margin-top:10px;line-height:1}
+.steps li p{color:#d8d3ca;margin-top:10px;font-size:17px}
+.detail{margin-top:28px;color:#d8d3ca;max-width:70ch}
+.detail li{margin:6px 0 0 20px}
+
+/* founding spots */
+.spots{background:var(--bone);color:var(--void)}
+.spots h2 span{color:var(--blood)}
+.spots .lead{color:#2a2622}
+.spot-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;list-style:none}
+.spot-row li{width:72px;height:72px;display:grid;place-items:center;border:3px solid var(--void);font-family:Anton,Impact,sans-serif;font-size:32px}
+.spots .fine{margin-top:18px;font-size:13px;color:#4a4540}
+
+/* order form */
+.order{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,64px);align-items:start}
+@media(max-width:900px){.order{grid-template-columns:1fr}}
+.notice{border:3px solid var(--hot);background:rgba(232,0,28,.08);padding:18px 20px;margin-top:24px}
+.notice strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:26px;color:var(--bone)}
+.notice p{color:#d8d3ca;margin-top:6px;font-size:16px}
+.story-form{background:var(--coal);border:2px solid var(--line);border-top:4px solid var(--blood);padding:clamp(20px,3.5vw,40px);display:grid;gap:18px}
+.story-form fieldset{border:0;padding:0;margin:0;display:grid;gap:18px;min-width:0}
+.story-form legend{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);margin-bottom:4px}
+.field{display:grid;gap:8px}
+.field label,.field .label{font-weight:700;font-size:17px}
+.field small{color:var(--ash);font-size:14px}
+.field input,.field textarea,.field select{width:100%;background:#080606;color:var(--bone);border:2px solid #3a3533;padding:12px 14px;font:inherit;font-size:17px;border-radius:0}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible{outline:3px solid var(--hot);outline-offset:2px;border-color:var(--hot)}
+.choices{display:grid;gap:10px}
+.choices label{display:flex;gap:12px;align-items:flex-start;font-weight:500;font-size:17px;min-height:44px}
+.choices input{width:22px;height:22px;margin-top:3px;accent-color:var(--blood);flex:none}
+.story-form button{justify-self:start;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.04em;text-transform:uppercase;padding:16px 26px;border:3px solid var(--blood);background:var(--blood);color:var(--void);cursor:pointer;min-height:56px}
+.story-form button:disabled{background:transparent;color:var(--ash);border-color:#3a3533;cursor:not-allowed}
+.story-form .fine{font-size:13px;color:var(--ash);line-height:1.6}
+
+/* free + close */
+.free{border-top:2px solid var(--line)}
+.free .ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
+.hclose{background:var(--bone);color:var(--void)}
+.hclose p{max-width:640px;margin-top:16px;font-weight:500}
+
+.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
+.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
+.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
+.sitefoot p{color:var(--ash);margin-top:8px}
+.sitefoot nav{display:flex;flex-direction:column;gap:8px}
+.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.sitefoot nav a:hover{color:var(--hot)}
+.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:560px){body{font-size:17px}.price-table td:last-child{white-space:normal}}
+</style>
+</head>
+<body>
+<!--@inject header.ghx-header-->
+<main id="main-content">
+
+<header class="hhero">
+  <div class="giant display" aria-hidden="true">ONE HEART. MANY VOICES.</div>
+  <span class="kicker">✶ GhostHeart Studios / I’m Here to Help</span>
+  <h1 class="display">I’m here <span>to help.</span></h1>
+  <p class="intro">Tell me your story, and I’ll write it into a real song.</p>
+  <p class="sub">GhostHeart is the fictional reflection of my real life, told through music, stories and films so people feel less alone and able to move forward. Now I can write your story too, or take everyday work off your plate. Nobody has to buy anything or share their story to belong here.</p>
+  <div class="ctas"><a class="btn red" href="#custom-song">A custom song</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
+</header>
+
+<section class="sec" id="what-i-do" aria-labelledby="what-title">
+  <div class="wrap">
+    <h2 class="display" id="what-title">What I <span>can do.</span></h2>
+    <div class="offers">
+
+      <article class="offer" id="custom-song" aria-labelledby="song-title">
+        <p class="offer-tag">Offer 01 · Starting now</p>
+        <h3 id="song-title">A custom <span>GhostHeart song.</span></h3>
+        <p class="notes">You tell me your story, and I write it into a real song: my lyrics, produced in Country / Americana. For weddings, anniversaries, birthdays, memorials, or anyone you want to say something to.</p>
+        <p class="price-big"><b>$50</b><small>Founding price · first 5 customers</small></p>
+        <dl class="facts">
+          <div><dt>Length</dt><dd>Your choice: a full song, or two verses and a chorus</dd></div>
+          <div><dt>Delivery</dt><dd>7 days</dd></div>
+          <div><dt>Included</dt><dd>Finished song, the lyrics as a keepsake, one small fix</dd></div>
+          <div><dt>Honest label</dt><dd>Lyrics written by me from your story. Music produced with AI tools.</dd></div>
+          <div><dt>Rights</dt><dd>Made on my paid Suno plan, which includes commercial rights</dd></div>
+        </dl>
+        <p class="notes">The founding price goes up after the first reviews.</p>
+      </article>
+
+      <article class="offer" id="office-help" aria-labelledby="office-title">
+        <p class="offer-tag">Offer 02 · Starting now</p>
+        <h3 id="office-title">Office &amp; <span>production help.</span></h3>
+        <p class="notes">Everyday work that makes your day easier, done by GhostHeart Studios.</p>
+        <ul class="cols">
+          <li><strong>Documents in Word</strong><span>Letters, resumes, forms, flyers, cleaning up messy documents</span></li>
+          <li><strong>PowerPoint</strong><span>Slide decks for work, church, school projects or events</span></li>
+          <li><strong>Data entry and Excel</strong><span>Typing up lists, records, receipts, simple spreadsheets</span></li>
+          <li><strong>Writing help</strong><span>Bios, product descriptions, social posts, editing and proofreading</span></li>
+        </ul>
+        <table class="price-table">
+          <caption class="mono" style="text-align:left;color:var(--ash);font-size:12px;padding-bottom:6px">Founding prices</caption>
+          <thead><tr><th scope="col">Service</th><th scope="col">Founding price</th></tr></thead>
+          <tbody>
+            <tr><td>Data entry and typing</td><td>$20 per hour</td></tr>
+            <tr><td>Word: letter, flyer, form, or fixing a messy document</td><td>$25 each</td></tr>
+            <tr><td>Resume</td><td>$50</td></tr>
+            <tr><td>PowerPoint deck, up to 10 slides</td><td>$50</td></tr>
+            <tr><td>Excel sheet or simple tracker</td><td>$35</td></tr>
+            <tr><td>Writing: bio, product description, social posts</td><td>$25 each</td></tr>
+            <tr><td>Proofreading and editing</td><td>$15 per page</td></tr>
+          </tbody>
+        </table>
+        <p class="hold"><b>One line I hold:</b> I don’t write school papers or tests that someone turns in as their own. Editing and formatting your own work is fine.</p>
+      </article>
+
+      <article class="offer soon" id="artists" aria-labelledby="artists-title">
+        <p class="offer-tag">Offer 03</p>
+        <h3 id="artists-title">Writing for <span>other artists.</span></h3>
+        <p class="stamp-soon">Coming soon</p>
+        <p class="notes">Songs and lyrics for independent artists. Not open yet.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how-it-works" aria-labelledby="how-title">
+  <div class="wrap">
+    <h2 class="display" id="how-title">How it <span>works.</span></h2>
+    <ol class="steps">
+      <li><strong>Story in</strong><p>Tell me who it’s for, the occasion, your memories, the names to include, and the mood.</p></li>
+      <li><strong>Song written</strong><p>You pay up front at the founding price, and I write and produce it.</p></li>
+      <li><strong>Delivered in 7 days</strong><p>You get the song plus the lyrics, and one small fix if a name is wrong or a line doesn’t land.</p></li>
+    </ol>
+    <div class="detail">
+      <p>After it’s delivered, I’ll ask for a review and whether I can share it. Your private details stay out if you want.</p>
+      <p>Christmas songs: orders close Sunday, December 13, and every Christmas song is delivered by Sunday, December 20.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec spots" id="founding-spots" aria-labelledby="spots-title">
+  <div class="wrap">
+    <h2 class="display" id="spots-title">5 founding <span>spots.</span></h2>
+    <p class="lead">The first 5 custom songs are $50. After the first reviews, the price goes up.</p>
+    <ul class="spot-row" aria-label="5 founding spots"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+  </div>
+</section>
+
+<section class="sec" id="order" aria-labelledby="order-title">
+  <div class="wrap order">
+    <div>
+      <h2 class="display" id="order-title">Tell me <span>your story.</span></h2>
+      <p class="lead">Everything happens here on myghostheart.com. You’ll only ever see the name GhostHeart Studios.</p>
+      <div class="notice" role="status" data-order-status>
+        <strong>Orders open soon</strong>
+        <p>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when the founding spots open.</p>
+      </div>
+    </div>
+    <form class="story-form" id="story-form" data-order-endpoint="" novalidate aria-describedby="order-title">
+      <fieldset disabled>
+        <legend>Your custom song</legend>
+        <div class="field"><label for="sf-for">Who is the song for?</label><input id="sf-for" name="for" type="text" autocomplete="off"></div>
+        <div class="field"><label for="sf-occasion">What’s the occasion?</label><small>A wedding, an anniversary, a birthday, a memorial, or just because.</small><input id="sf-occasion" name="occasion" type="text" autocomplete="off"></div>
+        <div class="field"><label for="sf-memories">Your memories</label><small>The moments, places and details that matter most.</small><textarea id="sf-memories" name="memories"></textarea></div>
+        <div class="field"><label for="sf-names">Names to include</label><input id="sf-names" name="names" type="text" autocomplete="off"></div>
+        <div class="field"><label for="sf-mood">The mood</label><small>Happy, tender, bittersweet, a little funny…</small><input id="sf-mood" name="mood" type="text" autocomplete="off"></div>
+        <div class="field" role="group" aria-labelledby="sf-length-label"><span class="label" id="sf-length-label">Length</span>
+          <div class="choices">
+            <label><input type="radio" name="length" value="full">A full song</label>
+            <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
+          </div>
+        </div>
+        <div class="field"><label for="sf-email">Your email, for delivery</label><input id="sf-email" name="email" type="email" autocomplete="email"></div>
+        <button type="submit">Continue to payment · $50</button>
+        <p class="fine">You pay up front at the founding price. Delivered in 7 days. For office and production help, the same form will let you choose a service.</p>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<section class="sec free" id="free" aria-labelledby="free-title">
+  <div class="wrap">
+    <h2 class="display" id="free-title">Can’t buy <span>right now?</span></h2>
+    <p class="lead">You still belong here. The music, the films and the stories are free.</p>
+    <div class="ctas"><a class="btn red" href="/vault/">Explore The Vault</a><a class="btn ghost" href="/music/">Music &amp; films</a><a class="btn ghost" href="/follow/">Stay Connected</a></div>
+  </div>
+</section>
+
+<section class="sec hclose" aria-labelledby="close-title">
+  <div class="wrap">
+    <h2 class="display" id="close-title">One heart. Many voices.</h2>
+    <p>Real stories. Real people. Same heart.</p>
+  </div>
+</section>
+
+</main>
+<footer class="sitefoot">
+  <div class="fcols">
+    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/workshop/">The Workshop</a></nav>
+    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+  </div>
+  <p class="fcopy">© 2026 GhostHeart Studios</p>
+</footer>
+
+<script src="/assets/shared/ghostheart-world.js"></script>
+<script src="/assets/loud/loud.js"></script>
+</body>
+</html>

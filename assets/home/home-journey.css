@@ -44,7 +44,7 @@
 .ghx-site #join-the-signal { scroll-margin-top: 7rem; }
 .home-mission h2 { max-width: 28ch; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
 .home-mission p { max-width: 58ch; color: #e1d4cf; }
-.mission-board-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-block: 2rem; }
+.mission-board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 2rem; margin-block: 2rem; }
 .mission-board-grid h3 { font-size: 1.25rem; margin-bottom: .75rem; }
 .mission-board-grid a { display: flex; align-items: center; min-height: 44px; color: #f4c0b8; text-underline-offset: .25em; }
 .mission-participation { padding-top: 1rem; border-top: 1px solid #65343b; }
