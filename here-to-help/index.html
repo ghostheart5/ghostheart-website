@@ -107,6 +107,11 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .story-form button{justify-self:start;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.04em;text-transform:uppercase;padding:16px 26px;border:3px solid var(--blood);background:var(--blood);color:var(--void);cursor:pointer;min-height:56px}
 .story-form button:disabled{background:transparent;color:var(--ash);border-color:#3a3533;cursor:not-allowed}
 .story-form .fine{font-size:13px;color:var(--ash);line-height:1.6}
+.story-form .kind-song,.story-form .kind-office{display:grid;gap:18px}
+.story-form [hidden]{display:none}
+.story-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-error{border-left:4px solid var(--hot);padding:8px 12px;color:var(--bone);background:rgba(232,0,28,.12)}
+.notice.ok{border-color:#f4efe6;background:rgba(244,239,230,.06)}
 
 /* free + close */
 .free{border-top:2px solid var(--line)}
@@ -232,28 +237,52 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
     <div>
       <h2 class="display" id="order-title">Tell me <span>your story.</span></h2>
       <p class="lead">Everything happens here on myghostheart.com. You’ll only ever see the name GhostHeart Studios.</p>
-      <div class="notice" role="status" data-order-status>
-        <strong>Orders open soon</strong>
-        <p>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when the founding spots open.</p>
+      <div class="notice" role="status" aria-live="polite" data-order-status>
+        <strong data-order-status-title>Orders open soon</strong>
+        <p data-order-status-text>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when the founding spots open.</p>
       </div>
     </div>
-    <form class="story-form" id="story-form" data-order-endpoint="" novalidate aria-describedby="order-title">
-      <fieldset disabled>
-        <legend>Your custom song</legend>
-        <div class="field"><label for="sf-for">Who is the song for?</label><input id="sf-for" name="for" type="text" autocomplete="off"></div>
-        <div class="field"><label for="sf-occasion">What’s the occasion?</label><small>A wedding, an anniversary, a birthday, a memorial, or just because.</small><input id="sf-occasion" name="occasion" type="text" autocomplete="off"></div>
-        <div class="field"><label for="sf-memories">Your memories</label><small>The moments, places and details that matter most.</small><textarea id="sf-memories" name="memories"></textarea></div>
-        <div class="field"><label for="sf-names">Names to include</label><input id="sf-names" name="names" type="text" autocomplete="off"></div>
-        <div class="field"><label for="sf-mood">The mood</label><small>Happy, tender, bittersweet, a little funny…</small><input id="sf-mood" name="mood" type="text" autocomplete="off"></div>
-        <div class="field" role="group" aria-labelledby="sf-length-label"><span class="label" id="sf-length-label">Length</span>
+    <form class="story-form" id="story-form" novalidate aria-labelledby="order-title">
+      <fieldset disabled data-order-fields>
+        <div class="field" role="group" aria-labelledby="sf-kind-label"><span class="label" id="sf-kind-label">What do you need?</span>
           <div class="choices">
-            <label><input type="radio" name="length" value="full">A full song</label>
-            <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
+            <label><input type="radio" name="kind" value="song" checked>A custom song · $50</label>
+            <label><input type="radio" name="kind" value="office">Office and production help</label>
           </div>
         </div>
-        <div class="field"><label for="sf-email">Your email, for delivery</label><input id="sf-email" name="email" type="email" autocomplete="email"></div>
-        <button type="submit">Continue to payment · $50</button>
-        <p class="fine">You pay up front at the founding price. Delivered in 7 days. For office and production help, the same form will let you choose a service.</p>
+        <div class="kind-song" data-kind="song">
+          <div class="field"><label for="sf-for">Who is the song for?</label><input id="sf-for" name="for_whom" type="text" maxlength="200" autocomplete="off"></div>
+          <div class="field"><label for="sf-occasion">What’s the occasion?</label><small>A wedding, an anniversary, a birthday, a memorial, or just because.</small><input id="sf-occasion" name="occasion" type="text" maxlength="200" autocomplete="off"></div>
+          <div class="field"><label for="sf-memories">Your memories</label><small>The moments, places and details that matter most.</small><textarea id="sf-memories" name="memories" maxlength="4000"></textarea></div>
+          <div class="field"><label for="sf-names">Names to include</label><input id="sf-names" name="names" type="text" maxlength="500" autocomplete="off"></div>
+          <div class="field"><label for="sf-mood">The mood</label><small>Happy, tender, bittersweet, a little funny…</small><input id="sf-mood" name="mood" type="text" maxlength="200" autocomplete="off"></div>
+          <div class="field" role="group" aria-labelledby="sf-length-label"><span class="label" id="sf-length-label">Length</span>
+            <div class="choices">
+              <label><input type="radio" name="length" value="full">A full song</label>
+              <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
+            </div>
+          </div>
+        </div>
+        <div class="kind-office" data-kind="office" hidden>
+          <div class="field"><label for="sf-service">Which service?</label>
+            <select id="sf-service" name="service">
+              <option value="">Choose one</option>
+              <option value="data_entry">Data entry and typing · $20 per hour</option>
+              <option value="word">Word: letter, flyer, form, or fixing a messy document · $25 each</option>
+              <option value="resume">Resume · $50</option>
+              <option value="powerpoint">PowerPoint deck, up to 10 slides · $50</option>
+              <option value="excel">Excel sheet or simple tracker · $35</option>
+              <option value="writing">Writing: bio, product description, social posts · $25 each</option>
+              <option value="proofreading">Proofreading and editing · $15 per page</option>
+            </select>
+          </div>
+          <div class="field"><label for="sf-details">What do you need done?</label><small>Tell me about the job. I’ll reply with the total before you pay.</small><textarea id="sf-details" name="details" maxlength="4000"></textarea></div>
+        </div>
+        <div class="field"><label for="sf-email">Your email</label><input id="sf-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
+        <div class="field hp" aria-hidden="true"><label for="sf-website">Leave this empty</label><input id="sf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="form-error" role="alert" data-order-error hidden></p>
+        <button type="submit" data-order-submit>Continue to payment · $50</button>
+        <p class="fine" data-order-fine>Custom songs: you pay up front at the founding price, then I deliver in 7 days. Office and production help: I reply by email with the total, then you pay.</p>
       </fieldset>
     </form>
   </div>
@@ -287,5 +316,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
+<script src="/assets/help/orders-config.js"></script>
+<script src="/assets/help/order-form.js"></script>
 </body>
 </html>
