@@ -7,5 +7,5 @@
 window.GHOSTHEART_ORDERS = {
   supabaseUrl: 'https://pgqaqqliefpofsktjhjq.supabase.co',
   supabaseKey: 'sb_publishable_P7GsZrSsz839xa3xhJ3bbA_JKcTZNXp',
-  songPayLink: ''
+  songPayLink: 'https://buy.stripe.com/aFa4gAb51451crA4Se4F200'
 };

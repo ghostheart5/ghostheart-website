@@ -1,8 +1,9 @@
 // "I'm here to help" order form: closed until configured; song goes to Stripe with only the order id; office request; paid return.
 const {chromium}=require('playwright');const assert=require('assert');(async()=>{const b=await chromium.launch();
 const base='http://localhost:8765/here-to-help/';
-// 1. Unconfigured: form closed, nothing sent.
+// 1. Unconfigured (no payment link): form closed, nothing sent. The real config is live now, so serve an empty one.
 let p=await b.newPage(); let sent=0; p.on('request',r=>{if(/supabase|stripe/.test(r.url()))sent++;});
+await p.route('**/assets/help/orders-config.js',r=>r.fulfill({contentType:'text/javascript',body:"window.GHOSTHEART_ORDERS={supabaseUrl:'https://pgqaqqliefpofsktjhjq.supabase.co',supabaseKey:'sb_publishable_test_key_123456',songPayLink:''}"}));
 await p.goto(base); assert.equal(await p.locator('[data-order-fields]').evaluate(e=>e.disabled),true);
 assert.match(await p.locator('[data-order-status-title]').innerText(),/Orders open soon/i); assert.equal(sent,0); console.log('closed ok');
 // 2. Configured with mocks.
@@ -29,5 +30,7 @@ assert.equal(posts2[0].payload.service,'resume'); console.log('office ok');
 p=await b.newPage(); await p.route('**/assets/help/orders-config.js',r=>r.fulfill({contentType:'text/javascript',body:"window.GHOSTHEART_ORDERS={supabaseUrl:'https://pgqaqqliefpofsktjhjq.supabase.co',supabaseKey:'sb_publishable_test_key_123456',songPayLink:'https://buy.stripe.com/test_9B6cN551A2Ml24haFA6Ri00'}"}));
 await p.goto(base); assert.equal(await p.locator('[data-order-fields]').evaluate(e=>e.disabled),true); console.log('test link refused ok');
 // 4. Paid return.
-p=await b.newPage(); await p.goto(base+'?paid=1#order'); assert.match(await p.locator('[data-order-status-title]').innerText(),/Thank you/i); console.log('paid ok'); console.log('PASS help orders: closed by default, song to Stripe with order id only, office request, paid return');
+p=await b.newPage(); await p.goto(base+'?paid=1#order'); assert.match(await p.locator('[data-order-status-title]').innerText(),/Thank you/i); console.log('paid ok');
+// 5. The real config shipped with the site opens the form with a live link.
+p=await b.newPage(); await p.goto(base); assert.equal(await p.locator('[data-order-fields]').evaluate(e=>e.disabled),false); console.log('live config opens ok'); console.log('PASS help orders: closed by default, song to Stripe with order id only, office request, paid return');
 await b.close();})().catch(e=>{console.error(e);process.exit(1)});
