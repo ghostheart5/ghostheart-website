@@ -80,7 +80,7 @@ exception
     raise exception 'invalid order' using errcode = '22023';
 end;
 $$;
-revoke all on function public.submit_ghostheart_order(jsonb) from public;
+revoke all on function public.submit_ghostheart_order(jsonb) from public, authenticated;
 grant execute on function public.submit_ghostheart_order(jsonb) to anon;
 
 -- Reader role for Work HQ (morning brief). NOLOGIN; connect it later in a separate, reviewed step.

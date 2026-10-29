@@ -19,6 +19,9 @@ Owner decision OWNER-BLUEPRINT-20261028. The page is `/here-to-help/`.
 3. Fill in `assets/help/orders-config.js`: the project's publishable key (Project Settings > API keys) and the
    Payment Link. The form opens on its own once both are set.
 
+Only a **live** link (not `buy.stripe.com/test_...`) opens the form. A test link for trying the flow:
+`https://buy.stripe.com/test_9B6cN551A2Ml24haFA6Ri00` (GhostHeart Studios sandbox, created 2026-10-28; no real money).
+
 ## Reading orders
 Supabase > Table Editor > schema `ghostheart_orders` > `story_orders`. Stripe sends its own payment emails.
 
