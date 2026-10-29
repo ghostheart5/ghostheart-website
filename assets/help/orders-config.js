@@ -6,6 +6,6 @@
 // After setting them, run .github/orders/supabase/story-orders.review.sql in Supabase once.
 window.GHOSTHEART_ORDERS = {
   supabaseUrl: 'https://pgqaqqliefpofsktjhjq.supabase.co',
-  supabaseKey: '',
+  supabaseKey: 'sb_publishable_P7GsZrSsz839xa3xhJ3bbA_JKcTZNXp',
   songPayLink: ''
 };

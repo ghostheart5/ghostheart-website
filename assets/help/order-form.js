@@ -68,7 +68,7 @@
     submit.textContent = 'Sending…';
     fetch(cfg.supabaseUrl + '/rest/v1/rpc/submit_ghostheart_order', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey, Authorization: 'Bearer ' + cfg.supabaseKey },
+      headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey },
       body: JSON.stringify({ payload: payload })
     }).then(function (response) {
       if (!response.ok) throw new Error(String(response.status));
