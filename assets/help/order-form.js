@@ -25,7 +25,7 @@
 
   var ready = /^https:\/\/[a-z0-9]+\.supabase\.co$/.test(cfg.supabaseUrl || '') &&
     typeof cfg.supabaseKey === 'string' && cfg.supabaseKey.length > 20 &&
-    /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(cfg.songPayLink || '');
+    /^https:\/\/buy\.stripe\.com\/(?!test_)[A-Za-z0-9_]+$/.test(cfg.songPayLink || ''); // live links only
   if (!ready) return;
 
   fields.disabled = false;
