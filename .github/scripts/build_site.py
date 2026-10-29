@@ -29,3 +29,4 @@ print('Complete build preserved the earlier featured recording as well as the ar
 runpy.run_path(str(ROOT/'.github/scripts/build_reviewed_site.py'))
 runpy.run_path(str(ROOT/'.github/scripts/apply_platform_directory.py'))
 runpy.run_path(str(ROOT/'.github/scripts/apply_share_meta.py'))
+runpy.run_path(str(ROOT/'.github/scripts/apply_merch_links.py'))
