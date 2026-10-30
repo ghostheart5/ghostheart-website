@@ -68,6 +68,25 @@
 .join{grid-template-columns:1fr}
 #email-signup-title{scroll-margin-top:calc(var(--hdr,110px) + 24px)}
 .email-entry:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+/* moved from the home page 2026-10-30 */
+:root{--coal:#0e0b0b;--line:rgba(244,239,230,.16);--display:Anton,Impact,"Arial Narrow",sans-serif;--body:"Space Grotesk",system-ui,sans-serif;--hand:"Permanent Marker",cursive}
+.hb-wrap{width:min(1280px,100%);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+#everywhere .label{border-bottom:2px solid var(--line)}
+#everywhere{padding:clamp(56px,9vw,120px) 0;background:linear-gradient(180deg,var(--coal),#160306);color:var(--bone);border-top:6px solid var(--blood)}
+#everywhere h2{font-size:clamp(44px,7vw,108px);margin:0;max-width:14ch}
+#everywhere h2 span{color:var(--blood)}
+.hb-lead{font-size:clamp(18px,1.6vw,22px);max-width:52ch;margin:18px 0 0}
+.hb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
+.hb-card{display:grid;align-content:start;gap:8px;min-height:190px;padding:20px;border:2px solid var(--line);background:var(--void);color:var(--bone);text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.hb-card small{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
+.hb-card strong{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);font-weight:400;text-transform:uppercase;line-height:.95}
+.hb-card span{font-size:16px;line-height:1.45}
+.hb-card em{font-style:normal;font-weight:700;color:var(--hot);font-size:15px;margin-top:auto}
+.hb-card:hover{border-color:var(--blood);background:#17070a;transform:translateY(-4px)}
+.hb-card.home{background:var(--blood);border-color:var(--blood);color:var(--void)}
+.hb-card.home small,.hb-card.home em{color:var(--void)}
+@media(max-width:1060px){.hb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.hb-grid{gap:8px}.hb-card{min-height:0;padding:14px;gap:6px}.hb-card strong{font-size:22px}.hb-card span{font-size:14px;line-height:1.4}.hb-card em{font-size:14px}}
 </style>
 </head>
 <body>
@@ -87,6 +106,28 @@
     <a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7"><small>Every song</small><b>Spotify ↗</b></a>
   </div>
 </header>
+
+<section id="everywhere" aria-labelledby="everywhere-title">
+<div class="hb-wrap">
+<div class="label"><span>Follow the heart / Every platform, a different piece</span><span class="num">✶</span></div>
+<h2 class="display" id="everywhere-title">One heart. <span>Never the same post twice.</span></h2>
+<p class="hb-lead">Each place gets something only it has. When something hits, it leads you back here—where the whole story lives.</p>
+<div class="hb-grid">
+<a class="hb-card" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank"><small>YouTube</small><strong>The full films</strong><span>Complete songs and films, plus the Shorts that lead to them.</span><em>Watch ↗</em></a>
+<a class="hb-card" href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank"><small>TikTok</small><strong>First moments</strong><span>The hit of a line or a scene. React, then come find the rest.</span><em>Catch it ↗</em></a>
+<a class="hb-card" href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank"><small>Instagram</small><strong>The art &amp; the meaning</strong><span>Artwork, what it means, and behind the scenes in Stories.</span><em>See it ↗</em></a>
+<a class="hb-card" href="https://x.com/ghostheartgp" rel="noopener noreferrer" target="_blank"><small>X</small><strong>The studio voice</strong><span>What I’m making, what’s ready, and what I have to say today.</span><em>Follow ↗</em></a>
+<a class="hb-card" href="https://bsky.app/profile/ghostheartgp.bsky.social" rel="noopener noreferrer" target="_blank"><small>Bluesky</small><strong>Work notes</strong><span>The decisions and questions behind the work, and real conversation.</span><em>Talk ↗</em></a>
+<a class="hb-card" href="https://www.pinterest.com/ghostheart131517/" rel="noopener noreferrer" target="_blank"><small>Pinterest</small><strong>Lines to keep</strong><span>Artwork to save. Every pin leads to the song or story behind it.</span><em>Save ↗</em></a>
+<a class="hb-card" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank"><small>Spotify</small><strong>Turn it up</strong><span>The recordings, for the listen you keep coming back to.</span><em>Listen ↗</em></a>
+<a class="hb-card" href="https://music.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank"><small>YouTube Music</small><strong>Audio only</strong><span>Every song without the picture, for the drive and the headphones.</span><em>Play ↗</em></a>
+<a class="hb-card" href="https://suno.com/@ghostheart131517" rel="noopener noreferrer" target="_blank"><small>Suno</small><strong>The listening room</strong><span>Selected songs from the GhostHeart world.</span><em>Step in ↗</em></a>
+<a class="hb-card" href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=social&amp;utm_campaign=wake-the-heart&amp;utm_content=follow_substack" rel="noopener noreferrer" target="_blank"><small>Substack</small><strong>Too Human to Stay Quiet</strong><span>The long version of GhostHeart’s story, one chapter at a time.</span><em>Read ↗</em></a>
+<a class="hb-card" href="/workshop/"><small>The Workshop</small><strong>Apps &amp; tools</strong><span>Things I built that you can use.</span><em>Open the files →</em></a>
+<a class="hb-card home" href="/"><small>myghostheart.com</small><strong>Home base</strong><span>Everything in one place, plus a note from me when something’s ready.</span><em>Go home →</em></a>
+</div>
+</div>
+</section>
 
 <section>
   <div class="join">

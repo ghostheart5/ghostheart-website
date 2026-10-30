@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const quote = document.querySelector('#home-vault [data-daily-quote]');
+  const quote = document.querySelector('#daily-line [data-daily-quote]');
   const link = document.getElementById('qlink');
   const copy = document.querySelector('[data-home-copy]');
   const share = document.querySelector('[data-home-share]');
