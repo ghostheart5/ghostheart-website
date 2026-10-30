@@ -39,6 +39,20 @@
 .film p{margin-top:12px;font-size:18px}
 .film small{display:block;margin-top:18px;font-weight:700;letter-spacing:.2em;font-size:12px;color:var(--hot)}
 
+/* halloween pick (2026-10-30): real recordings from the jukebox below; shows through Halloween night */
+.spook{background:radial-gradient(90% 120% at 85% 0%,#3a1400 0%,#120500 50%,var(--void) 80%);border-block:3px solid #ff7a1a}
+.spook[hidden]{display:none}
+.spook .label span{color:#ff7a1a}
+.spook h2{font-size:clamp(56px,9vw,140px);line-height:.88}
+.spook h2 span{color:#ff7a1a;text-shadow:0 0 30px rgba(255,122,26,.45)}
+.spook p.sub{margin:14px 0 26px;font-size:clamp(17px,1.8vw,21px);max-width:44ch}
+.spook ol{list-style:none;border-top:3px solid #ff7a1a}
+.spook ol button{width:100%;display:grid;grid-template-columns:clamp(54px,7vw,100px) 1fr auto;align-items:center;gap:12px;text-align:left;padding:14px 0;border-bottom:3px solid #2a1606;font-family:Anton,Impact,sans-serif;font-size:clamp(28px,4.4vw,58px);text-transform:uppercase;line-height:.95;transition:.12s}
+.spook ol button .no{color:#ff7a1a;font-size:.5em}
+.spook ol button .go{font-size:.42em;letter-spacing:.06em;color:var(--ash)}
+.spook ol button:hover{background:#ff7a1a;color:var(--void);padding-left:16px}
+.spook ol button:hover .no,.spook ol button:hover .go{color:var(--void)}
+
 /* jukebox */
 .juke{background:var(--void)}
 .album{margin-bottom:clamp(60px,8vw,110px)}
@@ -134,6 +148,19 @@
 </header>
 
 <div class="tape"><div><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
+
+<section class="spook" id="halloween" aria-labelledby="spook-title" data-spook-close="2026-11-01T05:00:00Z">
+  <div class="label"><span>Halloween / Lights off</span><span class="num">🎃</span></div>
+  <h2 class="display" id="spook-title">Halloween<br><span>Night.</span></h2>
+  <p class="sub">Turn the lights down. Four songs from the darker side of the heart.</p>
+  <ol>
+      <li><button data-spook="awakening-01-cruel.mp3"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
+      <li><button data-spook="youre-not-god-03-that-aint-holy.mp3"><span class="no">02</span>That Ain't Holy<span class="go">▶ PLAY</span></button></li>
+      <li><button data-spook="youre-not-god-02-hey-preacher-man.mp3"><span class="no">03</span>Hey Preacher Man<span class="go">▶ PLAY</span></button></li>
+      <li><button data-spook="awakening-02-im-not-staying-silent.mp3"><span class="no">04</span>I'm Not<span class="go">▶ PLAY</span></button></li>
+  </ol>
+</section>
+<script>(()=>{const box=document.querySelector('[data-spook-close]');if(!box)return;if(Date.now()>=new Date(box.dataset.spookClose)){box.hidden=true;return}box.querySelectorAll('[data-spook]').forEach(b=>b.addEventListener('click',()=>{const t=document.querySelector(`.tracks button[data-src="${b.dataset.spook}"]`);if(t)t.click()}))})();</script>
 
 <section class="films" id="films">
   <div class="label"><span>The Films / Lights down</span><span class="num">01</span></div><h2 class="vh">The films</h2>
