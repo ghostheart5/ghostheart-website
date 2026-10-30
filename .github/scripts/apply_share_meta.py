@@ -11,7 +11,9 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = 'https://www.myghostheart.com'
-DEFAULT_IMAGE = SITE + '/assets/story/ghostheart-scars-rooftop-rain.png'
+DEFAULT_IMAGE = SITE + '/assets/story/ghostheart-share-1200x630.jpg'
+# Audit 2026-10-30: the 2.3 MB PNG made link previews slow; the same art at 1200x630 is about 170 KB.
+OLD_IMAGE = SITE + '/assets/story/ghostheart-scars-rooftop-rain.png'
 IMAGES = {'assets/platforms/index.html': SITE + '/assets/platforms/header.jpg'}
 
 
@@ -33,6 +35,9 @@ for page in sorted(ROOT.rglob('*.html')):
     if '.github' in page.parts or 'node_modules' in page.parts:
         continue
     html = page.read_text(encoding='utf-8')
+    if f'content="{OLD_IMAGE}"' in html:
+        html = html.replace(f'content="{OLD_IMAGE}"', f'content="{DEFAULT_IMAGE}"')
+        page.write_text(html, encoding='utf-8')
     if 'http-equiv="refresh"' in html or 'og:image' in html or '</head>' not in html:
         continue
     title = first(r'<title[^>]*>(.*?)</title>', html) or 'GhostHeart'

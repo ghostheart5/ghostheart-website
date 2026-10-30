@@ -163,3 +163,19 @@ html body .g-play-label,html body .g-small,html body .qgrid small,html body .vau
 html body .ghx-brand,html body .g-actions .g-link{display:inline-flex;align-items:center;min-height:24px}
 html body .fcols nav a{display:flex;align-items:center;min-height:24px}
 html body .fine details summary{min-height:24px}
+
+/* AUDIT PASS 2026-10-30 — every main link stays visible on a phone (Music and I’m Here to Help were cut off), Merch in the main menu. */
+body header.ghx-header .ghx-bar .ghx-primary a.ghx-merch{color:var(--blood)}
+body header.ghx-header .ghx-bar .ghx-primary a.ghx-merch:hover{color:var(--hot)}
+@media(max-width:820px){
+  body header.ghx-header .ghx-bar .ghx-primary{order:3;display:flex;flex:1 0 100%;flex-wrap:wrap;justify-content:flex-start;gap:0 16px;width:100%;margin:0;overflow:visible}
+  body header.ghx-header .ghx-bar .ghx-primary a,body header.ghx-header .ghx-bar .ghx-primary a:last-child{display:inline-flex;flex:none;align-items:center;min-height:40px;padding:0;font-size:12px!important;letter-spacing:.08em;white-space:nowrap}
+}
+@media(max-width:400px){
+  body header.ghx-header .ghx-bar .ghx-primary{gap:0 9px}
+  body header.ghx-header .ghx-bar .ghx-primary a,body header.ghx-header .ghx-bar .ghx-primary a:last-child{min-height:36px;font-size:10.5px!important;letter-spacing:.03em}
+  body header.ghx-header .ghx-bar{gap:6px;padding-top:8px;padding-bottom:6px}
+  body header.ghx-header .ghx-bar .ghx-brand{font-size:20px!important;margin-right:auto}
+  body header.ghx-header .ghx-bar .ghx-menu-toggle{gap:4px;font-size:13px!important;padding:6px 7px;min-height:40px}
+  body header.ghx-header .ghx-bar .ghx-help-link{font-size:11px!important;padding:6px 8px;min-height:40px}
+}

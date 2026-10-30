@@ -201,7 +201,9 @@ assert home.select_one('#latest .ctas a').get_text() == 'Watch the full film'
 assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
-assert [section.get('id') for section in home.select('main > section')][:5] == ['home', 'latest', 'home-story', 'mission-board', 'join-the-signal']
+assert [section.get('id') for section in home.select('main > section')][:5] == ['home', 'latest', 'home-story', 'mission-board', 'everywhere']
+assert not home.select_one('section#join-the-signal'), 'One email signup block on the homepage: the Heart Rebellion invitation'
+assert home.select_one('aside#join-the-signal.rebellion-invite'), 'Old #join-the-signal links land on the Heart Rebellion invitation'
 assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "The Vault"
 assert not home.select('#home-vault .door[href="/GhostHeart_Quotes.html"], .sitefoot a[href="/GhostHeart_Quotes.html"]')
 assert len(home.select('#home-story a[href^="/GhostHeart_Story.html"]')) == 1

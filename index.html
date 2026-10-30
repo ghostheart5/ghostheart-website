@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
 <meta name="generator" content="GhostHeart LOUD redesign">
+<script>document.documentElement.classList.add("js")</script>
 <link href="https://www.myghostheart.com/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="GhostHeart" property="og:site_name"/>
 <meta content="GhostHeart | Real Stories. Real People. Same Heart." property="og:title"/>
 <meta content="Music, films, and stories for the wounded, the brave, and everyone still here." property="og:description"/>
 <meta content="https://www.myghostheart.com/" property="og:url"/>
-<meta content="https://www.myghostheart.com/assets/story/ghostheart-scars-rooftop-rain.png" property="og:image"/>
+<meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -83,7 +84,7 @@ main>section,main>aside{position:relative}
 /* tape */
 .tape{overflow:hidden;background:var(--blood);color:var(--void);transform:rotate(-1.2deg);margin:-14px -2vw 0;border-block:3px solid var(--void);position:relative;z-index:2}
 .tape div{display:flex;gap:44px;width:max-content;padding:12px 0;font-family:var(--display);font-size:clamp(26px,3.6vw,46px);text-transform:uppercase;animation:hb-tape 26s linear infinite}
-.tape.alt{background:var(--bone);transform:rotate(1deg)}
+.tape.alt{background:var(--void);color:var(--blood);transform:rotate(1deg)}
 
 /* ---------- FEATURED ---------- */
 #latest{padding:clamp(56px,9vw,120px) 0 clamp(40px,6vw,80px)}
@@ -134,27 +135,14 @@ main>section,main>aside{position:relative}
 .mission-board-grid a{display:inline-flex;align-items:center;min-height:44px;color:var(--hot);font-weight:700;text-underline-offset:5px}
 .mission-participation{color:var(--ash);font-size:16px;margin-top:18px}
 @media(max-width:860px){.mission-board-grid{grid-template-columns:1fr}}
-#join-the-signal{padding:clamp(40px,6vw,80px) 0;background:var(--bone);color:var(--void)}
-#join-the-signal .signup-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center;width:min(1280px,100%);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
-#join-the-signal .kicker{background:var(--void);color:var(--bone);transform:none}
-#join-the-signal h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(38px,5vw,72px);line-height:.95;margin:12px 0}
-#join-the-signal p{font-size:17px;max-width:44ch}
-#join-the-signal .ghx-actions{display:flex;flex-wrap:wrap;gap:10px}
-#join-the-signal .ghx-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 20px;border:2px solid var(--void);font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--void);background:transparent}
-#join-the-signal .ghx-actions a.primary,#join-the-signal .home-email-action a{background:var(--blood);border-color:var(--blood);color:#fff}
-#join-the-signal .ghx-actions a:hover{background:var(--void);color:var(--bone)}
-#join-the-signal a:focus-visible{outline-color:var(--blood)}
-@media(max-width:860px){#join-the-signal .signup-layout{grid-template-columns:1fr}}
 
 /* ---------- EVERYWHERE: every platform, a different piece ---------- */
-#everywhere{padding:clamp(28px,4vw,56px) 0 clamp(56px,9vw,120px);background:var(--bone);color:var(--void)}
-#everywhere .label{border-color:rgba(5,5,5,.2);color:#5c5752}
-#join-the-signal{padding-bottom:clamp(24px,3vw,40px)}
+#everywhere{padding:clamp(56px,9vw,120px) 0;background:linear-gradient(180deg,var(--coal),#160306);color:var(--bone);border-top:6px solid var(--blood)}
 #everywhere h2{font-size:clamp(44px,7vw,108px);margin:0;max-width:14ch}
 #everywhere h2 span{color:var(--blood)}
 .hb-lead{font-size:clamp(18px,1.6vw,22px);max-width:52ch;margin:18px 0 0}
 .hb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
-.hb-card{display:grid;align-content:start;gap:8px;min-height:190px;padding:20px;border:2px solid var(--void);background:var(--void);color:var(--bone);text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.hb-card{display:grid;align-content:start;gap:8px;min-height:190px;padding:20px;border:2px solid var(--line);background:var(--void);color:var(--bone);text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
 .hb-card small{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
 .hb-card strong{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);font-weight:400;text-transform:uppercase;line-height:.95}
 .hb-card span{font-size:16px;line-height:1.45}
@@ -179,24 +167,21 @@ main>section,main>aside{position:relative}
 .rebellion-note{color:var(--ash);font-size:15px;margin-top:14px}
 
 /* ---------- VAULT ---------- */
-#home-vault{padding:clamp(56px,9vw,120px) 0;background:var(--bone);color:var(--void)}
-#home-vault .label{border-color:rgba(5,5,5,.2);color:#5c5752}
+#home-vault{padding:clamp(56px,9vw,120px) 0;background:radial-gradient(90% 80% at 100% 0%,#3d0009,var(--coal) 62%);color:var(--bone);border-top:6px solid var(--blood)}
 #home-vault .vault-h2{font-size:clamp(56px,9vw,140px);margin:0}
 .rebellion-return{font-size:clamp(18px,1.6vw,21px);max-width:44ch;margin:12px 0 22px}
 #home-vault .rebellion-eyebrow{color:var(--blood)}
 .dq{font-family:var(--display);text-transform:none;font-size:clamp(30px,4.6vw,68px);line-height:1;margin:12px 0 0;max-width:22ch;border-left:10px solid var(--blood);padding-left:clamp(14px,2vw,26px)}
-#home-vault .rebellion-actions a,#home-vault .rebellion-actions button{border-color:var(--void);color:var(--void)}
-#home-vault .rebellion-actions a:hover,#home-vault .rebellion-actions button:hover{background:var(--void);color:var(--bone)}
-#home-vault .rebellion-note{color:#5c5752}
+#home-vault .rebellion-note{color:var(--ash)}
 #home-share-fallback textarea{width:100%;max-width:640px;font:16px var(--body);padding:10px;margin-top:8px}
 .door-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
-.door{display:grid;gap:10px;align-content:space-between;min-height:200px;padding:22px;background:var(--void);color:var(--bone);text-decoration:none;border:3px solid var(--void);transition:transform .2s ease,box-shadow .2s ease}
+.door{display:grid;gap:10px;align-content:space-between;min-height:200px;padding:22px;background:var(--void);color:var(--bone);text-decoration:none;border:3px solid var(--bone);transition:transform .2s ease,box-shadow .2s ease}
 .door .n{font-family:var(--display);font-size:40px;color:var(--blood);line-height:1}
 .door h3{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(30px,3vw,46px);line-height:.92;margin:0}
 .door p{margin:6px 0 0;font-size:15px;color:var(--ash)}
 .door:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood)}
 #home-vault .ctas{margin-top:26px}
-#home-vault .btn.red{box-shadow:6px 6px 0 var(--void)}
+#home-vault .btn.red{box-shadow:6px 6px 0 var(--bone)}
 @media(max-width:760px){.door-grid{grid-template-columns:1fr}.door{min-height:0}}
 
 /* ---------- MANIFESTO ---------- */
@@ -219,7 +204,7 @@ main>section,main>aside{position:relative}
 @media(max-width:760px){.sitefoot .fcols{grid-template-columns:1fr 1fr}.sitefoot .fcols>div:first-child{grid-column:1/-1}}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.js .rv.in{opacity:1;transform:none}
 @keyframes hb-pulse{0%,100%{transform:scale(1);opacity:.85}12%{transform:scale(1.18);opacity:1}24%{transform:scale(.98)}36%{transform:scale(1.1)}}
 @keyframes hb-trace{to{stroke-dashoffset:0}}
 @keyframes hb-tape{to{transform:translateX(-50%)}}
@@ -229,7 +214,33 @@ main>section,main>aside{position:relative}
   .hb-ekg{top:48%;opacity:.6}
   #home .ghx-actions a{flex:1 1 100%;justify-content:center}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hb-ekg path{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.hb-ekg path{stroke-dashoffset:0}}
+/* AUDIT PASS 2026-10-30 — hero leads to listening and the custom song; Christmas countdown; merch strip. */
+.hb-under{display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px;margin-top:22px}.hb-under .hb-scroll{margin-top:0}
+.hb-email{display:inline-flex;align-items:center;min-height:44px;color:var(--bone);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:6px;text-decoration-color:var(--blood)}
+.hb-email:hover{color:var(--hot)}
+#home .ghx-actions a.song{background:var(--void);border-color:var(--blood);color:#fff;box-shadow:6px 6px 0 var(--blood)}
+#home .ghx-actions a.song:hover{background:var(--blood);color:#fff}
+.hb-xmas{position:relative;z-index:1;background:var(--void);border-bottom:3px solid var(--blood);padding:clamp(34px,5vw,56px) 0 clamp(26px,4vw,44px)}
+.hb-xmas[hidden]{display:none}
+.hb-xmas .hb-wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center}
+.hb-xmas .days{font-family:var(--display);font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(232,0,28,.55)}
+.hb-xmas .days small{display:block;font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--ash);margin-top:10px}
+.hb-xmas h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(34px,4.6vw,66px);line-height:.92;margin:0}
+.hb-xmas h2 span{color:var(--blood)}
+.hb-xmas p{margin:10px 0 0;font-size:17px;max-width:46ch}
+.hb-xmas .btn.red{white-space:nowrap}
+@media(max-width:860px){.hb-xmas .hb-wrap{grid-template-columns:auto minmax(0,1fr)}.hb-xmas .ctas{grid-column:1/-1}}
+@media(max-width:480px){.hb-xmas .hb-wrap{grid-template-columns:1fr}.hb-xmas .btn.red{width:100%}}
+.hb-shop{position:relative;overflow:hidden;isolation:isolate;background:var(--blood);color:#fff;padding:clamp(48px,7vw,96px) 0;border-block:4px solid var(--void)}
+.hb-shop::before{content:"WEAR THE HEART WEAR THE HEART";position:absolute;z-index:-1;left:-2vw;top:50%;translate:0 -50%;font-family:var(--display);font-size:22vw;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,.25);pointer-events:none}
+.hb-shop .hb-wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:end;justify-content:space-between}
+.hb-shop h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(48px,8vw,128px);line-height:.85;margin:0}
+.hb-shop h2 span{color:var(--void)}
+.hb-shop p{margin:12px 0 0;font-size:18px;max-width:40ch}
+.hb-shop .btn{background:var(--void);border-color:var(--void);color:#fff;box-shadow:8px 8px 0 #fff;font-size:17px}
+.hb-shop .btn:hover{background:#fff;color:var(--void)}
+@media(max-width:560px){.hb-card span{display:none}}
 /* COMPACT PASS 2026-10-18 — kept from the published compact homepage: comfortable reading sizes on small screens. */
 @media(max-width:700px){body{font-size:17px}.canon-hero__line{font-size:18px}#mission-board article p{font-size:16px}}
 </style>
@@ -237,7 +248,7 @@ main>section,main>aside{position:relative}
 <body>
 <header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a aria-current="page" aria-label="GhostHeart home" class="ghx-brand" href="index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="awakening/index.html">The Awakening</a><a href="GhostHeart_Story.html">Enter My World</a><a href="albums/index.html">Music</a><a href="here-to-help/">I’m Here to Help</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="music/">Music</a><a href="awakening/index.html">The Awakening</a><a href="GhostHeart_Story.html">Enter My World</a><a href="here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
@@ -256,12 +267,20 @@ main>section,main>aside{position:relative}
 <h1 class="display">Too <span class="o">Human</span><br/>To Stay <span class="r">Quiet.</span></h1>
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note" id="home-story-explanation">Meet the man behind GhostHeart.</p>
-<div class="ghx-actions"><a aria-describedby="home-story-explanation" class="primary" href="/GhostHeart_Story.html">Discover GhostHeart</a><a class="secondary" href="/follow/#email-signup-title">Get email updates</a><a class="secondary" href="#mission-board">Be Part of the Mission</a></div>
-<a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a>
+<div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a><a aria-describedby="home-story-explanation" class="secondary" href="/GhostHeart_Story.html">Enter My World</a></div>
+<div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a><a class="hb-email" href="/follow/#email-signup-title">Get email updates</a></div>
 </div>
 </div>
 </section>
 <div class="tape" aria-hidden="true"><div><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span></div></div>
+<aside class="hb-xmas" aria-labelledby="xmas-title" data-xmas data-xmas-close="2026-12-14T06:00:00Z">
+<div class="hb-wrap">
+<div class="days" aria-hidden="true"><span data-xmas-days>Dec 13</span><small data-xmas-unit>Orders close</small></div>
+<div><h2 id="xmas-title">A Christmas song <span>about your people.</span></h2><p>Tell me your story and I’ll write it into a real song, delivered by December 20. Christmas orders close Sunday, December 13.</p></div>
+<div class="ctas"><a class="btn red" href="/here-to-help/#order">Tell me your story</a></div>
+</div>
+</aside>
+<script>(()=>{const box=document.querySelector('[data-xmas]');if(!box)return;const left=(new Date(box.dataset.xmasClose)-Date.now())/864e5;if(left<=0){box.hidden=true;return}const d=Math.max(1,Math.floor(left));box.querySelector('[data-xmas-days]').textContent=d;box.querySelector('[data-xmas-unit]').textContent=d===1?'Day left':'Days left'})();</script>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
 <div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
@@ -290,7 +309,7 @@ main>section,main>aside{position:relative}
 <h2 class="display">The Man<br/>Behind <span class="o">The</span> Heart.</h2>
 <p>Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.</p>
 <div class="creed"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
-<div class="hb-links"><a class="btn red" href="/GhostHeart_Story.html#behind-the-scars">Read Behind the Scars</a><a class="btn" href="/journal/">The Journal</a></div>
+<div class="hb-links"><a class="btn red" href="/GhostHeart_Story.html#behind-the-scars">Read Behind the Scars</a><a class="btn" href="/journal/">The Blog</a></div>
 </div>
 </div>
 </div>
@@ -304,7 +323,6 @@ main>section,main>aside{position:relative}
 <article><h3>Need a hand?</h3><p>A custom song written from your story, or office and production help.</p><a href="/here-to-help/">I’m here to help</a></article>
 <article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: <span data-live-after="coming soon" data-live-until="2026-11-01T16:45:00Z">Sunday, November 1, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives &amp; Readings</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
-<section class="signup-section" id="join-the-signal"><div class="site-wrap signup-layout"><div><p class="kicker">Stay connected</p><h2>Be Part of GhostHeart</h2><p>New chapters, stories behind the music, confirmed Live announcements, and ways to take part—when there’s something ready to share.</p><p class="connection-optional">Free and optional. Unsubscribe anytime.</p><div class="ghx-actions home-email-action"><a class="secondary" href="/follow/">Keep Me Connected</a></div></div><nav aria-label="GhostHeart social profiles" class="ghx-actions"><a class="primary" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank">YouTube</a><a class="secondary" href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank">TikTok</a><a class="secondary" href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank">Instagram</a><a class="secondary" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank">Spotify</a></nav></div></section>
 <section id="everywhere" aria-labelledby="everywhere-title">
 <div class="hb-wrap">
 <div class="label"><span>Follow the heart / Every platform, a different piece</span><span class="num">03</span></div>
@@ -326,8 +344,14 @@ main>section,main>aside{position:relative}
 </div>
 </div>
 </section>
+<aside class="hb-shop" aria-labelledby="shop-title">
+<div class="hb-wrap">
+<div><h2 id="shop-title">Wear <span>The Heart.</span></h2><p>Official GhostHeart Studios merch. Carry the cracked heart out into the world.</p></div>
+<a class="btn" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Shop merch ↗</a>
+</div>
+</aside>
 <div class="heart-not-done" aria-hidden="true">This Heart Isn't <span>Done.</span></div>
-<aside class="rebellion-invite" aria-labelledby="rebellion-title">
+<aside class="rebellion-invite" id="join-the-signal" aria-labelledby="rebellion-title">
 <p class="rebellion-eyebrow">Still here. Still connected.</p>
 <h2 id="rebellion-title">Join the Heart Rebellion.</h2>
 <p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
@@ -346,7 +370,7 @@ main>section,main>aside{position:relative}
 <div id="home-share-fallback" hidden><label for="home-share-text">Select and copy this quote and its link:</label><textarea id="home-share-text" readonly rows="4"></textarea></div>
 <div class="door-grid">
 <a class="door" href="/music/"><span class="n">01</span><div><h3>Music &amp; films</h3><p>Every song. Every film. Turn it up.</p></div></a>
-<a class="door" href="/GhostHeart_Story.html"><span class="n">02</span><div><h3>The story</h3><p>The life behind the name, chapter by chapter.</p></div></a>
+<a class="door" href="/GhostHeart_Story.html"><span class="n">02</span><div><h3>Enter My World</h3><p>The life behind the name, chapter by chapter.</p></div></a>
 <a class="door" href="/workshop/"><span class="n">03</span><div><h3>The Workshop</h3><p>Things I built that you can use.</p></div></a>
 </div>
 <div class="ctas"><a class="btn red" href="/vault/">Explore The Vault: music, films &amp; quotes ↗</a></div>
@@ -364,7 +388,7 @@ main>section,main>aside{position:relative}
 <div class="fcols">
 <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
 <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">The Story</a><a href="/journal/">Blog</a><a href="/workshop/">The Workshop</a></nav>
+<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=footer" rel="noopener" target="_blank">Substack</a><a href="/workshop/">The Workshop</a></nav>
 <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
 </div>
 <p class="fcopy">© 2026 GhostHeart Studios</p>

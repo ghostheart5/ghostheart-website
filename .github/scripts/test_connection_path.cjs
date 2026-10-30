@@ -12,18 +12,17 @@ module.exports = async (page, base) => {
     // Owner decision 2026-10-14 (LOUD redesign): homepage headline is "Too Human to Stay Quiet."
     assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
-      ['Discover GhostHeart', 'Get email updates', 'Be Part of the Mission']);
+      ['▶ Play The Awakening', 'Get Your Song Written', 'Enter My World']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
-      ['/GhostHeart_Story.html', '/follow/#email-signup-title', '#mission-board']);
+      ['/music/#listen', '/here-to-help/#order', '/GhostHeart_Story.html']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
     assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
-    assert.equal(await page.locator('#join-the-signal h2').textContent(), 'Be Part of GhostHeart');
-    assert.equal(await page.locator('.home-email-action a').textContent(), 'Keep Me Connected');
-    assert.match(await page.locator('#join-the-signal').innerText(), /confirmed Live announcements/);
-    assert.match(await page.locator('#join-the-signal').innerText(), /Free and optional/);
-    for (const fragment of ['#mission-board']) {
-      await page.locator('#home a[href="' + fragment + '"]').focus();
+    assert.equal(await page.locator('section#join-the-signal').count(), 0);
+    assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
+    assert.match(await page.locator('.rebellion-invite').innerText(), /Free and optional/);
+    for (const fragment of ['#home-vault']) {
+      await page.locator('.rebellion-invite a[href="' + fragment + '"]').focus();
       await page.keyboard.press('Enter');
       // The same-page jump reaches Playwright's URL a moment after the key press; wait for it instead of racing it.
       await page.waitForURL(url => url.hash === fragment, { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
@@ -72,7 +71,7 @@ module.exports = async (page, base) => {
       assert.doesNotMatch(await page.locator('body').innerText(), /Join the Signal|Follow the Signal|GhostHeart Signal/);
       results.push({ route, width, overflow: false, signalBranding: false });
     }
-    assert.equal(await page.locator('#email-signup-title').textContent(), 'Be Part of GhostHeart');
+    assert.equal(await page.locator('#email-signup-title').textContent(), 'Join the Heart Rebellion');
     assert.equal(await page.locator('button[type=submit]').textContent(), 'Keep Me Connected');
     assert.match(await page.locator('#email-signup-title + p').innerText(), /confirmed Live announcements/);
   }
