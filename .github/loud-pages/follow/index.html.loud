@@ -36,7 +36,7 @@
 .form label{display:block;font-weight:700;letter-spacing:.18em;font-size:12px;text-transform:uppercase;margin-bottom:10px}
 .form .row{display:flex;flex-wrap:wrap;gap:10px}
 .form input{flex:1 1 220px;min-width:0;border:3px solid var(--void);background:#fff;color:var(--void);font:700 18px "Space Grotesk",sans-serif;padding:14px}
-.form button{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;background:var(--blood);color:#fff;padding:14px 22px;border:3px solid var(--blood)}
+.form button{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;background:var(--blood);color:var(--void);padding:14px 22px;border:3px solid var(--blood)}
 .form button:disabled,.form input:disabled{opacity:.55;cursor:not-allowed}
 .form p{margin-top:14px;font-size:14px}
 .form .pv{margin-top:14px;border:2px dashed var(--blood);padding:10px 12px;font-weight:700;font-size:13px}

@@ -22,7 +22,7 @@ body.ghx-site { background: var(--ghx-bg); color: var(--ghx-white); font-family:
 .ghx-site main h2 { letter-spacing: -.04em; line-height: 1.08; }
 .ghx-site main h3 { letter-spacing: -.025em; line-height: 1.15; }
 .ghx-site main :is(h1,h2) em { color: #ff8981; font-style: normal; }
-.ghx-site main :is(.ghx-kicker,.g-kicker,.kicker,.world-section-label,.vault-type,.projects-index,.journal-meta) { color: #f38f8b; font-family: 'Segoe UI',Arial,sans-serif; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.ghx-site main :is(.ghx-kicker,.g-kicker,.kicker,.world-section-label,.vault-type,.projects-index,.journal-meta) { color: #ff6b5e; font-family: 'Segoe UI',Arial,sans-serif; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
 .ghx-site main :is(.world-page,.projects-page,.vault-page) { color: var(--ghx-white); }
 .ghx-site main :is(.world-hero,.vault-hero,.music-hero,.journal-hero,.readings-page,.projects-intro,.g-page-top) { border-color: #68303a; }
 .ghx-site main :is(.world-prose,.music-group,.world-finish,.projects-future,.projects-close) { border-color: #61323a; }
@@ -35,17 +35,17 @@ body.ghx-site { background: var(--ghx-bg); color: var(--ghx-white); font-family:
 .ghx-site main :is(.home-discovery-card,.vault-item,.journal-highlight,.readings-event,.projects-future-grid article) { border-left: 3px solid #c73b46; }
 .ghx-site main :is(.ghx-lead,.projects-lead,.world-lead,.journal-deck) { color: #e1d4cf; }
 .ghx-site main :is(.primary,.g-button,.projects-button,.home-discovery-card>a) {
-  background: #ac303b;
-  border: 1px solid #ef6b69;
+  background: #f4483c;
+  border: 1px solid #ff6b5e;
   border-radius: 2px;
-  color: #fff;
+  color: #050505;
   font-family: 'Segoe UI',Arial,sans-serif;
   font-weight: 850;
   letter-spacing: .045em;
   text-transform: uppercase;
   text-decoration: none;
 }
-.ghx-site main :is(.primary,.g-button,.projects-button,.home-discovery-card>a):hover { background: #cf3d47; color: #fff; }
+.ghx-site main :is(.primary,.g-button,.projects-button,.home-discovery-card>a):hover { background: #ff6b5e; color: #050505; }
 .ghx-site main :is(.secondary,.music-jump a,.music-youtube,.vault-filters button,.vault-search-row button,.projects-close-links a) {
   border-color: #8a4c53;
   border-radius: 2px;

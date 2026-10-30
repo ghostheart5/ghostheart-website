@@ -20,7 +20,7 @@
 .feature{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,3vw,40px);align-items:center;margin-top:20px}
 @media(max-width:900px){.feature{grid-template-columns:1fr}}
 .feature .thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:#000 center/cover;border:6px solid var(--bone);box-shadow:16px 16px 0 var(--blood)}
-.feature .thumb .p,.card .p{position:absolute;left:50%;top:50%;translate:-50% -50%;width:92px;height:92px;border-radius:50%;background:var(--blood);display:grid;place-items:center;animation:heart 1.1s infinite;box-shadow:0 0 40px rgba(232,0,28,.7)}
+.feature .thumb .p,.card .p{position:absolute;left:50%;top:50%;translate:-50% -50%;width:92px;height:92px;border-radius:50%;background:var(--blood);display:grid;place-items:center;animation:heart 1.1s infinite;box-shadow:0 0 40px rgba(244,72,60,.7)}
 .feature .thumb .p svg,.card .p svg{width:34px;fill:var(--void)}
 .new-short{margin-top:22px;max-width:520px}.new-short small{margin-bottom:6px}.feature small{display:block;font-weight:700;letter-spacing:.2em;font-size:12px;color:var(--hot);text-transform:uppercase}
 .feature h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(60px,7vw,120px);line-height:.85;text-transform:uppercase;margin:10px 0 14px}
@@ -72,7 +72,7 @@
 .g-player button{position:absolute;inset:0;width:100%;height:100%;padding:0;display:block}
 .g-player img{width:100%;height:100%;object-fit:cover;display:block}
 .g-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.g-play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:66px;height:66px;border-radius:50%;background:var(--blood);color:var(--void);display:grid;place-items:center;font-size:24px;box-shadow:0 0 30px rgba(232,0,28,.6)}
+.g-play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:66px;height:66px;border-radius:50%;background:var(--blood);color:var(--void);display:grid;place-items:center;font-size:24px;box-shadow:0 0 30px rgba(244,72,60,.6)}
 .g-film:hover .g-play{animation:heart 1.1s infinite}
 .g-play-label{position:absolute;left:12px;bottom:10px;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:rgba(5,5,5,.75);padding:4px 8px}
 .g-close{align-self:flex-start;margin:10px 20px 0;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--bone);padding:6px 10px}
