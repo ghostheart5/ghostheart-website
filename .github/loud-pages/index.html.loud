@@ -207,23 +207,12 @@ main>section,main>aside{position:relative}
   #home .ghx-actions a{flex:1 1 100%;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.hb-ekg path{stroke-dashoffset:0}}
-/* AUDIT PASS 2026-10-30 — hero leads to listening and the custom song; Christmas countdown; merch strip. */
+/* AUDIT PASS 2026-10-30 — hero leads to listening and the custom song; merch strip. (Christmas song promo moved to /music/.) */
 .hb-under{display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px;margin-top:22px}.hb-under .hb-scroll{margin-top:0}
 .hb-email{display:inline-flex;align-items:center;min-height:44px;color:var(--bone);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:6px;text-decoration-color:var(--blood)}
 .hb-email:hover{color:var(--hot)}
 #home .ghx-actions a.song{background:var(--void);border-color:var(--blood);color:#fff;box-shadow:6px 6px 0 var(--blood)}
 #home .ghx-actions a.song:hover{background:var(--blood);color:var(--void)}
-.hb-xmas{position:relative;z-index:1;background:var(--void);border-bottom:3px solid var(--blood);padding:clamp(34px,5vw,56px) 0 clamp(26px,4vw,44px)}
-.hb-xmas[hidden]{display:none}
-.hb-xmas .hb-wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center}
-.hb-xmas .days{font-family:var(--display);font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(244,72,60,.55)}
-.hb-xmas .days small{display:block;font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--ash);margin-top:10px}
-.hb-xmas h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(34px,4.6vw,66px);line-height:.92;margin:0}
-.hb-xmas h2 span{color:var(--blood)}
-.hb-xmas p{margin:10px 0 0;font-size:17px;max-width:46ch}
-.hb-xmas .btn.red{white-space:nowrap}
-@media(max-width:860px){.hb-xmas .hb-wrap{grid-template-columns:auto minmax(0,1fr)}.hb-xmas .ctas{grid-column:1/-1}}
-@media(max-width:480px){.hb-xmas .hb-wrap{grid-template-columns:1fr}.hb-xmas .btn.red{width:100%}}
 .hb-shop{position:relative;overflow:hidden;isolation:isolate;background:var(--blood);color:var(--void);padding:clamp(48px,7vw,96px) 0;border-block:4px solid var(--void)}
 .hb-shop h2{color:#fff}
 .hb-shop::before{content:"WEAR THE HEART WEAR THE HEART";position:absolute;z-index:-1;left:-2vw;top:50%;translate:0 -50%;font-family:var(--display);font-size:22vw;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,.25);pointer-events:none}
@@ -258,14 +247,6 @@ main>section,main>aside{position:relative}
 </div>
 </section>
 <div class="tape" aria-hidden="true"><div><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span></div></div>
-<aside class="hb-xmas" aria-labelledby="xmas-title" data-xmas data-xmas-close="2026-12-14T06:00:00Z">
-<div class="hb-wrap">
-<div class="days" aria-hidden="true"><span data-xmas-days>Dec 13</span><small data-xmas-unit>Orders close</small></div>
-<div><h2 id="xmas-title">A Christmas song <span>about your people.</span></h2><p>Tell me your story and I’ll write it into a real song, delivered by December 20. Christmas orders close Sunday, December 13.</p></div>
-<div class="ctas"><a class="btn red" href="/here-to-help/#order">Tell me your story</a></div>
-</div>
-</aside>
-<script>(()=>{const box=document.querySelector('[data-xmas]');if(!box)return;const left=(new Date(box.dataset.xmasClose)-Date.now())/864e5;if(left<=0){box.hidden=true;return}const d=Math.max(1,Math.floor(left));box.querySelector('[data-xmas-days]').textContent=d;box.querySelector('[data-xmas-unit]').textContent=d===1?'Day left':'Days left'})();</script>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
 <div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>

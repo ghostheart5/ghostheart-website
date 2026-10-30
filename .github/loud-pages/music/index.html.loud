@@ -68,6 +68,19 @@
 @media(max-width:600px){.deck .bars{display:none}.deck{grid-template-columns:auto 1fr}}
 .deck .err{color:var(--hot);font-size:12px;margin-top:4px}
 
+/* christmas custom-song promo (moved from the home page 2026-10-30): shows Nov 1 through order close */
+.xmas{background:var(--void);border-block:3px solid var(--blood)}
+.xmas[hidden]{display:none}
+.xmas .row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center}
+.xmas .days{font-family:Anton,Impact,sans-serif;font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(244,72,60,.55)}
+.xmas .days small{display:block;font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--ash);margin-top:10px}
+.xmas h2{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-weight:400;font-size:clamp(34px,4.6vw,66px);line-height:.92}
+.xmas h2 span{color:var(--blood)}
+.xmas p{margin-top:10px;font-size:17px;max-width:46ch}
+.xmas .btn{white-space:nowrap}
+@media(max-width:860px){.xmas .row{grid-template-columns:auto minmax(0,1fr)}.xmas .ctas{grid-column:1/-1}}
+@media(max-width:480px){.xmas .row{grid-template-columns:1fr}.xmas .btn{width:100%}}
+
 .vault{background:var(--bone);color:var(--void)}
 .next{background:var(--blood);color:var(--void);text-align:center}
 .next h2{font-size:clamp(80px,14vw,240px)}
@@ -146,6 +159,15 @@
     </ul>
   </div>
 </section>
+
+<section class="xmas" id="christmas" aria-labelledby="xmas-title" data-xmas data-xmas-open="2026-11-01T05:00:00Z" data-xmas-close="2026-12-14T06:00:00Z" hidden>
+  <div class="row">
+    <div class="days" aria-hidden="true"><span data-xmas-days>Dec 13</span><small data-xmas-unit>Orders close</small></div>
+    <div><h2 id="xmas-title">A Christmas song <span>about your people.</span></h2><p>Tell me your story and I’ll write it into a real song, delivered by December 20. Christmas orders close Sunday, December 13.</p></div>
+    <div class="ctas"><a class="btn red" href="/here-to-help/#order">Tell me your story</a></div>
+  </div>
+</section>
+<script>(()=>{const box=document.querySelector('[data-xmas]');if(!box)return;const now=Date.now();if(now<new Date(box.dataset.xmasOpen))return;const left=(new Date(box.dataset.xmasClose)-now)/864e5;if(left<=0)return;const d=Math.max(1,Math.floor(left));box.querySelector('[data-xmas-days]').textContent=d;box.querySelector('[data-xmas-unit]').textContent=d===1?'Day left':'Days left';box.hidden=false})();</script>
 
 <section class="vault">
   <div class="label"><span>Go Deeper / Everything else</span><span class="num">03</span></div><h2 class="vh">Go deeper</h2>
