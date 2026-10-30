@@ -54,9 +54,13 @@ module.exports = async (page, base) => {
     assert.equal(await page.locator('#p02 a').getAttribute('href'),'/passages/im-not.html');
     await page.locator('#p03 summary').focus();await page.keyboard.press('Space');
     await page.waitForFunction(()=>!document.querySelector('#p02').open);
-    assert.equal(await page.locator('#p03 a').count(),0);
+    assert.equal(await page.locator('#p03 a').getAttribute('href'),'/passages/its-not-the-1950s.html');
     await page.locator('#p03 summary').press('Space');
     assert.equal(await page.locator('#p03').evaluate(e=>e.open),false);
+    // A Passage that is not out yet opens to its date only, never a link.
+    await page.locator('#p09 summary').focus();await page.keyboard.press('Space');
+    assert.equal(await page.locator('#p09 a').count(),0);
+    await page.locator('#p09 summary').press('Space');
     await page.goto(base + '/passages/#p01');
     assert.equal(await page.locator('#p01').evaluate(e=>e.open),true);
     assert.equal(await page.locator('#p01 a').getAttribute('href'),'/journal/cruel-something-needs-to-change.html');
