@@ -14,7 +14,7 @@
 <style>
 /* I'M HERE TO HELP 2026-10-28 — owner decision OWNER-BLUEPRINT-20261028.
    Offers, prices and delivery are copied exactly from GHOSTHEART_BLUEPRINT.md. */
-:root{--void:#050505;--coal:#0e0b0b;--blood:#e8001c;--hot:#ff2d4b;--bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);--mono:"Space Mono",ui-monospace,Menlo,monospace}
+:root{--void:#050505;--coal:#0e0b0b;--blood:#f4483c;--hot:#ff6b5e;--bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);--mono:"Space Mono",ui-monospace,Menlo,monospace}
 body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .wrap{max-width:1180px;margin:0 auto}
@@ -25,7 +25,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 
 /* hero */
 .hhero{padding:calc(var(--hdr,96px) + clamp(40px,8vw,90px)) max(16px,4vw) clamp(40px,6vw,70px);position:relative;overflow:hidden;isolation:isolate;border-bottom:4px solid var(--blood)}
-.hhero .giant{position:absolute;z-index:-1;left:0;bottom:-3vw;font-size:22vw;color:transparent;-webkit-text-stroke:2px rgba(232,0,28,.22);white-space:nowrap;animation:slide 50s linear infinite}
+.hhero .giant{position:absolute;z-index:-1;left:0;bottom:-3vw;font-size:22vw;color:transparent;-webkit-text-stroke:2px rgba(244,72,60,.22);white-space:nowrap;animation:slide 50s linear infinite}
 .hhero h1{font-size:clamp(60px,12vw,190px);margin-top:20px}
 .hhero h1 span{color:var(--blood)}
 .hhero .intro{font-size:clamp(20px,2.4vw,30px);font-weight:700;max-width:800px;margin-top:22px}
@@ -81,7 +81,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 /* order form */
 .order{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,64px);align-items:start}
 @media(max-width:900px){.order{grid-template-columns:1fr}}
-.notice{border:3px solid var(--hot);background:rgba(232,0,28,.08);padding:18px 20px;margin-top:24px}
+.notice{border:3px solid var(--hot);background:rgba(244,72,60,.08);padding:18px 20px;margin-top:24px}
 .notice strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:26px;color:var(--bone)}
 .notice p{color:#d8d3ca;margin-top:6px;font-size:16px}
 .story-form{background:var(--coal);border:2px solid var(--line);border-top:4px solid var(--blood);padding:clamp(20px,3.5vw,40px);display:grid;gap:18px}
@@ -102,7 +102,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .story-form .kind-song,.story-form .kind-office{display:grid;gap:18px}
 .story-form [hidden]{display:none}
 .story-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.form-error{border-left:4px solid var(--hot);padding:8px 12px;color:var(--bone);background:rgba(232,0,28,.12)}
+.form-error{border-left:4px solid var(--hot);padding:8px 12px;color:var(--bone);background:rgba(244,72,60,.12)}
 .notice.ok{border-color:#f4efe6;background:rgba(244,239,230,.06)}
 
 /* free + close */

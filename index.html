@@ -28,7 +28,7 @@
 <style>
 /* HEARTBEAT 2026-10-25 — homepage redesign: one hub every platform leads home to. */
 :root{color-scheme:dark;
-  --void:#050505;--coal:#0e0b0b;--blood:#e8001c;--hot:#ff2d4b;--ember:#5c000b;
+  --void:#050505;--coal:#0e0b0b;--blood:#f4483c;--hot:#ff6b5e;--ember:#5c000b;
   --bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);
   --display:Anton,Impact,"Arial Narrow",sans-serif;--body:"Space Grotesk",system-ui,sans-serif;--hand:"Permanent Marker",cursive;
 }
@@ -52,23 +52,23 @@ main>section,main>aside{position:relative}
   -webkit-mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);
   filter:contrast(1.08) saturate(1.15)}
 .hb-portrait::after{content:"";position:absolute;left:52%;top:64%;width:22%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,45,75,.95),rgba(232,0,28,.35) 45%,transparent 70%);mix-blend-mode:screen;animation:hb-pulse 1.15s infinite}
-.hb-giant{position:absolute;z-index:-4;left:-2vw;top:calc(var(--hdr,88px) + 2vh);font-family:var(--display);font-size:24vw;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(232,0,28,.28);white-space:nowrap;pointer-events:none;user-select:none}
+  background:radial-gradient(circle,rgba(255,107,94,.95),rgba(244,72,60,.35) 45%,transparent 70%);mix-blend-mode:screen;animation:hb-pulse 1.15s infinite}
+.hb-giant{position:absolute;z-index:-4;left:-2vw;top:calc(var(--hdr,88px) + 2vh);font-family:var(--display);font-size:24vw;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,72,60,.28);white-space:nowrap;pointer-events:none;user-select:none}
 .hb-ekg{position:absolute;z-index:-1;left:0;right:0;top:auto;bottom:6%;height:120px;width:100%;pointer-events:none;opacity:.9}
-.hb-ekg path{fill:none;stroke:var(--blood);stroke-width:3;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(255,45,75,.9));stroke-dasharray:2400;stroke-dashoffset:2400;animation:hb-trace 3.2s linear infinite}
+.hb-ekg path{fill:none;stroke:var(--blood);stroke-width:3;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(255,107,94,.9));stroke-dasharray:2400;stroke-dashoffset:2400;animation:hb-trace 3.2s linear infinite}
 .hb-hero::after{content:"";position:absolute;inset:auto 0 0;height:34%;z-index:-2;background:linear-gradient(transparent,var(--void))}
 .hb-hero-copy{position:relative;max-width:1180px}
 .kicker{display:inline-block;background:var(--blood);color:var(--void);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:8px 12px;transform:rotate(-1.5deg)}
 #home h1{font-size:clamp(54px,11vw,172px);margin:18px 0 0;max-width:100%;overflow-wrap:anywhere}
 #home h1 .o{color:transparent;-webkit-text-stroke:2px var(--bone)}
-#home h1 .r{color:var(--blood);text-shadow:0 0 34px rgba(232,0,28,.55)}
+#home h1 .r{color:var(--blood);text-shadow:0 0 34px rgba(244,72,60,.55)}
 .canon-hero__line{font-size:clamp(18px,1.6vw,22px);font-weight:500;max-width:36ch;margin:22px 0 0;line-height:1.45}
 .canon-hero__note{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,26px);margin:10px 0 0}
 #home .ghx-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 #home .ghx-actions a{display:inline-flex;align-items:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:15px;background:rgba(5,5,5,.55);backdrop-filter:blur(4px)}
-#home .ghx-actions a.primary{background:var(--blood);border-color:var(--blood);color:#fff;font-size:17px;padding:14px 28px;box-shadow:6px 6px 0 var(--bone)}
+#home .ghx-actions a.primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;padding:14px 28px;box-shadow:6px 6px 0 var(--bone)}
 #home .ghx-actions a:hover{background:var(--bone);color:var(--void)}
-#home .ghx-actions a.primary:hover{background:var(--hot);color:#fff}
+#home .ghx-actions a.primary:hover{background:var(--hot);color:var(--void)}
 .hb-scroll{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);text-decoration:none;min-height:44px}
 .hb-scroll i{width:9px;height:9px;border-radius:50%;background:var(--blood);box-shadow:0 0 12px var(--blood);animation:hb-pulse 1.15s infinite}
 
@@ -96,7 +96,7 @@ main>section,main>aside{position:relative}
 #latest .jump a,.hb-textlink{display:inline-flex;align-items:center;min-height:44px;color:var(--hot);font-weight:700;text-underline-offset:6px}
 #latest .ctas{margin-top:22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--bone)}
-.btn.red{background:var(--blood);border-color:var(--blood);color:#fff;box-shadow:6px 6px 0 var(--bone)}
+.btn.red{background:var(--blood);border-color:var(--blood);color:var(--void);box-shadow:6px 6px 0 var(--bone)}
 .btn.red:hover{background:var(--hot)}
 .hb-poster{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border:3px solid var(--bone);box-shadow:14px 14px 0 var(--blood);text-decoration:none}
 .hb-poster img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
@@ -114,7 +114,7 @@ main>section,main>aside{position:relative}
 .hb-man{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
 .hb-man figure{margin:0;position:relative}
 .hb-man figure img{width:100%;aspect-ratio:1;object-fit:cover;border:3px solid var(--bone);filter:contrast(1.05)}
-.hb-man figure figcaption{position:absolute;right:-10px;bottom:-14px;background:var(--blood);color:#fff;font-family:var(--hand);font-size:clamp(18px,2vw,24px);padding:8px 14px;transform:rotate(-2deg)}
+.hb-man figure figcaption{position:absolute;right:-10px;bottom:-14px;background:var(--blood);color:var(--void);font-family:var(--hand);font-size:clamp(18px,2vw,24px);padding:8px 14px;transform:rotate(-2deg)}
 #home-story h2{font-size:clamp(46px,7vw,104px);margin:0}
 #home-story h2 .o{color:transparent;-webkit-text-stroke:2px var(--bone)}
 .hb-man p{max-width:40ch}
@@ -148,8 +148,8 @@ main>section,main>aside{position:relative}
 .hb-card span{font-size:16px;line-height:1.45}
 .hb-card em{font-style:normal;font-weight:700;color:var(--hot);font-size:15px;margin-top:auto}
 .hb-card:hover{border-color:var(--blood);background:#17070a;transform:translateY(-4px)}
-.hb-card.home{background:var(--blood);border-color:var(--blood);color:#fff}
-.hb-card.home small,.hb-card.home em{color:#fff}
+.hb-card.home{background:var(--blood);border-color:var(--blood);color:var(--void)}
+.hb-card.home small,.hb-card.home em{color:var(--void)}
 @media(max-width:1060px){.hb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.hb-grid{gap:8px}.hb-card{min-height:0;padding:14px;gap:6px}.hb-card strong{font-size:22px}.hb-card span{font-size:14px;line-height:1.4}.hb-card em{font-size:14px}}
 
@@ -162,7 +162,7 @@ main>section,main>aside{position:relative}
 .rebellion-invite p{max-width:46ch}
 .rebellion-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 .rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);background:transparent;color:var(--bone);font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.rebellion-actions a.rebellion-primary{background:var(--blood);border-color:var(--blood);color:#fff;font-size:17px;box-shadow:6px 6px 0 var(--bone)}
+.rebellion-actions a.rebellion-primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;box-shadow:6px 6px 0 var(--bone)}
 .rebellion-actions a:hover,.rebellion-actions button:hover{background:var(--bone);color:var(--void)}
 .rebellion-note{color:var(--ash);font-size:15px;margin-top:14px}
 
@@ -220,11 +220,11 @@ main>section,main>aside{position:relative}
 .hb-email{display:inline-flex;align-items:center;min-height:44px;color:var(--bone);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:6px;text-decoration-color:var(--blood)}
 .hb-email:hover{color:var(--hot)}
 #home .ghx-actions a.song{background:var(--void);border-color:var(--blood);color:#fff;box-shadow:6px 6px 0 var(--blood)}
-#home .ghx-actions a.song:hover{background:var(--blood);color:#fff}
+#home .ghx-actions a.song:hover{background:var(--blood);color:var(--void)}
 .hb-xmas{position:relative;z-index:1;background:var(--void);border-bottom:3px solid var(--blood);padding:clamp(34px,5vw,56px) 0 clamp(26px,4vw,44px)}
 .hb-xmas[hidden]{display:none}
 .hb-xmas .hb-wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center}
-.hb-xmas .days{font-family:var(--display);font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(232,0,28,.55)}
+.hb-xmas .days{font-family:var(--display);font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(244,72,60,.55)}
 .hb-xmas .days small{display:block;font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--ash);margin-top:10px}
 .hb-xmas h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(34px,4.6vw,66px);line-height:.92;margin:0}
 .hb-xmas h2 span{color:var(--blood)}
@@ -232,7 +232,8 @@ main>section,main>aside{position:relative}
 .hb-xmas .btn.red{white-space:nowrap}
 @media(max-width:860px){.hb-xmas .hb-wrap{grid-template-columns:auto minmax(0,1fr)}.hb-xmas .ctas{grid-column:1/-1}}
 @media(max-width:480px){.hb-xmas .hb-wrap{grid-template-columns:1fr}.hb-xmas .btn.red{width:100%}}
-.hb-shop{position:relative;overflow:hidden;isolation:isolate;background:var(--blood);color:#fff;padding:clamp(48px,7vw,96px) 0;border-block:4px solid var(--void)}
+.hb-shop{position:relative;overflow:hidden;isolation:isolate;background:var(--blood);color:var(--void);padding:clamp(48px,7vw,96px) 0;border-block:4px solid var(--void)}
+.hb-shop h2{color:#fff}
 .hb-shop::before{content:"WEAR THE HEART WEAR THE HEART";position:absolute;z-index:-1;left:-2vw;top:50%;translate:0 -50%;font-family:var(--display);font-size:22vw;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,.25);pointer-events:none}
 .hb-shop .hb-wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:end;justify-content:space-between}
 .hb-shop h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(48px,8vw,128px);line-height:.85;margin:0}
