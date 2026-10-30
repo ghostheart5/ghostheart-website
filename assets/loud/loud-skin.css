@@ -99,9 +99,12 @@ body header.ghx-header .ghx-bar .ghx-primary a.ghx-merch:hover{color:var(--hot)}
   body header.ghx-header .ghx-bar .ghx-primary a,body header.ghx-header .ghx-bar .ghx-primary a:last-child{display:inline-flex;flex:none;align-items:center;min-height:40px;padding:0;font-size:12px!important;letter-spacing:.08em;white-space:nowrap}
 }
 @media(max-width:400px){
-  body header.ghx-header .ghx-bar .ghx-primary{gap:0 9px}
-  body header.ghx-header .ghx-bar .ghx-primary a,body header.ghx-header .ghx-bar .ghx-primary a:last-child{min-height:36px;font-size:10.5px!important;letter-spacing:.03em}
-  body header.ghx-header .ghx-bar{gap:6px;padding-top:8px;padding-bottom:6px}
+  /* Fixed grid: always one top row and two menu rows, whatever font the phone falls back to. */
+  body header.ghx-header .ghx-bar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:6px;padding-top:8px;padding-bottom:6px}
+  body header.ghx-header .ghx-bar .ghx-primary{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 8px}
+  body header.ghx-header .ghx-bar .ghx-primary a,body header.ghx-header .ghx-bar .ghx-primary a:last-child{min-width:0;min-height:36px;font-size:10.5px!important;letter-spacing:.03em;line-height:1.1;white-space:normal}
+  body header.ghx-header .ghx-bar .ghx-brand{min-width:0;overflow:hidden}
+  body header.ghx-header .ghx-bar .ghx-help-link{white-space:nowrap}
   body header.ghx-header .ghx-bar .ghx-brand{font-size:20px!important;margin-right:auto}
   body header.ghx-header .ghx-bar .ghx-menu-toggle{gap:4px;font-size:13px!important;padding:6px 7px;min-height:40px}
   body header.ghx-header .ghx-bar .ghx-help-link{font-size:11px!important;padding:6px 8px;min-height:40px}

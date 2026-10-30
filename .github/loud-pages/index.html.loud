@@ -252,7 +252,7 @@ main>section,main>aside{position:relative}
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note" id="home-story-explanation">Meet the man behind GhostHeart.</p>
 <div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a><a aria-describedby="home-story-explanation" class="secondary" href="/GhostHeart_Story.html">Enter My World</a></div>
-<div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a><a class="hb-email" href="/follow/#email-signup-title">Get email updates</a></div>
+<div class="hb-under"><a class="hb-email" href="/follow/#email-signup-title">Get email updates</a><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
 </div>
 </div>
 </section>
