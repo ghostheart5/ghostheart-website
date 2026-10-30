@@ -109,3 +109,16 @@ body header.ghx-header .ghx-bar .ghx-primary a.ghx-merch:hover{color:var(--hot)}
   body header.ghx-header .ghx-bar .ghx-menu-toggle{gap:4px;font-size:13px!important;padding:6px 7px;min-height:40px}
   body header.ghx-header .ghx-bar .ghx-help-link{font-size:11px!important;padding:6px 8px;min-height:40px}
 }
+
+/* TIGHT PASS 2026-10-30 — less scrolling on the song library (owner: "the layout is so huge"). */
+@media(max-width:700px){
+  html body .l-recordings{gap:12px}
+  html body .l-recordings .record-card{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;padding:14px}
+  html body .l-recordings .cover{margin:0;max-width:84px}
+  html body .l-recordings h3{font-size:20px!important;margin-bottom:6px}
+  html body .l-recordings .record-copy p{font-size:15px;line-height:1.5}
+  html body .music-group{padding:28px 0 12px}
+  html body .music-hero{padding:32px 0 20px}
+  html body .music-track{padding:12px}
+  html body .music-tracks{gap:8px}
+}
