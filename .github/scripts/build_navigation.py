@@ -7,7 +7,7 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 HEADER = '''<header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/albums/index.html">Music</a><a href="/here-to-help/">I’m Here to Help</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
@@ -18,8 +18,8 @@ PATTERN = re.compile(r'<header\b[^>]*class=["\'][^"\']*\bghx-header\b[^"\']*["\'
 
 def build_header(path):
     rel = path.relative_to(ROOT).as_posix()
-    active = ('/albums/index.html' if rel.startswith('albums/') else
-              '/live/' if rel.startswith('live/') else
+    active = ('/music/' if rel.startswith(('albums/', 'music/')) else
+              '/live/' if rel.startswith(('live/', 'passages/')) else
               {'awakening/index.html': '/awakening/index.html',
                'GhostHeart_Story.html': '/GhostHeart_Story.html',
                'GhostHeart_Projects.html': '/GhostHeart_Projects.html',
@@ -27,7 +27,7 @@ def build_header(path):
                'GhostHeart_Resources.html': '/GhostHeart_Resources.html',
                'GhostHeart_Quotes.html': '/vault/',
                'GhostHeart_Videos.html': '/vault/',
-               'GhostHeart_Songs.html': '/albums/index.html',
+               'GhostHeart_Songs.html': '/music/',
                'follow/index.html': '/follow/',
                'start/index.html': '/index.html',
                'woman-behind-the-scenes/index.html': '/woman-behind-the-scenes/',

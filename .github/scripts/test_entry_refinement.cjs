@@ -23,9 +23,8 @@ const promise = JSON.parse(fs.readFileSync(path.join(__dirname, '../content/conn
     for (const [width, height] of [[320,740], [390,844], [768,1024], [1440,900], [1920,1080]]) {
       await page.setViewportSize({ width, height });
       await page.goto(base + '/', { waitUntil: 'networkidle' });
-      assert.equal((await page.locator('#join-the-signal h2').textContent()).trim(), 'Be Part of GhostHeart');
-      assert.equal(await page.locator('#join-the-signal h2 + p').innerText(), promise);
-      assert.equal(await page.locator('#home a').filter({ hasText: 'Discover GhostHeart' }).count(), 1);
+      assert.equal((await page.locator('.rebellion-invite h2').textContent()).trim(), 'Join the Heart Rebellion.');
+      assert.equal(await page.locator('#home a').filter({ hasText: 'Enter My World' }).count(), 1);
       const layout = await page.evaluate(() => {
         const hero = document.querySelector('#home').getBoundingClientRect();
         const range = document.createRange();
@@ -43,7 +42,7 @@ const promise = JSON.parse(fs.readFileSync(path.join(__dirname, '../content/conn
       if (evidence) await page.screenshot({ path: path.join(evidence, 'home-' + width + '.png'), fullPage: false });
     }
     await page.goto(base + '/follow/index.html');
-    assert.equal((await page.locator('#email-signup-title').textContent()).trim(), 'Be Part of GhostHeart');
+    assert.equal((await page.locator('#email-signup-title').textContent()).trim(), 'Join the Heart Rebellion');
     assert.equal(await page.locator('#email-signup-title + p').innerText(), promise);
     const form = page.locator('form');
     assert.equal(await form.getAttribute('method'), 'post');

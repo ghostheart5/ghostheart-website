@@ -42,16 +42,16 @@ const recordingsPreviewFragments = [
     assert.equal(await page.locator('.canon-hero__line').innerText(), 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.');
     assert.equal(await page.locator('.canon-hero__note').innerText(), 'Meet the man behind GhostHeart.');
     assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
-    assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.slice(0,5).map(section => section.id)), ['home', 'latest', 'home-story', 'mission-board', 'join-the-signal']);
+    assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.slice(0,5).map(section => section.id)), ['home', 'latest', 'home-story', 'mission-board', 'everywhere']);
     assert.equal(await page.locator('audio[autoplay], main form').count(), 0);
-    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, #join-the-signal a');
+    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, .hb-xmas:not([hidden]) a, .rebellion-invite a');
     for (const link of await journeyLinks.all()) {
       const box = await link.boundingBox();
       assert.ok(box.height >= 44, 'Homepage touch target ' + await link.innerText());
       await link.focus();
       assert.equal(await link.evaluate(element => element.matches(':focus-visible') && parseFloat(getComputedStyle(element).outlineWidth) >= 3), true, 'Visible keyboard focus');
     }
-    await page.locator('#home a[href="/follow/#email-signup-title"]').focus();
+    await page.locator('.rebellion-invite a[href="/follow/#email-signup-title"]').focus();
     await page.keyboard.press('Enter');
     await page.waitForURL(url => url.hash === '#email-signup-title', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#email-signup-title');
@@ -71,7 +71,7 @@ const recordingsPreviewFragments = [
       assert.equal(response.status(), 200, path);
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
-      assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'The Awakening', 'Enter My World', 'Music', 'I’m Here to Help'], path + ' tabs');
+      assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'Music', 'The Awakening', 'Enter My World', 'I’m Here to Help', 'Merch'], path + ' tabs');
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, path + ' overflow at ' + width);
       const menu = page.locator('header.ghx-header .ghx-menu-toggle');
