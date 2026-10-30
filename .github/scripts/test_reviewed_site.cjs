@@ -44,7 +44,7 @@ const recordingsPreviewFragments = [
     assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
     assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.slice(0,5).map(section => section.id)), ['home', 'latest', 'home-story', 'mission-board', 'everywhere']);
     assert.equal(await page.locator('audio[autoplay], main form').count(), 0);
-    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, .hb-xmas a, .rebellion-invite a');
+    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, .hb-xmas:not([hidden]) a, .rebellion-invite a');
     for (const link of await journeyLinks.all()) {
       const box = await link.boundingBox();
       assert.ok(box.height >= 44, 'Homepage touch target ' + await link.innerText());
