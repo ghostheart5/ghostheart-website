@@ -199,22 +199,23 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
     'https://www.youtube.com/shorts/bkm3czEmk5g',
     'https://www.youtube.com/shorts/5b43JyYmIts',
 }
-assert home.select_one("#home-vault [data-daily-quote]")
+# Home page trimmed to five sections (owner request 2026-10-30); the daily line now lives on /vault/.
+assert vault.select_one("#daily-line [data-daily-quote]")
+assert not home.select_one("#home-vault, #everywhere, .manifesto")
 assert home.select_one('#latest .label span').get_text() == 'FEATURED NOW'
 assert home.select_one('#latest .ctas a')['href'] == 'https://www.youtube.com/watch?v=RtFTIssLd0s'
 assert home.select_one('#latest .ctas a').get_text() == 'Watch the full film'
 assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
-assert [section.get('id') for section in home.select('main > section')][:5] == ['home', 'latest', 'home-story', 'mission-board', 'everywhere']
+assert [section.get('id') for section in home.select('main > section')]== ['home', 'latest', 'home-story', 'mission-board']
 assert not home.select_one('section#join-the-signal'), 'One email signup block on the homepage: the Heart Rebellion invitation'
 assert home.select_one('aside#join-the-signal.rebellion-invite'), 'Old #join-the-signal links land on the Heart Rebellion invitation'
-assert home.select_one("#home-vault h2").get_text(" ", strip=True) == "The Vault"
-assert not home.select('#home-vault .door[href="/GhostHeart_Quotes.html"], .sitefoot a[href="/GhostHeart_Quotes.html"]')
+assert not home.select('.sitefoot a[href="/GhostHeart_Quotes.html"]')
 assert len(home.select('#home-story a[href^="/GhostHeart_Story.html"]')) == 1
 assert 'Live day: Sunday.' in home.get_text()
 
-assert home.select_one('#home-vault a[href="/vault/"]')
+assert home.select_one('#join-the-signal a[href="/vault/"]')
 assert not home.select_one("#home-lives")
 assert home.select_one('#mission-board a[href="/live/"]')
 assert not home.select_one('#mission-board form')

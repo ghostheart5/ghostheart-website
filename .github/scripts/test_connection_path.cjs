@@ -21,16 +21,8 @@ module.exports = async (page, base) => {
     assert.equal(await page.locator('section#join-the-signal').count(), 0);
     assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
     assert.match(await page.locator('.rebellion-invite').innerText(), /Free and optional/);
-    for (const fragment of ['#home-vault']) {
-      await page.locator('.rebellion-invite a[href="' + fragment + '"]').focus();
-      await page.keyboard.press('Enter');
-      // The same-page jump reaches Playwright's URL a moment after the key press; wait for it instead of racing it.
-      await page.waitForURL(url => url.hash === fragment, { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
-      assert.equal(new URL(page.url()).hash, fragment);
-      const box = await page.locator(fragment).boundingBox();
-      const header = await page.locator('header.ghx-header').boundingBox();
-      assert.ok(box.y >= header.y + header.height - 1 && box.y < 900, fragment + ' visible below header');
-    }
+    // The Vault's daily line moved off the home page (owner request 2026-10-30); the invitation now links to /vault/.
+    assert.equal(await page.locator('.rebellion-invite a[href="/vault/"]').count(), 1);
     await page.locator('#mission-board a[href="/live/"]').focus();
     await Promise.all([page.waitForURL(base + '/live/'), page.keyboard.press('Enter')]);
     assert.equal(new URL(page.url()).pathname, '/live/');

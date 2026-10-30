@@ -17,8 +17,9 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
   });
   for (const width of [320,390,1440]) {
     await page.setViewportSize({width,height:900});
-    await page.goto(base);
-    const quote = await page.locator('#home-vault [data-daily-quote]').innerText();
+    // The daily line moved from the home page to /vault/ (owner request 2026-10-30).
+    await page.goto(base + '/vault/');
+    const quote = await page.locator('#daily-line [data-daily-quote]').innerText();
     const permalink = 'https://www.myghostheart.com' + await page.locator('#qlink').getAttribute('href');
     await page.locator('[data-home-copy]').click();
     assert.equal(await page.evaluate(() => window.copied), quote+'\n'+permalink);
@@ -32,8 +33,9 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
     assert.equal(new URL(page.url()).pathname, '/follow/');
     assert.equal(new URL(page.url()).hash, '#email-signup-title');
     await page.goto(base);
-    await page.locator('.rebellion-invite a[href="#home-vault"]').click();
-    assert.equal(new URL(page.url()).hash, '#home-vault');
+    await Promise.all([page.waitForURL('**/vault/'), page.locator('.rebellion-invite a[href="/vault/"]').click()]);
+    assert(await page.locator('#daily-line').isVisible());
+    await page.goto(base);
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1));
     await page.keyboard.press('Tab');
     for (const control of await page.locator('.rebellion-actions a,.rebellion-actions button').all()) {
@@ -43,12 +45,13 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
     }
     if (process.env.GHOSTHEART_SCREENSHOTS) {
       fs.mkdirSync(process.env.GHOSTHEART_SCREENSHOTS,{recursive:true});
-      for (const [name,selector] of [['invitation','.rebellion-invite'],['discovery','#home-vault']]) {
+      for (const [name,selector] of [['invitation','.rebellion-invite'],['discovery','#daily-line']]) {
         await page.locator(selector).evaluate(e => window.scrollTo({top:e.getBoundingClientRect().top+scrollY-180,behavior:'instant'}));
         await page.screenshot({path:`${process.env.GHOSTHEART_SCREENSHOTS}/${name}-${width}.png`});
       }
     }
   }
+  await page.goto(base + '/vault/');
   await page.evaluate(() => Object.defineProperty(navigator,'clipboard',{value:{writeText:async()=>{throw Error('denied');}}}));
   await page.locator('[data-home-copy]').click();
   assert(await page.locator('#home-share-fallback').isVisible());
@@ -61,10 +64,11 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
   assert.equal(await page.locator('#home-share-status').innerText(),'Sharing cancelled.');
   assert.deepEqual(errors,[]);
   const noJS=await browser.newPage({javaScriptEnabled:false});
-  await noJS.goto(base);
+  await noJS.goto(base + '/vault/');
   assert.equal(await noJS.locator('#qlink').getAttribute('href'),'/GhostHeart_Quotes.html#quote-01');
   assert.equal(await noJS.locator('[data-home-copy]').isVisible(),false);
+  await noJS.goto(base);
   assert(await noJS.locator('.rebellion-primary').isVisible());
   await browser.close();
-  console.log('PASS homepage: three widths; exact quote permalink, copy, share fallback, manual fallback, native share, cancellation, keyboard, signup, Vault, no-JS; zero submissions.');
+  console.log('PASS homepage: three widths; exact quote permalink, copy, share fallback, manual fallback, native share, cancellation, keyboard, signup, link to the Vault daily line, no-JS; zero submissions.');
 })().catch(e=>{console.error(e);process.exit(1);});

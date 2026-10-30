@@ -136,26 +136,8 @@ main>section,main>aside{position:relative}
 .mission-participation{color:var(--ash);font-size:16px;margin-top:18px}
 @media(max-width:860px){.mission-board-grid{grid-template-columns:1fr}}
 
-/* ---------- EVERYWHERE: every platform, a different piece ---------- */
-#everywhere{padding:clamp(56px,9vw,120px) 0;background:linear-gradient(180deg,var(--coal),#160306);color:var(--bone);border-top:6px solid var(--blood)}
-#everywhere h2{font-size:clamp(44px,7vw,108px);margin:0;max-width:14ch}
-#everywhere h2 span{color:var(--blood)}
-.hb-lead{font-size:clamp(18px,1.6vw,22px);max-width:52ch;margin:18px 0 0}
-.hb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
-.hb-card{display:grid;align-content:start;gap:8px;min-height:190px;padding:20px;border:2px solid var(--line);background:var(--void);color:var(--bone);text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
-.hb-card small{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
-.hb-card strong{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);font-weight:400;text-transform:uppercase;line-height:.95}
-.hb-card span{font-size:16px;line-height:1.45}
-.hb-card em{font-style:normal;font-weight:700;color:var(--hot);font-size:15px;margin-top:auto}
-.hb-card:hover{border-color:var(--blood);background:#17070a;transform:translateY(-4px)}
-.hb-card.home{background:var(--blood);border-color:var(--blood);color:var(--void)}
-.hb-card.home small,.hb-card.home em{color:var(--void)}
-@media(max-width:1060px){.hb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.hb-grid{gap:8px}.hb-card{min-height:0;padding:14px;gap:6px}.hb-card strong{font-size:22px}.hb-card span{font-size:14px;line-height:1.4}.hb-card em{font-size:14px}}
 
 /* ---------- ONE invitation ---------- */
-.heart-not-done{font-family:var(--display);text-transform:uppercase;text-align:center;font-size:clamp(46px,9vw,140px);line-height:.85;padding:clamp(40px,7vw,90px) 16px 0;overflow-wrap:anywhere}
-.heart-not-done span{color:var(--blood)}
 .rebellion-invite{width:min(1100px,calc(100% - 32px));margin:clamp(20px,3vw,36px) auto clamp(48px,7vw,96px);padding:clamp(24px,4vw,48px);border:3px solid var(--blood);background:radial-gradient(80% 120% at 0% 0%,#2a0309,var(--void) 70%);box-shadow:12px 12px 0 var(--blood)}
 .rebellion-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0}
 .rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:.92;margin:10px 0 12px}
@@ -165,32 +147,6 @@ main>section,main>aside{position:relative}
 .rebellion-actions a.rebellion-primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;box-shadow:6px 6px 0 var(--bone)}
 .rebellion-actions a:hover,.rebellion-actions button:hover{background:var(--bone);color:var(--void)}
 .rebellion-note{color:var(--ash);font-size:15px;margin-top:14px}
-
-/* ---------- VAULT ---------- */
-#home-vault{padding:clamp(56px,9vw,120px) 0;background:radial-gradient(90% 80% at 100% 0%,#3d0009,var(--coal) 62%);color:var(--bone);border-top:6px solid var(--blood)}
-#home-vault .vault-h2{font-size:clamp(56px,9vw,140px);margin:0}
-.rebellion-return{font-size:clamp(18px,1.6vw,21px);max-width:44ch;margin:12px 0 22px}
-#home-vault .rebellion-eyebrow{color:var(--blood)}
-.dq{font-family:var(--display);text-transform:none;font-size:clamp(30px,4.6vw,68px);line-height:1;margin:12px 0 0;max-width:22ch;border-left:10px solid var(--blood);padding-left:clamp(14px,2vw,26px)}
-#home-vault .rebellion-note{color:var(--ash)}
-#home-share-fallback textarea{width:100%;max-width:640px;font:16px var(--body);padding:10px;margin-top:8px}
-.door-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
-.door{display:grid;gap:10px;align-content:space-between;min-height:200px;padding:22px;background:var(--void);color:var(--bone);text-decoration:none;border:3px solid var(--bone);transition:transform .2s ease,box-shadow .2s ease}
-.door .n{font-family:var(--display);font-size:40px;color:var(--blood);line-height:1}
-.door h3{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(30px,3vw,46px);line-height:.92;margin:0}
-.door p{margin:6px 0 0;font-size:15px;color:var(--ash)}
-.door:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood)}
-#home-vault .ctas{margin-top:26px}
-#home-vault .btn.red{box-shadow:6px 6px 0 var(--bone)}
-@media(max-width:760px){.door-grid{grid-template-columns:1fr}.door{min-height:0}}
-
-/* ---------- MANIFESTO ---------- */
-.manifesto{position:relative;overflow:hidden;isolation:isolate;padding:clamp(80px,14vw,200px) 0;text-align:center}
-.manifesto img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.55}
-.manifesto::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--void),rgba(5,5,5,.25) 35%,rgba(5,5,5,.25) 65%,var(--void))}
-.manifesto blockquote{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6.5vw,104px);line-height:.92;margin:0 auto;max-width:16ch}
-.manifesto blockquote em{color:var(--blood);font-style:normal}
-.manifesto .sig{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,28px);margin-top:20px}
 
 /* ---------- FOOTER ---------- */
 .sitefoot{padding:40px clamp(16px,4vw,48px);border-top:3px solid var(--blood);font-size:15px}
@@ -230,7 +186,6 @@ main>section,main>aside{position:relative}
 .hb-shop p{margin:12px 0 0;font-size:18px;max-width:40ch}
 .hb-shop .btn{background:var(--void);border-color:var(--void);color:#fff;box-shadow:8px 8px 0 #fff;font-size:17px}
 .hb-shop .btn:hover{background:#fff;color:var(--void)}
-@media(max-width:560px){.hb-card span{display:none}}
 /* COMPACT PASS 2026-10-18 — kept from the published compact homepage: comfortable reading sizes on small screens. */
 @media(max-width:700px){body{font-size:17px}.canon-hero__line{font-size:18px}#mission-board article p{font-size:16px}}
 </style>
@@ -262,7 +217,6 @@ main>section,main>aside{position:relative}
 </div>
 </div>
 </section>
-<div class="tape" aria-hidden="true"><div><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span><span>Loud heart</span><span>✶</span><span>Open door</span><span>✶</span><span>Same man. Different scars.</span><span>✶</span><span>Still here</span><span>✶</span></div></div>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
 <div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
@@ -305,71 +259,24 @@ main>section,main>aside{position:relative}
 <article><h3>Need a hand?</h3><p>A custom song written from your story, or office and production help.</p><a href="/here-to-help/">I’m here to help</a></article>
 <article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: <span data-live-after="coming soon" data-live-until="2026-11-01T16:45:00Z">Sunday, November 1, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives &amp; Readings</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
-<section id="everywhere" aria-labelledby="everywhere-title">
-<div class="hb-wrap">
-<div class="label"><span>Follow the heart / Every platform, a different piece</span><span class="num">03</span></div>
-<h2 class="display rv" id="everywhere-title">One heart. <span>Never the same post twice.</span></h2>
-<p class="hb-lead rv">Each place gets something only it has. When something hits, it leads you back here—where the whole story lives.</p>
-<div class="hb-grid">
-<a class="hb-card rv" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank"><small>YouTube</small><strong>The full films</strong><span>Complete songs and films, plus the Shorts that lead to them.</span><em>Watch ↗</em></a>
-<a class="hb-card rv" href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank"><small>TikTok</small><strong>First moments</strong><span>The hit of a line or a scene. React, then come find the rest.</span><em>Catch it ↗</em></a>
-<a class="hb-card rv" href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank"><small>Instagram</small><strong>The art &amp; the meaning</strong><span>Artwork, what it means, and behind the scenes in Stories.</span><em>See it ↗</em></a>
-<a class="hb-card rv" href="https://x.com/ghostheartgp" rel="noopener noreferrer" target="_blank"><small>X</small><strong>The studio voice</strong><span>What I’m making, what’s ready, and what I have to say today.</span><em>Follow ↗</em></a>
-<a class="hb-card rv" href="https://bsky.app/profile/ghostheartgp.bsky.social" rel="noopener noreferrer" target="_blank"><small>Bluesky</small><strong>Work notes</strong><span>The decisions and questions behind the work, and real conversation.</span><em>Talk ↗</em></a>
-<a class="hb-card rv" href="https://www.pinterest.com/ghostheart131517/" rel="noopener noreferrer" target="_blank"><small>Pinterest</small><strong>Lines to keep</strong><span>Artwork to save. Every pin leads to the song or story behind it.</span><em>Save ↗</em></a>
-<a class="hb-card rv" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank"><small>Spotify</small><strong>Turn it up</strong><span>The recordings, for the listen you keep coming back to.</span><em>Listen ↗</em></a>
-<a class="hb-card rv" href="https://music.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank"><small>YouTube Music</small><strong>Audio only</strong><span>Every song without the picture, for the drive and the headphones.</span><em>Play ↗</em></a>
-<a class="hb-card rv" href="https://suno.com/@ghostheart131517" rel="noopener noreferrer" target="_blank"><small>Suno</small><strong>The listening room</strong><span>Selected songs from the GhostHeart world.</span><em>Step in ↗</em></a>
-<a class="hb-card rv" href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=social&amp;utm_campaign=wake-the-heart&amp;utm_content=follow_substack" rel="noopener noreferrer" target="_blank"><small>Substack</small><strong>Too Human to Stay Quiet</strong><span>The long version of GhostHeart’s story, one chapter at a time.</span><em>Read ↗</em></a>
-<a class="hb-card rv" href="/workshop/"><small>The Workshop</small><strong>Apps &amp; tools</strong><span>Things I built that you can use.</span><em>Open the files →</em></a>
-<a class="hb-card home rv" href="/follow/"><small>myghostheart.com</small><strong>Home base</strong><span>Everything in one place, plus a note from me when something’s ready.</span><em>Stay connected →</em></a>
-</div>
-</div>
-</section>
 <aside class="hb-shop" aria-labelledby="shop-title">
 <div class="hb-wrap">
 <div><h2 id="shop-title">Wear <span>The Heart.</span></h2><p>Official GhostHeart Studios merch. Carry the cracked heart out into the world.</p></div>
 <a class="btn" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Shop merch ↗</a>
 </div>
 </aside>
-<div class="heart-not-done" aria-hidden="true">This Heart Isn't <span>Done.</span></div>
 <aside class="rebellion-invite" id="join-the-signal" aria-labelledby="rebellion-title">
 <p class="rebellion-eyebrow">Still here. Still connected.</p>
 <h2 id="rebellion-title">Join the Heart Rebellion.</h2>
 <p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
-<div class="rebellion-actions"><a class="rebellion-primary" href="/follow/#email-signup-title">Join by email ↗</a><a href="#home-vault">Find your next song, film or quote ↓</a></div>
+<div class="rebellion-actions"><a class="rebellion-primary" href="/follow/#email-signup-title">Join by email ↗</a><a href="/vault/">Find your next song, film or quote ↗</a></div>
 <p class="rebellion-note">Free and optional. Unsubscribe anytime.</p>
 </aside>
-<section class="doors" id="home-vault"><span id="vault"></span>
-<div class="hb-wrap">
-<div class="label"><span>Pick your way in</span><span class="num">04</span></div>
-<h2 class="display vault-h2">The Vault</h2>
-<p class="rebellion-return">Come back for a different line each day, revisit a film, or explore the published stories.</p>
-<p class="rebellion-eyebrow">A line for today · <span id="qn">01</span> / 17</p>
-<blockquote class="dq" data-daily-quote="">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
-<div class="rebellion-actions quote-actions"><a id="qlink" href="/GhostHeart_Quotes.html#quote-01">Open this quote ↗</a><button type="button" data-home-copy hidden>Copy quote</button><button type="button" data-home-share hidden>Share quote</button></div>
-<p id="home-share-status" class="rebellion-note" role="status" aria-live="polite"></p>
-<div id="home-share-fallback" hidden><label for="home-share-text">Select and copy this quote and its link:</label><textarea id="home-share-text" readonly rows="4"></textarea></div>
-<div class="door-grid">
-<a class="door" href="/music/"><span class="n">01</span><div><h3>Music &amp; films</h3><p>Every song. Every film. Turn it up.</p></div></a>
-<a class="door" href="/GhostHeart_Story.html"><span class="n">02</span><div><h3>Enter My World</h3><p>The life behind the name, chapter by chapter.</p></div></a>
-<a class="door" href="/workshop/"><span class="n">03</span><div><h3>The Workshop</h3><p>Things I built that you can use.</p></div></a>
-</div>
-<div class="ctas"><a class="btn red" href="/vault/">Explore The Vault: music, films &amp; quotes ↗</a></div>
-</div>
-</section>
-<section class="manifesto">
-<img alt="" height="450" loading="lazy" sizes="100vw" src="/assets/home/heartbeat/versions-800.webp" srcset="/assets/home/heartbeat/versions-800.webp 800w, /assets/home/heartbeat/versions-1600.webp 1600w" width="800"/>
-<div class="hb-wrap">
-<blockquote class="rv">Same soul. Different versions. <em>One heart.</em></blockquote>
-<div class="sig">The heart feels what the world misses.</div>
-</div>
-</section>
 </main>
 <footer class="sitefoot">
 <div class="fcols">
 <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-<nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
+<nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube</a><a href="https://www.tiktok.com/@ghosthearted1" rel="noopener" target="_blank">TikTok</a></nav>
 <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=footer" rel="noopener" target="_blank">Substack</a><a href="/workshop/">The Workshop</a></nav>
 <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
 </div>
@@ -379,8 +286,6 @@ main>section,main>aside{position:relative}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
-<script src="/assets/journal/daily-quote.js"></script>
-<script src="/assets/home/rebellion.js"></script>
 <script src="/assets/home/heartbeat/arrival.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
