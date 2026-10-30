@@ -1,5 +1,43 @@
 [
   {
+    "slug": "wake-the-heart-week",
+    "title": "Wake the Heart Week",
+    "category": "Announcement",
+    "status": "published",
+    "published": "2026-10-30T13:00:00-05:00",
+    "summary": "November 9 to 15: one week inside The Awakening, built around the songs and the people they are for.",
+    "image": "/assets/journal/art/wake-the-heart-week-1280.jpg",
+    "paragraphs": [
+      "From Monday, November 9 to Sunday, November 15, The Awakening gets a week of its own: Wake the Heart Week.",
+      "The Awakening is eight songs that follow one journey, from witnessing cruelty to finding the courage to stand beside someone else. For one week, every place GhostHeart shows up will carry a different piece of that same story. One heart. Never the same post twice.",
+      "Here is what is already set. On Saturday, November 14 at 7 PM Central, Passage 06 opens: the reading for This Is GhostHeart. On Sunday, November 15 at 10 AM Central, the week closes with the Sunday Live.",
+      "A Friday night listening event and the first letter to the email list are planned for the same week. Their details will be posted here and sent by email once they are confirmed.",
+      "You don’t have to take part in everything. Stay with one song. Carry one line. If someone comes to mind while you listen, that might be the person to share it with.",
+      "What survived can help someone rise."
+    ],
+    "links": [
+      {
+        "label": "Explore The Awakening",
+        "url": "/awakening/index.html"
+      },
+      {
+        "label": "See the Passages",
+        "url": "/passages/"
+      },
+      {
+        "label": "Lives & Readings",
+        "url": "/live/"
+      }
+    ],
+    "sources": [
+      "awakening/index.html",
+      "homepage line “One heart. Never the same post twice.”",
+      "passages schedule",
+      "Wake the Heart Week launch pack (dates)"
+    ],
+    "comments_enabled": false
+  },
+  {
     "slug": "how-we-got-here",
     "title": "How We Got Here",
     "category": "Public introduction",
@@ -38,10 +76,14 @@
     "category": "Short song introduction",
     "published": "2026-09-25T16:13:00+00:00",
     "summary": "A heart that survived, and a question about what comes next.",
-    "image": "/assets/videos/youtube/kF1Cc_GB6AM.jpg",
+    "image": "/assets/journal/art/this-is-ghostheart-1280.jpg",
     "paragraphs": [
       "This Is GhostHeart begins with a heart that survived and a question about what comes next. The song opens a larger story told through music, film, words and pictures.",
-      "What can a person carry forward from survival? And how might that become something another person can recognize themselves in?"
+      "What can a person carry forward from survival? And how might that become something another person can recognize themselves in?",
+      "The film calls it the name, the scars, and the reason a hidden heart chose to be seen.",
+      "In Enter My World, I put it this way: “Maybe my story could help somebody. Even with the ugly parts. Even with the mistakes I have to own.” And then: “If I help one person, then I did something.”",
+      "That is the heart of this song. It doesn’t ask anyone to share that past. It asks what a person might carry forward, and who might need to see it.",
+      "This Is GhostHeart is one of the eight songs on The Awakening. Its Passage, the longer reading for the song, opens Saturday, November 14 at 7 PM Central."
     ],
     "links": [
       {
@@ -55,9 +97,13 @@
     ],
     "sources": [
       "index.html",
-      "start/index.html"
+      "start/index.html",
+      "albums/ghostheart/index.html",
+      "GhostHeart_Story.html",
+      "passages schedule"
     ],
-    "comments_enabled": false
+    "comments_enabled": false,
+    "updated": "2026-10-30T13:00:00-05:00"
   },
   {
     "slug": "ghosthearts-oath",
@@ -65,10 +111,14 @@
     "category": "Short song introduction",
     "published": "2026-09-25T16:12:00+00:00",
     "summary": "What might protecting the light in others look like in an ordinary moment?",
-    "image": "/assets/videos/youtube/DQcl28CHE_o.jpg",
+    "image": "/assets/journal/art/ghosthearts-oath-1280.jpg",
     "paragraphs": [
       "GhostHeart’s Oath turns from the name to the promise behind it: protecting the light in others.",
-      "What might that promise look like in an ordinary moment? What survived can become a reason to help someone else rise."
+      "What might that promise look like in an ordinary moment? What survived can become a reason to help someone else rise.",
+      "The mission behind it fits in three words: Build. Serve. Change. Turn survival into work that leaves a door open for someone else.",
+      "GhostHeart turns survival into work that serves people who feel unseen. Build the platforms. Tell the truth. Leave a door open behind you.",
+      "Sometimes protecting the light might look like noticing who was left out. Sometimes it might mean giving someone the patience you once needed.",
+      "GhostHeart’s Oath is one of the eight songs on The Awakening. Its Passage, the longer reading for the song, opens Saturday, November 21 at 7 PM Central."
     ],
     "links": [
       {
@@ -82,9 +132,12 @@
     ],
     "sources": [
       "index.html",
-      "start/index.html"
+      "start/index.html",
+      "GhostHeart_Version_Mission.html",
+      "passages schedule"
     ],
-    "comments_enabled": false
+    "comments_enabled": false,
+    "updated": "2026-10-30T13:00:00-05:00"
   },
   {
     "slug": "youre-not-god",
@@ -98,6 +151,10 @@
       "You’re Not God explores that question through songs about judgement, shame and people who claim the right to speak for heaven. Its focus is what happens when faith is used to hurt or exclude someone.",
       "That Ain’t Holy and Hey Preacher Man ask what happens when compassion becomes control and religion is used to excuse cruelty.",
       "Belief can matter deeply to a person. That does not give someone else the right to decide whose love counts or whose life has value.",
+      "This collection is not an attack on faith. It is a confrontation with hypocrisy: purity demanded by people hiding their own sins, scripture used as a weapon, and personal hatred mistaken for God’s voice.",
+      "I Won’t Pretend to Speak for You tells it through one long love. One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, the song asks what a lifetime of love can tell us that appearances cannot.",
+      "That Ain’t Holy is a father-and-son story about poverty, dignity, and who gets judged. Mercy should not check your pockets at the door.",
+      "If your faith requires cruelty, that ain’t holy.",
       "The album holds those ideas together: room for faith, and a boundary against cruelty carried out in its name."
     ],
     "links": [
@@ -111,9 +168,11 @@
       }
     ],
     "sources": [
-      "albums/youre-not-god/index.html"
+      "albums/youre-not-god/index.html",
+      "albums/youre-not-god/index.html (collection text and film descriptions)"
     ],
-    "comments_enabled": false
+    "comments_enabled": false,
+    "updated": "2026-10-30T13:00:00-05:00"
   },
   {
     "slug": "cruel-something-needs-to-change",

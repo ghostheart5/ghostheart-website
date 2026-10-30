@@ -92,7 +92,7 @@ assert main.select_one('.filter[data-filter="all"]')["aria-pressed"] == "true"
 assert main.select_one(".urgent").sourceline < main.select_one(".catalog").sourceline
 
 posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="utf-8"))
-assert len(posts) == 5
+assert len(posts) == 6
 for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
     article = page(f"journal/{slug}.html")
     assert not article.select('[data-comment-thread]'), "Closed Conversation invitation must stay absent"
@@ -102,4 +102,4 @@ for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]
 assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
-print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, 15 exact reading paragraphs, 16 resources, 5 Journal entries")
+print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, 15 exact reading paragraphs, 16 resources, 6 Journal entries")
