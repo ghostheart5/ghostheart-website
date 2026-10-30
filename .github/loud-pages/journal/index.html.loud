@@ -40,6 +40,8 @@
 .archive{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border:3px dashed var(--blood);padding:24px;margin-top:50px}
 .archive h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(30px,3vw,44px);text-transform:uppercase}
 .archive p{color:#c9c6c1;max-width:560px}
+.long-story{border-style:solid;background:linear-gradient(135deg,#3a0008,var(--void) 70%)}
+.journal-purpose a{color:var(--hot);text-decoration:underline;text-underline-offset:.2em}
 .sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
 .sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
 @media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
@@ -85,7 +87,7 @@ section{padding:32px max(16px,4vw)}
   <div class="giant display">BEHIND THE SONGS</div>
   <span class="kicker">✶ GhostHeart / Blog</span>
   <h1 class="display">The GhostHeart <span class="r">Blog.</span></h1>
-  <p class="journal-purpose">Readings and short notes behind the songs. Choose an entry below by title and date.</p>
+  <p class="journal-purpose">A short note with every new song and film. Choose an entry below by title and date. The full life story lives on <a href="#long-story">Substack</a>.</p>
   <p class="tag">The songs don’t tell you everything. Here I write about the thoughts behind them and the questions they leave with me.</p>
 <div class="ctas"><a class="btn ghost email-entry" href="/follow/#email-signup-title">Get email updates</a></div>
 </header>
@@ -105,14 +107,25 @@ section{padding:32px max(16px,4vw)}
   <!--@inject .journal-signup-->
 
   <div class="posts journal-highlights">
-    <article><a href="/journal/this-is-ghostheart.html"><span class="no">02</span><div><small>Short song introduction · September 25, 2026</small><h3>This is GhostHeart.</h3><p>A heart that survived, and a question about what comes next.</p></div><span class="go">Read ↗</span></a></article>
-    <article><a href="/journal/ghosthearts-oath.html"><span class="no">03</span><div><small>Short song introduction · September 25, 2026</small><h3>GhostHeart’s Oath</h3><p>What might protecting the light in others look like in an ordinary moment?</p></div><span class="go">Read ↗</span></a></article>
-    <article><a href="/journal/youre-not-god.html"><span class="no">04</span><div><small>Album spotlight · September 25, 2026</small><h3>You’re Not God</h3><p>A question about belief, judgement and the difference between care and control.</p></div><span class="go">Read ↗</span></a></article>
+    <article><a href="/passages/im-not.html"><span class="no">02</span><div><small>Passage 02 · October 19, 2026</small><h3>I’m Not — More Than One Chapter</h3><p>A story can be worth telling before the fear is gone.</p></div><span class="go">Read ↗</span></a></article>
+    <article><a href="/journal/this-is-ghostheart.html"><span class="no">03</span><div><small>Short song introduction · September 25, 2026</small><h3>This is GhostHeart.</h3><p>A heart that survived, and a question about what comes next.</p></div><span class="go">Read ↗</span></a></article>
+    <article><a href="/journal/ghosthearts-oath.html"><span class="no">04</span><div><small>Short song introduction · September 25, 2026</small><h3>GhostHeart’s Oath</h3><p>What might protecting the light in others look like in an ordinary moment?</p></div><span class="go">Read ↗</span></a></article>
+    <article><a href="/journal/youre-not-god.html"><span class="no">05</span><div><small>Album spotlight · September 25, 2026</small><h3>You’re Not God</h3><p>A question about belief, judgement and the difference between care and control.</p></div><span class="go">Read ↗</span></a></article>
+  </div>
+
+  <div class="archive long-story">
+    <div><h3>Passages</h3><p>One reading for each song on The Awakening. A new one Saturdays at 7 PM Central.</p></div>
+    <div class="ctas"><a class="btn red" href="/passages/">See all Passages ↗</a></div>
   </div>
 
   <div class="archive">
     <div><h3>How We Got Here</h3><p>The original introduction stays in the archive. The current reading path begins at Enter My World.</p></div>
     <div class="ctas"><a class="btn ghost" href="/journal/how-we-got-here-archive.html">Read the archive ↗</a><a class="btn red" href="/GhostHeart_Story.html">Enter My World</a></div>
+  </div>
+
+  <div class="archive long-story" id="long-story">
+    <div><h3>The long story lives on Substack</h3><p>This blog is the short note behind each song. Too Human to Stay Quiet is the long version of GhostHeart’s story, one chapter at a time.</p></div>
+    <div class="ctas"><a class="btn red" href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=blog&amp;utm_content=long_story" rel="noopener noreferrer" target="_blank">Read on Substack ↗</a></div>
   </div>
 </section>
 
@@ -127,7 +140,7 @@ section{padding:32px max(16px,4vw)}
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
     <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Live</a></nav>
-    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
+    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=footer" rel="noopener" target="_blank">Substack</a></nav>
     <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
   </div>
   <p class="fcopy">© 2026 GhostHeart Studios</p>
