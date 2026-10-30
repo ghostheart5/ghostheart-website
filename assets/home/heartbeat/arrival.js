@@ -13,9 +13,9 @@
     pinterest: ['From Pinterest', 'You saved the line. Hear the song it came from.', '/music/', 'Hear the music'],
     reddit: ['From Reddit', 'Welcome—no pitch. Here’s what GhostHeart is, in one minute.', '#home-story', 'See what this is'],
     substack: ['From Substack', 'You read the chapter. Now hear the song it came from.', '/music/', 'Hear the music'],
-    discord: ['Welcome back', 'Good to see you. Today’s line is waiting.', '#home-vault', 'Today’s line'],
+    discord: ['Welcome back', 'Good to see you. Today’s line is waiting.', '/vault/#daily-line', 'Today’s line'],
     spotify: ['From Spotify', 'You heard it. Now see the story the song is telling.', '#home-story', 'The story behind it'],
-    email: ['From your inbox', 'Thanks for opening. Here’s today’s line.', '#home-vault', 'Today’s line']
+    email: ['From your inbox', 'Thanks for opening. Here’s today’s line.', '/vault/#daily-line', 'Today’s line']
   };
   var ALIASES = { twitter: 'x', 't.co': 'x', ig: 'instagram', yt: 'youtube', mailchimp: 'email', newsletter: 'email', bsky: 'bluesky' };
 
@@ -34,7 +34,7 @@
   if (dismissed) return;
 
   var route = ROUTES[source];
-  if (!route && visits > 1) route = ['Welcome back', 'You came back. Today’s line is new.', '#home-vault', 'Today’s line'];
+  if (!route && visits > 1) route = ['Welcome back', 'You came back. Today’s line is new.', '/vault/#daily-line', 'Today’s line'];
   if (!route) return;
 
   box.querySelector('[data-arrival-from]').textContent = route[0];
