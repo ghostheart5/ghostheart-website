@@ -163,3 +163,10 @@ block = "\n  <!-- PASSAGES:START -->\n" + "\n".join(
 value = value.rstrip().removesuffix("</urlset>").rstrip() + block + "</urlset>\n"
 sitemap.write_text(value, encoding="utf-8", newline="\n")
 print(f"Passages: {len(passages)} listed, {len(open_ones)} open, {len(published)} reading pages")
+
+# The Blog index and journal feed list released Passages too (see build_blog_index.py).
+# Partial test fixtures copy only the Passages files, so skip when the Blog is absent.
+import runpy
+blog_index = ROOT / ".github/scripts/build_blog_index.py"
+if blog_index.exists() and (ROOT / "journal/index.html").exists():
+    runpy.run_path(str(blog_index), init_globals={"passages": passages, "now": now}, run_name="__main__")
