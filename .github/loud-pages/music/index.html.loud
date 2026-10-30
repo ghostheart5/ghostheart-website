@@ -100,7 +100,7 @@ html body .vault .door{min-height:0;padding:14px 16px;gap:10px}
 html body .vault .door .n{font-size:28px}
 html body .vault .door h3{font-size:clamp(20px,2.2vw,30px)}
 html body .vault .door p{font-size:11px;margin-top:6px;letter-spacing:.1em}
-@media(max-width:600px){html body .vault .door{padding:10px}html body .vault .door .n{font-size:20px}html body .vault .door h3{font-size:16px}html body .vault .door p{font-size:9px}}
+@media(max-width:600px){html body .vault .door{padding:10px}html body .vault .door .n{font-size:20px}html body .vault .door h3{font-size:clamp(12px,4.2vw,16px);overflow-wrap:anywhere}html body .vault .door p{font-size:9px}}
 .next{background:var(--blood);color:var(--void);text-align:center}
 .next h2{font-size:clamp(80px,14vw,240px)}
 .next h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
