@@ -307,3 +307,49 @@ html body:has(#everywhere) .start .door .n{font-size:28px}
   html body:has(#scene) #scene .stage{width:min(100%,240px)}
   html body:has(#everywhere) details.gh-directory:not(#_){padding:16px}
 }
+/* WHOLE-SITE REVIEW 2026-10-31 (owner: "look at it, it's horrible" / sections too big).
+   Music song lists, Enter My World blocks, home boxes and bands, Stay Connected doors, I'm Here to Help offers. */
+/* Music: song names were in giant letters, one per screen-wide row. */
+html body:has(.juke) .tracks button,html body:has(.juke) .spook ol button{font-size:clamp(20px,2.2vw,30px);padding:9px 0;gap:10px;grid-template-columns:clamp(36px,4vw,56px) 1fr auto;border-bottom-width:2px}
+html body:has(.juke) :is(.tracks,.spook ol) button .go{font-size:.5em}
+html body:has(.juke) .tracks button.on .go::before{font-size:clamp(12px,1.2vw,16px)}
+html body:has(.juke) .album{margin-bottom:clamp(32px,4vw,56px)}
+html body:has(.juke) .album-head{margin-bottom:12px}
+html body:has(.juke) .album-head h2{font-size:clamp(36px,4.6vw,72px)}
+html body:has(.juke) .playall{font-size:16px;padding:9px 14px}
+html body:has(.juke) .spook h2{font-size:clamp(36px,4.6vw,72px)}
+html body:has(.juke) .spook p.sub{margin:8px 0 14px}
+html body:has(.juke) main h1{font-size:clamp(40px,5.2vw,84px)!important}
+html body:has(.juke) .tape div{font-size:clamp(16px,1.8vw,24px);padding:4px 0}
+/* Enter My World: banner, tapes, Read more, Woman Behind the Scenes. */
+html body:has(.slam-wrap) .slam:not(#_){width:fit-content;max-width:min(92%,760px);margin:16px auto;padding:10px 18px;font-size:clamp(20px,2.2vw,30px)}
+html body:has(.slam-wrap) .slam span{max-width:none}
+html body:has(.slam-wrap) .tape div{font-size:clamp(16px,1.8vw,24px);padding:4px 0}
+html body:has(.slam-wrap) .world-reading .reading-toggle:not(#_){display:inline-flex;align-items:center;width:fit-content!important;min-height:44px;padding:8px 22px;font-size:16px}
+html body:has(.slam-wrap) .her:not(#_){padding-top:clamp(20px,2.6vw,32px);padding-bottom:clamp(20px,2.6vw,32px)}
+html body:has(.slam-wrap) .her h2{font-size:clamp(24px,2.4vw,34px)!important}
+html body:has(.slam-wrap) .her p{font-size:16px;margin:10px 0 14px}
+html body:has(.slam-wrap) .her .card{padding:14px 16px}
+html body:has(.slam-wrap) .her .card .mark{font-size:clamp(17px,1.5vw,22px)}
+/* Home: mission boxes, Wear the Heart band, Join box. */
+html body .mission-board-grid article{padding:14px;gap:4px}
+html body .mission-board-grid h3{font-size:22px}
+html body .mission-board-grid p{font-size:14px;line-height:1.45}
+html body .mission-board-grid a{min-height:32px}
+html body aside.hb-shop:not(#_){padding-top:32px;padding-bottom:32px}
+html body aside.rebellion-invite:not(#_){padding-bottom:28px}
+/* I'm Here to Help: offer boxes had heavy padding. */
+html body #what-i-do .offer:not(#_){padding:clamp(18px,2.4vw,30px)}
+html body #what-i-do .offer + .offer{margin-top:18px}
+@media (max-width:700px){
+  html body:has(.juke) .tracks button,html body:has(.juke) .spook ol button{font-size:19px;padding:8px 0}
+  html body:has(.slam-wrap) .slam:not(#_){font-size:20px;padding:8px 14px}
+  html body .mission-board-grid article{padding:12px}
+  html body .mission-board-grid h3{font-size:20px}
+  html body aside.hb-shop:not(#_){padding-top:22px;padding-bottom:22px}
+  /* Stay Connected: the first "More ways in" door was squeezed into a thin strip. Show all four as a 2x2 grid. */
+  html body .start .door-grid:not(#_){grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;gap:0}
+  html body .start .door-grid .door:not(#_){padding:10px}
+  html body .start .door-grid .door h3{font-size:18px!important;line-height:1.05}
+  html body .start .door-grid .door .n{font-size:18px}
+}
