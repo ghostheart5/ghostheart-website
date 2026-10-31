@@ -353,3 +353,17 @@ html body #what-i-do .offer + .offer{margin-top:18px}
   html body .start .door-grid .door h3{font-size:18px!important;line-height:1.05}
   html body .start .door-grid .door .n{font-size:18px}
 }
+/* Owner follow-up 2026-10-31 (Enter My World screenshot): the see-through top menu let buttons and tapes show under it,
+   and the Woman Behind the Scenes and "Your pace" blocks were still too big. */
+html body header.ghx-header:not(#_){background:#050505;border-bottom:2px solid rgba(244,72,60,.6)}
+html body:has(.slam-wrap) main :is(.her,.pace) h2.display:not(#_):not(#__){font-size:clamp(24px,2.2vw,32px)!important;line-height:1}
+html body:has(.slam-wrap) .her:not(#_){padding-top:20px;padding-bottom:20px}
+html body:has(.slam-wrap) .her .label{margin-bottom:10px}
+html body:has(.slam-wrap) .her-grid{align-items:center;gap:20px}
+html body:has(.slam-wrap) .her .btn{padding:10px 16px;font-size:15px}
+html body:has(.slam-wrap) .pace .label{margin-bottom:10px}
+html body:has(.slam-wrap) .pace .label .num,html body:has(.slam-wrap) .her .label .num{font-size:24px}
+html body:has(.slam-wrap) .pace .door-grid{max-width:760px}
+html body:has(.slam-wrap) .pace .door:not(#_){flex-direction:row;justify-content:flex-start;align-items:center;gap:14px;padding:10px 12px}
+html body:has(.slam-wrap) .story-ctas:not(#_){padding-bottom:64px}
+html body:has(.slam-wrap) .pace .ctas:not(#_){margin-top:14px!important}
