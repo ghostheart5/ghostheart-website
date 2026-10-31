@@ -122,3 +122,35 @@ body header.ghx-header .ghx-bar .ghx-primary a.ghx-merch:hover{color:var(--hot)}
   html body .music-track{padding:12px}
   html body .music-tracks{gap:8px}
 }
+
+/* SITEWIDE COMPACT PASS 2026-10-31 (owner request: "you have huge sections that take up the whole page").
+   Caps oversized headlines, pictures and section spacing so no one section fills the screen.
+   The Music page, album pages and Films page keep their own recent sizing. */
+html body{overflow-x:clip}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main h1:not(.hb-giant){font-size:clamp(36px,4.3vw,62px)!important;line-height:.95}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(section h2:not(:is(section section,article,li,form,.vault-item,.hb-card,.door,.card) h2),#rebellion-title,.projects-close h2,.case h2.display){font-size:clamp(28px,3vw,44px)!important;line-height:1}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main #shop-title{font-size:clamp(40px,5vw,72px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(.offer h3,#show h3,.start .door h3){font-size:clamp(22px,2.4vw,34px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section:not(:first-of-type):not(#_){padding-top:clamp(24px,3.4vw,44px);padding-bottom:clamp(24px,3.4vw,44px)}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section :is(img,video,iframe,.hb-poster){max-height:420px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section img{object-fit:cover}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .label{margin-bottom:14px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .label .num{font-size:clamp(28px,3vw,44px)}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-hero:not(#_){padding-bottom:32px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) #scene .stage{width:min(100%,420px);justify-self:center}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-grid .hb-card strong{font-size:clamp(20px,1.9vw,28px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .vault-item blockquote{font-size:clamp(18px,1.6vw,24px)!important}
+@media (max-width:700px){
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main h1:not(.hb-giant){font-size:clamp(30px,9.6vw,38px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(section h2:not(:is(section section,article,li,form,.vault-item,.hb-card,.door,.card) h2),#rebellion-title,.projects-close h2,.case h2.display){font-size:clamp(24px,7.6vw,30px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main #shop-title{font-size:clamp(32px,10vw,40px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section:not(:first-of-type):not(#_){padding-top:22px;padding-bottom:22px}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section :is(img,video,iframe,.hb-poster){max-height:300px}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(.ghx-actions,.ctas) a{min-height:44px;padding-top:9px!important;padding-bottom:9px!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-man figure{max-width:260px;margin-left:auto;margin-right:auto}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) ul.tracks li a{padding-top:10px;padding-bottom:10px}
+}
+/* The top menu now has five tabs, so phones fit them on one row. */
+@media(max-width:400px){
+  html body header.ghx-header .ghx-bar .ghx-primary{grid-template-columns:repeat(5,minmax(0,auto));justify-content:space-between;gap:0 8px}
+}

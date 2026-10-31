@@ -7,12 +7,12 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 HEADER = '''<header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="/GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>Go deeper</h2><a href="/GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="/vault/">GhostHeart's Vault</a></div>
-<div><h2>Explore</h2><a href="/journal/">Blog</a><a href="/live/">Lives &amp; Readings</a><a href="/GhostHeart_Projects.html">Projects</a><a href="/follow/">Stay Connected</a></div>
+<div><h2>Enter My World</h2><a href="/awakening/index.html">The Awakening</a><a href="/GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="/vault/">GhostHeart's Vault</a></div>
+<div><h2>Explore</h2><a href="/journal/">Blog</a><a href="/live/">Lives &amp; Readings</a><a href="/GhostHeart_Projects.html">Projects</a></div>
 </div></nav></header>'''
 PATTERN = re.compile(r'<header\b[^>]*class=["\'][^"\']*\bghx-header\b[^"\']*["\'][^>]*>.*?</header>', re.S | re.I)
 
@@ -20,7 +20,7 @@ def build_header(path):
     rel = path.relative_to(ROOT).as_posix()
     active = ('/music/' if rel.startswith(('albums/', 'music/')) else
               '/live/' if rel.startswith(('live/', 'passages/')) else
-              {'awakening/index.html': '/awakening/index.html',
+              {'awakening/index.html': '/GhostHeart_Story.html',
                'GhostHeart_Story.html': '/GhostHeart_Story.html',
                'GhostHeart_Projects.html': '/GhostHeart_Projects.html',
                'journal/index.html': '/journal/',
@@ -28,7 +28,6 @@ def build_header(path):
                'GhostHeart_Quotes.html': '/vault/',
                'GhostHeart_Videos.html': '/vault/',
                'GhostHeart_Songs.html': '/music/',
-               'follow/index.html': '/follow/',
                'start/index.html': '/index.html',
                'woman-behind-the-scenes/index.html': '/woman-behind-the-scenes/',
                'vault/index.html': '/vault/',

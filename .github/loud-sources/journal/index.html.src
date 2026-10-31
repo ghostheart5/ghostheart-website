@@ -18,12 +18,12 @@
 <link href="/assets/shared/blog-subscription.css" rel="stylesheet"/><link href="/assets/shared/review-theme.css" rel="stylesheet"/><script defer="" src="/assets/journal/subscription.js"></script></head><body class="ghx-site">
 <a class="skip-link" href="#main-content">Skip to content</a><header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a aria-label="GhostHeart home" class="ghx-brand" href="../index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="../index.html">Home</a><a href="../music/">Music</a><a href="../awakening/index.html">The Awakening</a><a href="../GhostHeart_Story.html">Enter My World</a><a href="../here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="../index.html">Home</a><a href="../music/">Music</a><a href="../GhostHeart_Story.html">Enter My World</a><a href="../here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="../GhostHeart_Resources.html">Help &amp; Resources</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>Go deeper</h2><a href="../GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="../woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="../vault/">GhostHeart's Vault</a></div>
-<div><h2>Explore</h2><a aria-current="page" href="../journal/">Blog</a><a href="../live/">Lives &amp; Readings</a><a href="../GhostHeart_Projects.html">Projects</a><a href="/follow/">Stay Connected</a></div>
+<div><h2>Enter My World</h2><a href="../awakening/index.html">The Awakening</a><a href="../GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="../woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="../vault/">GhostHeart's Vault</a></div>
+<div><h2>Explore</h2><a aria-current="page" href="../journal/">Blog</a><a href="../live/">Lives &amp; Readings</a><a href="../GhostHeart_Projects.html">Projects</a></div>
 </div></nav></header>
 <main id="main-content"><div class="ghx-wrap"><header class="journal-hero"><p class="ghx-kicker">GhostHeart / Blog</p>
 <h1>Behind the songs.</h1><p class="ghx-lead">The songs don’t tell you everything. Here I write about the thoughts behind them and the questions they leave with me.</p>

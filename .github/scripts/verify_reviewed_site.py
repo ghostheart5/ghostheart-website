@@ -15,8 +15,9 @@ def page(path):
     return BeautifulSoup((ROOT / path).read_text(encoding="utf-8"), "html.parser")
 
 
-nav = ["Home", "Music", "The Awakening", "Enter My World", "I’m Here to Help", "Merch"]
-explore = {"Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Merch", "Stay Connected"}
+nav = ["Home", "Music", "Enter My World", "I’m Here to Help", "Merch"]
+# Owner request 2026-10-31: The Awakening lives under Enter My World; Stay Connected left the menu.
+explore = {"The Awakening", "Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Merch"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:
