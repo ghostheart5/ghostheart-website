@@ -32,6 +32,17 @@
 .crt .lower span{display:inline-block;animation:slide 12s linear infinite}
 @keyframes flick{0%,96%,100%{opacity:1;transform:none}97%{opacity:.6;transform:translateX(-4px)}98%{opacity:1;transform:translateX(3px)}}
 
+/* next live feature */
+.nextlive{background:var(--bone);color:var(--void);padding:clamp(28px,4vw,48px) clamp(16px,4vw,48px);border-top:6px solid var(--blood);border-bottom:6px solid var(--blood)}
+.nextlive .when{display:inline-block;background:var(--void);color:var(--bone);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 12px}
+.nextlive h2{font-size:clamp(48px,7vw,110px);margin:16px 0 10px}
+.nextlive h2 span{color:var(--blood)}
+.nextlive p{font-size:clamp(18px,2vw,22px);font-weight:700;max-width:640px}
+.nextlive .ctas{margin-top:22px}
+/* room for the slanted tape that overlaps the bottom of this strip */
+.nextlive .tape-room{height:clamp(64px,7vw,96px)}
+.sunday .topic{font-weight:700;color:var(--hot)}
+
 /* scene */
 .scene{background:var(--blood);color:var(--void)}
 .scene-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
@@ -143,6 +154,13 @@ details p{margin-top:12px;color:#c9c6c1}
   </div>
 </header>
 
+<section class="nextlive" id="next-live-feature" aria-labelledby="next-live-feature-title" data-live-hide-after="2026-11-01T16:45:00Z">
+  <span class="when">Next Live · Sunday, November 1 · 10:00 a.m. Central · TikTok</span>
+  <h2 class="display" id="next-live-feature-title">Before the <span>Heart Wakes.</span></h2>
+  <p>An introduction to Wake the Heart Week, November 9 to 15.</p>
+  <div class="ctas"><a class="btn dark" href="https://www.tiktok.com/@ghosthearted1">Watch at @ghosthearted1 ↗</a><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
+  <div class="tape-room" aria-hidden="true"></div>
+</section>
 <div class="tape"><div><span>CHANGE THE SCENE</span><span>YOUR CHOICE</span><span>✶ GHOSTHEART LIVE ✶</span><span>ONE DOOR</span><span>CHANGE THE SCENE</span><span>YOUR CHOICE</span><span>✶ GHOSTHEART LIVE ✶</span><span>ONE DOOR</span></div></div>
 
 <section class="scene" id="scene">
@@ -193,6 +211,7 @@ details p{margin-top:12px;color:#c9c6c1}
     <section class="sunday rv" aria-labelledby="live-status-title">
       <small>LIVES</small>
       <h2 id="live-status-title">Next Live: <span data-live-until="2026-11-01T16:45:00Z" data-live-after="coming soon">Sunday, November 1, 2026, 10:00 a.m. Central</span>.</h2>
+      <p class="topic" data-live-hide-after="2026-11-01T16:45:00Z">This Live: Before the Heart Wakes, an introduction to Wake the Heart Week.</p>
       <p>GhostHeart Lives are on TikTok: <a href="https://www.tiktok.com/@ghosthearted1">watch at @ghosthearted1</a>.</p><p>Lives start at 10:00 a.m. Central.</p>
       <p class="mark"><a href="/follow/">Join the Heart Rebellion</a> to hear about the next one.</p>
     </section>
