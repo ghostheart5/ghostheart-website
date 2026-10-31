@@ -112,7 +112,7 @@ def reading_page(p: dict) -> str:
     page = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + escape(title, quote=True), page, count=1)
     page = re.sub(r'(<meta property="og:type" content=")[^"]*', lambda m: m.group(1) + "article", page, count=1)
     page = page.replace(f'{SITE}/passages/"', f'{url}"')
-    i = passages.index(p)
+    i = next(k for k, q in enumerate(passages) if q["number"] == p["number"])
     prev_p = next((q for q in reversed(passages[:i]) if q["open"]), None)
     next_p = next((q for q in passages[i + 1:] if q["open"]), None)
     nav = []
@@ -141,14 +141,41 @@ def reading_page(p: dict) -> str:
     return re.sub(r"<main>.*?</main>", lambda _: main, page, count=1, flags=re.S)
 
 
-published = set()
+def waiting_page(p: dict) -> str:
+    """A ready Passage whose time hasn't come: its link already works, but shows only
+    the title and opening time (never the reading) so an early click doesn't hit the 404."""
+    page = reading_page({**p, "paragraphs": [], "audio": None})
+    page = page.replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1)
+    wait = (f'<article class="r-body r-wait" data-at="{escape(p["date"], quote=True)}">\n'
+            f'    <p class="pull">Passage {p["number"]} opens {escape(p["at"].strftime("%A, %B ") + str(p["at"].day))} at 7 PM Central.</p>\n'
+            '    <p class="r-wait-note">You found it early. Come back then and the reading will be right here.</p>\n'
+            '</article>\n'
+            '<script>(function(){var a=document.querySelector(".r-wait");if(!a)return;'
+            'var t=Date.parse(a.dataset.at),n=a.querySelector(".r-wait-note");'
+            'function tick(){var s=Math.round((t-Date.now())/1000);'
+            'if(s<=0){n.textContent="It\u2019s opening now. Refresh in a minute or two.";return;}'
+            'var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);'
+            'n.textContent="Opens in "+(d?d+(d>1?" days, ":" day, "):"")+(h?h+(h>1?" hours, ":" hour, "):"")+m+(m===1?" minute.":" minutes.");'
+            'setTimeout(tick,30000);}tick();})();</script>\n')
+    page = page.replace('<article class="r-body">\n\n</article>\n', wait, 1)
+    page = page.replace('<p class="care">Some parts of the story are hard to hear. You can pause or step away. '
+                        'If you need support now, see <a href="/GhostHeart_Resources.html">Help &amp; Resources</a>.</p>\n', "", 1)
+    return page
+
+
+published, waiting = set(), set()
 for p in passages:
     target = ROOT / "passages" / f'{p["slug"]}.html'
-    if p["open"] and not p.get("link"):
+    if p.get("link") or p["status"] != "ready":
+        continue
+    if p["open"]:
         target.write_text(reading_page(p), encoding="utf-8")
         published.add(target.name)
+    else:
+        target.write_text(waiting_page(p), encoding="utf-8")
+        waiting.add(target.name)
 for stale in (ROOT / "passages").glob("*.html"):
-    if stale.name != "index.html" and stale.name not in published:
+    if stale.name != "index.html" and stale.name not in published | waiting:
         stale.unlink()
 
 sitemap = ROOT / "sitemap.xml"
@@ -162,7 +189,7 @@ block = "\n  <!-- PASSAGES:START -->\n" + "\n".join(
     f"  <url>\n    <loc>{loc}</loc>\n  </url>" for loc in entries) + "\n  <!-- PASSAGES:END -->\n"
 value = value.rstrip().removesuffix("</urlset>").rstrip() + block + "</urlset>\n"
 sitemap.write_text(value, encoding="utf-8", newline="\n")
-print(f"Passages: {len(passages)} listed, {len(open_ones)} open, {len(published)} reading pages")
+print(f"Passages: {len(passages)} listed, {len(open_ones)} open, {len(published)} reading pages, {len(waiting)} waiting")
 
 # The Blog index and journal feed list released Passages too (see build_blog_index.py).
 # Partial test fixtures copy only the Passages files, so skip when the Blog is absent.
