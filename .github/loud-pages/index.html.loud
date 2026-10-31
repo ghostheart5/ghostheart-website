@@ -180,6 +180,18 @@ main>section,main>aside{position:relative}
 .hb-shop .btn:hover{background:#fff;color:var(--void)}
 /* COMPACT PASS 2026-10-18 — kept from the published compact homepage: comfortable reading sizes on small screens. */
 @media(max-width:700px){body{font-size:17px}.canon-hero__line{font-size:18px}#mission-board article p{font-size:16px}}
+/* EASY SIGNUP 2026-10-31 (Dom: nobody was subscribing) — email box right in the home hero, same tab. */
+.hb-join{margin-top:26px;max-width:560px;padding:18px;border:2px solid var(--blood);background:rgba(5,5,5,.82);box-shadow:6px 6px 0 var(--blood)}
+.hb-join-title{margin:0 0 12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(22px,3vw,30px);line-height:1;color:#fff}
+.hb-join-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hb-join-row{display:flex;gap:10px;flex-wrap:wrap}
+.hb-join-row input{flex:1 1 220px;min-width:0;min-height:55px;padding:0 14px;border:2px solid var(--bone);background:#fff;color:#111;font-size:17px;border-radius:0}
+.hb-join-row button{flex:0 0 auto;min-height:55px;padding:0 22px;border:2px solid var(--blood);background:var(--blood);color:var(--void);font-weight:800;font-size:16px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.hb-join-row button:hover{background:#fff;border-color:#fff}
+.hb-join-row input:focus-visible,.hb-join-row button:focus-visible{outline:4px solid #fff;outline-offset:3px}
+.hb-join-trap{position:absolute;left:-5000px}
+.hb-join-note{margin:10px 0 0;font-size:14px;color:var(--bone)}.hb-join-note a{color:var(--bone)}
+@media(max-width:700px){.hb-join{padding:14px}.hb-join-row button{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -197,7 +209,8 @@ main>section,main>aside{position:relative}
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note" id="home-story-explanation">Meet the man behind GhostHeart.</p>
 <div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a><a aria-describedby="home-story-explanation" class="secondary" href="/GhostHeart_Story.html">Enter My World</a></div>
-<div class="hb-under"><a class="hb-email" href="/follow/#email-signup-title">Get email updates</a><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
+<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" class="hb-join" id="home-join" method="post" aria-labelledby="home-join-title"><p class="hb-join-title" id="home-join-title">Get new songs &amp; stories by email</p><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required type="email" aria-describedby="home-join-note"/><button name="subscribe" type="submit">Join free</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
+<div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
 </div>
 </div>
 </section>
