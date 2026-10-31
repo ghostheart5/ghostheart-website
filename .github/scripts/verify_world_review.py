@@ -204,8 +204,8 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
 assert vault.select_one("#daily-line [data-daily-quote]")
 assert not home.select_one("#home-vault, #everywhere, .manifesto")
 assert home.select_one('#latest .label span').get_text() == 'FEATURED NOW'
-assert home.select_one('#latest .ctas a')['href'] == 'https://www.youtube.com/watch?v=RtFTIssLd0s'
-assert home.select_one('#latest .ctas a').get_text() == 'Watch the full film'
+assert home.select_one('#latest .ctas a')['href'] == '/journal/wake-the-heart-week.html'
+assert home.select_one('#latest .ctas a').get_text() == 'About Wake the Heart Week'
 assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
