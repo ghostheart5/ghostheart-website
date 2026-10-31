@@ -8,7 +8,8 @@ create table if not exists ghostheart_blog.comments (
   id bigint generated always as identity primary key,
   thread text not null check (thread in (
     'journal:how-we-got-here', 'journal:this-is-ghostheart',
-    'journal:ghosthearts-oath', 'journal:youre-not-god')),
+    'journal:ghosthearts-oath', 'journal:youre-not-god',
+    'journal:wake-the-heart-week', 'journal:cruel-something-needs-to-change')),
   display_name text not null check (char_length(display_name) between 2 and 60),
   body text not null check (char_length(body) between 10 and 1000),
   consent_at timestamptz not null default now(),
