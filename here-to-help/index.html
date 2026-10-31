@@ -8,11 +8,11 @@
 <meta content="website" property="og:type"/>
 <meta content="GhostHeart" property="og:site_name"/>
 <meta content="I'm Here to Help | GhostHeart" property="og:title"/>
-<meta content="Hire GhostHeart Studios: a custom song written from your story ($50 founding price, delivered in 7 days), plus office and production help." property="og:description"/>
+<meta content="Try it free: tell GhostHeart your story and get a song title and 2 lines. Like it? The full song is $50, delivered in 7 days. Plus office and production help." property="og:description"/>
 <meta content="https://www.myghostheart.com/here-to-help/" property="og:url"/>
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta name="description" content="Hire GhostHeart Studios: a custom song written from your story ($50 founding price, delivered in 7 days), plus office and production help.">
+<meta name="description" content="Try it free: tell GhostHeart your story and get a song title and 2 lines. Like it? The full song is $50, delivered in 7 days. Plus office and production help.">
 <meta name="theme-color" content="#050505">
 <title>I'm Here to Help | GhostHeart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,6 +115,20 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 
 /* free + close */
 .free{border-top:2px solid var(--line)}
+.small-note{margin-top:18px;color:var(--ash);font-size:15px;max-width:60ch}
+/* TRY IT FREE 2026-10-31 (Dom): compact page. */
+.sec{padding:clamp(36px,5vw,64px) max(16px,4vw)}
+.sec h2{font-size:clamp(34px,4.4vw,60px)}
+.hhero{padding-bottom:clamp(30px,4vw,48px)}
+.hhero h1{font-size:clamp(52px,8vw,110px)}
+.steps{margin-top:24px;gap:14px}
+.steps li{padding:18px 20px}
+.steps li::before{font-size:40px}
+.steps li strong{font-size:26px}
+.order .facts{margin-top:22px}
+.order .facts div{grid-template-columns:120px 1fr}
+.order .facts dd{font-size:17px}
+@media(max-width:560px){.order .facts div{grid-template-columns:1fr}}
 .free .ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
 .hclose{background:var(--bone);color:var(--void)}
 .hclose p{max-width:640px;margin-top:16px;font-weight:500}
@@ -146,89 +160,20 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 <header class="hhero">
   <div class="giant display" aria-hidden="true">ONE HEART. MANY VOICES.</div>
   <span class="kicker">✶ GhostHeart Studios / I’m Here to Help</span>
-  <h1 class="display">I’m here <span>to help.</span></h1>
-  <p class="intro">Tell me your story, and I’ll write it into a real song.</p>
-  <p class="sub">GhostHeart is the fictional reflection of my real life, told through music, stories and films so people feel less alone and able to move forward. Now I can write your story too, or take everyday work off your plate. Nobody has to buy anything or share their story to belong here.</p>
-  <div class="ctas"><a class="btn red" href="#custom-song">A custom song</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
+  <h1 class="display">Try it <span>free.</span></h1>
+  <p class="intro">Tell me your story. I’ll send you a song title and 2 lines, free.</p>
+  <p class="sub">If you like them, I’ll write the full song for $50.</p>
+  <div class="ctas"><a class="btn red" href="#order">Try it free</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
 </header>
-
-<section class="sec" id="what-i-do" aria-labelledby="what-title">
-  <div class="wrap">
-    <h2 class="display" id="what-title">What I <span>can do.</span></h2>
-    <div class="offers">
-
-      <article class="offer" id="custom-song" aria-labelledby="song-title">
-        <p class="offer-tag">Offer 01 · Starting now</p>
-        <h3 id="song-title">A custom <span>GhostHeart song.</span></h3>
-        <p class="notes">You tell me your story, and I write it into a real song: my lyrics, produced in Country / Americana. For weddings, anniversaries, birthdays, memorials, or anyone you want to say something to.</p>
-        <p class="price-big"><b>$50</b><small>Founding price · first 5 customers</small></p>
-        <dl class="facts">
-          <div><dt>Length</dt><dd>Your choice: a full song, or two verses and a chorus</dd></div>
-          <div><dt>Delivery</dt><dd>7 days</dd></div>
-          <div><dt>Included</dt><dd>Finished song, the lyrics as a keepsake, one small fix</dd></div>
-          <div><dt>Honest label</dt><dd>Lyrics written by me from your story. Music produced with AI tools.</dd></div>
-          <div><dt>Rights</dt><dd>Made on my paid Suno plan, which includes commercial rights</dd></div>
-        </dl>
-        <p class="notes">The founding price goes up after the first reviews.</p>
-      </article>
-
-      <article class="offer" id="office-help" aria-labelledby="office-title">
-        <p class="offer-tag">Offer 02 · Starting now</p>
-        <h3 id="office-title">Office &amp; <span>production help.</span></h3>
-        <p class="notes">Everyday work that makes your day easier, done by GhostHeart Studios.</p>
-        <ul class="cols">
-          <li><strong>Documents in Word</strong><span>Letters, resumes, forms, flyers, cleaning up messy documents</span></li>
-          <li><strong>PowerPoint</strong><span>Slide decks for work, church, school projects or events</span></li>
-          <li><strong>Data entry and Excel</strong><span>Typing up lists, records, receipts, simple spreadsheets</span></li>
-          <li><strong>Writing help</strong><span>Bios, product descriptions, social posts, editing and proofreading</span></li>
-        </ul>
-        <table class="price-table">
-          <caption class="mono" style="text-align:left;color:var(--ash);font-size:12px;padding-bottom:6px">Founding prices</caption>
-          <thead><tr><th scope="col">Service</th><th scope="col">Founding price</th></tr></thead>
-          <tbody>
-            <tr><td>Data entry and typing</td><td>$20 per hour</td></tr>
-            <tr><td>Word: letter, flyer, form, or fixing a messy document</td><td>$25 each</td></tr>
-            <tr><td>Resume</td><td>$50</td></tr>
-            <tr><td>PowerPoint deck, up to 10 slides</td><td>$50</td></tr>
-            <tr><td>Excel sheet or simple tracker</td><td>$35</td></tr>
-            <tr><td>Writing: bio, product description, social posts</td><td>$25 each</td></tr>
-            <tr><td>Proofreading and editing</td><td>$15 per page</td></tr>
-          </tbody>
-        </table>
-        <p class="hold"><b>One line I hold:</b> I don’t write school papers or tests that someone turns in as their own. Editing and formatting your own work is fine.</p>
-      </article>
-
-      <article class="offer soon" id="artists" aria-labelledby="artists-title">
-        <p class="offer-tag">Offer 03</p>
-        <h3 id="artists-title">Writing for <span>other artists.</span></h3>
-        <p class="stamp-soon">Coming soon</p>
-        <p class="notes">Songs and lyrics for independent artists. Not open yet.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
 
 <section class="sec" id="how-it-works" aria-labelledby="how-title">
   <div class="wrap">
     <h2 class="display" id="how-title">How it <span>works.</span></h2>
     <ol class="steps">
-      <li><strong>Story in</strong><p>Tell me who it’s for, the occasion, your memories, the names to include, and the mood.</p></li>
-      <li><strong>Song written</strong><p>You pay up front at the founding price, and I write and produce it.</p></li>
-      <li><strong>Delivered in 7 days</strong><p>You get the song plus the lyrics, and one small fix if a name is wrong or a line doesn’t land.</p></li>
+      <li><strong>Try it free</strong><p>Tell me who it’s for and a few memories. I email you a song title and 2 lines.</p></li>
+      <li><strong>Like it?</strong><p>Get the full song for $50. You pay up front.</p></li>
+      <li><strong>7 days</strong><p>Your finished song, the lyrics as a keepsake, and one small fix.</p></li>
     </ol>
-    <div class="detail">
-      <p>After it’s delivered, I’ll ask for a review and whether I can share it. Your private details stay out if you want.</p>
-      <p>Christmas songs: orders close Sunday, December 13, and every Christmas song is delivered by Sunday, December 20.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec spots" id="founding-spots" aria-labelledby="spots-title">
-  <div class="wrap">
-    <h2 class="display" id="spots-title">5 founding <span>spots.</span></h2>
-    <p class="lead">The first 5 custom songs are $50. After the first reviews, the price goes up.</p>
-    <ul class="spot-row" aria-label="5 founding spots"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
   </div>
 </section>
 
@@ -236,31 +181,38 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
   <div class="wrap order">
     <div>
       <h2 class="display" id="order-title">Tell me <span>your story.</span></h2>
-      <p class="lead">Everything happens here on myghostheart.com. You’ll only ever see the name GhostHeart Studios.</p>
       <div class="notice" role="status" aria-live="polite" data-order-status>
         <strong data-order-status-title>Orders open soon</strong>
-        <p data-order-status-text>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when the founding spots open.</p>
+        <p data-order-status-text>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when it opens.</p>
       </div>
+      <dl class="facts" id="custom-song">
+        <div><dt>Full song</dt><dd>$50 founding price, first 5 customers</dd></div>
+        <div><dt>Length</dt><dd>A full song, or two verses and a chorus</dd></div>
+        <div><dt>Delivery</dt><dd>7 days</dd></div>
+        <div><dt>Honest label</dt><dd>Lyrics written by me from your story. Music produced with AI tools on my paid Suno plan, which includes commercial rights.</dd></div>
+      </dl>
+      <p class="small-note">Country / Americana. For weddings, anniversaries, birthdays, memorials, or anyone you want to say something to. Christmas songs: order by Sunday, December 13 for delivery by Sunday, December 20.</p>
     </div>
     <form class="story-form" id="story-form" novalidate aria-labelledby="order-title">
       <fieldset disabled data-order-fields>
-        <div class="field" role="group" aria-labelledby="sf-kind-label"><span class="label" id="sf-kind-label">What do you need?</span>
+        <div class="field" role="group" aria-labelledby="sf-kind-label"><span class="label" id="sf-kind-label">What would you like?</span>
           <div class="choices">
-            <label><input type="radio" name="kind" value="song" checked>A custom song · $50</label>
+            <label><input type="radio" name="kind" value="try" checked>Try it free: a title and 2 lines</label>
+            <label><input type="radio" name="kind" value="song">The full song · $50</label>
             <label><input type="radio" name="kind" value="office">Office and production help</label>
           </div>
         </div>
-        <div class="kind-song" data-kind="song">
+        <div class="kind-song" data-kind="try song">
           <div class="field"><label for="sf-for">Who is the song for?</label><input id="sf-for" name="for_whom" type="text" maxlength="200" autocomplete="off"></div>
           <div class="field"><label for="sf-occasion">What’s the occasion?</label><small>A wedding, an anniversary, a birthday, a memorial, or just because.</small><input id="sf-occasion" name="occasion" type="text" maxlength="200" autocomplete="off"></div>
           <div class="field"><label for="sf-memories">Your memories</label><small>The moments, places and details that matter most.</small><textarea id="sf-memories" name="memories" maxlength="4000"></textarea></div>
           <div class="field"><label for="sf-names">Names to include</label><input id="sf-names" name="names" type="text" maxlength="500" autocomplete="off"></div>
           <div class="field"><label for="sf-mood">The mood</label><small>Happy, tender, bittersweet, a little funny…</small><input id="sf-mood" name="mood" type="text" maxlength="200" autocomplete="off"></div>
-          <div class="field" role="group" aria-labelledby="sf-length-label"><span class="label" id="sf-length-label">Length</span>
-            <div class="choices">
-              <label><input type="radio" name="length" value="full">A full song</label>
-              <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
-            </div>
+        </div>
+        <div class="field" role="group" aria-labelledby="sf-length-label" data-kind="song" hidden><span class="label" id="sf-length-label">Length</span>
+          <div class="choices">
+            <label><input type="radio" name="length" value="full">A full song</label>
+            <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
           </div>
         </div>
         <div class="kind-office" data-kind="office" hidden>
@@ -281,25 +233,40 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
         <div class="field"><label for="sf-email">Your email</label><input id="sf-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
         <div class="field hp" aria-hidden="true"><label for="sf-website">Leave this empty</label><input id="sf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="form-error" role="alert" data-order-error hidden></p>
-        <button type="submit" data-order-submit>Continue to payment · $50</button>
-        <p class="fine" data-order-fine>Custom songs: you pay up front at the founding price, then I deliver in 7 days. Office and production help: I reply by email with the total, then you pay.</p>
+        <button type="submit" data-order-submit>Send my free try</button>
+        <p class="fine" data-order-fine>Free try: no payment. I email you a title and 2 lines. Full song: you pay $50 up front, then I deliver in 7 days.</p>
       </fieldset>
     </form>
+  </div>
+</section>
+
+<section class="sec" id="office-help" aria-labelledby="office-title">
+  <div class="wrap">
+    <h2 class="display" id="office-title">Office &amp; <span>production help.</span></h2>
+    <p class="lead">Everyday work that makes your day easier, done by GhostHeart Studios. Pick it in the form above and I’ll reply with the total before you pay.</p>
+    <table class="price-table">
+      <caption class="mono" style="text-align:left;color:var(--ash);font-size:12px;padding-bottom:6px">Founding prices</caption>
+      <thead><tr><th scope="col">Service</th><th scope="col">Founding price</th></tr></thead>
+      <tbody>
+        <tr><td>Data entry and typing</td><td>$20 per hour</td></tr>
+        <tr><td>Word: letter, flyer, form, or fixing a messy document</td><td>$25 each</td></tr>
+        <tr><td>Resume</td><td>$50</td></tr>
+        <tr><td>PowerPoint deck, up to 10 slides</td><td>$50</td></tr>
+        <tr><td>Excel sheet or simple tracker</td><td>$35</td></tr>
+        <tr><td>Writing: bio, product description, social posts</td><td>$25 each</td></tr>
+        <tr><td>Proofreading and editing</td><td>$15 per page</td></tr>
+      </tbody>
+    </table>
+    <p class="hold"><b>One line I hold:</b> I don’t write school papers or tests that someone turns in as their own. Editing and formatting your own work is fine.</p>
+    <p class="hold" id="artists"><b>Writing for other artists:</b> songs and lyrics for independent artists. Coming soon.</p>
   </div>
 </section>
 
 <section class="sec free" id="free" aria-labelledby="free-title">
   <div class="wrap">
     <h2 class="display" id="free-title">Can’t buy <span>right now?</span></h2>
-    <p class="lead">You still belong here. The music, the films and the stories are free.</p>
+    <p class="lead">You still belong here. Nobody has to buy anything or share their story to belong. The music, the films and the stories are free.</p>
     <div class="ctas"><a class="btn red" href="/vault/">Explore The Vault</a><a class="btn ghost" href="/music/">Music &amp; films</a><a class="btn ghost" href="/follow/">Stay Connected</a></div>
-  </div>
-</section>
-
-<section class="sec hclose" aria-labelledby="close-title">
-  <div class="wrap">
-    <h2 class="display" id="close-title">One heart. Many voices.</h2>
-    <p>Real stories. Real people. Same heart.</p>
   </div>
 </section>
 

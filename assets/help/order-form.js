@@ -30,14 +30,17 @@
 
   fields.disabled = false;
   if (params.get('paid') !== '1') {
-    setStatus('5 founding spots open', 'Tell me your story below. Custom songs are $50 at the founding price.', true);
+    setStatus('Try it free', 'Tell me your story. I’ll email you a song title and 2 lines. Like them? The full song is $50.', true);
   }
+  // A link like /here-to-help/?pick=song#order opens straight on the full song.
+  var pick = form.querySelector('input[name="kind"][value="' + (params.get('pick') || '').replace(/[^a-z]/g, '') + '"]');
+  if (pick) pick.checked = true;
 
-  function kind() { var k = form.querySelector('input[name="kind"]:checked'); return k ? k.value : 'song'; }
+  function kind() { var k = form.querySelector('input[name="kind"]:checked'); return k ? k.value : 'try'; }
   function showKind() {
     var k = kind();
-    form.querySelectorAll('[data-kind]').forEach(function (el) { el.hidden = el.getAttribute('data-kind') !== k; });
-    submit.textContent = k === 'song' ? 'Continue to payment · $50' : 'Send my request';
+    form.querySelectorAll('[data-kind]').forEach(function (el) { el.hidden = el.getAttribute('data-kind').split(' ').indexOf(k) < 0; });
+    submit.textContent = k === 'song' ? 'Continue to payment · $50' : k === 'try' ? 'Send my free try' : 'Send my request';
   }
   form.querySelectorAll('input[name="kind"]').forEach(function (el) { el.addEventListener('change', showKind); });
   showKind();
@@ -52,13 +55,17 @@
     var email = value('email');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('Please add an email address so I can reach you.');
     var payload = { kind: k, email: email, website: value('website') };
-    if (k === 'song') {
+    if (k === 'song' || k === 'try') {
       var length = form.querySelector('input[name="length"]:checked');
       if (!value('for_whom')) return fail('Please tell me who the song is for.');
       if (!value('memories')) return fail('Please share a few memories for the song.');
-      if (!length) return fail('Please choose a length.');
+      if (k === 'song' && !length) return fail('Please choose a length.');
+      payload.kind = 'song';
       payload.for_whom = value('for_whom'); payload.occasion = value('occasion'); payload.memories = value('memories');
-      payload.names = value('names'); payload.mood = value('mood'); payload.length = length.value;
+      payload.names = value('names'); payload.mood = value('mood');
+      // The free try is saved as a song story marked FREE TRY, with no payment (the order list needs no change).
+      payload.length = k === 'try' ? 'full' : length.value;
+      if (k === 'try') payload.details = 'FREE TRY: send a song title and 2 lines. No payment yet.';
     } else {
       if (!value('service')) return fail('Please choose a service.');
       if (!value('details')) return fail('Please tell me what you need done.');
@@ -81,7 +88,8 @@
         return;
       }
       form.reset(); showKind();
-      setStatus('Got it. Thank you.', 'I’ll email you the total for your job. You only pay once you agree to it.', true);
+      if (k === 'try') setStatus('Got it. Thank you.', 'I’ll email you a song title and 2 lines. If you like them, the full song is $50.', true);
+      else setStatus('Got it. Thank you.', 'I’ll email you the total for your job. You only pay once you agree to it.', true);
       statusBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       submit.disabled = false;
     }).catch(function () {
