@@ -384,8 +384,9 @@ html body main section section:not(#_){padding-top:12px;padding-bottom:12px}
 html body :is(.hb-hero,.bhero,.shero,.fhero,.hhero,.hero,.world-hero,.page-hero):not(#_):not(#__){min-height:0;padding-bottom:20px}
 html body :is(.giant,.hb-giant):not(#_){font-size:clamp(60px,9vw,160px)!important}
 html body .tape div:not(#_){font-size:clamp(14px,1.4vw,20px)!important;padding:3px 0}
-html body main :is(img,video,iframe):not(#_){max-height:340px}
+html body main :is(img,video,iframe):not(.g-player *):not(#_){max-height:340px}
 html body .label:not(#_){margin-bottom:10px}
+html body main .g-player:not(#_){max-width:min(100%,604px)}
 html body .label .num:not(#_){font-size:clamp(20px,2vw,30px)!important}
 html body main p:not(#_){font-size:min(1em,17px)}
 @media (max-width:700px){
@@ -393,6 +394,6 @@ html body main p:not(#_){font-size:min(1em,17px)}
   html body main h2:not(#_):not(#__),html body section h2.display:not(#_):not(#__){font-size:clamp(20px,6.2vw,26px)!important}
   html body main h3:not(#_){font-size:17px!important}
   html body :is(main,body) > :is(section,aside,header:not(.ghx-header)):not(:has(h1)):not(#_):not(#__){padding-top:14px;padding-bottom:14px}
-  html body main :is(img,video,iframe):not(#_){max-height:240px}
+  html body main :is(img,video,iframe):not(.g-player *):not(#_){max-height:240px}
   html body main p:not(#_){font-size:min(1em,15px)}
 }
