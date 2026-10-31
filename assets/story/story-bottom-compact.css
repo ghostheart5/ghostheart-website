@@ -11,3 +11,24 @@
 .pace .door h3{font-size:clamp(22px,2vw,28px);line-height:1.15}
 .pace .safe{font-size:16px;line-height:1.5;margin-top:22px;padding:12px 16px}
 @media(max-width:700px){.pace .door{min-height:88px;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;gap:18px}.pace .door h3{max-width:20ch}}
+/* Owner follow-up 2026-10-31: "But if I help one person" and "Stay with what speaks to you" were way too big. */
+html body .slam-wrap{padding:8px 0}
+html body .slam{margin:clamp(20px,3vw,36px) 0;padding:clamp(18px,2.4vw,30px) clamp(16px,4vw,48px);font-size:clamp(28px,3.6vw,52px)}
+html body .slam span{max-width:24ch}
+html body .slam.red em{text-shadow:3px 3px 0 var(--void)}
+html body .story-ctas:not(#_){padding-bottom:28px}
+html body .pace:not(#_){padding-top:clamp(20px,2.6vw,32px);padding-bottom:clamp(20px,2.6vw,32px)}
+html body .pace h2{font-size:clamp(24px,2.4vw,34px)!important}
+html body .pace .intro{font-size:16px;margin:10px 0 14px}
+html body .pace .door{min-height:0;padding:12px 14px;gap:12px}
+html body .pace .door .n{font-size:22px}
+html body .pace .door h3{font-size:clamp(18px,1.6vw,22px)!important}
+html body .pace .safe{font-size:14px;margin-top:12px;padding:8px 12px}
+@media (max-width:700px){
+  html body .slam{font-size:clamp(24px,7vw,30px)}
+  html body .pace .door-grid{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto;overflow:visible;gap:0}
+  html body .pace .door{flex-direction:column;align-items:flex-start;gap:4px;padding:8px}
+  html body .pace .door .n{font-size:16px}
+  html body .pace .door h3{font-size:15px!important}
+  html body .pace .door p{font-size:9px;letter-spacing:.08em}
+}
