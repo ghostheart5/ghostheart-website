@@ -22,20 +22,24 @@
 .phero{background:radial-gradient(110% 80% at 75% 35%,#4a000b 0%,#140004 45%,var(--void) 75%)}
 .phero .figure{aspect-ratio:175/460;background-size:654.3% auto;background-position:82.7% 0%}
 
-/* films (smaller cards 2026-10-30) */
+/* films (compact cards 2026-10-31) */
 .films{background:var(--blood);color:var(--void)}
-.film-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);max-width:880px;margin-inline:auto}
-.film{display:block;background:var(--void);color:var(--bone);box-shadow:8px 8px 0 var(--ember);transition:.15s}
-.film:hover{box-shadow:12px 12px 0 var(--bone)}
+html body .films,html body .vault{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(28px,3vw,40px)}
+html body :is(.films,.vault) .label{margin-bottom:16px;padding-bottom:8px}
+html body :is(.films,.vault) .label .num{font-size:clamp(26px,3vw,38px)}
+.film-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin-inline:auto}
+.film{display:block;background:var(--void);color:var(--bone);box-shadow:5px 5px 0 var(--ember);transition:.15s}
+.film:hover{box-shadow:8px 8px 0 var(--bone)}
 .film .thumb{position:relative;aspect-ratio:16/9;background:#000 center/cover;overflow:hidden}
 .film .thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(5,5,5,.85))}
-.film .thumb .p{position:absolute;left:50%;top:50%;translate:-50% -50%;width:58px;height:58px;border-radius:50%;background:var(--blood);display:grid;place-items:center;animation:heart 1.1s infinite;box-shadow:0 0 28px rgba(244,72,60,.7)}
-.film .thumb .p svg{width:22px;fill:var(--void)}
-.film .meta{padding:14px 16px 16px}
-.film h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(22px,2.6vw,36px);line-height:.9;text-transform:uppercase}
-.film p{margin-top:8px;font-size:15px}
-.film small{display:block;margin-top:10px;font-weight:700;letter-spacing:.2em;font-size:11px;color:var(--hot)}
-@media(max-width:600px){.film .thumb .p{width:40px;height:40px}.film .thumb .p svg{width:15px}.film .meta{padding:10px 10px 12px}.film h3{font-size:18px}.film p{font-size:12px;margin-top:6px}.film small{font-size:9px;letter-spacing:.12em;margin-top:8px}}
+.film .thumb .p{position:absolute;left:50%;top:50%;translate:-50% -50%;width:40px;height:40px;border-radius:50%;background:var(--blood);display:grid;place-items:center;animation:heart 1.1s infinite;box-shadow:0 0 20px rgba(244,72,60,.7)}
+.film .thumb .p svg{width:15px;fill:var(--void)}
+.film .meta{padding:10px 12px 12px}
+.film h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;line-height:.95;text-transform:uppercase}
+.film h3 br{display:none}
+.film p{display:none}
+.film small{display:block;margin-top:6px;font-weight:700;letter-spacing:.14em;font-size:10px;color:var(--hot)}
+@media(max-width:600px){.film .thumb .p{width:32px;height:32px}.film .thumb .p svg{width:12px}.film .meta{padding:8px}.film h3{font-size:15px}.film small{font-size:9px;letter-spacing:.1em}}
 
 /* halloween pick (2026-10-30): real recordings from the jukebox below; shows through Halloween night */
 .spook{background:radial-gradient(90% 120% at 85% 0%,#3a1400 0%,#120500 50%,var(--void) 80%);border-block:3px solid #ff7a1a}
@@ -102,13 +106,14 @@
 @media(max-width:480px){.xmas .row{grid-template-columns:1fr}.xmas .btn{width:100%}}
 
 .vault{background:var(--bone);color:var(--void)}
-/* go deeper (smaller doors 2026-10-30): one short row on every screen */
-html body .vault .door-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;overflow:visible;gap:0;padding-bottom:0;max-width:880px;margin-inline:auto}
-html body .vault .door{min-height:0;padding:14px 16px;gap:10px}
-html body .vault .door .n{font-size:28px}
-html body .vault .door h3{font-size:clamp(20px,2.2vw,30px)}
-html body .vault .door p{font-size:11px;margin-top:6px;letter-spacing:.1em}
-@media(max-width:600px){html body .vault .door{padding:10px}html body .vault .door .n{font-size:20px}html body .vault .door h3{font-size:clamp(12px,4.2vw,16px);overflow-wrap:anywhere}html body .vault .door p{font-size:9px}}
+/* go deeper (compact link row 2026-10-31) */
+html body .vault .door-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;overflow:visible;gap:0;padding-bottom:0;max-width:560px;margin-inline:auto;border-width:3px 0 0 3px}
+html body .vault .door{min-height:0;padding:10px 12px;border-width:0 3px 3px 0;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px}
+html body .vault .door .n{font-size:16px}
+html body .vault .door h3{font-size:clamp(13px,4vw,18px);overflow-wrap:anywhere}
+html body .vault .door h3 br{display:none}
+html body .vault .door p{display:none}
+@media(max-width:600px){html body .vault .door{padding:10px 8px;justify-content:center}html body .vault .door .n{display:none}html body .vault .door h3{font-size:clamp(12px,4vw,16px);text-align:center}}
 .next{background:var(--blood);color:var(--void);text-align:center}
 .next h2{font-size:clamp(80px,14vw,240px)}
 .next h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
@@ -172,11 +177,11 @@ html body .vault .door p{font-size:11px;margin-top:6px;letter-spacing:.1em}
   <div class="film-grid">
     <a class="film rv" href="https://www.youtube.com/watch?v=AOCRvtz92JM">
       <div class="thumb" style="background-image:url('/assets/videos/youtube/AOCRvtz92JM.jpg')"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></div>
-      <div class="meta"><h3>This Is<br>GhostHeart</h3><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><small>WATCH ON YOUTUBE ↗</small></div>
+      <div class="meta"><h3>This Is<br> GhostHeart</h3><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><small>WATCH ON YOUTUBE ↗</small></div>
     </a>
     <a class="film rv" href="https://www.youtube.com/watch?v=mBAsUNX3vHQ">
       <div class="thumb" style="background-image:url('/assets/videos/youtube/mBAsUNX3vHQ.jpg')"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></div>
-      <div class="meta"><h3>GhostHeart's<br>Oath</h3><p>The promise to protect the light in others.</p><small>WATCH ON YOUTUBE ↗</small></div>
+      <div class="meta"><h3>GhostHeart's<br> Oath</h3><p>The promise to protect the light in others.</p><small>WATCH ON YOUTUBE ↗</small></div>
     </a>
   </div>
 </section>
@@ -220,9 +225,9 @@ html body .vault .door p{font-size:11px;margin-top:6px;letter-spacing:.1em}
 <section class="vault">
   <div class="label"><span>Go Deeper / Everything else</span><span class="num">03</span></div><h2 class="vh">Go deeper</h2>
   <div class="door-grid">
-    <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br>Film</h3><p>Films &amp; shorts</p></div></a>
-    <a class="door" href="/GhostHeart_Songs.html"><span class="n">02</span><div><h3>The<br>Archive</h3><p>Released recordings · singles · versions</p></div></a>
-    <a class="door" href="/music/#listen"><span class="n">03</span><div><h3>The<br>Collections</h3><p>Featured listening</p></div></a>
+    <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br> Film</h3><p>Films &amp; shorts</p></div></a>
+    <a class="door" href="/GhostHeart_Songs.html"><span class="n">02</span><div><h3>The<br> Archive</h3><p>Released recordings · singles · versions</p></div></a>
+    <a class="door" href="/music/#listen"><span class="n">03</span><div><h3>The<br> Collections</h3><p>Featured listening</p></div></a>
   </div>
 </section>
 
