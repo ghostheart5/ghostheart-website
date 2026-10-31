@@ -367,3 +367,32 @@ html body:has(.slam-wrap) .pace .door-grid{max-width:760px}
 @media (min-width:701px){html body:has(.slam-wrap) .pace .door:not(#_){flex-direction:row;justify-content:flex-start;align-items:center;gap:14px;padding:10px 12px}}
 html body:has(.slam-wrap) .story-ctas:not(#_){padding-bottom:64px}
 html body:has(.slam-wrap) .pace .ctas:not(#_){margin-top:14px!important}
+/* SITEWIDE HALF-SIZE PASS 2026-10-31 (owner, after the earlier trims: "BRO ITS STILL WAY TOO BIG").
+   One bold pass for every page: the whole site renders smaller on computers, and headlines,
+   section spacing, heroes and pictures are capped hard on every screen. */
+@media (min-width:1000px){html{zoom:.8}
+  /* keep buttons a full 44px tall and focus rings 3px+ on screen after the zoom */
+  html body :is(.ghx-actions,.rebellion-actions,.ctas,.story-ctas,.hb-xmas) :is(a,button):not(#_){min-height:55px}
+  html body :focus-visible{outline-width:4px!important}
+  html body form :is(button,input[type=email],input[type=text],select):not(#_){min-height:55px}
+}
+html body main h1:not(#_):not(#__),html body h1.display:not(#_):not(#__){font-size:clamp(30px,3.4vw,56px)!important;line-height:.95}
+html body main h2:not(#_):not(#__),html body section h2.display:not(#_):not(#__){font-size:clamp(22px,2.2vw,34px)!important;line-height:1.02}
+html body main h3:not(#_){font-size:clamp(17px,1.4vw,22px)!important;line-height:1.1}
+html body :is(main,body) > :is(section,aside,header:not(.ghx-header)):not(:has(h1)):not(#_):not(#__){padding-top:clamp(16px,2vw,28px);padding-bottom:clamp(16px,2vw,28px);min-height:0}
+html body main section section:not(#_){padding-top:12px;padding-bottom:12px}
+html body :is(.hb-hero,.bhero,.shero,.fhero,.hhero,.hero,.world-hero,.page-hero):not(#_):not(#__){min-height:0;padding-bottom:20px}
+html body :is(.giant,.hb-giant):not(#_){font-size:clamp(60px,9vw,160px)!important}
+html body .tape div:not(#_){font-size:clamp(14px,1.4vw,20px)!important;padding:3px 0}
+html body main :is(img,video,iframe):not(#_){max-height:340px}
+html body .label:not(#_){margin-bottom:10px}
+html body .label .num:not(#_){font-size:clamp(20px,2vw,30px)!important}
+html body main p:not(#_){font-size:min(1em,17px)}
+@media (max-width:700px){
+  html body main h1:not(#_):not(#__),html body h1.display:not(#_):not(#__){font-size:clamp(28px,8.4vw,34px)!important}
+  html body main h2:not(#_):not(#__),html body section h2.display:not(#_):not(#__){font-size:clamp(20px,6.2vw,26px)!important}
+  html body main h3:not(#_){font-size:17px!important}
+  html body :is(main,body) > :is(section,aside,header:not(.ghx-header)):not(:has(h1)):not(#_):not(#__){padding-top:14px;padding-bottom:14px}
+  html body main :is(img,video,iframe):not(#_){max-height:240px}
+  html body main p:not(#_){font-size:min(1em,15px)}
+}
