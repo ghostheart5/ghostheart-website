@@ -245,3 +245,65 @@ html body .step b{font-size:clamp(48px,5vw,72px)}
   html body :is(.bhero,.fhero,.hhero,.shero,.whero,.phero:has(.tag)):not(#_){padding-top:calc(var(--hdr,134px) + 14px)}
   html body .g-films .g-film p:not(.g-small){display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 }
+
+/* SITEWIDE COMPACT PASS 2026-10-31 (owner request: "you have huge sections that take up the whole page").
+   Caps oversized headlines, pictures and section spacing so no one section fills the screen.
+   The Music page, album pages and Films page keep their own recent sizing. */
+html body{overflow-x:clip}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main h1:not(.hb-giant){font-size:clamp(36px,4.3vw,62px)!important;line-height:.95}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(section h2:not(:is(section section,article,li,form,.vault-item,.hb-card,.door,.card) h2),#rebellion-title,.projects-close h2,.case h2.display){font-size:clamp(28px,3vw,44px)!important;line-height:1}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main #shop-title{font-size:clamp(40px,5vw,72px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(.offer h3,#show h3,.start .door h3){font-size:clamp(22px,2.4vw,34px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section:not(:first-of-type):not(#_){padding-top:clamp(24px,3.4vw,44px);padding-bottom:clamp(24px,3.4vw,44px)}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section :is(img,video,iframe,.hb-poster){max-height:420px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section img{object-fit:cover}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .label{margin-bottom:14px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .label .num{font-size:clamp(28px,3vw,44px)}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-hero:not(#_){padding-bottom:32px}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) #scene .stage{width:min(100%,420px);justify-self:center}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-grid .hb-card strong{font-size:clamp(20px,1.9vw,28px)!important}
+html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .vault-item blockquote{font-size:clamp(18px,1.6vw,24px)!important}
+@media (max-width:700px){
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main h1:not(.hb-giant){font-size:clamp(30px,9.6vw,38px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(section h2:not(:is(section section,article,li,form,.vault-item,.hb-card,.door,.card) h2),#rebellion-title,.projects-close h2,.case h2.display){font-size:clamp(24px,7.6vw,30px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main #shop-title{font-size:clamp(32px,10vw,40px)!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section:not(:first-of-type):not(#_){padding-top:22px;padding-bottom:22px}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main section :is(img,video,iframe,.hb-poster){max-height:300px}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) main :is(.ghx-actions,.ctas) a{min-height:44px;padding-top:9px!important;padding-bottom:9px!important}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) .hb-man figure{max-width:260px;margin-left:auto;margin-right:auto}
+  html body:not(:has(.ghx-primary a[aria-current="page"][href$="music/"],#all-films)) ul.tracks li a{padding-top:10px;padding-bottom:10px}
+}
+/* The top menu now has five tabs, so phones fit them on one row. */
+@media(max-width:400px){
+  html body header.ghx-header .ghx-bar .ghx-primary{grid-template-columns:repeat(5,minmax(0,auto));justify-content:space-between;gap:0 8px}
+}
+/* Owner follow-up 2026-10-31: Live and Stay Connected pages "a little more smaller". */
+html body:has(#scene) .bhero:not(#_){padding-top:calc(var(--hdr,88px) + 16px);padding-bottom:28px}
+html body:has(#scene) .bhero .crt{width:min(100%,380px);justify-self:end}
+html body:has(#scene) .tape div{font-size:clamp(18px,2vw,28px);padding:4px 0}
+html body:has(#scene) main section:not(#_){padding-top:clamp(20px,2.6vw,32px);padding-bottom:clamp(20px,2.6vw,32px)}
+html body:has(#scene) #scene .stage{width:min(100%,320px)}
+html body:has(#scene) #scene .choices button{padding-top:10px;padding-bottom:10px;font-size:clamp(20px,2vw,28px)!important}
+html body:has(#scene) main #scene h2,html body:has(#scene) main #show h2,html body:has(#scene) main .readings h2:not(#live-status-title),html body:has(#scene) main .meanwhile h2{font-size:clamp(26px,2.6vw,38px)!important}
+html body:has(#scene) #show .step{padding:12px 16px 14px 0}
+html body:has(#scene) #show .step b{font-size:clamp(32px,3vw,44px)}
+html body:has(#scene) #show h3{font-size:clamp(20px,1.8vw,26px)!important}
+html body:has(#scene) .readings .sunday{padding:24px 22px}
+html body:has(#everywhere) .shero:not(#_){padding-top:calc(var(--hdr,88px) + 16px);padding-bottom:24px}
+html body:has(#everywhere) .shero .form{padding:14px}
+html body:has(#everywhere) .shero .socials a{padding:14px 16px}
+html body:has(#everywhere) .shero .socials a :is(b,strong,span:not(:first-child)){font-size:clamp(22px,2.4vw,34px)!important}
+html body:has(#everywhere) main section:not(#_){padding-top:clamp(20px,2.6vw,32px);padding-bottom:clamp(20px,2.6vw,32px)}
+html body:has(#everywhere) main #everywhere-title{font-size:clamp(26px,2.6vw,38px)!important}
+html body:has(#everywhere) .hb-grid .hb-card{padding:14px}
+html body:has(#everywhere) .hb-grid .hb-card strong{font-size:clamp(18px,1.6vw,22px)!important}
+html body:has(#everywhere) .big-join{font-size:clamp(34px,4.4vw,64px)!important}
+html body:has(#everywhere) details.gh-directory:not(#_){padding:20px 48px}
+html body:has(#everywhere) .start .door{padding:14px}
+html body:has(#everywhere) .start .door h3{font-size:clamp(20px,1.9vw,26px)!important}
+html body:has(#everywhere) .start .door .n{font-size:28px}
+@media (max-width:700px){
+  html body:has(#scene) .bhero .crt{width:min(100%,260px);justify-self:center}
+  html body:has(#scene) #scene .stage{width:min(100%,240px)}
+  html body:has(#everywhere) details.gh-directory:not(#_){padding:16px}
+}
