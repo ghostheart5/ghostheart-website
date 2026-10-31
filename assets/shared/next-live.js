@@ -7,4 +7,9 @@
     var until = Date.parse(el.getAttribute('data-live-until'));
     if (!isNaN(until) && now > until) el.textContent = el.getAttribute('data-live-after') || 'coming soon';
   });
+  // Announcements tied to one Live (like its topic) disappear once that Live has ended.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-live-hide-after]'), function (el) {
+    var until = Date.parse(el.getAttribute('data-live-hide-after'));
+    if (!isNaN(until) && now > until) el.hidden = true;
+  });
 })();
