@@ -43,7 +43,11 @@ for(const tz of ['UTC','America/Los_Angeles','Asia/Tokyo','America/Chicago']) {
   assert.equal(nodes.qlink.href,'/GhostHeart_Quotes.html#quote-'+String(i+1).padStart(2,'0'));
  }
 }
-for(const file of ['index.html','GhostHeart_Videos.html']) {
+const home=fs.readFileSync('index.html','utf8');
+assert(home.includes('FEATURED NOW'));
+assert(home.includes('Before the Heart Wakes'));
+assert(home.includes('href="/journal/wake-the-heart-week.html"'));
+for(const file of ['GhostHeart_Videos.html']) {
  const html=fs.readFileSync(file,'utf8');
  assert(html.includes('FEATURED NOW'));
  assert(html.includes("It's Not the 1950s"));

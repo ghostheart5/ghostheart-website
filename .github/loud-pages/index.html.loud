@@ -206,12 +206,12 @@ main>section,main>aside{position:relative}
 <div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
 <div class="hb-feature">
 <div class="rv">
-<h2 class="display">It's Not the 1950s<em>.</em></h2>
-<p class="line">Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
+<h2 class="display">Before the Heart Wakes<em>.</em></h2>
+<p class="line">An introduction to Wake the Heart Week, November 9 to 15: one week inside The Awakening.</p>
 <p class="jump"><a href="#home-story">Meet the man behind the music ↓</a></p>
-<div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=RtFTIssLd0s">Watch the full film</a></div>
+<div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
 </div>
-<a aria-label="Watch It's Not the 1950s full film on YouTube" class="hb-poster rv" href="https://www.youtube.com/watch?v=RtFTIssLd0s"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span><i aria-hidden="true"></i>Full film on YouTube</span></a>
+<a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span><i aria-hidden="true"></i>Wake the Heart Week</span></a>
 </div>
 <ul class="tracks rv">
 <li><a href="/music/#listen"><span>02</span>I'm Not Staying Silent<span aria-hidden="true">↗</span></a></li>
