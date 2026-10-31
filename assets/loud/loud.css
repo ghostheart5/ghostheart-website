@@ -364,6 +364,6 @@ html body:has(.slam-wrap) .her .btn{padding:10px 16px;font-size:15px}
 html body:has(.slam-wrap) .pace .label{margin-bottom:10px}
 html body:has(.slam-wrap) .pace .label .num,html body:has(.slam-wrap) .her .label .num{font-size:24px}
 html body:has(.slam-wrap) .pace .door-grid{max-width:760px}
-html body:has(.slam-wrap) .pace .door:not(#_){flex-direction:row;justify-content:flex-start;align-items:center;gap:14px;padding:10px 12px}
+@media (min-width:701px){html body:has(.slam-wrap) .pace .door:not(#_){flex-direction:row;justify-content:flex-start;align-items:center;gap:14px;padding:10px 12px}}
 html body:has(.slam-wrap) .story-ctas:not(#_){padding-bottom:64px}
 html body:has(.slam-wrap) .pace .ctas:not(#_){margin-top:14px!important}
