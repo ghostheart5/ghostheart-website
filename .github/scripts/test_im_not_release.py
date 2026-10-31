@@ -12,6 +12,17 @@ import tempfile
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def released(route: Path, reading: str) -> bool:
+    """A ready Passage gets an early 'opens at' page before its time: that holds no reading text."""
+    if not route.exists():
+        return False
+    html = route.read_text(encoding="utf-8")
+    if 'class="r-body r-wait"' in html:
+        assert reading not in html, f"{route.name} leaks its reading before release"
+        return False
+    return True
 TITLE = "I’m Not — More Than One Chapter"
 BODY_SHA = "9427fc3d8dad30dab6839a7ae6ccca00bc98d4d8669025cc50b6d677e8b8b6d1"
 
@@ -39,14 +50,15 @@ def main():
             subprocess.run([sys.executable, "-X", "utf8", str(fixture / ".github/scripts/build_passages.py")],
                            env=dict(os.environ, PASSAGES_BUILD_NOW=instant), check=True, capture_output=True)
             route = fixture / "passages/im-not.html"
-            assert route.exists() == opened
+            assert released(route, expected[0]) == opened
             index = BeautifulSoup((fixture / "passages/index.html").read_text(encoding="utf-8"), "html.parser")
             assert (index.select_one("#p02 a[href='/passages/im-not.html']") is not None) == opened
             assert ("/passages/im-not.html" in (fixture / "sitemap.xml").read_text()) == opened
             future_open = (future_meta["status"].strip() == "ready" and
                            datetime.fromisoformat(instant.replace("Z", "+00:00")) >= datetime.fromisoformat(future_meta["date"].strip()))
             assert (index.select_one("#p03 a[href='/passages/its-not-the-1950s.html']") is not None) == future_open
-            assert (fixture / "passages/its-not-the-1950s.html").exists() == future_open
+            future_body = (ROOT / ".github/content/passages/03-its-not-the-1950s.md").read_text(encoding="utf-8").split("---", 2)[2].strip()
+            assert released(fixture / "passages/its-not-the-1950s.html", future_body.split("\n\n")[0].strip()) == future_open
             if opened:
                 page = BeautifulSoup(route.read_text(encoding="utf-8"), "html.parser")
                 assert page.select_one("h1").get_text() == TITLE

@@ -46,7 +46,8 @@ assert awakening.select_one("h1").get_text(" ", strip=True) == "The Awakening."
 # The Blog lists every public entry (the archived introduction has its own card) plus every released Passage page.
 public_entries = [p for p in json.loads((ROOT / ".github/content/journal.json").read_text(encoding="utf-8"))
                   if p["slug"] != "how-we-got-here" and (ROOT / "journal" / f'{p["slug"]}.html').exists()]
-released_passages = [f for f in (ROOT / "passages").glob("*.html") if f.name != "index.html"]
+released_passages = [f for f in (ROOT / "passages").glob("*.html") if f.name != "index.html"
+                     and 'class="r-body r-wait"' not in f.read_text(encoding="utf-8")]
 assert len(blog.select("#entries article")) == len(public_entries) + len(released_passages)
 assert blog.select_one("a[href=\"/passages/im-not.html\"]") and blog.select_one("#long-story a[href^=\"https://toohumantostayquiet.substack.com/\"]")
 assert blog.select_one('a[href="/journal/how-we-got-here-archive.html"]')
