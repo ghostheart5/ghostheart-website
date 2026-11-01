@@ -24,7 +24,8 @@ const promise = JSON.parse(fs.readFileSync(path.join(__dirname, '../content/conn
       await page.setViewportSize({ width, height });
       await page.goto(base + '/', { waitUntil: 'networkidle' });
       assert.equal((await page.locator('.rebellion-invite h2').textContent()).trim(), 'Join the Heart Rebellion.');
-      assert.equal(await page.locator('#home a').filter({ hasText: 'Enter My World' }).count(), 1);
+      // Site audit 2026-11-01: the hero links to the story section below; Enter My World is in the top bar.
+      assert.equal(await page.locator('#home a[href="#home-story"]').filter({ hasText: 'Meet the man behind GhostHeart' }).count(), 1);
       const layout = await page.evaluate(() => {
         const hero = document.querySelector('#home').getBoundingClientRect();
         const range = document.createRange();

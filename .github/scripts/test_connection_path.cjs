@@ -11,10 +11,11 @@ module.exports = async (page, base) => {
     await page.goto(base + '/');
     // Owner decision 2026-10-14 (LOUD redesign): homepage headline is "Too Human to Stay Quiet."
     assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
+    // Site audit 2026-11-01: two hero buttons; Enter My World stays in the top bar.
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
-      ['▶ Play The Awakening', 'Get Your Song Written', 'Enter My World']);
+      ['▶ Play The Awakening', 'Get Your Song Written']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
-      ['/music/#listen', '/here-to-help/#order', '/GhostHeart_Story.html']);
+      ['/music/#listen', '/here-to-help/#order']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
     assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
