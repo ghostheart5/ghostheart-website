@@ -6,6 +6,19 @@
     var until = Date.parse(el.getAttribute(attr));
     return !isNaN(until) && now > until;
   }
+  // Song of the week: show the first featured song whose week hasn't ended.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-sotw]'), function (box) {
+    var items = box.querySelectorAll('[data-sotw-item]');
+    var shown = null;
+    Array.prototype.forEach.call(items, function (it) {
+      var hide = shown || passed(it, 'data-until');
+      it.hidden = !!hide;
+      if (!hide) shown = it;
+    });
+    if (!shown) { box.hidden = true; return; }
+    var when = box.querySelector('[data-sotw-when]');
+    if (when && passed(shown, 'data-from')) when.textContent = 'Song of the week · This week';
+  });
   // Pages with a list of upcoming Lives: the "Next Live" line rolls to the first one still ahead.
   Array.prototype.forEach.call(document.querySelectorAll('[data-live-next]'), function (box) {
     var scope = box.closest('section') || document;
