@@ -34,6 +34,11 @@
 .lr-card{border:3px solid var(--bone);padding:clamp(18px,3vw,28px);max-width:640px;margin-top:18px;box-shadow:10px 10px 0 var(--blood)}
 .lr-card h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(30px,3.4vw,46px);text-transform:uppercase;line-height:.95}
 .lr-card p{margin:10px 0 18px;color:#d8d4cc;font-size:17px}
+.lr-sotw{background:var(--void);color:var(--bone);border-top:6px solid var(--blood)}
+.lr-sotw .lr-next{background:var(--blood);color:var(--void)}
+.lr-sotw h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,60px);text-transform:uppercase;line-height:.95;margin:14px 0 6px}
+.lr-sotw p{font-size:17px;color:#d8d4cc;max-width:640px}
+.lr-sotw [data-sotw-item][hidden]{display:none}
 .lr-later{background:var(--blood);color:var(--void)}
 .lr-later p{font-size:18px;font-weight:700;max-width:640px;margin-top:10px}
 .lr-sec .ctas{margin-top:20px}
@@ -69,6 +74,20 @@
     <li data-live-slot data-live-hide-after="2026-11-15T16:45:00Z" data-live-when="Sunday, November 15, 2026, 10:00 a.m. Central" data-live-topic="This Live: Still Here."><b>Sun, Nov 15</b><span>Still Here Live.</span></li>
   </ul>
   <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
+</section>
+
+<section class="lr-sec lr-sotw" id="song-of-the-week" aria-labelledby="sotw-title" data-sotw>
+  <span class="lr-next" data-sotw-when>Song of the week · Coming up</span>
+  <div data-sotw-item data-from="2026-11-16T06:00:00Z" data-until="2026-11-23T06:00:00Z">
+    <h2 id="sotw-title">You Can&rsquo;t Change Us</h2>
+    <p>November 16&ndash;22 &middot; The Parts You Hide</p>
+    <div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906">Hear You Can&rsquo;t Change Us</a></div>
+  </div>
+  <div data-sotw-item data-from="2026-12-07T06:00:00Z" data-until="2026-12-14T06:00:00Z" hidden>
+    <h2>Rebellion</h2>
+    <p>December 7&ndash;13 &middot; Still Here</p>
+    <div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-rebellion">Hear Rebellion</a></div>
+  </div>
 </section>
 
 <section class="dv" id="pick-the-door" data-door-vote data-poll="sunday-2026-11-22-hide" aria-labelledby="dv-title">
