@@ -206,7 +206,7 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
 # Home page trimmed to five sections (owner request 2026-10-30); the daily line now lives on /vault/.
 assert vault.select_one("#daily-line [data-daily-quote]")
 assert not home.select_one("#home-vault, #everywhere, .manifesto")
-assert home.select_one('#latest .label span').get_text() == 'FEATURED NOW'
+assert not home.select('#home .kicker, #latest .label, #home-story .label')  # Owner 2026-11-01: no section label strips on the home page
 assert home.select_one('#latest .ctas a')['href'] == '/journal/wake-the-heart-week.html'
 assert home.select_one('#latest .ctas a').get_text() == 'About Wake the Heart Week'
 assert not home.select_one('#latest audio')

@@ -47,7 +47,7 @@ def main():
             rebuilt = (fixture / "index.html").read_text(encoding="utf-8")
             assert compact_css(rebuilt) == expected, f"Rebuild {run} lost or changed compact CSS"
             assert 'href="/journal/wake-the-heart-week.html"' in rebuilt
-            assert "FEATURED NOW" in rebuilt
+            assert "Before the Heart Wakes" in rebuilt
             if previous is not None:
                 assert rebuilt == previous, "Second LOUD build changed homepage output"
             previous = rebuilt

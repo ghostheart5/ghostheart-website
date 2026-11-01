@@ -44,7 +44,7 @@ for(const tz of ['UTC','America/Los_Angeles','Asia/Tokyo','America/Chicago']) {
  }
 }
 const home=fs.readFileSync('index.html','utf8');
-assert(home.includes('FEATURED NOW'));
+assert(!home.includes('FEATURED NOW')); // Owner 2026-11-01: no section label strips on the home page
 assert(home.includes('Before the Heart Wakes'));
 assert(home.includes('href="/journal/wake-the-heart-week.html"'));
 for(const file of ['GhostHeart_Videos.html']) {

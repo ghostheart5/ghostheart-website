@@ -195,6 +195,8 @@ main>section,main>aside{position:relative}
 .hb-join-trap{position:absolute;left:-5000px}
 .hb-join-note{margin:10px 0 0;font-size:14px;color:var(--bone)}.hb-join-note a{color:var(--bone)}
 @media(max-width:700px){.hb-join{padding:14px}.hb-join-row button{flex:1 1 100%}}
+/* SITE AUDIT 2026-11-01 — the mission box has two short cards now: stack them on phones so the next Live is never hidden in a swipe row. */
+@media(max-width:860px){html body #mission-board .mission-board-grid{grid-auto-flow:row;grid-template-columns:1fr;overflow:visible}}
 </style>
 </head>
 <body>
@@ -207,7 +209,6 @@ main>section,main>aside{position:relative}
 <div class="hb-wrap">
 <div class="hb-hero-copy">
 <div class="hb-arrival" data-arrival hidden aria-live="polite"><b data-arrival-from>Welcome</b><p data-arrival-text></p><a data-arrival-link href="#latest">Keep going</a><button type="button" data-arrival-close aria-label="Dismiss welcome note">Close ✕</button></div>
-<span class="kicker">✶ Music / Stories / The Heart Rebellion</span>
 <h1 class="display">Too <span class="o">Human</span><br/>To Stay <span class="r">Quiet.</span></h1>
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note"><a href="#home-story">Meet the man behind GhostHeart.</a></p>
@@ -218,7 +219,6 @@ main>section,main>aside{position:relative}
 </section>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
-<div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
 <div class="hb-feature">
 <div class="rv">
 <h2 class="display">Before the Heart Wakes<em>.</em></h2>
@@ -236,7 +236,6 @@ main>section,main>aside{position:relative}
 </section>
 <section class="man" id="home-story"><span id="story"></span>
 <div class="hb-wrap">
-<div class="label"><span>Behind the name / Real life. Fictional reflection.</span><span class="num">02</span></div>
 <div class="hb-man">
 <figure class="rv"><img alt="GhostHeart with his head lowered and his hand to his face, a cracked red heart glowing through his chest under a red sky." height="640" loading="lazy" sizes="(max-width: 860px) 100vw, 50vw" src="/assets/home/heartbeat/portrait-640.webp" srcset="/assets/home/heartbeat/portrait-640.webp 640w, /assets/home/heartbeat/portrait-1200.webp 1200w" width="640"/><figcaption>Same man. Still here.</figcaption></figure>
 <div class="rv">

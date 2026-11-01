@@ -19,8 +19,10 @@
   }
 
   var params = new URLSearchParams(window.location.search);
+  // The return address alone can't prove a payment (anyone can add ?paid=1), so this note
+  // points to Stripe's receipt instead of confirming payment itself (site audit 2026-11-01).
   if (params.get('paid') === '1') {
-    setStatus('Thank you. Your song is on its way.', 'Your payment went through. I’ll write your song and email it to you within 7 days.', true);
+    setStatus('Thank you for your order.', 'Stripe emails your receipt when the payment goes through. Once it does, I’ll write your song and email it to you within 7 days.', true);
   }
 
   var ready = /^https:\/\/[a-z0-9]+\.supabase\.co$/.test(cfg.supabaseUrl || '') &&
