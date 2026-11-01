@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/vote/door-vote.css">
 <link rel="stylesheet" href="/assets/loud/loud.css">
 <style>
 /* LIVES & READINGS CLEANUP 2026-11-01: one clear page, no pilot hero */
@@ -70,6 +71,37 @@
   <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
 </section>
 
+<section class="dv" id="pick-the-door" data-door-vote data-poll="sunday-2026-11-22" aria-labelledby="dv-title">
+  <div class="dv-in">
+    <div>
+      <span class="dv-tag"><i aria-hidden="true"></i>You decide · Sunday, November 22 Live</span>
+      <h2 class="dv-title" id="dv-title">Pick the door.<br><span>Sunday walks through it.</span></h2>
+      <p class="dv-lead">Two doors. One Live. Whichever door gets the most votes is what I do on TikTok that Sunday at 10:00 a.m. Central.</p>
+      <div class="dv-meta"><span>Voting closes <b>Saturday night, Nov 21</b></span><span data-dv-count></span></div>
+    </div>
+    <div class="dv-doors">
+      <button class="dv-door" type="button" data-pick="a" aria-pressed="false" aria-describedby="dv-a">
+        <span class="dv-frame" aria-hidden="true"><span class="dv-pct"></span><span class="dv-slab"><span class="dv-num">I</span><span class="dv-knob"></span><span class="dv-crack"></span></span></span>
+        <span class="dv-bar" aria-hidden="true"><i></i></span>
+        <span class="dv-label" id="dv-a">Door I: Your words, my song<small>You drop a few words in the chat. I write a brand-new song from them on screen.</small></span>
+      </button>
+      <button class="dv-door" type="button" data-pick="b" aria-pressed="false" aria-describedby="dv-b">
+        <span class="dv-frame" aria-hidden="true"><span class="dv-pct"></span><span class="dv-slab"><span class="dv-num">II</span><span class="dv-knob"></span><span class="dv-crack"></span></span></span>
+        <span class="dv-bar" aria-hidden="true"><i></i></span>
+        <span class="dv-label" id="dv-b">Door II: The story behind the song<small>I pick one of my songs and tell you what really happened.</small></span>
+      </button>
+    </div>
+    <p class="dv-status" data-dv-status role="status" aria-live="polite">Tap a door to vote.</p>
+    <form class="dv-join" action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" method="post" aria-labelledby="dv-join-title">
+      <p id="dv-join-title">See which door wins. Get the Live reminder.</p>
+      <label for="dv-email">Email address</label>
+      <input type="email" id="dv-email" name="EMAIL" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" required>
+      <button type="submit" name="subscribe">Join free</button>
+      <div class="dv-trap" aria-hidden="true"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off"></div>
+      <span class="dv-small">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></span>
+    </form>
+  </div>
+</section>
 <section class="lr-sec lr-later" aria-label="More from GhostHeart">
   <div class="ctas"><a class="btn dark" href="/music/">Hear the music ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/GhostHeart_Story.html">Enter My World</a></div>
 </section>
@@ -89,5 +121,6 @@
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
 <script defer src="/assets/shared/next-live.js"></script>
+<script defer src="/assets/vote/door-vote.js"></script>
 </body>
 </html>
