@@ -34,7 +34,7 @@
   if (dismissed) return;
 
   var route = ROUTES[source];
-  if (!route && visits > 1) route = ['Welcome back', 'You came back. Today’s line is new.', '/vault/#daily-line', 'Today’s line'];
+  if (!route && visits > 1) route = ['Welcome back', 'Today’s line is new.', '/vault/#daily-line', 'Today’s line'];
   if (!route) return;
 
   box.querySelector('[data-arrival-from]').textContent = route[0];

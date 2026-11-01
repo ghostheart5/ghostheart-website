@@ -203,6 +203,8 @@ main>section,main>aside{position:relative}
 .hb-join-trap{position:absolute;left:-5000px}
 .hb-join-note{margin:10px 0 0;font-size:14px;color:var(--bone)}.hb-join-note a{color:var(--bone)}
 @media(max-width:700px){.hb-join{padding:14px}.hb-join-row button{flex:1 1 100%}}
+/* SITE AUDIT 2026-11-01 — the mission box has two short cards now: stack them on phones so the next Live is never hidden in a swipe row. */
+@media(max-width:860px){html body #mission-board .mission-board-grid{grid-auto-flow:row;grid-template-columns:1fr;overflow:visible}}
 </style>
 </head>
 <body>
@@ -223,7 +225,6 @@ main>section,main>aside{position:relative}
 <div class="hb-wrap">
 <div class="hb-hero-copy">
 <div aria-live="polite" class="hb-arrival" data-arrival="" hidden=""><b data-arrival-from="">Welcome</b><p data-arrival-text=""></p><a data-arrival-link="" href="#latest">Keep going</a><button aria-label="Dismiss welcome note" data-arrival-close="" type="button">Close ✕</button></div>
-<span class="kicker">✶ Music / Stories / The Heart Rebellion</span>
 <h1 class="display">Too <span class="o">Human</span><br/>To Stay <span class="r">Quiet.</span></h1>
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note"><a href="#home-story">Meet the man behind GhostHeart.</a></p>
@@ -234,25 +235,23 @@ main>section,main>aside{position:relative}
 </section>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
-<div class="label"><span>FEATURED NOW</span><span class="num">01</span></div>
 <div class="hb-feature">
 <div class="rv">
 <h2 class="display">Before the Heart Wakes<em>.</em></h2>
 <p class="line">An introduction to Wake the Heart Week, November 9 to 15: one week inside The Awakening.</p>
 <div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
 </div>
-<a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span><i aria-hidden="true"></i>Wake the Heart Week</span></a>
+<a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Read: Wake the Heart Week <b aria-hidden="true">→</b></span></a>
 </div>
 <ul class="tracks rv">
-<li><a href="/music/#listen"><span>02</span>I'm Not Staying Silent<span aria-hidden="true">↗</span></a></li>
-<li><a href="/music/#listen"><span>03</span>She Got to Me<span aria-hidden="true">↗</span></a></li>
-<li><a href="/music/#listen"><span>04</span>One Heart, Many Voices<span aria-hidden="true">↗</span></a></li>
+<li><a href="/music/#song-im-not"><span>02</span>I'm Not<span aria-hidden="true">▶</span></a></li>
+<li><a href="/music/#song-she-got-to-me"><span>04</span>She Got to Me<span aria-hidden="true">▶</span></a></li>
+<li><a href="/music/#song-one-heart-many-voices"><span>08</span>One Heart Many Voices<span aria-hidden="true">▶</span></a></li>
 </ul>
 </div>
 </section>
 <section class="man" id="home-story"><span id="story"></span>
 <div class="hb-wrap">
-<div class="label"><span>Behind the name / Real life. Fictional reflection.</span><span class="num">02</span></div>
 <div class="hb-man">
 <figure class="rv"><img alt="GhostHeart with his head lowered and his hand to his face, a cracked red heart glowing through his chest under a red sky." height="640" loading="lazy" sizes="(max-width: 860px) 100vw, 50vw" src="/assets/home/heartbeat/portrait-640.webp" srcset="/assets/home/heartbeat/portrait-640.webp 640w, /assets/home/heartbeat/portrait-1200.webp 1200w" width="640"/><figcaption>Same man. Still here.</figcaption></figure>
 <div class="rv">
@@ -269,7 +268,7 @@ main>section,main>aside{position:relative}
 <p>Music, stories, and the belief that nobody should feel invisible.</p>
 <div class="mission-board-grid">
 <article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
-<article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: <span data-live-after="coming soon" data-live-until="2026-11-08T16:45:00Z">Sunday, November 8, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
+<article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p data-live-next>Next Live: <span data-live-slot-label data-live-until="2026-11-15T16:45:00Z" data-live-after="coming soon">Sunday, November 8, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.<span data-live-slot data-live-hide-after="2026-11-01T16:45:00Z" data-live-when="Sunday, November 1, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-08T16:45:00Z" data-live-when="Sunday, November 8, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-15T16:45:00Z" data-live-when="Sunday, November 15, 2026, 10:00 a.m. Central" hidden></span></p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
 <aside aria-labelledby="shop-title" class="hb-shop">
 <div class="hb-wrap">

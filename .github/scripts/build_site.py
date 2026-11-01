@@ -34,3 +34,4 @@ runpy.run_path(str(ROOT/'.github/scripts/apply_lives_only.py'),run_name='__main_
 runpy.run_path(str(ROOT/'.github/scripts/apply_single_home.py'))
 runpy.run_path(str(ROOT/'.github/scripts/apply_one_signup.py'))
 runpy.run_path(str(ROOT/'.github/scripts/apply_clear_names.py'))
+runpy.run_path(str(ROOT/'.github/scripts/apply_live_schedule.py'))

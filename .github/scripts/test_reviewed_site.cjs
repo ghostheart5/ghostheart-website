@@ -65,7 +65,7 @@ const recordingsPreviewFragments = [
     assert.equal(await preview.count(), 1, 'One featured preview CTA');
     assert.equal((await preview.textContent()).trim(), 'About Wake the Heart Week');
     assert.equal(await preview.getAttribute('href'), '/journal/wake-the-heart-week.html');
-    assert.equal(await page.locator('#latest .label span').first().innerText(), 'FEATURED NOW');
+    assert.equal(await page.locator('#home .kicker, #latest .label, #home-story .label').count(), 0); // Owner 2026-11-01: no section label strips on the home page
     assert.equal(await page.locator('#latest audio, #latest source').count(), 0, 'Featured preview does not play the previous song');
     for (const path of paths) {
       const response = await page.goto(base + path, { waitUntil: 'load' });
