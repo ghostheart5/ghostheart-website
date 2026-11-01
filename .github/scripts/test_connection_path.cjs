@@ -13,12 +13,12 @@ module.exports = async (page, base) => {
     assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
     // Site audit 2026-11-01: two hero buttons; Enter My World stays in the top bar.
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
-      ['▶ Play The Awakening', 'Get Your Song Written']);
+      ['▶ Play Before the Heart Wakes', 'Get Your Song Written']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
       ['/music/#listen', '/here-to-help/#order']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
-    assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
+    assert.match(await page.locator('#mission-board').innerText(), /Before the Heart Wakes continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
     assert.equal(await page.locator('section#join-the-signal').count(), 0);
     assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
     // One sign-up per page (2026-11-01): the email note now sits with the hero email box.

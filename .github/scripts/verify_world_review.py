@@ -29,7 +29,7 @@ start = page("start/index.html")
 follow = page("follow/index.html")
 
 assert story.select_one("h1").get_text(" ", strip=True) == "Enter My World."
-assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars — The Awakening"
+assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars — Before the Heart Wakes"  # renamed 2026-11-01 (owner)
 assert story.select_one('a[href="/woman-behind-the-scenes/"]')
 assert story.select_one('a[href="/journal/"]')
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
@@ -42,7 +42,7 @@ assert "GhostHeart and His Angel" not in love.get_text(" ", strip=True)
 assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert love_alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert "Survival matters" in archive.get_text(" ", strip=True)
-assert awakening.select_one("h1").get_text(" ", strip=True) == "The Awakening."
+assert awakening.select_one("h1").get_text(" ", strip=True) == "Before the Heart Wakes."
 # The Blog lists every public entry (the archived introduction has its own card) plus every released Passage page.
 public_entries = [p for p in json.loads((ROOT / ".github/content/journal.json").read_text(encoding="utf-8"))
                   if p["slug"] != "how-we-got-here" and (ROOT / "journal" / f'{p["slug"]}.html').exists()]
