@@ -27,7 +27,7 @@ module.exports = async (page, base) => {
       assert.equal(await field.getAttribute('type'), 'email');
       assert.equal(await form.locator('.g-honeypot input').getAttribute('name'), 'b_a7ab330423f3b936c48b8d8ba_880e8056a6');
       assert.equal(await form.locator('.g-honeypot input').getAttribute('tabindex'), '-1');
-      assert.match(await form.innerText(), /Confirm through the email/);
+      assert.match(await form.innerText(), /tap the link in the email/);
       assert.match(await form.innerText(), /Unsubscribe anytime/);
       assert.equal(await form.locator('.g-form-status').innerText(), '');
       assert.equal(await page.locator('[data-comment-thread]').count(), route === '/journal/' ? 0 : 1, route); // comments on 2026-10-31

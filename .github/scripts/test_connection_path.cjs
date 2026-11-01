@@ -18,7 +18,7 @@ module.exports = async (page, base) => {
       ['/music/#listen', '/here-to-help/#order']);
     assert.equal(await page.locator('#mission-board form').count(), 0);
     assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
-    assert.match(await page.locator('#mission-board').innerText(), /Before the Heart Wakes continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
+    assert.match(await page.locator('#mission-board').innerText(), /Before the Heart Wakes continues through January 3, 2027\. The Starts begins January 4, 2027\./);
     assert.equal(await page.locator('section#join-the-signal').count(), 0);
     assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
     // One sign-up per page (2026-11-01): the email note now sits with the hero email box.

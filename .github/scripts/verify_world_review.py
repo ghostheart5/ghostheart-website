@@ -79,8 +79,8 @@ retained_film_aliases = films.select('.g-films > span[id^=film-][hidden]')
 assert len(retained_film_aliases) == 12
 assert all(not alias.select('button, iframe, a') for alias in retained_film_aliases)
 assert 'cinematic remake' in actual_films['film-human-too-remake'].get_text(' ', strip=True)
-assert "Why You Should Never Judge Someone's Worst Day" in actual_films['film-human-too-remake'].get_text(' ', strip=True)
-assert 'Fixed vocal ending' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)
+assert 'Human After All' in actual_films['film-human-too-remake'].get_text(' ', strip=True)  # owner 2026-11-01: plain label, no YouTube title
+assert 'Broken Man' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)  # owner 2026-11-01: no upload notes shown
 recordings = page('GhostHeart_Songs.html')
 # Preserve the public preview fragments as usable rows, not hidden aliases.
 preview_tracks = [track for group in json.loads((ROOT / '.github/content/music.json').read_text(encoding='utf-8'))['groups']
