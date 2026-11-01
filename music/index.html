@@ -88,8 +88,15 @@ html body :is(.films,.vault) .label .num{font-size:clamp(26px,3vw,38px)}
 .deck .now{min-width:0}
 .deck .now small{display:block;color:var(--ash);letter-spacing:.18em;font-size:11px;text-transform:uppercase}
 .deck .now strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(22px,2.6vw,32px);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.deck .bar{height:6px;background:#2a2a2a;margin-top:8px;cursor:pointer}
-.deck .bar i{display:block;height:100%;width:0;background:var(--blood)}
+/* Seek (site audit 2026-11-01): a real slider, so arrow keys, Page Up/Down and Home/End seek, with elapsed and total time. */
+.deck .seek{display:flex;align-items:center;gap:10px;margin-top:4px}
+.deck .seek .t{font:700 12px/1 "Space Grotesk",system-ui,sans-serif;font-variant-numeric:tabular-nums;color:var(--ash);min-width:3.2em}
+.deck .seek .t:last-child{text-align:right}
+.deck #seek{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:var(--blood);cursor:pointer}
+.deck #seek:disabled{cursor:default;opacity:.5}
+.deck #seek:focus-visible{outline:3px solid var(--bone);outline-offset:2px}
+/* Desktop renders at zoom .8 (loud.css), so 55px stays a full 44px on screen, like the site's other buttons. */
+@media(min-width:1000px){.deck #seek{height:55px}}
 .deck .bars{display:flex;gap:3px;align-items:center;height:40px;width:clamp(80px,14vw,200px)}
 .deck .bars i{flex:1;background:var(--blood);height:20%}
 .deck.playing .bars i{animation:eq .55s ease-in-out infinite alternate}
@@ -244,7 +251,7 @@ html body .vault .door p{display:none}
     <button id="tog" class="big" aria-label="Play or pause">▶</button>
     <button id="next" aria-label="Next song">⏭</button>
   </div>
-  <div class="now"><small id="album">Now playing</small><strong id="title">—</strong><div class="bar" id="bar"><i id="prog"></i></div><div class="err" id="err" role="status"></div></div>
+  <div class="now"><small id="album">Now playing</small><strong id="title">—</strong><div class="seek"><span class="t" id="t-now">0:00</span><input type="range" id="seek" min="0" max="0" step="1" value="0" aria-label="Song position" aria-valuetext="0:00 of 0:00" disabled><span class="t" id="t-total">0:00</span></div><div class="err" id="err" role="status"></div></div>
   <div class="bars" aria-hidden="true"></div>
 </div>
 <audio id="aud" preload="none"></audio>
@@ -273,8 +280,17 @@ aud.addEventListener('play',()=>{deck.classList.add('playing');tog.textContent='
 aud.addEventListener('pause',()=>{deck.classList.remove('playing');tog.textContent='▶'});
 aud.addEventListener('ended',()=>{if(idx<queue.length-1)load(queue,idx+1)});
 aud.addEventListener('error',()=>{if(aud.src)document.getElementById('err').textContent='This preview could not load. Is the local site server running?'});
-aud.addEventListener('timeupdate',()=>{document.getElementById('prog').style.width=(aud.duration?aud.currentTime/aud.duration*100:0)+'%'});
-document.getElementById('bar').addEventListener('click',e=>{if(!aud.duration)return;const r=e.currentTarget.getBoundingClientRect();aud.currentTime=(e.clientX-r.left)/r.width*aud.duration});
+const seek=document.getElementById('seek'),tNow=document.getElementById('t-now'),tTotal=document.getElementById('t-total');
+const clock=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+function showTime(){const d=isFinite(aud.duration)?aud.duration:0;
+  seek.disabled=!d;seek.max=Math.floor(d);if(!seek.dataset.drag)seek.value=Math.floor(aud.currentTime);
+  tNow.textContent=clock(aud.currentTime);tTotal.textContent=clock(d);seek.setAttribute('aria-valuetext',clock(aud.currentTime)+' of '+clock(d));}
+['timeupdate','loadedmetadata','durationchange','seeked','emptied'].forEach(ev=>aud.addEventListener(ev,showTime));
+// Arrow keys move 5 seconds (1 second felt like nothing); Page Up/Down, Home and End keep the browser's own jumps.
+seek.addEventListener('keydown',e=>{const k={ArrowRight:5,ArrowUp:5,ArrowLeft:-5,ArrowDown:-5}[e.key];if(!k||seek.disabled)return;e.preventDefault();aud.currentTime=Math.min(Math.max(aud.currentTime+k,0),aud.duration);showTime();});
+seek.addEventListener('pointerdown',()=>{seek.dataset.drag='1'});
+addEventListener('pointerup',()=>{delete seek.dataset.drag});
+seek.addEventListener('input',()=>{aud.currentTime=Number(seek.value);tNow.textContent=clock(seek.value);seek.setAttribute('aria-valuetext',clock(seek.value)+' of '+clock(aud.duration));});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 // Arriving on a song link: put keyboard focus on that song's play button (after the browser's own jump to it, which clears focus).
