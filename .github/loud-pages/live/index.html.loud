@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--@inject-all head > meta[property], head > meta[name^="twitter:"], head > link[rel="canonical"]-->
-<meta name="description" content="GhostHeart Lives and Readings: Sunday Lives on TikTok at 10 a.m. Central, plus readings to explore.">
-<title>Lives &amp; Readings | GhostHeart</title>
+<meta name="description" content="GhostHeart Sunday Lives: every Sunday at 10 a.m. Central on TikTok.">
+<title>Lives | GhostHeart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
 .lr-list{list-style:none;margin:22px 0 0;padding:0;border-top:3px solid var(--void);max-width:760px}
 .lr-list li{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:14px;padding:12px 0;border-bottom:2px solid rgba(0,0,0,.15);font-size:17px}
 .lr-list li b{font-weight:700}
-@media(max-width:600px){.lr-list li{grid-template-columns:92px 1fr;gap:10px}}
+@media(max-width:600px){.lr-list li{grid-template-columns:108px 1fr;gap:10px}}
 .lr-small{font-size:16px;margin-top:14px;max-width:640px}
 .lr-small a{color:var(--blood);text-decoration:underline}
 .lr-read{background:var(--void);color:var(--bone)}
@@ -51,9 +51,9 @@
 
 <main id="main-content">
 <header class="lr-hero">
-  <span class="kicker">✶ GhostHeart / Lives &amp; Readings</span>
-  <h1 class="display">Lives &amp; <span>Readings.</span></h1>
-  <p class="lead">On Sundays at 10:00 a.m. Central I go live on TikTok and write songs on screen. Readings are pieces I&rsquo;ve written for you to read right here.</p>
+  <span class="kicker">✶ GhostHeart / Lives</span>
+  <h1 class="display">Sunday <span>Lives.</span></h1>
+  <p class="lead">Every Sunday at 10:00 a.m. Central I go live on TikTok and write songs on screen.</p>
 </header>
 
 <section class="lr-sec lr-lives" id="lives" aria-labelledby="live-status-title">
@@ -69,18 +69,7 @@
   <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
 </section>
 
-<section class="lr-sec lr-read" id="readings" aria-labelledby="promise-title">
-  <div class="label"><span>Readings</span></div>
-  <div class="lr-card">
-    <h3 id="promise-title">My Promise</h3>
-    <p>A promise to keep learning, listening, and choosing care.</p>
-    <a class="btn red" href="/live/my-promise.html">Read My Promise</a>
-  </div>
-</section>
-
-<section class="lr-sec lr-later" id="later" aria-labelledby="later-title">
-  <h2 class="display" id="later-title">Coming later</h2>
-  <p>The World Is Watching: a story show where you help choose what happens next. It&rsquo;s still being built, and there&rsquo;s no date yet.</p>
+<section class="lr-sec lr-later" aria-label="More from GhostHeart">
   <div class="ctas"><a class="btn dark" href="/music/">Hear the music ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/GhostHeart_Story.html">Enter My World</a></div>
 </section>
 
@@ -89,7 +78,7 @@
 <footer class="sitefoot">
   <div class="fcols">
     <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives &amp; Readings</a></nav>
+    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
     <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
     <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Help &amp; Resources</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
   </div>

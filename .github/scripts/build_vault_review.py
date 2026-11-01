@@ -168,9 +168,9 @@ home_paths = f'''<section class="home-discovery ghx-wrap" aria-label="Explore Gh
 <article class="home-discovery-card" id="home-vault" aria-labelledby="home-vault-title"><p class="ghx-kicker">The collection</p><h2 id="home-vault-title">GhostHeart's Vault</h2>
 <p>Find a song, film, Short, or quote that stays with you.</p>
 <p class="home-discovery-meta">11 songs · 6 videos · 5 Shorts · 17 quotes</p><a href="/vault/">Explore GhostHeart's Vault</a></article>
-<article class="home-discovery-card" id="home-lives" aria-labelledby="home-lives-title"><p class="ghx-kicker">Planned Sunday Live</p><h2 id="home-lives-title">Lives &amp; Readings</h2>
+<article class="home-discovery-card" id="home-lives" aria-labelledby="home-lives-title"><p class="ghx-kicker">Planned Sunday Live</p><h2 id="home-lives-title">Lives</h2>
 <p><strong>{escape(live['title'])}</strong> is planned for <time datetime="{escape(live['starts_at'], quote=True)}">October 11, 2026 at 10:00 a.m. Central</time>. The platform, viewing link, and replay are pending.</p>
-<a href="/live/">Lives &amp; Readings details</a></article></section>'''
+<a href="/live/">Lives details</a></article></section>'''
 assert 'id="latest"' not in home
 assert home.count('<section class="signup-section"') == 1
 home = home.replace('<section class="signup-section"', home_paths + '\n' + home_latest + '\n<section class="signup-section"', 1)

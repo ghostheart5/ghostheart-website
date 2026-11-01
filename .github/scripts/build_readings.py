@@ -27,8 +27,8 @@ html = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta nam
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/journal/highlights.css"/><script defer src="/assets/shared/ghostheart-world.js"></script>
 </head><body class="ghx-site"><a class="skip-link" href="#main-content">Skip to content</a>{header}
-<main id="main-content"><div class="ghx-wrap readings-page"><p class="ghx-kicker">GhostHeart / Lives &amp; Readings</p>
-<h1>Lives &amp; Readings.</h1><p class="ghx-lead">The planned gathering and approved readings, with details added only when confirmed.</p>
+<main id="main-content"><div class="ghx-wrap readings-page"><p class="ghx-kicker">GhostHeart / Lives</p>
+<h1>Lives.</h1><p class="ghx-lead">The planned gathering and approved readings, with details added only when confirmed.</p>
 <section class="readings-event" aria-labelledby="next-live-title"><p class="ghx-kicker">Planned Sunday Live</p>
 <h2 id="next-live-title">{escape(LIVE['title'])}</h2>
 <p><time datetime="{LIVE['starts_at']}">Sunday, October 11, 2026 at 10:00 a.m. Central</time></p>
@@ -51,9 +51,9 @@ article = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta 
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/journal/highlights.css"/><script defer src="/assets/shared/ghostheart-world.js"></script>
 </head><body class="ghx-site"><a class="skip-link" href="#main-content">Skip to content</a>{header}
-<main id="main-content"><article class="ghx-wrap reading-article"><a class="reading-back" href="/live/">← Lives &amp; Readings</a>
+<main id="main-content"><article class="ghx-wrap reading-article"><a class="reading-back" href="/live/">← Lives</a>
 <header><p class="ghx-kicker">Approved reading</p><h1>My Promise</h1><p>A promise to keep learning, listening, and choosing care.</p></header>
-<div class="reading-text">{paragraphs}</div><p class="reading-return"><a href="/live/">Return to Lives &amp; Readings</a></p>
+<div class="reading-text">{paragraphs}</div><p class="reading-return"><a href="/live/">Return to Lives</a></p>
 </article></main>{footer}</body></html>\n'''
 (ROOT / 'live/my-promise.html').write_text(article, encoding='utf-8', newline='\n')
 print('Built Readings page and My Promise for', LIVE['starts_at'])

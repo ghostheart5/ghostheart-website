@@ -141,7 +141,7 @@ assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
 live = page("live/index.html")
 assert " ".join(live.select_one("#live-status-title").get_text().split()) == "Next Live: Sunday, November 1, 2026, 10:00 a.m. Central."
 assert live.select_one("#live-status-title [data-live-until][data-live-after]")
-assert live.select_one('a[href="/live/my-promise.html"]')
+assert not live.select_one('a[href="/live/my-promise.html"]')  # owner: readings off the site (2026-11-01)
 assert live.select_one('a[href="/follow/"]')
 assert not live.select_one("#next-live-title")
 assert not live.select_one("#live-replay")

@@ -17,7 +17,7 @@ def page(path):
 
 nav = ["Home", "Music", "Enter My World", "I’m Here to Help", "Merch"]
 # Owner request 2026-10-31: The Awakening lives under Enter My World; Stay Connected left the menu.
-explore = {"The Awakening", "Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives & Readings", "Projects", "Merch"}
+explore = {"The Awakening", "Behind the Scars", "The Woman Behind the Scenes", "GhostHeart's Vault", "Blog", "Lives", "Projects", "Merch"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:
@@ -68,9 +68,9 @@ audio = list((ROOT / "assets/music/preview").glob("*.mp3"))
 assert len(audio) == 11 and all(track.stat().st_size > 1_000_000 for track in audio)
 assert max(track.stat().st_size for track in audio) < 100_000_000
 
-source = (ROOT / ".github/content/my-promise.txt").read_text(encoding="utf-8").strip().split("\n\n")
-rendered = [p.get_text(" ", strip=True) for p in page("live/my-promise.html").select(".reading-text p")]
-assert len(rendered) == 15 and rendered == source[1:]
+# Owner decision 2026-11-01: readings are off the site; the My Promise text is kept in .github/content only.
+assert not (ROOT / "live/my-promise.html").exists()
+assert (ROOT / ".github/content/my-promise.txt").exists()
 
 projects = page("GhostHeart_Projects.html")
 assert projects.select_one("#axiomara")
@@ -104,4 +104,4 @@ for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]
 assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
-print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, 15 exact reading paragraphs, 16 resources, 6 Journal entries")
+print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, My Promise unpublished, 16 resources, 6 Journal entries")

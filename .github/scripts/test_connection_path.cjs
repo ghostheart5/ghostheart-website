@@ -27,26 +27,21 @@ module.exports = async (page, base) => {
     await Promise.all([page.waitForURL(base + '/live/'), page.keyboard.press('Enter')]);
     assert.equal(new URL(page.url()).pathname, '/live/');
     assert.match(await page.locator('#live-status-title').textContent(), /^Next Live: (Sunday, [A-Z][a-z]+ \d{1,2}, \d{4}, 10:00 a\.m\. Central|coming soon)\.$/);
-    assert.match(await page.locator('main').innerText(), /On Sundays at 10:00 a\.m\. Central I go live on TikTok/);
+    assert.match(await page.locator('main').innerText(), /Every Sunday at 10:00 a\.m\. Central I go live on TikTok/);
     assert.equal(await page.locator('main time, #live-replay, main iframe').count(), 0);
-    assert.doesNotMatch(await page.locator('main').innerText(), /October 11|The Awakening Begins|I'm a Nobody|Watch Live|weekly|every Sunday/i);
+    assert.doesNotMatch(await page.locator('main').innerText(), /October 11|The Awakening Begins|I'm a Nobody|Watch Live|Reading|My Promise/i);
     const menu = page.locator('header.ghx-header .ghx-menu-toggle');
     await menu.click();
-    assert.equal(await page.getByRole('link', { name: 'Lives & Readings', exact: true }).first().isVisible(), true);
+    assert.equal(await page.getByRole('link', { name: 'Lives', exact: true }).first().isVisible(), true);
     await page.keyboard.press('Escape');
-    await page.getByRole('link', { name: 'Read My Promise', exact: true }).focus();
-    assert.ok(await page.evaluate(() => parseFloat(getComputedStyle(document.activeElement).outlineWidth) >= 3));
-    await Promise.all([page.waitForURL(base + '/live/my-promise.html'), page.keyboard.press('Enter')]);
-    assert.equal(new URL(page.url()).pathname, '/live/my-promise.html');
-    assert.equal(await page.locator('.reading-text p').count(), 15);
-    await page.locator('.reading-return a').click();
-    assert.equal(new URL(page.url()).pathname, '/live/');
+    // Owner decision 2026-11-01: readings are off the site.
+    assert.equal(await page.locator('a[href*="my-promise"]').count(), 0);
     if (evidence && [390, 1440].includes(width)) {
       await page.screenshot({ path: path.join(evidence, 'live-' + width + '.png'), fullPage: true });
       await page.goto(base + '/#mission-board');
       await page.screenshot({ path: path.join(evidence, 'mission-' + width + '.png') });
     }
-    for (const route of ['/', '/live/', '/live/my-promise.html', '/follow/']) {
+    for (const route of ['/', '/live/', '/follow/']) {
       await page.goto(base + route);
       await page.evaluate(() => document.fonts.ready);
       const reflow = await page.evaluate(() => ({
@@ -71,5 +66,5 @@ module.exports = async (page, base) => {
     results, signupSubmitted: false, status: 'PASS',
     limits: ['No confirmed future Live date or viewing platform', 'No native browser zoom or provider/email test']
   }, null, 2));
-  console.log('PASS connection pathway: three routes, pending Lives, exact reading, 16 route/viewport reflow checks; zero submissions');
+  console.log('PASS connection pathway: three routes, pending Lives, no readings, 16 route/viewport reflow checks; zero submissions');
 };
