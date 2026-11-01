@@ -115,8 +115,8 @@ assert recordings.select_one('#released-recordings h2').get_text(' ', strip=True
 assert recordings.select_one('.music-jump a[href="/albums/index.html"]').get_text() == 'Featured listening collections'
 assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
-assert start.select_one('a[href="/albums/index.html#youre-not-god"]')
-assert not start.select("form")
+# Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
+assert 'content="0; url=/"' in (ROOT / "start/index.html").read_text(encoding="utf-8")
 # Home has exactly one form: the email box Dom approved on 2026-10-31.
 assert [f.get("id") for f in home.select("form")] == ["home-join"]
 assert "list-manage.com/subscribe/post" in home.select_one("form#home-join")["action"]
@@ -247,7 +247,7 @@ for path in ROOT.rglob('*.html'):
     assert 'Sunday readings will connect' not in text, path
 assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
-for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "start/index.html", "follow/index.html"):
+for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "follow/index.html"):
     # LOUD redesign (2026-10-14): redesigned routes use the LOUD stylesheet instead of the review theme.
     document = page(relative)
     assert document.select_one('link[href="/assets/shared/review-theme.css"]') or document.select_one('link[href="/assets/loud/loud.css"]'), relative
