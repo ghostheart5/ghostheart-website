@@ -1,7 +1,7 @@
 // "For how you feel" picks on the Vault page (site audit 2026-11-01, owner yes).
-// Hand-curated: every "why" line is wording already published on the site (film
-// descriptions, blog summaries, passage subtitles, Short titles, the quotes).
-// Songs without a published description are left out until one is approved.
+// Hand-curated from published site copy and GhostHeart song sources.
+// The five remaining Awakening song descriptions were added at the owner's
+// request on 2026-11-01.
 // moods: strength, judged, change, love, protect, alone. how: line, watch, listen, read.
 window.GHOSTHEART_FOR_YOU = {
   moods: [
@@ -29,8 +29,13 @@ window.GHOSTHEART_FOR_YOU = {
     {id: 'short-porch-light', how: 'watch', title: 'Would You Leave the Porch Light On?', kind: 'Short', href: 'https://www.youtube.com/shorts/5HUWedEnnsA', why: 'A Short from That Ain’t Holy.', moods: ['protect', 'alone']},
     {id: 'short-mercy-empty-seat', how: 'watch', title: 'Mercy That Leaves an Empty Seat', kind: 'Short', href: 'https://www.youtube.com/shorts/ofU09J3bkHI', why: 'A Short from That Ain’t Holy.', moods: ['judged', 'change']},
     {id: 'song-cruel', how: 'listen', title: 'Cruel', kind: 'Song', href: '/music/#song-cruel', why: 'From GhostHeart’s Awakening. Something needs to change.', moods: ['change']},
+    {id: 'song-im-not', how: 'listen', title: 'I’m Not', kind: 'Song', href: '/music/#song-im-not', why: 'A story can be worth telling before the fear is gone.', moods: ['judged', 'alone', 'strength']},
+    {id: 'song-papa-didnt-raise-a-fool', how: 'listen', title: 'Papa Didn’t Raise a Fool', kind: 'Song', href: '/music/#song-papa-didnt-raise-a-fool', why: 'The lesson is to keep thinking for yourself without losing your heart.', moods: ['strength', 'judged']},
+    {id: 'song-she-got-to-me', how: 'listen', title: 'She Got to Me', kind: 'Song', href: '/music/#song-she-got-to-me', why: 'The love that challenged GhostHeart to turn his care into action.', moods: ['love', 'change']},
     {id: 'song-this-is-ghostheart', how: 'listen', title: 'This Is GhostHeart', kind: 'Song', href: '/music/#song-this-is-ghostheart', why: 'The name, the scars, and the reason a hidden heart chose to be seen.', moods: ['alone', 'strength']},
     {id: 'song-ghosthearts-oath', how: 'listen', title: 'GhostHeart’s Oath', kind: 'Song', href: '/music/#song-ghosthearts-oath', why: 'The promise to protect the light in others.', moods: ['protect']},
+    {id: 'song-you-can-be-ghostheart-too', how: 'listen', title: 'You Can Be GhostHeart Too', kind: 'Song', href: '/music/#song-you-can-be-ghostheart-too', why: 'A reminder that looking out for someone can begin with you.', moods: ['protect', 'change']},
+    {id: 'song-one-heart-many-voices', how: 'listen', title: 'One Heart Many Voices', kind: 'Song', href: '/music/#song-one-heart-many-voices', why: 'Different lives and different struggles, with room for every voice.', moods: ['alone', 'love']},
     {id: 'song-i-wont-pretend-to-speak-for-you', how: 'listen', title: 'I Won’t Pretend to Speak for You', kind: 'Song', href: '/music/#song-i-wont-pretend-to-speak-for-you', why: 'Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.', moods: ['love']},
     {id: 'song-hey-preacher-man', how: 'listen', title: 'Hey Preacher Man', kind: 'Song', href: '/music/#song-hey-preacher-man', why: 'A direct answer to the judgment that tried to define a life from the outside.', moods: ['judged', 'strength']},
     {id: 'song-that-aint-holy', how: 'listen', title: 'That Ain’t Holy', kind: 'Song', href: '/music/#song-that-aint-holy', why: 'Mercy should not check your pockets at the door.', moods: ['judged', 'protect']},
