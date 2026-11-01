@@ -12,7 +12,7 @@
 <meta content="https://www.myghostheart.com/music/" property="og:url"/>
 <meta content="https://www.myghostheart.com/assets/images/web-v2/awakening-1440-v1.webp" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta name="description" content="Hear GhostHeart: every song preview from The Awakening and You’re Not God, plus the films.">
+<meta name="description" content="Hear GhostHeart: every song preview from The Awakening and You’re Not God, with every film one tap away on Films.">
 <title>Music &amp; Films | GhostHeart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,12 +152,12 @@ html body .vault .door p{display:none}
     <p class="tag">Watch the films. Hear the recordings. Stay with the words behind them.</p>
     <div class="ctas">
       <button class="btn red" data-playall="awakening">▶ Play The Awakening</button>
-      <a class="btn ghost" href="#films">Watch the films ↘</a>
+      <a class="btn ghost" href="/GhostHeart_Videos.html">Watch the films ↗</a>
     </div>
   </div>
 </header>
 
-<div class="tape"><div><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>TWO FILMS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
+<div class="tape"><div><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
 
 <section class="spook" id="halloween" aria-labelledby="spook-title" data-spook-close="2026-11-01T05:00:00Z">
   <div class="label"><span>Halloween / Lights off</span><span class="num">🎃</span></div>
@@ -172,22 +172,8 @@ html body .vault .door p{display:none}
 </section>
 <script>(()=>{const box=document.querySelector('[data-spook-close]');if(!box)return;if(Date.now()>=new Date(box.dataset.spookClose)){box.hidden=true;return}box.querySelectorAll('[data-spook]').forEach(b=>b.addEventListener('click',()=>{const t=document.querySelector(`.tracks button[data-src="${b.dataset.spook}"]`);if(t)t.click()}))})();</script>
 
-<section class="films" id="films">
-  <div class="label"><span>The Films / Lights down</span><span class="num">01</span></div><h2 class="vh">The films</h2>
-  <div class="film-grid">
-    <a class="film rv" href="https://www.youtube.com/watch?v=AOCRvtz92JM">
-      <div class="thumb" style="background-image:url('/assets/videos/youtube/AOCRvtz92JM.jpg')"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></div>
-      <div class="meta"><h3>This Is<br> GhostHeart</h3><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><small>WATCH ON YOUTUBE ↗</small></div>
-    </a>
-    <a class="film rv" href="https://www.youtube.com/watch?v=mBAsUNX3vHQ">
-      <div class="thumb" style="background-image:url('/assets/videos/youtube/mBAsUNX3vHQ.jpg')"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></div>
-      <div class="meta"><h3>GhostHeart's<br> Oath</h3><p>The promise to protect the light in others.</p><small>WATCH ON YOUTUBE ↗</small></div>
-    </a>
-  </div>
-</section>
-
 <section class="juke" id="listen">
-  <div class="label"><span>The Recordings / Tap a song. It plays.</span><span class="num">02</span></div>
+  <div class="label"><span>The Recordings / Tap a song. It plays.</span><span class="num">01</span></div>
 
   <div class="album">
     <div class="album-head"><h2 class="display rv">GhostHeart's<br><span class="r">Awakening.</span></h2><button class="playall" data-playall="awakening">▶ Play all 8</button></div>
@@ -223,9 +209,9 @@ html body .vault .door p{display:none}
 <script>(()=>{const box=document.querySelector('[data-xmas]');if(!box)return;const now=Date.now();if(now<new Date(box.dataset.xmasOpen))return;const left=(new Date(box.dataset.xmasClose)-now)/864e5;if(left<=0)return;const d=Math.max(1,Math.floor(left));box.querySelector('[data-xmas-days]').textContent=d;box.querySelector('[data-xmas-unit]').textContent=d===1?'Day left':'Days left';box.hidden=false})();</script>
 
 <section class="vault">
-  <div class="label"><span>Go Deeper / Everything else</span><span class="num">03</span></div><h2 class="vh">Go deeper</h2>
+  <div class="label"><span>Go Deeper / Everything else</span><span class="num">02</span></div><h2 class="vh">Go deeper</h2>
   <div class="door-grid">
-    <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br> Film</h3><p>Films &amp; shorts</p></div></a>
+    <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br> Film</h3><p>This Is GhostHeart, the Oath, every film &amp; short</p></div></a>
     <a class="door" href="/GhostHeart_Songs.html"><span class="n">02</span><div><h3>The<br> Archive</h3><p>Released recordings · singles · versions</p></div></a>
     <a class="door" href="/music/#listen"><span class="n">03</span><div><h3>The<br> Collections</h3><p>Featured listening</p></div></a>
   </div>

@@ -42,6 +42,14 @@ body = '''<div class="projects-page">
 <p class="projects-work-note">In development. There is no public download or live service here yet.</p></div>
 <div class="projects-shadow-mark" aria-hidden="true"><span>WRITE</span><span>REFLECT</span><span>CHOOSE</span></div></div></section>
 
+<section class="projects-shadow projects-deal ghx-wrap" id="deal-vector" aria-labelledby="deal-vector-title"><div class="projects-shadow-frame"><div>
+<p class="projects-status projects-status-work">In progress</p><p class="projects-index">03 / Run the numbers first</p>
+<h2 id="deal-vector-title">DEAL VECTOR<span aria-hidden="true">.</span></h2>
+<p class="projects-feature-lead">An Android calculator for knowing what is left after the costs, before you commit to a resale deal.</p>
+<p>Enter your expected sale price, what you paid and shipping. Offline USD estimates, before selling fees.</p>
+<p class="projects-work-note">Public release and availability are still pending. No download is offered yet. <a href="/apps/deal-vector/">Open the Deal Vector file →</a></p></div>
+<div class="projects-shadow-mark" aria-hidden="true"><span>PRICE</span><span>COSTS</span><span>DECIDE</span></div></div></section>
+
 <section class="projects-future ghx-wrap" aria-labelledby="future-title"><p class="ghx-kicker">What could come next</p>
 <h2 id="future-title">Under construction<span aria-hidden="true">.</span></h2>
 <p>GhostHeart Studios is exploring more ways to make, play, and carry a story. These are directions, not announced products or launch dates.</p>
@@ -55,11 +63,11 @@ body = '''<div class="projects-page">
 </div>'''
 
 html = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projects | GhostHeart Studios</title><meta name="description" content="Meet Axiomara, explore Shadow Fire in development, and see what GhostHeart Studios is building next."/>
+<title>Projects | GhostHeart Studios</title><meta name="description" content="Meet Axiomara, explore Shadow Fire and Deal Vector in development, and see what GhostHeart Studios is building next."/>
 <link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Projects.html"/><link rel="icon" href="/favicon.ico"/>
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/projects/projects.css"/><script defer src="/assets/shared/ghostheart-world.js"></script>
 </head><body class="ghx-site"><a class="skip-link" href="#main-content">Skip to content</a>{header}
 <main id="main-content">{body}</main>{footer}</body></html>\n'''
 (ROOT / 'GhostHeart_Projects.html').write_text(html, encoding='utf-8', newline='\n')
-print('Built Projects: Axiomara, Shadow Fire, and three under-construction directions')
+print('Built Projects: Axiomara, Shadow Fire, Deal Vector, and three under-construction directions')
