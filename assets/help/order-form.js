@@ -19,14 +19,54 @@
   }
 
   var params = new URLSearchParams(window.location.search);
+  var hasDatabase = /^https:\/\/[a-z0-9]+\.supabase\.co$/.test(cfg.supabaseUrl || '') &&
+    typeof cfg.supabaseKey === 'string' && cfg.supabaseKey.length > 20;
+
+  // The order id waits in this tab while the customer is on Stripe, so the return can ask about it.
+  var ORDER_KEY = 'ghostheart.order.pending.v1';
+  function rememberOrder(id) { try { window.sessionStorage.setItem(ORDER_KEY, id); } catch (e) { /* storage blocked: honest note only */ } }
+  function storedOrder() {
+    try { var id = window.sessionStorage.getItem(ORDER_KEY) || ''; return /^[0-9a-f-]{36}$/.test(id) ? id : ''; } catch (e) { return ''; }
+  }
+  function forgetOrder() { try { window.sessionStorage.removeItem(ORDER_KEY); } catch (e) { /* nothing to do */ } }
+
   // The return address alone can't prove a payment (anyone can add ?paid=1), so this note
   // points to Stripe's receipt instead of confirming payment itself (site audit 2026-11-01).
-  if (params.get('paid') === '1') {
+  function receiptNote() {
     setStatus('Thank you for your order.', 'Stripe emails your receipt when the payment goes through. Once it does, I’ll write your song and email it to you within 7 days.', true);
   }
+  // "Payment confirmed" only shows when the database says Stripe's signed webhook marked this
+  // order paid (public.ghostheart_order_paid). Webhooks can lag, so ask a few times over ~20 seconds.
+  var PAID_CHECKS = 8, PAID_WAIT_MS = 2500;
+  function checkPaid(id, tries) {
+    fetch(cfg.supabaseUrl + '/rest/v1/rpc/ghostheart_order_paid', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey },
+      body: JSON.stringify({ order_id: id })
+    }).then(function (response) {
+      return response.ok ? response.json() : false;
+    }).catch(function () { return false; }).then(function (paid) {
+      if (paid === true) {
+        forgetOrder();
+        setStatus('Payment confirmed.', 'Thank you. I’ll write your song and email it within 7 days.', true);
+      } else if (tries + 1 < PAID_CHECKS) {
+        window.setTimeout(function () { checkPaid(id, tries + 1); }, PAID_WAIT_MS);
+      } else {
+        receiptNote();
+      }
+    });
+  }
+  if (params.get('paid') === '1') {
+    var paidId = storedOrder();
+    if (paidId && hasDatabase && window.fetch) {
+      setStatus('Checking your payment…', 'This takes a few seconds while Stripe confirms it.', true);
+      checkPaid(paidId, 0);
+    } else {
+      receiptNote();
+    }
+  }
 
-  var ready = /^https:\/\/[a-z0-9]+\.supabase\.co$/.test(cfg.supabaseUrl || '') &&
-    typeof cfg.supabaseKey === 'string' && cfg.supabaseKey.length > 20 &&
+  var ready = hasDatabase &&
     /^https:\/\/buy\.stripe\.com\/(?!test_)[A-Za-z0-9_]+$/.test(cfg.songPayLink || ''); // live links only
   if (!ready) return;
 
@@ -85,6 +125,7 @@
     }).then(function (orderId) {
       if (typeof orderId !== 'string' || !/^[0-9a-f-]{36}$/.test(orderId)) throw new Error('bad id');
       if (k === 'song') {
+        rememberOrder(orderId);
         var url = cfg.songPayLink + '?client_reference_id=' + encodeURIComponent(orderId);
         window.location.assign(url);
         return;
