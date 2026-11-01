@@ -51,9 +51,9 @@ article = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta 
 <link rel="stylesheet" href="/assets/shared/release-site.css"/><link rel="stylesheet" href="/assets/shared/ghostheart-world.css"/>
 <link rel="stylesheet" href="/assets/journal/highlights.css"/><script defer src="/assets/shared/ghostheart-world.js"></script>
 </head><body class="ghx-site"><a class="skip-link" href="#main-content">Skip to content</a>{header}
-<main id="main-content"><article class="ghx-wrap reading-article"><a class="reading-back" href="/live/">← Readings &amp; Live</a>
+<main id="main-content"><article class="ghx-wrap reading-article"><a class="reading-back" href="/live/">← Lives &amp; Readings</a>
 <header><p class="ghx-kicker">Approved reading</p><h1>My Promise</h1><p>A promise to keep learning, listening, and choosing care.</p></header>
-<div class="reading-text">{paragraphs}</div><p class="reading-return"><a href="/live/">Return to Readings &amp; Live</a></p>
+<div class="reading-text">{paragraphs}</div><p class="reading-return"><a href="/live/">Return to Lives &amp; Readings</a></p>
 </article></main>{footer}</body></html>\n'''
 (ROOT / 'live/my-promise.html').write_text(article, encoding='utf-8', newline='\n')
 print('Built Readings page and My Promise for', LIVE['starts_at'])

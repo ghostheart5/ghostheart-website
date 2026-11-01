@@ -27,7 +27,7 @@ module.exports = async (page, base) => {
     await Promise.all([page.waitForURL(base + '/live/'), page.keyboard.press('Enter')]);
     assert.equal(new URL(page.url()).pathname, '/live/');
     assert.match(await page.locator('#live-status-title').textContent(), /^Next Live: (Sunday, [A-Z][a-z]+ \d{1,2}, \d{4}, 10:00 a\.m\. Central|coming soon)\.$/);
-    assert.match(await page.locator('main').innerText(), /GhostHeart Lives are on TikTok/);
+    assert.match(await page.locator('main').innerText(), /On Sundays at 10:00 a\.m\. Central I go live on TikTok/);
     assert.equal(await page.locator('main time, #live-replay, main iframe').count(), 0);
     assert.doesNotMatch(await page.locator('main').innerText(), /October 11|The Awakening Begins|I'm a Nobody|Watch Live|weekly|every Sunday/i);
     const menu = page.locator('header.ghx-header .ghx-menu-toggle');
