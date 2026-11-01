@@ -76,10 +76,10 @@
   <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
 </section>
 
-<section class="lr-sec lr-sotw" id="song-of-the-week" aria-labelledby="sotw-title" data-sotw>
+<section class="lr-sec lr-sotw" id="song-of-the-week" aria-label="Song of the week" data-sotw>
   <span class="lr-next" data-sotw-when>Song of the week · Coming up</span>
   <div data-sotw-item data-from="2026-11-16T06:00:00Z" data-until="2026-11-23T06:00:00Z">
-    <h2 id="sotw-title">You Can&rsquo;t Change Us</h2>
+    <h2>You Can&rsquo;t Change Us</h2>
     <p>November 16&ndash;22 &middot; The Parts You Hide</p>
     <div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906">Hear You Can&rsquo;t Change Us</a></div>
   </div>
