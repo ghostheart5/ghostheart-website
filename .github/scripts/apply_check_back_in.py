@@ -41,7 +41,7 @@ NOTE = ('<h2 id="saved-on-this-device">Saved on this device</h2>\n'
         '<p>If you save a song, film or line, or stop partway through a song or a reading, this website remembers it '
         'in your own browser (local storage) so you can check back in later. It also keeps a visit count and the time '
         'of your last visit, to welcome you back and show what is new. None of this is sent to GhostHeart or anyone '
-        'else. Clear it any time with “Forget everything on this device” on the home page, or by clearing this '
+        'else. Clear it any time by clearing this '
         'site’s data in your browser.</p>\n')
 anchor = '<h2>What is collected</h2>'
 if 'id="saved-on-this-device"' not in text:

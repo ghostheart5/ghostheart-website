@@ -39,8 +39,9 @@ const recordingsPreviewFragments = [
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(base + '/');
-    assert.equal(await page.locator('.canon-hero__line').innerText(), 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.');
-    assert.equal(await page.locator('.canon-hero__note').innerText(), 'Meet the man behind GhostHeart.');
+    // Owner 2026-11-01: the top of home is "The Man Behind The Heart" (his words).
+    assert.equal(await page.locator('.canon-hero__line').innerText(), 'Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.');
+    assert.equal(await page.locator('.canon-hero__note').count(), 0);
     assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
     assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.map(section => section.id)), ['home', 'latest', 'home-story', 'mission-board']);
     assert.equal(await page.locator('audio[autoplay], main form:not(#home-join)').count(), 0); // home email box approved 2026-10-31
@@ -56,11 +57,6 @@ const recordingsPreviewFragments = [
     await page.locator('#home-join-email').focus();
     assert.equal(await page.locator('#home-join-email').evaluate(e => e === document.activeElement), true);
     await page.goto(base + '/');
-    // Site audit 2026-11-01: the hero note is the one link down to the story section.
-    await page.locator('#home .canon-hero__note a[href="#home-story"]').focus();
-    await page.keyboard.press('Enter');
-    await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
-    assert.equal(new URL(page.url()).hash, '#home-story');
     // One feature block per week (owner 2026-11-01); exactly one shows on any day. Dates: test_home_weeks.cjs.
     const preview = page.locator('#latest .hb-feature:not([hidden]) .ctas a');
     assert.equal(await preview.count(), 1, 'One featured preview CTA');

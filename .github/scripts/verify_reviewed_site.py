@@ -18,7 +18,8 @@ def page(path):
 nav = ["Home", "Music", "Enter My World", "Work with GhostHeart", "Merch"]  # renamed 2026-11-01 (owner yes)
 # Owner request 2026-10-31: The Awakening lives under Enter My World; Stay Connected left the menu.
 # Site audit 2026-11-01 (apply_clear_names.py): one name per place; Merch stays in the top bar only.
-explore = {"The Awakening", "Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Blog", "Lives", "Projects"}
+explore = {"Before the Heart Wakes",  # renamed from "The Awakening" 2026-11-01 (owner)
+            "Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Blog", "Lives", "Projects"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:

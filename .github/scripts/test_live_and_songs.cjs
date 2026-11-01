@@ -12,7 +12,7 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
 
   await page.goto(base + '/');
   const songs = await page.locator('#latest .tracks a').evaluateAll(links => links.map(a => [a.getAttribute('href'), a.textContent.replace(/\s+/g, ' ').trim()]));
-  assert.equal(songs.length, 3);
+  assert.equal(songs.length, 0); // Owner 2026-11-01: no numbered song list on home
   for (const [href, label] of songs) {
     assert.match(href, /^\/music\/#song-[a-z0-9-]+$/, label);
     await page.goto(base + '/');
@@ -37,5 +37,5 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
   }
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log('PASS live and songs: 3 home song links land on their own song; home and Lives page agree on the next Live at 4 times.');
+  console.log('PASS live and songs: no home song list; home and Lives page agree on the next Live at 4 times.');
 })().catch(e => { console.error(e); process.exit(1); });
