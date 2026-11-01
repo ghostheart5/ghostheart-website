@@ -43,7 +43,7 @@ module.exports = async (page, base) => {
     assert.equal(await field.getAttribute('type'),'email');
     assert.ok(await field.evaluate(e=>e.getBoundingClientRect().top+scrollY)<900,'email field in opening viewport');
     assert.ok(await page.locator('button[type=submit]').evaluate(e=>e.getBoundingClientRect().top+scrollY)<1000,'submit near entry');
-    assert.equal(await page.evaluate(()=>document.querySelector('form').compareDocumentPosition(document.querySelector('.socials')) & Node.DOCUMENT_POSITION_FOLLOWING),4);
+    assert.equal(await page.evaluate(()=>document.querySelector('form').compareDocumentPosition(document.querySelector('#everywhere')) & Node.DOCUMENT_POSITION_FOLLOWING),4);
     await field.focus();await page.keyboard.press('Tab');
     assert.equal(await page.locator('button[type=submit]').evaluate(e=>e===document.activeElement),true);
     assert.equal(await page.locator('button[type=submit]').evaluate(e=>{const r=e.getBoundingClientRect();const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return hit===e||e.contains(hit)}),true);

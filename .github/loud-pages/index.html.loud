@@ -56,6 +56,7 @@ main>section,main>aside{position:relative}
 #home h1 .r{color:var(--blood);text-shadow:0 0 34px rgba(244,72,60,.55)}
 .canon-hero__line{font-size:clamp(18px,1.6vw,22px);font-weight:500;max-width:36ch;margin:22px 0 0;line-height:1.45}
 .canon-hero__note{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,26px);margin:10px 0 0}
+.canon-hero__note a{display:inline-flex;align-items:center;min-height:44px;text-decoration-thickness:1px;text-underline-offset:6px}
 #home .ghx-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 #home .ghx-actions a{display:inline-flex;align-items:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:15px;background:rgba(5,5,5,.55);backdrop-filter:blur(4px)}
 #home .ghx-actions a.primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;padding:14px 28px;box-shadow:6px 6px 0 var(--bone)}
@@ -107,7 +108,7 @@ main>section,main>aside{position:relative}
 .hb-man figure{margin:0;position:relative}
 .hb-man figure img{width:100%;aspect-ratio:1;object-fit:cover;border:3px solid var(--bone);filter:contrast(1.05)}
 .hb-man figure figcaption{position:absolute;right:-10px;bottom:-14px;background:var(--blood);color:var(--void);font-family:var(--hand);font-size:clamp(18px,2vw,24px);padding:8px 14px;transform:rotate(-2deg)}
-#home-story h2{font-size:clamp(46px,7vw,104px);margin:0}
+#home-story h2{font-size:clamp(40px,5.5vw,80px);margin:0}
 #home-story h2 .o{color:transparent;-webkit-text-stroke:2px var(--bone)}
 .hb-man p{max-width:40ch}
 .creed{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;font-family:var(--display);font-size:clamp(26px,3vw,40px);text-transform:uppercase}
@@ -118,7 +119,7 @@ main>section,main>aside{position:relative}
 /* ---------- injected mission board + signal, restyled ---------- */
 #mission-board{padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px);max-width:1280px;margin:0 auto}
 #mission-board .ghx-kicker{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blood);margin:0}
-#mission-board h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:.95;margin:10px 0 14px;max-width:18ch}
+#mission-board h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(32px,4vw,56px);line-height:.95;margin:10px 0 14px;max-width:18ch}
 .mission-board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin-top:22px}
 .mission-board-grid article{border:2px solid var(--line);padding:20px;display:grid;gap:8px;align-content:start;background:var(--coal)}
 .mission-board-grid article:last-child{border-color:var(--blood)}
@@ -132,7 +133,7 @@ main>section,main>aside{position:relative}
 /* ---------- ONE invitation ---------- */
 .rebellion-invite{width:min(1100px,calc(100% - 32px));margin:clamp(20px,3vw,36px) auto clamp(48px,7vw,96px);padding:clamp(24px,4vw,48px);border:3px solid var(--blood);background:radial-gradient(80% 120% at 0% 0%,#2a0309,var(--void) 70%);box-shadow:12px 12px 0 var(--blood)}
 .rebellion-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0}
-.rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:.92;margin:10px 0 12px}
+.rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(36px,4.5vw,64px);line-height:.92;margin:10px 0 12px}
 .rebellion-invite p{max-width:46ch}
 .rebellion-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 .rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);background:transparent;color:var(--bone);font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
@@ -173,7 +174,7 @@ main>section,main>aside{position:relative}
 .hb-shop h2{color:#fff}
 .hb-shop::before{content:"WEAR THE HEART WEAR THE HEART";position:absolute;z-index:-1;left:-2vw;top:50%;translate:0 -50%;font-family:var(--display);font-size:22vw;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,.25);pointer-events:none}
 .hb-shop .hb-wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:end;justify-content:space-between}
-.hb-shop h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(48px,8vw,128px);line-height:.85;margin:0}
+.hb-shop h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.85;margin:0}
 .hb-shop h2 span{color:var(--void)}
 .hb-shop p{margin:12px 0 0;font-size:18px;max-width:40ch}
 .hb-shop .btn{background:var(--void);border-color:var(--void);color:#fff;box-shadow:8px 8px 0 #fff;font-size:17px}
@@ -209,8 +210,8 @@ main>section,main>aside{position:relative}
 <span class="kicker">✶ Music / Stories / The Heart Rebellion</span>
 <h1 class="display">Too <span class="o">Human</span><br/>To Stay <span class="r">Quiet.</span></h1>
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
-<p class="canon-hero__note" id="home-story-explanation">Meet the man behind GhostHeart.</p>
-<div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a><a aria-describedby="home-story-explanation" class="secondary" href="/GhostHeart_Story.html">Enter My World</a></div>
+<p class="canon-hero__note"><a href="#home-story">Meet the man behind GhostHeart.</a></p>
+<div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a></div>
 <div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
 </div>
 </div>
@@ -222,7 +223,6 @@ main>section,main>aside{position:relative}
 <div class="rv">
 <h2 class="display">Before the Heart Wakes<em>.</em></h2>
 <p class="line">An introduction to Wake the Heart Week, November 9 to 15: one week inside The Awakening.</p>
-<p class="jump"><a href="#home-story">Meet the man behind the music ↓</a></p>
 <div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
 </div>
 <a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span><i aria-hidden="true"></i>Wake the Heart Week</span></a>

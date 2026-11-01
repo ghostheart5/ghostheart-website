@@ -56,7 +56,8 @@ const recordingsPreviewFragments = [
     await page.locator('#home-join-email').focus();
     assert.equal(await page.locator('#home-join-email').evaluate(e => e === document.activeElement), true);
     await page.goto(base + '/');
-    await page.locator('#latest a[href="#home-story"]').focus();
+    // Site audit 2026-11-01: the hero note is the one link down to the story section.
+    await page.locator('#home .canon-hero__note a[href="#home-story"]').focus();
     await page.keyboard.press('Enter');
     await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#home-story');

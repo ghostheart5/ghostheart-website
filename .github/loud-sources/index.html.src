@@ -14,7 +14,7 @@
 <script defer="" src="assets/shared/release-site.js"></script>
 <script defer="" src="assets/shared/ghostheart-world.js"></script>
 <script defer="" src="assets/journal/daily-quote.js"></script>
-<link href="assets/vault/vault.css" rel="stylesheet">
+<link href="assets/vault/vault.css" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
 <meta content="GhostHeart" property="og:site_name"/>
 <meta content="GhostHeart | Real Stories. Real People. Same Heart." property="og:title"/>
@@ -23,7 +23,7 @@
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-scars-rooftop-rain.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="/journal/feed.xml" rel="alternate" title="GhostHeart Journal" type="application/rss+xml"/>
-<link href="/assets/home/home-journey.css?v=connection-v1" rel="stylesheet"/><link href="/assets/shared/review-theme.css" rel="stylesheet"/></link><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-mobile-v1.webp" media="(max-width: 700px)" rel="preload" type="image/webp"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-desktop-v1.webp" media="(min-width: 701px)" rel="preload" type="image/webp"/></head>
+<link href="/assets/home/home-journey.css?v=connection-v1" rel="stylesheet"/><link href="/assets/shared/review-theme.css" rel="stylesheet"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-mobile-v1.webp" media="(max-width: 700px)" rel="preload" type="image/webp"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-desktop-v1.webp" media="(min-width: 701px)" rel="preload" type="image/webp"/></head>
 <body class="release-site ghx-site">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="nav ghx-header" data-nav-owner="shared">
@@ -48,10 +48,8 @@
 <p class="ghx-kicker">Be Part of the Mission</p><h2 id="mission-board-title">One heart started the story. Yours can help change it.</h2>
 <p>Music, stories, and the belief that nobody should feel invisible.</p>
 <div class="mission-board-grid">
-<article><h3>Latest chapter</h3><p>Behind the Scars — The Awakening.</p><a href="/GhostHeart_Story.html#behind-the-scars">Read the public beginning</a><a href="/journal/">Explore the stories behind the songs</a></article>
 <article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
-<article><h3>Need a hand?</h3><p>A custom song written from your story, or office and production help.</p><a href="/here-to-help/">I’m here to help</a></article>
-<article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: <span data-live-after="coming soon" data-live-until="2026-11-01T16:45:00Z">Sunday, November 1, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
+<article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p>Next Live: <span data-live-after="coming soon" data-live-until="2026-11-08T16:45:00Z">Sunday, November 8, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section><section class="signup-section" id="join-the-signal"><div class="site-wrap signup-layout"><div><p class="kicker">Stay connected</p><h2>Join the Heart Rebellion</h2><p>New chapters, stories behind the music, confirmed Live announcements, and ways to take part—when there’s something ready to share.</p><p class="connection-optional">Free and optional. Unsubscribe anytime.</p><div class="ghx-actions home-email-action"><a class="secondary" href="/follow/">Keep Me Connected</a></div></div><nav aria-label="GhostHeart social profiles" class="ghx-actions"><a class="primary" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener noreferrer" target="_blank">YouTube</a><a class="secondary" href="https://www.tiktok.com/@ghosthearted1" rel="noopener noreferrer" target="_blank">TikTok</a><a class="secondary" href="https://www.instagram.com/ghostheart131517/" rel="noopener noreferrer" target="_blank">Instagram</a><a class="secondary" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener noreferrer" target="_blank">Spotify</a></nav></div></section><section aria-label="Explore GhostHeart’s Vault" class="home-discovery ghx-wrap">
 <article aria-labelledby="home-vault-title" class="home-discovery-card" id="home-vault"><p class="ghx-kicker">The collection</p><h2 id="home-vault-title">GhostHeart's Vault</h2>
 <p>Find a song, film, Short, or quote that stays with you.</p>
