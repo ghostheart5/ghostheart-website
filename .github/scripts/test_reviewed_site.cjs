@@ -51,10 +51,10 @@ const recordingsPreviewFragments = [
       await link.focus();
       assert.equal(await link.evaluate(element => element.matches(':focus-visible') && parseFloat(getComputedStyle(element).outlineWidth) >= 3), true, 'Visible keyboard focus');
     }
-    await page.locator('.rebellion-invite a[href="/follow/#email-signup-title"]').focus();
-    await page.keyboard.press('Enter');
-    await page.waitForURL(url => url.hash === '#email-signup-title', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
-    assert.equal(new URL(page.url()).hash, '#email-signup-title');
+    // One sign-up per page (2026-11-01): the home email box replaces the bottom "Join by email" button.
+    assert.equal(await page.locator('.rebellion-invite a[href="/follow/#email-signup-title"]').count(), 0);
+    await page.locator('#home-join-email').focus();
+    assert.equal(await page.locator('#home-join-email').evaluate(e => e === document.activeElement), true);
     await page.goto(base + '/');
     await page.locator('#latest a[href="#home-story"]').focus();
     await page.keyboard.press('Enter');

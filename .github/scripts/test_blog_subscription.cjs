@@ -34,7 +34,7 @@ module.exports = async (page, base) => {
       assert.equal(await page.locator('footer a').filter({ hasText: /^(Stay Connected|Follow by email)$/ }).getAttribute('href'), '/follow/');
       const emailLinks = await page.locator('a').filter({ hasText: /^(Stay Connected|Follow by email)(?: ↗)?$/ }).evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
       assert.ok(emailLinks.every(href => href === '/follow/'), 'Direct email links including archive arrow label');
-      assert.equal(await page.locator('.journal-signup-fallback a').getAttribute('href'), '/follow/');
+      assert.equal(await page.locator('.journal-signup-fallback, a.email-entry').count(), 0); // one sign-up per page (2026-11-01)
       const ids = await page.locator('[id]').evaluateAll(nodes => nodes.map(node => node.id));
       assert.equal(ids.length, new Set(ids).size, 'Duplicate IDs');
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, route + ' overflow');
