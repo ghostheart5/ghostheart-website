@@ -82,6 +82,7 @@ main>section,main>aside{position:relative}
 /* ---------- FEATURED ---------- */
 #latest{padding:clamp(56px,9vw,120px) 0 clamp(40px,6vw,80px)}
 .hb-feature{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hb-feature[hidden]{display:none}
 #latest h2{font-size:clamp(48px,7.5vw,112px);margin:0}
 #latest h2 em{color:var(--blood);font-style:normal}
 #latest .line{font-size:clamp(18px,1.5vw,21px);max-width:36ch;margin:18px 0 0}
@@ -225,13 +226,77 @@ main>section,main>aside{position:relative}
 </aside>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
-<div class="hb-feature">
+<div class="hb-feature" data-week-until="2026-11-09T06:00:00Z">
 <div class="rv">
 <h2 class="display">Before the Heart Wakes<em>.</em></h2>
-<p class="line">An introduction to Wake the Heart Week, November 9 to 15: one week inside The Awakening.</p>
+<p class="line">Wake the Heart starts Monday, November 9. Until then: a new song every day, and the last Sunday Live before launch on November 8.</p>
+<div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">What starts Nov 9</a></div>
+</div>
+<a aria-label="Read: what starts Nov 9" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Read: what starts Nov 9 <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-11-09T06:00:00Z" data-week-until="2026-11-16T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">Wake the Heart Week<em>.</em></h2>
+<p class="line">It’s here. November 9 to 15: one week inside The Awakening.</p>
 <div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
 </div>
-<a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Read: Wake the Heart Week <b aria-hidden="true">→</b></span></a>
+<a aria-label="Read: Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Read: Wake the Heart Week <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-11-16T06:00:00Z" data-week-until="2026-11-23T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">The Parts You Hide<em>.</em></h2>
+<p class="line">This week in The Awakening, November 16 to 22. Featured song: You Can’t Change Us.</p>
+<div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906">Hear You Can’t Change Us</a></div>
+</div>
+<a aria-label="Listen: You Can’t Change Us" class="hb-poster rv" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Listen: You Can’t Change Us <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-11-23T06:00:00Z" data-week-until="2026-11-30T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">What Saved You<em>.</em></h2>
+<p class="line">This week in The Awakening, November 23 to 29.</p>
+<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
+</div>
+<a aria-label="See this Sunday’s Live" class="hb-poster rv" href="/live/"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>See this Sunday’s Live <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-11-30T06:00:00Z" data-week-until="2026-12-07T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">Letters to My Younger Self<em>.</em></h2>
+<p class="line">This week in The Awakening, November 30 to December 6.</p>
+<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
+</div>
+<a aria-label="See this Sunday’s Live" class="hb-poster rv" href="/live/"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>See this Sunday’s Live <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-12-07T06:00:00Z" data-week-until="2026-12-14T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">Still Here<em>.</em></h2>
+<p class="line">This week in The Awakening, December 7 to 13. Featured song: Rebellion.</p>
+<div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-rebellion">Hear Rebellion</a></div>
+</div>
+<a aria-label="Listen: Rebellion" class="hb-poster rv" href="/GhostHeart_Songs.html#song-rebellion"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Listen: Rebellion <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-12-14T06:00:00Z" data-week-until="2026-12-21T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">A Kinder Tomorrow<em>.</em></h2>
+<p class="line">This week in The Awakening, December 14 to 20.</p>
+<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
+</div>
+<a aria-label="See this Sunday’s Live" class="hb-poster rv" href="/live/"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>See this Sunday’s Live <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-12-21T06:00:00Z" data-week-until="2026-12-28T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">Love Makes Me Braver<em>.</em></h2>
+<p class="line">This week in The Awakening, December 21 to 27.</p>
+<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
+</div>
+<a aria-label="See this Sunday’s Live" class="hb-poster rv" href="/live/"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>See this Sunday’s Live <b aria-hidden="true">→</b></span></a>
+</div>
+<div class="hb-feature" data-week-from="2026-12-28T06:00:00Z" hidden>
+<div class="rv">
+<h2 class="display">Wrapping The Awakening<em>.</em></h2>
+<p class="line">This week in The Awakening, December 28 to January 3.</p>
+<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
+</div>
+<a aria-label="See this Sunday’s Live" class="hb-poster rv" href="/live/"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>See this Sunday’s Live <b aria-hidden="true">→</b></span></a>
 </div>
 <ul class="tracks rv">
 <li><a href="/music/#song-im-not"><span>02</span>I'm Not<span aria-hidden="true">▶</span></a></li>

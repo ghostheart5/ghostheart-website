@@ -208,7 +208,7 @@ assert vault.select_one("#daily-line [data-daily-quote]")
 assert not home.select_one("#home-vault, #everywhere, .manifesto")
 assert not home.select('#home .kicker, #latest .label, #home-story .label')  # Owner 2026-11-01: no section label strips on the home page
 assert home.select_one('#latest .ctas a')['href'] == '/journal/wake-the-heart-week.html'
-assert home.select_one('#latest .ctas a').get_text() == 'About Wake the Heart Week'
+assert home.select_one('#latest .ctas a').get_text() == 'What starts Nov 9'  # Owner 2026-11-01: Before the Heart Wakes runs until Nov 8
 assert not home.select_one('#latest audio')
 assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
 assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'

@@ -6,6 +6,13 @@
     var until = Date.parse(el.getAttribute(attr));
     return !isNaN(until) && now > until;
   }
+  // Home feature: one block per week. Show the block whose dates hold today; hide the rest.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-week-from], [data-week-until]'), function (el) {
+    var from = Date.parse(el.getAttribute('data-week-from'));
+    var off = (!isNaN(from) && now < from) || passed(el, 'data-week-until');
+    el.hidden = off;
+    el.style.display = off ? 'none' : '';
+  });
   // Song of the week: show the first featured song whose week hasn't ended.
   Array.prototype.forEach.call(document.querySelectorAll('[data-sotw]'), function (box) {
     var items = box.querySelectorAll('[data-sotw-item]');

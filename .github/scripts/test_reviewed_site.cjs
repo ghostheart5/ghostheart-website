@@ -61,10 +61,10 @@ const recordingsPreviewFragments = [
     await page.keyboard.press('Enter');
     await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
     assert.equal(new URL(page.url()).hash, '#home-story');
-    const preview = page.locator('#latest .ctas a');
+    // One feature block per week (owner 2026-11-01); exactly one shows on any day. Dates: test_home_weeks.cjs.
+    const preview = page.locator('#latest .hb-feature:not([hidden]) .ctas a');
     assert.equal(await preview.count(), 1, 'One featured preview CTA');
-    assert.equal((await preview.textContent()).trim(), 'About Wake the Heart Week');
-    assert.equal(await preview.getAttribute('href'), '/journal/wake-the-heart-week.html');
+    assert.ok((await preview.getAttribute('href')).startsWith('/'));
     assert.equal(await page.locator('#home .kicker, #latest .label, #home-story .label').count(), 0); // Owner 2026-11-01: no section label strips on the home page
     assert.equal(await page.locator('#latest audio, #latest source').count(), 0, 'Featured preview does not play the previous song');
     for (const path of paths) {
