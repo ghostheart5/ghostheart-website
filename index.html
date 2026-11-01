@@ -20,6 +20,7 @@
 <title>GhostHeart | Too Human to Stay Quiet.</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="/assets/home/rebellion.css" rel="stylesheet"/>
 <link href="/assets/loud/loud.css" rel="stylesheet"/>
@@ -210,7 +211,7 @@ main>section,main>aside{position:relative}
 <body>
 <header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a aria-current="page" aria-label="GhostHeart home" class="ghx-brand" href="index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="music/">Music</a><a href="GhostHeart_Story.html">Enter My World</a><a href="here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="music/">Music</a><a href="GhostHeart_Story.html">Enter My World</a><a href="here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="GhostHeart_Resources.html">Find Support</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
@@ -233,6 +234,12 @@ main>section,main>aside{position:relative}
 </div>
 </div>
 </section>
+<aside aria-labelledby="check-back-in-title" class="check-back-in" hidden="" id="check-back-in">
+<h2 id="check-back-in-title">Check back in.</h2>
+<p class="ck-note">Only you see this. It’s saved in this browser and never sent anywhere.</p>
+<ul data-checkin-list=""></ul>
+<button data-checkin-forget="" type="button">Forget everything on this device</button>
+</aside>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
 <div class="hb-feature">
@@ -301,5 +308,6 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
 <script defer="" src="/assets/shared/next-live.js"></script>
+<script defer src="/assets/shared/check-back-in.js"></script>
 </body>
 </html>

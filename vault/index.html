@@ -18,6 +18,7 @@
 <title>GhostHeart's Vault | GhostHeart</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/home/rebellion.css"/>
 <link href="/assets/loud/loud.css" rel="stylesheet"/>
@@ -161,12 +162,36 @@
 .manifesto blockquote{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6.5vw,104px);line-height:.92;margin:0 auto;max-width:16ch}
 .manifesto blockquote em{color:var(--blood);font-style:normal}
 .manifesto .sig{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,28px);margin-top:20px}
+/* FOR HOW YOU FEEL (site audit 2026-11-01): one pick for a chosen feeling and time. */
+.for-you{padding:clamp(40px,6vw,80px) 0;border-top:6px solid var(--blood,#f4483c);background:var(--coal)}
+.for-you[hidden],.fy-result[hidden]{display:none!important}
+#for-you-title{font-size:clamp(44px,6vw,88px);margin:0}
+.fy-lead{max-width:46ch;margin:12px 0 22px}
+.fy-form{display:grid;gap:18px}
+.fy-set{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.fy-set legend{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ash,#a39e98);margin-bottom:10px;padding:0}
+.fy-choice{position:relative;display:inline-flex;flex-direction:column;justify-content:center;min-height:48px;padding:8px 16px;border:2px solid var(--line);cursor:pointer;font-weight:700}
+.fy-choice small{font-weight:400;font-size:13px;color:var(--ash,#a39e98)}
+.fy-choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.fy-choice:has(input:checked){border-color:var(--blood,#f4483c);background:#2a0309}
+.fy-choice:has(input:focus-visible){outline:3px solid #fff;outline-offset:3px}
+.fy-go,.fy-again,.fy-open,.gh-save{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:2px solid var(--bone,#f4efe6);background:transparent;color:var(--bone,#f4efe6)}
+.fy-go,.fy-open{background:var(--blood,#f4483c);border-color:var(--blood,#f4483c);color:#050505;justify-self:start}
+.fy-result{margin-top:24px;padding:clamp(18px,3vw,28px);border:2px solid var(--blood,#f4483c);max-width:760px}
+.fy-kind,.fy-honest{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ash,#a39e98)}
+.fy-honest{letter-spacing:0;text-transform:none;font-size:15px}
+.fy-title{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(28px,3.4vw,44px);line-height:1;margin:0 0 10px}
+.fy-why{margin:0 0 16px;max-width:52ch}
+.fy-actions{display:flex;flex-wrap:wrap;gap:10px}
+.vault-item .gh-save{min-height:44px;padding:6px 14px;font-size:13px;margin-top:10px;justify-self:start;align-self:start}
+:where(.fy-go,.fy-again,.fy-open,.gh-save):focus-visible{outline:3px solid #fff;outline-offset:3px}
+.gh-save[aria-pressed="true"]{border-color:var(--blood,#f4483c);color:var(--blood,#f4483c)}
 </style>
 </head>
 <body>
 <header class="nav ghx-header" data-nav-owner="shared">
 <div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">I’m Here to Help</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
+<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
 <button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
 <a class="ghx-help-link" href="/GhostHeart_Resources.html">Find Support</a></div>
 <nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
@@ -176,6 +201,14 @@
 <noscript id="no-script-navigation"><nav aria-label="Navigation without JavaScript" class="l-nojs-nav"><a href="/GhostHeart_Story.html">Story</a><a href="/music/index.html">Music &amp; films</a><a href="/follow/index.html">Follow by email</a><a href="/GhostHeart_Resources.html">Find support</a></nav></noscript><main class="vault-page loud-vault" id="main-content">
 <div class="vhero-wrap"><div class="giant display">VAULT</div><section class="vault-hero ghx-wrap"><p class="ghx-kicker">A selected collection</p><h1>GhostHeart’s Vault.</h1><p>Songs, films, Shorts, and quotes already shared. Start with a few, or browse Films for more public videos.</p>
 <div class="vault-hero-links"><a class="vault-films-link" href="/GhostHeart_Videos.html">Browse Films</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/GhostHeart_Resources.html">Find Support</a></div></section></div>
+<section class="for-you" id="for-you" aria-labelledby="for-you-title" hidden>
+<div class="hb-wrap">
+<h2 class="display" id="for-you-title">For how you feel.</h2>
+<p class="fy-lead">Pick a feeling and how much time you have. You get one piece and the reason it fits.</p>
+<form class="fy-form" data-for-you-form><button class="fy-go" type="submit">Find one</button></form>
+<div class="fy-result" data-for-you-result aria-live="polite" hidden></div>
+</div>
+</section>
 <section class="vault-library ghx-wrap" aria-label="Explore the Vault"><div class="vault-controls"><label for="vault-search">Find a title or theme</label><div class="vault-search-row"><input id="vault-search" type="search" placeholder="Search the Vault" autocomplete="off"/><button id="vault-clear" type="button">Clear</button></div></div>
 <div class="vault-filters" aria-label="Filter the Vault"><button type="button" data-vault-filter="featured" aria-pressed="true">Featured</button><button type="button" data-vault-filter="songs" aria-pressed="false">Songs</button><button type="button" data-vault-filter="videos" aria-pressed="false">Videos</button><button type="button" data-vault-filter="shorts" aria-pressed="false">Shorts</button><button type="button" data-vault-filter="quotes" aria-pressed="false">Quotes</button><button type="button" data-vault-filter="all" aria-pressed="false">All</button></div>
 <p id="vault-count" class="vault-count" role="status" aria-live="polite">3 featured selections shown.</p>
@@ -263,5 +296,8 @@
 <script src="/assets/home/rebellion.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
+<script src="/assets/data/for-you.js"></script>
+<script src="/assets/vault/for-you.js"></script>
+<script defer src="/assets/shared/check-back-in.js"></script>
 </body>
 </html>

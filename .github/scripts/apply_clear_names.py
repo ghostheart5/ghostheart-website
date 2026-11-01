@@ -13,6 +13,8 @@ names at one page, or one name at two different pages, now agree:
                                             an "Enter My World" link to a
                                             different page)
   Explore menu "Merch" goes; Merch stays in the top bar on every screen size.
+  "I'm Here to Help"  -> "Work with GhostHeart" (owner yes 2026-11-01; the
+                                            custom-song and services page)
 
 Link targets do not change. Idempotent.
 """
@@ -26,6 +28,8 @@ RULES = [
     (re.compile(r'(<a\b[^>]*' + RESOURCES + r'[^>]*>(?:<span class="n">\d+</span>)?<div><h3>)Help &amp;<br/?>Resources</h3>'), r'\1Find<br/>Support</h3>'),
     (re.compile(r'(<a\b[^>]*href="(?:/|(?:\.\./)*)vault/"[^>]*>)GhostHeart\'s Vault</a>'), r'\1The Vault</a>'),
     (re.compile(r'(<a\b[^>]*href="(?:/|(?:\.\./)*)live/"[^>]*>)Live</a>'), r'\1Lives</a>'),
+    (re.compile(r'(<a\b[^>]*href="(?:/|(?:\.\./)*)here-to-help/[^"]*"[^>]*>)I’m Here to Help</a>'), r'\1Work with GhostHeart</a>'),
+    (re.compile(r'(<title>|content=")I\'m Here to Help \| GhostHeart'), r'\1Work with GhostHeart'),
 ]
 MENU = re.compile(r'(<nav\b[^>]*id="gateway-menu"[^>]*>)(.*?)(</nav>)', re.S)
 MENU_MERCH = re.compile(r'<a\b[^>]*href="https://ghostheart-studios-shop\.fourthwall\.com"[^>]*>Merch</a>')
@@ -38,7 +42,7 @@ def fix_menu(match):
 
 changed = 0
 for path in ROOT.rglob('*.html'):
-    if any(part in {'.github', 'node_modules', '.git'} for part in path.relative_to(ROOT).parts):
+    if any(part in {'.github', '.claude', 'node_modules', '.git'} for part in path.relative_to(ROOT).parts):
         continue
     text = path.read_text(encoding='utf-8')
     fixed = MENU.sub(fix_menu, text, count=1)

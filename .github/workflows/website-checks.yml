@@ -50,3 +50,4 @@ jobs:
           node .github/scripts/test_home_rebellion.cjs
           node .github/scripts/test_help_orders.cjs
           node .github/scripts/test_live_and_songs.cjs
+          node .github/scripts/test_check_back_in.cjs

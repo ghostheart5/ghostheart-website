@@ -19,8 +19,8 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
     await Promise.all([page.waitForURL('**' + href), page.locator(`#latest .tracks a[href="${href}"]`).click()]);
     const song = page.locator(href.slice(href.indexOf('#')));
     assert.equal(await song.count(), 1, href + ' exists');
-    assert.ok(label.includes(await song.locator('button').getAttribute('data-title')), label + ' matches the Music page title');
-    await page.waitForFunction(id => document.activeElement === document.querySelector(id + ' button'), href.slice(href.indexOf('#')), {timeout: 5000});
+    assert.ok(label.includes(await song.locator('button[data-title]').getAttribute('data-title')), label + ' matches the Music page title');
+    await page.waitForFunction(id => document.activeElement === document.querySelector(id + ' button[data-title]'), href.slice(href.indexOf('#')), {timeout: 5000});
     assert.ok(await song.evaluate(e => { const r = e.getBoundingClientRect(); return r.top >= 0 && r.top < innerHeight; }), href + ' in view');
   }
 
