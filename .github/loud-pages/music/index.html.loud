@@ -64,6 +64,9 @@ html body :is(.films,.vault) .label .num{font-size:clamp(26px,3vw,38px)}
 .tracks button:hover .no,.tracks button:hover .go{color:var(--void)}
 .tracks button.on{background:var(--blood);color:var(--void);padding-left:16px}
 .tracks button.on .no,.tracks button.on .go{color:var(--void)}
+/* Song links from other pages (/music/#song-she-got-to-me) land on that song, marked, one tap from playing. */
+.tracks li{scroll-margin-top:calc(var(--hdr,88px) + 24px)}
+.tracks li:target button{box-shadow:inset 6px 0 0 var(--blood);padding-left:16px}
 .tracks button.on .go{font-size:0}
 .tracks button.on .go::before{content:"■ PLAYING";font-size:clamp(13px,2.1vw,28px)}
 
@@ -162,23 +165,23 @@ html body .vault .door p{display:none}
   <div class="album">
     <div class="album-head"><h2 class="display rv">GhostHeart's<br><span class="r">Awakening.</span></h2><button class="playall" data-playall="awakening">▶ Play all 8</button></div>
     <ul class="tracks" data-album="awakening">
-      <li><button data-src="awakening-01-cruel.mp3" data-title="Cruel"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-02-im-not-staying-silent.mp3" data-title="I'm Not"><span class="no">02</span>I'm Not<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-03-papa-didnt-raise-no-fool.mp3" data-title="Papa Didn't Raise a Fool"><span class="no">03</span>Papa Didn't Raise a Fool<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-04-she-got-to-me.mp3" data-title="She Got to Me"><span class="no">04</span>She Got to Me<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-05-this-is-ghostheart.mp3" data-title="This Is GhostHeart"><span class="no">05</span>This Is GhostHeart<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-06-ghosthearts-oath.mp3" data-title="GhostHeart's Oath"><span class="no">06</span>GhostHeart's Oath<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-07-you-can-be-ghostheart-too.mp3" data-title="You Can Be GhostHeart Too"><span class="no">07</span>You Can Be GhostHeart Too<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="awakening-08-one-heart-many-voices.mp3" data-title="One Heart Many Voices"><span class="no">08</span>One Heart Many Voices<span class="go">▶ PLAY</span></button></li>
+      <li id="song-cruel"><button data-src="awakening-01-cruel.mp3" data-title="Cruel"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
+      <li id="song-im-not"><button data-src="awakening-02-im-not-staying-silent.mp3" data-title="I'm Not"><span class="no">02</span>I'm Not<span class="go">▶ PLAY</span></button></li>
+      <li id="song-papa-didnt-raise-a-fool"><button data-src="awakening-03-papa-didnt-raise-no-fool.mp3" data-title="Papa Didn't Raise a Fool"><span class="no">03</span>Papa Didn't Raise a Fool<span class="go">▶ PLAY</span></button></li>
+      <li id="song-she-got-to-me"><button data-src="awakening-04-she-got-to-me.mp3" data-title="She Got to Me"><span class="no">04</span>She Got to Me<span class="go">▶ PLAY</span></button></li>
+      <li id="song-this-is-ghostheart"><button data-src="awakening-05-this-is-ghostheart.mp3" data-title="This Is GhostHeart"><span class="no">05</span>This Is GhostHeart<span class="go">▶ PLAY</span></button></li>
+      <li id="song-ghosthearts-oath"><button data-src="awakening-06-ghosthearts-oath.mp3" data-title="GhostHeart's Oath"><span class="no">06</span>GhostHeart's Oath<span class="go">▶ PLAY</span></button></li>
+      <li id="song-you-can-be-ghostheart-too"><button data-src="awakening-07-you-can-be-ghostheart-too.mp3" data-title="You Can Be GhostHeart Too"><span class="no">07</span>You Can Be GhostHeart Too<span class="go">▶ PLAY</span></button></li>
+      <li id="song-one-heart-many-voices"><button data-src="awakening-08-one-heart-many-voices.mp3" data-title="One Heart Many Voices"><span class="no">08</span>One Heart Many Voices<span class="go">▶ PLAY</span></button></li>
     </ul>
   </div>
 
   <div class="album">
     <div class="album-head"><h2 class="display rv">You're<br><span class="r">Not God.</span></h2><button class="playall" data-playall="notgod">▶ Play all 3</button></div>
     <ul class="tracks" data-album="notgod">
-      <li><button data-src="youre-not-god-01-i-wont-pretend.mp3" data-title="I Won't Pretend to Speak for You"><span class="no">01</span>I Won't Pretend to Speak for You<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="youre-not-god-02-hey-preacher-man.mp3" data-title="Hey Preacher Man"><span class="no">02</span>Hey Preacher Man<span class="go">▶ PLAY</span></button></li>
-      <li><button data-src="youre-not-god-03-that-aint-holy.mp3" data-title="That Ain't Holy"><span class="no">03</span>That Ain't Holy<span class="go">▶ PLAY</span></button></li>
+      <li id="song-i-wont-pretend-to-speak-for-you"><button data-src="youre-not-god-01-i-wont-pretend.mp3" data-title="I Won't Pretend to Speak for You"><span class="no">01</span>I Won't Pretend to Speak for You<span class="go">▶ PLAY</span></button></li>
+      <li id="song-hey-preacher-man"><button data-src="youre-not-god-02-hey-preacher-man.mp3" data-title="Hey Preacher Man"><span class="no">02</span>Hey Preacher Man<span class="go">▶ PLAY</span></button></li>
+      <li id="song-that-aint-holy"><button data-src="youre-not-god-03-that-aint-holy.mp3" data-title="That Ain't Holy"><span class="no">03</span>That Ain't Holy<span class="go">▶ PLAY</span></button></li>
     </ul>
   </div>
 </section>
@@ -257,6 +260,8 @@ aud.addEventListener('timeupdate',()=>{document.getElementById('prog').style.wid
 document.getElementById('bar').addEventListener('click',e=>{if(!aud.duration)return;const r=e.currentTarget.getBoundingClientRect();aud.currentTime=(e.clientX-r.left)/r.width*aud.duration});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// Arriving on a song link: put keyboard focus on that song's play button (after the browser's own jump to it, which clears focus).
+{const song=document.getElementById(decodeURIComponent(location.hash.slice(1)));const play=song&&song.matches('.tracks li')&&song.querySelector('button');if(play)addEventListener('load',()=>setTimeout(()=>play.focus({preventScroll:true})));}
 </script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>

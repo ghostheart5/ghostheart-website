@@ -49,3 +49,4 @@ jobs:
           node .github/scripts/test_reviewed_site.cjs
           node .github/scripts/test_home_rebellion.cjs
           node .github/scripts/test_help_orders.cjs
+          node .github/scripts/test_live_and_songs.cjs
