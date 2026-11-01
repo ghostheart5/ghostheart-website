@@ -18,7 +18,7 @@ def apply():
         new = old
         if path.relative_to(ROOT).as_posix() == 'live/index.html':
             pending = '''<main id="main-content"><div class="ghx-wrap readings-page">
-<p class="ghx-kicker">GhostHeart / Lives &amp; Readings</p><h1>Lives &amp; Readings.</h1>
+<p class="ghx-kicker">GhostHeart / Lives</p><h1>Lives.</h1>
 <section class="readings-event" aria-labelledby="live-status-title"><h2 id="live-status-title">Next Live: <span data-live-until="2026-11-01T16:45:00Z" data-live-after="coming soon">Sunday, November 1, 2026, 10:00 a.m. Central</span>.</h2>
 <p>GhostHeart Lives are on TikTok: <a href="https://www.tiktok.com/@ghosthearted1">watch at @ghosthearted1</a>.</p><p>Lives start at 10:00 a.m. Central.</p><p><a href="/follow/">Join the Heart Rebellion</a> to hear about the next one.</p></section>
 <section class="readings-event" aria-labelledby="promise-title"><p class="ghx-kicker">Read now</p><h2 id="promise-title">My Promise</h2><p>A promise to keep learning, listening, and choosing care.</p><a href="/live/my-promise.html">Read My Promise</a></section>
@@ -29,7 +29,7 @@ def apply():
 <p><a href="/GhostHeart_Story.html">Enter My World</a> or <a href="/journal/">read the Blog</a>.</p>
 </div></main>'''
             new = re.sub(r'<main\b.*?</main>', pending if PATH_VISIBLE else hidden, new, count=1, flags=re.S)
-            title = 'Lives &amp; Readings' if PATH_VISIBLE else 'Live sessions'
+            title = 'Lives' if PATH_VISIBLE else 'Live sessions'
             description = 'GhostHeart readings and Live announcements. Next Live: Sunday, November 1, 2026, 10:00 a.m. Central, on TikTok.' if PATH_VISIBLE else 'No Live sessions are currently scheduled.'
             new = new.replace('<title>Readings | GhostHeart</title>', f'<title>{title} | GhostHeart</title>')
             new = new.replace('Readings and Sunday Live updates from GhostHeart.', description)

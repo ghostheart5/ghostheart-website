@@ -53,7 +53,7 @@ def build():
 <article><h3>Latest chapter</h3><p>Behind the Scars — The Awakening.</p><a href="/GhostHeart_Story.html#behind-the-scars">Read the public beginning</a><a href="/journal/">Explore the stories behind the songs</a></article>
 <article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
 <article><h3>Need a hand?</h3><p>A custom song written from your story, or office and production help.</p><a href="/here-to-help/">I’m here to help</a></article>
-<article><h3>Coming next</h3><p>{escape(CONNECTION['campaign'])}</p><p>Next Live: <span data-live-until="2026-11-01T16:45:00Z" data-live-after="coming soon">Sunday, November 1, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives &amp; Readings</a></article>
+<article><h3>Coming next</h3><p>{escape(CONNECTION['campaign'])}</p><p>Next Live: <span data-live-until="2026-11-01T16:45:00Z" data-live-after="coming soon">Sunday, November 1, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.</p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
 </div><p class="mission-participation">{escape(CONNECTION['participation'])}</p></section>''', 'html.parser').section
     discovery = main.select_one('.home-discovery')
     quote = main.select_one('[data-daily-quote]')

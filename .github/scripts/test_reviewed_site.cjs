@@ -33,7 +33,7 @@ const recordingsPreviewFragments = [
   page.on('pageerror', error => errors.push(String(error)));
   const paths = [
     '/', '/GhostHeart_Story.html', '/woman-behind-the-scenes/',
-    '/albums/index.html', '/vault/', '/live/index.html', '/live/my-promise.html',
+    '/albums/index.html', '/vault/', '/live/index.html',
     '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/journal/index.html'
   ];
   for (const width of [390, 1440]) {
