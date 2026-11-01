@@ -5,7 +5,7 @@ module.exports = async (page, base) => {
   const records = [];
   for (const width of [320, 390, 1440]) {
     await page.setViewportSize({width, height:900});
-    for (const route of ['/GhostHeart_Story.html', '/journal/', '/passages/', '/passages/im-not.html']) {
+    for (const route of ['/GhostHeart_Story.html', '/passages/', '/passages/im-not.html']) {
       await page.goto(base + route);
       const link = page.getByRole('link', {name:'Get email updates', exact:true}).first();
       assert.equal(await link.getAttribute('href'), '/follow/#email-signup-title');

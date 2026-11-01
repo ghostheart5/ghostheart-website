@@ -20,7 +20,8 @@ module.exports = async (page, base) => {
     assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
     assert.equal(await page.locator('section#join-the-signal').count(), 0);
     assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
-    assert.match(await page.locator('.rebellion-invite').innerText(), /Free and optional/);
+    // One sign-up per page (2026-11-01): the email note now sits with the hero email box.
+    assert.match(await page.locator('#home-join').innerText(), /Free\. Unsubscribe anytime/);
     // The Vault's daily line moved off the home page (owner request 2026-10-30); the invitation now links to /vault/.
     assert.equal(await page.locator('.rebellion-invite a[href="/vault/"]').count(), 1);
     await page.locator('#mission-board a[href="/live/"]').focus();
