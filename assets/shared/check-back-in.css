@@ -1,0 +1,26 @@
+/* "Check back in" (site audit 2026-11-01): Save buttons, pick-up bars and the home panel. */
+.gh-save{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 14px;border:2px solid rgba(244,239,230,.4);background:transparent;color:#f4efe6;font:700 13px "Space Grotesk",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.gh-save[aria-pressed="true"]{border-color:#f4483c;color:#ff6b5e}
+.gh-save:hover{border-color:#f4efe6}
+.gh-save:focus-visible,.gh-resume button:focus-visible,.gh-remove:focus-visible,[data-checkin-forget]:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.tracks li[id^="song-"]{display:flex;align-items:stretch;gap:10px}
+.tracks li[id^="song-"]>button[data-title]{flex:1 1 auto;min-width:0}
+/* The Music page styles every ".tracks button" as a big track row; the Save button opts out. */
+html body .tracks li[id^="song-"]>button.gh-save{align-self:center;flex:0 0 auto;width:auto!important;display:inline-flex!important;grid-template-columns:none!important;font:700 12px "Space Grotesk",system-ui,sans-serif!important;letter-spacing:.06em!important;padding:6px 10px!important;border:2px solid rgba(244,239,230,.4)!important;background:transparent!important;color:#f4efe6!important}
+html body .tracks li[id^="song-"]>button.gh-save[aria-pressed="true"]{border-color:#f4483c!important;color:#ff6b5e!important}
+.gh-resume{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 18px;padding:12px 16px;border:2px solid #f4483c;background:#140204;color:#f4efe6;font:500 16px/1.4 "Space Grotesk",system-ui,sans-serif}
+.gh-resume p{margin:0;flex:1 1 220px}
+.gh-resume button{min-height:44px;padding:8px 16px;border:2px solid #f4efe6;background:transparent;color:#f4efe6;font:700 14px "Space Grotesk",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.gh-resume .gh-resume-go{background:#f4483c;border-color:#f4483c;color:#050505}
+.gh-resume .gh-resume-close{min-width:44px;padding:8px}
+.gh-resume-read{width:min(760px,calc(100% - 32px));margin:calc(var(--hdr,88px) + 12px) auto 0}
+.check-back-in{width:min(1100px,calc(100% - 32px));margin:clamp(24px,4vw,48px) auto;padding:clamp(18px,3vw,32px);border:2px solid rgba(244,239,230,.16);background:#0e0b0b}
+.check-back-in[hidden]{display:none}
+.check-back-in h2{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,4vw,52px);line-height:.95;margin:0 0 6px}
+.check-back-in .ck-note{margin:0 0 16px;color:#a39e98;font-size:15px}
+.check-back-in ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check-back-in li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 12px;padding:10px 14px;border:1px solid rgba(244,239,230,.16)}
+.check-back-in li small{grid-column:1;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff6b5e}
+.check-back-in li a{grid-column:1;display:inline-flex;align-items:center;min-height:40px;font-weight:700;color:#f4efe6;text-underline-offset:5px}
+.check-back-in .gh-remove{grid-column:2;grid-row:1/span 2;min-width:44px;min-height:44px;border:0;background:none;color:#a39e98;font-size:16px;cursor:pointer}
+.check-back-in [data-checkin-forget]{margin-top:14px;min-height:44px;padding:6px 0;border:0;background:none;color:#a39e98;font:500 14px "Space Grotesk",system-ui,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}

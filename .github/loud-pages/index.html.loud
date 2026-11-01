@@ -217,6 +217,12 @@ main>section,main>aside{position:relative}
 </div>
 </div>
 </section>
+<aside class="check-back-in" id="check-back-in" aria-labelledby="check-back-in-title" hidden>
+<h2 id="check-back-in-title">Check back in.</h2>
+<p class="ck-note">Only you see this. It’s saved in this browser and never sent anywhere.</p>
+<ul data-checkin-list></ul>
+<button type="button" data-checkin-forget>Forget everything on this device</button>
+</aside>
 <section class="music" id="latest"><span id="music"></span>
 <div class="hb-wrap">
 <div class="hb-feature">
