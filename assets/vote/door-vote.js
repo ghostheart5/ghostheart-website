@@ -12,6 +12,7 @@
   var status = box.querySelector('[data-dv-status]');
   var count = box.querySelector('[data-dv-count]');
   var mode = 'loading';
+  var busy = false;
   var mine = store('dv-pick-' + poll);
 
   function store(k, v) {
@@ -45,11 +46,11 @@
       d.querySelector('.dv-bar i').style.width = p + '%';
     });
     if (count) count.textContent = total + (total === 1 ? ' vote' : ' votes');
-    return { pa: pa, pb: pb, total: total };
+    return { a: a, b: b, pa: pa, pb: pb, total: total };
   }
   function lead(r) {
-    if (r.pa === r.pb) return 'It&rsquo;s dead even.';
-    return '<em>' + (r.pa > r.pb ? 'Door I' : 'Door II') + '</em> leads with ' + Math.max(r.pa, r.pb) + '%.';
+    if (r.a === r.b) return 'It&rsquo;s dead even.';
+    return '<em>' + (r.a > r.b ? 'Door I' : 'Door II') + '</em> leads with ' + (r.a > r.b ? r.pa : r.pb) + '%.';
   }
 
   call('door_vote_totals', { p_poll: poll }).then(function (t) {
@@ -58,8 +59,13 @@
       mode = 'closed';
       box.classList.add('voted');
       var r = show(t);
-      press(r.pa >= r.pb ? 'a' : 'b');
-      status.innerHTML = 'Voting is closed. ' + (r.total ? '<em>' + (r.pa >= r.pb ? 'Door I' : 'Door II') + '</em> won with ' + Math.max(r.pa, r.pb) + '%.' : '');
+      if (r.a === r.b) {
+        press('');
+        status.innerHTML = 'Voting is closed. ' + (r.total ? 'It ended in a tie.' : '');
+      } else {
+        press(r.a > r.b ? 'a' : 'b');
+        status.innerHTML = 'Voting is closed. <em>' + (r.a > r.b ? 'Door I' : 'Door II') + '</em> won with ' + (r.a > r.b ? r.pa : r.pb) + '%.';
+      }
       doors.forEach(function (d) { d.setAttribute('aria-disabled', 'true'); });
       return;
     }
@@ -78,13 +84,15 @@
   doors.forEach(function (d) {
     d.addEventListener('click', function () {
       var p = d.getAttribute('data-pick');
-      if (mode === 'closed' || mode === 'loading') return;
+      if (mode === 'closed' || mode === 'loading' || busy) return;
       press(p);
       if (mode === 'soon') {
         box.classList.add('soon');
         status.innerHTML = 'You picked <em>' + name(p) + '</em>. Voting opens soon. Get a reminder when it does.';
         return;
       }
+      busy = true;
+      box.setAttribute('aria-busy', 'true');
       status.textContent = 'Counting your vote…';
       call('cast_door_vote', { p_poll: poll, p_pick: p, p_voter: voter() }).then(function (t) {
         store('dv-pick-' + poll, p); mine = p;
@@ -92,6 +100,10 @@
         status.innerHTML = 'Your vote is in for <em>' + name(p) + '</em>. ' + lead(show(t)) + ' Changed your mind? Tap the other door.';
       }).catch(function () {
         status.textContent = 'That didn’t go through. Please try again in a minute.';
+        press(mine === 'a' || mine === 'b' ? mine : '');
+      }).then(function () {
+        busy = false;
+        box.removeAttribute('aria-busy');
       });
     });
   });
