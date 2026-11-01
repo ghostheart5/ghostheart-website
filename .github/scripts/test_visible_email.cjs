@@ -28,7 +28,9 @@ module.exports = async (page, base) => {
     assert.equal(await homeForm.getAttribute('target'), null);
     assert.match(await homeForm.getAttribute('action'), /^https:\/\/myghostheart\.us22\.list-manage\.com\/subscribe\/post\?/);
     const homeTop = await page.locator('#home-join-email').evaluate(e=>e.getBoundingClientRect().top+scrollY);
-    assert.ok(homeTop < 1700, 'home email box buried: ' + homeTop);
+    // Dom 2026-11-01: not at the top of home; it lives in the Join the Heart Rebellion card.
+    assert.equal(await page.locator('.rebellion-invite form#home-join').count(), 1);
+    assert.equal(await page.locator('#home form').count(), 0);
     assert.ok((await page.locator('#home-join button[type=submit]').boundingBox()).height >= 44);
     await page.goto(base + '/follow/');
     const field=page.locator('input[name=EMAIL]');

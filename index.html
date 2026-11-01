@@ -188,7 +188,9 @@ main>section,main>aside{position:relative}
 .hb-shop .btn:hover{background:#fff;color:var(--void)}
 /* COMPACT PASS 2026-10-18 — kept from the published compact homepage: comfortable reading sizes on small screens. */
 @media(max-width:700px){body{font-size:17px}.canon-hero__line{font-size:18px}#mission-board article p{font-size:16px}}
-/* EASY SIGNUP 2026-10-31 (Dom: nobody was subscribing) — email box right in the home hero, same tab. */
+/* EASY SIGNUP — email box (moved 2026-11-01 from the hero into the Join the Heart Rebellion card, Dom's ask). */
+.rebellion-invite .hb-join{margin:18px 0 22px;box-shadow:none;background:transparent;padding:0;border:0}
+.rebellion-invite .hb-join-note a{display:inline-flex;align-items:center;min-height:44px}@media(min-width:1000px){.rebellion-invite .hb-join-note a{min-height:56px}}.rebellion-invite .hb-join-note a:focus-visible{outline:4px solid #fff;outline-offset:3px}
 .hb-join{margin-top:26px;max-width:560px;padding:18px;border:2px solid var(--blood);background:rgba(5,5,5,.82);box-shadow:6px 6px 0 var(--blood)}
 .hb-join-title{margin:0 0 12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(22px,3vw,30px);line-height:1;color:#fff}
 .hb-join-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -225,7 +227,6 @@ main>section,main>aside{position:relative}
 <p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
 <p class="canon-hero__note" id="home-story-explanation">Meet the man behind GhostHeart.</p>
 <div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a><a aria-describedby="home-story-explanation" class="secondary" href="/GhostHeart_Story.html">Enter My World</a></div>
-<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" aria-labelledby="home-join-title" class="hb-join" id="home-join" method="post"><p class="hb-join-title" id="home-join-title">Get new songs &amp; stories by email</p><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input aria-describedby="home-join-note" autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Join free</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
 <div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
 </div>
 </div>
@@ -282,8 +283,8 @@ main>section,main>aside{position:relative}
 <p class="rebellion-eyebrow">Still here. Still connected.</p>
 <h2 id="rebellion-title">Join the Heart Rebellion.</h2>
 <p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
+<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" aria-labelledby="rebellion-title" class="hb-join" id="home-join" method="post"><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input aria-describedby="home-join-note" autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Join free</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
 <div class="rebellion-actions"><a href="/vault/">Find your next song, film or quote ↗</a></div>
-
 </aside>
 </main>
 <footer class="sitefoot">
