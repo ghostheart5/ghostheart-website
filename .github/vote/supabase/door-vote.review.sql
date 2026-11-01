@@ -32,10 +32,11 @@ alter table ghostheart_votes.door_votes enable row level security;
 revoke all on ghostheart_votes.door_polls, ghostheart_votes.door_votes from public, anon, authenticated;
 create index if not exists door_votes_time on ghostheart_votes.door_votes (voted_at desc);
 
--- The first vote: which door the Sunday, November 22, 2026 Live goes through.
+-- The vote: which door the Sunday, November 22, 2026 Live goes through
+-- (Ask me anything / Your confessions). The earlier song-door poll 'sunday-2026-11-22' is retired.
 -- Closes Saturday night, November 21, at midnight Central.
 insert into ghostheart_votes.door_polls (id, closes_at)
-values ('sunday-2026-11-22', '2026-11-22T06:00:00Z')
+values ('sunday-2026-11-22-hide', '2026-11-22T06:00:00Z')
 on conflict (id) do update set closes_at = excluded.closes_at;
 
 create or replace function public.door_vote_totals(p_poll text)
@@ -96,5 +97,5 @@ select has_function_privilege('anon', 'public.cast_door_vote(text, text, text)',
        has_function_privilege('anon', 'public.door_vote_totals(text)', 'execute') as "anon can count",
        has_table_privilege('anon', 'ghostheart_votes.door_votes', 'select') as "anon can read votes (must be false)";
 
--- To see results yourself: select pick, count(*) from ghostheart_votes.door_votes where poll = 'sunday-2026-11-22' group by pick;
+-- To see results yourself: select pick, count(*) from ghostheart_votes.door_votes where poll = 'sunday-2026-11-22-hide' group by pick;
 -- To turn it off: drop function public.cast_door_vote(text, text, text); (the page then shows "Voting opens soon").

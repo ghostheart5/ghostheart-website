@@ -55,6 +55,7 @@
 
   call('door_vote_totals', { p_poll: poll }).then(function (t) {
     if (!t || typeof t.a !== 'number') throw new Error('bad');
+    if (!t.closes_at) throw new Error('vote not set up yet');
     if (!t.open) {
       mode = 'closed';
       box.classList.add('voted');
