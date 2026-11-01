@@ -19,7 +19,7 @@ module.exports = async (page, base) => {
       const form = page.locator('.journal-signup form');
       assert.equal(await form.getAttribute('action'), action);
       assert.equal(await form.getAttribute('method'), 'post');
-      assert.equal(await form.getAttribute('target'), '_blank');
+      assert.equal(await form.getAttribute('target'), null); // same tab (2026-10-31)
       assert.equal(await form.locator('input:not([type=hidden])').count(), 2);
       const field = form.locator('input[name=EMAIL]');
       const id = await field.getAttribute('id');
@@ -30,7 +30,7 @@ module.exports = async (page, base) => {
       assert.match(await form.innerText(), /Confirm through the email/);
       assert.match(await form.innerText(), /Unsubscribe anytime/);
       assert.equal(await form.locator('.g-form-status').innerText(), '');
-      assert.equal(await page.locator('[data-comment-thread], script[src*="/assets/journal/comments"]').count(), 0);
+      assert.equal(await page.locator('[data-comment-thread]').count(), route === '/journal/' ? 0 : 1, route); // comments on 2026-10-31
       assert.equal(await page.locator('footer a').filter({ hasText: /^(Stay Connected|Follow by email)$/ }).getAttribute('href'), '/follow/');
       const emailLinks = await page.locator('a').filter({ hasText: /^(Stay Connected|Follow by email)(?: ↗)?$/ }).evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
       assert.ok(emailLinks.every(href => href === '/follow/'), 'Direct email links including archive arrow label');

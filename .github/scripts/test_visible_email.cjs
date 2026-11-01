@@ -5,7 +5,7 @@ module.exports = async (page, base) => {
   const records = [];
   for (const width of [320, 390, 1440]) {
     await page.setViewportSize({width, height:900});
-    for (const route of ['/', '/GhostHeart_Story.html', '/journal/', '/passages/', '/passages/im-not.html']) {
+    for (const route of ['/GhostHeart_Story.html', '/journal/', '/passages/', '/passages/im-not.html']) {
       await page.goto(base + route);
       const link = page.getByRole('link', {name:'Get email updates', exact:true}).first();
       assert.equal(await link.getAttribute('href'), '/follow/#email-signup-title');
@@ -21,11 +21,20 @@ module.exports = async (page, base) => {
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
       records.push({route,width,entryTop:position});
     }
+    // Home page has the email box itself (2026-10-31), right under the hero buttons.
+    await page.goto(base + '/');
+    const homeForm = page.locator('form#home-join');
+    assert.equal(await homeForm.getAttribute('method'), 'post');
+    assert.equal(await homeForm.getAttribute('target'), null);
+    assert.match(await homeForm.getAttribute('action'), /^https:\/\/myghostheart\.us22\.list-manage\.com\/subscribe\/post\?/);
+    const homeTop = await page.locator('#home-join-email').evaluate(e=>e.getBoundingClientRect().top+scrollY);
+    assert.ok(homeTop < 1700, 'home email box buried: ' + homeTop);
+    assert.ok((await page.locator('#home-join button[type=submit]').boundingBox()).height >= 44);
     await page.goto(base + '/follow/');
     const field=page.locator('input[name=EMAIL]');
     const form=page.locator('form.signal-signup-form');
     assert.equal(await form.count(),1);
-    assert.equal(await form.getAttribute('target'),'_blank');
+    assert.equal(await form.getAttribute('target'),null); // same tab (2026-10-31)
     assert.equal(await form.getAttribute('method'),'post');
     assert.match(await form.getAttribute('action'),/^https:\/\/myghostheart\.us22\.list-manage\.com\/subscribe\/post\?/);
     assert.equal(await field.getAttribute('required'),'');

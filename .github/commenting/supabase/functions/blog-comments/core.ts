@@ -1,6 +1,7 @@
 export const THREADS = new Set([
   'journal:how-we-got-here', 'journal:this-is-ghostheart',
   'journal:ghosthearts-oath', 'journal:youre-not-god',
+  'journal:wake-the-heart-week', 'journal:cruel-something-needs-to-change',
 ]);
 
 export function validateSubmission(value: unknown) {

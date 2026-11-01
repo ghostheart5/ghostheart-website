@@ -20,7 +20,7 @@ title, *paragraphs = raw.decode('utf-8').strip().split('\n\n')
 posts = json.loads((ROOT / '.github/content/journal.json').read_text())
 post = next(p for p in posts if p['slug'] == SLUG)
 assert post['title'] == title and post['paragraphs'] == paragraphs
-assert post['summary'] == paragraphs[0] and post['comments_enabled'] is False
+assert post['summary'] == paragraphs[0] and post['comments_enabled'] is True
 assert post['published'] == '2026-10-10T19:00:00-05:00'
 clock = os.environ.get('GHOSTHEART_JOURNAL_BUILD_NOW')
 now = datetime.fromisoformat(clock.replace('Z', '+00:00')) if clock else datetime.now(timezone.utc)
@@ -34,9 +34,9 @@ else:
     assert article.select_one('article.journal-article h1').get_text() == title
     rendered = [p.get_text() for p in article.select('.journal-prose > p')]
     assert rendered == paragraphs, 'Rendered body differs from exact owner text'
-    assert not article.select('[data-comment-thread]')
+    assert len(article.select('[data-comment-thread]')) == 1
     assert len(article.select('form.signal-signup-form')) == 1
-    assert not article.select('script[src*="comments"]')
+    assert article.select('script[src*="comments"]')
     music_actions = article.select('.journal-continue a[href="/albums/#track-cruel"]')
     assert len(music_actions) == 1, 'Duplicate Cruel listening CTA'
     assert article.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com'+ROUTE
@@ -57,4 +57,4 @@ else:
     assert SLUG in (ROOT/'journal/feed.xml').read_text()
     assert any(node.text == 'https://www.myghostheart.com'+ROUTE
                for node in ET.parse(ROOT/'sitemap.xml').iter() if node.tag.endswith('}loc'))
-    print(f'PASS: exact title and {len(paragraphs)} approved paragraphs; navigation, metadata, links; no comment activation')
+    print(f'PASS: exact title and {len(paragraphs)} approved paragraphs; navigation, metadata, links; comment box on')

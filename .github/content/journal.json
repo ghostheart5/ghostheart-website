@@ -35,7 +35,7 @@
       "passages schedule",
       "Wake the Heart Week launch pack (dates)"
     ],
-    "comments_enabled": false
+    "comments_enabled": true
   },
   {
     "slug": "how-we-got-here",
@@ -68,7 +68,7 @@
     "sources": [
       "public /journal/how-we-got-here.html (retrieved 2026-10-05)"
     ],
-    "comments_enabled": false
+    "comments_enabled": true
   },
   {
     "slug": "this-is-ghostheart",
@@ -102,7 +102,7 @@
       "GhostHeart_Story.html",
       "passages schedule"
     ],
-    "comments_enabled": false,
+    "comments_enabled": true,
     "updated": "2026-10-30T13:00:00-05:00"
   },
   {
@@ -136,7 +136,7 @@
       "GhostHeart_Version_Mission.html",
       "passages schedule"
     ],
-    "comments_enabled": false,
+    "comments_enabled": true,
     "updated": "2026-10-30T13:00:00-05:00"
   },
   {
@@ -171,7 +171,7 @@
       "albums/youre-not-god/index.html",
       "albums/youre-not-god/index.html (collection text and film descriptions)"
     ],
-    "comments_enabled": false,
+    "comments_enabled": true,
     "updated": "2026-10-30T13:00:00-05:00"
   },
   {
@@ -201,7 +201,7 @@
         "url": "/GhostHeart_Story.html#behind-the-scars"
       }
     ],
-    "comments_enabled": false,
+    "comments_enabled": true,
     "sources": [
       ".github/reviewed-inputs/content/cruel-reading.txt"
     ]

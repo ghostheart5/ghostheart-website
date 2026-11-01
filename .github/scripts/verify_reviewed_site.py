@@ -96,8 +96,9 @@ posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="u
 assert len(posts) == 6
 for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
     article = page(f"journal/{slug}.html")
-    assert not article.select('[data-comment-thread]'), "Closed Conversation invitation must stay absent"
-    assert not article.select('script[src*="/assets/journal/comments"]'), "No public comment activation"
+    # Comments switched on 2026-10-31 (Dom's yes); new comments wait for review before they show.
+    assert len(article.select('[data-comment-thread]')) == 1, "Conversation box must be on the post"
+    assert article.select('script[src*="/assets/journal/comments"]'), "Comment box script must load"
     assert len(article.select("form.signal-signup-form")) == 1
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()

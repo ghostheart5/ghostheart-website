@@ -116,7 +116,10 @@ assert recordings.select_one('.music-jump a[href="/albums/index.html"]').get_tex
 assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
 assert start.select_one('a[href="/albums/index.html#youre-not-god"]')
-assert not start.select("form") and not home.select("form")
+assert not start.select("form")
+# Home has exactly one form: the email box Dom approved on 2026-10-31.
+assert [f.get("id") for f in home.select("form")] == ["home-join"]
+assert "list-manage.com/subscribe/post" in home.select_one("form#home-join")["action"]
 form = follow.select_one("form.signal-signup-form")
 assert form and form.get("method") == "post" and "list-manage.com/subscribe/post" in form["action"]
 assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
