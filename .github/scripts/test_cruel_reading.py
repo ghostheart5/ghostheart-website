@@ -37,7 +37,7 @@ else:
     assert len(article.select('[data-comment-thread]')) == 1
     assert len(article.select('form.signal-signup-form')) == 1
     assert article.select('script[src*="comments"]')
-    music_actions = article.select('.journal-continue a[href="/albums/#track-cruel"]')
+    music_actions = article.select('.journal-continue a[href="/music/#song-cruel"]')
     assert len(music_actions) == 1, 'Duplicate Cruel listening CTA'
     assert article.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com'+ROUTE
     for tag in article.select('main a[href], main img[src]'):

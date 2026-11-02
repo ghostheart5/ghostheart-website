@@ -34,9 +34,9 @@ assert story.select_one('a[href="/woman-behind-the-scenes/"]')
 assert story.select_one('a[href="/journal/"]')
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
 assert love.select_one("h1").get_text(" ", strip=True) == "The Woman Behind the Scenes."
-assert love.select_one('a[href="/albums/#track-she-got-to-me"]')
-for relative, fragment in [('journal/this-is-ghostheart.html', 'track-this-is-ghostheart'), ('journal/ghosthearts-oath.html', 'track-ghosthearts-oath')]:
-    assert page(relative).select_one(f'a[href="/albums/#{fragment}"]').get_text() == 'Listen to the song'
+assert love.select_one('a[href="/music/#song-she-got-to-me"]')
+for relative, fragment in [('journal/this-is-ghostheart.html', 'song-this-is-ghostheart'), ('journal/ghosthearts-oath.html', 'song-ghosthearts-oath')]:
+    assert page(relative).select_one(f'a[href="/music/#{fragment}"]').get_text() == 'Listen to the song'
 assert "GhostHeart and His Angel" not in story.get_text(" ", strip=True)
 assert "GhostHeart and His Angel" not in love.get_text(" ", strip=True)
 assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
@@ -82,20 +82,10 @@ assert 'cinematic remake' in actual_films['film-human-too-remake'].get_text(' ',
 assert 'Human After All' in actual_films['film-human-too-remake'].get_text(' ', strip=True)  # owner 2026-11-01: plain label, no YouTube title
 assert 'Broken Man' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)  # owner 2026-11-01: no upload notes shown
 recordings = page('GhostHeart_Songs.html')
-# Preserve the public preview fragments as usable rows, not hidden aliases.
-preview_tracks = [track for group in json.loads((ROOT / '.github/content/music.json').read_text(encoding='utf-8'))['groups']
-                  for track in group['tracks'] if track.get('audio')]
-assert len(preview_tracks) == 11
-assert {row['id'] for row in recordings.select('#existing-audio li.music-track[id]')} == {
-    'song-audio-' + track['id'] for track in preview_tracks
-}, 'Published preview fragments changed'
-for track in preview_tracks:
-    row = recordings.select_one('#song-audio-' + track['id'] + '.music-track')
-    assert row and row.name == 'li' and not row.has_attr('hidden'), track['id']
-    assert not any(parent.has_attr('hidden') for parent in row.parents), track['id']
-    assert row.select_one('h3').get_text() == track['title'], track['id']
-    player = row.select_one('audio[controls][preload="none"]')
-    assert player and player.select_one('source')['src'] == track['audio'], track['id']
+# Owner 2026-11-02 ("fix the bigger jobs now"): the 11 previews live only on Music. The Songs page keeps the
+# Released recordings archive; old #song-audio-track-* links forward to the same song on Music.
+assert not recordings.select('#existing-audio, li.music-track')
+assert recordings.select_one('script[data-song-forward]')
 for link in recordings.select('.record-card a[href*="GhostHeart_Videos.html#"]'):
     fragment = urlsplit(link['href']).fragment
     assert fragment in actual_films, (link, 'Recording action targets a hidden or absent film')
@@ -112,7 +102,7 @@ assert 'new 5:30 version' in recordings.select_one('#song-you-cant-change-us-202
 assert 're-released or merged' not in recordings.get_text(' ', strip=True)
 assert 'reuse the same public preview' not in recordings.get_text(' ', strip=True)
 assert recordings.select_one('#released-recordings h2').get_text(' ', strip=True) == 'Released recordings archive'
-assert recordings.select_one('.music-jump a[href="/albums/index.html"]').get_text() == 'Featured listening collections'
+assert recordings.select_one('.music-jump a[href="/music/"]').get_text() == 'Music: the 11 song previews'
 assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
 # Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
@@ -125,7 +115,7 @@ assert form and form.get("method") == "post" and "list-manage.com/subscribe/post
 assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
 assert 'You?ll' not in follow.get_text()
 assert 'approved' not in follow.select_one('meta[name="description"]')['content']
-for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behind-the-scenes/'), ('vault/index.html', '/vault/'), ('albums/index.html', '/albums/')]:
+for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behind-the-scenes/'), ('vault/index.html', '/vault/')]:
     document = page(relative)
     assert document.select_one('meta[property="og:url"]')['content'] == document.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com' + canonical
     for property_name in ['og:title', 'og:description', 'og:image']:
@@ -170,22 +160,20 @@ for slug in ['broken-man', 'fatherhood', 'human-after-all', 'love-is-love', 'the
     collection = page(f'albums/{slug}/index.html')
     prose = collection.select_one('#about .l-prose').get_text(' ', strip=True).lower()
     assert not any(phrase in prose for phrase in ['is an album', 'this album']), slug
-music = page('albums/index.html')
-assert music.select_one('a[href="/GhostHeart_Songs.html#released-recordings"]').get_text() == 'Released recordings archive'
-assert music.select_one('a[href="/GhostHeart_Videos.html"]').get_text() == 'Films'
-assert 'Featured listening collections' in music.select_one('.music-hero').get_text(' ', strip=True)
+# Owner 2026-11-02: Music (/music/) is the one home for the 11 songs; /albums/ only forwards there.
+music = page('music/index.html')
+assert music.select_one('a[href="/GhostHeart_Songs.html"]')
+assert music.select_one('a[href="/GhostHeart_Videos.html"]')
+assert page('albums/index.html').select_one('meta[http-equiv="refresh"]')['content'] == '0; url=/music/'
 for relative in ['journal/this-is-ghostheart.html', 'journal/ghosthearts-oath.html']:
     assert 'Short song introduction' in page(relative).select_one('.journal-meta').get_text(' ', strip=True)
 ids = [element['id'] for element in music.select('[id]')]
 assert len(ids) == len(set(ids)), 'Duplicate Music IDs'
 for card in vault.select('.vault-item[data-vault-kind="songs"]'):
     href = card.select_one('a')['href']
-    assert href.startswith('/albums/#track-'), href
+    assert href.startswith('/music/#song-'), href
     target = music.find(id=href.split('#', 1)[1])
-    assert target and target.select_one('h3').get_text() == card.select_one('h2').get_text(), href
-trailer = music.select_one('#track-this-is-ghostheart a')
-assert trailer['href'] == 'https://www.youtube.com/watch?v=AOCRvtz92JM'
-assert trailer.get_text() == 'Watch trailer'
+    assert target and target.select_one('button')['data-title'] == card.select_one('h2').get_text(), href
 assert vault.select_one('.vault-item[data-vault-kind="videos"] a[href="https://www.youtube.com/watch?v=9sbFgjM_SDE"]')
 assert len(vault.select('.vault-item[data-vault-featured="true"]')) == 3
 assert {button["data-vault-filter"] for button in vault.select("[data-vault-filter]")} == {
@@ -193,9 +181,9 @@ assert {button["data-vault-filter"] for button in vault.select("[data-vault-filt
 }
 assert all(card.select_one("a[href]") for card in vault.select(".vault-item"))
 assert not vault.select("a[download]")
-assert all(card.select_one('a[href="/albums/#track-that-aint-holy"]') for card in
+assert all(card.select_one('a[href="/music/#song-that-aint-holy"]') for card in
            vault.select('.vault-item[data-vault-kind="shorts"]')[1:])
-assert vault.select('.vault-item[data-vault-kind="shorts"]')[0].select_one('a[href="/albums/#track-cruel"]')
+assert vault.select('.vault-item[data-vault-kind="shorts"]')[0].select_one('a[href="/music/#song-cruel"]')
 assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a[href^="https://www.youtube.com/shorts/"]')} == {
     'https://www.youtube.com/shorts/2fq-XQxtFuo',
     'https://www.youtube.com/shorts/ofU09J3bkHI',
@@ -247,7 +235,7 @@ for path in ROOT.rglob('*.html'):
     assert 'Sunday readings will connect' not in text, path
 assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
-for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "albums/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "follow/index.html"):
+for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "music/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "follow/index.html"):
     # LOUD redesign (2026-10-14): redesigned routes use the LOUD stylesheet instead of the review theme.
     document = page(relative)
     assert document.select_one('link[href="/assets/shared/review-theme.css"]') or document.select_one('link[href="/assets/loud/loud.css"]'), relative
