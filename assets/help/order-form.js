@@ -7,6 +7,7 @@
   var fields = form.querySelector('[data-order-fields]');
   var errorBox = form.querySelector('[data-order-error]');
   var submit = form.querySelector('[data-order-submit]');
+  var fine = form.querySelector('[data-order-fine]');
   var statusBox = document.querySelector('[data-order-status]');
   var statusTitle = document.querySelector('[data-order-status-title]');
   var statusText = document.querySelector('[data-order-status-text]');
@@ -16,6 +17,7 @@
     statusTitle.textContent = title;
     statusText.textContent = text;
     statusBox.classList.toggle('ok', Boolean(ok));
+    statusBox.hidden = false;
   }
 
   var params = new URLSearchParams(window.location.search);
@@ -68,12 +70,13 @@
 
   var ready = hasDatabase &&
     /^https:\/\/buy\.stripe\.com\/(?!test_)[A-Za-z0-9_]+$/.test(cfg.songPayLink || ''); // live links only
-  if (!ready) return;
+  // The status box stays hidden unless there is news for the visitor (Dom, Nov 2: no warning box).
+  if (!ready) {
+    if (params.get('paid') !== '1') setStatus('Orders open soon', 'The form isn’t taking orders yet, so nothing you type here is sent.');
+    return;
+  }
 
   fields.disabled = false;
-  if (params.get('paid') !== '1') {
-    setStatus('Try it free', 'Tell me your story. I’ll email you a song title and 2 lines. Like them? The full song is $50.', true);
-  }
   // A link like /here-to-help/?pick=song#order opens straight on the full song.
   var pick = form.querySelector('input[name="kind"][value="' + (params.get('pick') || '').replace(/[^a-z]/g, '') + '"]');
   if (pick) pick.checked = true;
@@ -82,7 +85,8 @@
   function showKind() {
     var k = kind();
     form.querySelectorAll('[data-kind]').forEach(function (el) { el.hidden = el.getAttribute('data-kind').split(' ').indexOf(k) < 0; });
-    submit.textContent = k === 'song' ? 'Continue to payment · $50' : k === 'try' ? 'Send my free try' : 'Send my request';
+    submit.textContent = k === 'song' ? 'Continue to payment · $50' : k === 'try' ? 'Send for my free preview' : 'Send my request';
+    if (fine) fine.textContent = k === 'song' ? 'You pay $50 on Stripe’s secure page, and your song arrives within 7 days.' : k === 'try' ? 'The free preview costs nothing and asks for no card.' : 'I’ll email you the total. You only pay once you agree to it.';
   }
   form.querySelectorAll('input[name="kind"]').forEach(function (el) { el.addEventListener('change', showKind); });
   showKind();
@@ -131,7 +135,7 @@
         return;
       }
       form.reset(); showKind();
-      if (k === 'try') setStatus('Got it. Thank you.', 'I’ll email you a song title and 2 lines. If you like them, the full song is $50.', true);
+      if (k === 'try') setStatus('Got it. Thank you.', 'Within 2 days I’ll email you the song title and first 2 lines. If you love them, the full song is $50.', true);
       else setStatus('Got it. Thank you.', 'I’ll email you the total for your job. You only pay once you agree to it.', true);
       statusBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       submit.disabled = false;
