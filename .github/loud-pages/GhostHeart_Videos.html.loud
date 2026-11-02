@@ -18,6 +18,7 @@
 .fhero h1 .r{color:var(--blood);display:inline-block;text-shadow:3px 0 var(--glitch),-3px 0 var(--hot);animation:glitch 3.2s infinite steps(1)}
 .fhero .tag{max-width:600px}
 .feature{max-width:1180px}
+.feature[hidden]{display:none}
 .feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:center;margin-top:28px}
 @media(max-width:900px){.feature{grid-template-columns:1fr}}
 .feature .thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:#000 center/cover;border:6px solid var(--bone);box-shadow:10px 10px 0 var(--blood);margin-right:10px}
@@ -97,13 +98,68 @@
   <span class="kicker">✶ Music &amp; films / Watch</span>
   <h1 class="display">Stay With<br>the <span class="r">Story.</span></h1>
   <p class="tag">Music videos, lyric videos and cinematic remakes. Twelve films. Pick one.</p>
-  <div class="feature">
+  <!-- Owner 2026-11-02: Featured Now follows each day of Shorts Week (Central). Monday's song has no film, so Monday shows This Is GhostHeart. next-live.js shows the block whose dates hold today. -->
+  <div class="feature" data-week-until="2026-11-03T06:00:00Z">
+    <a class="thumb" href="https://www.youtube.com/watch?v=AOCRvtz92JM" style="display:grid;place-items:center;background:#000 url('/assets/videos/youtube/AOCRvtz92JM.jpg') center/cover" aria-label="Watch This Is GhostHeart full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>This Is GhostHeart</h2>
+      <p>The name, the scars, and the reason a hidden heart chose to be seen.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=AOCRvtz92JM">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-03T06:00:00Z" data-week-until="2026-11-04T06:00:00Z" hidden>
+    <a class="thumb" href="https://www.youtube.com/watch?v=z-FRCpG9vfw" style="display:grid;place-items:center;background:#000 url('/assets/releases/i-wont-pretend-cover.jpg') center/cover" aria-label="Watch I Won’t Pretend to Speak for You full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>I Won’t Pretend to Speak for You</h2>
+      <p>Two women began with trembling hands and borrowed flowers. Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=z-FRCpG9vfw">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-04T06:00:00Z" data-week-until="2026-11-05T06:00:00Z" hidden>
+    <a class="thumb" href="https://www.youtube.com/watch?v=2SEng4dmgUc" style="display:grid;place-items:center;background:#000 url('/assets/videos/youtube/JGTwfFrej-M.jpg') center/cover" aria-label="Watch Hey Preacher Man full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>Hey Preacher Man</h2>
+      <p>A direct answer to the judgment that tried to define a life from the outside.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=2SEng4dmgUc">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-05T06:00:00Z" data-week-until="2026-11-06T06:00:00Z" hidden>
+    <a class="thumb" href="https://www.youtube.com/watch?v=ARCFOZSOC_o" style="display:grid;place-items:center;background:#000 url('/assets/videos/youtube/ARCFOZSOC_o.jpg') center/cover" aria-label="Watch Human Too full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>Human Too</h2>
+      <p>A new cinematic version of Human Too—a GhostHeart song about addiction, judgment, pain, and the person behind every label.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=ARCFOZSOC_o">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-06T06:00:00Z" data-week-until="2026-11-07T06:00:00Z" hidden>
     <a class="thumb" href="https://www.youtube.com/watch?v=RtFTIssLd0s" style="display:grid;place-items:center;background:#000 url('/assets/platforms/pin-1950s.jpg') center 42%/cover" aria-label="Watch It's Not the 1950s full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
     <div>
       <small>FEATURED NOW</small>
       <h2>It's Not the 1950s</h2>
       <p>Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.</p>
-      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=RtFTIssLd0s">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/shorts/UZTAlw8R17s" aria-label="Watch the new Short: Who gets to decide?">New Short: Who gets to decide? ↗</a></div><p class="new-short"><small>NEW SHORT · <time datetime="2026-10-26">OCT 26, 2026</time></small>A new Short from the film every day this week, on <a href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">the GhostHeart channel</a>.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=RtFTIssLd0s">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-07T06:00:00Z" data-week-until="2026-11-08T06:00:00Z" hidden>
+    <a class="thumb" href="https://www.youtube.com/watch?v=9sbFgjM_SDE" style="display:grid;place-items:center;background:#000 url('/assets/videos/youtube/9sbFgjM_SDE.jpg') center/cover" aria-label="Watch Cruel full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>Cruel</h2>
+      <p>The full public music video, from GhostHeart’s Awakening.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=9sbFgjM_SDE">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
+    </div>
+  </div>
+  <div class="feature" data-week-from="2026-11-08T06:00:00Z" hidden>
+    <a class="thumb" href="https://www.youtube.com/watch?v=AOCRvtz92JM" style="display:grid;place-items:center;background:#000 url('/assets/videos/youtube/AOCRvtz92JM.jpg') center/cover" aria-label="Watch This Is GhostHeart full film"><span class="p"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></a>
+    <div>
+      <small>FEATURED NOW</small>
+      <h2>This Is GhostHeart</h2>
+      <p>The name, the scars, and the reason a hidden heart chose to be seen.</p>
+      <div class="ctas"><a class="btn red" href="https://www.youtube.com/watch?v=AOCRvtz92JM">Watch the full film</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK/shorts">Today's Short ↗</a></div>
     </div>
   </div>
 </header>
@@ -131,6 +187,7 @@
   <p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
 
+<script src="/assets/shared/next-live.js"></script>
 <script src="/assets/shared/library-v3.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
