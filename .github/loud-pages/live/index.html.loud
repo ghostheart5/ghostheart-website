@@ -83,7 +83,7 @@
   <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
 </section>
 
-<section class="lr-sec lr-sotw" id="song-of-the-week" aria-label="Song of the week" data-sotw>
+<section class="lr-sec lr-sotw" id="song-of-the-week" aria-label="Song of the week" data-sotw data-week-from="2026-11-16T06:00:00Z" hidden>
   <span class="lr-next" data-sotw-when>Song of the week · Coming up</span>
   <div data-sotw-item data-from="2026-11-16T06:00:00Z" data-until="2026-11-23T06:00:00Z">
     <h2>You Can&rsquo;t Change Us</h2>

@@ -47,7 +47,7 @@ body = '''<div class="projects-page">
 <h2 id="deal-vector-title">DEAL VECTOR<span aria-hidden="true">.</span></h2>
 <p class="projects-feature-lead">An Android calculator for knowing what is left after the costs, before you commit to a resale deal.</p>
 <p>Enter your expected sale price, what you paid and shipping. Offline USD estimates, before selling fees.</p>
-<p class="projects-work-note">Public release and availability are still pending. No download is offered yet. <a href="/apps/deal-vector/">Open the Deal Vector file →</a></p></div>
+<p class="projects-work-note">Public release and availability are still pending. No download is offered yet. <a href="/apps/deal-vector/">About Deal Vector →</a></p></div>
 <div class="projects-shadow-mark" aria-hidden="true"><span>PRICE</span><span>COSTS</span><span>DECIDE</span></div></div></section>
 
 <section class="projects-future ghx-wrap" aria-labelledby="future-title"><p class="ghx-kicker">What could come next</p>

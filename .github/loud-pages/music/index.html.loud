@@ -153,18 +153,6 @@ html body .vault .door p{display:none}
 
 <div class="tape"><div><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
 
-<section class="spook" id="halloween" aria-labelledby="spook-title" data-spook-close="2026-11-01T05:00:00Z">
-  <div class="label"><span>Halloween / Lights off</span><span class="num">🎃</span></div>
-  <h2 class="display" id="spook-title">Halloween<br><span>Night.</span></h2>
-  <p class="sub">Turn the lights down. Four songs from the darker side of the heart.</p>
-  <ol>
-      <li><button data-spook="awakening-01-cruel.mp3"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
-      <li><button data-spook="youre-not-god-03-that-aint-holy.mp3"><span class="no">02</span>That Ain't Holy<span class="go">▶ PLAY</span></button></li>
-      <li><button data-spook="youre-not-god-02-hey-preacher-man.mp3"><span class="no">03</span>Hey Preacher Man<span class="go">▶ PLAY</span></button></li>
-      <li><button data-spook="awakening-02-im-not-staying-silent.mp3"><span class="no">04</span>I'm Not<span class="go">▶ PLAY</span></button></li>
-  </ol>
-</section>
-<script>(()=>{const box=document.querySelector('[data-spook-close]');if(!box)return;if(Date.now()>=new Date(box.dataset.spookClose)){box.hidden=true;return}box.querySelectorAll('[data-spook]').forEach(b=>b.addEventListener('click',()=>{const t=document.querySelector(`.tracks button[data-src="${b.dataset.spook}"]`);if(t)t.click()}))})();</script>
 
 <section class="juke" id="listen">
   <div class="label"><span>The Recordings / Tap a song. It plays.</span><span class="num">01</span></div>

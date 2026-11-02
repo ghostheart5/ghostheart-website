@@ -118,7 +118,7 @@ section{padding:32px max(16px,4vw)}
   <!--BLOG-LIST:END-->
 
   <div class="archive long-story">
-    <div><h3>Passages</h3><p>One reading for each song on The Awakening. A new one Saturdays at 7 PM Central.</p></div>
+    <div><h3>Passages</h3><p>A reading behind each song. New ones on Saturdays at 7 PM Central.</p></div>
     <div class="ctas"><a class="btn red" href="/passages/">See all Passages ↗</a></div>
   </div>
 
