@@ -8,7 +8,7 @@ The sources (content JSON, templates, LOUD pages) still use the old wording; thi
 step renames the finished output, so it holds however a page was generated.
 
 Unchanged on purpose (owner, same day): the album title "GhostHeart's Awakening",
-lowercase prose ("where the awakening began", "One awakening."), and addresses
+lowercase prose ("where the awakening began"; the album blurb "One awakening."), and addresses
 such as /awakening/, so no link breaks. Idempotent.
 """
 from pathlib import Path
