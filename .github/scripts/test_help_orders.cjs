@@ -34,9 +34,9 @@ p=await b.newPage(); await p.route('**/assets/help/orders-config.js',r=>r.fulfil
 const postsT=[]; let stripeHit=false; await p.route('https://buy.stripe.com/**',r=>{stripeHit=true;r.fulfill({body:'stripe'})});
 await p.route('https://pgqaqqliefpofsktjhjq.supabase.co/**',r=>{postsT.push(JSON.parse(r.request().postData()));r.fulfill({contentType:'application/json',body:'"0d6c7422-b571-4c6c-9923-bbb35058b7b1"',headers:{'access-control-allow-origin':'*'}})});
 await p.goto(base); assert.equal(await p.locator('input[name=kind][value=try]').isChecked(),true);
-assert.match(await p.locator('[data-order-submit]').innerText(),/free try/i); assert.equal(await p.locator('#sf-length-label').isVisible(),false);
+assert.match(await p.locator('[data-order-submit]').innerText(),/free preview/i); assert.equal(await p.locator('#sf-length-label').isVisible(),false);
 await p.fill('#sf-for','My dad'); await p.fill('#sf-memories','Fishing at dawn'); await p.fill('#sf-email','fan@example.com'); await p.click('[data-order-submit]');
-await p.waitForFunction(()=>/title and 2 lines/i.test(document.querySelector('[data-order-status-text]').textContent));
+await p.waitForFunction(()=>/title and first 2 lines/i.test(document.querySelector('[data-order-status-text]').textContent));
 assert.equal(postsT[0].payload.kind,'song'); assert.match(postsT[0].payload.details,/FREE TRY/); assert.equal(stripeHit,false); console.log('free try ok');
 // 3. Office request.
 p=await b.newPage(); await p.route('**/assets/help/orders-config.js',r=>r.fulfill({contentType:'text/javascript',body:"window.GHOSTHEART_ORDERS={supabaseUrl:'https://pgqaqqliefpofsktjhjq.supabase.co',supabaseKey:'sb_publishable_test_key_123456',songPayLink:'https://buy.stripe.com/live_abc123'}"}));
@@ -63,6 +63,8 @@ await p.goto(base+'?paid=1#order'); assert.match(await statusTitle(p),/Checking 
 await p.waitForFunction(()=>/Thank you for your order/.test(document.querySelector('[data-order-status-title]').textContent),null,{timeout:30000});
 assert.match(await p.locator('[data-order-status-text]').innerText(),honest); assert.ok(falseChecks>=5,'asked several times: '+falseChecks);
 assert.ok(!(await p.evaluate(()=>window.__seen)).some(s=>/confirmed/i.test(s)),'never showed confirmed'); console.log('paid, not confirmed: honest note ok after',falseChecks,'checks');
+// 4c. Ready form shows no status/warning box until there is news.
+p=await b.newPage(); await p.goto(base); assert.equal(await p.locator('[data-order-status]').isVisible(),false,'no warning box on a ready form'); console.log('no warning box ok');
 // 5. The real config shipped with the site opens the form with a live link.
 p=await b.newPage(); await p.goto(base); assert.equal(await p.locator('[data-order-fields]').evaluate(e=>e.disabled),false); console.log('live config opens ok'); console.log('PASS help orders: closed by default, free try with no payment, song to Stripe with order id only, office request, paid confirmed only when the database says so');
 await b.close();})().catch(e=>{console.error(e);process.exit(1)});

@@ -12,7 +12,7 @@
 <meta content="https://www.myghostheart.com/here-to-help/" property="og:url"/>
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta name="description" content="Try it free: tell GhostHeart your story and get a song title and 2 lines. Like it? The full song is $50, delivered in 7 days. Plus office and production help.">
+<meta name="description" content="A custom Country / Americana song written from your story. Free preview of the title and first 2 lines within 2 days, then $50 for the full song in 7 days. Plus office and production help.">
 <meta name="theme-color" content="#050505">
 <title>Work with GhostHeart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,6 +113,10 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .form-error{border-left:4px solid var(--hot);padding:8px 12px;color:var(--bone);background:rgba(244,72,60,.12)}
 .notice.ok{border-color:#f4efe6;background:rgba(244,239,230,.06)}
 
+/* WORK WITH GHOSTHEART CLEAR-UP 2026-11-02 (Dom): status box only shows when there is news. */
+.story-form .notice{margin-top:0}
+.story-form .notice[hidden]{display:none}
+@media(min-width:1000px){.steps4{grid-template-columns:repeat(4,1fr)}}
 /* free + close */
 .free{border-top:2px solid var(--line)}
 .small-note{margin-top:18px;color:var(--ash);font-size:15px;max-width:60ch}
@@ -160,19 +164,20 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 <header class="hhero">
   <div class="giant display" aria-hidden="true">ONE HEART. MANY VOICES.</div>
   <span class="kicker">✶ GhostHeart Studios / Work with GhostHeart</span>
-  <h1 class="display">Try it <span>free.</span></h1>
-  <p class="intro">Tell me your story. I’ll send you a song title and 2 lines, free.</p>
-  <p class="sub">If you like them, I’ll write the full song for $50.</p>
-  <div class="ctas"><a class="btn red" href="#order">Try it free</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
+  <h1 class="display">Your story. <span>Your song.</span></h1>
+  <p class="intro">Tell me about someone you love, and I’ll write them a real song. Country / Americana. $50.</p>
+  <p class="sub">Not sure yet? Start with a free preview: within 2 days I email you the song title and the first 2 lines. You only pay if you love it.</p>
+  <div class="ctas"><a class="btn red" href="#order">Get my free preview</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
 </header>
 
 <section class="sec" id="how-it-works" aria-labelledby="how-title">
   <div class="wrap">
-    <h2 class="display" id="how-title">How it <span>works.</span></h2>
-    <ol class="steps">
-      <li><strong>Try it free</strong><p>Tell me who it’s for and a few memories. I email you a song title and 2 lines.</p></li>
-      <li><strong>Like it?</strong><p>Get the full song for $50. You pay up front.</p></li>
-      <li><strong>7 days</strong><p>Your finished song, the lyrics as a keepsake, and one small fix.</p></li>
+    <h2 class="display" id="how-title">How a custom song <span>works.</span></h2>
+    <ol class="steps steps4">
+      <li><strong>Tell me your story</strong><p>Who it’s for, the occasion, and a few memories. Free.</p></li>
+      <li><strong>Free preview</strong><p>Within 2 days I email you the song title and the first 2 lines.</p></li>
+      <li><strong>Love it? Pay $50</strong><p>Pay through Stripe. You owe nothing until you choose the full song.</p></li>
+      <li><strong>Your song in 7 days</strong><p>The finished song, the lyrics as a keepsake, and one small fix if you need it.</p></li>
     </ol>
   </div>
 </section>
@@ -181,24 +186,26 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
   <div class="wrap order">
     <div>
       <h2 class="display" id="order-title">Tell me <span>your story.</span></h2>
-      <div class="notice" role="status" aria-live="polite" data-order-status>
-        <strong data-order-status-title>Orders open soon</strong>
-        <p data-order-status-text>The form isn’t taking orders yet. Nothing you type here is sent or saved. <a href="/follow/">Stay connected</a> to hear when it opens.</p>
-      </div>
       <dl class="facts" id="custom-song">
-        <div><dt>Full song</dt><dd>$50 founding price, first 5 customers</dd></div>
-        <div><dt>Length</dt><dd>A full song, or two verses and a chorus</dd></div>
-        <div><dt>Delivery</dt><dd>7 days</dd></div>
-        <div><dt>Honest label</dt><dd>Lyrics written by me from your story. Music produced with AI tools on my paid Suno plan, which includes commercial rights.</dd></div>
+        <div><dt>Price</dt><dd>$50, the founding price for my first 5 customers</dd></div>
+        <div><dt>Length</dt><dd>Your choice: a full song, or two verses and a chorus</dd></div>
+        <div><dt>Delivery</dt><dd>7 days after you pay</dd></div>
+        <div><dt>You get</dt><dd>The finished song, the lyrics, and one small fix (a wrong name or a line that doesn’t land) within 7 days</dd></div>
+        <div><dt>How it’s made</dt><dd>I write the lyrics from your story. The music is produced on my paid Suno plan, which includes commercial rights.</dd></div>
+        <div><dt>Your story</dt><dd>Stays private. I never share your story, names or song without your yes. Full refund if I haven’t started writing.</dd></div>
       </dl>
-      <p class="small-note">Country / Americana. For weddings, anniversaries, birthdays, memorials, or anyone you want to say something to. Christmas songs: order by Sunday, December 13 for delivery by Sunday, December 20.</p>
+      <p class="small-note">For weddings, anniversaries, birthdays, memorials, or anyone you want to say something to. Christmas songs: order by Sunday, December 13 for delivery by Sunday, December 20.</p>
     </div>
     <form class="story-form" id="story-form" novalidate aria-labelledby="order-title">
+      <div class="notice" role="status" aria-live="polite" data-order-status hidden>
+        <strong data-order-status-title></strong>
+        <p data-order-status-text></p>
+      </div>
       <fieldset disabled data-order-fields>
         <div class="field" role="group" aria-labelledby="sf-kind-label"><span class="label" id="sf-kind-label">What would you like?</span>
           <div class="choices">
-            <label><input type="radio" name="kind" value="try" checked>Try it free: a title and 2 lines</label>
-            <label><input type="radio" name="kind" value="song">The full song · $50</label>
+            <label><input type="radio" name="kind" value="try" checked>A free preview: the title and first 2 lines</label>
+            <label><input type="radio" name="kind" value="song">The full song now · $50</label>
             <label><input type="radio" name="kind" value="office">Office and production help</label>
           </div>
         </div>
@@ -233,8 +240,8 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
         <div class="field"><label for="sf-email">Your email</label><input id="sf-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
         <div class="field hp" aria-hidden="true"><label for="sf-website">Leave this empty</label><input id="sf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="form-error" role="alert" data-order-error hidden></p>
-        <button type="submit" data-order-submit>Send my free try</button>
-        <p class="fine" data-order-fine>Free try: no payment. I email you a title and 2 lines. Full song: you pay $50 up front, then I deliver in 7 days.</p>
+        <button type="submit" data-order-submit>Send for my free preview</button>
+        <p class="fine" data-order-fine>The free preview costs nothing and asks for no card.</p>
       </fieldset>
     </form>
   </div>
@@ -243,7 +250,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 <section class="sec" id="office-help" aria-labelledby="office-title">
   <div class="wrap">
     <h2 class="display" id="office-title">Office &amp; <span>production help.</span></h2>
-    <p class="lead">Everyday work that makes your day easier, done by GhostHeart Studios. Pick it in the form above and I’ll reply with the total before you pay.</p>
+    <p class="lead">Everyday work that makes your day easier, done by GhostHeart Studios. Choose “Office and production help” in the form above, tell me the job, and I’ll email you the total. You only pay once you agree to it.</p>
     <table class="price-table">
       <caption class="mono" style="text-align:left;color:var(--ash);font-size:12px;padding-bottom:6px">Founding prices</caption>
       <thead><tr><th scope="col">Service</th><th scope="col">Founding price</th></tr></thead>
@@ -257,8 +264,6 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
         <tr><td>Proofreading and editing</td><td>$15 per page</td></tr>
       </tbody>
     </table>
-    <p class="hold"><b>One line I hold:</b> I don’t write school papers or tests that someone turns in as their own. Editing and formatting your own work is fine.</p>
-    <p class="hold" id="artists"><b>Writing for other artists:</b> songs and lyrics for independent artists. Coming soon.</p>
   </div>
 </section>
 
