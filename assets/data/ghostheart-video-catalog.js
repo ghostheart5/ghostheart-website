@@ -308,9 +308,9 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
       "GhostHeart film"
     ],
     "title": "Heart of the Ashes",
-    "videoTitle": "Heart of the Ashes | GhostHeart (Official Graffiti Lyric Video)",
+    "videoTitle": "Heart of the Ashes — GhostHeart (Official Music Video)",
     "provider": "youtube",
-    "youtubeId": "Wgdfz9q394U",
+    "youtubeId": "G6_x8P5R1pA",
     "description": "Love, survival, and the heart that remains after the fire.",
     "song": {
       "label": "Explore the collection",
@@ -320,7 +320,7 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     },
     "related": [],
     "accessibility": "Use the YouTube player CC control for available captions. An approved GhostHeart transcript is not attached here.",
-    "thumbnail": "assets/videos/youtube/Wgdfz9q394U.jpg",
+    "thumbnail": "assets/videos/youtube/G6_x8P5R1pA.jpg",
     "featured": false
   },
   {
