@@ -5,8 +5,8 @@ Final build step. Plain text swaps on the finished pages (no re-parsing, so
 nothing else on a page moves). Each swap runs only where its old text is
 present, so the step is safe to run twice.
 
-- Dead YouTube videos: Heart of the Ashes (Wgdfz9q394U) loses its Watch link
-  and its film card; the This Is GhostHeart and Oath blog posts point to the
+- Dead YouTube videos: Heart of the Ashes now uses the working official
+  music video (G6_x8P5R1pA, owner's YouTube list, Nov 2); the This Is GhostHeart and Oath blog posts point to the
   working trailer (AOCRvtz92JM) and lyric video (mBAsUNX3vHQ).
 - Music: the "What comes next" button names Sunday Lives, not the retired
   World Is Watching show.
@@ -28,7 +28,6 @@ SIGNUP_NEW = 'Then tap the link in the email Mailchimp sends you.'
 
 SWAPS = {
     'GhostHeart_Songs.html': [
-        ('<a aria-label="Watch Heart of the Ashes on YouTube (opens in a new tab)" class="g-link" href="https://www.youtube.com/watch?v=Wgdfz9q394U" rel="noopener noreferrer" target="_blank">Watch</a>', ''),
         ('Watch the fixed vocal ending video', 'Watch the video'),
     ],
     'journal/this-is-ghostheart.html': [
@@ -45,9 +44,6 @@ SWAPS = {
         ('the life behind the name. Fixed vocal ending"', 'the life behind the name. Broken Man"'),
         ('Human Too cinematic remake · YouTube title: Why You Should Never Judge Someone\'s Worst Day', 'Human After All · cinematic remake'),
         ('Human Too cinematic remake YouTube title: Why You Should Never Judge Someone\'s Worst Day', 'Human After All cinematic remake'),
-    ],
-    'albums/ghostheart/index.html': [
-        ('<h3>Heart of the Ashes</h3></div><div class="g-actions"><a class="g-button" href="#watch-heart-of-the-ashes">Watch film ↓</a></div></li>', '<h3>Heart of the Ashes</h3></div></li>'),
     ],
     'albums/broken-man/index.html': [
         ('<p class="g-small">Fixed vocal ending</p>', '<p class="g-small">Broken Man</p>'),
@@ -69,8 +65,6 @@ SWAPS = {
     ],
 }
 
-# Film card for the dead Heart of the Ashes video on the GhostHeart collection page.
-DEAD_CARD = re.compile(r'<article\b[^>]*\bid="watch-heart-of-the-ashes"[^>]*>.*?</article>', re.S)
 # The "New Short" note under the featured film (that week ended Nov 1).
 OLD_SHORT = re.compile(r'<p class="new-short"><small>NEW SHORT · <time datetime="2026-10-26">.*?</p>', re.S)
 
@@ -87,12 +81,6 @@ for rel, swaps in SWAPS.items():
         path.write_text(out, encoding='utf-8', newline='\n')
         changed += 1
 
-ghost = ROOT / 'albums/ghostheart/index.html'
-text = ghost.read_text(encoding='utf-8')
-out = DEAD_CARD.sub('', text)
-if out != text:
-    ghost.write_text(out, encoding='utf-8', newline='\n')
-    changed += 1
 
 signup = 0
 for path in sorted(ROOT.rglob('*.html')):

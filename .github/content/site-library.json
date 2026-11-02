@@ -63,11 +63,11 @@
               "label": "Watch ▶ Heart of the Ashes"
             },
             {
-              "url": "https://www.youtube.com/watch?v=Wgdfz9q394U",
+              "url": "https://www.youtube.com/watch?v=G6_x8P5R1pA",
               "label": "YouTube ↗"
             }
           ],
-          "video": "Wgdfz9q394U"
+          "video": "G6_x8P5R1pA"
         },
         {
           "id": "this-is-ghostheart",
@@ -976,7 +976,7 @@
     {
       "id": "song-heart-of-the-ashes",
       "title": "Heart of the Ashes",
-      "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-heart-of-the-ashes\">\n<div class=\"cover\"><img alt=\"Cover artwork for Heart of the Ashes\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/heart-of-the-ashes.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 06</span><span>Multi-track • 2 tracks</span></div>\n<h3>Heart of the Ashes</h3>\n<p class=\"track-list\">Tracks: Heart of the Ashes • <span id=\"song-angels-in-the-ashes\">Angels in the Ashes</span></p>\n<p>Love, survival, and the heart that remains after the fire.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch Heart of the Ashes on YouTube (opens in a new tab)\" class=\"button\" href=\"https://www.youtube.com/watch?v=Wgdfz9q394U\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to Heart of the Ashes on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/735SnSg0dfh4T4vShL9Rhu\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=rVKB421psic\" rel=\"noopener noreferrer\" target=\"_blank\">Heart of the Ashes <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=QMKI0gMLKPY\" rel=\"noopener noreferrer\" target=\"_blank\">Angels in the Ashes <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
+      "html": "<article class=\"record-card\" data-track-count=\"2\" id=\"song-heart-of-the-ashes\">\n<div class=\"cover\"><img alt=\"Cover artwork for Heart of the Ashes\" decoding=\"async\" height=\"900\" loading=\"lazy\" src=\"/assets/songs/heart-of-the-ashes.jpg\" width=\"900\"/></div>\n<div class=\"record-copy\">\n<div class=\"record-meta\"><span>Release 06</span><span>Multi-track • 2 tracks</span></div>\n<h3>Heart of the Ashes</h3>\n<p class=\"track-list\">Tracks: Heart of the Ashes • <span id=\"song-angels-in-the-ashes\">Angels in the Ashes</span></p>\n<p>Love, survival, and the heart that remains after the fire.</p>\n<div class=\"record-actions\"><a aria-label=\"Watch Heart of the Ashes on YouTube (opens in a new tab)\" class=\"button\" href=\"https://www.youtube.com/watch?v=G6_x8P5R1pA\" rel=\"noopener noreferrer\" target=\"_blank\">Watch</a><a aria-label=\"Listen to Heart of the Ashes on Spotify (opens in a new tab)\" class=\"button\" href=\"https://open.spotify.com/album/735SnSg0dfh4T4vShL9Rhu\" rel=\"noopener noreferrer\" target=\"_blank\">Listen</a></div>\n<details class=\"gh-track-list\"><summary>Listen to all 2 tracks on YouTube</summary><ol><li><a href=\"https://www.youtube.com/watch?v=rVKB421psic\" rel=\"noopener noreferrer\" target=\"_blank\">Heart of the Ashes <span aria-hidden=\"true\">↗</span></a></li><li><a href=\"https://www.youtube.com/watch?v=QMKI0gMLKPY\" rel=\"noopener noreferrer\" target=\"_blank\">Angels in the Ashes <span aria-hidden=\"true\">↗</span></a></li></ol></details>\n</div>\n</article>",
       "tracks": 2
     },
     {
