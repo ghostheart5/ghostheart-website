@@ -222,7 +222,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
               <option value="">Choose one</option>
               <option value="data_entry">Data entry and typing · $20 per hour</option>
               <option value="word">Word: letter, flyer, form, or fixing a messy document · $25 each</option>
-              <option value="resume">Resume · $50</option>
+              <option value="resume">Resume · $25</option>
               <option value="powerpoint">PowerPoint deck, up to 10 slides · $50</option>
               <option value="excel">Excel sheet or simple tracker · $35</option>
               <option value="writing">Writing: bio, product description, social posts · $25 each</option>
@@ -251,7 +251,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
       <tbody>
         <tr><td>Data entry and typing</td><td>$20 per hour</td></tr>
         <tr><td>Word: letter, flyer, form, or fixing a messy document</td><td>$25 each</td></tr>
-        <tr><td>Resume</td><td>$50</td></tr>
+        <tr><td>Resume</td><td>$25</td></tr>
         <tr><td>PowerPoint deck, up to 10 slides</td><td>$50</td></tr>
         <tr><td>Excel sheet or simple tracker</td><td>$35</td></tr>
         <tr><td>Writing: bio, product description, social posts</td><td>$25 each</td></tr>
