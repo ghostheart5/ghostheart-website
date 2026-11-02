@@ -8,7 +8,7 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
 const recordingsPreviewFragments = [
   ['song-audio-track-cruel', 'Cruel', '/assets/music/preview/awakening-01-cruel.mp3'],
   ['song-audio-track-im-not', "I'm Not", '/assets/music/preview/awakening-02-im-not-staying-silent.mp3'],
-  ['song-audio-track-papa-didnt-raise-a-fool', "Papa Didn't Raise a Fool", '/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3'],
+  ['song-audio-track-papa-didnt-raise-a-fool', "Papa Didn't Raise No Fool", '/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3'],
   ['song-audio-track-she-got-to-me', 'She Got to Me', '/assets/music/preview/awakening-04-she-got-to-me.mp3'],
   ['song-audio-track-this-is-ghostheart', 'This Is GhostHeart', '/assets/music/preview/awakening-05-this-is-ghostheart.mp3'],
   ['song-audio-track-ghosthearts-oath', "GhostHeart's Oath", '/assets/music/preview/awakening-06-ghosthearts-oath.mp3'],

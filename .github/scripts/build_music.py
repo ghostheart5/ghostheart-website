@@ -8,7 +8,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / '.github/content/music.json'
-AWAKENING = ["Cruel", "I'm Not", "Papa Didn't Raise a Fool", "She Got to Me", "This Is GhostHeart", "GhostHeart's Oath", "You Can Be GhostHeart Too", "One Heart Many Voices"]
+AWAKENING = ["Cruel", "I'm Not", "Papa Didn't Raise No Fool", "She Got to Me", "This Is GhostHeart", "GhostHeart's Oath", "You Can Be GhostHeart Too", "One Heart Many Voices"]
 YNG = ["I Won't Pretend to Speak for You", "Hey Preacher Man", "That Ain't Holy"]
 
 
