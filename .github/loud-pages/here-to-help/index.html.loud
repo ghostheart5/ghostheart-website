@@ -109,6 +109,18 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .story-form .notice{margin-top:0}
 .story-form .notice[hidden]{display:none}
 @media(min-width:1000px){.steps4{grid-template-columns:repeat(4,1fr)}}
+/* SMALLER FORM 2026-11-02 (Dom: "make this smaller"). */
+.story-form{gap:12px;padding:clamp(16px,2.6vw,28px)}
+.story-form fieldset,.story-form .kind-song,.story-form .kind-office{gap:12px}
+.field{gap:5px}
+.field label,.field .label{font-size:16px}
+.field input,.field textarea,.field select{padding:9px 12px;font-size:16px}
+.field textarea{min-height:84px}
+.choices{gap:2px}
+.choices label{font-size:16px;align-items:center}
+.choices input{margin-top:0}
+.story-form button{font-size:19px;padding:12px 22px}
+.order .facts{gap:8px}
 /* free + close */
 .free{border-top:2px solid var(--line)}
 .small-note{margin-top:18px;color:var(--ash);font-size:15px;max-width:60ch}
@@ -195,10 +207,8 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
         </div>
         <div class="kind-song" data-kind="try song">
           <div class="field"><label for="sf-for">Who is the song for?</label><input id="sf-for" name="for_whom" type="text" maxlength="200" autocomplete="off"></div>
-          <div class="field"><label for="sf-occasion">What’s the occasion?</label><small>A wedding, an anniversary, a birthday, a memorial, or just because.</small><input id="sf-occasion" name="occasion" type="text" maxlength="200" autocomplete="off"></div>
-          <div class="field"><label for="sf-memories">Your memories</label><small>The moments, places and details that matter most.</small><textarea id="sf-memories" name="memories" maxlength="4000"></textarea></div>
-          <div class="field"><label for="sf-names">Names to include</label><input id="sf-names" name="names" type="text" maxlength="500" autocomplete="off"></div>
-          <div class="field"><label for="sf-mood">The mood</label><small>Happy, tender, bittersweet, a little funny…</small><input id="sf-mood" name="mood" type="text" maxlength="200" autocomplete="off"></div>
+          <div class="field"><label for="sf-occasion">What’s the occasion?</label><input id="sf-occasion" name="occasion" type="text" maxlength="200" autocomplete="off" placeholder="Wedding, birthday, memorial, just because…"></div>
+          <div class="field"><label for="sf-memories">Your story</label><textarea id="sf-memories" name="memories" maxlength="4000" placeholder="A few memories, names to include, and the mood you want."></textarea></div>
         </div>
         <div class="field" role="group" aria-labelledby="sf-length-label" data-kind="song" hidden><span class="label" id="sf-length-label">Length</span>
           <div class="choices">
