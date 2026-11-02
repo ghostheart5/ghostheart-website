@@ -41,10 +41,13 @@ assert.equal(postsT[0].payload.kind,'song'); assert.match(postsT[0].payload.deta
 // 3. Office request.
 p=await b.newPage(); await p.route('**/assets/help/orders-config.js',r=>r.fulfill({contentType:'text/javascript',body:"window.GHOSTHEART_ORDERS={supabaseUrl:'https://pgqaqqliefpofsktjhjq.supabase.co',supabaseKey:'sb_publishable_test_key_123456',songPayLink:'https://buy.stripe.com/live_abc123'}"}));
 const posts2=[]; await p.route('https://pgqaqqliefpofsktjhjq.supabase.co/**',r=>{posts2.push(JSON.parse(r.request().postData()));r.fulfill({contentType:'application/json',body:'"6b6c7422-b571-4c6c-9923-bbb35058b7b0"',headers:{'access-control-allow-origin':'*'}})});
-await p.goto(base); await p.check('input[name=kind][value=office]'); assert.equal(await p.locator('#sf-for').isVisible(),false);
-assert.match(await p.locator('[data-order-submit]').innerText(),/Send my request/i);
-await p.selectOption('#sf-service','resume'); await p.fill('#sf-details','Update my resume'); await p.fill('#sf-email','a@b.co'); await p.click('[data-order-submit]');
-await p.waitForFunction(()=>/Got it/i.test(document.querySelector('[data-order-status-title]').textContent));
+// Dom 2026-11-02: "More ways I can help" has its own form in its section; the song form is songs only.
+await p.goto(base); assert.equal(await p.locator('#story-form input[name=kind][value=office]').count(),0);
+assert.equal(await p.locator('#help-form [data-help-fields]').evaluate(e=>e.disabled),false);
+await p.click('[data-help-submit]'); assert.match(await p.locator('[data-help-error]').innerText(),/choose a job/i);
+await p.selectOption('#hf-service','resume'); await p.fill('#hf-details','Update my resume'); await p.fill('#hf-email','a@b.co'); await p.click('[data-help-submit]');
+await p.waitForFunction(()=>/Got it/i.test(document.querySelector('[data-help-status-title]').textContent));
+assert.equal(posts2[0].payload.kind,'office'); assert.equal(posts2[0].payload.details,'Update my resume');
 assert.equal(posts2[0].payload.service,'resume'); console.log('office ok');
 // 3b. A Stripe TEST link never opens the live form.
 p=await b.newPage(); await p.route('**/assets/help/orders-config.js',r=>r.fulfill({contentType:'text/javascript',body:"window.GHOSTHEART_ORDERS={supabaseUrl:'https://pgqaqqliefpofsktjhjq.supabase.co',supabaseKey:'sb_publishable_test_key_123456',songPayLink:'https://buy.stripe.com/test_9B6cN551A2Ml24haFA6Ri00'}"}));

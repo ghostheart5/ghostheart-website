@@ -12,7 +12,7 @@
 <meta content="https://www.myghostheart.com/here-to-help/" property="og:url"/>
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta name="description" content="A custom Country / Americana song written from your story. Free preview of the title and first 2 lines within 2 days, then $50 for the full song in 7 days. Plus office and production help.">
+<meta name="description" content="A custom Country / Americana song written from your story. Free preview of the title and first 2 lines within 2 days, then $50 for the full song in 7 days. Plus more ways I can help: documents, resumes, slides, spreadsheets, and writing.">
 <meta name="theme-color" content="#050505">
 <title>Work with GhostHeart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +107,8 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 .story-form button{justify-self:start;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.04em;text-transform:uppercase;padding:16px 26px;border:3px solid var(--blood);background:var(--blood);color:var(--void);cursor:pointer;min-height:56px}
 .story-form button:disabled{background:transparent;color:var(--ash);border-color:#3a3533;cursor:not-allowed}
 .story-form .fine{font-size:13px;color:var(--ash);line-height:1.6}
-.story-form .kind-song,.story-form .kind-office{display:grid;gap:18px}
+.story-form .kind-song{display:grid;gap:18px}
+.help-form{margin-top:26px;max-width:760px}
 .story-form [hidden]{display:none}
 .story-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-error{border-left:4px solid var(--hot);padding:8px 12px;color:var(--bone);background:rgba(244,72,60,.12)}
@@ -179,7 +180,7 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
   <h1 class="display">Your story. <span>Your song.</span></h1>
   <p class="intro">Tell me about someone you love, and I’ll write them a real song. Country / Americana. $50.</p>
   <p class="sub">Not sure yet? Start with a free preview: within 2 days I email you the song title and the first 2 lines. You only pay if you love it.</p>
-  <div class="ctas"><a class="btn red" href="#order">Get my free preview</a><a class="btn ghost" href="#office-help">Office &amp; production help</a></div>
+  <div class="ctas"><a class="btn red" href="#order">Get my free preview</a><a class="btn ghost" href="#office-help">More ways I can help</a></div>
 </header>
 
 <section class="sec" id="how-it-works" aria-labelledby="how-title">
@@ -218,7 +219,6 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
           <div class="choices">
             <label><input type="radio" name="kind" value="try" checked>A free preview: the title and first 2 lines</label>
             <label><input type="radio" name="kind" value="song">The full song now · $50</label>
-            <label><input type="radio" name="kind" value="office">Office and production help</label>
           </div>
         </div>
         <div class="kind-song" data-kind="try song">
@@ -232,21 +232,6 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
             <label><input type="radio" name="length" value="short">Two verses and a chorus</label>
           </div>
         </div>
-        <div class="kind-office" data-kind="office" hidden>
-          <div class="field"><label for="sf-service">Which service?</label>
-            <select id="sf-service" name="service">
-              <option value="">Choose one</option>
-              <option value="data_entry">Data entry and typing · $20 per hour</option>
-              <option value="word">Word: letter, flyer, form, or fixing a messy document · $25 each</option>
-              <option value="resume">Resume · $25</option>
-              <option value="powerpoint">PowerPoint deck, up to 10 slides · $50</option>
-              <option value="excel">Excel sheet or simple tracker · $35</option>
-              <option value="writing">Writing: bio, product description, social posts · $25 each</option>
-              <option value="proofreading">Proofreading and editing · $15 per page</option>
-            </select>
-          </div>
-          <div class="field"><label for="sf-details">What do you need done?</label><small>Tell me about the job. I’ll reply with the total before you pay.</small><textarea id="sf-details" name="details" maxlength="4000"></textarea></div>
-        </div>
         <div class="field"><label for="sf-email">Your email</label><input id="sf-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
         <div class="field hp" aria-hidden="true"><label for="sf-website">Leave this empty</label><input id="sf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="form-error" role="alert" data-order-error hidden></p>
@@ -259,8 +244,8 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 
 <section class="sec" id="office-help" aria-labelledby="office-title">
   <div class="wrap">
-    <h2 class="display" id="office-title">Office &amp; <span>production help.</span></h2>
-    <p class="lead">Everyday work that makes your day easier, done by GhostHeart Studios. Choose “Office and production help” in the form above, tell me the job, and I’ll email you the total. You only pay once you agree to it.</p>
+    <h2 class="display" id="office-title">More ways <span>I can help.</span></h2>
+    <p class="lead">Everyday work that makes your day easier, done by GhostHeart Studios. Tell me the job and your email below, and I’ll email you the total. You only pay once you agree to it.</p>
     <table class="price-table">
       <caption class="mono" style="text-align:left;color:var(--ash);font-size:12px;padding-bottom:6px">Founding prices</caption>
       <thead><tr><th scope="col">Service</th><th scope="col">Founding price</th></tr></thead>
@@ -274,6 +259,32 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
         <tr><td>Proofreading and editing</td><td>$15 per page</td></tr>
       </tbody>
     </table>
+    <form class="story-form help-form" id="help-form" novalidate aria-label="Ask for more help">
+      <div class="notice" role="status" aria-live="polite" data-help-status hidden>
+        <strong data-help-status-title></strong>
+        <p data-help-status-text></p>
+      </div>
+      <fieldset disabled data-help-fields>
+        <div class="field"><label for="hf-service">Which job?</label>
+            <select id="hf-service" name="service">
+              <option value="">Choose one</option>
+              <option value="data_entry">Data entry and typing · $20 per hour</option>
+              <option value="word">Word: letter, flyer, form, or fixing a messy document · $25 each</option>
+              <option value="resume">Resume · $25</option>
+              <option value="powerpoint">PowerPoint deck, up to 10 slides · $50</option>
+              <option value="excel">Excel sheet or simple tracker · $35</option>
+              <option value="writing">Writing: bio, product description, social posts · $25 each</option>
+              <option value="proofreading">Proofreading and editing · $15 per page</option>
+            </select>
+        </div>
+        <div class="field"><label for="hf-details">What do you need done?</label><small>Tell me about the job. I’ll reply with the total before you pay.</small><textarea id="hf-details" name="details" maxlength="4000"></textarea></div>
+        <div class="field"><label for="hf-email">Your email</label><input id="hf-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
+        <div class="field hp" aria-hidden="true"><label for="hf-website">Leave this empty</label><input id="hf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="form-error" role="alert" data-help-error hidden></p>
+        <button type="submit" data-help-submit>Send my request</button>
+        <p class="fine">I’ll email you the total. You only pay once you agree to it.</p>
+      </fieldset>
+    </form>
   </div>
 </section>
 
@@ -300,5 +311,6 @@ body{background:var(--void);color:var(--bone);font-size:18px;line-height:1.55}
 <script src="/assets/loud/loud.js"></script>
 <script src="/assets/help/orders-config.js"></script>
 <script src="/assets/help/order-form.js"></script>
+<script src="/assets/help/help-form.js"></script>
 </body>
 </html>
