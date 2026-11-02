@@ -20,7 +20,7 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual(sections[0]['source_key'], 'cruel')
         self.assertEqual(sections[3]['source_key'], 'wife')
         self.assertTrue(all(section['source_name'] is None and section['source_sha256'] is None for section in sections))
-        self.data['sections'][2]['title'] = "Papa Didn't Raise No Fool"
+        self.data['sections'][2]['title'] = "Papa Didn't Raise a Fool"  # Owner 2026-11-02: the title is "No Fool"
         with self.assertRaises(ValueError):
             app.validate(self.data)
 

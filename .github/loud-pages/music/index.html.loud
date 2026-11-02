@@ -174,7 +174,7 @@ html body .vault .door p{display:none}
     <ul class="tracks" data-album="awakening">
       <li id="song-cruel"><button data-src="awakening-01-cruel.mp3" data-title="Cruel"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
       <li id="song-im-not"><button data-src="awakening-02-im-not-staying-silent.mp3" data-title="I'm Not"><span class="no">02</span>I'm Not<span class="go">▶ PLAY</span></button></li>
-      <li id="song-papa-didnt-raise-a-fool"><button data-src="awakening-03-papa-didnt-raise-no-fool.mp3" data-title="Papa Didn't Raise a Fool"><span class="no">03</span>Papa Didn't Raise a Fool<span class="go">▶ PLAY</span></button></li>
+      <li id="song-papa-didnt-raise-a-fool"><button data-src="awakening-03-papa-didnt-raise-no-fool.mp3" data-title="Papa Didn't Raise No Fool"><span class="no">03</span>Papa Didn't Raise No Fool<span class="go">▶ PLAY</span></button></li>
       <li id="song-she-got-to-me"><button data-src="awakening-04-she-got-to-me.mp3" data-title="She Got to Me"><span class="no">04</span>She Got to Me<span class="go">▶ PLAY</span></button></li>
       <li id="song-this-is-ghostheart"><button data-src="awakening-05-this-is-ghostheart.mp3" data-title="This Is GhostHeart"><span class="no">05</span>This Is GhostHeart<span class="go">▶ PLAY</span></button></li>
       <li id="song-ghosthearts-oath"><button data-src="awakening-06-ghosthearts-oath.mp3" data-title="GhostHeart's Oath"><span class="no">06</span>GhostHeart's Oath<span class="go">▶ PLAY</span></button></li>

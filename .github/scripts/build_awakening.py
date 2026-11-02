@@ -12,7 +12,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / '.github/content/awakening.json'
-ORDER = ["Cruel", "I'm Not", "Papa Didn't Raise a Fool", "She Got to Me",
+ORDER = ["Cruel", "I'm Not", "Papa Didn't Raise No Fool", "She Got to Me",
          "This Is GhostHeart", "GhostHeart's Oath", "You Can Be GhostHeart Too",
          "One Heart Many Voices"]
 SUNDAY = 'Sunday, October 11, 2026 at 10:00 a.m. Central. Viewing link and platform to be confirmed.'
