@@ -214,3 +214,11 @@ html body main p:not(#_){font-size:min(1em,17px)}
   html body main :is(img,video,iframe):not(.g-player *):not(#_){max-height:240px}
   html body main p:not(#_){font-size:min(1em,15px)}
 }
+
+/* READABLE TEXT FLOOR 2026-11-02 (owner: "fix the bigger jobs now", from the page-by-page audit).
+   The site stays at the 80% size Dom chose on computers, but small words (menu, labels, captions,
+   footers, little buttons) no longer drop below 12px on screen: 15px before the zoom (15 x 0.8 = 12).
+   Only text that was smaller than that is listed here; nothing gets smaller. */
+@media (min-width:1000px){
+  html body :is(.ghx-primary a,.ghx-menu-toggle,.ghx-help-link,.kicker,.ghx-kicker,small,legend,dt,th,caption,.fcopy,.g-small,.g-link,.g-play-label,.lr-next,.dv-tag,.world-section-label,.gh-save,.hb-scroll,.sitefoot nav a,.sitefoot nav span,.sitefoot p,.tracks .go,a.song,.vault-type,.dv-meta b,.ghx-footer nav a,.ghx-footer-bottom a,.ghx-footer-bottom span,.gateway-footnote a,.gateway-footnote span,.label span:not(.num),span.t,.when,.when b,.meta,span.live,.g-kicker,.g-button,.music-number,.artist-pick,.track-list,.eyebrow,time):not(#_):not(#__){font-size:15px!important}
+}

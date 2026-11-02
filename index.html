@@ -52,6 +52,7 @@ main>section,main>aside{position:relative}
   background:url("/assets/home/heartbeat/portrait-1200.webp") center/cover no-repeat;
   -webkit-mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);
   filter:contrast(1.08) saturate(1.15)}
+@media(max-width:700px){.hb-portrait{background-image:url("/assets/home/heartbeat/portrait-640.webp")}} /* phones load the small picture (audit 2026-11-02) */
 .hb-portrait::after{content:"";position:absolute;left:52%;top:64%;width:22%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
   background:radial-gradient(circle,rgba(255,107,94,.95),rgba(244,72,60,.35) 45%,transparent 70%);mix-blend-mode:screen;animation:hb-pulse 1.15s infinite}
 .hb-giant{position:absolute;z-index:-4;left:-2vw;top:calc(var(--hdr,88px) + 2vh);font-family:var(--display);font-size:24vw;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,72,60,.28);white-space:nowrap;pointer-events:none;user-select:none}

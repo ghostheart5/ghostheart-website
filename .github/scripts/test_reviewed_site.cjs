@@ -33,7 +33,7 @@ const recordingsPreviewFragments = [
   page.on('pageerror', error => errors.push(String(error)));
   const paths = [
     '/', '/GhostHeart_Story.html', '/woman-behind-the-scenes/',
-    '/albums/index.html', '/vault/', '/live/index.html',
+    '/music/index.html', '/vault/', '/live/index.html',
     '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/journal/index.html'
   ];
   for (const width of [390, 1440]) {
@@ -101,49 +101,23 @@ const recordingsPreviewFragments = [
       const headerBounds = await page.locator('header.ghx-header').boundingBox();
       assert.ok(bounds.y >= headerBounds.y + headerBounds.height - 1, href + ' visible below sticky header');
       assert.ok(bounds.y < 900, href + ' fragment in viewport');
-      assert.equal(await target.locator('audio').count(), 1);
+      assert.equal(await target.locator('button[data-src]').count(), 1, href + ' play button');
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
     }
-    const trailer = page.locator('#track-this-is-ghostheart a');
-    assert.equal(await trailer.getAttribute('href'), 'https://www.youtube.com/watch?v=AOCRvtz92JM');
-    assert.equal(await trailer.innerText(), 'Watch trailer');
-    assert.equal(await trailer.getAttribute('aria-label'), 'Watch trailer: This Is GhostHeart on YouTube');
   }
-  for (const width of [320, 1440]) {
-    await page.setViewportSize({ width, height: 900 });
-    for (const [id, title, src] of recordingsPreviewFragments) {
-      const href = '/GhostHeart_Songs.html#' + id;
-      const label = href + ' at ' + width;
-      // Exercise opening a shared deep link, not only a same-document hash change.
+  // Owner 2026-11-02: Music is the one home for the 11 songs. Old shared links (Songs page rows and
+  // /albums/#track-*) still open, and land on the same song on Music.
+  for (const [id, title] of recordingsPreviewFragments) {
+    const slug = id.replace('song-audio-track-', '');
+    for (const href of ['/GhostHeart_Songs.html#' + id, '/albums/#track-' + slug, '/albums/index.html#track-' + slug]) {
       await page.goto('about:blank');
-      const response = await page.goto(base + href, { waitUntil: 'load' });
-      assert.equal(response.status(), 200, label + ' response');
-      assert.equal(new URL(page.url()).hash, '#' + id, label + ' preserved URL');
-      assert.equal(await page.locator('#' + id).count(), 1, label + ' unique fragment');
-      const target = page.locator('li.music-track#' + id);
-      assert.equal(await target.count(), 1, label + ' playable row');
-      assert.equal(await target.isVisible(), true, label + ' visible row');
-      assert.equal(await target.locator('h3').innerText(), title, label + ' matching title');
-      assert.equal(await target.locator('audio').count(), 1, label + ' audio player');
-      const audio = target.locator('audio');
-      assert.equal(await audio.evaluate(element => element.controls), true, label + ' native controls');
-      assert.equal(await audio.getAttribute('preload'), 'none', label + ' no preloading');
-      assert.equal(await audio.locator('source').count(), 1, label + ' single audio source');
-      assert.equal(await audio.locator('source').getAttribute('src'), src, label + ' matching audio');
-      await page.waitForFunction(selector => {
-        const bounds = document.querySelector(selector).getBoundingClientRect();
-        const header = document.querySelector('header.ghx-header').getBoundingClientRect();
-        return bounds.y >= header.bottom - 1 && bounds.bottom <= innerHeight + 1;
-      }, 'li.music-track#' + id, { timeout: 3000 });
-      const bounds = await target.boundingBox();
-      const headerBounds = await page.locator('header.ghx-header').boundingBox();
-      assert.ok(bounds.width > 0 && bounds.height > 0, label + ' rendered row');
-      assert.ok(bounds.y >= headerBounds.y + headerBounds.height - 1, label + ' below sticky header');
-      assert.ok(bounds.y + bounds.height <= 901, label + ' complete row in viewport');
-      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, label + ' no horizontal overflow');
+      await page.goto(base + href);
+      await page.waitForURL(url => url.pathname === '/music/', { timeout: 5000 });
+      assert.equal(new URL(page.url()).hash, '#song-' + slug, href + ' lands on the song');
+      assert.equal(await page.locator('#song-' + slug + ' button[data-src]').getAttribute('data-title'), title, href + ' title');
     }
   }
-  console.log('PASS browser: all 11 original Released recordings preview fragments at 320 and 1440 pixels');
+  console.log('PASS browser: all 11 old song links forward to the same song on Music');
   await page.goto(base + '/GhostHeart_Resources.html');
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -174,7 +148,8 @@ const recordingsPreviewFragments = [
   await page.locator('[data-filter="all"]').click();
   assert.equal(await page.locator('.resource:visible').count(), 16);
   await page.goto(base + '/albums/index.html');
-  assert.equal(await page.locator('audio').count(), 11);
+  await page.waitForURL(url => url.pathname === '/music/', { timeout: 5000 });
+  assert.equal(await page.locator('main [id^="song-"] button[data-src]').count(), 11);
   await page.goto(base + '/GhostHeart_Privacy.html');
   const privacyMenu = page.locator('header.ghx-header .ghx-menu-toggle');
   for (const expected of ['true', 'false', 'true']) {

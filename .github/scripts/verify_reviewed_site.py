@@ -63,9 +63,10 @@ assert page('GhostHeart_Angel.html').select_one('a[href="/woman-behind-the-scene
 assert story.select_one('a[href*="GhostHeart_Resources.html"]')
 assert (ROOT / "journal/how-we-got-here-archive.html").is_file()
 
-music = page("albums/index.html")
-assert len(music.select("audio")) == 11
-assert len(music.select(".music-youtube")) == 6
+# Owner 2026-11-02 ("fix the bigger jobs now"): Music is the one home for the 11 songs; /albums/ forwards there.
+music = page("music/index.html")
+assert len(music.select('[id^="song-"]')) == 11
+assert page("albums/index.html").select_one('meta[http-equiv="refresh"]')["content"] == "0; url=/music/"
 audio = list((ROOT / "assets/music/preview").glob("*.mp3"))
 assert len(audio) == 11 and all(track.stat().st_size > 1_000_000 for track in audio)
 assert max(track.stat().st_size for track in audio) < 100_000_000
