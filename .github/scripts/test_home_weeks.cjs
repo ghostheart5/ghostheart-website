@@ -10,7 +10,7 @@ const cases = [
   ['2026-11-15T23:00:00Z', 'Wake the Heart Week', 'About Wake the Heart Week'],
   ['2026-11-16T15:00:00Z', 'The Parts You Hide', 'Hear You Can’t Change Us'],
   ['2026-12-08T15:00:00Z', 'Still Here', 'Hear Rebellion'],
-  ['2027-01-02T15:00:00Z', 'Wrapping The Awakening', 'See this Sunday’s Live'],
+  ['2027-01-02T15:00:00Z', 'Wrapping Before the Heart Wakes', 'See this Sunday’s Live'],
 ];
 (async () => {
   const browser = await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE || undefined});

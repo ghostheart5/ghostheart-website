@@ -34,7 +34,7 @@ const KEY = 'gh-check-back-in';
 
   // First visit: nothing to check back in to.
   await page.goto(base + '/');
-  assert.equal(await page.locator('#check-back-in').isHidden(), true);
+  assert.equal(await page.locator('#check-back-in').count(), 0);
 
   // Vault: the picker gives one piece with its reason; honest when a format has nothing.
   await page.goto(base + '/vault/');
@@ -74,26 +74,9 @@ const KEY = 'gh-check-back-in';
   await page.goto(base + '/passages/im-not.html');
   assert.match(await page.locator('.gh-resume-read').innerText(), /You stopped about 40% of the way through\./);
 
-  // Home: the panel lists the song to pick up, the reading, what's new and the saved items.
-  // Last visit long ago: the home page treats this as a new visit and lists what was published since.
-  await page.evaluate(k => { const d = JSON.parse(localStorage.getItem(k)); d.last = Date.parse('2026-10-02T00:00:00Z'); localStorage.setItem(k, JSON.stringify(d)); }, KEY);
+  // Home: no Check back in panel (owner 2026-11-01: "REMOVE CHECK IN").
   await page.goto(base + '/');
-  const panel = page.locator('#check-back-in');
-  await panel.locator('li:has-text("New since your last visit")').first().waitFor({timeout: 5000});
-  const text = await panel.innerText();
-  assert.match(text, /Pick up at 1:12\s+Cruel/i);
-  assert.match(text, /Continue reading\s+I’m Not/i);
-  assert.match(text, /Saved song\s+She Got to Me/i);
-  assert.equal(await panel.locator('a[href="/music/?resume=1#song-cruel"]').count(), 1);
-  for (const target of await panel.locator('a, button').all()) assert.ok((await target.boundingBox()).height >= 40, 'touch target');
-  const before = await panel.locator('li').count();
-  await panel.locator('li:has-text("She Got to Me") .gh-remove').click();
-  assert.equal(await panel.locator('li').count(), before - 1);
-  assert.equal((await state()).saved.some(s => s.id === 'song-she-got-to-me'), false);
-  await panel.locator('[data-checkin-forget]').click();
-  assert.equal(await panel.isHidden(), true);
-  const cleared = await state();
-  assert.deepEqual([cleared.saved.length, cleared.song, cleared.read], [0, null, null]);
+  assert.equal(await page.locator('#check-back-in').count(), 0);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'no sideways scroll');
 
   // Blocked storage: pages work, the feature stays out of the way.
@@ -108,5 +91,5 @@ const KEY = 'gh-check-back-in';
 
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log(`PASS check back in: ${cat.picks.length} curated picks resolve; picker, Try another, honest gap, Save; song pick-up, reading pick-up, what's new, remove, forget; blocked storage.`);
+  console.log(`PASS check back in: ${cat.picks.length} curated picks resolve; picker, Try another, honest gap, Save; song pick-up, reading pick-up, no home panel; blocked storage.`);
 })().catch(e => { console.error(e); process.exit(1); });
