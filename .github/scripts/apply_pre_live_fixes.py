@@ -55,7 +55,6 @@ SWAPS = {
         ('Human Too cinematic remake YouTube title: Why You Should Never Judge Someone\'s Worst Day', 'Human After All cinematic remake'),
     ],
     'index.html': [
-        ('The Start campaign kicks off January 4, 2027.', 'The Starts begins January 4, 2027.'),
     ],
     'here-to-help/index.html': [
         ('✶ GhostHeart Studios / I’m Here to Help</span>', '✶ GhostHeart Studios / Work with GhostHeart</span>'),
