@@ -125,7 +125,7 @@
       <input type="email" id="dv-email" name="EMAIL" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" required>
       <button type="submit" name="subscribe">Join free</button>
       <div class="dv-trap" aria-hidden="true"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off"></div>
-      <span class="dv-small">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></span>
+      <span class="dv-small">Free. Unsubscribe anytime. Mailchimp handles signup. <a href="/GhostHeart_Privacy.html">Privacy</a></span>
     </form>
   </div>
 </section>

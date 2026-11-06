@@ -46,7 +46,7 @@ def film(vid, title, copy):
 FILMS = '<div class="g-films">'+film('AOCRvtz92JM','This Is GhostHeart','The name, the scars, and the reason a hidden heart chose to be seen.')+film('mBAsUNX3vHQ',"GhostHeart’s Oath",'The promise to protect the light in others.')+'</div>'
 
 def signup(prefix='signal'):
-    return f'''<form class="g-form signal-signup-form" action="{escape(FORM, quote=True)}" method="post" target="_blank" rel="noopener noreferrer"><label for="{prefix}-email">Email address</label><div class="g-form-row"><input id="{prefix}-email" type="email" name="EMAIL" required autocomplete="email" inputmode="email" placeholder="you@example.com" maxlength="254" aria-describedby="{prefix}-note"/><button type="submit" name="subscribe">Follow by email <span aria-hidden="true">↗</span></button></div><div class="g-honeypot" aria-hidden="true"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off"/></div><p class="g-small" id="{prefix}-note">Mailchimp opens to finish signup. Confirm through the email it sends. Unsubscribe anytime. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.</p><p class="g-form-status" role="status" aria-live="polite"></p></form>'''
+    return f'''<form class="g-form signal-signup-form" action="{escape(FORM, quote=True)}" method="post" target="_blank" rel="noopener noreferrer"><label for="{prefix}-email">Email address</label><div class="g-form-row"><input id="{prefix}-email" type="email" name="EMAIL" required autocomplete="email" inputmode="email" placeholder="you@example.com" maxlength="254" aria-describedby="{prefix}-note"/><button type="submit" name="subscribe">Follow by email <span aria-hidden="true">↗</span></button></div><div class="g-honeypot" aria-hidden="true"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off"/></div><p class="g-small" id="{prefix}-note">Free. Unsubscribe anytime. Mailchimp handles signup. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.</p><p class="g-form-status" role="status" aria-live="polite"></p></form>'''
 
 def follow_block(prefix='signal'):
     return f'''<section class="g-section g-follow" id="join-the-signal"><div class="g-wrap g-two"><div><p class="g-kicker">Email updates</p><h2>Join the Heart<br/>Rebellion.</h2><p>New chapters, stories behind the music, confirmed Live announcements, and ways to take part—when there’s something ready to share.</p></div><div>{signup(prefix)}</div></div></section>'''
@@ -120,8 +120,8 @@ privacy=ROOT/'GhostHeart_Privacy.html'; text=privacy.read_text()
 marker='<h2>Optional reading bookmark</h2>'
 if marker not in text:
     text=text.replace('<h2>What is collected</h2>',marker+'<p>If you choose Save my place, this browser stores the page path and reading position on this device. It is not an account, is not sent to GhostHeart, and can be removed with Clear saved place. Email addresses are never stored by this bookmark.</p><h2>What is collected</h2>')
-text=text.replace('You must confirm the subscription before messages are sent.','Follow the confirmation instructions shown by Mailchimp after signup.')
-text=text.replace('<li>You can ignore the confirmation message and remain unsubscribed.</li>','<li>Submitting the website form alone is not a confirmation of delivery. Mailchimp manages your signup status and any confirmation step.</li>')
+text=text.replace('You must confirm the subscription before messages are sent.','Submitting the form asks to receive GhostHeart emails; Mailchimp displays the signup outcome.')
+text=text.replace('<li>You can ignore the confirmation message and remain unsubscribed.</li>','<li>Mailchimp displays the signup outcome. This website does not confirm your subscription or email delivery.</li>')
 privacy.write_text(text,encoding='utf-8',newline='\n')
 # Do not leave obsolete Angel image previews on the separate music collection.
 if HAS_ANGEL:

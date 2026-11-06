@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[2]
 CONNECTION = json.loads((ROOT / '.github/content/connection.json').read_text(encoding='utf-8'))
 EMAIL_VALUE = CONNECTION['benefits']
-SIGNUP_NOTE = 'You’ll finish signup in a new Mailchimp tab. Confirm through the email it sends. Unsubscribe anytime. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.'
+SIGNUP_NOTE = 'Free. Unsubscribe anytime. Mailchimp handles signup. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.'
 follow_path = ROOT / "follow/index.html"
 follow = BeautifulSoup(follow_path.read_text(encoding="utf-8"), "html.parser")
 provider_form = follow.select_one("form.signal-signup-form")

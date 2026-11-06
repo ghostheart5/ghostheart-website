@@ -27,7 +27,8 @@ module.exports = async (page, base) => {
       assert.equal(await field.getAttribute('type'), 'email');
       assert.equal(await form.locator('.g-honeypot input').getAttribute('name'), 'b_a7ab330423f3b936c48b8d8ba_880e8056a6');
       assert.equal(await form.locator('.g-honeypot input').getAttribute('tabindex'), '-1');
-      assert.match(await form.innerText(), /tap the link in the email/);
+      assert.match(await form.innerText(), /Mailchimp handles signup/);
+      assert.doesNotMatch(await form.innerText(), /confirm through|tap the link in the email/i);
       assert.match(await form.innerText(), /Unsubscribe anytime/);
       assert.equal(await form.locator('.g-form-status').innerText(), '');
       assert.equal(await page.locator('[data-comment-thread]').count(), route === '/journal/' ? 0 : 1, route); // comments on 2026-10-31
@@ -62,6 +63,13 @@ module.exports = async (page, base) => {
         await field.fill('local-layout-check@example.invalid');
         assert.equal(await field.evaluate(node => node.checkValidity()), true);
         await field.fill('');
+        // Exercise only the local announcement; prevent the browser's form action.
+        await form.evaluate(node => {
+          node.addEventListener('submit', event => event.preventDefault(), { once: true });
+          node.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        });
+        assert.equal(await form.locator('.g-form-status').innerText(),
+          'Opening Mailchimp to complete signup. This page does not confirm your subscription or email delivery.');
       }
       if (evidence && [390,1440].includes(width) && [routes[0],routes[1]].includes(route)) {
         await page.locator('.journal-signup').scrollIntoViewIfNeeded();
@@ -69,6 +77,17 @@ module.exports = async (page, base) => {
       }
       results.push({ route, width, overflow: false, providerPreserved: true, focusVisible: true });
     }
+  }
+  await page.goto(base + '/GhostHeart_Privacy.html');
+  const privacy = await page.locator('main').innerText();
+  assert.match(privacy, /When you submit the email form, you ask to receive GhostHeart updates/);
+  assert.match(privacy, /Mailchimp.*displays the outcome/);
+  assert.match(privacy, /unsubscribe.*link included in that message/);
+  assert.doesNotMatch(privacy, /must confirm|ignore the confirmation message/i);
+  for (const route of ['/signup/check-your-inbox.html', '/signup/confirmed.html']) {
+    await page.goto(base + route);
+    const guidance = await page.locator('main').innerText();
+    assert.match(guidance, /Opening this public page(?: alone)? does not subscribe you or confirm email delivery/);
   }
   // The 320 CSS-pixel checks cover the width equivalent to 1280px at 400% zoom:
   // https://www.w3.org/WAI/WCAG22/Understanding/reflow.html

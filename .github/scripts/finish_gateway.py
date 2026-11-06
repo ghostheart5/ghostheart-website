@@ -234,10 +234,10 @@ for p in ROOT.glob('GhostHeart_Version_*.html'):
 p=ROOT/'GhostHeart_Projects.html';s=p.read_text().replace('chronospark','axiomara');s=s.replace('id="axiomara-title"','id="axiomara-title"',1);p.write_text(s,encoding='utf-8')
 css=ROOT/'assets/projects/projects-page.css';css.write_text(css.read_text().replace('.chronospark','.axiomara'),encoding='utf-8')
 
-# Confirmation pages give useful next steps without mistaking a public page load for proof of a subscription.
+# Signup guidance never mistakes a public page load for proof of subscription or email delivery.
 for path,title,lead,detail in [
- ('signup/check-your-inbox.html','Check your inbox.','Complete the signup instructions from Mailchimp.','When confirmation is requested, use the link in that email. Check spam or promotions if it does not arrive. This page cannot check your subscription status.'),
- ('signup/confirmed.html','Welcome to GhostHeart.','The next page is waiting.','Mailchimp manages your subscription status. Opening this public page alone does not subscribe you. Follow its confirmation instructions if you have not finished signup.')]:
+ ('signup/check-your-inbox.html','Check your inbox.','Mailchimp displays the signup outcome.','Opening this public page does not subscribe you or confirm email delivery. Follow the instructions displayed by Mailchimp after submitting the signup form. If you are looking for an email, check spam or promotions too.'),
+ ('signup/confirmed.html','Welcome to GhostHeart.','The next page is waiting.','Mailchimp manages your subscription status. Opening this public page alone does not subscribe you or confirm email delivery. Follow the instructions displayed by Mailchimp after submitting the signup form.')]:
  body=HEAD('Follow GhostHeart',title,lead)+f'<section class="g-section"><div class="g-wrap l-prose"><p>{detail}</p><div class="g-actions">{L(READ,"Begin the story ↗","g-button")}{L("/follow/index.html","Return to signup ↗")}</div></div></section>'
  page(path,title,'GhostHeart email signup guidance and the public story.',body)
 

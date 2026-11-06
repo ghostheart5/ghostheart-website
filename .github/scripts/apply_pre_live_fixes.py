@@ -15,8 +15,8 @@ present, so the step is safe to run twice.
 - Typos and names: "Human Afterall", "The Start campaign" (Blueprint: The
   Starts), the Work with GhostHeart page label, the Awakening page's
   "public reading" (readings are off the site).
-- Sign-up note: the form no longer opens Mailchimp, so the note says to tap
-  the link in the email instead.
+- Sign-up note: keep Mailchimp handoff guidance accurate without promising
+  a confirmation email or requiring double opt-in.
 """
 import re
 from pathlib import Path
@@ -24,7 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 SIGNUP_OLD = 'Mailchimp opens to finish signup. Confirm through the email it sends.'
-SIGNUP_NEW = 'Then tap the link in the email Mailchimp sends you.'
+SIGNUP_NEW = 'Mailchimp handles signup.'
 
 SWAPS = {
     'GhostHeart_Songs.html': [
