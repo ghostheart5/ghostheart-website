@@ -1,355 +1,154 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta content="GhostHeart LOUD redesign" name="generator"/>
-<script>document.documentElement.classList.add("js")</script>
-<link href="https://www.myghostheart.com/" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="GhostHeart" property="og:site_name"/>
-<meta content="GhostHeart | Real Stories. Real People. Same Heart." property="og:title"/>
-<meta content="Music, films, and stories for the wounded, the brave, and everyone still here." property="og:description"/>
-<meta content="https://www.myghostheart.com/" property="og:url"/>
-<meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="GhostHeart — music, films and stories from one man's real life. Too human to stay quiet. Every platform leads home to myghostheart.com." name="description"/>
-<meta content="427845c023131887ec264df45999badc" name="p:domain_verify"/>
-<meta content="#050505" name="theme-color"/>
-<title>GhostHeart | The Man Behind The Heart.</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="/assets/home/rebellion.css" rel="stylesheet"/>
-<link href="/assets/loud/loud.css" rel="stylesheet"/>
-<link as="image" fetchpriority="high" href="/assets/home/heartbeat/portrait-640.webp" media="(max-width: 700px)" rel="preload" type="image/webp"/>
-<link as="image" fetchpriority="high" href="/assets/home/heartbeat/portrait-1200.webp" media="(min-width: 701px)" rel="preload" type="image/webp"/>
-<style>
-/* HEARTBEAT 2026-10-25 — homepage redesign: one hub every platform leads home to. */
-:root{color-scheme:dark;
-  --void:#050505;--coal:#0e0b0b;--blood:#f4483c;--hot:#ff6b5e;--ember:#5c000b;
-  --bone:#f4efe6;--ash:#a39e98;--line:rgba(244,239,230,.16);
-  --display:Anton,Impact,"Arial Narrow",sans-serif;--body:"Space Grotesk",system-ui,sans-serif;--hand:"Permanent Marker",cursive;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:auto;overflow-x:clip;scroll-padding-top:calc(var(--hdr,88px) + 8px)}
-body{margin:0;background:var(--void);color:var(--bone);font-family:var(--body);font-size:18px;line-height:1.55;overflow-x:clip}
-a{color:inherit}
-img{display:block;max-width:100%;height:auto}
-.display{font-family:var(--display);text-transform:uppercase;line-height:.86;letter-spacing:-.005em;font-weight:400}
-:where(a,button,summary):focus-visible{outline:3px solid var(--hot);outline-offset:4px}
-.hb-wrap{width:min(1280px,100%);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
-.label{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:clamp(20px,3vw,36px);font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ash)}
-.label .num{font-family:var(--display);font-size:clamp(28px,3vw,40px);letter-spacing:0;color:var(--blood)}
-main>section,main>aside{position:relative}
-
-/* ---------- HERO: the heartbeat ---------- */
-.hb-hero{min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate;padding:calc(var(--hdr,88px) + 24px) 0 clamp(40px,8vh,90px);
-  background:radial-gradient(90% 70% at 72% 42%,#3d0009 0%,#140204 46%,var(--void) 78%)}
-.hb-portrait{position:absolute;z-index:-3;right:max(-6vw,-80px);top:50%;translate:0 -46%;width:min(68vw,880px);aspect-ratio:1;
-  background:url("/assets/home/heartbeat/portrait-1200.webp") center/cover no-repeat;
-  -webkit-mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);mask-image:radial-gradient(closest-side,#000 58%,transparent 100%);
-  filter:contrast(1.08) saturate(1.15)}
-@media(max-width:700px){.hb-portrait{background-image:url("/assets/home/heartbeat/portrait-640.webp")}} /* phones load the small picture (audit 2026-11-02) */
-.hb-portrait::after{content:"";position:absolute;left:52%;top:64%;width:22%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,107,94,.95),rgba(244,72,60,.35) 45%,transparent 70%);mix-blend-mode:screen;animation:hb-pulse 1.15s infinite}
-.hb-giant{position:absolute;z-index:-4;left:-2vw;top:calc(var(--hdr,88px) + 2vh);font-family:var(--display);font-size:24vw;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,72,60,.28);white-space:nowrap;pointer-events:none;user-select:none}
-.hb-ekg{position:absolute;z-index:-1;left:0;right:0;top:auto;bottom:6%;height:120px;width:100%;pointer-events:none;opacity:.9}
-.hb-ekg path{fill:none;stroke:var(--blood);stroke-width:3;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(255,107,94,.9));stroke-dasharray:2400;stroke-dashoffset:2400;animation:hb-trace 3.2s linear infinite}
-.hb-hero::after{content:"";position:absolute;inset:auto 0 0;height:34%;z-index:-2;background:linear-gradient(transparent,var(--void))}
-.hb-hero-copy{position:relative;max-width:1180px}
-.kicker{display:inline-block;background:var(--blood);color:var(--void);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:8px 12px;transform:rotate(-1.5deg)}
-#home h1{font-size:clamp(54px,11vw,172px);margin:18px 0 0;max-width:100%;overflow-wrap:anywhere}
-#home h1 .o{color:transparent;-webkit-text-stroke:2px var(--bone)}
-#home h1 .r{color:var(--blood);text-shadow:0 0 34px rgba(244,72,60,.55)}
-.canon-hero__line{font-size:clamp(18px,1.6vw,22px);font-weight:500;max-width:36ch;margin:22px 0 0;line-height:1.45}
-.canon-hero__note{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,26px);margin:10px 0 0}
-.canon-hero__note a{display:inline-flex;align-items:center;min-height:44px;text-decoration-thickness:1px;text-underline-offset:6px}
-#home .ghx-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-#home .ghx-actions a{display:inline-flex;align-items:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:15px;background:rgba(5,5,5,.55);backdrop-filter:blur(4px)}
-#home .ghx-actions a.primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;padding:14px 28px;box-shadow:6px 6px 0 var(--bone)}
-#home .ghx-actions a:hover{background:var(--bone);color:var(--void)}
-#home .ghx-actions a.primary:hover{background:var(--hot);color:var(--void)}
-.hb-scroll{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);text-decoration:none;min-height:44px}
-.hb-scroll i{width:9px;height:9px;border-radius:50%;background:var(--blood);box-shadow:0 0 12px var(--blood);animation:hb-pulse 1.15s infinite}
-
-/* arrival note: a different welcome for each platform */
-.hb-arrival{position:relative;display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;max-width:860px;margin:0 0 22px;padding:14px 16px;border:2px solid var(--blood);background:rgba(20,2,4,.82);backdrop-filter:blur(6px)}
-.hb-arrival[hidden]{display:none}
-.hb-arrival b{font-family:var(--display);font-size:22px;text-transform:uppercase;color:var(--blood);font-weight:400}
-.hb-arrival p{margin:0;font-size:16px;line-height:1.4}
-.hb-arrival a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;background:var(--bone);color:var(--void);font-weight:700;text-decoration:none;white-space:nowrap}
-.hb-arrival button{background:none;border:0;color:var(--ash);font:inherit;font-size:14px;min-height:44px;min-width:44px;cursor:pointer}
-@media(max-width:700px){.hb-arrival{grid-template-columns:1fr auto;gap:6px 10px;padding:10px 12px;margin-bottom:16px}.hb-arrival b{grid-column:1;font-size:18px}.hb-arrival button{grid-column:2;grid-row:1;justify-self:end}.hb-arrival p{grid-column:1/-1;font-size:15px}.hb-arrival a{grid-column:1/-1;justify-self:start;min-height:44px}}
-
-/* tape */
-.tape{overflow:hidden;background:var(--blood);color:var(--void);transform:rotate(-1.2deg);margin:-14px -2vw 0;border-block:3px solid var(--void);position:relative;z-index:2}
-.tape div{display:flex;gap:44px;width:max-content;padding:12px 0;font-family:var(--display);font-size:clamp(26px,3.6vw,46px);text-transform:uppercase;animation:hb-tape 26s linear infinite}
-.tape.alt{background:var(--void);color:var(--blood);transform:rotate(1deg)}
-
-/* ---------- FEATURED ---------- */
-#latest{padding:clamp(56px,9vw,120px) 0 clamp(40px,6vw,80px)}
-.hb-feature{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
-.hb-feature[hidden]{display:none}
-#latest h2{font-size:clamp(48px,7.5vw,112px);margin:0}
-#latest h2 em{color:var(--blood);font-style:normal}
-#latest .line{font-size:clamp(18px,1.5vw,21px);max-width:36ch;margin:18px 0 0}
-#latest .jump{margin:14px 0 0}
-#latest .jump a,.hb-textlink{display:inline-flex;align-items:center;min-height:44px;color:var(--hot);font-weight:700;text-underline-offset:6px}
-#latest .ctas{margin-top:22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--bone)}
-.btn.red{background:var(--blood);border-color:var(--blood);color:var(--void);box-shadow:6px 6px 0 var(--bone)}
-.btn.red:hover{background:var(--hot)}
-.hb-poster{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border:3px solid var(--bone);box-shadow:14px 14px 0 var(--blood);text-decoration:none}
-.hb-poster img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.hb-poster:hover img{transform:scale(1.04)}
-.hb-poster span{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:12px;background:var(--void);padding:12px 18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
-.hb-poster span i{width:0;height:0;border-left:14px solid var(--blood);border-block:9px solid transparent}
-.tracks{list-style:none;margin:clamp(28px,4vw,48px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.tracks a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border:2px solid var(--line);text-decoration:none;font-weight:700}
-.tracks a span:first-child{font-family:var(--display);color:var(--blood);font-size:24px}
-.tracks a:hover{border-color:var(--blood);background:#16070a}
-@media(max-width:860px){.hb-feature{grid-template-columns:1fr}.tracks{grid-template-columns:1fr}}
-
-/* ---------- THE MAN ---------- */
-#home-story{padding:clamp(56px,9vw,120px) 0;background:linear-gradient(180deg,var(--void),#120305 60%,var(--void))}
-.hb-man{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
-.hb-man figure{margin:0;position:relative}
-.hb-man figure img{width:100%;aspect-ratio:1;object-fit:cover;border:3px solid var(--bone);filter:contrast(1.05)}
-.hb-man figure figcaption{position:absolute;right:-10px;bottom:-14px;background:var(--blood);color:var(--void);font-family:var(--hand);font-size:clamp(18px,2vw,24px);padding:8px 14px;transform:rotate(-2deg)}
-#home-story h2{font-size:clamp(40px,5.5vw,80px);margin:0}
-#home-story h2 .o{color:transparent;-webkit-text-stroke:2px var(--bone)}
-.hb-man p{max-width:40ch}
-.creed{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;font-family:var(--display);font-size:clamp(26px,3vw,40px);text-transform:uppercase}
-.creed span:nth-child(2){color:var(--blood)}
-.hb-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-@media(max-width:860px){.hb-man{grid-template-columns:1fr}.hb-man figure{max-width:520px}}
-
-/* ---------- injected mission board + signal, restyled ---------- */
-#mission-board{padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px);max-width:1280px;margin:0 auto}
-#mission-board .ghx-kicker{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blood);margin:0}
-#mission-board h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(32px,4vw,56px);line-height:.95;margin:10px 0 14px;max-width:18ch}
-.mission-board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin-top:22px}
-.mission-board-grid article{border:2px solid var(--line);padding:20px;display:grid;gap:8px;align-content:start;background:var(--coal)}
-.mission-board-grid article:last-child{border-color:var(--blood)}
-.mission-board-grid h3{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:28px;margin:0}
-.mission-board-grid p{margin:0;font-size:16px;line-height:1.5}
-.mission-board-grid a{display:inline-flex;align-items:center;min-height:44px;color:var(--hot);font-weight:700;text-underline-offset:5px}
-.mission-participation{color:var(--ash);font-size:16px;margin-top:18px}
-@media(max-width:860px){.mission-board-grid{grid-template-columns:1fr}}
-
-
-/* ---------- ONE invitation ---------- */
-.rebellion-invite{width:min(1100px,calc(100% - 32px));margin:clamp(20px,3vw,36px) auto clamp(48px,7vw,96px);padding:clamp(24px,4vw,48px);border:3px solid var(--blood);background:radial-gradient(80% 120% at 0% 0%,#2a0309,var(--void) 70%);box-shadow:12px 12px 0 var(--blood)}
-.rebellion-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0}
-.rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(36px,4.5vw,64px);line-height:.92;margin:10px 0 12px}
-.rebellion-invite p{max-width:46ch}
-.rebellion-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);background:transparent;color:var(--bone);font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.rebellion-actions a.rebellion-primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;box-shadow:6px 6px 0 var(--bone)}
-.rebellion-actions a:hover,.rebellion-actions button:hover{background:var(--bone);color:var(--void)}
-.rebellion-note{color:var(--ash);font-size:15px;margin-top:14px}
-
-/* ---------- FOOTER ---------- */
-.sitefoot{padding:40px clamp(16px,4vw,48px);border-top:3px solid var(--blood);font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:24px;max-width:1280px;margin:0 auto}
-.sitefoot b{font-family:var(--display);font-size:32px;font-weight:400}.sitefoot b i{color:var(--blood);font-style:normal}
-.sitefoot nav{display:grid;align-content:start}
-.sitefoot nav span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ash);margin-bottom:4px}
-.sitefoot nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{max-width:1280px;margin:24px auto 0;color:var(--ash)}
-@media(max-width:760px){.sitefoot .fcols{grid-template-columns:1fr 1fr}.sitefoot .fcols>div:first-child{grid-column:1/-1}}
-
-/* reveal */
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.js .rv.in{opacity:1;transform:none}
-@keyframes hb-pulse{0%,100%{transform:scale(1);opacity:.85}12%{transform:scale(1.18);opacity:1}24%{transform:scale(.98)}36%{transform:scale(1.1)}}
-@keyframes hb-trace{to{stroke-dashoffset:0}}
-@keyframes hb-tape{to{transform:translateX(-50%)}}
-@media(max-width:700px){
-  .hb-portrait{width:120vw;right:-38vw;top:42%;opacity:.55}
-  .hb-giant{font-size:36vw}
-  .hb-ekg{top:48%;opacity:.6}
-  #home .ghx-actions a{flex:1 1 100%;justify-content:center}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.hb-ekg path{stroke-dashoffset:0}}
-/* AUDIT PASS 2026-10-30 — hero leads to listening and the custom song; merch strip. (Christmas song promo moved to /music/.) */
-.hb-under{display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px;margin-top:22px}.hb-under .hb-scroll{margin-top:0}
-.hb-email{display:inline-flex;align-items:center;min-height:44px;color:var(--bone);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:6px;text-decoration-color:var(--blood)}
-.hb-email:hover{color:var(--hot)}
-#home .ghx-actions a.song{background:var(--void);border-color:var(--blood);color:#fff;box-shadow:6px 6px 0 var(--blood)}
-#home .ghx-actions a.song:hover{background:var(--blood);color:var(--void)}
-.hb-shop{position:relative;overflow:hidden;isolation:isolate;background:var(--blood);color:var(--void);padding:clamp(48px,7vw,96px) 0;border-block:4px solid var(--void)}
-.hb-shop h2{color:#fff}
-.hb-shop::before{content:"WEAR THE HEART WEAR THE HEART";position:absolute;z-index:-1;left:-2vw;top:50%;translate:0 -50%;font-family:var(--display);font-size:22vw;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,.25);pointer-events:none}
-.hb-shop .hb-wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:end;justify-content:space-between}
-.hb-shop h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.85;margin:0}
-.hb-shop h2 span{color:var(--void)}
-.hb-shop p{margin:12px 0 0;font-size:18px;max-width:40ch}
-.hb-shop .btn{background:var(--void);border-color:var(--void);color:#fff;box-shadow:8px 8px 0 #fff;font-size:17px}
-.hb-shop .btn:hover{background:#fff;color:var(--void)}
-/* COMPACT PASS 2026-10-18 — kept from the published compact homepage: comfortable reading sizes on small screens. */
-@media(max-width:700px){body{font-size:17px}.canon-hero__line{font-size:18px}#mission-board article p{font-size:16px}}
-/* EASY SIGNUP — email box (moved 2026-11-01 from the hero into the Join the Heart Rebellion card, Dom's ask). */
-.rebellion-invite .hb-join{margin:18px 0 22px;box-shadow:none;background:transparent;padding:0;border:0}
-.rebellion-invite .hb-join-note a{display:inline-flex;align-items:center;min-height:44px}@media(min-width:1000px){.rebellion-invite .hb-join-note a{min-height:56px}}.rebellion-invite .hb-join-note a:focus-visible{outline:4px solid #fff;outline-offset:3px}
-.hb-join{margin-top:26px;max-width:560px;padding:18px;border:2px solid var(--blood);background:rgba(5,5,5,.82);box-shadow:6px 6px 0 var(--blood)}
-.hb-join-title{margin:0 0 12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(22px,3vw,30px);line-height:1;color:#fff}
-.hb-join-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hb-join-row{display:flex;gap:10px;flex-wrap:wrap}
-.hb-join-row input{flex:1 1 220px;min-width:0;min-height:55px;padding:0 14px;border:2px solid var(--bone);background:#fff;color:#111;font-size:17px;border-radius:0}
-.hb-join-row button{flex:0 0 auto;min-height:55px;padding:0 22px;border:2px solid var(--blood);background:var(--blood);color:var(--void);font-weight:800;font-size:16px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.hb-join-row button:hover{background:#fff;border-color:#fff}
-.hb-join-row input:focus-visible,.hb-join-row button:focus-visible{outline:4px solid #fff;outline-offset:3px}
-.hb-join-trap{position:absolute;left:-5000px}
-.hb-join-note{margin:10px 0 0;font-size:14px;color:var(--bone)}.hb-join-note a{color:var(--bone)}
-@media(max-width:700px){.hb-join{padding:14px}.hb-join-row button{flex:1 1 100%}}
-/* SITE AUDIT 2026-11-01 — the mission box has two short cards now: stack them on phones so the next Live is never hidden in a swipe row. */
-@media(max-width:860px){html body #mission-board .mission-board-grid{grid-auto-flow:row;grid-template-columns:1fr;overflow:visible}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GhostHeart | The Heart Wakes</title>
+<meta name="description" content="GhostHeart: Wake the Heart, fourteen weeks of new songs from the album The Heart Wakes, Nov 9 to Feb 8. Music, films, Sunday Lives and stories.">
+<link rel="canonical" href="https://www.myghostheart.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="GhostHeart | The Heart Wakes">
+<meta property="og:description" content="GhostHeart: Wake the Heart, fourteen weeks of new songs from the album The Heart Wakes, Nov 9 to Feb 8. Music, films, Sunday Lives and stories.">
+<meta property="og:url" content="https://www.myghostheart.com/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
 </head>
-<body>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a aria-current="page" aria-label="GhostHeart home" class="ghx-brand" href="index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="music/">Music</a><a href="GhostHeart_Story.html">Enter My World</a><a href="here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="awakening/index.html">Before the Heart Wakes</a><a href="GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="vault/">The Vault</a></div>
-<div><h2>Explore</h2><a href="journal/">Blog</a><a href="live/">Lives</a><a href="GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-<noscript id="no-script-navigation"><nav aria-label="Navigation without JavaScript" class="l-nojs-nav"><a href="/GhostHeart_Story.html">Story</a><a href="/music/index.html">Music &amp; films</a><a href="/follow/index.html">Follow by email</a><a href="/GhostHeart_Resources.html">Find support</a></nav></noscript><main id="main-content">
-<section class="hb-hero" id="home"><span id="top"></span>
-<div aria-hidden="true" class="hb-giant">GHOSTHEART</div>
-<div aria-label="GhostHeart in a black beanie with a cracked heart, head lowered, a red heart glowing and cracking through his chest." class="hb-portrait" role="img"></div>
-<svg aria-hidden="true" class="hb-ekg" preserveaspectratio="none" viewbox="0 0 1200 120"><path d="M0 70H330l18-8 14 8h40l14-58 20 104 18-60 12 14h90l16-10 16 10H760l14-46 18 84 16-50 10 12H1200"></path></svg>
-<div class="hb-wrap">
-<div class="hb-hero-copy">
-<div aria-live="polite" class="hb-arrival" data-arrival="" hidden=""><b data-arrival-from="">Welcome</b><p data-arrival-text=""></p><a data-arrival-link="" href="#latest">Keep going</a><button aria-label="Dismiss welcome note" data-arrival-close="" type="button">Close ✕</button></div>
-<h1 class="display">The Man<br/>Behind <span class="o">The</span> Heart.</h1>
-<p class="canon-hero__line">Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.</p>
-<div class="creed"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
-<div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play Before the Heart Wakes</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a></div>
-<div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
+<body data-page="home">
+<header class="top">
+<div class="wrap">
+<a aria-current="page" aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a aria-current="page" href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a href="/music/">Music</a>
+<a href="/GhostHeart_Story.html">Enter My World</a>
+<a href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="view" data-view="home">
+<!-- THE HEART WAKES: top of home -->
+<section aria-label="The Heart Wakes" class="hero" id="home">
+<div aria-label="The Heart Engine: a real heart wired into chrome cables in a dark industrial hall lit by red neon" class="art" role="img"></div>
+<div class="screen">
+<div class="wrap hw">
+<div class="hw-copy">
+<p class="mono" style="margin:0 0 14px"><b class="red">Wake the Heart</b> · the campaign · 14 weeks, Nov 9 to Feb 8</p>
+<h1 class="giant"><span class="chrome">The Heart</span><br/><span class="heart">Wakes.</span></h1>
+<p class="mono" style="margin:10px 0 0;color:var(--song-heartwakes)">The Heart Wakes · the new album</p>
+<p class="core">It’s time to wake up the heart. <b>A heart does not change the world by beating alone. It changes the world by reaching another.</b></p>
+<p class="mono" style="color:var(--song-heartwakes);margin:0 0 20px">Week one goes up Sunday night</p>
+<div class="row">
+<a class="btn red" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Listen on Spotify ↗</a>
+<a class="btn" href="/wake-the-heart/">14 weeks</a>
+</div>
+</div>
+<div class="hw-cover panel"><img alt="The Heart Wakes album cover: tattooed hands tearing open a shirt to show a cracked, glowing red heart" height="1000" src="/assets/wake-v3/img/heart-wakes.jpg" width="1000"/></div>
 </div>
 </div>
 </section>
-<section class="music" id="latest"><span id="music"></span>
-<div class="hb-wrap">
-<div class="hb-feature" data-week-until="2026-11-09T06:00:00Z">
-<div class="rv">
-<h2 class="display">Before the Heart Wakes<em>.</em></h2>
-<p class="line">Wake the Heart starts Monday, November 9. Until then: a new song every day, and the last Sunday Live before launch on November 8.</p>
-<div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">What starts Nov 9</a></div>
+<!-- FEATURED WEEK -->
+<section id="watch">
+<span aria-hidden="true" class="beam" style="left:72%"></span>
+<div class="wrap">
+<div class="wk-head">
+<h2 class="giant" style="font-size:clamp(52px,8vw,120px)"><span class="chrome">Featured</span> <span class="red">week.</span></h2>
+<span class="stamp" style="font-size:clamp(22px,2.6vw,34px)">14 weeks</span>
 </div>
+<div class="featured" id="featured-home"></div>
 </div>
-<div class="hb-feature" data-week-from="2026-11-09T06:00:00Z" data-week-until="2026-11-16T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">Wake the Heart Week<em>.</em></h2>
-<p class="line">It’s here. November 9 to 15: one week inside Before the Heart Wakes.</p>
-<div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
+</section>
+<!-- DAILY QUOTE: changes every day at midnight Central (same 17-quote schedule as the current site) -->
+<section class="qotd">
+<div class="wrap">
+<div class="q-head"><p class="mono" style="margin:0">Today’s line · <span id="q-date"></span></p><p class="mono" style="margin:0"><span class="red" id="qn">01</span> / 17</p></div>
+<blockquote class="giant" data-daily-quote=""></blockquote>
+<p class="q-song" hidden="" id="q-song"></p>
+<details class="more every-line"><summary>Every line</summary><ol id="all-lines"></ol></details>
 </div>
-</div>
-<div class="hb-feature" data-week-from="2026-11-16T06:00:00Z" data-week-until="2026-11-23T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">The Parts You Hide<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, November 16 to 22. Featured song: You Can’t Change Us.</p>
-<div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906">Hear You Can’t Change Us</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-11-23T06:00:00Z" data-week-until="2026-11-30T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">What Saved You<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, November 23 to 29.</p>
-<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-11-30T06:00:00Z" data-week-until="2026-12-07T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">Letters to My Younger Self<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, November 30 to December 6.</p>
-<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-12-07T06:00:00Z" data-week-until="2026-12-14T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">Still Here<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, December 7 to 13. Featured song: Rebellion.</p>
-<div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-rebellion">Hear Rebellion</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-12-14T06:00:00Z" data-week-until="2026-12-21T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">A Kinder Tomorrow<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, December 14 to 20.</p>
-<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-12-21T06:00:00Z" data-week-until="2026-12-28T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">Love Makes Me Braver<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, December 21 to 27.</p>
-<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
-</div>
-</div>
-<div class="hb-feature" data-week-from="2026-12-28T06:00:00Z" hidden="">
-<div class="rv">
-<h2 class="display">Wrapping Before the Heart Wakes<em>.</em></h2>
-<p class="line">This week in Before the Heart Wakes, December 28 to January 3.</p>
-<div class="ctas"><a class="btn red" href="/live/">See this Sunday’s Live</a></div>
-</div>
+</section>
+<!-- NEXT LIVE: compact -->
+<section class="nextlive">
+<div class="wrap">
+<div class="nl panel">
+<div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 8</b></div>
+<div><p class="mono" style="margin:0;color:var(--mute)">12:00 PM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+<a class="btn red" href="https://www.tiktok.com/@ghosthearted1" rel="noopener" target="_blank">Watch on TikTok ↗</a>
 </div>
 </div>
 </section>
-<section class="man" id="home-story"><span id="story"></span>
-<div class="hb-wrap">
-<div class="hb-man">
-<div class="rv">
-<div class="hb-links"><a class="btn red" href="/GhostHeart_Story.html#behind-the-scars">Read Behind the Scars</a><a class="btn" href="/journal/">The Blog</a></div>
+<!-- MANIFESTO -->
+<section class="manifesto">
+<div class="wrap">
+<div class="grid">
+<div>
+<h2 class="giant"><span class="chrome">It’s time to</span><br/><span class="chrome">wake up</span><br/><span class="red">the heart.</span></h2>
 </div>
+<div class="side">
+<div class="panel"><b class="red">Red</b><p>is the feeling.</p></div>
+<div class="panel"><b style="color:#5b6068">Black</b><p>is the unknown.</p></div>
+<div class="panel"><b class="chrome">Silver</b><p>is the connection.</p></div>
+</div>
+</div>
+<p class="last">The Awakening introduced the heart. Wake the Heart gives it power.</p>
+</div>
+</section>
+<!-- THE SILVER THREAD: above merch -->
+<section class="thread" id="thread">
+<div class="wrap">
+<div class="thread-box panel" id="join-the-signal">
+<div class="heartbox"><canvas aria-label="A cracked red heart bound in silver, with a silver thread running in from each person who joins" id="living"></canvas></div>
+<div>
+<p class="mono" style="margin:0 0 6px">The Silver Thread</p>
+<h2 class="giant" style="font-size:clamp(34px,4.2vw,52px)"><span class="chrome">Add your</span> <span class="red">thread.</span></h2>
+<p style="color:var(--silver);margin:8px 0 0;font-size:15px">Every person who joins adds a silver thread to the heart. Joining means email updates from GhostHeart: each new featured week when it goes up, and every Sunday Live.</p>
+</div>
+<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" class="f js-thread" method="post">
+<label class="sr" for="t-email">Your email</label>
+<input aria-label="Your email" autocomplete="email" id="t-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><div aria-hidden="true" class="mc-trap" style="position:absolute;left:-5000px"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text" value=""/></div>
+<button class="btn red" name="subscribe" type="submit">Join by email</button>
+<p class="note">Email only. Free. Unsubscribe anytime. Mailchimp handles signup. <a href="/GhostHeart_Privacy.html">Privacy</a></p>
+<p class="ok" hidden="" role="status"></p>
+</form>
 </div>
 </div>
 </section>
-<section aria-labelledby="mission-board-title" class="home-mission ghx-wrap" id="mission-board">
-<p class="ghx-kicker">Be Part of the Mission</p><h2 id="mission-board-title">One heart started the story. Yours can help change it.</h2>
-<p>Music, stories, and the belief that nobody should feel invisible.</p>
-<div class="mission-board-grid">
-<article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
-<article><h3>Coming next</h3><p>Before the Heart Wakes continues through January 3, 2027.</p><p data-live-next>Next Live: <span data-live-slot-label data-live-until="2027-01-03T16:45:00Z" data-live-after="coming soon">Sunday, November 8, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.<span data-live-slot data-live-hide-after="2026-11-01T16:45:00Z" data-live-when="Sunday, November 1, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-08T16:45:00Z" data-live-when="Sunday, November 8, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-15T16:45:00Z" data-live-when="Sunday, November 15, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-22T16:45:00Z" data-live-when="Sunday, November 22, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-29T16:45:00Z" data-live-when="Sunday, November 29, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-06T16:45:00Z" data-live-when="Sunday, December 6, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-13T16:45:00Z" data-live-when="Sunday, December 13, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-20T16:45:00Z" data-live-when="Sunday, December 20, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-27T16:45:00Z" data-live-when="Sunday, December 27, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2027-01-03T16:45:00Z" data-live-when="Sunday, January 3, 2027, 10:00 a.m. Central" hidden></span></p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
-</div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
-<aside aria-labelledby="shop-title" class="hb-shop">
-<div class="hb-wrap">
-<div><h2 id="shop-title">Wear <span>The Heart.</span></h2><p>Official GhostHeart Studios merch. Carry the cracked heart out into the world.</p></div>
-<a class="btn" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Shop merch ↗</a>
+<!-- MERCH: after music and the thread -->
+<section class="merch">
+<div class="wrap">
+<div class="wk-head"><h2 class="giant"><span class="chrome">Wear the</span> <span class="red">heart.</span></h2><a class="btn ghost" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Whole shop ↗</a></div>
+<div class="m-grid">
+<a class="m-item panel" href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-heavyweight-tee" rel="noopener" target="_blank"><img alt="Still Here heavyweight tee, black, with a wildflower design" height="640" loading="lazy" src="/assets/wake-v3/img/merch-still-here.jpg" width="640"/><span><b>Still Here Heavyweight Tee</b><small>From $28 · S to 4XL</small></span></a>
+<a class="m-item panel" href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-heavyweight-tee" rel="noopener" target="_blank"><img alt="Take Up Space heavyweight tee, black, cream letters in a red frame" height="640" loading="lazy" src="/assets/wake-v3/img/merch-take-up-space.jpg" width="640"/><span><b>Take Up Space Heavyweight Tee</b><small>From $28 · S to 4XL</small></span></a>
 </div>
-</aside>
-<aside aria-labelledby="rebellion-title" class="rebellion-invite" id="join-the-signal">
-<p class="rebellion-eyebrow">Still here. Still connected.</p>
-<h2 id="rebellion-title">Join the Heart Rebellion.</h2>
-<p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
-<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" aria-labelledby="rebellion-title" class="hb-join" id="home-join" method="post"><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input aria-describedby="home-join-note" autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Join free</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Mailchimp handles signup. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
-<div class="rebellion-actions"><a href="/vault/">Find your next song, film or quote ↗</a></div>
-</aside>
+</div>
+</section>
+</div>
 </main>
-<footer class="sitefoot">
-<div class="fcols">
-<div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-<nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube</a><a href="https://www.tiktok.com/@ghosthearted1" rel="noopener" target="_blank">TikTok</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=footer" rel="noopener" target="_blank">Substack</a><a href="/GhostHeart_Projects.html">Projects</a></nav>
-<nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
 </div>
-<p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-</script>
-<script src="/assets/home/heartbeat/arrival.js"></script>
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script defer="" src="/assets/shared/next-live.js"></script>
-<script defer src="/assets/shared/check-back-in.js"></script>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>

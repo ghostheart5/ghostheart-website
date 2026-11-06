@@ -1,303 +1,74 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta name="generator" content="GhostHeart LOUD redesign">
-<link rel="canonical" href="https://www.myghostheart.com/vault/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="GhostHeart"/>
-<meta property="og:title" content="GhostHeart’s Vault"/>
-<meta property="og:url" content="https://www.myghostheart.com/vault/"/>
-<meta property="og:description" content="Explore a selected collection of GhostHeart songs, films, Shorts, and quotes already shared with the public."/>
-<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/>
-<meta property="og:image:alt" content="GhostHeart Awakening artwork"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="GhostHeart’s Vault: songs, films, Shorts and quotes already shared." name="description"/>
-<title>GhostHeart's Vault | GhostHeart</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/assets/home/rebellion.css"/>
-<link href="/assets/loud/loud.css" rel="stylesheet"/>
-<style>
-.vhero{position:relative;padding:140px clamp(16px,4vw,48px) 60px;overflow:hidden;isolation:isolate;background:radial-gradient(100% 90% at 80% 20%,#3a0008,var(--void) 65%)}
-.vhero .giant{position:absolute;z-index:-1;right:-2vw;top:40px;font-size:34vw;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(244,72,60,.3)}
-.vhero h1{font-size:clamp(58px,11vw,200px);margin-top:18px;overflow-wrap:anywhere}
-.vhero h1 .r{color:var(--blood);display:inline-block;text-shadow:3px 0 var(--glitch),-3px 0 var(--hot);animation:glitch 3.2s infinite steps(1)}
-.vhero .tag{max-width:680px}
-
-/* controls */
-.controls{position:sticky;top:62px;z-index:60;background:var(--void);border-block:4px solid var(--blood);padding:14px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.controls input{flex:1 1 240px;min-width:0;background:#111;border:2px solid #333;color:var(--bone);font:700 18px "Space Grotesk",sans-serif;padding:12px 14px;outline:none}
-.controls input:focus{border-color:var(--blood)}
-.filters{display:flex;flex-wrap:wrap;gap:8px}
-.filters button{font-family:Anton,Impact,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.03em;padding:10px 16px;border:2px solid var(--bone)}
-.filters button:hover{background:var(--bone);color:var(--void)}
-.filters button[aria-pressed=true]{background:var(--blood);border-color:var(--blood);color:var(--void)}
-.count{width:100%;font-weight:700;letter-spacing:.18em;font-size:12px;text-transform:uppercase;color:var(--ash)}
-
-/* grid */
-.vault{padding-top:50px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.item{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:22px;border:3px solid #262626;background:#0b0b0b;transition:.14s;overflow:hidden}
-.item:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood);border-color:var(--blood)}
-.item .kind{display:inline-block;align-self:flex-start;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:5px 8px;background:var(--bone);color:var(--void)}
-.item h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(32px,3vw,46px);line-height:.9;text-transform:uppercase;margin:16px 0 10px}
-.item p{color:#c9c6c1;font-size:16px;line-height:1.45}
-.item .go{margin-top:18px;font-weight:700;letter-spacing:.16em;font-size:12px;text-transform:uppercase;color:var(--hot)}
-.item .go a:hover{text-decoration:underline}
-.item .go a+a{margin-left:14px}
-.item.big{grid-column:span 2}
-@media(max-width:700px){.item.big{grid-column:auto}}
-/* kinds */
-.item.songs{background:var(--blood);border-color:var(--blood);color:var(--void)}
-.item.songs p{color:var(--void)}
-.item.songs .go{color:var(--void)}
-.item.songs .kind{background:var(--void);color:var(--bone)}
-.item.songs h3::before{content:"♪ ";font-size:.6em;vertical-align:middle}
-.item.media{padding:0;justify-content:flex-start}
-.item.media .thumb{aspect-ratio:16/9;background:#000 center/cover;position:relative}
-.item.shorts .thumb{aspect-ratio:9/12}
-.item.media .thumb::after{content:"▶";position:absolute;left:50%;top:50%;translate:-50% -50%;width:64px;height:64px;border-radius:50%;background:var(--blood);color:var(--void);display:grid;place-items:center;font-size:24px;box-shadow:0 0 30px rgba(244,72,60,.6)}
-.item.media .body{padding:18px 22px 22px;display:flex;flex-direction:column;flex:1}
-.item.media .body .go{margin-top:auto;padding-top:14px}
-.item.quotes{background:var(--void);border-color:#262626;justify-content:center}
-.item.quotes blockquote{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(30px,2.6vw,42px);line-height:.95;margin:14px 0}
-.item.quotes blockquote::before{content:"“";display:block;color:var(--blood);font-size:2.2em;line-height:.6}
-.item.quotes:hover{background:var(--bone);color:var(--void)}
-.item.quotes:hover .go{color:var(--blood)}
-.item.big.quotes blockquote{font-size:clamp(40px,4.4vw,72px)}
-.item[hidden]{display:none}
-.empty{display:none;padding:60px 0;font-family:Anton,Impact,sans-serif;font-size:clamp(40px,6vw,90px);text-transform:uppercase;color:var(--blood)}
-.note{margin-top:40px;color:var(--ash);font-size:14px;max-width:760px}
-.outro{background:var(--blood);color:var(--void);text-align:center}
-.outro h2{font-size:clamp(70px,12vw,200px)}
-.outro h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
-.outro .ctas{justify-content:center;margin-top:40px}
-.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
-.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
-.sitefoot p{color:var(--ash);margin-top:8px}
-.sitefoot nav{display:flex;flex-direction:column;gap:8px}
-.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-/* injected Vault (approved items) restyled */
-.vhero-wrap{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(100% 90% at 80% 20%,#3a0008,var(--void) 65%)}
-.vhero-wrap .giant{position:absolute;z-index:-1;right:-2vw;top:40px;font-size:34vw;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(244,72,60,.3)}
-.vault-hero{padding:140px max(16px,4vw) 60px}
-.vault-hero .ghx-kicker{display:inline-flex;background:var(--blood);color:var(--void);font-weight:700;font-size:12px;letter-spacing:.25em;padding:8px 12px;text-transform:uppercase;transform:rotate(-2deg)}
-.vault-hero h1{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.84;font-size:clamp(58px,11vw,200px);margin-top:18px;overflow-wrap:anywhere}
-.vault-hero > p:not(.ghx-kicker){font-size:clamp(18px,2.2vw,26px);max-width:680px;margin:20px 0 28px;font-weight:500}
-.vault-hero-links{display:flex;flex-wrap:wrap;gap:14px}
-.vault-hero-links a{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;padding:16px 24px;border:3px solid var(--bone);background:rgba(5,5,5,.5)}
-.vault-hero-links a.vault-films-link{background:var(--blood);border-color:var(--blood);color:var(--void);box-shadow:8px 8px 0 var(--bone)}
-.vault-hero-links a:hover{background:var(--bone);color:var(--void)}
-.vault-library{padding:0 max(16px,4vw) 90px}
-.vault-controls,.vault-filters,.vault-count{background:var(--void)}
-.vault-controls{position:sticky;top:62px;z-index:60;border-top:4px solid var(--blood);padding-top:14px}
-.vault-controls label{display:block;font-weight:700;letter-spacing:.18em;font-size:12px;text-transform:uppercase;color:var(--ash);margin-bottom:8px}
-.vault-search-row{display:flex;gap:10px;flex-wrap:wrap}
-.vault-search-row input{flex:1 1 240px;min-width:0;background:#111;border:2px solid #333;color:var(--bone);font:700 18px "Space Grotesk",sans-serif;padding:12px 14px}
-.vault-search-row input:focus{border-color:var(--blood);outline:none}
-.vault-search-row button{font-family:Anton,Impact,sans-serif;font-size:18px;text-transform:uppercase;padding:10px 16px;border:2px solid var(--bone)}
-.vault-filters{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0}
-.vault-filters button{font-family:Anton,Impact,sans-serif;font-size:20px;text-transform:uppercase;padding:10px 16px;border:2px solid var(--bone)}
-.vault-filters button:hover{background:var(--bone);color:var(--void)}
-.vault-filters button[aria-pressed=true]{background:var(--blood);border-color:var(--blood);color:var(--void)}
-.vault-count{font-weight:700;letter-spacing:.18em;font-size:12px;text-transform:uppercase;color:var(--ash);padding-bottom:14px;border-bottom:4px solid var(--blood);margin-bottom:30px}
-.vault-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.vault-item{display:flex;flex-direction:column;gap:10px;min-height:260px;padding:22px;border:3px solid #262626;background:#0b0b0b;transition:.14s}
-.vault-item[hidden]{display:none}
-.vault-item:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood);border-color:var(--blood)}
-.vault-type{align-self:flex-start;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:5px 8px;background:var(--bone);color:var(--void)}
-.vault-item h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(32px,3vw,46px);line-height:.9;text-transform:uppercase}
-.vault-item p{color:#c9c6c1;font-size:16px;line-height:1.45}
-.vault-item a{margin-top:auto;font-weight:700;letter-spacing:.06em;font-size:15px;color:var(--hot);min-height:44px;display:inline-flex;align-items:center}
-.vault-item a + a{margin-top:0}
-.vault-item a:hover{text-decoration:underline}
-.vault-item[data-vault-kind=songs]{background:var(--blood);border-color:var(--blood);color:var(--void)}
-.vault-item[data-vault-kind=songs] p,.vault-item[data-vault-kind=songs] a{color:var(--void)}
-.vault-item[data-vault-kind=songs] .vault-type{background:var(--void);color:var(--bone)}
-.vault-item[data-vault-kind=quotes] blockquote{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(28px,2.6vw,40px);line-height:.95}
-.vault-item[data-vault-kind=quotes] blockquote::before{content:"“";display:block;color:var(--blood);font-size:2em;line-height:.6}
-.vault-item[data-vault-kind=quotes]:hover{background:var(--bone);color:var(--void)}
-.vault-item[data-vault-kind=quotes] h2{font-size:14px;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:.2em;color:var(--ash)}
-.vault-empty{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,5vw,70px);text-transform:uppercase;color:var(--blood);padding:40px 0}
-.vault-source-note{margin-top:40px;color:var(--ash);font-size:14px;max-width:760px}
-/* moved from the home page 2026-10-30 */
-:root{--coal:#0e0b0b;--line:rgba(244,239,230,.16);--display:Anton,Impact,"Arial Narrow",sans-serif;--body:"Space Grotesk",system-ui,sans-serif;--hand:"Permanent Marker",cursive}
-.hb-wrap{width:min(1280px,100%);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
-/* ---------- VAULT ---------- */
-#daily-line{padding:clamp(56px,9vw,120px) 0;background:radial-gradient(90% 80% at 100% 0%,#3d0009,var(--coal) 62%);color:var(--bone);border-top:6px solid var(--blood)}
-#daily-line .vault-h2{font-size:clamp(56px,9vw,140px);margin:0}
-.rebellion-return{font-size:clamp(18px,1.6vw,21px);max-width:44ch;margin:12px 0 22px}
-#daily-line .rebellion-eyebrow{color:var(--blood)}
-.dq{font-family:var(--display);text-transform:none;font-size:clamp(30px,4.6vw,68px);line-height:1;margin:12px 0 0;max-width:22ch;border-left:10px solid var(--blood);padding-left:clamp(14px,2vw,26px)}
-#daily-line .rebellion-note{color:var(--ash)}
-#daily-line [hidden]{display:none!important}
-#home-share-fallback textarea{width:100%;max-width:640px;font:16px var(--body);padding:10px;margin-top:8px}
-.door-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
-.door{display:grid;gap:10px;align-content:space-between;min-height:200px;padding:22px;background:var(--void);color:var(--bone);text-decoration:none;border:3px solid var(--bone);transition:transform .2s ease,box-shadow .2s ease}
-.door .n{font-family:var(--display);font-size:40px;color:var(--blood);line-height:1}
-.door h3{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(30px,3vw,46px);line-height:.92;margin:0}
-.door p{margin:6px 0 0;font-size:15px;color:var(--ash)}
-.door:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood)}
-#daily-line .ctas{margin-top:26px}
-#daily-line .btn.red{box-shadow:6px 6px 0 var(--bone)}
-@media(max-width:760px){.door-grid{grid-template-columns:1fr}.door{min-height:0}}
-.rebellion-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0}
-.rebellion-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);background:transparent;color:var(--bone);font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.rebellion-actions a.rebellion-primary{background:var(--blood);border-color:var(--blood);color:var(--void);font-size:17px;box-shadow:6px 6px 0 var(--bone)}
-.rebellion-actions a:hover,.rebellion-actions button:hover{background:var(--bone);color:var(--void)}
-.rebellion-note{color:var(--ash);font-size:15px;margin-top:14px}
-.manifesto{position:relative;overflow:hidden;isolation:isolate;padding:clamp(80px,14vw,200px) 0;text-align:center}
-.manifesto img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.55}
-.manifesto::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--void),rgba(5,5,5,.25) 35%,rgba(5,5,5,.25) 65%,var(--void))}
-.manifesto blockquote{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6.5vw,104px);line-height:.92;margin:0 auto;max-width:16ch}
-.manifesto blockquote em{color:var(--blood);font-style:normal}
-.manifesto .sig{font-family:var(--hand);color:var(--hot);font-size:clamp(20px,2vw,28px);margin-top:20px}
-/* FOR HOW YOU FEEL (site audit 2026-11-01): one pick for a chosen feeling and time. */
-.for-you{padding:clamp(40px,6vw,80px) 0;border-top:6px solid var(--blood,#f4483c);background:var(--coal)}
-.for-you[hidden],.fy-result[hidden]{display:none!important}
-#for-you-title{font-size:clamp(44px,6vw,88px);margin:0}
-.fy-lead{max-width:46ch;margin:12px 0 22px}
-.fy-form{display:grid;gap:18px}
-.fy-set{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-.fy-set legend{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ash,#a39e98);margin-bottom:10px;padding:0}
-.fy-choice{position:relative;display:inline-flex;flex-direction:column;justify-content:center;min-height:48px;padding:8px 16px;border:2px solid var(--line);cursor:pointer;font-weight:700}
-.fy-choice small{font-weight:400;font-size:13px;color:var(--ash,#a39e98)}
-.fy-choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.fy-choice:has(input:checked){border-color:var(--blood,#f4483c);background:#2a0309}
-.fy-choice:has(input:focus-visible){outline:3px solid #fff;outline-offset:3px}
-.fy-go,.fy-again,.fy-open,.gh-save{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:2px solid var(--bone,#f4efe6);background:transparent;color:var(--bone,#f4efe6)}
-.fy-go,.fy-open{background:var(--blood,#f4483c);border-color:var(--blood,#f4483c);color:#050505;justify-self:start}
-.fy-result{margin-top:24px;padding:clamp(18px,3vw,28px);border:2px solid var(--blood,#f4483c);max-width:760px}
-.fy-kind,.fy-honest{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ash,#a39e98)}
-.fy-honest{letter-spacing:0;text-transform:none;font-size:15px}
-.fy-title{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(28px,3.4vw,44px);line-height:1;margin:0 0 10px}
-.fy-why{margin:0 0 16px;max-width:52ch}
-.fy-actions{display:flex;flex-wrap:wrap;gap:10px}
-.vault-item .gh-save{min-height:44px;padding:6px 14px;font-size:13px;margin-top:10px;justify-self:start;align-self:start}
-:where(.fy-go,.fy-again,.fy-open,.gh-save):focus-visible{outline:3px solid #fff;outline-offset:3px}
-.gh-save[aria-pressed="true"]{border-color:var(--blood,#f4483c);color:var(--blood,#f4483c)}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How’s Your Heart? | GhostHeart Vault</title>
+<meta name="description" content="The Heart Dial: tell GhostHeart how you feel and get one song, film, line or reading from the Vault, and why it fits.">
+<link rel="canonical" href="https://www.myghostheart.com/vault/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="How’s Your Heart? | GhostHeart Vault">
+<meta property="og:description" content="The Heart Dial: tell GhostHeart how you feel and get one song, film, line or reading from the Vault, and why it fits.">
+<meta property="og:url" content="https://www.myghostheart.com/vault/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
 </head>
-<body>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="/index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="/index.html">Home</a><a href="/music/">Music</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="/GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="/awakening/index.html">Before the Heart Wakes</a><a href="/GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="/woman-behind-the-scenes/">The Woman Behind the Scenes</a><a aria-current="page" href="/vault/">The Vault</a></div>
-<div><h2>Explore</h2><a href="/journal/">Blog</a><a href="/live/">Lives</a><a href="/GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-<noscript id="no-script-navigation"><nav aria-label="Navigation without JavaScript" class="l-nojs-nav"><a href="/GhostHeart_Story.html">Story</a><a href="/music/index.html">Music &amp; films</a><a href="/follow/index.html">Follow by email</a><a href="/GhostHeart_Resources.html">Find support</a></nav></noscript><main class="vault-page loud-vault" id="main-content">
-<div class="vhero-wrap"><div class="giant display">VAULT</div><section class="vault-hero ghx-wrap"><p class="ghx-kicker">A selected collection</p><h1>GhostHeart’s Vault.</h1><p>Songs, films, Shorts, and quotes already shared. Start with a few, or browse Films for more public videos.</p>
-<div class="vault-hero-links"><a class="vault-films-link" href="/GhostHeart_Videos.html">Browse Films</a><a href="/GhostHeart_Story.html">Enter My World</a><a href="/GhostHeart_Resources.html">Find Support</a></div></section></div>
-<section class="for-you" id="for-you" aria-labelledby="for-you-title" hidden>
-<div class="hb-wrap">
-<h2 class="display" id="for-you-title">For how you feel.</h2>
-<p class="fy-lead">Pick a feeling and how much time you have. You get one piece and the reason it fits.</p>
-<form class="fy-form" data-for-you-form><button class="fy-go" type="submit">Find one</button></form>
-<div class="fy-result" data-for-you-result aria-live="polite" hidden></div>
+<body data-page="vault">
+<header class="top">
+<div class="wrap">
+<a aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a href="/music/">Music</a>
+<a href="/GhostHeart_Story.html">Enter My World</a>
+<a href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
 </div>
-</section>
-<section class="vault-library ghx-wrap" aria-label="Explore the Vault"><div class="vault-controls"><label for="vault-search">Find a title or theme</label><div class="vault-search-row"><input id="vault-search" type="search" placeholder="Search the Vault" autocomplete="off"/><button id="vault-clear" type="button">Clear</button></div></div>
-<div class="vault-filters" aria-label="Filter the Vault"><button type="button" data-vault-filter="featured" aria-pressed="true">Featured</button><button type="button" data-vault-filter="songs" aria-pressed="false">Songs</button><button type="button" data-vault-filter="videos" aria-pressed="false">Videos</button><button type="button" data-vault-filter="shorts" aria-pressed="false">Shorts</button><button type="button" data-vault-filter="quotes" aria-pressed="false">Quotes</button><button type="button" data-vault-filter="all" aria-pressed="false">All</button></div>
-<p id="vault-count" class="vault-count" role="status" aria-live="polite">3 featured selections shown.</p>
-<div class="vault-grid"><article class="vault-item" data-vault-kind="songs" data-vault-featured="true" data-vault-search="cruel ghostheart&#x27;s awakening"><span class="vault-type">Song</span><h2>Cruel</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-cruel">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="i&#x27;m not ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>I&#x27;m Not</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-im-not">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="papa didn&#x27;t raise no fool ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>Papa Didn&#x27;t Raise No Fool</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-papa-didnt-raise-a-fool">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="she got to me ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>She Got to Me</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-she-got-to-me">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="this is ghostheart ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>This Is GhostHeart</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-this-is-ghostheart">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="ghostheart&#x27;s oath ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>GhostHeart&#x27;s Oath</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-ghosthearts-oath">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="you can be ghostheart too ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>You Can Be GhostHeart Too</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-you-can-be-ghostheart-too">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="one heart many voices ghostheart&#x27;s awakening" hidden><span class="vault-type">Song</span><h2>One Heart Many Voices</h2><p>From GhostHeart&#x27;s Awakening.</p><a href="/music/#song-one-heart-many-voices">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="i won&#x27;t pretend to speak for you you&#x27;re not god" hidden><span class="vault-type">Song</span><h2>I Won&#x27;t Pretend to Speak for You</h2><p>From You&#x27;re Not God.</p><a href="/music/#song-i-wont-pretend-to-speak-for-you">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="hey preacher man you&#x27;re not god" hidden><span class="vault-type">Song</span><h2>Hey Preacher Man</h2><p>From You&#x27;re Not God.</p><a href="/music/#song-hey-preacher-man">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="songs" data-vault-featured="false" data-vault-search="that ain&#x27;t holy you&#x27;re not god" hidden><span class="vault-type">Song</span><h2>That Ain&#x27;t Holy</h2><p>From You&#x27;re Not God.</p><a href="/music/#song-that-aint-holy">Listen in Music</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="false" data-vault-search="cruel the awakening full music video" hidden><span class="vault-type">Video</span><h2>Cruel</h2><p>The full public music video.</p><a href="https://www.youtube.com/watch?v=9sbFgjM_SDE">Watch full video</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="true" data-vault-search="this is ghostheart the name, the scars, and the reason a hidden heart chose to be seen."><span class="vault-type">Video</span><h2>This Is GhostHeart</h2><p>The name, the scars, and the reason a hidden heart chose to be seen.</p><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch the film</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="false" data-vault-search="ghostheart&#x27;s oath the promise to protect the light in others." hidden><span class="vault-type">Video</span><h2>GhostHeart&#x27;s Oath</h2><p>The promise to protect the light in others.</p><a href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch the film</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="false" data-vault-search="i won’t pretend to speak for you one marriage began beneath a church-house light, surrounded by every blessing people could give. two women began with trembling hands and borrowed flowers. fifty years later, this song asks what a lifetime of love can tell us that appearances cannot." hidden><span class="vault-type">Video</span><h2>I Won’t Pretend to Speak for You</h2><p>One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, this song asks what a lifetime of love can tell us that appearances cannot.</p><a href="/GhostHeart_Videos.html#film-i-wont-pretend-to-speak-for-you">Watch the film</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="false" data-vault-search="hey preacher man a direct answer to the judgment that tried to define a life from the outside." hidden><span class="vault-type">Video</span><h2>Hey Preacher Man</h2><p>A direct answer to the judgment that tried to define a life from the outside.</p><a href="/GhostHeart_Videos.html#film-hey-preacher-man">Watch the film</a></article>
-<article class="vault-item" data-vault-kind="videos" data-vault-featured="false" data-vault-search="that ain&#x27;t holy mercy should not check your pockets at the door. a father-and-son story about poverty, dignity, and who gets judged." hidden><span class="vault-type">Video</span><h2>That Ain&#x27;t Holy</h2><p>Mercy should not check your pockets at the door. A father-and-son story about poverty, dignity, and who gets judged.</p><a href="/GhostHeart_Videos.html#film-that-aint-holy">Watch the film</a></article>
-<article class="vault-item" data-vault-kind="shorts" data-vault-featured="false" data-vault-search="cruel awakening" hidden><span class="vault-type">Short</span><h2>Cruel</h2><p>From Before the Heart Wakes.</p><a href="https://www.youtube.com/shorts/2fq-XQxtFuo">Watch the Short</a><a href="/music/#song-cruel">Listen to the song</a></article>
-<article class="vault-item" data-vault-kind="shorts" data-vault-featured="false" data-vault-search="mercy that leaves an empty seat that ain&#x27;t holy you&#x27;re not god" hidden><span class="vault-type">Short</span><h2>Mercy That Leaves an Empty Seat</h2><p>From That Ain&#x27;t Holy / You&#x27;re Not God.</p><a href="https://www.youtube.com/shorts/ofU09J3bkHI">Watch the Short</a><a href="/music/#song-that-aint-holy">Listen to the song</a></article>
-<article class="vault-item" data-vault-kind="shorts" data-vault-featured="false" data-vault-search="would you leave the porch light on? that ain&#x27;t holy you&#x27;re not god" hidden><span class="vault-type">Short</span><h2>Would You Leave the Porch Light On?</h2><p>From That Ain&#x27;t Holy / You&#x27;re Not God.</p><a href="https://www.youtube.com/shorts/5HUWedEnnsA">Watch the Short</a><a href="/music/#song-that-aint-holy">Listen to the song</a></article>
-<article class="vault-item" data-vault-kind="shorts" data-vault-featured="false" data-vault-search="a child should never have to earn love that ain&#x27;t holy you&#x27;re not god" hidden><span class="vault-type">Short</span><h2>A Child Should Never Have to Earn Love</h2><p>From That Ain&#x27;t Holy / You&#x27;re Not God.</p><a href="https://www.youtube.com/shorts/bkm3czEmk5g">Watch the Short</a><a href="/music/#song-that-aint-holy">Listen to the song</a></article>
-<article class="vault-item" data-vault-kind="shorts" data-vault-featured="false" data-vault-search="son, you did no wrong that ain&#x27;t holy you&#x27;re not god" hidden><span class="vault-type">Short</span><h2>Son, You Did No Wrong</h2><p>From That Ain&#x27;t Holy / You&#x27;re Not God.</p><a href="https://www.youtube.com/shorts/5b43JyYmIts">Watch the Short</a><a href="/music/#song-that-aint-holy">Listen to the song</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="true" data-vault-search="equality isn’t given; it’s reborn in the hearts of those who refuse to let it die."><span class="vault-type">Quote</span><h2>Quote 01</h2><blockquote>Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote><a href="/GhostHeart_Quotes.html#quote-01">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="you can’t fight what you don’t face." hidden><span class="vault-type">Quote</span><h2>Quote 02</h2><blockquote>You can’t fight what you don’t face.</blockquote><a href="/GhostHeart_Quotes.html#quote-02">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="when the promise breaks, the heart must carry it." hidden><span class="vault-type">Quote</span><h2>Quote 03</h2><blockquote>When the promise breaks, the heart must carry it.</blockquote><a href="/GhostHeart_Quotes.html#quote-03">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="they call it rebellion when you love who you want." hidden><span class="vault-type">Quote</span><h2>Quote 04</h2><blockquote>They call it rebellion when you love who you want.</blockquote><a href="/GhostHeart_Quotes.html#quote-04">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="you can’t close a revolving door, but you can get out." hidden><span class="vault-type">Quote</span><h2>Quote 05</h2><blockquote>You can’t close a revolving door, but you can get out.</blockquote><a href="/GhostHeart_Quotes.html#quote-05">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="you can burn every bridge behind you, but ashes don’t rebuild paths." hidden><span class="vault-type">Quote</span><h2>Quote 06</h2><blockquote>You can burn every bridge behind you, but ashes don’t rebuild paths.</blockquote><a href="/GhostHeart_Quotes.html#quote-06">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="when the fire dies, silence becomes the loudest scream." hidden><span class="vault-type">Quote</span><h2>Quote 07</h2><blockquote>When the fire dies, silence becomes the loudest scream.</blockquote><a href="/GhostHeart_Quotes.html#quote-07">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="i gave my life so yours could live—the heart that glows is the one that gave." hidden><span class="vault-type">Quote</span><h2>Quote 08</h2><blockquote>I gave my life so yours could live—the heart that glows is the one that gave.</blockquote><a href="/GhostHeart_Quotes.html#quote-08">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="some bonds burn brighter... until they consume you." hidden><span class="vault-type">Quote</span><h2>Quote 09</h2><blockquote>Some bonds burn brighter... until they consume you.</blockquote><a href="/GhostHeart_Quotes.html#quote-09">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="everyone has something to say, but gets real quiet when it’s their turn." hidden><span class="vault-type">Quote</span><h2>Quote 10</h2><blockquote>Everyone has something to say, but gets real quiet when it’s their turn.</blockquote><a href="/GhostHeart_Quotes.html#quote-10">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="it doesn’t matter what they say; they couldn’t handle it anyway." hidden><span class="vault-type">Quote</span><h2>Quote 11</h2><blockquote>It doesn’t matter what they say; they couldn’t handle it anyway.</blockquote><a href="/GhostHeart_Quotes.html#quote-11">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="i can’t draw or sing, but these are my words, and i say what i mean." hidden><span class="vault-type">Quote</span><h2>Quote 12</h2><blockquote>I can’t draw or sing, but these are my words, and I say what I mean.</blockquote><a href="/GhostHeart_Quotes.html#quote-12">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="strength is quiet until it roars." hidden><span class="vault-type">Quote</span><h2>Quote 13</h2><blockquote>Strength is quiet until it roars.</blockquote><a href="/GhostHeart_Quotes.html#quote-13">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="even broken steel remembers first." hidden><span class="vault-type">Quote</span><h2>Quote 14</h2><blockquote>Even broken steel remembers first.</blockquote><a href="/GhostHeart_Quotes.html#quote-14">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="love doesn’t ask permission to exist." hidden><span class="vault-type">Quote</span><h2>Quote 15</h2><blockquote>Love doesn’t ask permission to exist.</blockquote><a href="/GhostHeart_Quotes.html#quote-15">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="truth dances in silence." hidden><span class="vault-type">Quote</span><h2>Quote 16</h2><blockquote>Truth dances in silence.</blockquote><a href="/GhostHeart_Quotes.html#quote-16">View in Quote Vault</a></article>
-<article class="vault-item" data-vault-kind="quotes" data-vault-featured="false" data-vault-search="reflection is rebellion." hidden><span class="vault-type">Quote</span><h2>Quote 17</h2><blockquote>Reflection is rebellion.</blockquote><a href="/GhostHeart_Quotes.html#quote-17">View in Quote Vault</a></article></div><p id="vault-empty" class="vault-empty" hidden>No matches. Try another title or theme.</p>
-<p class="vault-source-note">Songs open Music, videos open the film collection or their public YouTube pages, Shorts open their public YouTube pages, and quotes open the Quote Vault. No downloads are offered here.</p>
-<noscript><p><a href="/music/">Music</a> · <a href="/GhostHeart_Videos.html">Films</a> · <a href="/GhostHeart_Quotes.html">Quote Vault</a></p></noscript></section>
-<section class="doors" id="daily-line">
-<div class="hb-wrap">
-<div class="label"><span>Pick your way in</span><span class="num">✶</span></div>
-<h2 class="display vault-h2">A Line For Today</h2>
-<p class="rebellion-return">Come back for a different line each day, revisit a film, or explore the published stories.</p>
-<p class="rebellion-eyebrow">A line for today · <span id="qn">01</span> / 17</p>
-<blockquote class="dq" data-daily-quote="">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
-<div class="rebellion-actions quote-actions"><a id="qlink" href="/GhostHeart_Quotes.html#quote-01">Open this quote ↗</a><button type="button" data-home-copy hidden>Copy quote</button><button type="button" data-home-share hidden>Share quote</button></div>
-<p id="home-share-status" class="rebellion-note" role="status" aria-live="polite"></p>
-<div id="home-share-fallback" hidden><label for="home-share-text">Select and copy this quote and its link:</label><textarea id="home-share-text" readonly rows="4"></textarea></div>
-<div class="door-grid">
-<a class="door" href="/music/"><span class="n">01</span><div><h3>Music &amp; films</h3><p>Every song. Every film. Turn it up.</p></div></a>
-<a class="door" href="/GhostHeart_Story.html"><span class="n">02</span><div><h3>Enter My World</h3><p>The life behind the name, chapter by chapter.</p></div></a>
-<a class="door" href="/GhostHeart_Projects.html"><span class="n">03</span><div><h3>Projects</h3><p>Things I built that you can use.</p></div></a>
+</header>
+<main id="main">
+<div class="view" data-view="vault">
+<section>
+<div class="wrap">
+
+
+<div class="alt alt-b">
+<p class="mono" style="margin:0 0 6px">GhostHeart / The Vault</p>
+<h1 class="giant dial-h"><span class="chrome">How’s your</span> <span class="red">heart?</span></h1>
+<p style="color:var(--silver);max-width:58ch;margin:4px 0 0">Tap what you’re feeling. The heart answers with one song, film, line or reading from the Vault, and why it fits.</p>
+<div class="dial">
+<div class="dial-ring"><button class="dial-m" data-m="strength" style="--i:0" type="button">I need strength</button><button class="dial-m" data-m="alone" style="--i:1" type="button">I want to feel less alone</button><button class="dial-m" data-m="judged" style="--i:2" type="button">I feel judged</button><button class="dial-m" data-m="change" style="--i:3" type="button">Something has to change</button><button class="dial-m" data-m="love" style="--i:4" type="button">I’m thinking about love</button><button class="dial-m" data-m="protect" style="--i:5" type="button">I want to look out for someone</button><img alt="" class="dial-heart" height="560" src="/assets/wake-v3/img/silver-heart.png" width="560"/></div>
+</div>
+<div class="dial-how chips" hidden=""><span class="mono">How much time?</span><button class="chip on" data-h="" type="button">Any</button><button class="chip" data-h="line" type="button">Just a line <small>seconds</small></button><button class="chip" data-h="watch" type="button">Watch <small>1–5 minutes</small></button><button class="chip" data-h="listen" type="button">Listen <small>about 3 minutes</small></button><button class="chip" data-h="read" type="button">Read <small>5 minutes or more</small></button></div>
+<div aria-live="polite" class="dial-out panel" hidden=""></div>
 </div>
 </div>
 </section>
-<section class="manifesto">
-<img alt="" height="450" loading="lazy" sizes="100vw" src="/assets/home/heartbeat/versions-800.webp" srcset="/assets/home/heartbeat/versions-800.webp 800w, /assets/home/heartbeat/versions-1600.webp 1600w" width="800"/>
-<div class="hb-wrap">
-<blockquote>Same soul. Different versions. <em>One heart.</em></blockquote>
-<div class="sig">The heart feels what the world misses.</div>
 </div>
-</section>
 </main>
-<section class="outro">
-<h2 class="display">Found Something?<br/><span>Carry It.</span></h2>
-<div class="ctas"><a class="btn dark" href="/music/">Music ↗</a><a class="btn dark" href="/GhostHeart_Videos.html">Films ↗</a><a class="btn" href="/GhostHeart_Resources.html" style="background:var(--bone);color:var(--void);border-color:var(--void)">Find Support</a></div>
-</section>
-<footer class="sitefoot">
-<div class="fcols">
-<div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-<nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
-<nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
 </div>
-<p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
-<script src="/assets/vault/vault.js"></script>
-<script src="/assets/journal/daily-quote.js"></script>
-<script src="/assets/home/rebellion.js"></script>
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script src="/assets/data/for-you.js"></script>
-<script src="/assets/vault/for-you.js"></script>
-<script defer src="/assets/shared/check-back-in.js"></script>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>

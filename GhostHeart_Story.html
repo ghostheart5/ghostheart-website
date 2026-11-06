@@ -1,143 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="GhostHeart LOUD redesign">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Story.html"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="GhostHeart"/>
-<meta property="og:title" content="Enter My World"/>
-<meta property="og:description" content="Behind the Scars: the public introduction to the life and purpose behind GhostHeart."/>
-<meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Story.html"/>
-<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-awakening-banner.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="description" content="Enter My World: the life behind GhostHeart — Behind the Scars, Before the Heart Wakes.">
 <title>Enter My World | GhostHeart</title>
+<meta name="description" content="Enter GhostHeart’s world: the story behind the songs.">
+<link rel="canonical" href="https://www.myghostheart.com/GhostHeart_Story.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="Enter My World | GhostHeart">
+<meta property="og:description" content="Enter GhostHeart’s world: the story behind the songs.">
+<meta property="og:url" content="https://www.myghostheart.com/GhostHeart_Story.html">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/story/reading-layout.css"/>
-<link rel="stylesheet" href="/assets/loud/loud.css">
-<style>
-.progress{display:none;position:fixed;top:0;left:0;height:5px;width:0;background:var(--blood);z-index:96;box-shadow:0 0 12px var(--blood)}
-.phero{background:radial-gradient(110% 80% at 75% 40%,#4a000b 0%,#140004 45%,var(--void) 75%);min-height:100svh}
-.phero .figure{aspect-ratio:482/1065;background-size:237.6% auto;background-position:22.6% 61.5%}
-.phero .figure::after{content:"";position:absolute;left:48%;top:44%;width:34%;aspect-ratio:1;border-radius:50%;translate:-50% -50%;background:radial-gradient(circle,rgba(255,107,94,.9),rgba(244,72,60,.3) 40%,transparent 70%);mix-blend-mode:screen;animation:heart 1.1s infinite}
-.phero .lead{font-size:clamp(18px,2vw,24px);max-width:600px;margin:22px 0 10px;font-weight:500}
-.phero .lead + .lead{color:#c9c6c1;margin-top:0}
-
-/* the essay */
-.essay{background:var(--void);padding-top:clamp(70px,9vw,120px)}
-.essay-head{max-width:1100px;margin:0 auto}
-.essay-head h2{font-size:clamp(70px,11vw,180px)}
-.essay-head h2 span{color:var(--blood)}
-.essay-head .sub{font-family:"Permanent Marker",cursive;font-size:clamp(24px,3vw,40px);color:var(--hot);margin-top:18px;transform:rotate(-2deg);display:inline-block}
-.prose{max-width:760px;margin:clamp(50px,7vw,90px) auto 0;font-size:clamp(19px,1.6vw,23px);line-height:1.65;color:#e6e2da}
-.prose p{margin:0 0 1.15em}
-.prose p.short{font-weight:700;color:var(--bone)}
-.slam{margin:clamp(60px,8vw,120px) calc(50% - 50vw);padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.88;font-size:clamp(54px,9vw,150px)}
-.slam.red{background:var(--blood);color:var(--void);transform:rotate(-1.5deg)}
-.slam.bone{background:var(--bone);color:var(--void);transform:rotate(1.2deg)}
-.slam.void{color:var(--bone);text-align:center}
-.slam.void em{font-style:normal;color:var(--blood)}
-.slam span{display:block;max-width:15ch}
-.slam.bone span,.slam.void span{margin:0 auto}
-.slam.red em{font-style:normal;color:var(--bone);text-shadow:5px 5px 0 var(--void)}
-.plate{margin:clamp(60px,8vw,110px) calc(50% - 50vw);height:min(80vh,760px);background:#000 center/cover;position:relative}
-.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--void),transparent 20%,transparent 75%,var(--void))}
-.plate figcaption{position:absolute;left:clamp(16px,4vw,48px);bottom:30px;z-index:2;background:var(--blood);color:var(--void);font-family:Anton,Impact,sans-serif;font-size:clamp(22px,2.6vw,34px);padding:10px 16px;text-transform:uppercase}
-.essay .ctas{max-width:760px;margin:40px auto 0}
-
-/* her */
-.her{background:var(--blood);color:var(--void)}
-.her-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
-@media(max-width:900px){.her-grid{grid-template-columns:1fr}}
-.her h2{font-size:clamp(70px,10vw,170px)}
-.her h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
-.her p{font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.35;margin:24px 0 30px}
-.her .card{background:var(--void);color:var(--bone);padding:clamp(26px,3vw,40px);box-shadow:14px 14px 0 var(--ember)}
-.her .card.in{transform:rotate(1.5deg)}
-.her .card .mark{font-size:clamp(28px,3.2vw,46px);line-height:1.2;color:var(--bone)}
-.her .card .mark b{color:var(--blood);font-weight:400}
-
-/* next steps */
-.pace{background:var(--bone);color:var(--void)}
-.pace h2{font-size:clamp(66px,10vw,170px)}
-.pace h2 span{color:var(--blood)}
-.pace .intro{font-size:clamp(19px,2vw,24px);max-width:720px;margin:24px 0 50px;font-weight:500}
-.pace .door{min-height:240px}
-.pace .safe{margin-top:40px;display:inline-block;background:var(--void);color:var(--bone);padding:16px 20px;font-weight:700;font-size:clamp(16px,1.6vw,20px)}
-.intro-line{font-size:clamp(20px,2.2vw,28px);font-weight:700;margin:34px 0 26px;max-width:720px}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:800px){.strip{grid-template-columns:1fr 1fr}}
-.strip a{display:flex;flex-direction:column;gap:8px;padding:20px;border:3px solid #262626;background:#0b0b0b;transition:.14s}
-.strip a:hover{border-color:var(--blood);transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--blood)}
-.strip b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:64px;line-height:.8;color:var(--blood)}
-.strip span{font-family:Anton,Impact,sans-serif;font-size:clamp(26px,2.4vw,36px);text-transform:uppercase;line-height:.9}
-.strip i{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.essay .slam{margin:clamp(50px,7vw,90px) 0}
-.essay .ctas{max-width:none;margin:0}
-.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
-.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
-.sitefoot p{color:var(--ash);margin-top:8px}
-.sitefoot nav{display:flex;flex-direction:column;gap:8px}
-.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-/* approved reading (Behind the Scars) restyled */
-#behind-the-scars{padding:clamp(70px,9vw,120px) max(16px,4vw) 20px;max-width:1100px;margin:0 auto}
-#behind-the-scars .world-section-label{font-weight:700;letter-spacing:.2em;font-size:13px;text-transform:uppercase;border-bottom:3px solid var(--bone);padding-bottom:12px;margin-bottom:40px}
-#behind-the-scars .world-approved-art{margin:0 0 50px;border:6px solid var(--bone);box-shadow:16px 16px 0 var(--blood);max-width:100%}
-#behind-the-scars .world-approved-art img{display:block;width:100%;height:auto}
-#behind-the-scars .world-prose-grid{display:grid;gap:30px}
-#behind-the-scars h2{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.86;font-size:clamp(60px,9vw,150px)}
-#behind-the-scars .world-intro{font-family:"Permanent Marker",cursive;font-size:clamp(24px,3vw,40px);color:var(--hot);margin-top:14px;transform:rotate(-2deg);display:inline-block}
-#behind-the-scars .world-reading{max-width:740px;font-size:clamp(19px,1.6vw,23px);line-height:1.65;color:#e6e2da}
-#behind-the-scars .world-reading p{margin:0 0 1.15em}
-#behind-the-scars .world-reading a{display:inline-flex;align-items:center;min-height:48px;margin:8px 12px 0 0;font-family:Anton,Impact,sans-serif;font-size:20px;text-transform:uppercase;padding:10px 18px;border:3px solid var(--bone)}
-#behind-the-scars .world-reading a:first-of-type{background:var(--blood);border-color:var(--blood);color:var(--void)}
-#behind-the-scars .world-reading a:hover{background:var(--bone);color:var(--void);border-color:var(--bone)}
-.slam-wrap{overflow:hidden;padding:30px 0}
-.story-ctas{display:flex;flex-wrap:wrap;gap:14px;padding:0 max(16px,4vw) 80px;max-width:1100px;margin:0 auto}
-</style>
-<link rel="stylesheet" href="/assets/shared/compact-readings.css">
-<link rel="stylesheet" href="/assets/story/story-bottom-compact.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
 </head>
-<body class="reading-layout">
-<a class="skip-link" href="#behind-the-scars">Skip to reading</a>
-<div class="progress" id="progress"></div>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="index.html">Home</a><a href="music/">Music</a><a aria-current="page" href="GhostHeart_Story.html">Enter My World</a><a href="here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="awakening/index.html">Before the Heart Wakes</a><a href="GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="vault/">The Vault</a></div>
-<div><h2>Explore</h2><a href="journal/">Blog</a><a href="live/">Lives</a><a href="GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-<main id="main-content">
-
-<header class="phero">
-  <div class="giant display">ENTER MY WORLD ENTER MY WORLD ENTER MY WORLD</div>
-  <div class="figure" role="img" aria-label="GhostHeart seated, head lowered, a crimson heart glowing through his chest."></div>
-  <div class="copy">
-    <span class="kicker">✶ One lived story / many voices</span>
-    <h1 class="display">Enter<br><span class="o">My</span> <span class="r">World.</span></h1>
-    <p class="lead">GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
-    <p class="lead">The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
-    <div class="ctas"><a class="btn red" href="#behind-the-scars">Read Behind the Scars ↓</a><a class="btn ghost" href="/music/">Hear the music</a><a class="btn ghost email-entry" href="/follow/#email-signup-title">Get email updates</a></div>
-  </div>
+<body data-page="story">
+<header class="top">
+<div class="wrap">
+<a aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a href="/music/">Music</a>
+<a aria-current="page" href="/GhostHeart_Story.html">Enter My World</a>
+<a href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
+</div>
 </header>
-
-<div class="tape"><div><span>NOT ONE WOUND</span><span>NOT ONE LABEL</span><span>✶ STILL HERE ✶</span><span>BEFORE THE HEART WAKES</span><span>NOT ONE WOUND</span><span>NOT ONE LABEL</span><span>✶ STILL HERE ✶</span><span>BEFORE THE HEART WAKES</span></div></div>
-
-<section class="world-prose ghx-wrap" id="behind-the-scars" tabindex="-1" aria-labelledby="scars-title"><div class="world-section-label">The life behind the name</div><div class="world-prose-grid"><div><h2 id="scars-title">Behind the Scars — Before the Heart Wakes</h2><p class="world-intro">Not one wound. Not one label. Still here.</p></div><div class="world-reading reading-body"><div class="reading-opening"><div class="reading-opening-copy">
+<main id="main">
+<div class="view" data-view="story">
+<section>
+<div class="wrap">
+<div class="pagehead proj-head">
+<p class="mono" style="margin:0 0 6px">One lived story / many voices</p>
+<h1><span class="chrome">Enter</span> <span class="red">My World.</span></h1>
+<p>GhostHeart is the fictional mirror of a real life shaped by survival, identity, relationships, loss, and change.</p>
+<p>The music gives those experiences a voice. Here, there is room for the life behind the name.</p>
+<div class="row" style="margin-top:10px"><a class="btn ghost" href="/music/">Hear the music</a><a class="btn ghost" href="/follow/">Get email updates</a></div>
+</div>
+<article class="read panel" id="behind-the-scars">
+<p class="mono k">01 · The life behind the name</p>
+<h2>Behind the Scars — Before the Heart Wakes</h2>
+<p class="sub">Not one wound. Not one label. Still here.</p>
 <p>I kept seeing people treated like they were nothing.</p>
 <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
-<p>And I had plenty to say about it.</p></div><figure class="world-approved-art"><img src="/assets/story/ghostheart-scars-rooftop-rain.webp" width="1672" height="941" loading="lazy" decoding="async" alt="GhostHeart sits on a rooftop overlooking a city, with a glowing red heart and messages about scars and belonging."/></figure></div><div class="reading-continuation">
+<p>And I had plenty to say about it.</p>
 <p>If I’d been there, I would’ve said something. I would’ve stood up for them. I’d find time to help at a shelter. Make a stand. Do something that mattered.</p>
 <p>I kept saying it.</p>
 <p>I got angry at the news, the schools, the government. Why the hell was this happening? Why was it allowed? People were supposed to be protected. Every one of them.</p>
@@ -158,57 +79,65 @@
 <p>I don’t know how many people will read these words. I don’t know if I’ll ever stop being afraid of what comes next.</p>
 <p>But if I help one person, then I did something.</p>
 <p>I finally did more than sit there and wish somebody would.</p>
-<div class="world-inline-links"><a href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart</a><a href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath</a></div>
-</div></div></div></section>
-<div class="slam-wrap"><div class="slam red"><span class="rv">But if I help one person, then I did <em>something.</em></span></div></div>
-<div class="story-ctas"><a class="btn red" href="/GhostHeart_Videos.html#film-this-is-ghostheart">Watch This Is GhostHeart ↗</a><a class="btn ghost" href="/GhostHeart_Videos.html#film-ghosthearts-oath">Watch GhostHeart's Oath ↗</a></div>
-
-<div class="tape alt"><div><span>THE WOMAN</span><span>BEHIND THE SCENES</span><span>THE WOMAN</span><span>BEHIND THE SCENES</span><span>THE WOMAN</span><span>BEHIND THE SCENES</span></div></div>
-
-<section class="her">
-  <div class="label"><span>The relationship behind the work</span><span class="num">02</span></div>
-  <div class="her-grid">
-    <div class="rv">
-      <h2 class="display">The Woman<br><span>Behind the Scenes.</span></h2>
-      <p>Her love helped shape the man he is today. That story has its own space here, alongside the music and the life behind it.</p>
-      <a class="btn dark" href="/woman-behind-the-scenes/">Read The Woman Behind the Scenes ↗</a>
-    </div>
-    <div class="card rv"><p class="mark">She saw the heart <b>beneath the scars</b> — and never asked it to hide.</p></div>
-  </div>
+<div class="row"><a class="btn red" href="/GhostHeart_Videos.html">Watch This Is GhostHeart</a><a class="btn ghost" href="/GhostHeart_Videos.html">Watch GhostHeart’s Oath</a></div>
+</article>
+<article class="read panel">
+<p class="mono k">02 · The relationship behind the work</p>
+<h2>The Woman Behind the Scenes.</h2>
+<p class="sub">Her love helped shape the man he is today. Meet GhostHeart’s Rebel.</p>
+<details class="more"><summary>Read The Woman Behind the Scenes</summary>
+<p>I was confused about love.</p>
+<p>Some people held hands and made it look easy. Others said they screamed because they cared. Some of what people called love left bruises. Some love left.</p>
+<p>I didn’t understand how all of that could live under the same word.</p>
+<p>But I knew what I wanted.</p>
+<p>I wanted my grandparents’ love.</p>
+<p>Married within six months. Kids. A house. Fifty-four years together. From where I stood, they always worked as a team. I didn’t see yelling or fighting. I saw two people who made loving each other look like the easiest thing in the world.</p>
+<p>They were perfect to me.</p>
+<p>I wanted that. I just didn’t understand that I could spend my life looking for their love and miss the love standing right in front of me.</p>
+<p>Because I’m not my grandpa. And my life didn’t look like his.</p>
+<p>I knew my momma loved me. I knew I could give somebody my whole heart. But giving everything I had didn’t mean I knew how to love well. I was still learning how to be the man I wanted to be. How to be a good husband. How to recognize love when it asked something difficult of me.</p>
+<p>I hadn’t understood that love could fight for you. That sometimes it meant helping you stand, and sometimes it meant challenging what you were standing for.</p>
+<p>Then my wife took my hand, and it felt like a whole new universe.</p>
+<p>In GhostHeart’s world, you’ll know her as GhostHeart’s Rebel.</p>
+<p>There’s a whole story in how we found each other. We’ll get there. This one begins with the challenge Rebel put in front of me.</p>
+<p>I wanted to help people like me. Build a place for the broken ones. The people whose pain I recognized because I’d carried some of it myself.</p>
+<p>I thought that was where change began.</p>
+<p>Rebel made me look at who I was leaving outside.</p>
+<p>If I wanted the world to stop separating people, why was I building another line between us? What about the people whose lives I didn’t understand? The ones who didn’t look like me, love like me, or carry the same scars?</p>
+<p>Did they deserve less kindness because their pain wasn’t familiar?</p>
+<p>That got to me.</p>
+<p>I had been telling her how much I cared. How angry I was. How badly I wanted the world to change. Rebel challenged me to make that care bigger than the people I already knew how to stand beside.</p>
+<p>Everyone needed love. Everyone needed room to be human. If I wanted to bring people together, I had to mean it when somebody different walked through the door.</p>
+<p>And I had to do more than tell her about it.</p>
+<p>I had to tell the world. More than that, I had to start showing it.</p>
+<p>She got to me.</p>
+<p>I wanted to make a change. Rebel made me face where that change had to begin.</p>
+</details>
+<p class="pull">She saw the heart beneath the scars — and never asked it to hide.</p>
+</article>
+<div class="read-end">
+<p class="mono" style="margin:0 0 4px">03 · Stay with what speaks to you</p>
+<h2 class="giant"><span class="chrome">Your pace.</span> <span class="red">Your way in.</span></h2>
+<p style="color:var(--silver);max-width:62ch">You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer.</p>
+<ul class="help-kinds three">
+<li class="panel"><a href="/music/"><span class="mono">01</span><b>Stay with a Song</b>The music</a></li>
+<li class="panel"><a href="/"><span class="mono">02</span><b>Carry a Line</b>Today’s line</a></li>
+<li class="panel"><a href="/GhostHeart_Resources.html"><span class="mono">03</span><b>Find Support</b>Help &amp; resources</a></li>
+</ul>
+<p class="note">No one has to disclose their own pain to belong here.</p>
+</div>
+</div>
 </section>
-
-<section class="pace">
-  <div class="label"><span>Stay with what speaks to you</span><span class="num">03</span></div>
-  <h2 class="display rv">Your Pace.<br><span>Your Way In.</span></h2>
-  <p class="intro">You do not have to share this past to find something in these words. Stay with a song. Carry a line that means something to you. Find support when you need more than a story can offer.</p>
-  <div class="door-grid">
-    <a class="door" href="/music/"><span class="n">01</span><div><h3>Stay with<br>a Song</h3><p>The music</p></div></a>
-    <a class="door" href="/GhostHeart_Quotes.html"><span class="n">02</span><div><h3>Carry<br>a Line</h3><p>The quotes</p></div></a>
-    <a class="door" href="/GhostHeart_Resources.html"><span class="n">03</span><div><h3>Find<br>Support</h3><p>Help &amp; resources</p></div></a>
-  </div>
-  <p class="safe">No one has to disclose their own pain to belong here.</p>
-  <div class="ctas" style="margin-top:30px"><a class="btn red" href="/follow/">Stay Connected ↗</a></div>
-</section>
-
+</div>
 </main>
-<footer class="sitefoot">
-  <div class="fcols">
-    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
-    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
-    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
-  </div>
-  <p class="fcopy">© 2026 GhostHeart Studios</p>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
+</div>
 </footer>
-
-<script>
-const bar=document.getElementById('progress'),essay=document.getElementById('behind-the-scars');
-addEventListener('scroll',()=>{const r=essay.getBoundingClientRect();const p=Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));bar.style.width=(p*100)+'%'},{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-</script>
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script src="/assets/shared/compact-readings.js"></script>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>

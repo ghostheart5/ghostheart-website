@@ -1,162 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="GhostHeart LOUD redesign">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://www.myghostheart.com/live/"/>
-<meta name="description" content="GhostHeart Sunday Lives: every Sunday at 10 a.m. Central on TikTok.">
-<title>Lives | GhostHeart</title>
+<title>Sunday Lives | GhostHeart</title>
+<meta name="description" content="GhostHeart goes Live every Sunday at 12:00 PM Central on TikTok, @ghosthearted1.">
+<link rel="canonical" href="https://www.myghostheart.com/live/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="Sunday Lives | GhostHeart">
+<meta property="og:description" content="GhostHeart goes Live every Sunday at 12:00 PM Central on TikTok, @ghosthearted1.">
+<meta property="og:url" content="https://www.myghostheart.com/live/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/vote/door-vote.css">
-<link rel="stylesheet" href="/assets/loud/loud.css">
-<style>
-/* LIVES & READINGS CLEANUP 2026-11-01: one clear page, no pilot hero */
-.lr-hero{background:var(--void);padding:clamp(110px,12vw,150px) clamp(16px,4vw,48px) clamp(28px,4vw,48px);border-bottom:6px solid var(--blood)}
-.lr-hero h1{font-size:clamp(56px,8vw,120px);margin-top:12px}
-.lr-hero h1 span{color:var(--blood)}
-.lr-hero .lead{font-size:clamp(18px,2vw,22px);font-weight:700;max-width:640px;margin-top:14px;color:#d8d4cc}
-.lr-sec{padding:clamp(28px,4vw,56px) clamp(16px,4vw,48px)}
-.lr-sec h2{font-size:clamp(40px,5vw,72px)}
-.lr-lives{background:var(--bone);color:var(--void)}
-.lr-next{display:inline-block;background:var(--void);color:var(--bone);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 12px}
-.lr-lives h2#live-status-title{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(30px,4vw,56px);text-transform:uppercase;line-height:.95;margin:14px 0 6px}
-.lr-lives .topic{font-weight:700;font-size:clamp(18px,2vw,22px);color:var(--blood)}
-.lr-list{list-style:none;margin:22px 0 0;padding:0;border-top:3px solid var(--void);max-width:760px}
-.lr-list li{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:14px;padding:12px 0;border-bottom:2px solid rgba(0,0,0,.15);font-size:17px}
-.lr-list li[hidden]{display:none}
-.lr-list li b{font-weight:700}
-@media(max-width:600px){.lr-list li{grid-template-columns:108px 1fr;gap:10px}}
-.lr-small{font-size:16px;margin-top:14px;max-width:640px}
-.lr-small a{color:var(--blood);text-decoration:underline}
-.lr-read{background:var(--void);color:var(--bone)}
-.lr-card{border:3px solid var(--bone);padding:clamp(18px,3vw,28px);max-width:640px;margin-top:18px;box-shadow:10px 10px 0 var(--blood)}
-.lr-card h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(30px,3.4vw,46px);text-transform:uppercase;line-height:.95}
-.lr-card p{margin:10px 0 18px;color:#d8d4cc;font-size:17px}
-.lr-sotw{background:var(--void);color:var(--bone);border-top:6px solid var(--blood)}
-.lr-sotw .lr-next{background:var(--blood);color:var(--void)}
-.lr-sotw h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,60px);text-transform:uppercase;line-height:.95;margin:14px 0 6px}
-.lr-sotw p{font-size:17px;color:#d8d4cc;max-width:640px}
-.lr-sotw [data-sotw-item][hidden]{display:none}
-.lr-later{background:var(--blood);color:var(--void)}
-.lr-later p{font-size:18px;font-weight:700;max-width:640px;margin-top:10px}
-.lr-sec .ctas{margin-top:20px}
-.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
-.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
-.sitefoot p{color:var(--ash);margin-top:8px}
-.sitefoot nav{display:flex;flex-direction:column;gap:8px}
-.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-</style>
-<meta content="website" property="og:type"/><meta content="GhostHeart" property="og:site_name"/><meta content="Lives | GhostHeart" property="og:title"/><meta content="GhostHeart Sunday Lives: every Sunday at 10 a.m. Central on TikTok." property="og:description"/><meta content="https://www.myghostheart.com/live/" property="og:url"/><meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/></head>
-<body>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="../index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="../index.html">Home</a><a href="../music/">Music</a><a href="../GhostHeart_Story.html">Enter My World</a><a href="../here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="../GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="../awakening/index.html">Before the Heart Wakes</a><a href="../GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="../woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="../vault/">The Vault</a></div>
-<div><h2>Explore</h2><a href="../journal/">Blog</a><a aria-current="page" href="../live/">Lives</a><a href="../GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-
-<main id="main-content">
-<header class="lr-hero">
-  <span class="kicker">✶ GhostHeart / Lives</span>
-  <h1 class="display">Sunday <span>Lives.</span></h1>
-  <p class="lead">Every Sunday at 10:00 a.m. Central I go live on TikTok and write songs on screen.</p>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
+</head>
+<body data-page="lives">
+<header class="top">
+<div class="wrap">
+<a aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a href="/music/">Music</a>
+<a href="/GhostHeart_Story.html">Enter My World</a>
+<a aria-current="page" href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
+</div>
 </header>
-
-<section class="lr-sec lr-lives" id="lives" aria-labelledby="live-status-title">
-  <span class="lr-next">Sunday Lives · 10:00 a.m. Central · TikTok</span>
-  <h2 id="live-status-title" data-live-next>Next Live: <span data-live-slot-label data-live-until="2027-01-03T16:45:00Z" data-live-after="coming soon">Sunday, November 1, 2026, 10:00 a.m. Central</span>.</h2>
-  <p class="topic" data-live-slot-topic>This Live: &ldquo;Who I Am,&rdquo; written live.</p>
-  <div class="ctas"><a class="btn dark" href="https://www.tiktok.com/@ghosthearted1">Watch at @ghosthearted1 ↗</a></div>
-  <ul class="lr-list" aria-label="Upcoming Lives">
-    <li data-live-slot data-live-hide-after="2026-11-01T16:45:00Z" data-live-when="Sunday, November 1, 2026, 10:00 a.m. Central" data-live-topic="This Live: &ldquo;Who I Am,&rdquo; written live."><b>Sun, Nov 1</b><span>&ldquo;Who I Am,&rdquo; written live.</span></li>
-    <li data-live-slot data-live-hide-after="2026-11-08T16:45:00Z" data-live-when="Sunday, November 8, 2026, 10:00 a.m. Central" data-live-topic="This Live: share a few words about someone you love or miss, and I&rsquo;ll write a verse on screen."><b>Sun, Nov 8</b><span>Share a few words about someone you love or miss, and I&rsquo;ll write a verse on screen.</span></li>
-    <li data-live-slot data-live-hide-after="2026-11-15T16:45:00Z" data-live-when="Sunday, November 15, 2026, 10:00 a.m. Central" data-live-topic="This Live: Still Here."><b>Sun, Nov 15</b><span>Still Here Live.</span></li>
-    <li data-live-slot data-live-hide-after="2026-11-22T16:45:00Z" data-live-when="Sunday, November 22, 2026, 10:00 a.m. Central" data-live-topic="This Live: The Parts You Hide. Pick the door: ask me anything or your confessions."><b>Sun, Nov 22</b><span>The Parts You Hide &mdash; Pick the door.</span></li>
-    <li data-live-slot data-live-hide-after="2026-11-29T16:45:00Z" data-live-when="Sunday, November 29, 2026, 10:00 a.m. Central" data-live-topic="This Live: What Saved You."><b>Sun, Nov 29</b><span>What Saved You.</span></li>
-    <li data-live-slot data-live-hide-after="2026-12-06T16:45:00Z" data-live-when="Sunday, December 6, 2026, 10:00 a.m. Central" data-live-topic="This Live: Letters to My Younger Self. Last call for Christmas songs."><b>Sun, Dec 6</b><span>Letters to My Younger Self &mdash; Christmas song last call.</span></li>
-    <li data-live-slot data-live-hide-after="2026-12-13T16:45:00Z" data-live-when="Sunday, December 13, 2026, 10:00 a.m. Central" data-live-topic="This Live: Still Here."><b>Sun, Dec 13</b><span>Still Here.</span></li>
-    <li data-live-slot data-live-hide-after="2026-12-20T16:45:00Z" data-live-when="Sunday, December 20, 2026, 10:00 a.m. Central" data-live-topic="This Live: A Kinder Tomorrow."><b>Sun, Dec 20</b><span>A Kinder Tomorrow.</span></li>
-    <li data-live-slot data-live-hide-after="2026-12-27T16:45:00Z" data-live-when="Sunday, December 27, 2026, 10:00 a.m. Central" data-live-topic="This Live: Love Makes Me Braver."><b>Sun, Dec 27</b><span>Love Makes Me Braver.</span></li>
-    <li data-live-slot data-live-hide-after="2027-01-03T16:45:00Z" data-live-when="Sunday, January 3, 2027, 10:00 a.m. Central" data-live-topic="This Live: Wrapping Before the Heart Wakes."><b>Sun, Jan 3</b><span>Wrapping Before the Heart Wakes.</span></li>
-  </ul>
-  <p class="lr-small" id="ghost-day" data-week-until="2026-11-14T06:00:00Z">Also: <b>Ghost Day listening night</b>, Friday, November 13, 9:00 p.m. Central, on <a href="https://discord.gg/PKmxAQ82" rel="noopener noreferrer" target="_blank">the GhostHeart Discord ↗</a>.</p>
-  <p class="lr-small"><a href="/follow/">Join the email list</a> to hear about each Live before it starts.</p>
+<main id="main">
+<div class="view" data-view="lives">
+<section class="lives-sec">
+<div class="wrap">
+<div class="pagehead">
+<h1><span class="chrome">Sunday</span> <span class="red">Lives.</span></h1>
+<p>Every Sunday at 12:00 PM Central on TikTok, <a href="https://www.tiktok.com/@ghosthearted1" rel="noopener" target="_blank">@ghosthearted1</a>.</p>
+</div>
+<div class="nl nl-big panel">
+<div><p class="mono" style="margin:0">Next Sunday Live</p><b class="chrome js-nl-date">Sun, Nov 8</b><p class="mono" style="margin:2px 0 0;color:var(--mute)">12:00 PM Central · TikTok</p></div>
+<div><p class="mono" style="margin:0;color:var(--mute)">Topic</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+<a class="btn red big" href="https://www.tiktok.com/@ghosthearted1" rel="noopener" target="_blank">Watch on TikTok ↗</a>
+</div>
+<div class="up-lives">
+<p class="mono" style="margin:0 0 6px">Upcoming Lives</p>
+<ul class="lives lives-compact" id="lives"></ul>
+</div>
+<div class="thread-box thread-slim live-remind panel">
+<div>
+<p class="mono" style="margin:0 0 4px">Live reminders · The Silver Thread</p>
+<p style="color:var(--silver);margin:0;font-size:15px">Get an email before each Sunday Live, plus each new week of Wake the Heart.</p>
+</div>
+<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" class="f js-thread" method="post">
+<label class="sr" for="t-email3">Your email</label>
+<input aria-label="Your email" autocomplete="email" id="t-email3" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><div aria-hidden="true" class="mc-trap" style="position:absolute;left:-5000px"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text" value=""/></div>
+<button class="btn red" name="subscribe" type="submit">Remind me</button>
+<p class="ok" hidden="" role="status"></p>
+</form>
+</div>
+<p style="margin-top:16px;color:var(--silver);font-size:14px"><strong style="color:var(--silverw)">Also:</strong> Ghost Day listening night, Friday, November 13, 9:00 PM Central, on the <a href="https://discord.gg/PKmxAQ82" rel="noopener" target="_blank">GhostHeart Discord ↗</a>.</p>
+</div>
 </section>
-
-<section class="lr-sec lr-sotw" id="song-of-the-week" aria-label="Song of the week" data-sotw data-week-from="2026-11-16T06:00:00Z" hidden>
-  <span class="lr-next" data-sotw-when>Song of the week · Coming up</span>
-  <div data-sotw-item data-from="2026-11-16T06:00:00Z" data-until="2026-11-23T06:00:00Z">
-    <h2>You Can&rsquo;t Change Us</h2>
-    <p>November 16&ndash;22 &middot; The Parts You Hide</p>
-    <div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-you-cant-change-us-20260906">Hear You Can&rsquo;t Change Us</a></div>
-  </div>
-  <div data-sotw-item data-from="2026-12-07T06:00:00Z" data-until="2026-12-14T06:00:00Z" hidden>
-    <h2>Rebellion</h2>
-    <p>December 7&ndash;13 &middot; Still Here</p>
-    <div class="ctas"><a class="btn red" href="/GhostHeart_Songs.html#song-rebellion">Hear Rebellion</a></div>
-  </div>
-</section>
-
-<section class="dv" id="pick-the-door" data-door-vote data-poll="sunday-2026-11-22-hide" aria-labelledby="dv-title">
-  <div class="dv-in">
-    <div>
-      <span class="dv-tag"><i aria-hidden="true"></i>You decide · Sunday, November 22 Live</span>
-      <h2 class="dv-title" id="dv-title">Pick the door.<br><span>Sunday walks through it.</span></h2>
-      <p class="dv-lead">Two doors. One Live. Whichever door gets the most votes is what I do on TikTok that Sunday at 10:00 a.m. Central.</p>
-      <div class="dv-meta"><span>Voting closes <b>Saturday night, Nov 21</b></span><span data-dv-count></span></div>
-    </div>
-    <div class="dv-doors">
-      <button class="dv-door" type="button" data-pick="a" aria-pressed="false" aria-describedby="dv-a">
-        <span class="dv-frame" aria-hidden="true"><span class="dv-pct"></span><span class="dv-slab"><span class="dv-num">I</span><span class="dv-knob"></span><span class="dv-crack"></span></span></span>
-        <span class="dv-bar" aria-hidden="true"><i></i></span>
-        <span class="dv-label" id="dv-a">Door I: Ask me anything<small>I answer the questions I usually dodge. No filter.</small></span>
-      </button>
-      <button class="dv-door" type="button" data-pick="b" aria-pressed="false" aria-describedby="dv-b">
-        <span class="dv-frame" aria-hidden="true"><span class="dv-pct"></span><span class="dv-slab"><span class="dv-num">II</span><span class="dv-knob"></span><span class="dv-crack"></span></span></span>
-        <span class="dv-bar" aria-hidden="true"><i></i></span>
-        <span class="dv-label" id="dv-b">Door II: Your confessions<small>You send what you hide, no names attached, and I respond live.</small></span>
-      </button>
-    </div>
-    <p class="dv-status" data-dv-status role="status" aria-live="polite">Tap a door to vote.</p>
-    <form class="dv-join" action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" method="post" aria-labelledby="dv-join-title">
-      <p id="dv-join-title">See which door wins. Get the Live reminder.</p>
-      <label for="dv-email">Email address</label>
-      <input type="email" id="dv-email" name="EMAIL" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" required>
-      <button type="submit" name="subscribe">Join free</button>
-      <div class="dv-trap" aria-hidden="true"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" autocomplete="off"></div>
-      <span class="dv-small">Free. Unsubscribe anytime. Mailchimp handles signup. <a href="/GhostHeart_Privacy.html">Privacy</a></span>
-    </form>
-  </div>
-</section>
-<section class="lr-sec lr-later" aria-label="More from GhostHeart">
-  <div class="ctas"><a class="btn dark" href="/music/">Hear the music ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/GhostHeart_Story.html">Enter My World</a></div>
-</section>
-
+</div>
 </main>
-
-<footer class="sitefoot">
-  <div class="fcols">
-    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
-    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
-    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
-  </div>
-  <p class="fcopy">© 2026 GhostHeart Studios</p>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
+</div>
 </footer>
-
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script defer src="/assets/shared/next-live.js"></script>
-<script defer src="/assets/vote/door-vote.js"></script>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>

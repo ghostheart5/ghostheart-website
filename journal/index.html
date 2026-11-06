@@ -1,169 +1,171 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta content="GhostHeart LOUD redesign" name="generator"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="https://www.myghostheart.com/journal/" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="GhostHeart" property="og:site_name"/>
-<meta content="Blog" property="og:title"/>
-<meta content="Writing about the thoughts behind GhostHeart’s songs and the questions they leave." property="og:description"/>
-<meta content="https://www.myghostheart.com/journal/" property="og:url"/>
-<meta content="https://www.myghostheart.com/assets/journal/art/wake-the-heart-week-1280.jpg" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Behind the songs: the GhostHeart blog." name="description"/>
-<title>Blog | GhostHeart</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="/assets/loud/loud.css" rel="stylesheet"/>
-<style>
-.bhero{position:relative;padding:150px clamp(16px,4vw,48px) 70px;overflow:hidden;isolation:isolate;background:radial-gradient(90% 80% at 90% 0%,#3a0008,var(--void) 60%)}
-.bhero .giant{position:absolute;z-index:-1;right:-2vw;bottom:-3vw;font-size:24vw;color:transparent;-webkit-text-stroke:2px rgba(244,72,60,.28);white-space:nowrap}
-.bhero h1{font-size:clamp(80px,13vw,220px);margin-top:18px}
-.bhero h1 .r{color:var(--blood)}
-.bhero .tag{max-width:640px}
-.lead-post{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(20px,4vw,60px);align-items:center;background:var(--blood);color:var(--void);padding:clamp(24px,4vw,50px);box-shadow:16px 16px 0 var(--bone)}
-@media(max-width:900px){.lead-post{grid-template-columns:1fr}}
-.lead-post .thumb{aspect-ratio:16/10;max-width:100%;background:#000 center/cover;border:6px solid var(--void)}
-.lead-post small{display:block;font-weight:700;letter-spacing:.2em;font-size:12px;text-transform:uppercase}
-.lead-post h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(54px,6.4vw,110px);line-height:.86;text-transform:uppercase;margin:12px 0}
-.lead-post p{font-size:clamp(20px,2vw,26px);font-weight:700;margin-bottom:24px}
-.posts{border-top:4px solid var(--bone);margin-top:60px}
-.posts a{display:grid;grid-template-columns:clamp(70px,9vw,130px) 1fr auto;gap:clamp(14px,3vw,36px);align-items:center;padding:24px 0;border-bottom:3px solid #262626;transition:.12s}
-@media(max-width:700px){.posts a{grid-template-columns:60px 1fr}.posts .go{display:none}}
-.posts .no{font-family:Anton,Impact,sans-serif;font-size:clamp(54px,7vw,100px);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--blood)}
-.posts small{font-weight:700;letter-spacing:.18em;font-size:12px;color:var(--ash);text-transform:uppercase}
-.posts h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:.9;text-transform:uppercase;margin:8px 0}
-.posts p{color:#c9c6c1;font-size:18px}
-.posts .go{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;border:3px solid var(--blood);color:var(--blood);padding:12px 18px;white-space:nowrap}
-.posts a:hover{background:#0f0f0f;padding-inline:16px}
-.posts a:hover .no{color:var(--blood)}
-.posts a:hover .go{background:var(--blood);color:var(--void)}
-.qotd{background:var(--bone);color:var(--void)}
-.qotd blockquote{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(46px,7vw,120px);line-height:.88;max-width:18ch}
-.qotd blockquote::before{content:"“";display:block;color:var(--blood);font-size:1.4em;line-height:.6}
-.qotd .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-.archive{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border:3px dashed var(--blood);padding:24px;margin-top:50px}
-.archive h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(30px,3vw,44px);text-transform:uppercase}
-.archive p{color:#c9c6c1;max-width:560px}
-.long-story{border-style:solid;background:linear-gradient(135deg,#3a0008,var(--void) 70%)}
-.journal-purpose a{color:var(--hot);text-decoration:underline;text-underline-offset:.2em}
-.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
-.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
-.sitefoot p{color:var(--ash);margin-top:8px}
-.sitefoot nav{display:flex;flex-direction:column;gap:8px}
-.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-/* approved signup block */
-.journal-signup{margin:50px 0;background:var(--bone);color:var(--void);padding:clamp(24px,3vw,40px);box-shadow:14px 14px 0 var(--blood)}
-.journal-signup h2{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(40px,5vw,72px);line-height:.9}
-.journal-signup p{margin-top:10px;font-size:17px}
-.journal-signup label{display:block;font-weight:700;letter-spacing:.18em;font-size:12px;text-transform:uppercase;margin:18px 0 8px}
-.journal-signup .g-form-row{display:flex;flex-wrap:wrap;gap:10px}
-.journal-signup input[type=email]{flex:1 1 220px;min-width:0;border:3px solid var(--void);background:#fff;color:var(--void);font:700 18px "Space Grotesk",sans-serif;padding:12px;min-height:48px}
-.journal-signup button{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;background:var(--blood);color:var(--void);padding:12px 22px;border:3px solid var(--void);min-height:48px}
-.journal-signup .g-honeypot{position:absolute;left:-5000px}
-.journal-signup a{text-decoration:underline}
-.journal-signup button:focus-visible,.journal-signup input:focus-visible{outline:3px solid var(--void);outline-offset:3px}
-/* Compact entry index; article prose, dates and routes are unchanged. */
-section{padding:32px max(16px,4vw)}
-.bhero{padding:calc(var(--hdr,96px) + 20px) max(16px,4vw) 28px}
-.bhero h1{font-size:clamp(36px,4.8vw,64px);line-height:1.05;margin-top:12px}
-.bhero .tag,.journal-purpose{font-size:17px;line-height:1.5;max-width:70ch;margin:12px 0}
-.label{margin-bottom:18px}.label .num{font-size:32px}
-.btn{font-size:16px;min-height:44px;padding:10px 14px}
-.lead-post{grid-template-columns:minmax(160px,240px) 1fr;padding:20px;gap:24px;box-shadow:6px 6px 0 var(--bone)}
-.lead-post h2{font-size:clamp(28px,3vw,42px);line-height:1.1}.lead-post p{font-size:17px;line-height:1.5;margin-bottom:16px}
-.posts{margin-top:24px}.posts a{grid-template-columns:40px 1fr auto;padding:16px 0;gap:16px}.posts .no{font-size:28px}.posts h3{font-size:clamp(24px,2.3vw,32px);line-height:1.15}.posts p{font-size:16px;line-height:1.5}.posts .go{font-size:16px;padding:10px}
-.journal-signup{margin:24px 0;padding:20px;box-shadow:6px 6px 0 var(--blood)}.journal-signup h2{font-size:clamp(28px,3vw,40px);line-height:1.1}.journal-signup button{font-size:16px}
-.archive{margin-top:24px;padding:18px}.archive h3{font-size:28px}.archive p{font-size:16px;line-height:1.5}
-.qotd blockquote{font-size:clamp(26px,3vw,42px);line-height:1.2;max-width:32ch}.qotd .row{margin-top:18px}
-.sitefoot{padding:28px max(16px,4vw)}.sitefoot b{font-size:26px}.sitefoot nav a{display:inline-flex;align-items:center;min-height:44px}.sitefoot nav{gap:0}
-@media(max-width:700px){.lead-post{grid-template-columns:1fr}.lead-post .thumb{max-width:240px;width:100%;aspect-ratio:16/7}.posts a{grid-template-columns:28px 1fr;gap:12px}.posts .go{display:none}section{padding:28px 16px}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind the Songs | GhostHeart</title>
+<meta name="description" content="The GhostHeart Notebook: passages, song notes and announcements behind the songs.">
+<link rel="canonical" href="https://www.myghostheart.com/journal/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="Behind the Songs | GhostHeart">
+<meta property="og:description" content="The GhostHeart Notebook: passages, song notes and announcements behind the songs.">
+<meta property="og:url" content="https://www.myghostheart.com/journal/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
 </head>
-<body>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a aria-label="GhostHeart home" class="ghx-brand" href="../index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="../index.html">Home</a><a href="../music/">Music</a><a href="../GhostHeart_Story.html">Enter My World</a><a href="../here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="../GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden="" id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="../awakening/index.html">Before the Heart Wakes</a><a href="../GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="../woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="../vault/">The Vault</a></div>
-<div><h2>Explore</h2><a aria-current="page" href="../journal/">Blog</a><a href="../live/">Lives</a><a href="../GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-<main id="main-content">
-<header class="bhero">
-<div class="giant display">BEHIND THE SONGS</div>
-<span class="kicker">✶ GhostHeart / Blog</span>
-<h1 class="display">The GhostHeart <span class="r">Blog.</span></h1>
-<p class="journal-purpose">A short note with every new song and film. Choose an entry below by title and date. The full life story lives on <a href="#long-story">Substack</a>.</p>
-<p class="tag">The songs don’t tell you everything. Here I write about the thoughts behind them and the questions they leave with me.</p>
-
+<body data-page="blog">
+<header class="top">
+<div class="wrap">
+<a aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a href="/music/">Music</a>
+<a href="/GhostHeart_Story.html">Enter My World</a>
+<a href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
+</div>
 </header>
-<section id="entries" style="padding-top:30px">
-<div class="label"><span>Latest entry</span><span class="num">01</span></div>
-<!--BLOG-LEAD:START-->
-<article class="lead-post journal-feature">
-<a aria-label="Read Papa Didn’t Raise No Fool — A Backbone and a Heart" class="thumb" href="/passages/papa-didnt-raise-no-fool.html" style="background-image:url('/assets/story/ghostheart-awakening-banner.webp')"></a>
+<main id="main">
+<div class="view" data-view="blog">
+<section>
+<div class="wrap">
+
+
+<div class="alt alt-b">
+<div class="nb-head">
 <div>
-<small>Passage 04 · October 31, 2026</small>
-<h2>Papa Didn’t Raise No Fool — A Backbone and a Heart</h2>
-<p>The lesson is to keep thinking for yourself without losing your heart.</p>
-<a class="btn dark" href="/passages/papa-didnt-raise-no-fool.html">Read the entry ↗</a>
+<p class="mono" style="margin:0 0 6px">GhostHeart / Blog</p>
+<h1 class="giant"><span class="chrome">Behind</span> <span class="red">the songs.</span></h1>
+<p style="color:var(--silver);max-width:60ch">The songs don’t tell you everything. Here I write about the thoughts behind them and the questions they leave with me.</p>
 </div>
-</article>
-<!--BLOG-LEAD:END-->
-<section aria-labelledby="blog-index-signup-title" class="journal-signup"><h2 id="blog-index-signup-title">Join the Heart Rebellion</h2><p>New chapters, stories behind the music, confirmed Live announcements, and ways to take part—when there’s something ready to share.</p><p class="connection-optional">Free and optional. Unsubscribe anytime.</p><form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" class="g-form signal-signup-form" method="post"><label for="blog-index-signup-email">Email address</label><div class="g-form-row"><input aria-describedby="blog-index-signup-note" autocomplete="email" id="blog-index-signup-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Keep Me Connected</button></div><div aria-hidden="true" class="g-honeypot"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="g-small" id="blog-index-signup-note">Free. Unsubscribe anytime. Mailchimp handles signup. Read the <a href="/GhostHeart_Privacy.html">privacy notice</a>.</p><p aria-live="polite" class="g-form-status" role="status"></p></form></section>
-<!--BLOG-LIST:START-->
-<div class="posts journal-highlights">
-<article><a href="/journal/wake-the-heart-week.html"><span class="no">02</span><div><small>Coming Nov 9 · Announcement · October 30, 2026</small><h3>Wake the Heart Week</h3><p>November 9 to 15: one week inside Before the Heart Wakes, built around the songs and the people they are for.</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/passages/its-not-the-1950s.html"><span class="no">03</span><div><small>Passage 03 · October 30, 2026</small><h3>It’s Not the 1950s</h3><p>Change came from the people who refused to wait for it.</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/passages/im-not.html"><span class="no">04</span><div><small>Passage 02 · October 19, 2026</small><h3>I’m Not — More Than One Chapter</h3><p>A story can be worth telling before the fear is gone.</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/journal/cruel-something-needs-to-change.html"><span class="no">05</span><div><small>Song reading · October 10, 2026</small><h3>Cruel — Something Needs to Change</h3><p>What happens after the video ends?</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/journal/this-is-ghostheart.html"><span class="no">06</span><div><small>Short song introduction · September 25, 2026</small><h3>This is GhostHeart.</h3><p>A heart that survived, and a question about what comes next.</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/journal/ghosthearts-oath.html"><span class="no">07</span><div><small>Short song introduction · September 25, 2026</small><h3>GhostHeart’s Oath</h3><p>What might protecting the light in others look like in an ordinary moment?</p></div><span class="go">Read ↗</span></a></article>
-<article><a href="/journal/youre-not-god.html"><span class="no">08</span><div><small>Album spotlight · September 25, 2026</small><h3>You’re Not God</h3><p>A question about belief, judgement and the difference between care and control.</p></div><span class="go">Read ↗</span></a></article>
+<div class="nb-next panel"><span class="mono">Next Passage</span><b class="js-next-sat">Saturday</b><small>7:00 PM Central</small></div>
 </div>
-<!--BLOG-LIST:END-->
-<div class="archive long-story">
-<div><h3>Passages</h3><p>A reading behind each song. New ones on Saturdays at 7 PM Central.</p></div>
-<div class="ctas"><a class="btn red" href="/passages/">See all Passages ↗</a></div>
+<div class="chips nb-chips"><button class="chip on" data-nb="all" type="button">Everything</button><button class="chip" data-nb="passage" type="button">Passages</button><button class="chip" data-nb="song" type="button">Song notes</button><button class="chip" data-nb="news" type="button">Announcements</button></div>
+<ol class="nb">
+<li class="nb-item" data-typ="passage" id="e-papa"><time>October 31</time><div class="nb-card"><span class="mono k">Passage · 3 min read</span><b>Papa Didn’t Raise No Fool — A Backbone and a Heart</b><p class="pull">“The lesson is to keep thinking for yourself without losing your heart.”</p><details><summary>Read it</summary><div class="entry-body"><p>Content note: This reading reflects on family loss, fear, judgment and love, without graphic detail.</p>
+<p>Some lessons stay with us because we keep finding places to use them.</p>
+<p>In Papa Didn’t Raise No Fool, the narrator remembers hours on a front porch, listening to Papa’s stories. There is affection in that picture, but the stories carry difficult things too: fear, loss and a world that can be harder to understand than it first appears.</p>
+<p>Papa takes the questions seriously. He can be stern. He can also send the narrator back to the books with a joke about needing a doctor. The song gives us someone whose care has more than one voice.</p>
+<p>At the center of what he teaches are two things that belong together.</p>
+<p>Papa didn’t raise no fool He raised me with a backbone and a heart</p>
+<p>A backbone gives a person something to stand on when it would be easier to agree for the sake of being accepted. A heart keeps that strength connected to the people affected by what we say and do.</p>
+<p>Holding both can take work. We can become so concerned with proving we cannot be fooled that we stop being willing to learn. Or we can become so eager to keep everyone comfortable that we leave our own judgment unused.</p>
+<p>Papa’s lesson asks for attention.</p>
+<p>Look closely at what is being offered. Take time with the words. A confident voice, an impressive appearance or a familiar place on a screen cannot do our thinking for us. We still have to consider what a claim rests on and remain willing to ask another question.</p>
+<p>There is humility in that responsibility. Thinking for yourself includes recognizing when you do not know enough. It includes learning something that changes your mind. Being difficult to fool does not require pretending you have every answer.</p>
+<p>The song makes that especially clear when it returns to learning.</p>
+<p>The smartest man I ever knew Never finished school</p>
+<p>That is the narrator’s regard for one person, not a reason to give up on education. Papa points toward the books himself. The lesson makes room for knowledge gained through study and for wisdom carried in an ordinary life. A person’s title cannot tell us everything worth hearing from them.</p>
+<p>The same care belongs in how we judge people.</p>
+<p>When Papa talks about love, he refuses to let other people’s shame decide its value. His advice leaves room for a heart to be honest. The strength he is teaching has to include that kindness; otherwise, the backbone has lost something essential.</p>
+<p>The final chorus brings fear and hate into the lesson too. They can press for a quick answer about who to follow, whom to distrust and what another person deserves. The song asks the narrator to keep hold of a self that those pressures do not get to command.</p>
+<p>That choice reaches beyond a declaration. It can show up in checking a claim before passing it on, hearing someone out before assigning them a motive, or standing by a value when the room would prefer easy agreement.</p>
+<p>It can also show up in admitting a mistake and taking the trouble to correct it.</p>
+<p>The narrator carries Papa’s words forward because they still have somewhere to go. The porch is the beginning of the lesson. Life beyond it is where the lesson has to be practiced.</p>
+<p>He didn’t need a fancy title Didn’t need no polished name</p>
+<p>What matters is what the teaching asks of the person who receives it: keep learning, look carefully, love honestly and stand for something without letting cruelty become part of the stance.</p>
+<p>A backbone and a heart. Both need to come with us into the next conversation, the next difficult choice, and the next chance to decide what kind of person we want to be.</p>
+<p class="note">Some parts of the story are hard to hear. You can pause or step away. If you need support now, see Find Support. <a href="/GhostHeart_Resources.html">Find Support</a></p></div></details></div></li>
+<li class="nb-item" data-typ="news" id="e-wth-week"><time>October 30</time><div class="nb-card"><span class="mono k">Announcement · 1 min read</span><b>Wake the Heart Week</b><p class="pull">“November 9 to 15: one week inside Before the Heart Wakes, built around the songs and the people they are for.”</p><details><summary>Read it</summary><div class="entry-body"><p>From Monday, November 9 to Sunday, November 15, Before the Heart Wakes gets a week of its own: Wake the Heart Week.</p>
+<p>Before the Heart Wakes is eight songs that follow one journey, from witnessing cruelty to finding the courage to stand beside someone else. For one week, every place GhostHeart shows up will carry a different piece of that same story. One heart. Never the same post twice.</p>
+<p>Here is what is already set. On Saturday, November 14 at 7 PM Central, Passage 06 opens: the reading for This Is GhostHeart. On Sunday, November 15 at 10 AM Central, the week closes with the Sunday Live.</p>
+<p>A Friday night listening event and the first letter to the email list are planned for the same week. Their details will be posted here and sent by email once they are confirmed.</p>
+<p>You don’t have to take part in everything. Stay with one song. Carry one line. If someone comes to mind while you listen, that might be the person to share it with.</p>
+<p>What survived can help someone rise.</p></div></details></div></li>
+<li class="nb-item" data-typ="passage" id="e-fifties"><time>October 30</time><div class="nb-card"><span class="mono k">Passage · 2 min read</span><b>It’s Not the 1950s</b><p class="pull">“Change came from the people who refused to wait for it.”</p><details><summary>Read it</summary><div class="entry-body"><p>Some lessons arrive as stories told across a kitchen table.</p>
+<p>It’s Not the 1950s grows out of one of those. Grandma told it the way people tell things they have watched happen more than once: the government makes a law, the people push back, and years later the government takes the credit for the change the people fought for.</p>
+<p>She was not talking about one fight. She was talking about a pattern.</p>
+<p>Slavery did not end because the people in power woke up one day and decided it was wrong. People resisted, escaped, organized and refused to stop. Women did not get the vote because it was handed to them. They marched and argued and kept showing up long after they were told to go home. Same-sex couples did not win the right to marry because someone at the top changed their mind first. They lived openly, told their stories and fought in court until the law caught up.</p>
+<p>Each time, the history books can make it sound like the change came from above. Grandma wanted me to remember where it really started.</p>
+<p>The change was won by people. The credit was taken by power.</p>
+<p>That is not a reason to give up on laws. Laws matter. They can protect people or leave them exposed. It is a reason to remember who moves them.</p>
+<p>And the story is not finished. Women today are still fighting for the right to make their own choices about their own lives. Saying “it’s not the 1950s” is not the same as saying the work is done. It is a reminder that the calendar moving forward does not guarantee that freedom moves with it.</p>
+<p>What Grandma passed on was not anger for its own sake. It was attention. Notice who is doing the fighting. Notice who shows up to take the bow. And when it is your turn, do not wait for permission to stand up for someone’s freedom, including your own.</p>
+<p>The people who changed things were ordinary people who refused to stay quiet.</p>
+<p>That door is still open to anyone willing to walk through it.</p>
+<p class="note">Some parts of the story are hard to hear. You can pause or step away. If you need support now, see Find Support. <a href="/GhostHeart_Resources.html">Find Support</a></p></div></details></div></li>
+<li class="nb-item" data-typ="passage" id="e-im-not"><time>October 19</time><div class="nb-card"><span class="mono k">Passage · 3 min read</span><b>I’m Not — More Than One Chapter</b><p class="pull">“A story can be worth telling before the fear is gone.”</p><details><summary>Read it</summary><div class="entry-body"><p>Sometimes the hardest part of telling a story comes before the first word.</p>
+<p>You may know what you want to say and still hear all the ways it could be misunderstood. Someone could choose one sentence, one mistake, one difficult chapter, and decide they have heard enough to explain your whole life.</p>
+<p>That fear sits at the beginning of I’m Not. Before the narrator has finished speaking, judgment is already anticipated. The wish to be understood has to share the room with the fear of being reduced to a few words.</p>
+<p>And still, there is something worth saying.</p>
+<p>I just want to tell my story, So maybe someone will do the same.</p>
+<p>There is room in that word “maybe.” It leaves the outcome open. A story might reach someone. It might help them find words for something they have carried quietly. It might give them a reason to consider a next step. The narrator cannot decide what another person will take from it.</p>
+<p>What the narrator can choose is whether to speak honestly.</p>
+<p>That does not require a perfect ending. There can still be mistakes, uncertainty and parts that are hard to explain. A person can be learning how to live with their choices and still have something worth sharing. If every story had to wait until its teller had nothing left to work on, a great many voices would never be heard.</p>
+<p>The song makes room for a person who kept trying.</p>
+<p>That matters when a single chapter has become the only one anyone wants to discuss. What went wrong can take up so much space that the effort afterward becomes difficult to see: continuing, trying again, choosing what to do next. Those parts belong to the story too.</p>
+<p>No one else can fit a whole person into the worst thing they hear about them. Listening asks more of us than that. It asks us to leave room for what we have not heard, to notice when we are filling in the gaps ourselves, and to let someone finish before we decide what their words must mean.</p>
+<p>For the person speaking, honesty can have boundaries.</p>
+<p>I’m just opening up the door To the parts I used to hide.</p>
+<p>An open door does not mean every room has to be shown. You can choose the part you are ready to put into words. You can keep names, details and other people’s lives private. You can stop where you need to stop. The value of what you share does not depend on giving an audience everything.</p>
+<p>And listening to someone else’s story places no obligation on you to reveal your own.</p>
+<p>You can recognize a feeling without having lived the same life. You can sit with a line, think about it privately, or leave something unspoken. There is no test of how much you must disclose before the song is allowed to mean something to you.</p>
+<p>The bridge holds on to that freedom. Hearing that someone kept going cannot undo all the hurt. The song leaves that truth intact. Its hope is smaller and more possible: perhaps there is still a next step you can choose.</p>
+<p>Maybe that step begins with finding words. Maybe it begins with giving yourself time. It belongs to you, and no one else can decide its shape from a distance.</p>
+<p>I’m Not ends with an invitation that leaves room for someday.</p>
+<p>A story can be offered without applause. It can remain imperfect and still be honest. Speaking can feel frightening and still be a choice worth considering.</p>
+<p>For anyone listening, the responsibility is simple enough to begin now: hear the person, leave room for the chapters you do not know, and resist turning one part of a life into the whole of it.</p>
+<p>For anyone considering their own words, there is time. You can choose what belongs in the telling and what stays yours.</p>
+<p>The fear does not have to disappear before a voice can matter.</p>
+<p class="note">Some parts of the story are hard to hear. You can pause or step away. If you need support now, see Find Support. <a href="/GhostHeart_Resources.html">Find Support</a></p></div></details></div></li>
+<li class="nb-item" data-typ="song" id="e-cruel"><time>October 10</time><div class="nb-card"><span class="mono k">Song note · 1 min read</span><b>Cruel — Something Needs to Change</b><p class="pull">“What happens after the video ends?”</p><details><summary>Read it</summary><div class="entry-body"><p>That’s the question I want Cruel to leave with us. The crowd moves on, but the person we watched still has to live with what happened.</p>
+<p>It’s easy to see one reaction and think we understand someone. What might we be missing? What has made it hard for that person to trust kindness?</p>
+<p>One conversation won’t undo years of hurt. Sometimes someone needs more help than we can offer. But a patient response can still matter: time to finish a sentence, a question asked without judgement, or kindness that doesn’t depend on hearing their whole story.</p>
+<p>If you’re the person who is hurting, you don’t owe anyone your whole story to deserve kindness.</p>
+<p>For me, the song returns to those small choices. I’m interested in care that reaches someone in an ordinary moment, even when we don’t have all the answers.</p>
+<p>When someone is already hurting, what could we offer that makes the next moment a little less lonely?</p></div></details></div></li>
+<li class="nb-item" data-typ="song" id="e-this-is"><time>September 25</time><div class="nb-card"><span class="mono k">Song note · 1 min read</span><b>This is GhostHeart.</b><p class="pull">“A heart that survived, and a question about what comes next.”</p><details><summary>Read it</summary><div class="entry-body"><p>This Is GhostHeart begins with a heart that survived and a question about what comes next. The song opens a larger story told through music, film, words and pictures.</p>
+<p>What can a person carry forward from survival? And how might that become something another person can recognize themselves in?</p>
+<p>The film calls it the name, the scars, and the reason a hidden heart chose to be seen.</p>
+<p>In Enter My World, I put it this way: “Maybe my story could help somebody. Even with the ugly parts. Even with the mistakes I have to own.” And then: “If I help one person, then I did something.”</p>
+<p>That is the heart of this song. It doesn’t ask anyone to share that past. It asks what a person might carry forward, and who might need to see it.</p>
+<p>This Is GhostHeart is one of the eight songs on Before the Heart Wakes. Its Passage, the longer reading for the song, opens Saturday, November 14 at 7 PM Central.</p></div></details></div></li>
+<li class="nb-item" data-typ="song" id="e-oath"><time>September 25</time><div class="nb-card"><span class="mono k">Song note · 1 min read</span><b>GhostHeart’s Oath</b><p class="pull">“What might protecting the light in others look like in an ordinary moment?”</p><details><summary>Read it</summary><div class="entry-body"><p>GhostHeart’s Oath turns from the name to the promise behind it: protecting the light in others.</p>
+<p>What might that promise look like in an ordinary moment? What survived can become a reason to help someone else rise.</p>
+<p>The mission behind it fits in three words: Build. Serve. Change. Turn survival into work that leaves a door open for someone else.</p>
+<p>GhostHeart turns survival into work that serves people who feel unseen. Build the platforms. Tell the truth. Leave a door open behind you.</p>
+<p>Sometimes protecting the light might look like noticing who was left out. Sometimes it might mean giving someone the patience you once needed.</p>
+<p>GhostHeart’s Oath is one of the eight songs on Before the Heart Wakes. Its Passage, the longer reading for the song, opens Saturday, November 21 at 7 PM Central.</p></div></details></div></li>
+<li class="nb-item" data-typ="song" id="e-ynG"><time>September 25</time><div class="nb-card"><span class="mono k">Song note · 1 min read</span><b>You’re Not God</b><p class="pull">“A question about belief, judgement and the difference between care and control.”</p><details><summary>Read it</summary><div class="entry-body"><p>Where does belief end and control begin?</p>
+<p>You’re Not God explores that question through songs about judgement, shame and people who claim the right to speak for heaven. Its focus is what happens when faith is used to hurt or exclude someone.</p>
+<p>That Ain’t Holy and Hey Preacher Man ask what happens when compassion becomes control and religion is used to excuse cruelty.</p>
+<p>Belief can matter deeply to a person. That does not give someone else the right to decide whose love counts or whose life has value.</p>
+<p>This collection is not an attack on faith. It is a confrontation with hypocrisy: purity demanded by people hiding their own sins, scripture used as a weapon, and personal hatred mistaken for God’s voice.</p>
+<p>I Won’t Pretend to Speak for You tells it through one long love. One marriage began beneath a church-house light, surrounded by every blessing people could give. Two women began with trembling hands and borrowed flowers. Fifty years later, the song asks what a lifetime of love can tell us that appearances cannot.</p>
+<p>That Ain’t Holy is a father-and-son story about poverty, dignity, and who gets judged. Mercy should not check your pockets at the door.</p>
+<p>If your faith requires cruelty, that ain’t holy.</p>
+<p>The album holds those ideas together: room for faith, and a boundary against cruelty carried out in its name.</p></div></details></div></li>
+</ol>
+<a class="btn ghost" href="https://toohumantostayquiet.substack.com/" rel="noopener" style="margin-top:14px" target="_blank">The long story on Substack ↗</a>
 </div>
-<div class="archive">
-<div><h3>How We Got Here</h3><p>The original introduction stays in the archive. The current reading path begins at Enter My World.</p></div>
-<div class="ctas"><a class="btn ghost" href="/journal/how-we-got-here-archive.html">Read the archive ↗</a><a class="btn red" href="/GhostHeart_Story.html">Enter My World</a></div>
-</div>
-<div class="archive long-story" id="long-story">
-<div><h3>The long story lives on Substack</h3><p>This blog is the short note behind each song. Too Human to Stay Quiet is the long version of GhostHeart’s story, one chapter at a time.</p></div>
-<div class="ctas"><a class="btn red" href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=blog&amp;utm_content=long_story" rel="noopener noreferrer" target="_blank">Read on Substack ↗</a></div>
 </div>
 </section>
-<section class="qotd">
-<div class="label"><span>Quote of the day / a line to carry</span><span class="num" id="qn">✶</span></div>
-<blockquote data-daily-quote="" id="qotd">Equality isn’t given; it’s reborn in the hearts of those who refuse to let it die.</blockquote>
-<div class="row"><a class="btn red" href="/GhostHeart_Quotes.html" id="qlink">Open this quote ↗</a></div>
-</section>
+</div>
 </main>
-<footer class="sitefoot">
-<div class="fcols">
-<div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-<nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
-<nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="https://toohumantostayquiet.substack.com/?utm_source=website&amp;utm_medium=footer" rel="noopener" target="_blank">Substack</a></nav>
-<nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
 </div>
-<p class="fcopy">© 2026 GhostHeart Studios</p>
 </footer>
-<script src="/assets/journal/daily-quote.js"></script>
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script defer src="/assets/shared/check-back-in.js"></script>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>

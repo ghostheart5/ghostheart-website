@@ -1,291 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="generator" content="GhostHeart LOUD redesign">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://www.myghostheart.com/music/" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="GhostHeart" property="og:site_name"/>
-<meta content="Music &amp; films" property="og:title"/>
-<meta content="Explore featured GhostHeart listening collections, the Released recordings archive, and selected films." property="og:description"/>
-<meta content="https://www.myghostheart.com/music/" property="og:url"/>
-<meta content="https://www.myghostheart.com/assets/images/web-v2/awakening-1440-v1.webp" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta name="description" content="Hear GhostHeart: every song preview from Before the Heart Wakes and You’re Not God, with every film one tap away on Films.">
-<title>Music &amp; Films | GhostHeart</title>
+<title>Music | GhostHeart</title>
+<meta name="description" content="The Heart Wakes, the new GhostHeart album, opening one week at a time, plus GhostHeart’s Awakening and You’re Not God.">
+<link rel="canonical" href="https://www.myghostheart.com/music/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostHeart">
+<meta property="og:title" content="Music | GhostHeart">
+<meta property="og:description" content="The Heart Wakes, the new GhostHeart album, opening one week at a time, plus GhostHeart’s Awakening and You’re Not God.">
+<meta property="og:url" content="https://www.myghostheart.com/music/">
+<meta property="og:image" content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta name="p:domain_verify" content="427845c023131887ec264df45999badc">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/loud/loud.css">
-<style>
-.phero{background:radial-gradient(110% 80% at 75% 35%,#4a000b 0%,#140004 45%,var(--void) 75%)}
-.phero .figure{aspect-ratio:175/460;background-size:654.3% auto;background-position:82.7% 0%}
-
-/* films (compact cards 2026-10-31) */
-.films{background:var(--blood);color:var(--void)}
-html body .films,html body .vault{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(28px,3vw,40px)}
-html body :is(.films,.vault) .label{margin-bottom:16px;padding-bottom:8px}
-html body :is(.films,.vault) .label .num{font-size:clamp(26px,3vw,38px)}
-.film-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin-inline:auto}
-.film{display:block;background:var(--void);color:var(--bone);box-shadow:5px 5px 0 var(--ember);transition:.15s}
-.film:hover{box-shadow:8px 8px 0 var(--bone)}
-.film .thumb{position:relative;aspect-ratio:16/9;background:#000 center/cover;overflow:hidden}
-.film .thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(5,5,5,.85))}
-.film .thumb .p{position:absolute;left:50%;top:50%;translate:-50% -50%;width:40px;height:40px;border-radius:50%;background:var(--blood);display:grid;place-items:center;animation:heart 1.1s infinite;box-shadow:0 0 20px rgba(244,72,60,.7)}
-.film .thumb .p svg{width:15px;fill:var(--void)}
-.film .meta{padding:10px 12px 12px}
-.film h3{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;line-height:.95;text-transform:uppercase}
-.film h3 br{display:none}
-.film p{display:none}
-.film small{display:block;margin-top:6px;font-weight:700;letter-spacing:.14em;font-size:10px;color:var(--hot)}
-@media(max-width:600px){.film .thumb .p{width:32px;height:32px}.film .thumb .p svg{width:12px}.film .meta{padding:8px}.film h3{font-size:15px}.film small{font-size:9px;letter-spacing:.1em}}
-
-/* halloween pick (2026-10-30): real recordings from the jukebox below; shows through Halloween night */
-.spook{background:radial-gradient(90% 120% at 85% 0%,#3a1400 0%,#120500 50%,var(--void) 80%);border-block:3px solid #ff7a1a}
-.spook[hidden]{display:none}
-.spook .label span{color:#ff7a1a}
-.spook h2{font-size:clamp(56px,9vw,140px);line-height:.88}
-.spook h2 span{color:#ff7a1a;text-shadow:0 0 30px rgba(255,122,26,.45)}
-.spook p.sub{margin:14px 0 26px;font-size:clamp(17px,1.8vw,21px);max-width:44ch}
-.spook ol{list-style:none;border-top:3px solid #ff7a1a}
-.spook ol button{width:100%;display:grid;grid-template-columns:clamp(54px,7vw,100px) 1fr auto;align-items:center;gap:12px;text-align:left;padding:14px 0;border-bottom:3px solid #2a1606;font-family:Anton,Impact,sans-serif;font-size:clamp(28px,4.4vw,58px);text-transform:uppercase;line-height:.95;transition:.12s}
-.spook ol button .no{color:#ff7a1a;font-size:.5em}
-.spook ol button .go{font-size:.42em;letter-spacing:.06em;color:var(--ash)}
-.spook ol button:hover{background:#ff7a1a;color:var(--void);padding-left:16px}
-.spook ol button:hover .no,.spook ol button:hover .go{color:var(--void)}
-
-/* jukebox */
-.juke{background:var(--void)}
-.album{margin-bottom:clamp(60px,8vw,110px)}
-.album-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:20px}
-.album-head h2{font-size:clamp(60px,9vw,150px)}
-.album-head h2 .r{color:var(--blood)}
-.playall{font-family:Anton,Impact,sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.04em;padding:14px 22px;border:3px solid var(--blood);color:var(--blood)}
-.playall:hover{background:var(--blood);color:var(--void)}
-.tracks{list-style:none;border-top:3px solid var(--bone)}
-.tracks button{width:100%;display:grid;grid-template-columns:clamp(54px,7vw,100px) 1fr auto;align-items:center;gap:12px;text-align:left;padding:16px 0;border-bottom:3px solid #262626;
-  font-family:Anton,Impact,sans-serif;font-size:clamp(30px,5vw,68px);text-transform:uppercase;line-height:.95;transition:.12s}
-.tracks button .no{color:var(--ash);font-size:.5em}
-.tracks button .go{font-size:.42em;letter-spacing:.06em;color:var(--ash)}
-.tracks button:hover{background:var(--bone);color:var(--void);padding-left:16px}
-.tracks button:hover .no,.tracks button:hover .go{color:var(--void)}
-.tracks button.on{background:var(--blood);color:var(--void);padding-left:16px}
-.tracks button.on .no,.tracks button.on .go{color:var(--void)}
-/* Song links from other pages (/music/#song-she-got-to-me) land on that song, marked, one tap from playing. */
-.tracks li{scroll-margin-top:calc(var(--hdr,88px) + 24px)}
-.tracks li:target button{box-shadow:inset 6px 0 0 var(--blood);padding-left:16px}
-.tracks button.on .go{font-size:0}
-.tracks button.on .go::before{content:"■ PLAYING";font-size:clamp(13px,2.1vw,28px)}
-
-/* sticky player */
-.deck{position:fixed;left:0;right:0;bottom:0;z-index:85;background:var(--void);border-top:4px solid var(--blood);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(12px,2vw,28px);padding:12px clamp(16px,4vw,48px);transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.deck.show{transform:none}
-.deck .ctl{display:flex;gap:10px;align-items:center}
-.deck .ctl button{width:44px;height:44px;display:grid;place-items:center;border:2px solid var(--bone);font-weight:700}
-.deck .ctl .big{width:58px;height:58px;border-radius:50%;background:var(--blood);border:none;color:var(--void);font-size:22px}
-.deck .now{min-width:0}
-.deck .now small{display:block;color:var(--ash);letter-spacing:.18em;font-size:11px;text-transform:uppercase}
-.deck .now strong{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(22px,2.6vw,32px);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* Seek (site audit 2026-11-01): a real slider, so arrow keys, Page Up/Down and Home/End seek, with elapsed and total time. */
-.deck .seek{display:flex;align-items:center;gap:10px;margin-top:4px}
-.deck .seek .t{font:700 12px/1 "Space Grotesk",system-ui,sans-serif;font-variant-numeric:tabular-nums;color:var(--ash);min-width:3.2em}
-.deck .seek .t:last-child{text-align:right}
-.deck #seek{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:var(--blood);cursor:pointer}
-.deck #seek:disabled{cursor:default;opacity:.5}
-.deck #seek:focus-visible{outline:3px solid var(--bone);outline-offset:2px}
-/* Desktop renders at zoom .8 (loud.css), so 55px stays a full 44px on screen, like the site's other buttons. */
-@media(min-width:1000px){.deck #seek{height:55px}}
-.deck .bars{display:flex;gap:3px;align-items:center;height:40px;width:clamp(80px,14vw,200px)}
-.deck .bars i{flex:1;background:var(--blood);height:20%}
-.deck.playing .bars i{animation:eq .55s ease-in-out infinite alternate}
-@media(max-width:600px){.deck .bars{display:none}.deck{grid-template-columns:auto 1fr}}
-.deck .err{color:var(--hot);font-size:12px;margin-top:4px}
-
-/* christmas custom-song promo (moved from the home page 2026-10-30): shows Nov 1 through order close */
-.xmas{background:var(--void);border-block:3px solid var(--blood)}
-.xmas[hidden]{display:none}
-.xmas .row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center}
-.xmas .days{font-family:Anton,Impact,sans-serif;font-size:clamp(72px,11vw,150px);line-height:.8;color:var(--blood);text-shadow:0 0 30px rgba(244,72,60,.55)}
-.xmas .days small{display:block;font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--ash);margin-top:10px}
-.xmas h2{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-weight:400;font-size:clamp(34px,4.6vw,66px);line-height:.92}
-.xmas h2 span{color:var(--blood)}
-.xmas p{margin-top:10px;font-size:17px;max-width:46ch}
-.xmas .btn{white-space:nowrap}
-@media(max-width:860px){.xmas .row{grid-template-columns:auto minmax(0,1fr)}.xmas .ctas{grid-column:1/-1}}
-@media(max-width:480px){.xmas .row{grid-template-columns:1fr}.xmas .btn{width:100%}}
-
-.vault{background:var(--bone);color:var(--void)}
-/* go deeper (compact link row 2026-10-31) */
-html body .vault .door-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;overflow:visible;gap:0;padding-bottom:0;max-width:560px;margin-inline:auto;border-width:3px 0 0 3px}
-html body .vault .door{min-height:0;padding:10px 12px;border-width:0 3px 3px 0;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px}
-html body .vault .door .n{font-size:16px}
-html body .vault .door h3{font-size:clamp(13px,4vw,18px);overflow-wrap:anywhere}
-html body .vault .door h3 br{display:none}
-html body .vault .door p{display:none}
-@media(max-width:600px){html body .vault .door{padding:10px 8px;justify-content:center}html body .vault .door .n{display:none}html body .vault .door h3{font-size:clamp(12px,4vw,16px);text-align:center}}
-.next{background:var(--blood);color:var(--void);text-align:center}
-.next h2{font-size:clamp(80px,14vw,240px)}
-.next h2 span{color:var(--bone);text-shadow:6px 6px 0 var(--void)}
-.next p{font-size:clamp(18px,2vw,24px);font-weight:700;margin:20px auto 34px;max-width:640px}
-.next .ctas{justify-content:center}
-.sitefoot{display:block;padding:50px max(16px,4vw) 110px;border-top:4px solid var(--blood);background:var(--void);color:var(--bone);text-transform:none;letter-spacing:0;font-size:15px}
-.sitefoot .fcols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-@media(max-width:800px){.sitefoot .fcols{grid-template-columns:1fr 1fr}}
-.sitefoot b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px}.sitefoot b i{font-style:normal;color:var(--blood)}
-.sitefoot p{color:var(--ash);margin-top:8px}
-.sitefoot nav{display:flex;flex-direction:column;gap:8px}
-.sitefoot nav span{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
-.sitefoot nav a:hover{color:var(--hot)}
-.sitefoot .fcopy{margin-top:34px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
-.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css">
 </head>
-<body>
-<header class="nav ghx-header" data-nav-owner="shared">
-<div class="ghx-wrap ghx-bar"><a class="ghx-brand" aria-label="GhostHeart home" href="../index.html">GHOST<span>HEART</span></a>
-<nav aria-label="Main navigation" class="ghx-primary"><a href="../index.html">Home</a><a aria-current="page" href="../music/">Music</a><a href="../GhostHeart_Story.html">Enter My World</a><a href="../here-to-help/">Work with GhostHeart</a><a class="ghx-merch" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a></nav>
-<button aria-controls="gateway-menu" aria-expanded="false" class="menu-toggle ghx-menu-toggle" type="button">Explore <span aria-hidden="true">+</span></button>
-<a class="ghx-help-link" href="../GhostHeart_Resources.html">Find Support</a></div>
-<nav aria-label="Explore GhostHeart" class="ghx-menu" hidden id="gateway-menu"><div class="ghx-wrap ghx-menu-grid">
-<div><h2>The Story</h2><a href="../awakening/index.html">Before the Heart Wakes</a><a href="../GhostHeart_Story.html#behind-the-scars">Behind the Scars</a><a href="../woman-behind-the-scenes/">The Woman Behind the Scenes</a><a href="../vault/">The Vault</a></div>
-<div><h2>Explore</h2><a href="../journal/">Blog</a><a href="../live/">Lives</a><a href="../GhostHeart_Projects.html">Projects</a></div>
-</div></nav></header>
-<main id="main-content">
-
-<header class="phero">
-  <div class="giant display">TURN IT UP TURN IT UP TURN IT UP TURN IT UP</div>
-  <div class="figure" role="img" aria-label="GhostHeart from behind, the cracked crimson heart painted across his coat."></div>
-  <div class="copy">
-    <span class="kicker">✶ Music &amp; Films</span>
-    <h1 class="display">Feel the <span class="r">story.</span><br><span class="o">Choose your</span><br>way in.</h1>
-    <p class="tag">Watch the films. Hear the recordings. Stay with the words behind them.</p>
-    <div class="ctas">
-      <button class="btn red" data-playall="awakening">▶ Play Before the Heart Wakes</button>
-      <a class="btn ghost" href="/GhostHeart_Videos.html">Watch the films ↗</a>
-    </div>
-  </div>
-</header>
-
-<div class="tape"><div><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span><span>ELEVEN SONGS</span><span>✶ ONE HEART ✶</span><span>PRESS PLAY</span></div></div>
-
-
-<section class="juke" id="listen">
-  <div class="label"><span>The Recordings / Tap a song. It plays.</span><span class="num">01</span></div>
-
-  <div class="album">
-    <div class="album-head"><h2 class="display rv">GhostHeart's<br><span class="r">Awakening.</span></h2><button class="playall" data-playall="awakening">▶ Play all 8</button></div>
-    <ul class="tracks" data-album="awakening">
-      <li id="song-cruel"><button data-src="awakening-01-cruel.mp3" data-title="Cruel"><span class="no">01</span>Cruel<span class="go">▶ PLAY</span></button></li>
-      <li id="song-im-not"><button data-src="awakening-02-im-not-staying-silent.mp3" data-title="I'm Not"><span class="no">02</span>I'm Not<span class="go">▶ PLAY</span></button></li>
-      <li id="song-papa-didnt-raise-a-fool"><button data-src="awakening-03-papa-didnt-raise-no-fool.mp3" data-title="Papa Didn't Raise No Fool"><span class="no">03</span>Papa Didn't Raise No Fool<span class="go">▶ PLAY</span></button></li>
-      <li id="song-she-got-to-me"><button data-src="awakening-04-she-got-to-me.mp3" data-title="She Got to Me"><span class="no">04</span>She Got to Me<span class="go">▶ PLAY</span></button></li>
-      <li id="song-this-is-ghostheart"><button data-src="awakening-05-this-is-ghostheart.mp3" data-title="This Is GhostHeart"><span class="no">05</span>This Is GhostHeart<span class="go">▶ PLAY</span></button></li>
-      <li id="song-ghosthearts-oath"><button data-src="awakening-06-ghosthearts-oath.mp3" data-title="GhostHeart's Oath"><span class="no">06</span>GhostHeart's Oath<span class="go">▶ PLAY</span></button></li>
-      <li id="song-you-can-be-ghostheart-too"><button data-src="awakening-07-you-can-be-ghostheart-too.mp3" data-title="You Can Be GhostHeart Too"><span class="no">07</span>You Can Be GhostHeart Too<span class="go">▶ PLAY</span></button></li>
-      <li id="song-one-heart-many-voices"><button data-src="awakening-08-one-heart-many-voices.mp3" data-title="One Heart Many Voices"><span class="no">08</span>One Heart Many Voices<span class="go">▶ PLAY</span></button></li>
-    </ul>
-  </div>
-
-  <div class="album">
-    <div class="album-head"><h2 class="display rv">You're<br><span class="r">Not God.</span></h2><button class="playall" data-playall="notgod">▶ Play all 3</button></div>
-    <ul class="tracks" data-album="notgod">
-      <li id="song-i-wont-pretend-to-speak-for-you"><button data-src="youre-not-god-01-i-wont-pretend.mp3" data-title="I Won't Pretend to Speak for You"><span class="no">01</span>I Won't Pretend to Speak for You<span class="go">▶ PLAY</span></button></li>
-      <li id="song-hey-preacher-man"><button data-src="youre-not-god-02-hey-preacher-man.mp3" data-title="Hey Preacher Man"><span class="no">02</span>Hey Preacher Man<span class="go">▶ PLAY</span></button></li>
-      <li id="song-that-aint-holy"><button data-src="youre-not-god-03-that-aint-holy.mp3" data-title="That Ain't Holy"><span class="no">03</span>That Ain't Holy<span class="go">▶ PLAY</span></button></li>
-    </ul>
-  </div>
-</section>
-
-<section class="xmas" id="christmas" aria-labelledby="xmas-title" data-xmas data-xmas-open="2026-11-01T05:00:00Z" data-xmas-close="2026-12-14T06:00:00Z" hidden>
-  <div class="row">
-    <div class="days" aria-hidden="true"><span data-xmas-days>Dec 13</span><small data-xmas-unit>Orders close</small></div>
-    <div><h2 id="xmas-title">A Christmas song <span>about your people.</span></h2><p>Tell me your story and I’ll write it into a real song, delivered by December 20. Christmas orders close Sunday, December 13.</p></div>
-    <div class="ctas"><a class="btn red" href="/here-to-help/#order">Tell me your story</a></div>
-  </div>
-</section>
-<script>(()=>{const box=document.querySelector('[data-xmas]');if(!box)return;const now=Date.now();if(now<new Date(box.dataset.xmasOpen))return;const left=(new Date(box.dataset.xmasClose)-now)/864e5;if(left<=0)return;const d=Math.max(1,Math.floor(left));box.querySelector('[data-xmas-days]').textContent=d;box.querySelector('[data-xmas-unit]').textContent=d===1?'Day left':'Days left';box.hidden=false})();</script>
-
-<section class="vault">
-  <div class="label"><span>Go Deeper / Everything else</span><span class="num">02</span></div><h2 class="vh">Go deeper</h2>
-  <div class="door-grid">
-    <a class="door" href="/GhostHeart_Videos.html"><span class="n">01</span><div><h3>Every<br> Film</h3><p>This Is GhostHeart, the Oath, every film &amp; short</p></div></a>
-    <a class="door" href="/GhostHeart_Songs.html"><span class="n">02</span><div><h3>The<br> Archive</h3><p>Released recordings · singles · versions</p></div></a>
-    <a class="door" href="/music/#listen"><span class="n">03</span><div><h3>The<br> Collections</h3><p>Featured listening</p></div></a>
-  </div>
-</section>
-
-<section class="next">
-  <h2 class="display rv">What Comes<br><span>Next.</span></h2>
-  <p>Stay for what comes next. The music already here stays.</p>
-  <div class="ctas"><a class="btn dark" href="/live/">Sunday Lives ↗</a><a class="btn" style="background:var(--bone);color:var(--void);border-color:var(--void)" href="/GhostHeart_Resources.html">Find Support</a></div>
-</section>
-
-</main>
-<footer class="sitefoot">
-  <div class="fcols">
-    <div><b>GHOST<i>HEART</i></b><p>Real stories. Real people. Same heart.</p></div>
-    <nav aria-label="Listen and watch"><span>Listen &amp; watch</span><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a></nav>
-    <nav aria-label="Read"><span>Read</span><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a></nav>
-    <nav aria-label="Stay"><span>Stay</span><a href="/vault/">The Vault</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a></nav>
-  </div>
-  <p class="fcopy">© 2026 GhostHeart Studios</p>
-</footer>
-
-<div class="deck" id="deck" aria-label="Music player">
-  <div class="ctl">
-    <button id="prev" aria-label="Previous song">⏮</button>
-    <button id="tog" class="big" aria-label="Play or pause">▶</button>
-    <button id="next" aria-label="Next song">⏭</button>
-  </div>
-  <div class="now"><small id="album">Now playing</small><strong id="title">—</strong><div class="seek"><span class="t" id="t-now">0:00</span><input type="range" id="seek" min="0" max="0" step="1" value="0" aria-label="Song position" aria-valuetext="0:00 of 0:00" disabled><span class="t" id="t-total">0:00</span></div><div class="err" id="err" role="status"></div></div>
-  <div class="bars" aria-hidden="true"></div>
+<body data-page="music">
+<header class="top">
+<div class="wrap">
+<a aria-label="GhostHeart Studios home" class="logo" href="/"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></a>
+<button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
+<nav aria-label="Main" class="menu" id="menu">
+<a href="/">Home</a>
+<a href="/wake-the-heart/">Wake the Heart</a>
+<a aria-current="page" href="/music/">Music</a>
+<a href="/GhostHeart_Story.html">Enter My World</a>
+<a href="/live/">Lives</a>
+<a href="/here-to-help/">Work with GhostHeart</a>
+<a href="/GhostHeart_Projects.html">Projects</a>
+<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
+<a href="/follow/">Stay Connected</a>
+<a href="/GhostHeart_Resources.html">Find Support</a>
+</nav>
 </div>
-<audio id="aud" preload="none"></audio>
-
-<script>
-const BASE='/assets/music/preview/';
-const names={awakening:"GhostHeart's Awakening",notgod:"You're Not God"};
-const aud=document.getElementById('aud'),deck=document.getElementById('deck'),tog=document.getElementById('tog');
-const bars=deck.querySelector('.bars');for(let i=0;i<22;i++){const b=document.createElement('i');b.style.animationDelay=(Math.random()*.55)+'s';b.style.height=(15+Math.random()*60)+'%';bars.appendChild(b)}
-let queue=[],idx=-1;
-function list(album){return [...document.querySelectorAll(`[data-album="${album}"] button`)]}
-function load(q,i){queue=q;idx=i;const b=queue[idx];if(!b)return;
-  document.querySelectorAll('.tracks button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-  document.getElementById('title').textContent=b.dataset.title;
-  document.getElementById('album').textContent='Now playing · '+names[b.closest('[data-album]').dataset.album];
-  document.getElementById('err').textContent='';
-  aud.src=BASE+b.dataset.src;deck.classList.add('show');aud.play().catch(()=>{document.getElementById('err').textContent='Tap play to start.'});}
-document.querySelectorAll('.tracks button').forEach(b=>b.addEventListener('click',()=>{
-  if(b.classList.contains('on')){aud.paused?aud.play():aud.pause();return}
-  const q=list(b.closest('[data-album]').dataset.album);load(q,q.indexOf(b));}));
-document.querySelectorAll('[data-playall]').forEach(b=>b.addEventListener('click',()=>load(list(b.dataset.playall),0)));
-tog.onclick=()=>{if(idx<0)return load(list('awakening'),0);aud.paused?aud.play():aud.pause()};
-document.getElementById('next').onclick=()=>load(queue,(idx+1)%queue.length);
-document.getElementById('prev').onclick=()=>load(queue,(idx-1+queue.length)%queue.length);
-aud.addEventListener('play',()=>{deck.classList.add('playing');tog.textContent='❚❚'});
-aud.addEventListener('pause',()=>{deck.classList.remove('playing');tog.textContent='▶'});
-aud.addEventListener('ended',()=>{if(idx<queue.length-1)load(queue,idx+1)});
-aud.addEventListener('error',()=>{if(aud.src)document.getElementById('err').textContent='This preview could not load. Is the local site server running?'});
-const seek=document.getElementById('seek'),tNow=document.getElementById('t-now'),tTotal=document.getElementById('t-total');
-const clock=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
-function showTime(){const d=isFinite(aud.duration)?aud.duration:0;
-  seek.disabled=!d;seek.max=Math.floor(d);if(!seek.dataset.drag)seek.value=Math.floor(aud.currentTime);
-  tNow.textContent=clock(aud.currentTime);tTotal.textContent=clock(d);seek.setAttribute('aria-valuetext',clock(aud.currentTime)+' of '+clock(d));}
-['timeupdate','loadedmetadata','durationchange','seeked','emptied'].forEach(ev=>aud.addEventListener(ev,showTime));
-// Arrow keys move 5 seconds (1 second felt like nothing); Page Up/Down, Home and End keep the browser's own jumps.
-seek.addEventListener('keydown',e=>{const k={ArrowRight:5,ArrowUp:5,ArrowLeft:-5,ArrowDown:-5}[e.key];if(!k||seek.disabled)return;e.preventDefault();aud.currentTime=Math.min(Math.max(aud.currentTime+k,0),aud.duration);showTime();});
-seek.addEventListener('pointerdown',()=>{seek.dataset.drag='1'});
-addEventListener('pointerup',()=>{delete seek.dataset.drag});
-seek.addEventListener('input',()=>{aud.currentTime=Number(seek.value);tNow.textContent=clock(seek.value);seek.setAttribute('aria-valuetext',clock(seek.value)+' of '+clock(aud.duration));});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-// Arriving on a song link: put keyboard focus on that song's play button (after the browser's own jump to it, which clears focus).
-{const song=document.getElementById(decodeURIComponent(location.hash.slice(1)));const play=song&&song.matches('.tracks li')&&song.querySelector('button');if(play)addEventListener('load',()=>setTimeout(()=>play.focus({preventScroll:true})));}
-</script>
-<script src="/assets/shared/ghostheart-world.js"></script>
-<script src="/assets/loud/loud.js"></script>
-<script defer src="/assets/shared/check-back-in.js"></script>
+</header>
+<main id="main">
+<div class="view" data-view="music">
+<section id="listen">
+<div class="wrap album">
+<div class="cv panel"><img alt="The Heart Wakes album cover" height="1000" src="/assets/wake-v3/img/heart-wakes.jpg" width="1000"/></div>
+<div>
+<p class="mono" style="margin:0 0 12px">The new album</p>
+<h1 class="giant"><span class="chrome">The Heart</span> <span class="red">Wakes.</span></h1>
+<p style="color:var(--silver);max-width:46ch;margin:12px 0">The album opens one week at a time. Songs show up here as their week goes up.</p>
+<ul class="songlist album-songs" id="album-songs"></ul>
+<div class="row" style="margin-top:14px"><a class="btn red" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap cat">
+<div>
+<h3 class="chrome">GhostHeart’s Awakening</h3>
+<p class="sub">8 songs · where it started</p>
+<ol class="tracks">
+<li id="song-cruel"><span>Cruel</span><button class="tplay" data-src="/assets/music/preview/awakening-01-cruel.mp3" type="button">▶ Play</button></li>
+<li id="song-im-not"><span>I’m Not</span><button class="tplay" data-src="/assets/music/preview/awakening-02-im-not-staying-silent.mp3" type="button">▶ Play</button></li>
+<li id="song-papa-didnt-raise-a-fool"><span>Papa Didn’t Raise No Fool</span><button class="tplay" data-src="/assets/music/preview/awakening-03-papa-didnt-raise-no-fool.mp3" type="button">▶ Play</button></li>
+<li id="song-she-got-to-me"><span>She Got to Me</span><button class="tplay" data-src="/assets/music/preview/awakening-04-she-got-to-me.mp3" type="button">▶ Play</button></li>
+<li id="song-this-is-ghostheart"><span>This Is GhostHeart</span><button class="tplay" data-src="/assets/music/preview/awakening-05-this-is-ghostheart.mp3" type="button">▶ Play</button></li>
+<li id="song-ghosthearts-oath"><span>GhostHeart’s Oath</span><button class="tplay" data-src="/assets/music/preview/awakening-06-ghosthearts-oath.mp3" type="button">▶ Play</button></li>
+<li id="song-you-can-be-ghostheart-too"><span>You Can Be GhostHeart Too</span><button class="tplay" data-src="/assets/music/preview/awakening-07-you-can-be-ghostheart-too.mp3" type="button">▶ Play</button></li>
+<li id="song-one-heart-many-voices"><span>One Heart Many Voices</span><button class="tplay" data-src="/assets/music/preview/awakening-08-one-heart-many-voices.mp3" type="button">▶ Play</button></li>
+</ol>
+</div>
+<div>
+<h3 class="chrome">You’re Not God</h3>
+<p class="sub">3 songs</p>
+<ol class="tracks">
+<li id="song-i-wont-pretend-to-speak-for-you"><span>I Won’t Pretend to Speak for You</span><button class="tplay" data-src="/assets/music/preview/youre-not-god-01-i-wont-pretend.mp3" type="button">▶ Play</button></li>
+<li id="song-hey-preacher-man"><span>Hey Preacher Man</span><button class="tplay" data-src="/assets/music/preview/youre-not-god-02-hey-preacher-man.mp3" type="button">▶ Play</button></li>
+<li id="song-that-aint-holy"><span>That Ain’t Holy</span><button class="tplay" data-src="/assets/music/preview/youre-not-god-03-that-aint-holy.mp3" type="button">▶ Play</button></li>
+</ol>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/><p style="margin:0">Red is the feeling. Black is the unknown. Silver is the connection.</p><p class="note">© 2026 GhostHeart Studios</p></div>
+<div><h4>Listen</h4><a href="/music/">Music</a><a href="/GhostHeart_Videos.html">Films</a><a href="/live/">Lives</a><a href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" rel="noopener" target="_blank">Spotify ↗</a><a href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">YouTube ↗</a></div>
+<div><h4>Campaign</h4><a href="/wake-the-heart/">Wake the Heart</a><a href="/here-to-help/">Work with GhostHeart</a><a href="/GhostHeart_Projects.html">Projects</a><a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a></div>
+<div><h4>Stay</h4><a href="/GhostHeart_Story.html">Enter My World</a><a href="/journal/">Blog</a><a href="/vault/">The Vault</a><a href="/follow/">Stay Connected</a><a href="/GhostHeart_Resources.html">Find Support</a><a href="/GhostHeart_Privacy.html">Privacy</a><a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Substack ↗</a></div>
+</div>
+</footer>
+<script src="/assets/wake-v3/site.js"></script>
 </body>
 </html>
