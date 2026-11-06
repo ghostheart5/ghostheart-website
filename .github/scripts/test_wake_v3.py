@@ -116,6 +116,11 @@ for name in ('for_whom', 'occasion', 'memories', 'email', 'website'):
     assert story.select_one(f'[name={name}]'), name
 assert work.select_one('[data-order-status] [data-order-status-title]') and not work.select_one('details [data-order-status]')
 assert work.select_one('a[href="mailto:signal@myghostheart.com"]')
+# Same limits as the order database (story-orders.review.sql), so a long story is never silently refused.
+limits = {'#h-name': 100, '#h-email': 254, '#h-about': 3600, '#h-when': 100, '#o-who': 200, '#o-occ': 200, '#o-story': 4000, '#o-email': 254}
+for sel, n in limits.items():
+    assert work.select_one(sel)['maxlength'] == str(n), sel
+assert len('Help with: Put a presentation together\nName: \nNeeded by: \n\n') + 100 + 100 + 3600 <= 4000
 
 support = page('GhostHeart_Resources.html')
 assert len(support.select('.res-grid .resource')) == 16

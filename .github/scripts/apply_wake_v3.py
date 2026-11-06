@@ -236,6 +236,9 @@ def work_forms(view) -> None:
     status.append(tag(soup, 'strong', {'data-help-status-title': ''}))
     status.append(tag(soup, 'span', {'data-help-status-text': ''}))
     ok.replace_with(status)
+    # Lengths the order database accepts (story-orders.review.sql); details leaves room for the name/date lines.
+    for i, n in {'h-name': '100', 'h-email': '254', 'h-about': '3600', 'h-when': '100'}.items():
+        form.find(id=i)['maxlength'] = n
     # --- "A song from your story" -> assets/help/order-form.js (free preview) ---
     song = view.find(class_='song-opt')
     sform = song.find('form')
@@ -245,6 +248,8 @@ def work_forms(view) -> None:
     names = {'o-who': 'for_whom', 'o-occ': 'occasion', 'o-story': 'memories', 'o-email': 'email'}
     for i, n in names.items():
         sform.find(id=i)['name'] = n
+    for i, n in {'o-who': '200', 'o-occ': '200', 'o-story': '4000', 'o-email': '254'}.items():
+        sform.find(id=i)['maxlength'] = n
     sform.find(id='o-who')['required'] = ''
     sform.find(id='o-story')['required'] = ''
     sform.find(id='o-email')['required'] = ''
