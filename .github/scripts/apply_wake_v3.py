@@ -131,6 +131,14 @@ def build_js(js: str) -> str:
     start = js.index('  var NAMES=')
     end = js.index('  window.addEventListener("hashchange",route);route();')
     js = js[:start] + js[end + len('  window.addEventListener("hashchange",route);route();'):]
+    # Dom, Nov 6 2026: each new week shows at 7 PM Central on its Sunday (not at the midnight that starts it).
+    old_live = 'var live=-1;WEEKS.forEach(function(w,i){if(T>=w.up)live=i});'
+    assert old_live in js
+    js = js.replace(old_live, 'function nowCT(){try{var p={};new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return p.year+"-"+p.month+"-"+p.day+" "+p.hour+":"+p.minute}catch(e){return new Date().toISOString().slice(0,16).replace("T"," ")}}\n'
+                    '  var NOW=nowCT(),live=-1;WEEKS.forEach(function(w,i){if(NOW>=w.up+" 19:00")live=i});')
+    old_next = "</b>, at night'"
+    assert old_next in js
+    js = js.replace(old_next, "</b>, at 7 PM Central'")
     # The Lives list only exists on /live/.
     js = js.replace('  L.forEach(function(x){if(x<T)return;', '  if(lv)L.forEach(function(x){if(x<T)return;')
     # Silver Thread forms really post to Mailchimp now; never fake a success.

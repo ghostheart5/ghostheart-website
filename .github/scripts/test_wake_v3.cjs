@@ -45,6 +45,17 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.match(await page.locator('#featured-wake').innerText(), /Goes up Sunday night/i);
   assert.match(await page.locator('#featured-wake h3').innerText(), /To Those Who Served/i);
   await page.close();
+  // Dom, Nov 6 2026: a week shows at 7 PM Central on its Sunday. Sun Nov 8, 6:59 PM CST = 00:59Z Nov 9.
+  page = await open('/wake-the-heart/', '2026-11-09T00:59:00Z');
+  assert.match(await page.locator('#featured-wake').innerText(), /Goes up Sunday night/i);
+  await page.close();
+  page = await open('/wake-the-heart/', '2026-11-09T01:00:00Z');
+  assert.match(await page.locator('#featured-wake').innerText(), /Out now/i);
+  assert.match(await page.locator('#j-next').innerText(), /Sunday, Nov 15.*7 PM Central/i);
+  await page.close();
+  page = await open('/wake-the-heart/', '2026-11-15T15:00:00Z');
+  assert.match(await page.locator('#featured-wake h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
+  await page.close();
   page = await open('/', '2026-11-09T18:00:00Z');
   assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
   assert.equal(await page.locator('#featured-home audio').count(), 2);
