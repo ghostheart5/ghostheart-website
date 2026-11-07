@@ -104,13 +104,14 @@ for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behin
     for property_name in ['og:title', 'og:description', 'og:image']:
         assert len(document.select(f'meta[property="{property_name}"]')) == 1
     image_url = document.select_one('meta[property="og:image"]')['content']
-    expected_image = 'ghostheart-rebel-in-the-rain.png' if relative == 'woman-behind-the-scenes/index.html' else 'ghostheart-awakening-banner.png'
+    # Audit Nov 6, 2026 (WEB-06): 1200x630 share JPGs instead of 2.5-4.4 MB PNGs (apply_audit_nov6.py).
+    expected_image = 'ghostheart-rebel-share-1200x630.jpg' if relative == 'woman-behind-the-scenes/index.html' else 'ghostheart-awakening-share-1200x630.jpg'
     assert image_url == 'https://www.myghostheart.com/assets/story/' + expected_image
     assert (ROOT / image_url.removeprefix('https://www.myghostheart.com/')).is_file()
     assert document.select_one('meta[name="twitter:card"]')['content'] == 'summary_large_image'
 assert love.select_one('meta[property="og:image:alt"]')['content'] == love.select_one('.world-approved-art img')['alt']
-assert love.select_one('meta[property="og:image:width"]')['content'] == '1374'
-assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
+assert love.select_one('meta[property="og:image:width"]')['content'] == '1200'
+assert love.select_one('meta[property="og:image:height"]')['content'] == '630'
 for card in films.select('.g-film[id]'):
     for link in card.select('.g-actions a[href^="/albums/"]'):
         assert 'Explore the album' not in link.get_text(), (card['id'], link)

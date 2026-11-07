@@ -50,7 +50,7 @@ a { color: inherit; }
 .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,9,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
 .gateway-menu[hidden] { display: none; }
 .menu-grid { display: grid; grid-template-columns: .8fr 1.2fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-block: 2rem; }
-.menu-group h2 { margin: 0 0 .65rem; color: var(--ember-light); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+.menu-group h2 ,.menu-group .menu-heading{ margin: 0 0 .65rem; color: var(--ember-light); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
 .menu-group a { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .65rem .2rem; color: var(--muted); font-size: .93rem; font-weight: 750; text-decoration: none; }
 .menu-group a:hover, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--ember); }
 .menu-group a:focus-visible { color: var(--text); border-color: var(--ember); outline: 3px solid var(--ember-light); outline-offset: 3px; }

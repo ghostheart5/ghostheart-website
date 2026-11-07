@@ -30,7 +30,7 @@ a { color: inherit; }
 .gateway-menu { border-bottom: 1px solid var(--line); background: #0c0d10; }
 .gateway-menu[hidden] { display: none; }
 .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-block: 2rem 2.4rem; }
-.menu-group h2 { margin: 0 0 .7rem; color: var(--ember); font-size: .67rem; text-transform: uppercase; letter-spacing: .2em; }
+.menu-group h2 ,.menu-group .menu-heading{ margin: 0 0 .7rem; color: var(--ember); font-size: .67rem; text-transform: uppercase; letter-spacing: .2em; }
 .menu-group a { min-height: 44px; display: flex; align-items: center; width: fit-content; color: #c9c5bc; text-decoration: none; font-size: .88rem; }
 .menu-group a:hover, .menu-group a[aria-current="page"] { color: white; }
 

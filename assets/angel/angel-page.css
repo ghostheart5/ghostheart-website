@@ -46,7 +46,7 @@ a { color: inherit; }
 .gateway-menu { border-top: 1px solid var(--line); background: rgba(8,8,10,.98); box-shadow: 0 2rem 4rem rgba(0,0,0,.52); }
 .gateway-menu[hidden] { display: none; }
 .menu-grid { display: grid; grid-template-columns: .8fr 1.2fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-block: 2rem; }
-.menu-group h2 { margin: 0 0 .75rem; color: var(--gold); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+.menu-group h2 ,.menu-group .menu-heading{ margin: 0 0 .75rem; color: var(--gold); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
 .menu-group a { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.07); padding: .58rem 0; color: var(--muted); font-size: .88rem; font-weight: 750; text-decoration: none; }
 .menu-group a:hover, .menu-group a:focus-visible, .menu-group a[aria-current="page"] { color: var(--text); border-color: var(--gold); outline: none; }
 

@@ -519,3 +519,10 @@ details.more table{font-size:14px}
 .help-fields{border:0;margin:0;padding:0;min-width:0;display:contents}
 .err{color:#F4483C}
 [data-help-status] strong,[data-order-status] strong{display:block}
+/* Website audit, Nov 6 2026 (added by apply_wake_v3.py) */
+/* WEB-05: smaller WebP copies; <picture> adds no box, so each image keeps its exact size and place. */
+picture.wv{display:contents}
+picture.wv>source{display:none}
+.hero .art{background-image:image-set(url("/assets/wake-v3/img/heart-engine.webp") type("image/webp"),url("/assets/wake-v3/img/heart-engine.jpg") type("image/jpeg"))}
+/* WEB-08: footer column titles are not headings; same look as the old footer h4. */
+footer .foot-h{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--silverw);font-weight:500}
