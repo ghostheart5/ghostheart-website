@@ -146,7 +146,7 @@ a { color: inherit; }
   padding-block: 1.5rem 1.8rem;
 }
 
-.menu-group h2 {
+.menu-group h2 ,.menu-group .menu-heading{
   margin: 0 0 .45rem;
   color: var(--red);
   font-size: .62rem;

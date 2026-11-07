@@ -58,7 +58,7 @@ body[class^="page-"] .button-row {
   gap: .5rem;
 }
 
-body[class^="page-"] :is(.menu-toggle, .menu-group h2, .menu-group a, .nav-signal, .eyebrow, .part-label, .section-kicker, .reveal-kicker) {
+body[class^="page-"] :is(.menu-toggle, .menu-group h2, .menu-group .menu-heading, .menu-group a, .nav-signal, .eyebrow, .part-label, .section-kicker, .reveal-kicker) {
   font-size: var(--responsive-label-size);
 }
 

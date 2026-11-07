@@ -48,7 +48,7 @@
   function card(i,up){var w=WEEKS[i];var el=document.createElement("div");el.className="feat panel";if(w.color)el.style.setProperty("--song",w.color);
     var songs=(w.songs||[w.nm]).map(songLi).join("");
     el.innerHTML='<span class="bar"></span><div class="feat-l"><p class="mono" style="margin:0">Week '+(i+1)+' of 14 · '+rng(w.a,w.b)+'</p><h3></h3>'+
-      '<p class="mono" style="margin:0;color:'+(up?"var(--accent)":"var(--song,var(--silver))")+'">'+(up?"Out now":"Goes up Sunday night")+'</p>'+(w.cover?'<div class="feat-art"><img src="'+w.cover+'" alt="The Heart Wakes album cover" width="110" height="110"><p class="note" style="margin:0">From the album<br><b>The Heart Wakes</b></p></div>':'')+'</div>'+
+      '<p class="mono" style="margin:0;color:'+(up?"var(--accent)":"var(--song,var(--silver))")+'">'+(up?"Out now":"Goes up Sunday night")+'</p>'+(w.cover?'<div class="feat-art"><picture class="wv"><source srcset="'+w.cover.replace(/\.jpg$/,".webp")+'" type="image/webp"><img src="'+w.cover+'" alt="The Heart Wakes album cover" width="110" height="110"></picture><p class="note" style="margin:0">From the album<br><b>The Heart Wakes</b></p></div>':'')+'</div>'+
       '<div class="feat-r"><p class="mono" style="margin:0 0 6px;color:var(--mute)">'+(w.songs&&w.songs.length>1?"This week’s songs":"This week’s song")+'</p><ul class="songlist">'+songs+'</ul>'+(w.cover?'':'')+(w.note?'<p class="note" style="margin-top:10px">'+w.note+'</p>':"")+
       '<div class="row" style="margin-top:16px"><a class="btn red" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener">Spotify ↗</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener">YouTube ↗</a></div></div>';
     el.querySelector("h3").textContent=w.nm;return el}
@@ -178,4 +178,20 @@
   var mb=document.getElementById("menu-btn"),menu=document.getElementById("menu");
   if(mb&&menu)mb.addEventListener("click",function(){var o=menu.classList.toggle("open");mb.setAttribute("aria-expanded",o)});
 
+})();
+
+// Load website analytics only on the public GhostHeart domain, not local previews.
+(() => {
+  if (!['www.myghostheart.com', 'myghostheart.com'].includes(location.hostname)) return;
+  if (document.getElementById('ghostheart-metricool')) return;
+  const tracker = document.createElement('script');
+  tracker.id = 'ghostheart-metricool';
+  tracker.async = true;
+  tracker.src = 'https://tracker.metricool.com/resources/be.js';
+  tracker.onload = () => {
+    if (typeof window.beTracker?.t === 'function') {
+      window.beTracker.t({ hash: '9e25430c6db07385d4e58579695b9e8b' });
+    }
+  };
+  document.head.appendChild(tracker);
 })();

@@ -64,7 +64,7 @@ body.loud-skin header.ghx-header .ghx-menu-toggle{font-family:Anton,Impact,sans-
 body.loud-skin header.ghx-header .ghx-menu-toggle[aria-expanded=true]{background:var(--blood);border-color:var(--blood);color:#050505}
 body.loud-skin header.ghx-header .ghx-help-link{font-family:Anton,Impact,sans-serif;text-transform:uppercase;background:var(--bone);color:#050505;border-radius:0}
 body.loud-skin header.ghx-header .ghx-menu{background:#050505;border-top:4px solid var(--blood)}
-body.loud-skin header.ghx-header .ghx-menu h2{color:var(--ash)}
+body.loud-skin header.ghx-header .ghx-menu h2,body.loud-skin header.ghx-header .ghx-menu .menu-heading{color:var(--ash)}
 body.loud-skin header.ghx-header .ghx-menu a{font-family:Anton,Impact,sans-serif;text-transform:uppercase;color:var(--bone)}
 body.loud-skin header.ghx-header .ghx-menu a:hover,body.loud-skin header.ghx-header .ghx-menu a[aria-current]{color:var(--blood)}
 
