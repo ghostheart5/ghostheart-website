@@ -53,7 +53,8 @@ else:
         if parts.fragment:
             assert BeautifulSoup(dest.read_text(), 'html.parser').find(id=unquote(parts.fragment)), url
     index = BeautifulSoup((ROOT/'journal/index.html').read_text(), 'html.parser')
-    assert index.select_one(f'a[href="{ROUTE}"]')
+    # Wake the Heart site (Dom, Nov 6 2026): the Blog is the Notebook, with the reading shown in place.
+    assert index.select_one('#e-cruel.nb-item details .entry-body')
     assert SLUG in (ROOT/'journal/feed.xml').read_text()
     assert any(node.text == 'https://www.myghostheart.com'+ROUTE
                for node in ET.parse(ROOT/'sitemap.xml').iter() if node.tag.endswith('}loc'))

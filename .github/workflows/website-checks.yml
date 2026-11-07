@@ -26,14 +26,13 @@ jobs:
           python3 .github/scripts/verify_reviewed_site.py
           python3 .github/scripts/verify_world_review.py
           python3 .github/scripts/test_cruel_reading.py
-          python3 .github/scripts/test_compact_homepage.py
+          python3 .github/scripts/test_wake_v3.py
           python3 .github/scripts/test_im_not_release.py
       - name: Check JavaScript syntax
         shell: bash
         run: |
           set -euo pipefail
           while IFS= read -r -d '' script; do node --check "$script"; done < <(find assets -type f -name '*.js' -print0)
-          node .github/scripts/test_vault_filters.cjs
           node .github/scripts/test_featured_quote.cjs
       - name: Install browser for local page checks
         run: |
@@ -46,11 +45,5 @@ jobs:
           python3 -m http.server 8765 > /tmp/ghostheart-review-server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID"' EXIT
-          node .github/scripts/test_reviewed_site.cjs
-          node .github/scripts/test_home_rebellion.cjs
+          node .github/scripts/test_wake_v3.cjs
           node .github/scripts/test_help_orders.cjs
-          node .github/scripts/test_live_and_songs.cjs
-          node .github/scripts/test_home_weeks.cjs
-          node .github/scripts/test_films_daily.cjs
-          node .github/scripts/test_check_back_in.cjs
-          node .github/scripts/test_music_seek.cjs

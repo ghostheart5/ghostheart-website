@@ -43,29 +43,15 @@ for(const tz of ['UTC','America/Los_Angeles','Asia/Tokyo','America/Chicago']) {
   assert.equal(nodes.qlink.href,'/GhostHeart_Quotes.html#quote-'+String(i+1).padStart(2,'0'));
  }
 }
-const home=fs.readFileSync('index.html','utf8');
-assert(!home.includes('FEATURED NOW')); // Owner 2026-11-01: no section label strips on the home page
-assert(home.includes('Before the Heart Wakes'));
-assert(home.includes('href="/journal/wake-the-heart-week.html"'));
-for(const file of ['GhostHeart_Videos.html']) {
- const html=fs.readFileSync(file,'utf8');
- assert(html.includes('FEATURED NOW'));
- assert(html.includes("It's Not the 1950s"));
- assert(html.includes('Grandma remembers the rights people fought for—and the pain behind the victory speeches. Listen to who paid the price.'));
- assert(html.includes('https://www.youtube.com/watch?v=RtFTIssLd0s'));
- assert(html.includes('Watch the full film'));
- assert(!/watch the preview/i.test(html));
-}
-// Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World. The 1950s film stays on Films.
+// Wake the Heart site (Dom, Nov 6 2026): the home page shows the same 17 lines on the same Central-time schedule.
+const site=fs.readFileSync('assets/wake-v3/site.js','utf8');
+assert.deepEqual(JSON.parse(site.match(/var quotes=(\[.*?\]);/s)[1]), quotes);
+assert(site.includes('timeZone:"America/Chicago"'));
+assert(site.includes('Math.floor(Date.UTC(parts.year,parts.month-1,parts.day)/86400000)'));
+assert(fs.readFileSync('index.html','utf8').includes('data-daily-quote'));
+// Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
 assert(fs.readFileSync('start/index.html','utf8').includes('content="0; url=/"'));
-assert(fs.readFileSync('GhostHeart_Videos.html','utf8').includes('RtFTIssLd0s'));
 const films=fs.readFileSync('GhostHeart_Videos.html','utf8');
 assert(films.includes('id="film-cruel"'));
-assert(films.includes('data-video-id="9sbFgjM_SDE"'));
-for(const file of ['journal/index.html','.github/loud-pages/journal/index.html.loud']) {
- const html=fs.readFileSync(file,'utf8');
- assert(html.includes('data-daily-quote'));
- assert(html.includes('src="/assets/journal/daily-quote.js"'));
- assert(!html.includes('getFullYear()'));
-}
-console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, featured copy and preserved Cruel catalogue.');
+assert(films.includes('watch?v=9sbFgjM_SDE'));
+console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, same 17 lines on the home page and preserved Cruel film.');

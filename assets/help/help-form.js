@@ -28,7 +28,14 @@
     if (!value('service')) return fail('Please choose a job.');
     if (!value('details')) return fail('Please tell me what you need done.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value('email'))) return fail('Please add an email address so I can reach you.');
-    var payload = { kind: 'office', email: value('email'), website: value('website'), service: value('service'), details: value('details') };
+    // The Wake the Heart page also asks for an optional name and date; they ride along in the request text.
+    var picked = form.elements.service && form.elements.service.selectedOptions ? form.elements.service.selectedOptions[0] : null;
+    var extra = [];
+    if (picked && picked.textContent) extra.push('Help with: ' + picked.textContent.trim());
+    if (value('name')) extra.push('Name: ' + value('name'));
+    if (value('when')) extra.push('Needed by: ' + value('when'));
+    var details = (extra.length ? extra.join('\n') + '\n\n' : '') + value('details');
+    var payload = { kind: 'office', email: value('email'), website: value('website'), service: value('service'), details: details };
     submit.disabled = true;
     submit.textContent = 'Sending…';
     fetch(cfg.supabaseUrl + '/rest/v1/rpc/submit_ghostheart_order', {

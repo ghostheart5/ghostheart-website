@@ -30,8 +30,6 @@ follow = page("follow/index.html")
 
 assert story.select_one("h1").get_text(" ", strip=True) == "Enter My World."
 assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars — Before the Heart Wakes"  # renamed 2026-11-01 (owner)
-assert story.select_one('a[href="/woman-behind-the-scenes/"]')
-assert story.select_one('a[href="/journal/"]')
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
 assert love.select_one("h1").get_text(" ", strip=True) == "The Woman Behind the Scenes."
 assert love.select_one('a[href="/music/#song-she-got-to-me"]')
@@ -43,14 +41,6 @@ assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woma
 assert love_alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert "Survival matters" in archive.get_text(" ", strip=True)
 assert awakening.select_one("h1").get_text(" ", strip=True) == "Before the Heart Wakes."
-# The Blog lists every public entry (the archived introduction has its own card) plus every released Passage page.
-public_entries = [p for p in json.loads((ROOT / ".github/content/journal.json").read_text(encoding="utf-8"))
-                  if p["slug"] != "how-we-got-here" and (ROOT / "journal" / f'{p["slug"]}.html').exists()]
-released_passages = [f for f in (ROOT / "passages").glob("*.html") if f.name != "index.html"
-                     and 'class="r-body r-wait"' not in f.read_text(encoding="utf-8")]
-assert len(blog.select("#entries article")) == len(public_entries) + len(released_passages)
-assert blog.select_one("a[href=\"/passages/im-not.html\"]") and blog.select_one("#long-story a[href^=\"https://toohumantostayquiet.substack.com/\"]")
-assert blog.select_one('a[href="/journal/how-we-got-here-archive.html"]')
 assert page("journal/how-we-got-here.html").select_one('meta[http-equiv="refresh"]')["content"].endswith("/GhostHeart_Story.html")
 # A fragment must identify a visible player card, not only a compatibility span.
 expected_films = {
@@ -67,17 +57,14 @@ expected_films = {
     'film-look-at-me': 'nVC1kB0MREA',
     'film-cruel': '9sbFgjM_SDE',
 }
-actual_films = {card['id']: card for card in films.select('.g-film[id]')}
+# Wake the Heart site (Dom, Nov 6 2026): every film card keeps its old address and its YouTube link.
+actual_films = {card['id']: card for card in films.select('article.film[id]')}
 assert set(actual_films) == set(expected_films), set(actual_films)
 for card_id, video_id in expected_films.items():
     card = actual_films[card_id]
-    assert card.name == 'article' and not card.has_attr('hidden'), card_id
-    assert card.select_one('h3') and card.select_one(f'button[data-video-id="{video_id}"]'), card_id
+    assert not card.has_attr('hidden') and card.select_one('h3'), card_id
     assert card.select_one(f'a[href="https://www.youtube.com/watch?v={video_id}"]'), card_id
-    assert (ROOT / card.select_one('.g-player img')['src'].lstrip('/')).is_file(), card_id
-retained_film_aliases = films.select('.g-films > span[id^=film-][hidden]')
-assert len(retained_film_aliases) == 12
-assert all(not alias.select('button, iframe, a') for alias in retained_film_aliases)
+    assert (ROOT / card.select_one('img')['src'].lstrip('/')).is_file(), card_id
 assert 'cinematic remake' in actual_films['film-human-too-remake'].get_text(' ', strip=True)
 assert 'Human After All' in actual_films['film-human-too-remake'].get_text(' ', strip=True)  # owner 2026-11-01: plain label, no YouTube title
 assert 'Broken Man' in actual_films['film-the-man-beneath-the-moon'].get_text(' ', strip=True)  # owner 2026-11-01: no upload notes shown
@@ -107,15 +94,11 @@ assert not films.select("main form")
 assert not page("GhostHeart_Quotes.html").select("main form")
 # Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
 assert 'content="0; url=/"' in (ROOT / "start/index.html").read_text(encoding="utf-8")
-# Home has exactly one form: the email box Dom approved on 2026-10-31.
-assert [f.get("id") for f in home.select("form")] == ["home-join"]
-assert "list-manage.com/subscribe/post" in home.select_one("form#home-join")["action"]
-form = follow.select_one("form.signal-signup-form")
-assert form and form.get("method") == "post" and "list-manage.com/subscribe/post" in form["action"]
-assert form.select_one("input[name=EMAIL][required]") and form.select_one("input[name^=b_a7ab330423f3b936c48b8d8ba_]")
+# Wake the Heart site: every Silver Thread email box posts to the approved Mailchimp list (test_wake_v3.py).
+assert home.select("form") and all("list-manage.com/subscribe/post" in f["action"] for f in home.select("form"))
 assert 'You?ll' not in follow.get_text()
 assert 'approved' not in follow.select_one('meta[name="description"]')['content']
-for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behind-the-scenes/'), ('vault/index.html', '/vault/')]:
+for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behind-the-scenes/')]:
     document = page(relative)
     assert document.select_one('meta[property="og:url"]')['content'] == document.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com' + canonical
     for property_name in ['og:title', 'og:description', 'og:image']:
@@ -128,22 +111,6 @@ for relative, canonical in [('woman-behind-the-scenes/index.html', '/woman-behin
 assert love.select_one('meta[property="og:image:alt"]')['content'] == love.select_one('.world-approved-art img')['alt']
 assert love.select_one('meta[property="og:image:width"]')['content'] == '1374'
 assert love.select_one('meta[property="og:image:height"]')['content'] == '1145'
-live = page("live/index.html")
-assert " ".join(live.select_one("#live-status-title").get_text().split()) == "Next Live: Sunday, November 1, 2026, 10:00 a.m. Central."
-assert live.select_one("#live-status-title [data-live-until][data-live-after]")
-assert not live.select_one('a[href="/live/my-promise.html"]')  # owner: readings off the site (2026-11-01)
-assert live.select_one('a[href="/follow/"]')
-assert not live.select_one("#next-live-title")
-assert not live.select_one("#live-replay")
-assert not live.select_one('time')
-
-counts = {kind: len(vault.select(f'.vault-item[data-vault-kind="{kind}"]'))
-          for kind in ("songs", "videos", "shorts", "quotes")}
-assert counts == {"songs": 11, "videos": 6, "shorts": 5, "quotes": 17}, counts
-assert vault.select_one('.vault-hero .ghx-kicker').get_text() == 'A selected collection'
-vault_films_link = vault.select_one('.vault-hero-links > a.vault-films-link[href="/GhostHeart_Videos.html"]')
-assert vault_films_link and vault_films_link.get_text() == 'Browse Films'
-assert not any(parent.name == 'noscript' or parent.has_attr('hidden') for parent in vault_films_link.parents)
 for card in films.select('.g-film[id]'):
     for link in card.select('.g-actions a[href^="/albums/"]'):
         assert 'Explore the album' not in link.get_text(), (card['id'], link)
@@ -162,56 +129,11 @@ for slug in ['broken-man', 'fatherhood', 'human-after-all', 'love-is-love', 'the
     assert not any(phrase in prose for phrase in ['is an album', 'this album']), slug
 # Owner 2026-11-02: Music (/music/) is the one home for the 11 songs; /albums/ only forwards there.
 music = page('music/index.html')
-assert music.select_one('a[href="/GhostHeart_Songs.html"]')
-assert music.select_one('a[href="/GhostHeart_Videos.html"]')
 assert page('albums/index.html').select_one('meta[http-equiv="refresh"]')['content'] == '0; url=/music/'
 for relative in ['journal/this-is-ghostheart.html', 'journal/ghosthearts-oath.html']:
     assert 'Short song introduction' in page(relative).select_one('.journal-meta').get_text(' ', strip=True)
 ids = [element['id'] for element in music.select('[id]')]
 assert len(ids) == len(set(ids)), 'Duplicate Music IDs'
-for card in vault.select('.vault-item[data-vault-kind="songs"]'):
-    href = card.select_one('a')['href']
-    assert href.startswith('/music/#song-'), href
-    target = music.find(id=href.split('#', 1)[1])
-    assert target and target.select_one('button')['data-title'] == card.select_one('h2').get_text(), href
-assert vault.select_one('.vault-item[data-vault-kind="videos"] a[href="https://www.youtube.com/watch?v=9sbFgjM_SDE"]')
-assert len(vault.select('.vault-item[data-vault-featured="true"]')) == 3
-assert {button["data-vault-filter"] for button in vault.select("[data-vault-filter]")} == {
-    "featured", "songs", "videos", "shorts", "quotes", "all"
-}
-assert all(card.select_one("a[href]") for card in vault.select(".vault-item"))
-assert not vault.select("a[download]")
-assert all(card.select_one('a[href="/music/#song-that-aint-holy"]') for card in
-           vault.select('.vault-item[data-vault-kind="shorts"]')[1:])
-assert vault.select('.vault-item[data-vault-kind="shorts"]')[0].select_one('a[href="/music/#song-cruel"]')
-assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a[href^="https://www.youtube.com/shorts/"]')} == {
-    'https://www.youtube.com/shorts/2fq-XQxtFuo',
-    'https://www.youtube.com/shorts/ofU09J3bkHI',
-    'https://www.youtube.com/shorts/5HUWedEnnsA',
-    'https://www.youtube.com/shorts/bkm3czEmk5g',
-    'https://www.youtube.com/shorts/5b43JyYmIts',
-}
-# Home page trimmed to five sections (owner request 2026-10-30); the daily line now lives on /vault/.
-assert vault.select_one("#daily-line [data-daily-quote]")
-assert not home.select_one("#home-vault, #everywhere, .manifesto")
-assert not home.select('#home .kicker, #latest .label, #home-story .label')  # Owner 2026-11-01: no section label strips on the home page
-assert home.select_one('#latest .ctas a')['href'] == '/journal/wake-the-heart-week.html'
-assert home.select_one('#latest .ctas a').get_text() == 'What starts Nov 9'  # Owner 2026-11-01: Before the Heart Wakes runs until Nov 8
-assert not home.select_one('#latest audio')
-assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
-assert home.select_one('.canon-hero__line').get_text() == 'Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.'  # owner 2026-11-01
-assert [section.get('id') for section in home.select('main > section')]== ['home', 'latest', 'home-story', 'mission-board']
-assert not home.select_one('section#join-the-signal'), 'One email signup block on the homepage: the Heart Rebellion invitation'
-assert home.select_one('aside#join-the-signal.rebellion-invite'), 'Old #join-the-signal links land on the Heart Rebellion invitation'
-assert not home.select('.sitefoot a[href="/GhostHeart_Quotes.html"]')
-assert len(home.select('#home-story a[href^="/GhostHeart_Story.html"]')) == 1
-assert 'Live day: Sunday.' in home.get_text()
-
-assert home.select_one('#join-the-signal a[href="/vault/"]')
-assert not home.select_one("#home-lives")
-assert home.select_one('#mission-board a[href="/live/"]')
-assert not home.select_one('#mission-board form')
-assert home.select_one('#mission-board a[href="/GhostHeart_Resources.html"]')
 live_source = json.loads((ROOT / '.github/content/live.json').read_text(encoding='utf-8'))
 assert live_source['public_enabled'] is False and live_source['public_path_enabled'] is True
 assert live_source['starts_at'] == '2026-10-11T10:00:00-05:00'
@@ -231,12 +153,12 @@ for path in ROOT.rglob('*.html'):
         assert not any(label in link.get_text(' ', strip=True) for label in ['GhostHeart and His Angel', 'Meet the Angel']), (path, link)
     text = document.get_text(' ', strip=True)
     assert 'The Awakening Begins' not in text, path
-    assert 'Next Sunday Live' not in text, path
+    if path.relative_to(ROOT).as_posix() != 'live/index.html':  # Dom, Nov 6 2026: Lives shows the next Sunday Live
+        assert 'Next Sunday Live' not in text, path
     assert 'Sunday readings will connect' not in text, path
 assert home.select_one('a[href="/GhostHeart_Resources.html"]')
 assert "Join the Signal" not in home.get_text(" ", strip=True)
-for relative in ("index.html", "GhostHeart_Story.html", "woman-behind-the-scenes/index.html", "music/index.html", "GhostHeart_Videos.html", "live/index.html", "vault/index.html", "journal/index.html", "GhostHeart_Projects.html", "GhostHeart_Resources.html", "follow/index.html"):
-    # LOUD redesign (2026-10-14): redesigned routes use the LOUD stylesheet instead of the review theme.
+for relative in ("woman-behind-the-scenes/index.html",):
     document = page(relative)
     assert document.select_one('link[href="/assets/shared/review-theme.css"]') or document.select_one('link[href="/assets/loud/loud.css"]'), relative
-print("PASS World review: visible pending Lives, scoped 39-item Vault, exact track fragments, trailer label, reading aliases, shared theme")
+print("PASS World review: story, film and song addresses, recordings archive, reading aliases, shared theme on older pages")
