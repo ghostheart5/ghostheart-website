@@ -225,11 +225,11 @@ def main() -> int:
         if expected not in text:
             errors.append(f"Legacy redirect mismatch in {relative}; expected {destination}")
 
+    # Dom, Nov 8 2026: older songs are off the site; the old songs page forwards to Music (apply_week1_songs_only.py),
+    # keeping the old deep-link targets so legacy links still land before the forward.
     songs = (ROOT / "GhostHeart_Songs.html").read_text(encoding="utf-8")
-    if 'id="human-too"' not in songs:
-        errors.append("Human Too deep-link target is missing")
-    if "hasArchiveTarget" not in songs:
-        errors.append("Music archive does not reveal deep-linked releases")
+    if 'content="0; url=/music/"' not in songs or 'id="human-too"' not in songs:
+        errors.append("Old songs page must forward to Music and keep its deep-link targets")
 
     for warning in warnings:
         print(f"WARNING: {warning}")

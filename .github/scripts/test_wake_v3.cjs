@@ -87,11 +87,14 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.match(await page.locator('#lives li').first().innerText(), /Sun, Nov 22/i);
   await page.close();
 
-  // Notebook: filters and deep links.
-  page = await open('/journal/#e-cruel');
-  assert.equal(await page.locator('#e-cruel details').evaluate(d => d.open), true);
-  await page.click('.nb-chips .chip[data-nb="passage"]');
-  assert.equal(await page.locator('.nb-item:visible').count(), await page.locator('.nb-item[data-typ="passage"]').count());
+  // Blog: Dom, Nov 8 2026: older songs off everywhere; the Blog waits for The Heart Wakes notes,
+  // and an old song note forwards to it.
+  page = await open('/journal/');
+  assert.equal(await page.locator('.nb-item').count(), 0);
+  assert.match(await page.locator('.nb-empty').innerText(), /The Heart Wakes/);
+  await page.close();
+  page = await open('/journal/cruel-something-needs-to-change.html');
+  await page.waitForURL(/\/journal\/$/);
   await page.close();
 
   // Heart Dial: a feeling gives one pick with a working link on this site or outside it.
@@ -104,7 +107,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   // Old deep links still land on the right card.
   // Dom, Nov 8 2026: older songs left Music, so /music/#song-cruel just opens Music.
-  for (const [path, id] of [['/music/#song-cruel', 'album-songs'], ['/GhostHeart_Videos.html#film-rebellion', 'film-rebellion'],
+  for (const [path, id] of [['/music/#song-cruel', 'album-songs'], ['/GhostHeart_Videos.html#film-rebellion', 'film-the-heart-wakes'],
                             ['/GhostHeart_Story.html#behind-the-scars', 'behind-the-scars']]) {
     page = await open(path);
     assert.equal(await page.locator('#' + id).count(), 1, path);
@@ -120,5 +123,5 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log('PASS site browser: 13 pages, campaign page on, at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Mailchimp signup.');
+  console.log('PASS site browser: 13 pages, campaign page on, at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Films and Blog with only The Heart Wakes, Mailchimp signup.');
 })().catch(e => { console.error(e); process.exit(1); });

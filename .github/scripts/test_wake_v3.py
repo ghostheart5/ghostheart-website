@@ -97,21 +97,22 @@ music = page('music/index.html')
 # Dom, Nov 8 2026: only The Heart Wakes songs are listed on Music (filled in by site.js as each week opens).
 assert not music.select('.tracks li[id^="song-"]') and music.select_one('ul#album-songs')
 
+# Dom, Nov 8 2026: older songs off everywhere; Films points to The Heart Wakes premiere only.
 films = page('GhostHeart_Videos.html')
-assert len(films.select('article.film[id^="film-"]')) == 12
+assert [a['id'] for a in films.select('article.film[id^="film-"]')] == ['film-the-heart-wakes']
 
 live = page('live/index.html')
 assert live.select_one('#lives') and live.select_one('form.js-thread')
 assert live.select_one('a[href="https://www.tiktok.com/@ghosthearted1"]')
 
+# Dom, Nov 8 2026: the Blog's entries were all about older songs, so it waits for The Heart Wakes notes.
 blog = page('journal/index.html')
-items = blog.select('ol.nb > li.nb-item[id^="e-"]')
-assert len(items) == 7 and all(i.select_one('details .entry-body p') for i in items)
-assert {i['data-typ'] for i in items} <= {'passage', 'song', 'news'}
+assert not blog.select('li.nb-item') and blog.select_one('.nb-empty')
 
 vault = page('vault/index.html')
 assert len(vault.select('.dial-ring button.dial-m[data-m]')) == 6 and vault.select_one('.dial-out[aria-live]')
 picks = re.findall(r'"href": "([^"]+)"', site_js)
+assert not re.search(r'"kind": "(?:Film|Song|Blog|Passage)"', site_js), 'Heart Dial still picks older songs'
 assert picks and all(h.startswith('https://') or urlsplit(h).path in PAGES.values() for h in picks), picks
 
 work = page('here-to-help/index.html')
@@ -140,4 +141,4 @@ assert len(support.select('.res-grid .resource')) == 16
 assert support.select_one('a[href="tel:988"]')
 assert 'url("data:' not in site_css
 print('PASS site: 12 pages, campaign page on, one menu, no old-site links, real Mailchimp and order forms, '
-      '14 album weeks, only The Heart Wakes songs listed, 12 films, 7 Notebook entries, Heart Dial, 16 resources')
+      '14 album weeks, only The Heart Wakes songs listed, Films and Blog waiting for The Heart Wakes, Heart Dial without older songs, 16 resources')

@@ -52,6 +52,6 @@ assert(fs.readFileSync('index.html','utf8').includes('data-daily-quote'));
 // Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
 assert(fs.readFileSync('start/index.html','utf8').includes('content="0; url=/"'));
 const films=fs.readFileSync('GhostHeart_Videos.html','utf8');
-assert(films.includes('id="film-cruel"'));
-assert(films.includes('watch?v=9sbFgjM_SDE'));
-console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, same 17 lines on the home page and preserved Cruel film.');
+// Dom, Nov 8 2026: older songs (Cruel included) are off the site; Films points to The Heart Wakes premiere.
+assert(!films.includes('id="film-cruel"') && films.includes('id="film-the-heart-wakes"'));
+console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, same 17 lines on the home page; Films shows only The Heart Wakes.');
