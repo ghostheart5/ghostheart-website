@@ -69,7 +69,8 @@ FORWARD = '''<!doctype html>
 SONG_LINK = re.compile(r'((?:https://www\.myghostheart\.com)?(?:\.\./)*/?)music/#song-[a-z0-9-]+')
 OLD_SONGS = ['Cruel', 'I’m Not', 'Papa Didn’t Raise No Fool', 'She Got to Me', 'This Is GhostHeart',
              'GhostHeart’s Oath', 'You Can Be GhostHeart Too', 'One Heart Many Voices',
-             'I Won’t Pretend to Speak for You', 'Hey Preacher Man', 'That Ain’t Holy']
+             'I Won’t Pretend to Speak for You', 'Hey Preacher Man', 'That Ain’t Holy',
+             'Human Too', 'HUMAN TOO', 'The Dad I Never Had', 'The Man Beneath the Moon', 'Just Not This Morning']
 YOUTUBE = 'https://www.youtube.com/@GhostHeart-M95RTK'
 FILMS = re.compile(r'(<div class="films">).*?(</div>\s*</div>\s*</section>)', re.S)
 FILMS_NOW = ('<article class="film panel" id="film-the-heart-wakes"><div><p class="mono k">The Heart Wakes · premiere</p>'
@@ -81,7 +82,7 @@ BLOG_NOW = ('<div class="panel nb-empty" style="padding:18px"><p style="margin:0
             '<b>The Heart Wakes</b>. Week 1: The Heart Wakes and To Those Who Served.</p></div>')
 BLOG_CHIPS = re.compile(r'\s*<div class="chips nb-chips">.*?</div>', re.S)
 BLOG_NEXT = re.compile(r'\s*<div class="nb-next panel">.*?</div>', re.S)
-TO_MUSIC = ['GhostHeart_Songs.html', 'albums/ghostheart/index.html', 'albums/youre-not-god/index.html',
+TO_MUSIC = ['GhostHeart_Songs.html', 'assets/platforms/index.html', 'albums/ghostheart/index.html', 'albums/youre-not-god/index.html',
             'albums/youre-not-god/lyrics.html']
 TO_BLOG = ['journal/cruel-something-needs-to-change.html', 'journal/ghosthearts-oath.html', 'journal/this-is-ghostheart.html',
            'journal/youre-not-god.html', 'journal/how-we-got-here-archive.html', 'passages/index.html', 'passages/im-not.html',
