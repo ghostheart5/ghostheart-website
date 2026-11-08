@@ -40,7 +40,8 @@ assert "GhostHeart and His Angel" not in love.get_text(" ", strip=True)
 assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert love_alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
 assert "Survival matters" in archive.get_text(" ", strip=True)
-assert awakening.select_one("h1").get_text(" ", strip=True) == "Before the Heart Wakes."
+# Dom, Nov 8 2026: The Awakening is retired; the old album page forwards to Music (apply_no_awakening.py).
+assert awakening.select_one('meta[http-equiv="refresh"]')["content"] == "0; url=/music/"
 assert page("journal/how-we-got-here.html").select_one('meta[http-equiv="refresh"]')["content"].endswith("/GhostHeart_Story.html")
 # A fragment must identify a visible player card, not only a compatibility span.
 expected_films = {
