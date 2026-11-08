@@ -38,29 +38,41 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
     }
   }
 
-  // Before week one goes up (Sat Nov 7) and after (Mon Nov 9), Central time. The album's weeks show on the home page
-  // (Dom, Nov 8 2026: the campaign page /wake-the-heart/ is gone; it forwards to Music).
+  // Before week one goes up and after. Dom, Nov 8 2026: Week 1 premieres Monday Nov 9 at 12 PM Central
+  // (apply_week1_premiere.py); later weeks open Sunday 7 PM Central. No song plays before its week opens,
+  // Week 1 plays the title song The Heart Wakes and the week song To Those Who Served.
   let page = await open('/', '2026-11-07T18:00:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Goes up Sunday night/i);
+  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday at 12 PM Central/i);
   assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i);
+  assert.equal(await page.locator('#featured-home audio').count(), 0, 'nothing plays before the premiere');
   await page.close();
-  // Dom, Nov 6 2026: a week shows at 7 PM Central on its Sunday. Sun Nov 8, 6:59 PM CST = 00:59Z Nov 9.
-  page = await open('/', '2026-11-09T00:59:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Goes up Sunday night/i);
-  await page.close();
+  // Sun Nov 8, 7 PM CST (01:00Z Nov 9) is no longer the opening for Week 1.
   page = await open('/', '2026-11-09T01:00:00Z');
+  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday at 12 PM Central/i);
+  assert.equal(await page.locator('#featured-home audio').count(), 0);
+  await page.close();
+  // Mon Nov 9, 11:59 AM CST = 17:59Z; 12:00 PM CST = 18:00Z.
+  page = await open('/', '2026-11-09T17:59:00Z');
+  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday/i);
+  await page.close();
+  page = await open('/', '2026-11-09T18:00:00Z');
   assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
+  assert.equal(await page.locator('#featured-home audio').count(), 2);
+  assert.match(await page.locator('#featured-home .songlist').innerText(), /The Heart Wakes[\s\S]*To Those Who Served/);
+  assert.ok((await page.locator('[data-daily-quote]').innerText()).length > 10, 'daily line');
+  await page.close();
+  // The Music page's album list follows the same opening time.
+  page = await open('/music/', '2026-11-09T17:59:00Z');
+  assert.equal(await page.locator('#album-songs audio').count(), 0, 'Music page waits for the premiere');
+  await page.close();
+  page = await open('/music/', '2026-11-09T18:00:00Z');
+  assert.equal(await page.locator('#album-songs audio').count(), 2);
   await page.close();
   page = await open('/', '2026-11-15T15:00:00Z');
   assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
   await page.close();
   page = await open('/wake-the-heart/');
   await page.waitForURL(/\/music\/$/);
-  await page.close();
-  page = await open('/', '2026-11-09T18:00:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
-  assert.equal(await page.locator('#featured-home audio').count(), 2);
-  assert.ok((await page.locator('[data-daily-quote]').innerText()).length > 10, 'daily line');
   await page.close();
 
   // Lives: Sundays only, from the next one.

@@ -6,7 +6,7 @@
   // Weeks: CAMPAIGN_BRIEF.md (Nov 6, 2026) + TRACKLIST.md. Only FEATURED weeks are shown on the site.
   // A week becomes featured when it goes up (Sunday night before its Monday). Week 1 goes up Sun, Nov 8.
   var WEEKS=[
-    {nm:"To Those Who Served",up:"2026-11-08",a:"2026-11-09",b:"2026-11-15",songs:["The Heart Wakes","To Those Who Served"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)",note:"Veterans Day is Wednesday, Nov 11."},
+    {nm:"To Those Who Served",up:"2026-11-08",at:"2026-11-09 12:00",a:"2026-11-09",b:"2026-11-15",songs:["The Heart Wakes","To Those Who Served"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)",note:"Veterans Day is Wednesday, Nov 11."},
     {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22"},
     {nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29"},
     {nm:"I Can’t",up:"2026-11-29",a:"2026-11-30",b:"2026-12-06"},
@@ -38,7 +38,7 @@
   function wkName(i){return "Week "+(i+1)}
   // featured = the newest week that is up; before launch, week 1 is shown as "goes up Sunday night"
   function nowCT(){try{var p={};new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return p.year+"-"+p.month+"-"+p.day+" "+p.hour+":"+p.minute}catch(e){return new Date().toISOString().slice(0,16).replace("T"," ")}}
-  var NOW=nowCT(),live=-1;WEEKS.forEach(function(w,i){if(NOW>=w.up+" 19:00")live=i});
+  var NOW=nowCT(),live=-1;WEEKS.forEach(function(w,i){if(NOW>=(w.at||w.up+" 19:00"))live=i});
   var feat=live>=0?live:0, isUp=live>=0;
   var left=13-feat;
 
@@ -46,9 +46,9 @@
       return '<li class="player"><b>'+x+'</b><audio controls preload="none" src="'+a+'"></audio>'+(NOTES[x]?'<p class="why-song">'+NOTES[x]+'</p>':'')+
         (LYRICS[x]?'<details class="lyr"><summary>Read the lyrics</summary><pre>'+esc(LYRICS[x])+'</pre></details>':'')+'</li>'}
   function card(i,up){var w=WEEKS[i];var el=document.createElement("div");el.className="feat panel";if(w.color)el.style.setProperty("--song",w.color);
-    var songs=(w.songs||[w.nm]).map(songLi).join("");
+    var songs=(w.songs||[w.nm]).map(up?songLi:function(x){return '<li>'+x+'</li>'}).join("");
     el.innerHTML='<span class="bar"></span><div class="feat-l"><p class="mono" style="margin:0">Week '+(i+1)+' of 14 · '+rng(w.a,w.b)+'</p><h3></h3>'+
-      '<p class="mono" style="margin:0;color:'+(up?"var(--accent)":"var(--song,var(--silver))")+'">'+(up?"Out now":"Goes up Sunday night")+'</p>'+(w.cover?'<div class="feat-art"><picture class="wv"><source srcset="'+w.cover.replace(/\.jpg$/,".webp")+'" type="image/webp"><img src="'+w.cover+'" alt="The Heart Wakes album cover" width="110" height="110"></picture><p class="note" style="margin:0">From the album<br><b>The Heart Wakes</b></p></div>':'')+'</div>'+
+      '<p class="mono" style="margin:0;color:'+(up?"var(--accent)":"var(--song,var(--silver))")+'">'+(up?"Out now":(w.at?"Premieres Monday at 12 PM Central":"Goes up Sunday night"))+'</p>'+(w.cover?'<div class="feat-art"><picture class="wv"><source srcset="'+w.cover.replace(/\.jpg$/,".webp")+'" type="image/webp"><img src="'+w.cover+'" alt="The Heart Wakes album cover" width="110" height="110"></picture><p class="note" style="margin:0">From the album<br><b>The Heart Wakes</b></p></div>':'')+'</div>'+
       '<div class="feat-r"><p class="mono" style="margin:0 0 6px;color:var(--mute)">'+(w.songs&&w.songs.length>1?"This week’s songs":"This week’s song")+'</p><ul class="songlist">'+songs+'</ul>'+(w.cover?'':'')+(w.note?'<p class="note" style="margin-top:10px">'+w.note+'</p>':"")+
       '<div class="row" style="margin-top:16px"><a class="btn red" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener">Spotify ↗</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener">YouTube ↗</a></div></div>';
     el.querySelector("h3").textContent=w.nm;return el}
@@ -65,7 +65,7 @@
       if(open)b.addEventListener("click",function(){showWeek(i)});li.appendChild(b);tr.appendChild(li)});
     var nx=WEEKS[feat+1];document.getElementById("j-next").innerHTML=nx?'Next week opens <b class="red">Sunday, '+short(nx.up)+'</b>, at 7 PM Central':"All 14 weeks are open";
   })();
-  (function(){var al=document.getElementById("album-songs");if(!al)return;var h="";for(var k=0;k<=feat;k++)(WEEKS[k].songs||[]).forEach(function(x){if(AUDIO[x])h+=songLi(x)});al.innerHTML=h})();
+  (function(){var al=document.getElementById("album-songs");if(!al)return;var h="";for(var k=0;k<=live;k++)(WEEKS[k].songs||[]).forEach(function(x){if(AUDIO[x])h+=songLi(x)});al.innerHTML=h})();
   ["featured-home","featured-wake"].forEach(function(id){var box=document.getElementById(id);if(!box)return;
     if(id==="featured-wake")showWeek(feat);else box.appendChild(card(feat,isUp));
   });
