@@ -45,7 +45,7 @@ for path in ROOT.rglob("*.html"):
             assert styles and (styles[-1].endswith('/assets/shared/review-theme.css') or styles[-1] in ('/assets/loud/loud.css', '/assets/loud/loud-skin.css')), path
         checks += 1
 # Wake the Heart site (Dom, Nov 6 2026): 13 main pages left the old shell; their checks are in test_wake_v3.py.
-# Dom, Nov 8 2026: the Wake the Heart Week post now forwards to the Notebook (apply_no_campaign.py), one fewer.
+# Dom, Nov 8 2026: the old Wake the Heart Week post forwards to the Notebook (apply_week1_songs_only.py), one fewer.
 # Dom, Nov 8 2026: the old Awakening page now forwards to Music (apply_no_awakening.py), one fewer.
 assert checks >= 37, checks
 
@@ -67,7 +67,8 @@ assert (ROOT / "journal/how-we-got-here-archive.html").is_file()
 
 # Owner 2026-11-02 ("fix the bigger jobs now"): Music is the one home for the 11 songs; /albums/ forwards there.
 music = page("music/index.html")
-assert len(music.select('[id^="song-"]')) == 11
+# Dom, Nov 8 2026: "no other song should be listed": Music lists only The Heart Wakes songs (apply_week1_songs_only.py).
+assert len(music.select('[id^="song-"]')) == 0 and music.select_one('#album-songs')
 assert page("albums/index.html").select_one('meta[http-equiv="refresh"]')["content"] == "0; url=/music/"
 audio = list((ROOT / "assets/music/preview").glob("*.mp3"))
 assert len(audio) == 11 and all(track.stat().st_size > 1_000_000 for track in audio)

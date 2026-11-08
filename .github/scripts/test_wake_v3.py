@@ -10,14 +10,14 @@ ROOT = Path(__file__).resolve().parents[2]
 MAILCHIMP = ('https://myghostheart.us22.list-manage.com/subscribe/post'
              '?u=a7ab330423f3b936c48b8d8ba&id=880e8056a6&f_id=00bec2e1f0')
 PAGES = {
-    'index.html': '/', 'music/index.html': '/music/',
+    'index.html': '/', 'wake-the-heart/index.html': '/wake-the-heart/', 'music/index.html': '/music/',
     'GhostHeart_Videos.html': '/GhostHeart_Videos.html', 'live/index.html': '/live/',
     'GhostHeart_Story.html': '/GhostHeart_Story.html', 'journal/index.html': '/journal/',
     'vault/index.html': '/vault/', 'here-to-help/index.html': '/here-to-help/',
     'GhostHeart_Projects.html': '/GhostHeart_Projects.html', 'follow/index.html': '/follow/',
     'GhostHeart_Resources.html': '/GhostHeart_Resources.html', 'GhostHeart_Privacy.html': '/GhostHeart_Privacy.html',
 }
-NAV = ['Home', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
+NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
        'Merch ↗', 'Stay Connected', 'Find Support']
 
 
@@ -73,24 +73,29 @@ assert [f.get('id') for f in home.select('form')] == [None] and home.select_one(
 assert home.select_one('#featured-home') and home.select_one('[data-daily-quote]') and home.select_one('canvas#living')
 assert home.select_one('#join-the-signal') and home.select_one('#home')  # old links still land on the home page
 
-# Dom, Nov 8 2026: the website has nothing to do with the Wake the Heart campaign (apply_no_campaign.py).
-for relative, target in (('wake-the-heart/index.html', '/music/'), ('journal/wake-the-heart-week.html', '/journal/')):
-    moved = page(relative)
-    assert moved.select_one('meta[http-equiv=refresh]')['content'] == '0; url=' + target, relative
-    assert moved.select_one('meta[name=robots]')['content'] == 'noindex', relative
+# Dom, Nov 8 2026 (later): "release the entire site and 1st weeks songs ... no other song should be listed".
+# The confirmed prototype's campaign pieces are on; only The Heart Wakes songs are listed (apply_week1_songs_only.py).
+wake = page('wake-the-heart/index.html')
+assert not wake.select_one('meta[http-equiv=refresh]') and wake.select_one('h1'), 'wake-the-heart page is live'
+assert 'href="/wake-the-heart/"' in (ROOT / 'index.html').read_text(encoding='utf-8')
+assert '/wake-the-heart/' in (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+moved = page('journal/wake-the-heart-week.html')  # old post about the retired album
+assert moved.select_one('meta[http-equiv=refresh]')['content'] == '0; url=/journal/'
+assert moved.select_one('meta[name=robots]')['content'] == 'noindex'
+assert 'wake-the-heart-week' not in (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+music_raw = (ROOT / 'music/index.html').read_text(encoding='utf-8')
+assert 'Where it started' not in music_raw and 'class="tplay"' not in music_raw and 'id="album-songs"' in music_raw
 for relative in PAGES:
     raw = (ROOT / relative).read_text(encoding='utf-8')
-    assert 'Wake the Heart' not in raw and '/wake-the-heart/' not in raw and '14 weeks' not in raw, relative
-assert '/wake-the-heart/' not in (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
-assert 'Wake the Heart' not in (ROOT / 'journal/feed.xml').read_text(encoding='utf-8')
+    assert 'Awakening' not in raw, relative
 weeks = re.findall(r'\{nm:"([^"]+)",up:"(\d{4}-\d\d-\d\d)"', site_js)
 assert len(weeks) == 14 and weeks[0] == ('To Those Who Served', '2026-11-08') and weeks[-1][0] == 'Watch Me Anyway', weeks
 for mp3 in re.findall(r'"/assets/wake-v3/audio/([^"]+\.mp3)"', site_js):
     assert (ROOT / 'assets/wake-v3/audio' / mp3).stat().st_size > 1_000_000, mp3
 
 music = page('music/index.html')
-songs = music.select('.tracks li[id^="song-"] button.tplay[data-src]')
-assert len(songs) == 11 and all((ROOT / b['data-src'].lstrip('/')).is_file() for b in songs)
+# Dom, Nov 8 2026: only The Heart Wakes songs are listed on Music (filled in by site.js as each week opens).
+assert not music.select('.tracks li[id^="song-"]') and music.select_one('ul#album-songs')
 
 films = page('GhostHeart_Videos.html')
 assert len(films.select('article.film[id^="film-"]')) == 12
@@ -134,5 +139,5 @@ support = page('GhostHeart_Resources.html')
 assert len(support.select('.res-grid .resource')) == 16
 assert support.select_one('a[href="tel:988"]')
 assert 'url("data:' not in site_css
-print('PASS site: 12 pages, no campaign, one menu, no old-site links, real Mailchimp and order forms, '
-      '14 album weeks, 11 older songs, 12 films, 7 Notebook entries, Heart Dial, 16 resources')
+print('PASS site: 12 pages, campaign page on, one menu, no old-site links, real Mailchimp and order forms, '
+      '14 album weeks, only The Heart Wakes songs listed, 12 films, 7 Notebook entries, Heart Dial, 16 resources')

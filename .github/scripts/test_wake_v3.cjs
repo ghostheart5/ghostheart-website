@@ -2,7 +2,7 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
-const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart_Story.html', '/journal/',
+const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart_Story.html', '/journal/',
   '/vault/', '/here-to-help/', '/GhostHeart_Projects.html', '/follow/', '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html'];
 (async () => {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM_EXECUTABLE || undefined});
@@ -71,8 +71,10 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
   page = await open('/', '2026-11-15T15:00:00Z');
   assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
   await page.close();
+  // Dom, Nov 8 2026: the campaign page is on again (confirmed prototype).
   page = await open('/wake-the-heart/');
-  await page.waitForURL(/\/music\/$/);
+  assert.match(await page.locator('h1').innerText(), /Wake the\s*Heart/i);
+  assert.equal(new URL(page.url()).pathname, '/wake-the-heart/');
   await page.close();
 
   // Lives: Sundays only, from the next one.
@@ -101,7 +103,8 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
   await page.close();
 
   // Old deep links still land on the right card.
-  for (const [path, id] of [['/music/#song-cruel', 'song-cruel'], ['/GhostHeart_Videos.html#film-rebellion', 'film-rebellion'],
+  // Dom, Nov 8 2026: older songs left Music, so /music/#song-cruel just opens Music.
+  for (const [path, id] of [['/music/#song-cruel', 'album-songs'], ['/GhostHeart_Videos.html#film-rebellion', 'film-rebellion'],
                             ['/GhostHeart_Story.html#behind-the-scars', 'behind-the-scars']]) {
     page = await open(path);
     assert.equal(await page.locator('#' + id).count(), 1, path);
@@ -117,5 +120,5 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
 
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log('PASS site browser: 12 pages, no campaign page at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Mailchimp signup.');
+  console.log('PASS site browser: 13 pages, campaign page on, at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Mailchimp signup.');
 })().catch(e => { console.error(e); process.exit(1); });

@@ -32,9 +32,9 @@ assert story.select_one("h1").get_text(" ", strip=True) == "Enter My World."
 assert story.select_one("#behind-the-scars h2").get_text(" ", strip=True) == "Behind the Scars — Before the Heart Wakes"  # renamed 2026-11-01 (owner)
 assert story.select_one('a[href="/GhostHeart_Resources.html"]')
 assert love.select_one("h1").get_text(" ", strip=True) == "The Woman Behind the Scenes."
-assert love.select_one('a[href="/music/#song-she-got-to-me"]')
-for relative, fragment in [('journal/this-is-ghostheart.html', 'song-this-is-ghostheart'), ('journal/ghosthearts-oath.html', 'song-ghosthearts-oath')]:
-    assert page(relative).select_one(f'a[href="/music/#{fragment}"]').get_text() == 'Listen to the song'
+assert love.select_one('a[href="/music/"]')
+for relative in ('journal/this-is-ghostheart.html', 'journal/ghosthearts-oath.html'):
+    assert page(relative).select_one('a[href="/music/"]').get_text() == 'Listen to the song'
 assert "GhostHeart and His Angel" not in story.get_text(" ", strip=True)
 assert "GhostHeart and His Angel" not in love.get_text(" ", strip=True)
 assert alias.select_one('meta[http-equiv="refresh"]')["content"].endswith("/woman-behind-the-scenes/")
