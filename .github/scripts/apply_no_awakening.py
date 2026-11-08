@@ -22,6 +22,9 @@ TEXT = [
     ('<p class="sub">8 songs · where it started</p>', '<p class="sub">8 songs · the first GhostHeart songs</p>'),
     ('plus GhostHeart’s Awakening and You’re Not God.', 'plus the first GhostHeart songs and You’re Not God.'),
     ('GhostHeart’s Awakening · Official music video', 'Official music video'),
+    # Home page campaign block (Wake the Heart is back on the site, Dom Nov 8 2026): drop the retired name only.
+    ('<p class="last">The Awakening introduced the heart. Wake the Heart gives it power.</p>', ''),
+    ('<a class="primary" href="/awakening/">Explore Before the Heart Wakes</a>', '<a class="primary" href="/music/">Hear The Heart Wakes</a>'),
 ]
 JS = {
     'assets/wake-v3/site.js': [('From GhostHeart’s Awakening. Something needs to change.', 'Something needs to change.')],
