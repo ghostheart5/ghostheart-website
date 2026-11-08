@@ -47,7 +47,8 @@ for path in ROOT.rglob("*.html"):
 # Wake the Heart site (Dom, Nov 6 2026): 13 main pages left the old shell; their checks are in test_wake_v3.py.
 # Dom, Nov 8 2026: the old Wake the Heart Week post forwards to the Notebook (apply_week1_songs_only.py), one fewer.
 # Dom, Nov 8 2026: the old Awakening page now forwards to Music (apply_no_awakening.py), one fewer.
-assert checks >= 37, checks
+# Dom, Nov 8 2026: older songs are off the site; their song notes, Passages and album pages now forward (apply_week1_songs_only.py).
+assert checks >= 17, checks
 
 missing_page = page("404.html")
 for element in missing_page.select("[href], [src]"):
@@ -97,12 +98,10 @@ posts = json.loads((ROOT / ".github/content/journal.json").read_text(encoding="u
 assert len(posts) == 6
 for slug in ("ghosthearts-oath", "this-is-ghostheart", "youre-not-god"):
     article = page(f"journal/{slug}.html")
-    # Comments switched on 2026-10-31 (Dom's yes); new comments wait for review before they show.
-    assert len(article.select('[data-comment-thread]')) == 1, "Conversation box must be on the post"
-    assert article.select('script[src*="/assets/journal/comments"]'), "Comment box script must load"
-    assert len(article.select("form.signal-signup-form")) == 1
+    # Dom, Nov 8 2026: older songs are off the site; these song notes forward to the Blog (apply_week1_songs_only.py).
+    assert article.select_one('meta[http-equiv="refresh"]')["content"] == "0; url=/journal/", slug
 
 urls = [loc.text for loc in ET.parse(ROOT / "sitemap.xml").iter()
         if loc.tag.endswith("}loc")]
 assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
-print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, My Promise unpublished, 16 resources, 6 Journal entries")
+print(f"PASS reviewed site: {checks} navigation shells, 11 MP3s, My Promise unpublished, 16 resources, 6 Journal entries in the source; older song notes forward to the Blog")

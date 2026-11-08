@@ -30,32 +30,13 @@ if now < due:
     assert not target.exists(), 'Normal generator must exclude a not-yet-due article'
     print('PASS: exact approved source; ordinary build holds the future article')
 else:
+    # Dom, Nov 8 2026: older songs are off the site, so the reading's page forwards to the Blog
+    # (apply_week1_songs_only.py). The approved text above stays unchanged in the source.
     article = BeautifulSoup(target.read_text(), 'html.parser')
-    assert article.select_one('article.journal-article h1').get_text() == title
-    rendered = [p.get_text() for p in article.select('.journal-prose > p')]
-    assert rendered == paragraphs, 'Rendered body differs from exact owner text'
-    assert len(article.select('[data-comment-thread]')) == 1
-    assert len(article.select('form.signal-signup-form')) == 1
-    assert article.select('script[src*="comments"]')
-    music_actions = article.select('.journal-continue a[href="/music/"]')
-    assert len(music_actions) == 1, 'Duplicate Cruel listening CTA'
-    assert article.select_one('link[rel="canonical"]')['href'] == 'https://www.myghostheart.com'+ROUTE
-    for tag in article.select('main a[href], main img[src]'):
-        url = tag.get('href') or tag.get('src')
-        parts = urlsplit(url)
-        if not url.startswith('/') or url.startswith('//'):
-            continue
-        path = unquote(parts.path).lstrip('/')
-        if parts.path.endswith('/'):
-            path += 'index.html'
-        dest = ROOT / path
-        assert dest.is_file(), url
-        if parts.fragment:
-            assert BeautifulSoup(dest.read_text(), 'html.parser').find(id=unquote(parts.fragment)), url
+    assert article.select_one('meta[http-equiv="refresh"]')['content'] == '0; url=/journal/'
     index = BeautifulSoup((ROOT/'journal/index.html').read_text(), 'html.parser')
-    # Wake the Heart site (Dom, Nov 6 2026): the Blog is the Notebook, with the reading shown in place.
-    assert index.select_one('#e-cruel.nb-item details .entry-body')
-    assert SLUG in (ROOT/'journal/feed.xml').read_text()
-    assert any(node.text == 'https://www.myghostheart.com'+ROUTE
-               for node in ET.parse(ROOT/'sitemap.xml').iter() if node.tag.endswith('}loc'))
-    print(f'PASS: exact title and {len(paragraphs)} approved paragraphs; navigation, metadata, links; comment box on')
+    assert not index.select_one('#e-cruel') and 'Cruel' not in index.get_text(' ', strip=True)
+    assert SLUG not in (ROOT/'journal/feed.xml').read_text()
+    assert not any(node.text == 'https://www.myghostheart.com'+ROUTE
+                   for node in ET.parse(ROOT/'sitemap.xml').iter() if node.tag.endswith('}loc'))
+    print(f'PASS: exact approved source ({len(paragraphs)} paragraphs) kept; its page forwards to the Blog (older songs off the site)')
