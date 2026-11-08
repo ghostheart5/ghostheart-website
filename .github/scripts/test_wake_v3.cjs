@@ -61,6 +61,13 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
   assert.match(await page.locator('#featured-home .songlist').innerText(), /The Heart Wakes[\s\S]*To Those Who Served/);
   assert.ok((await page.locator('[data-daily-quote]').innerText()).length > 10, 'daily line');
   await page.close();
+  // The Music page's album list follows the same opening time.
+  page = await open('/music/', '2026-11-09T17:59:00Z');
+  assert.equal(await page.locator('#album-songs audio').count(), 0, 'Music page waits for the premiere');
+  await page.close();
+  page = await open('/music/', '2026-11-09T18:00:00Z');
+  assert.equal(await page.locator('#album-songs audio').count(), 2);
+  await page.close();
   page = await open('/', '2026-11-15T15:00:00Z');
   assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
   await page.close();

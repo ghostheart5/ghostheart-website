@@ -8,6 +8,7 @@ title song The Heart Wakes, with To Those Who Served as Week 1's song.
 - Week 1 (The Heart Wakes premiere, week song To Those Who Served) opens on the home page Monday, Nov 9, 2026 at 12 PM Central, not Sunday 7 PM.
   Later weeks keep their Sunday 7 PM opening.
 - Before a week opens, its songs are listed by name only, with no player, so nothing plays before the premiere.
+  The Music page's album list follows the same opening time.
 """
 from pathlib import Path
 
@@ -20,6 +21,8 @@ SWAPS = [
     ('(up?"Out now":"Goes up Sunday night")', '(up?"Out now":(w.at?"Premieres Monday at 12 PM Central":"Goes up Sunday night"))'),
     ('var songs=(w.songs||[w.nm]).map(songLi).join("");',
      'var songs=(w.songs||[w.nm]).map(up?songLi:function(x){return \'<li>\'+x+\'</li>\'}).join("");'),
+    # Music page album list: only weeks that are open get players (Codex review on PR #145).
+    ('for(var k=0;k<=feat;k++)(WEEKS[k].songs||[])', 'for(var k=0;k<=live;k++)(WEEKS[k].songs||[])'),
 ]
 
 

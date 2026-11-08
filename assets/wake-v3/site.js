@@ -65,7 +65,7 @@
       if(open)b.addEventListener("click",function(){showWeek(i)});li.appendChild(b);tr.appendChild(li)});
     var nx=WEEKS[feat+1];document.getElementById("j-next").innerHTML=nx?'Next week opens <b class="red">Sunday, '+short(nx.up)+'</b>, at 7 PM Central':"All 14 weeks are open";
   })();
-  (function(){var al=document.getElementById("album-songs");if(!al)return;var h="";for(var k=0;k<=feat;k++)(WEEKS[k].songs||[]).forEach(function(x){if(AUDIO[x])h+=songLi(x)});al.innerHTML=h})();
+  (function(){var al=document.getElementById("album-songs");if(!al)return;var h="";for(var k=0;k<=live;k++)(WEEKS[k].songs||[]).forEach(function(x){if(AUDIO[x])h+=songLi(x)});al.innerHTML=h})();
   ["featured-home","featured-wake"].forEach(function(id){var box=document.getElementById(id);if(!box)return;
     if(id==="featured-wake")showWeek(feat);else box.appendChild(card(feat,isUp));
   });
