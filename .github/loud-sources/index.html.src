@@ -14,7 +14,7 @@
 <script defer="" src="assets/shared/release-site.js"></script>
 <script defer="" src="assets/shared/ghostheart-world.js"></script>
 <script defer="" src="assets/journal/daily-quote.js"></script>
-<link href="assets/vault/vault.css" rel="stylesheet"/>
+<link href="assets/vault/vault.css" rel="stylesheet">
 <meta content="website" property="og:type"/>
 <meta content="GhostHeart" property="og:site_name"/>
 <meta content="GhostHeart | Real Stories. Real People. Same Heart." property="og:title"/>
@@ -23,7 +23,7 @@
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-scars-rooftop-rain.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="/journal/feed.xml" rel="alternate" title="GhostHeart Journal" type="application/rss+xml"/>
-<link href="/assets/home/home-journey.css?v=connection-v1" rel="stylesheet"/><link href="/assets/shared/review-theme.css" rel="stylesheet"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-mobile-v1.webp" media="(max-width: 700px)" rel="preload" type="image/webp"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-desktop-v1.webp" media="(min-width: 701px)" rel="preload" type="image/webp"/></head>
+<link href="/assets/home/home-journey.css?v=connection-v1" rel="stylesheet"/><link href="/assets/shared/review-theme.css" rel="stylesheet"/></link><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-mobile-v1.webp" media="(max-width: 700px)" rel="preload" type="image/webp"/><link as="image" fetchpriority="high" href="/assets/story/ghostheart-scars-rooftop-rain-desktop-v1.webp" media="(min-width: 701px)" rel="preload" type="image/webp"/></head>
 <body class="release-site ghx-site">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="nav ghx-header" data-nav-owner="shared">
