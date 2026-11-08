@@ -149,6 +149,12 @@ def main() -> None:
     t = BLOG_CHIPS.sub('', t, count=1)
     t = BLOG_NEXT.sub('', t, count=1)
     blog.write_text(t, encoding='utf-8')
+    mission = ROOT / 'GhostHeart_Version_Mission.html'  # "GhostHeart's Oath is the film that carries the promise."
+    if mission.exists():
+        s = mission.read_text(encoding='utf-8')
+        t = re.sub(r'<section class="g-section g-dark"><div class="g-wrap"><h2>The promise\.</h2>.*?</section>', '', s, count=1, flags=re.S)
+        if t != s:
+            mission.write_text(t, encoding='utf-8')
     for rel, swaps in TEXT.items():
         f = ROOT / rel
         s = f.read_text(encoding='utf-8')
@@ -208,7 +214,7 @@ def main() -> None:
     s = sj.read_text(encoding='utf-8')
     m = re.search(r'var FY=(\{.*?\});\n', s, re.S)
     fy = json.loads(m.group(1))
-    fy['picks'] = [x for x in fy['picks'] if x['kind'] not in ('Film', 'Song', 'Blog', 'Passage')]
+    fy['picks'] = [x for x in fy['picks'] if x['kind'] not in ('Film', 'Song', 'Blog', 'Passage', 'Short')]  # Shorts are clips of older songs
     t = s[:m.start(1)] + json.dumps(fy, ensure_ascii=False) + s[m.end(1):]
     t = t.replace('var SONG={4:{t:"Rebellion",u:"https://open.spotify.com/album/7jkKCwKlYjadMvBsJokvDq"}};', 'var SONG={};')
     if t != s:
@@ -224,11 +230,13 @@ def main() -> None:
         v = shown(f.read_text(encoding='utf-8'))
         if 'http-equiv="refresh"' in f.read_text(encoding='utf-8')[:2000]:
             continue
-        if rel in MAIN_PAGES:
-            for name in OLD_SONGS:
-                assert name not in v, (rel, name)
+        if rel.startswith('apps/'):  # app pages (e.g. the Love Is Not Rebellion app) are not song listings
+            continue
+        v = v.replace("'", '’')
+        for name in OLD_SONGS:
+            assert name not in v, (rel, name)
     picks = json.loads(re.search(r'var FY=(\{.*?\});\n', (ROOT / 'assets/wake-v3/site.js').read_text(encoding='utf-8'), re.S).group(1))['picks']
-    assert picks and not any(x['title'] in OLD_SONGS for x in picks)
+    assert picks and not any(x['title'] in OLD_SONGS or x['kind'] != 'Quote' for x in picks)
 
     js = (ROOT / 'assets/wake-v3/site.js').read_text(encoding='utf-8')
     assert 'var AUDIO={"The Heart Wakes":' in js and '"To Those Who Served":' in js

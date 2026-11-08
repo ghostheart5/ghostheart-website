@@ -112,7 +112,8 @@ assert not blog.select('li.nb-item') and blog.select_one('.nb-empty')
 vault = page('vault/index.html')
 assert len(vault.select('.dial-ring button.dial-m[data-m]')) == 6 and vault.select_one('.dial-out[aria-live]')
 picks = re.findall(r'"href": "([^"]+)"', site_js)
-assert not re.search(r'"kind": "(?:Film|Song|Blog|Passage)"', site_js), 'Heart Dial still picks older songs'
+assert not re.search(r'"kind": "(?:Film|Song|Blog|Passage|Short)"', site_js), 'Heart Dial still picks older songs'
+assert 'That Ain’t Holy' not in site_js and "That Ain't Holy" not in site_js
 assert picks and all(h.startswith('https://') or urlsplit(h).path in PAGES.values() for h in picks), picks
 
 work = page('here-to-help/index.html')
