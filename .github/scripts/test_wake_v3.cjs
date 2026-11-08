@@ -40,7 +40,7 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
 
   // Before week one goes up and after. Dom, Nov 8 2026: Week 1 premieres Monday Nov 9 at 12 PM Central
   // (apply_week1_premiere.py); later weeks open Sunday 7 PM Central. No song plays before its week opens,
-  // Week 1 plays the title song The Heart Wakes and the week song To Those Who Served.
+  // Week 1 plays the main song Wake The Heart and the week song To Those Who Served (album: The Heart Wakes).
   let page = await open('/', '2026-11-07T18:00:00Z');
   assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday at 12 PM Central/i);
   assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i);
@@ -58,7 +58,7 @@ const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart
   page = await open('/', '2026-11-09T18:00:00Z');
   assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
   assert.equal(await page.locator('#featured-home audio').count(), 2);
-  assert.match(await page.locator('#featured-home .songlist').innerText(), /The Heart Wakes[\s\S]*To Those Who Served/);
+  assert.match(await page.locator('#featured-home .songlist').innerText(), /Wake The Heart[\s\S]*To Those Who Served/);
   assert.ok((await page.locator('[data-daily-quote]').innerText()).length > 10, 'daily line');
   await page.close();
   // The Music page's album list follows the same opening time.
