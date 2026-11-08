@@ -10,14 +10,14 @@ ROOT = Path(__file__).resolve().parents[2]
 MAILCHIMP = ('https://myghostheart.us22.list-manage.com/subscribe/post'
              '?u=a7ab330423f3b936c48b8d8ba&id=880e8056a6&f_id=00bec2e1f0')
 PAGES = {
-    'index.html': '/', 'wake-the-heart/index.html': '/wake-the-heart/', 'music/index.html': '/music/',
+    'index.html': '/', 'music/index.html': '/music/',
     'GhostHeart_Videos.html': '/GhostHeart_Videos.html', 'live/index.html': '/live/',
     'GhostHeart_Story.html': '/GhostHeart_Story.html', 'journal/index.html': '/journal/',
     'vault/index.html': '/vault/', 'here-to-help/index.html': '/here-to-help/',
     'GhostHeart_Projects.html': '/GhostHeart_Projects.html', 'follow/index.html': '/follow/',
     'GhostHeart_Resources.html': '/GhostHeart_Resources.html', 'GhostHeart_Privacy.html': '/GhostHeart_Privacy.html',
 }
-NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
+NAV = ['Home', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
        'Merch ↗', 'Stay Connected', 'Find Support']
 
 
@@ -73,8 +73,15 @@ assert [f.get('id') for f in home.select('form')] == [None] and home.select_one(
 assert home.select_one('#featured-home') and home.select_one('[data-daily-quote]') and home.select_one('canvas#living')
 assert home.select_one('#join-the-signal') and home.select_one('#home')  # old links still land on the home page
 
-wake = page('wake-the-heart/index.html')
-assert wake.select_one('#track') and wake.select_one('#featured-wake') and wake.select_one('form.js-thread')
+# Dom, Nov 8 2026: the website has nothing to do with the Wake the Heart campaign (apply_no_campaign.py).
+for relative, target in (('wake-the-heart/index.html', '/music/'), ('journal/wake-the-heart-week.html', '/journal/')):
+    moved = page(relative)
+    assert moved.select_one('meta[http-equiv=refresh]')['content'] == '0; url=' + target, relative
+    assert moved.select_one('meta[name=robots]')['content'] == 'noindex', relative
+for relative in PAGES:
+    raw = (ROOT / relative).read_text(encoding='utf-8')
+    assert 'Wake the Heart' not in raw and '/wake-the-heart/' not in raw and '14 weeks' not in raw, relative
+assert '/wake-the-heart/' not in (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
 weeks = re.findall(r'\{nm:"([^"]+)",up:"(\d{4}-\d\d-\d\d)"', site_js)
 assert len(weeks) == 14 and weeks[0] == ('To Those Who Served', '2026-11-08') and weeks[-1][0] == 'Watch Me Anyway', weeks
 for mp3 in re.findall(r'"/assets/wake-v3/audio/([^"]+\.mp3)"', site_js):
@@ -93,7 +100,7 @@ assert live.select_one('a[href="https://www.tiktok.com/@ghosthearted1"]')
 
 blog = page('journal/index.html')
 items = blog.select('ol.nb > li.nb-item[id^="e-"]')
-assert len(items) == 8 and all(i.select_one('details .entry-body p') for i in items)
+assert len(items) == 7 and all(i.select_one('details .entry-body p') for i in items)
 assert {i['data-typ'] for i in items} <= {'passage', 'song', 'news'}
 
 vault = page('vault/index.html')
@@ -126,5 +133,5 @@ support = page('GhostHeart_Resources.html')
 assert len(support.select('.res-grid .resource')) == 16
 assert support.select_one('a[href="tel:988"]')
 assert 'url("data:' not in site_css
-print('PASS Wake the Heart site: 13 pages, one menu, no old-site links, real Mailchimp and order forms, '
-      '14 weeks, 11 older songs, 12 films, 8 Notebook entries, Heart Dial, 16 resources')
+print('PASS site: 12 pages, no campaign, one menu, no old-site links, real Mailchimp and order forms, '
+      '14 album weeks, 11 older songs, 12 films, 7 Notebook entries, Heart Dial, 16 resources')

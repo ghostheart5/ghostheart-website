@@ -45,7 +45,8 @@ for path in ROOT.rglob("*.html"):
             assert styles and (styles[-1].endswith('/assets/shared/review-theme.css') or styles[-1] in ('/assets/loud/loud.css', '/assets/loud/loud-skin.css')), path
         checks += 1
 # Wake the Heart site (Dom, Nov 6 2026): 13 main pages left the old shell; their checks are in test_wake_v3.py.
-assert checks >= 39, checks
+# Dom, Nov 8 2026: the Wake the Heart Week post now forwards to the Notebook (apply_no_campaign.py), one fewer.
+assert checks >= 38, checks
 
 missing_page = page("404.html")
 for element in missing_page.select("[href], [src]"):
