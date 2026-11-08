@@ -574,7 +574,6 @@ window.GHOSTHEART_VIDEO_CATALOG = Object.freeze([
     "provider": "youtube",
     "description": "The full public music video.",
     "meta": [
-      "GhostHeart's Awakening",
       "Official music video"
     ],
     "song": {

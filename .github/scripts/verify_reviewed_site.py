@@ -18,8 +18,8 @@ def page(path):
 nav = ["Home", "Music", "Enter My World", "Work with GhostHeart", "Merch"]  # renamed 2026-11-01 (owner yes)
 # Owner request 2026-10-31: The Awakening lives under Enter My World; Stay Connected left the menu.
 # Site audit 2026-11-01 (apply_clear_names.py): one name per place; Merch stays in the top bar only.
-explore = {"Before the Heart Wakes",  # renamed from "The Awakening" 2026-11-01 (owner)
-            "Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Blog", "Lives", "Projects"}
+# Dom, Nov 8 2026: The Awakening is retired; its "Before the Heart Wakes" page forwards to Music (apply_no_awakening.py).
+explore = {"Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Blog", "Lives", "Projects"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:
@@ -46,7 +46,8 @@ for path in ROOT.rglob("*.html"):
         checks += 1
 # Wake the Heart site (Dom, Nov 6 2026): 13 main pages left the old shell; their checks are in test_wake_v3.py.
 # Dom, Nov 8 2026: the Wake the Heart Week post now forwards to the Notebook (apply_no_campaign.py), one fewer.
-assert checks >= 38, checks
+# Dom, Nov 8 2026: the old Awakening page now forwards to Music (apply_no_awakening.py), one fewer.
+assert checks >= 37, checks
 
 missing_page = page("404.html")
 for element in missing_page.select("[href], [src]"):

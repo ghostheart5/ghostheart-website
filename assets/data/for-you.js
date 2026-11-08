@@ -28,7 +28,7 @@ window.GHOSTHEART_FOR_YOU = {
     {id: 'short-son-you-did-no-wrong', how: 'watch', title: 'Son, You Did No Wrong', kind: 'Short', href: 'https://www.youtube.com/shorts/5b43JyYmIts', why: 'A Short from That Ain’t Holy.', moods: ['judged', 'alone']},
     {id: 'short-porch-light', how: 'watch', title: 'Would You Leave the Porch Light On?', kind: 'Short', href: 'https://www.youtube.com/shorts/5HUWedEnnsA', why: 'A Short from That Ain’t Holy.', moods: ['protect', 'alone']},
     {id: 'short-mercy-empty-seat', how: 'watch', title: 'Mercy That Leaves an Empty Seat', kind: 'Short', href: 'https://www.youtube.com/shorts/ofU09J3bkHI', why: 'A Short from That Ain’t Holy.', moods: ['judged', 'change']},
-    {id: 'song-cruel', how: 'listen', title: 'Cruel', kind: 'Song', href: '/music/#song-cruel', why: 'From GhostHeart’s Awakening. Something needs to change.', moods: ['change']},
+    {id: 'song-cruel', how: 'listen', title: 'Cruel', kind: 'Song', href: '/music/#song-cruel', why: 'Something needs to change.', moods: ['change']},
     {id: 'song-im-not', how: 'listen', title: 'I’m Not', kind: 'Song', href: '/music/#song-im-not', why: 'A story can be worth telling before the fear is gone.', moods: ['judged', 'alone', 'strength']},
     {id: 'song-papa-didnt-raise-a-fool', how: 'listen', title: 'Papa Didn’t Raise No Fool', kind: 'Song', href: '/music/#song-papa-didnt-raise-a-fool', why: 'The lesson is to keep thinking for yourself without losing your heart.', moods: ['strength', 'judged']},
     {id: 'song-she-got-to-me', how: 'listen', title: 'She Got to Me', kind: 'Song', href: '/music/#song-she-got-to-me', why: 'The love that challenged GhostHeart to turn his care into action.', moods: ['love', 'change']},
