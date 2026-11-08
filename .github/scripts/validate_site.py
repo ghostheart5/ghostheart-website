@@ -139,8 +139,11 @@ def main() -> int:
     page_refs: list[tuple[Path, str]] = []
     for page in html_files:
         parser = PageParser()
-        parser.feed(page.read_text(encoding="utf-8"))
+        text = page.read_text(encoding="utf-8")
+        parser.feed(text)
         relative = page.relative_to(ROOT).as_posix()
+        if "</meta>" in text.lower():
+            errors.append(f"Stray </meta> end tag in {relative} (see .github/scripts/apply_void_meta.py)")
         page_ids[page.resolve()] = set(parser.ids)
         page_refs.extend((page, reference) for reference in parser.refs)
         duplicates = [item for item, count in Counter(parser.ids).items() if count > 1]
