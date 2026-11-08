@@ -34,8 +34,8 @@ CSP = '; '.join([
     "object-src 'none'",
     "base-uri 'self'",
 ])
-HEAD_META = ('<meta name="referrer" content="strict-origin-when-cross-origin">'
-             f'<meta http-equiv="Content-Security-Policy" content="{CSP}">')
+HEAD_META = ('<meta name="referrer" content="strict-origin-when-cross-origin"/>'
+             f'<meta http-equiv="Content-Security-Policy" content="{CSP}"/>')
 CHARSET = re.compile(r'<meta\s+charset=["\']?[\w-]+["\']?\s*/?>', re.I)
 
 SHARE = {

@@ -29,6 +29,7 @@ jobs:
           python3 .github/scripts/test_wake_v3.py
           python3 .github/scripts/test_im_not_release.py
           python3 .github/scripts/test_google_analytics.py
+          python3 .github/scripts/test_void_meta.py
       - name: Check JavaScript syntax
         shell: bash
         run: |
