@@ -171,7 +171,7 @@ const recordingsPreviewFragments = [
   await missingMenu.click();
   assert.equal(await missingMenu.getAttribute('aria-expanded'), 'true', 'Nested 404 Explore opens');
   await page.locator('a.hero-link').click();
-  assert.equal(new URL(page.url()).pathname, '/index.html', 'Nested 404 returns to root Home');
+  assert.equal(new URL(page.url()).pathname, '/', 'Nested 404 returns to root Home (folder address, audit Nov 6)');
   await require('./test_blog_subscription.cjs')(page, base);
   await require('./test_connection_path.cjs')(page, base);
   await require('./test_compact_readings.cjs')(page, base);
