@@ -2,7 +2,7 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
-const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart_Story.html', '/journal/',
+const PAGES = ['/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart_Story.html', '/journal/',
   '/vault/', '/here-to-help/', '/GhostHeart_Projects.html', '/follow/', '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html'];
 (async () => {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM_EXECUTABLE || undefined});
@@ -38,23 +38,24 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     }
   }
 
-  // Before week one goes up (Sat Nov 7) and after (Mon Nov 9), Central time.
-  let page = await open('/wake-the-heart/', '2026-11-07T18:00:00Z');
-  assert.equal(await page.locator('#track button').count(), 14);
-  assert.equal(await page.locator('#track button:not([disabled])').count(), 1);
-  assert.match(await page.locator('#featured-wake').innerText(), /Goes up Sunday night/i);
-  assert.match(await page.locator('#featured-wake h3').innerText(), /To Those Who Served/i);
+  // Before week one goes up (Sat Nov 7) and after (Mon Nov 9), Central time. The album's weeks show on the home page
+  // (Dom, Nov 8 2026: the campaign page /wake-the-heart/ is gone; it forwards to Music).
+  let page = await open('/', '2026-11-07T18:00:00Z');
+  assert.match(await page.locator('#featured-home').innerText(), /Goes up Sunday night/i);
+  assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i);
   await page.close();
   // Dom, Nov 6 2026: a week shows at 7 PM Central on its Sunday. Sun Nov 8, 6:59 PM CST = 00:59Z Nov 9.
-  page = await open('/wake-the-heart/', '2026-11-09T00:59:00Z');
-  assert.match(await page.locator('#featured-wake').innerText(), /Goes up Sunday night/i);
+  page = await open('/', '2026-11-09T00:59:00Z');
+  assert.match(await page.locator('#featured-home').innerText(), /Goes up Sunday night/i);
   await page.close();
-  page = await open('/wake-the-heart/', '2026-11-09T01:00:00Z');
-  assert.match(await page.locator('#featured-wake').innerText(), /Out now/i);
-  assert.match(await page.locator('#j-next').innerText(), /Sunday, Nov 15.*7 PM Central/i);
+  page = await open('/', '2026-11-09T01:00:00Z');
+  assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
   await page.close();
-  page = await open('/wake-the-heart/', '2026-11-15T15:00:00Z');
-  assert.match(await page.locator('#featured-wake h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
+  page = await open('/', '2026-11-15T15:00:00Z');
+  assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
+  await page.close();
+  page = await open('/wake-the-heart/');
+  await page.waitForURL(/\/music\/$/);
   await page.close();
   page = await open('/', '2026-11-09T18:00:00Z');
   assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
@@ -104,5 +105,5 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log('PASS Wake the Heart browser: 13 pages at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Mailchimp signup.');
+  console.log('PASS site browser: 12 pages, no campaign page at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Mailchimp signup.');
 })().catch(e => { console.error(e); process.exit(1); });
