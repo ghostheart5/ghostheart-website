@@ -3,9 +3,9 @@
 
 Dom: "MONDAY SHOULD BE ONLY- 9AM-TIKTOK/INSTAGRAM, 12 PRIEMERE, 6PM TIKTOK/INSTAGRAM. THE WEBSITE PREMIERE IS ALSO AT 12"
 and "THE MAIN SONG IS WAKE THE HEART!!! TO THOSE WHO SERVED IS THE WEEK SONG": the premiere is the
-main song Wake The Heart (from the album The Heart Wakes), with To Those Who Served as Week 1's song.
+title song The Heart Wakes, with To Those Who Served as Week 1's song.
 
-- Week 1 (Wake The Heart premiere, week song To Those Who Served) opens on the home page Monday, Nov 9, 2026 at 12 PM Central, not Sunday 7 PM.
+- Week 1 (The Heart Wakes premiere, week song To Those Who Served) opens on the home page Monday, Nov 9, 2026 at 12 PM Central, not Sunday 7 PM.
   Later weeks keep their Sunday 7 PM opening.
 - Before a week opens, its songs are listed by name only, with no player, so nothing plays before the premiere.
   The Music page's album list follows the same opening time.
@@ -21,11 +21,6 @@ SWAPS = [
     ('(up?"Out now":"Goes up Sunday night")', '(up?"Out now":(w.at?"Premieres Monday at 12 PM Central":"Goes up Sunday night"))'),
     ('var songs=(w.songs||[w.nm]).map(songLi).join("");',
      'var songs=(w.songs||[w.nm]).map(up?songLi:function(x){return \'<li>\'+x+\'</li>\'}).join("");'),
-    # Dom, Nov 8 2026: the main song's title is "Wake The Heart"; "The Heart Wakes" is the album name only.
-    ('songs:["The Heart Wakes","To Those Who Served"]', 'songs:["Wake The Heart","To Those Who Served"]'),
-    ('AUDIO={"The Heart Wakes":', 'AUDIO={"Wake The Heart":'),
-    ('LYRICS={"The Heart Wakes":', 'LYRICS={"Wake The Heart":'),
-    ('NOTES={"The Heart Wakes":', 'NOTES={"Wake The Heart":'),
     # Music page album list: only weeks that are open get players (Codex review on PR #145).
     ('for(var k=0;k<=feat;k++)(WEEKS[k].songs||[])', 'for(var k=0;k<=live;k++)(WEEKS[k].songs||[])'),
 ]
@@ -40,8 +35,7 @@ def main() -> None:
             t = t.replace(old, new)
     if t != s:
         JS.write_text(t, encoding='utf-8')
-    assert 'at:"2026-11-09 12:00"' in t and 'songs:["Wake The Heart","To Those Who Served"]' in t
-    assert '"The Heart Wakes":' not in t  # the album name is never used as a song name
+    assert 'at:"2026-11-09 12:00"' in t and '"The Heart Wakes","To Those Who Served"' in t
     print('Week 1 premieres Monday 12 PM Central; no players before a week opens.')
 
 
