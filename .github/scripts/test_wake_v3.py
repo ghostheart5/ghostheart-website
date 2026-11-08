@@ -82,6 +82,7 @@ for relative in PAGES:
     raw = (ROOT / relative).read_text(encoding='utf-8')
     assert 'Wake the Heart' not in raw and '/wake-the-heart/' not in raw and '14 weeks' not in raw, relative
 assert '/wake-the-heart/' not in (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+assert 'Wake the Heart' not in (ROOT / 'journal/feed.xml').read_text(encoding='utf-8')
 weeks = re.findall(r'\{nm:"([^"]+)",up:"(\d{4}-\d\d-\d\d)"', site_js)
 assert len(weeks) == 14 and weeks[0] == ('To Those Who Served', '2026-11-08') and weeks[-1][0] == 'Watch Me Anyway', weeks
 for mp3 in re.findall(r'"/assets/wake-v3/audio/([^"]+\.mp3)"', site_js):

@@ -83,6 +83,12 @@ def main() -> None:
             changed += 1
     forward('wake-the-heart/index.html', '/music/', 'Music')
     forward('journal/wake-the-heart-week.html', '/journal/', 'the Notebook')
+    feed = ROOT / 'journal/feed.xml'
+    if feed.exists():
+        s = feed.read_text(encoding='utf-8')
+        t = re.sub(r'\s*<item>\s*<title>Wake the Heart Week</title>.*?</item>', '', s, count=1, flags=re.S)
+        if t != s:
+            feed.write_text(t, encoding='utf-8')
     sm = ROOT / 'sitemap.xml'
     if sm.exists():
         s = sm.read_text(encoding='utf-8')
@@ -96,6 +102,8 @@ def main() -> None:
             continue
         s = p.read_text(encoding='utf-8')
         assert 'href="/wake-the-heart/' not in s and 'wake-the-heart-week' not in s, rel
+    if feed.exists():
+        assert 'wake-the-heart-week' not in feed.read_text(encoding='utf-8'), 'journal/feed.xml'
     print(f'Campaign pieces removed from {changed} pages; /wake-the-heart/ now goes to /music/.')
 
 
