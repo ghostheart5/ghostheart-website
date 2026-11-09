@@ -142,6 +142,11 @@ def main() -> int:
         text = page.read_text(encoding="utf-8")
         parser.feed(text)
         relative = page.relative_to(ROOT).as_posix()
+        # Google's verification response must remain the exact downloaded text.
+        if relative == "googleef97c689c4dbad73.html":
+            if text != "google-site-verification: googleef97c689c4dbad73.html":
+                errors.append(f"Google verification file contents changed: {relative}")
+            continue
         if "</meta>" in text.lower():
             errors.append(f"Stray </meta> end tag in {relative} (see .github/scripts/apply_void_meta.py)")
         page_ids[page.resolve()] = set(parser.ids)
