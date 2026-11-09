@@ -90,7 +90,7 @@
   (function(){var nx=L.filter(function(x){return x>=T})[0];if(!nx)return;var dd=d(nx);function all(c,v){document.querySelectorAll(c).forEach(function(e){e.textContent=v})}all(".js-nl-date","Sun, "+MON[dd.m]+" "+dd.d);
     if(nx!=="2026-11-08"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})();
   if(lv)L.forEach(function(x){if(x<T)return;var dd=d(x);var li=document.createElement("li");if(!lv.children.length)li.className="first";
-    li.innerHTML='<time datetime="'+x+'T12:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>12:00 PM Central · TikTok</small></div>';lv.appendChild(li)});
+    li.innerHTML='<time datetime="'+x+'T10:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>10:00 AM Central · TikTok</small></div>';lv.appendChild(li)});
 
   // Older songs play right here (same preview files the current site's Music page uses)
   (function(){var au=new Audio(),cur=null;au.preload="none";

@@ -592,7 +592,7 @@ details.more table{font-size:14px}
     <div class="wrap">
       <div class="nl panel">
         <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 8</b></div>
-        <div><p class="mono" style="margin:0;color:var(--mute)">12:00 PM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
         <a class="btn red" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
     </div>
@@ -676,7 +676,7 @@ details.more table{font-size:14px}
     <div class="wrap">
       <div class="nl panel">
         <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 8</b></div>
-        <div><p class="mono" style="margin:0;color:var(--mute)">12:00 PM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
         <a class="btn red" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
     </div>
@@ -752,11 +752,11 @@ details.more table{font-size:14px}
     <div class="wrap">
       <div class="pagehead">
         <h1><span class="chrome">Sunday</span> <span class="red">Lives.</span></h1>
-        <p>Every Sunday at 12:00 PM Central on TikTok, <a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">@ghosthearted1</a>.</p>
+        <p>Every Sunday at 10:00 AM Central on TikTok, <a href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">@ghosthearted1</a>.</p>
       </div>
 
       <div class="nl nl-big panel">
-        <div><p class="mono" style="margin:0">Next Sunday Live</p><b class="chrome js-nl-date">Sun, Nov 8</b><p class="mono" style="margin:2px 0 0;color:var(--mute)">12:00 PM Central · TikTok</p></div>
+        <div><p class="mono" style="margin:0">Next Sunday Live</p><b class="chrome js-nl-date">Sun, Nov 8</b><p class="mono" style="margin:2px 0 0;color:var(--mute)">10:00 AM Central · TikTok</p></div>
         <div><p class="mono" style="margin:0;color:var(--mute)">Topic</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
         <a class="btn red big" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
@@ -1568,7 +1568,7 @@ details.more table{font-size:14px}
   (function(){var nx=L.filter(function(x){return x>=T})[0];if(!nx)return;var dd=d(nx);function all(c,v){document.querySelectorAll(c).forEach(function(e){e.textContent=v})}all(".js-nl-date","Sun, "+MON[dd.m]+" "+dd.d);
     if(nx!=="2026-11-08"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})();
   L.forEach(function(x){if(x<T)return;var dd=d(x);var li=document.createElement("li");if(!lv.children.length)li.className="first";
-    li.innerHTML='<time datetime="'+x+'T12:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>12:00 PM Central · TikTok</small></div>';lv.appendChild(li)});
+    li.innerHTML='<time datetime="'+x+'T10:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>10:00 AM Central · TikTok</small></div>';lv.appendChild(li)});
 
   // Older songs play right here (same preview files the current site's Music page uses)
   (function(){var au=new Audio(),cur=null;au.preload="none";

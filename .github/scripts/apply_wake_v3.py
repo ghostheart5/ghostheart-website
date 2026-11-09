@@ -39,7 +39,7 @@ PAGES = {
     'films': ('GhostHeart_Videos.html', '/GhostHeart_Videos.html', 'Films | GhostHeart',
               'GhostHeart music videos and Shorts.'),
     'lives': ('live/index.html', '/live/', 'Sunday Lives | GhostHeart',
-              'GhostHeart goes Live every Sunday at 12:00 PM Central on TikTok, @ghosthearted1.'),
+              'GhostHeart goes Live every Sunday at 10:00 AM Central on TikTok, @ghosthearted1.'),
     'story': ('GhostHeart_Story.html', '/GhostHeart_Story.html', 'Enter My World | GhostHeart',
               'Enter GhostHeart’s world: the story behind the songs.'),
     'blog': ('journal/index.html', '/journal/', 'Behind the Songs | GhostHeart',
