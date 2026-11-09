@@ -110,6 +110,7 @@ SKIN_ROUTES = sorted(
     str(path.relative_to(ROOT)).replace("\\", "/")
     for path in ROOT.rglob("*.html")
     if ".github" not in path.parts and "node_modules" not in path.parts
+    and path != ROOT / "googleef97c689c4dbad73.html"  # Exact Google verification response, not a page.
     and 'http-equiv="refresh"' not in (text := path.read_text(encoding="utf-8"))
     and "GhostHeart LOUD redesign" not in text
 )
