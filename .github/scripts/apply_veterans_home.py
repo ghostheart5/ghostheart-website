@@ -7,8 +7,8 @@ Runs after apply_week1_premiere.py in build_site.py.
   above The Heart Wakes. Everything else on the home page stays as it is.
 - Home page title, description and share card name To Those Who Served / Veterans Day.
 - The full song lives on YouTube only (one home rule), so the main button goes to the
-  GhostHeart YouTube channel. Second button: the Substack, where Dom's grandfather's
-  story (Army, Korean War) goes up Wednesday.
+  To Those Who Served video. Second button: the Substack, where Dom's grandfather's
+  story (Army, Korean War), "He couldn't come home", is up now.
 - The only lyric quoted is "You shouldn't stand alone." No veteran stories are invented.
 - Veterans Crisis Line (US): dial 988 then press 1, or text 838255.
 
@@ -52,13 +52,13 @@ SECTION = MARK + '''
 <blockquote>You shouldn’t stand alone.</blockquote>
 <p class="mono v-cite">To Those Who Served · GhostHeart</p>
 <div class="row">
-<a class="btn red" href="https://www.youtube.com/@GhostHeart-M95RTK" rel="noopener" target="_blank">Watch on YouTube ↗</a>
-<a class="btn ghost" href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Read on Substack ↗</a>
+<a class="btn red" href="https://www.youtube.com/watch?v=U0X6SwISG_M" rel="noopener" target="_blank">Watch on YouTube ↗</a>
+<a class="btn ghost" href="https://toohumantostayquiet.substack.com/p/he-couldnt-come-home" rel="noopener" target="_blank">Read on Substack ↗</a>
 </div>
 </div>
 <div class="v-side">
 <div class="panel"><p class="mono" style="margin:0">More than just today</p><p>Make the thank you last past Wednesday. <b>Check in. Listen. Share a meal.</b></p></div>
-<div class="panel"><p class="mono" style="margin:0">My grandfather’s story</p><p>He served in the Army in the Korean War. His story goes up Wednesday on <a href="https://toohumantostayquiet.substack.com/" rel="noopener" target="_blank">Too Human to Stay Quiet</a>.</p></div>
+<div class="panel"><p class="mono" style="margin:0">My grandfather’s story</p><p>He served in the Army in the Korean War. His story is up now on Too Human to Stay Quiet: <a href="https://toohumantostayquiet.substack.com/p/he-couldnt-come-home" rel="noopener" target="_blank">He couldn’t come home</a>.</p></div>
 <div class="panel"><p class="mono" style="margin:0">If you are carrying it alone</p><p>Veterans Crisis Line, free and 24/7: <b>dial 988, then press 1</b>, or <b>text 838255</b>. <a href="/GhostHeart_Resources.html">More support</a></p></div>
 </div>
 </div>
