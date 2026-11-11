@@ -19,6 +19,7 @@ PAGES = {
 }
 NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
        'Merch ↗', 'Stay Connected', 'Find Support']
+PROTECTOR_NAV = ['Home', 'The Vault', 'About', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
 
 
 def page(relative):
@@ -29,14 +30,21 @@ site_js = (ROOT / 'assets/wake-v3/site.js').read_text(encoding='utf-8')
 site_css = (ROOT / 'assets/wake-v3/site.css').read_text(encoding='utf-8')
 for relative, path in PAGES.items():
     doc = page(relative)
-    assert doc.select_one('link[href="/assets/wake-v3/site.css"]') and doc.select_one('script[src="/assets/wake-v3/site.js"]'), relative
+    # Dom, Nov 11 2026: the home page is the new Protected by GhostHeart page (apply_protector_home.py), with its own menu.
+    protector_home = relative == 'index.html'
+    if not protector_home:
+        assert doc.select_one('link[href="/assets/wake-v3/site.css"]') and doc.select_one('script[src="/assets/wake-v3/site.js"]'), relative
     assert doc.select_one('link[rel=canonical]')['href'] == 'https://www.myghostheart.com' + path, relative
     assert len(doc.select('h1')) == 1, relative
-    nav = doc.select('header.top nav#menu a')
-    assert [a.get_text(' ', strip=True) for a in nav] == NAV, (relative, [a.get_text() for a in nav])
-    current = [a['href'] for a in nav if a.get('aria-current') == 'page']
-    in_menu = path in [a['href'] for a in nav]
-    assert current == ([path] if in_menu else []), (relative, current)
+    if protector_home:
+        nav = doc.select('header.top nav.nav a')
+        assert [a.get_text(' ', strip=True) for a in nav] == PROTECTOR_NAV, [a.get_text() for a in nav]
+    else:
+        nav = doc.select('header.top nav#menu a')
+        assert [a.get_text(' ', strip=True) for a in nav] == NAV, (relative, [a.get_text() for a in nav])
+        current = [a['href'] for a in nav if a.get('aria-current') == 'page']
+        in_menu = path in [a['href'] for a in nav]
+        assert current == ([path] if in_menu else []), (relative, current)
     # Dom, Nov 6: no link may send people to the old site. Every local link stays on these pages or /assets/.
     for el in doc.select('[href], [src]'):
         url = el.get('href') or el.get('src')
@@ -69,9 +77,19 @@ for word in ('prototype', 'Prototype'):
     assert word not in site_js.split('\n', 1)[1], word
 
 home = page('index.html')
-assert [f.get('id') for f in home.select('form')] == [None] and home.select_one('#thread form.js-thread')
-assert home.select_one('#featured-home') and home.select_one('[data-daily-quote]') and home.select_one('canvas#living')
+# Protected by GhostHeart home (Dom, Nov 11 2026): one form, the Silver Thread signup; the fire box sends nothing.
+assert [f.get('id') for f in home.select('form')] == ['join'] and home.select_one('#thread form.js-thread')
+assert home.select_one('#q-text') and home.select_one('canvas#living') and home.select_one('#fire-in')
 assert home.select_one('#join-the-signal') and home.select_one('#home')  # old links still land on the home page
+for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
+    assert home.select_one('#' + view), view
+assert home.select_one('a[href="https://www.youtube.com/watch?v=U0X6SwISG_M"]')  # full song: YouTube only
+assert 'Feb 8' not in home.get_text() and '14 weeks' not in home.get_text()
+home_raw = (ROOT / 'index.html').read_text(encoding='utf-8')
+# Dom, Nov 8 2026: older songs off everywhere; the Vault lists The Heart Wakes songs only.
+assert 'awakening-0' not in home_raw and 'youre-not-god' not in home_raw
+for asset in re.findall(r'/assets/protector/[a-z0-9-]+\.jpg', home_raw):
+    assert (ROOT / asset.lstrip('/')).is_file(), asset
 
 # Dom, Nov 8 2026 (later): "release the entire site and 1st weeks songs ... no other song should be listed".
 # The confirmed prototype's campaign pieces are on; only The Heart Wakes songs are listed (apply_week1_songs_only.py).

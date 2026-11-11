@@ -49,6 +49,10 @@ assert.deepEqual(JSON.parse(site.match(/var quotes=(\[.*?\]);/s)[1]), quotes);
 assert(site.includes('timeZone:"America/Chicago"'));
 assert(site.includes('Math.floor(Date.UTC(parts.year,parts.month-1,parts.day)/86400000)'));
 assert(fs.readFileSync('index.html','utf8').includes('data-daily-quote'));
+// Protected by GhostHeart home (Dom, Nov 11 2026): the same 17 lines on the same Central-time schedule.
+const home=fs.readFileSync('index.html','utf8');
+assert.deepEqual(JSON.parse(home.match(/\(function\(\)\{var q=(\[.*?\]),MON=/s)[1]), quotes);
+assert(home.includes('Math.floor(Date.UTC(p.year,p.month-1,p.day)/86400000)'));
 // Start Here retired 2026-11-01 (Dom): it only repeated Home and Enter My World.
 assert(fs.readFileSync('start/index.html','utf8').includes('content="0; url=/"'));
 const films=fs.readFileSync('GhostHeart_Videos.html','utf8');
