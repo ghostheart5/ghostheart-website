@@ -36,6 +36,8 @@
     if (value('when')) extra.push('Needed by: ' + value('when'));
     var details = (extra.length ? extra.join('\n') + '\n\n' : '') + value('details');
     var payload = { kind: 'office', email: value('email'), website: value('website'), service: value('service'), details: details };
+    // Where the visitor came from (order-form.js notes it on arrival). Saved with the request; no name or email in it.
+    if (typeof window.ghostheartOrderSource === 'function') payload.source = window.ghostheartOrderSource();
     submit.disabled = true;
     submit.textContent = 'Sending…';
     fetch(cfg.supabaseUrl + '/rest/v1/rpc/submit_ghostheart_order', {
@@ -47,6 +49,7 @@
       return response.json();
     }).then(function (orderId) {
       if (typeof orderId !== 'string' || !/^[0-9a-f-]{36}$/.test(orderId)) throw new Error('bad id');
+      if (typeof window.ghostheartOrderTrack === 'function') window.ghostheartOrderTrack('generate_lead', { lead_type: 'office_help' });
       form.reset();
       setStatus('Got it. Thank you.', 'I’ll email you the total for your job. You only pay once you agree to it.', true);
       statusBox.scrollIntoView({ behavior: 'smooth', block: 'center' });

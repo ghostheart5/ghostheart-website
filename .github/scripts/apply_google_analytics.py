@@ -24,7 +24,8 @@ CONNECT_SRC = 'https://www.googletagmanager.com https://*.google-analytics.com h
 LOADER = '<script defer id="ghostheart-ga-loader" src="/assets/shared/ghostheart-ga.js" data-ga-id="%s"></script>'
 
 PRIVACY = ('<h2>Google Analytics</h2>\n<p>GhostHeart also uses Google Analytics to count visits, pages viewed and roughly where '
-           'visitors come from. Google Analytics sets cookies in your browser to tell a new visit from a returning one. '
+           'visitors come from. On the Work with GhostHeart page it also counts when a request is sent or a song is paid '
+           'for, never your story, name or email. Google Analytics sets cookies in your browser to tell a new visit from a returning one. '
            'GhostHeart sees only totals, never who you are. Learn more about '
            '<a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">how Google uses '
            'information from sites that use its services</a>, or turn it off with the '
