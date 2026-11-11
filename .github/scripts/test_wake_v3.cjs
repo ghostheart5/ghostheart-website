@@ -30,7 +30,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
       const page = await open(path, null, width);
       assert.equal(await page.locator('h1').count(), 1, path);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' overflow at ' + width);
-      if (width === 390) {
+      if (width === 390 && path !== '/') {  // the Protected by GhostHeart home keeps its menu in one sliding row
         await page.click('#menu-btn');
         assert.equal(await page.getAttribute('#menu-btn', 'aria-expanded'), 'true', path + ' menu');
       }
@@ -38,28 +38,26 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     }
   }
 
-  // Before week one goes up and after. Dom, Nov 8 2026: Week 1 premieres Monday Nov 9 at 12 PM Central
-  // (apply_week1_premiere.py); later weeks open Sunday 7 PM Central. No song plays before its week opens,
-  // Week 1 plays the title song The Heart Wakes and the week song To Those Who Served.
-  let page = await open('/', '2026-11-07T18:00:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday at 12 PM Central/i);
-  assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i);
-  assert.equal(await page.locator('#featured-home audio').count(), 0, 'nothing plays before the premiere');
+  // Home (Dom, Nov 11 2026): Protected by GhostHeart (apply_protector_home.py). Featured week is To Those Who
+  // Served in steel and crimson; the full song is on YouTube only; the Vault, About, Live and Merch open on the page.
+  let page = await open('/', '2026-11-11T18:00:00Z');
+  assert.match(await page.locator('.feat2 .deck h3').innerText(), /To Those Who Served/i);
+  assert.equal(await page.locator('.feat2 a[href="https://www.youtube.com/watch?v=U0X6SwISG_M"]').count(), 1);
+  assert.ok((await page.locator('#q-text').innerText()).length > 10, 'daily line');
+  assert.equal(await page.locator('#v-vault').isVisible(), false);
+  await page.click('header.top a[href="#vault"]');
+  await page.locator('#v-vault').waitFor();
+  assert.equal(await page.locator('#albums .trk').count(), 2, 'only The Heart Wakes songs');
+  await page.click('header.top a[href="#live"]');
+  await page.fill('#fire-in', 'old weight');
+  await page.press('#fire-in', 'Enter');
+  assert.equal(await page.locator('#said').innerText(), 'old weight');
+  await page.click('header.top a[href="#merch"]');
+  assert.equal(await page.locator('#v-merch .m-card').count(), 5);
+  assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);
   await page.close();
-  // Sun Nov 8, 7 PM CST (01:00Z Nov 9) is no longer the opening for Week 1.
-  page = await open('/', '2026-11-09T01:00:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday at 12 PM Central/i);
-  assert.equal(await page.locator('#featured-home audio').count(), 0);
-  await page.close();
-  // Mon Nov 9, 11:59 AM CST = 17:59Z; 12:00 PM CST = 18:00Z.
-  page = await open('/', '2026-11-09T17:59:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Premieres Monday/i);
-  await page.close();
-  page = await open('/', '2026-11-09T18:00:00Z');
-  assert.match(await page.locator('#featured-home').innerText(), /Out now/i);
-  assert.equal(await page.locator('#featured-home audio').count(), 2);
-  assert.match(await page.locator('#featured-home .songlist').innerText(), /The Heart Wakes[\s\S]*To Those Who Served/);
-  assert.ok((await page.locator('[data-daily-quote]').innerText()).length > 10, 'daily line');
+  page = await open('/#thread');
+  assert.equal(await page.locator('#v-home').isVisible(), true, 'old /#thread links land on the home page');
   await page.close();
   // The Music page's album list follows the same opening time.
   page = await open('/music/', '2026-11-09T17:59:00Z');
@@ -67,9 +65,6 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   await page.close();
   page = await open('/music/', '2026-11-09T18:00:00Z');
   assert.equal(await page.locator('#album-songs audio').count(), 2);
-  await page.close();
-  page = await open('/', '2026-11-15T15:00:00Z');
-  assert.match(await page.locator('#featured-home h3').innerText(), /To Those Who Served/i, 'week 2 waits until 7 PM');
   await page.close();
   // Dom, Nov 8 2026: the campaign page is on again (confirmed prototype).
   page = await open('/wake-the-heart/');
@@ -116,7 +111,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   // Silver Thread: posts the email straight to Mailchimp.
   page = await open('/');
-  await page.fill('#t-email', 'fan@example.com');
+  await page.fill('#join-email', 'fan@example.com');
   await Promise.all([page.waitForURL(/list-manage\.com/), page.click('#thread form.js-thread button[type=submit]')]);
   assert.ok(mailchimp.some(body => body.includes('EMAIL=fan%40example.com')), 'Mailchimp got the email');
   await page.close();
