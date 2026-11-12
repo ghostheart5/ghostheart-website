@@ -73,9 +73,8 @@ OLD_SONGS = ['Cruel', 'I’m Not', 'Papa Didn’t Raise No Fool', 'She Got to Me
              'Human Too', 'HUMAN TOO', 'The Dad I Never Had', 'The Man Beneath the Moon', 'Just Not This Morning']
 YOUTUBE = 'https://www.youtube.com/@GhostHeart-M95RTK'
 FILMS = re.compile(r'(<div class="films">).*?(</div>\s*</div>\s*</section>)', re.S)
-FILMS_NOW = ('<article class="film panel" id="film-the-heart-wakes"><div><p class="mono k">The Heart Wakes · premiere</p>'
-             '<h3>The Heart Wakes</h3><p>The first film from the new album premieres Monday, November 9 at 12 PM Central on YouTube. '
-             'To Those Who Served follows this week.</p><div class="row"><a class="btn red" href="' + YOUTUBE + '" rel="noopener" '
+FILMS_NOW = ('<article class="film panel" id="film-the-heart-wakes"><div><p class="mono k">The Heart Wakes · first film</p>'
+             '<h3>The Heart Wakes</h3><p>The first film from the new album premiered Monday, November 9 on YouTube.</p><div class="row"><a class="btn red" href="' + YOUTUBE + '" rel="noopener" '
              'target="_blank">GhostHeart on YouTube ↗</a><a class="btn ghost" href="/music/">Music</a></div></div></article>\n')
 BLOG_LIST = re.compile(r'<ol class="nb">.*?</ol>', re.S)
 BLOG_NOW = ('<div class="panel nb-empty" style="padding:18px"><p style="margin:0">New notes arrive with each week of '
