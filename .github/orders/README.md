@@ -63,9 +63,38 @@ Stripe session id). The page asks `public.ghostheart_order_paid(order_id)`, whic
 Stripe retries a webhook for up to 3 days if the function fails, and a repeated webhook changes nothing.
 The function only ignores (200) other events, unpaid sessions, payments under $50 USD, or another Payment Link.
 
+## Linking an order to where it came from and what was paid (owner, once)
+Added November 11, 2026. Until these steps are done nothing changes and nothing breaks; the extra details are
+simply not saved.
+
+What gets linked:
+- **Where the customer came from.** The order page notes the campaign tags on the link the visitor followed
+  (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`), the site that linked here and the page they arrived
+  on, and sends them with the order. No cookie, and no name, email or story in them. Links in emails and posts
+  should point at `/here-to-help/` with tags, for example
+  `https://www.myghostheart.com/here-to-help/?utm_source=mailchimp&utm_medium=email&utm_campaign=wake-week-2#order`.
+- **What Stripe was paid.** The webhook records the amount, the currency and which Payment Link was used.
+- **Stripe itself.** The pay link now carries the order id, the email the story was sent with
+  (`prefilled_email`) and the same campaign tags, so the payment in Stripe shows who and where from.
+- **Google Analytics** (already on the site): the forms count `generate_lead` (free preview or office request),
+  `begin_checkout` (going to Stripe) and `purchase` (only after the database confirms the payment; its
+  transaction id is the short order number). Google is never given the story, a name or an email.
+
+Steps:
+1. **Run the SQL.** Supabase > SQL Editor: paste `supabase/order-linkage.review.sql` and press Run. The last line
+   must show `anon can save an order = true`, `anon can mark paid = false`, `service can mark paid = true`,
+   `anon can read orders = false`, `linkage columns = 9`.
+2. **Deploy the webhook again** (same command as above): `supabase functions deploy stripe-webhook --no-verify-jwt`.
+   The new copy also works before step 1, and the old copy also works after it.
+3. **Pay link you send by hand** (after a free preview): add the order id and the customer's email, so the payment
+   matches the order: `<song pay link>?client_reference_id=<order id>&prefilled_email=<their email>`. Work HQ's
+   morning brief prints this link for each waiting order when `GH_SONG_PAY_LINK` is set there.
+4. In Google Analytics > Admin > Events, mark `purchase` and `generate_lead` as key events.
+
 ## Reading orders
 Supabase > Table Editor > schema `ghostheart_orders` > `story_orders`. Stripe sends its own payment emails.
-Paid song orders show `status = paid` with a `paid_at` date and the Stripe session id.
+Paid song orders show `status = paid` with a `paid_at` date and the Stripe session id; after the linking steps
+they also show the amount, and every new order shows its source, campaign and landing page.
 
 ## Turning it off
 Run `supabase/rollback.review.sql` (keeps saved orders), or empty `songPayLink` in `orders-config.js`.

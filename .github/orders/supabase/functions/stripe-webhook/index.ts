@@ -91,19 +91,40 @@ async function verifyStripeSignature(
   return signatures.some((sig) => safeEqual(sig.toLowerCase(), expected));
 }
 
-async function markPaid(orderId: string, sessionId: string): Promise<string> {
+// Marks the order paid and records what Stripe was paid (amount, currency, which Payment Link), so the order,
+// the payment and the money line up (../../order-linkage.review.sql). If that SQL has not been run yet, the
+// database does not know the five-value version (404), and the older two-value call is used instead, so a
+// payment is never left unmarked because of it.
+async function markPaid(
+  orderId: string,
+  sessionId: string,
+  amountCents: number | null,
+  currency: string,
+  paymentLink: string,
+): Promise<string> {
   const url = Deno.env.get("SUPABASE_URL");
   const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   if (!url || !serviceKey) throw new Error("Supabase settings missing");
-  const response = await fetch(url + "/rest/v1/rpc/ghostheart_mark_order_paid", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: serviceKey,
-      Authorization: "Bearer " + serviceKey,
-    },
-    body: JSON.stringify({ order_id: orderId, session_id: sessionId }),
+  const call = (body: Record<string, unknown>) =>
+    fetch(url + "/rest/v1/rpc/ghostheart_mark_order_paid", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: serviceKey,
+        Authorization: "Bearer " + serviceKey,
+      },
+      body: JSON.stringify(body),
+    });
+  let response = await call({
+    order_id: orderId,
+    session_id: sessionId,
+    amount_cents: amountCents,
+    currency: currency,
+    payment_link: paymentLink,
   });
+  if (response.status === 404) {
+    response = await call({ order_id: orderId, session_id: sessionId });
+  }
   if (!response.ok) throw new Error("mark paid failed: " + response.status);
   return String(await response.json());
 }
@@ -149,7 +170,14 @@ async function handle(request: Request): Promise<Response> {
   }
 
   try {
-    const result = await markPaid(orderId, sessionId);
+    const amount = Number(session.amount_total);
+    const result = await markPaid(
+      orderId,
+      sessionId,
+      Number.isInteger(amount) && amount >= 0 ? amount : null,
+      String(session.currency ?? "").toLowerCase(),
+      String(session.payment_link ?? ""),
+    );
     console.log("stripe-webhook", event.id, sessionId, result);
     return reply(200, result);
   } catch (error) {

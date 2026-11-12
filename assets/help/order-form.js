@@ -1,6 +1,37 @@
 // "I'm here to help" order form. Sends nothing until orders-config.js is complete.
 (function () {
   'use strict';
+  // Where this visitor came from: the campaign tags on the address (utm_source and so on) or the site that linked
+  // here. It is saved with the order so a paid song can be traced to the post or email that brought it. No cookie
+  // is set; the note lives only in this tab and holds no name, email or story. help-form.js uses it too.
+  var SOURCE_KEY = 'ghostheart.order.source.v1';
+  function tidy(v, max) { return String(v || '').replace(/[^A-Za-z0-9 ._:\/+-]/g, '').trim().slice(0, max); }
+  function orderSource() {
+    try {
+      var saved = JSON.parse(window.sessionStorage.getItem(SOURCE_KEY) || 'null');
+      if (saved && typeof saved === 'object') return saved;
+    } catch (e) { /* storage blocked: read the address again */ }
+    var q = new URLSearchParams(window.location.search), from = '';
+    try {
+      var r = document.referrer ? new URL(document.referrer) : null;
+      if (r && r.hostname !== window.location.hostname) from = r.hostname;
+    } catch (e) { /* no usable referrer */ }
+    var s = { source: tidy(q.get('utm_source'), 80), medium: tidy(q.get('utm_medium'), 80),
+      campaign: tidy(q.get('utm_campaign'), 120), content: tidy(q.get('utm_content'), 120),
+      referrer: tidy(from, 120), landing: tidy(window.location.pathname, 200) };
+    try { window.sessionStorage.setItem(SOURCE_KEY, JSON.stringify(s)); } catch (e) { /* nothing to do */ }
+    return s;
+  }
+  // Google Analytics, when it is on the page (public site only): counts the order steps. It is never given the
+  // story, a name or an email address.
+  function track(name, data) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, data || {}); } catch (e) { /* never block an order */ }
+  }
+  window.ghostheartOrderSource = orderSource;
+  window.ghostheartOrderTrack = track;
+  orderSource(); // noted on arrival
+  var SONG = { currency: 'USD', value: 50, items: [{ item_id: 'custom-song', item_name: 'Custom GhostHeart song', price: 50, quantity: 1 }] };
+
   var form = document.getElementById('story-form');
   if (!form) return;
   var cfg = window.GHOSTHEART_ORDERS || {};
@@ -50,6 +81,9 @@
     }).catch(function () { return false; }).then(function (paid) {
       if (paid === true) {
         forgetOrder();
+        // Counted once: the order is forgotten above, so a reload does not count it again. The id is the same
+        // short order number Work HQ shows, so the payment, the order and the visit line up.
+        track('purchase', { transaction_id: id.slice(0, 8), currency: SONG.currency, value: SONG.value, items: SONG.items });
         setStatus('Payment confirmed.', 'Thank you. I’ll write your song and email it within 7 days.', true);
       } else if (tries + 1 < PAID_CHECKS) {
         window.setTimeout(function () { checkPaid(id, tries + 1); }, PAID_WAIT_MS);
@@ -100,7 +134,7 @@
     var k = kind();
     var email = value('email');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('Please add an email address so I can reach you.');
-    var payload = { kind: k, email: email, website: value('website') };
+    var payload = { kind: k, email: email, website: value('website'), source: orderSource() };
     if (k === 'song' || k === 'try') {
       var length = form.querySelector('input[name="length"]:checked');
       if (!value('for_whom')) return fail('Please tell me who the song is for.');
@@ -130,10 +164,18 @@
       if (typeof orderId !== 'string' || !/^[0-9a-f-]{36}$/.test(orderId)) throw new Error('bad id');
       if (k === 'song') {
         rememberOrder(orderId);
-        var url = cfg.songPayLink + '?client_reference_id=' + encodeURIComponent(orderId);
+        // Stripe keeps the order id, the same email the story was sent with, and the campaign tags, so the
+        // payment in Stripe can be matched to the order and to where the customer came from.
+        var url = cfg.songPayLink + '?client_reference_id=' + encodeURIComponent(orderId) + '&prefilled_email=' + encodeURIComponent(email);
+        var src = orderSource();
+        ['source', 'medium', 'campaign', 'content'].forEach(function (key) {
+          if (src[key]) url += '&utm_' + key + '=' + encodeURIComponent(src[key]);
+        });
+        track('begin_checkout', SONG);
         window.location.assign(url);
         return;
       }
+      track('generate_lead', { lead_type: k === 'try' ? 'free_song_preview' : 'office_help' });
       form.reset(); showKind();
       if (k === 'try') setStatus('Got it. Thank you.', 'Within 2 days I’ll email you the song title and first 2 lines. If you love them, the full song is $50.', true);
       else setStatus('Got it. Thank you.', 'I’ll email you the total for your job. You only pay once you agree to it.', true);
