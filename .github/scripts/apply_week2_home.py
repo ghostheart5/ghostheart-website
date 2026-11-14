@@ -10,7 +10,8 @@ The website update goes up Sunday, Nov 15 at 7 PM Central (rules sheet: website 
   Nov 15 at 7 PM Central, then Week 2 (The Parts You Hide) shows instead. So this can be merged any time
   before Sunday night and it switches by itself. Without JavaScript, Week 1 stays.
 - Week 2 has no play button: the song file is not on the site yet. The button goes to the GhostHeart
-  YouTube channel until the video is up. PLACEHOLDER: swap VIDEO for the video link once it is public.
+  YouTube channel until the video goes public (scheduled Mon, Nov 16, 12 PM Central), then the button
+  switches by itself to the video (VIDEO_AT, VIDEO_URL) and reads "Watch the full song".
 - Words come only from Dom-approved copy, word for word: sentences 1 and 4 of the approved YouTube description (Nov 14), the approved Week 2
   kit line "Your story. Your timing." and the kit's three friend steps. No lyrics are quoted.
   Nothing implies Dom is a veteran. Picture: Dom's chosen title card (TitleCard_DOM_square.png).
@@ -36,6 +37,9 @@ SWITCH = '2026-11-15 19:00'  # Central
 VIDEO = 'https://www.youtube.com/@GhostHeart-M95RTK'
 # PLACEHOLDER until The Man Beneath the Moon's new video is public (Wed, Nov 18): then put its watch link here.
 MOON_VIDEO = 'https://www.youtube.com/@GhostHeart-M95RTK'
+# The Parts You Hide v4 is scheduled on YouTube to go public at this time (Central). Never the old v2.
+VIDEO_URL = 'https://www.youtube.com/watch?v=XfF_B-_ZNxM'
+VIDEO_AT = '2026-11-16 12:00'
 VIDEO_LABEL = 'GhostHeart on YouTube ↗' if '@' in VIDEO else 'Watch the full song ↗'
 
 WEEK2 = MARK + '''
@@ -77,6 +81,7 @@ section.feat2[hidden]{display:none!important}
   if(now<at)return;
   var w1=document.querySelector('section.feat2[data-week="1"]'),w2=document.querySelector('section.feat2[data-week="2"]');
   if(w1)w1.hidden=true;if(w2)w2.hidden=false;
+  if(now>="''' + VIDEO_AT + '''"){var v=document.querySelector("[data-week2-video]");if(v){v.href="''' + VIDEO_URL + '''";v.textContent="Watch the full song \u2197"}}
 })();
 </script>
 '''
