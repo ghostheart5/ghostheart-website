@@ -62,6 +62,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     page = await open('/', when);
     assert.equal(await page.locator('.feat2:visible').count(), 1, when);
     assert.match(await page.locator('.feat2:visible .deck h3').innerText(), title, when);
+    if (String(title).includes('Parts')) assert.match(await page.locator('.feat2:visible .also2').innerText(), /The Man Beneath the Moon/, when);
     await page.close();
   }
   page = await open('/#thread');
