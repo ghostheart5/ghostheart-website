@@ -11,7 +11,7 @@ The website update goes up Sunday, Nov 15 at 7 PM Central (rules sheet: website 
   before Sunday night and it switches by itself. Without JavaScript, Week 1 stays.
 - Week 2 has no play button: the song file is not on the site yet. The button goes to the GhostHeart
   YouTube channel until the video is up. PLACEHOLDER: swap VIDEO for the video link once it is public.
-- Words come only from Dom-approved copy: the approved YouTube description (Nov 14), the approved Week 2
+- Words come only from Dom-approved copy, word for word: sentences 1 and 4 of the approved YouTube description (Nov 14), the approved Week 2
   kit line "Your story. Your timing." and the kit's three friend steps. No lyrics are quoted.
   Nothing implies Dom is a veteran. Picture: Dom's chosen title card (TitleCard_DOM_square.png).
 - Support line: Trans Lifeline and The Trevor Project, the same numbers as Find Support.
@@ -47,7 +47,7 @@ section.feat2[hidden]{display:none!important}
       <div class="feat-grid">
         <div class="rv"><div class="poster deck">
           <div class="head"><img class="cover2" src="/assets/protector/parts-you-hide.jpg" alt="The Parts You Hide cover: two hooded figures in the rain, the front one in a trans-flag hoodie with a cracked heart patch" width="640" height="640" loading="lazy"><div><h3>The Parts You Hide</h3><p class="mono" style="margin-top:4px">The Heart Wakes · Out Monday, Nov 16</p></div></div>
-          <p class="why">A Country and Americana song for Trans Awareness Week. It follows a young trans man from the night he first says his real name out loud, to a diner booth where a friend says it right without any fuss. His story belongs to him, and he gets to share it when he is ready.</p>
+          <p class="why">The Parts You Hide is a Country and Americana song from GhostHeart Studios, released for Trans Awareness Week. His story belongs to him, and he gets to share it when he is ready.</p>
           <div class="row"><a class="btn" href="''' + VIDEO + '''" target="_blank" rel="noopener" data-week2-video>''' + VIDEO_LABEL + '''</a></div>
         </div></div>
         <div class="watch rv">
@@ -74,8 +74,8 @@ WEEK1_OPEN = '<section class="wall2 feat2 lit" data-seed="23">'
 WEEK1_END = '\n<section class="quote2 lit">'
 
 TITLE = 'GhostHeart | The Parts You Hide · Wake the Heart Week 2'
-DESC = ('The Parts You Hide: Week 2 of Wake the Heart from GhostHeart, for Trans Awareness Week. '
-        'A Country and Americana song about being seen on your own terms. Out Monday, Nov 16.')
+DESC = ('The Parts You Hide is a Country and Americana song from GhostHeart Studios, released for Trans Awareness Week. '
+        'His story belongs to him, and he gets to share it when he is ready.')
 
 JS_SWAPS = [
     ('{nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22"}',
