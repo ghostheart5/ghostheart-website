@@ -91,7 +91,7 @@ DESC = ('The Parts You Hide is a Country and Americana song from GhostHeart Stud
 JS_SWAPS = [
     ('{nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22"}',
      '{nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],'
-     'songs:["The Parts You Hide","The Man Beneath the Moon"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."}'),
+     'note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."}'),
     ('(up?"Out now":', '(up?(w.soon&&NOW<w.soon[0]?w.soon[1]:"Out now"):'),
 ]
 

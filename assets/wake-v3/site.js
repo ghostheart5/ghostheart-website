@@ -7,7 +7,7 @@
   // A week becomes featured when it goes up (Sunday night before its Monday). Week 1 goes up Sun, Nov 8.
   var WEEKS=[
     {nm:"To Those Who Served",up:"2026-11-08",at:"2026-11-09 12:00",a:"2026-11-09",b:"2026-11-15",songs:["The Heart Wakes","To Those Who Served"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)",note:"Veterans Day is Wednesday, Nov 11."},
-    {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],songs:["The Parts You Hide","The Man Beneath the Moon"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."},
+    {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."},
     {nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29"},
     {nm:"I Can’t",up:"2026-11-29",a:"2026-11-30",b:"2026-12-06"},
     {nm:"What Saved You",up:"2026-12-06",a:"2026-12-07",b:"2026-12-13"},
