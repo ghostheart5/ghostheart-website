@@ -8,7 +8,7 @@
   var WEEKS=[
     {nm:"To Those Who Served",up:"2026-11-08",at:"2026-11-09 12:00",a:"2026-11-09",b:"2026-11-15",songs:["The Heart Wakes","To Those Who Served"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)",note:"Veterans Day is Wednesday, Nov 11."},
     {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."},
-    {nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29"},
+    {nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29",soon:["2026-11-22 20:00","Out tonight at 8 PM Central"],note:"If home does not feel safe, you do not have to carry it alone. Thanksgiving is Thursday, Nov 26."},
     {nm:"I Can’t",up:"2026-11-29",a:"2026-11-30",b:"2026-12-06"},
     {nm:"What Saved You",up:"2026-12-06",a:"2026-12-07",b:"2026-12-13"},
     {nm:"Heart Before Law",up:"2026-12-13",a:"2026-12-14",b:"2026-12-20"},
