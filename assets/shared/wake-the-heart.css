@@ -1,0 +1,7 @@
+/* Current campaign context; compact, with one link and no repeated signup. */
+html body main>.gh-wake-context{margin:0 0 24px;padding:10px clamp(16px,4vw,48px);border-bottom:1px solid #4a2527;background:#16080b;color:#f4efe6}
+html body main>.gh-wake-context a{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 18px;min-height:44px;color:inherit;font:600 14px/1.5 "Space Grotesk",system-ui,sans-serif;text-decoration:none;text-align:center}
+html body main>.gh-wake-context .gh-wake-date{color:#ff9b91;white-space:nowrap}
+html body main>.gh-wake-context a:focus-visible{outline:3px solid #f4efe6;outline-offset:4px}
+html body main>.gh-wake-context a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(min-width:1000px){html body main>.gh-wake-context a{min-height:56px;font-size:17px}}

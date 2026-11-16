@@ -203,27 +203,33 @@ assert {a["href"] for a in vault.select('.vault-item[data-vault-kind="shorts"] a
     'https://www.youtube.com/shorts/bkm3czEmk5g',
     'https://www.youtube.com/shorts/5b43JyYmIts',
 }
-# Home page trimmed to five sections (owner request 2026-10-30); the daily line now lives on /vault/.
+# Owner 2026-11-01: homepage introduces the work once; the daily line stays on /vault/.
 assert vault.select_one("#daily-line [data-daily-quote]")
 assert not home.select_one("#home-vault, #everywhere, .manifesto")
 assert not home.select('#home .kicker, #latest .label, #home-story .label')  # Owner 2026-11-01: no section label strips on the home page
-assert home.select_one('#latest .ctas a')['href'] == '/journal/wake-the-heart-week.html'
-assert home.select_one('#latest .ctas a').get_text() == 'About Wake the Heart Week'
+assert home.select_one('#home .primary')['href'] == '/journal/wake-the-heart-week.html'
+assert not home.select('#latest .ctas, .canon-hero__note, .hb-shop')
+assert home.select_one('#home h1').get_text(' ', strip=True) == 'The Man Behind The Heart.'
 assert not home.select_one('#latest audio')
-assert home.select_one('#home-story a')['href'] == '/GhostHeart_Story.html#behind-the-scars'
-assert home.select_one('.canon-hero__line').get_text() == 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.'
-assert [section.get('id') for section in home.select('main > section')]== ['home', 'latest', 'home-story', 'mission-board']
-assert not home.select_one('section#join-the-signal'), 'One email signup block on the homepage: the Heart Rebellion invitation'
-assert home.select_one('aside#join-the-signal.rebellion-invite'), 'Old #join-the-signal links land on the Heart Rebellion invitation'
+assert not home.select_one('#latest .tracks')
+assert home.select_one('#mission-board .ghx-kicker').get_text() == 'Be Part of the Mission'
+assert home.select_one('#home .creed').get_text() == 'Same man.Different scars.Still here.'
+assert home.select_one('figure.hb-poster') and not home.select_one('.hb-poster span')
+assert home.select_one('header .ghx-primary a[href$="GhostHeart_Story.html"]')
+assert home.select_one('.canon-hero__line').get_text() == "Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone."
+assert [section.get('id') for section in home.select('main > section')]== ['home', 'latest', 'mission-board']
+assert not home.select_one('section#join-the-signal'), 'One email form on the homepage'
+assert home.select_one('aside#join-the-signal.rebellion-invite'), 'Existing signup links still land on the email form'
 assert not home.select('.sitefoot a[href="/GhostHeart_Quotes.html"]')
-assert len(home.select('#home-story a[href^="/GhostHeart_Story.html"]')) == 1
-assert 'Live day: Sunday.' in home.get_text()
+assert len(home.select('main a[href^="/GhostHeart_Story.html"]')) == 0
+assert not home.select('.hb-arrival, .hb-scroll, #home-story')
+assert home.select_one('#rebellion-title').get_text() == 'Get the week’s updates.'
 
-assert home.select_one('#join-the-signal a[href="/vault/"]')
+assert home.select_one('.sitefoot a[href="/vault/"]')
 assert not home.select_one("#home-lives")
 assert home.select_one('#mission-board a[href="/live/"]')
-assert not home.select_one('#mission-board form')
-assert home.select_one('#mission-board a[href="/GhostHeart_Resources.html"]')
+assert len(home.select('main form')) == 1
+assert home.select_one('.sitefoot a[href="/GhostHeart_Resources.html"]')
 live_source = json.loads((ROOT / '.github/content/live.json').read_text(encoding='utf-8'))
 assert live_source['public_enabled'] is False and live_source['public_path_enabled'] is True
 assert live_source['starts_at'] == '2026-10-11T10:00:00-05:00'

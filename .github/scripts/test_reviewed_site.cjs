@@ -39,12 +39,12 @@ const recordingsPreviewFragments = [
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(base + '/');
-    assert.equal(await page.locator('.canon-hero__line').innerText(), 'GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.');
-    assert.equal(await page.locator('.canon-hero__note').innerText(), 'Meet the man behind GhostHeart.');
+    assert.equal(await page.locator('.canon-hero__line').textContent(), "Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.");
+    assert.equal((await page.locator('#home h1').innerText()).replace(/\s+/g, ' ').toLowerCase(), 'the man behind the heart.');
     assert.equal(await page.locator('#home h1').evaluate(element => { const range=document.createRange(); range.selectNodeContents(element); const bounds=range.getBoundingClientRect(); return bounds.x>=0 && bounds.right<=innerWidth; }), true, 'Homepage title is not clipped');
-    assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.map(section => section.id)), ['home', 'latest', 'home-story', 'mission-board']);
+    assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.map(section => section.id)), ['home', 'latest', 'mission-board']);
     assert.equal(await page.locator('audio[autoplay], main form:not(#home-join)').count(), 0); // home email box approved 2026-10-31
-    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #home-story .ghx-actions a, .hb-xmas:not([hidden]) a, .rebellion-invite a');
+    const journeyLinks = page.locator('#home .ghx-actions a, #latest .ghx-actions a, #mission-board a, .hb-xmas:not([hidden]) a, .rebellion-invite a');
     for (const link of await journeyLinks.all()) {
       const box = await link.boundingBox();
       assert.ok(box.height >= 44, 'Homepage touch target ' + await link.innerText());
@@ -56,20 +56,23 @@ const recordingsPreviewFragments = [
     await page.locator('#home-join-email').focus();
     assert.equal(await page.locator('#home-join-email').evaluate(e => e === document.activeElement), true);
     await page.goto(base + '/');
-    // Site audit 2026-11-01: the hero note is the one link down to the story section.
-    await page.locator('#home .canon-hero__note a[href="#home-story"]').focus();
+    // Owner 2026-11-01: one direct story link replaces the repeated biography section.
+    await page.locator('header.ghx-header .ghx-primary a[href$="GhostHeart_Story.html"]').focus();
     await page.keyboard.press('Enter');
-    await page.waitForURL(url => url.hash === '#home-story', { waitUntil: 'commit', timeout: 5000 }).catch(() => {});
-    assert.equal(new URL(page.url()).hash, '#home-story');
-    const preview = page.locator('#latest .ctas a');
-    assert.equal(await preview.count(), 1, 'One featured preview CTA');
-    assert.equal((await preview.textContent()).trim(), 'About Wake the Heart Week');
-    assert.equal(await preview.getAttribute('href'), '/journal/wake-the-heart-week.html');
+    await page.waitForURL('**/GhostHeart_Story.html');
+    assert.equal(new URL(page.url()).pathname, '/GhostHeart_Story.html');
+    await page.goto(base + '/');
+    assert.equal(await page.locator('.hb-arrival, .hb-scroll, #home-story').count(), 0);
+    assert.equal(await page.locator('main form').count(), 1);
+    assert.equal(await page.locator('#latest .ctas').count(), 0, 'No second button repeating the week link');
+    assert.equal(await page.locator('#home .primary').getAttribute('href'), '/journal/wake-the-heart-week.html');
+    assert.equal(await page.locator('.hb-shop, .canon-hero__note').count(), 0);
     assert.equal(await page.locator('#home .kicker, #latest .label, #home-story .label').count(), 0); // Owner 2026-11-01: no section label strips on the home page
     assert.equal(await page.locator('#latest audio, #latest source').count(), 0, 'Featured preview does not play the previous song');
     for (const path of paths) {
       const response = await page.goto(base + path, { waitUntil: 'load' });
       assert.equal(response.status(), 200, path);
+      assert.equal(await page.locator('.gh-wake-context').count(), path === '/' ? 0 : 1, path + ' campaign context');
       assert.equal(await page.locator('h1').count(), 1, path + ' heading');
       const tabs = await page.locator('header.ghx-header nav[aria-label="Main navigation"] a').allTextContents();
       assert.deepEqual(tabs.map(value => value.trim()), ['Home', 'Music', 'Enter My World', 'Work with GhostHeart', 'Merch'], path + ' tabs');

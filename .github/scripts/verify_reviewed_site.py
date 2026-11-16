@@ -88,7 +88,8 @@ for card in main.select(".resource-grid .resource"):
         "tags": card.get("data-tags", ""),
     }
 assert cards == baseline["cards"] and len(cards) == 16
-assert sorted(a.get("href", "") for a in main.select("a[href]")) == baseline["main_links"]
+assert sorted(a.get("href", "") for a in main.select("a[href]")
+              if not a.find_parent(class_="gh-wake-context")) == baseline["main_links"]
 assert " ".join(main.select_one(".boundary").stripped_strings) == baseline["boundary"]
 assert main.select_one('.filter[data-filter="all"]')["aria-pressed"] == "true"
 assert main.select_one(".urgent").sourceline < main.select_one(".catalog").sourceline

@@ -7,17 +7,17 @@
 <link href="https://www.myghostheart.com/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="GhostHeart" property="og:site_name"/>
-<meta content="GhostHeart | Real Stories. Real People. Same Heart." property="og:title"/>
-<meta content="Music, films, and stories for the wounded, the brave, and everyone still here." property="og:description"/>
+<meta content="GhostHeart | The Man Behind The Heart." property="og:title"/>
+<meta content="Wake the Heart Week, November 9–15, 2026: eight songs, one journey through The Awakening. Listen now and explore the week." property="og:description"/>
 <meta content="https://www.myghostheart.com/" property="og:url"/>
 <meta content="https://www.myghostheart.com/assets/story/ghostheart-share-1200x630.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="GhostHeart — music, films and stories from one man's real life. Too human to stay quiet. Every platform leads home to myghostheart.com." name="description"/>
+<meta content="Wake the Heart Week, November 9–15, 2026: eight songs, one journey through The Awakening. Listen now and explore the week." name="description"/>
 <meta content="427845c023131887ec264df45999badc" name="p:domain_verify"/>
 <meta content="#050505" name="theme-color"/>
-<title>GhostHeart | Too Human to Stay Quiet.</title>
+<title>GhostHeart | The Man Behind The Heart.</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="/assets/shared/check-back-in.css" rel="stylesheet"/>
@@ -100,7 +100,7 @@ main>section,main>aside{position:relative}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--bone)}
 .btn.red{background:var(--blood);border-color:var(--blood);color:var(--void);box-shadow:6px 6px 0 var(--bone)}
 .btn.red:hover{background:var(--hot)}
-.hb-poster{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border:3px solid var(--bone);box-shadow:14px 14px 0 var(--blood);text-decoration:none}
+.hb-poster{margin:0;position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border:3px solid var(--bone);box-shadow:14px 14px 0 var(--blood);text-decoration:none}
 .hb-poster img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .hb-poster:hover img{transform:scale(1.04)}
 .hb-poster span{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:12px;background:var(--void);padding:12px 18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
@@ -137,12 +137,19 @@ main>section,main>aside{position:relative}
 .mission-board-grid a{display:inline-flex;align-items:center;min-height:44px;color:var(--hot);font-weight:700;text-underline-offset:5px}
 .mission-participation{color:var(--ash);font-size:16px;margin-top:18px}
 @media(max-width:860px){.mission-board-grid{grid-template-columns:1fr}}
+#mission-board .mission-board-grid a{min-height:44px}
+@media(min-width:1000px){#mission-board .mission-board-grid a{min-height:56px}}
 
 
+/* A practical event line and one email form, without repeated introductions. */
+.hb-next{display:flex;flex-wrap:wrap;align-items:center;gap:4px 24px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.hb-next p{margin:0;color:var(--ash);font-size:16px}
+.hb-next p a{display:inline-flex;align-items:center;min-height:44px;color:var(--hot)}
+@media(min-width:1000px){.hb-next p a,.hb-next>a{min-height:56px}}
 /* ---------- ONE invitation ---------- */
-.rebellion-invite{width:min(1100px,calc(100% - 32px));margin:clamp(20px,3vw,36px) auto clamp(48px,7vw,96px);padding:clamp(24px,4vw,48px);border:3px solid var(--blood);background:radial-gradient(80% 120% at 0% 0%,#2a0309,var(--void) 70%);box-shadow:12px 12px 0 var(--blood)}
+.rebellion-invite{width:min(1100px,calc(100% - 32px));margin:clamp(20px,3vw,36px) auto clamp(48px,7vw,96px);padding:clamp(24px,4vw,48px) 0;border-top:1px solid var(--line);background:var(--void)}
 .rebellion-eyebrow{font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0}
-.rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(36px,4.5vw,64px);line-height:.92;margin:10px 0 12px}
+.rebellion-invite h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(28px,3.5vw,44px);line-height:1;margin:0 0 12px}
 .rebellion-invite p{max-width:46ch}
 .rebellion-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 .rebellion-actions a,.rebellion-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:2px solid var(--bone);background:transparent;color:var(--bone);font:700 15px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
@@ -225,12 +232,10 @@ main>section,main>aside{position:relative}
 <svg aria-hidden="true" class="hb-ekg" preserveaspectratio="none" viewbox="0 0 1200 120"><path d="M0 70H330l18-8 14 8h40l14-58 20 104 18-60 12 14h90l16-10 16 10H760l14-46 18 84 16-50 10 12H1200"></path></svg>
 <div class="hb-wrap">
 <div class="hb-hero-copy">
-<div aria-live="polite" class="hb-arrival" data-arrival="" hidden=""><b data-arrival-from="">Welcome</b><p data-arrival-text=""></p><a data-arrival-link="" href="#latest">Keep going</a><button aria-label="Dismiss welcome note" data-arrival-close="" type="button">Close ✕</button></div>
-<h1 class="display">Too <span class="o">Human</span><br/>To Stay <span class="r">Quiet.</span></h1>
-<p class="canon-hero__line">GhostHeart is the fictional reflection of one man’s real life—told through music, stories, and a mission to help people feel less alone.</p>
-<p class="canon-hero__note"><a href="#home-story">Meet the man behind GhostHeart.</a></p>
-<div class="ghx-actions"><a class="primary" href="/music/#listen">▶ Play The Awakening</a><a class="song" href="/here-to-help/#order">Get Your Song Written</a></div>
-<div class="hb-under"><a class="hb-scroll" href="#latest"><i aria-hidden="true"></i> Feel the heartbeat</a></div>
+<h1 class="display">The Man<br/>Behind <span class="o">The</span> <span class="r">Heart.</span></h1>
+<p class="canon-hero__line">Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.</p>
+<div class="creed"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
+<div class="ghx-actions"><a class="primary" href="/journal/wake-the-heart-week.html">Explore the week</a><a class="song" href="/music/#listen">▶ Play The Awakening</a></div>
 </div>
 </div>
 </section>
@@ -244,29 +249,10 @@ main>section,main>aside{position:relative}
 <div class="hb-wrap">
 <div class="hb-feature">
 <div class="rv">
-<h2 class="display">Before the Heart Wakes<em>.</em></h2>
-<p class="line">An introduction to Wake the Heart Week, November 9 to 15: one week inside The Awakening.</p>
-<div class="ctas"><a class="btn red" href="/journal/wake-the-heart-week.html">About Wake the Heart Week</a></div>
+<h2 class="display">Eight songs.<br/>One journey<em>.</em></h2>
+<p class="line">From witnessing cruelty to finding the courage to stand beside someone else.</p>
 </div>
-<a aria-label="Read about Wake the Heart Week" class="hb-poster rv" href="/journal/wake-the-heart-week.html"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/><span>Read: Wake the Heart Week <b aria-hidden="true">→</b></span></a>
-</div>
-<ul class="tracks rv">
-<li><a href="/music/#song-im-not"><span>02</span>I'm Not<span aria-hidden="true">▶</span></a></li>
-<li><a href="/music/#song-she-got-to-me"><span>04</span>She Got to Me<span aria-hidden="true">▶</span></a></li>
-<li><a href="/music/#song-one-heart-many-voices"><span>08</span>One Heart Many Voices<span aria-hidden="true">▶</span></a></li>
-</ul>
-</div>
-</section>
-<section class="man" id="home-story"><span id="story"></span>
-<div class="hb-wrap">
-<div class="hb-man">
-<figure class="rv"><img alt="GhostHeart with his head lowered and his hand to his face, a cracked red heart glowing through his chest under a red sky." height="640" loading="lazy" sizes="(max-width: 860px) 100vw, 50vw" src="/assets/home/heartbeat/portrait-640.webp" srcset="/assets/home/heartbeat/portrait-640.webp 640w, /assets/home/heartbeat/portrait-1200.webp 1200w" width="640"/><figcaption>Same man. Still here.</figcaption></figure>
-<div class="rv">
-<h2 class="display">The Man<br/>Behind <span class="o">The</span> Heart.</h2>
-<p>Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.</p>
-<div class="creed"><span>Same man.</span><span>Different scars.</span><span>Still here.</span></div>
-<div class="hb-links"><a class="btn red" href="/GhostHeart_Story.html#behind-the-scars">Read Behind the Scars</a><a class="btn" href="/journal/">The Blog</a></div>
-</div>
+<figure class="hb-poster rv"><img alt="" height="450" loading="lazy" sizes="(max-width: 860px) 100vw, 55vw" src="/assets/home/heartbeat/walk-800.webp" srcset="/assets/home/heartbeat/walk-800.webp 800w, /assets/home/heartbeat/walk-1600.webp 1600w" width="800"/></figure>
 </div>
 </div>
 </section>
@@ -277,18 +263,9 @@ main>section,main>aside{position:relative}
 <article><h3>A small kindness</h3><p>A place to start: include someone in a conversation, listen without rushing, or offer a kind word.</p><a href="/GhostHeart_Resources.html">Find support resources</a></article>
 <article><h3>Coming next</h3><p>The Awakening campaign continues through January 3, 2027. The Start campaign kicks off January 4, 2027.</p><p data-live-next>Next Live: <span data-live-slot-label data-live-until="2027-01-03T16:45:00Z" data-live-after="coming soon">Sunday, November 8, 2026, 10:00 a.m. Central</span>, on <a href="https://www.tiktok.com/@ghosthearted1">TikTok</a>.<span data-live-slot data-live-hide-after="2026-11-01T16:45:00Z" data-live-when="Sunday, November 1, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-08T16:45:00Z" data-live-when="Sunday, November 8, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-15T16:45:00Z" data-live-when="Sunday, November 15, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-22T16:45:00Z" data-live-when="Sunday, November 22, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-11-29T16:45:00Z" data-live-when="Sunday, November 29, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-06T16:45:00Z" data-live-when="Sunday, December 6, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-13T16:45:00Z" data-live-when="Sunday, December 13, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-20T16:45:00Z" data-live-when="Sunday, December 20, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2026-12-27T16:45:00Z" data-live-when="Sunday, December 27, 2026, 10:00 a.m. Central" hidden></span><span data-live-slot data-live-hide-after="2027-01-03T16:45:00Z" data-live-when="Sunday, January 3, 2027, 10:00 a.m. Central" hidden></span></p><p>Live day: Sunday.</p><a href="/live/">Lives</a></article>
 </div><p class="mission-participation">You’re welcome here whether or not you subscribe. No payment or personal story is required.</p></section>
-<aside aria-labelledby="shop-title" class="hb-shop">
-<div class="hb-wrap">
-<div><h2 id="shop-title">Wear <span>The Heart.</span></h2><p>Official GhostHeart Studios merch. Carry the cracked heart out into the world.</p></div>
-<a class="btn" href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Shop merch ↗</a>
-</div>
-</aside>
 <aside aria-labelledby="rebellion-title" class="rebellion-invite" id="join-the-signal">
-<p class="rebellion-eyebrow">Still here. Still connected.</p>
-<h2 id="rebellion-title">Join the Heart Rebellion.</h2>
-<p>Music to come back to. Stories to spend time with. A line to carry into your day.</p>
-<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" aria-labelledby="rebellion-title" class="hb-join" id="home-join" method="post"><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input aria-describedby="home-join-note" autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Join free</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
-<div class="rebellion-actions"><a href="/vault/">Find your next song, film or quote ↗</a></div>
+<h2 id="rebellion-title">Get the week’s updates.</h2>
+<form action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" aria-labelledby="rebellion-title" class="hb-join" id="home-join" method="post"><label class="hb-join-label" for="home-join-email">Email address</label><div class="hb-join-row"><input aria-describedby="home-join-note" autocomplete="email" id="home-join-email" inputmode="email" maxlength="254" name="EMAIL" placeholder="you@example.com" required="" type="email"/><button name="subscribe" type="submit">Keep me posted</button></div><div aria-hidden="true" class="hb-join-trap"><input autocomplete="off" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" type="text"/></div><p class="hb-join-note" id="home-join-note">Free. Unsubscribe anytime. Then tap the link in the email Mailchimp sends you. <a href="/GhostHeart_Privacy.html">Privacy</a></p></form>
 </aside>
 </main>
 <footer class="sitefoot">
@@ -304,7 +281,6 @@ main>section,main>aside{position:relative}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
-<script src="/assets/home/heartbeat/arrival.js"></script>
 <script src="/assets/shared/ghostheart-world.js"></script>
 <script src="/assets/loud/loud.js"></script>
 <script defer="" src="/assets/shared/next-live.js"></script>

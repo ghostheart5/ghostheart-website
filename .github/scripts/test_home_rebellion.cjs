@@ -32,7 +32,7 @@ const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
     assert.equal(await page.locator('.rebellion-primary').count(), 0);
     assert.equal(await page.locator('form#home-join').count(), 1);
     await page.goto(base);
-    await Promise.all([page.waitForURL('**/vault/'), page.locator('.rebellion-invite a[href="/vault/"]').click()]);
+    await Promise.all([page.waitForURL('**/vault/'), page.locator('.sitefoot a[href="/vault/"]').click()]);
     assert(await page.locator('#daily-line').isVisible());
     await page.goto(base);
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1));

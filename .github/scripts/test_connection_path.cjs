@@ -1,4 +1,4 @@
-/* Verify the new invitation and visible pending Live route; never submits. */
+/* Verify the simplified homepage, single email form and next-Live route; never submits. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -9,22 +9,21 @@ module.exports = async (page, base) => {
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(base + '/');
-    // Owner decision 2026-10-14 (LOUD redesign): homepage headline is "Too Human to Stay Quiet."
-    assert.equal((await page.locator('#home h1').innerText()).toLowerCase(), 'too human\nto stay quiet.');
+    // Owner Nov 1: the campaign leads the homepage.
+    assert.equal((await page.locator('#home h1').innerText()).replace(/\s+/g, ' ').toLowerCase(), 'the man behind the heart.');
     // Site audit 2026-11-01: two hero buttons; Enter My World stays in the top bar.
     assert.deepEqual(await page.locator('#home .ghx-actions a').allTextContents(),
-      ['▶ Play The Awakening', 'Get Your Song Written']);
+      ['Explore the week', '▶ Play The Awakening']);
     assert.deepEqual(await page.locator('#home .ghx-actions a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href'))),
-      ['/music/#listen', '/here-to-help/#order']);
-    assert.equal(await page.locator('#mission-board form').count(), 0);
-    assert.match(await page.locator('#mission-board').innerText(), /No payment or personal story is required/);
-    assert.match(await page.locator('#mission-board').innerText(), /The Awakening campaign continues through January 3, 2027\. The Start campaign kicks off January 4, 2027\./);
+      ['/journal/wake-the-heart-week.html', '/music/#listen']);
+    assert.equal(await page.locator('#home-story, .hb-arrival, .hb-scroll').count(), 0);
+    assert.equal(await page.locator('#mission-board [data-live-slot-label]').count(), 1);
     assert.equal(await page.locator('section#join-the-signal').count(), 0);
-    assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Join the Heart Rebellion.');
-    // One sign-up per page (2026-11-01): the email note now sits with the hero email box.
+    assert.equal(await page.locator('.rebellion-invite h2').textContent(), 'Get the week’s updates.');
+    // One sign-up at the bottom of the page, with its existing optional-email note.
     assert.match(await page.locator('#home-join').innerText(), /Free\. Unsubscribe anytime/);
-    // The Vault's daily line moved off the home page (owner request 2026-10-30); the invitation now links to /vault/.
-    assert.equal(await page.locator('.rebellion-invite a[href="/vault/"]').count(), 1);
+    // The Vault stays available in the footer without another signup-card invitation.
+    assert.equal(await page.locator('.sitefoot a[href="/vault/"]').count(), 1);
     await page.locator('#mission-board a[href="/live/"]').focus();
     await Promise.all([page.waitForURL(base + '/live/'), page.keyboard.press('Enter')]);
     assert.equal(new URL(page.url()).pathname, '/live/');
@@ -40,8 +39,8 @@ module.exports = async (page, base) => {
     assert.equal(await page.locator('a[href*="my-promise"]').count(), 0);
     if (evidence && [390, 1440].includes(width)) {
       await page.screenshot({ path: path.join(evidence, 'live-' + width + '.png'), fullPage: true });
-      await page.goto(base + '/#mission-board');
-      await page.screenshot({ path: path.join(evidence, 'mission-' + width + '.png') });
+      await page.goto(base + '/#latest');
+      await page.screenshot({ path: path.join(evidence, 'featured-' + width + '.png') });
     }
     for (const route of ['/', '/live/', '/follow/']) {
       await page.goto(base + route);

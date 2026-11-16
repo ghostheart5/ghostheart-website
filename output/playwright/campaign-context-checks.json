@@ -1,0 +1,50 @@
+[
+  {
+    "route": "/music/",
+    "width": 320
+  },
+  {
+    "route": "/awakening/",
+    "width": 320
+  },
+  {
+    "route": "/GhostHeart_Story.html",
+    "width": 320
+  },
+  {
+    "route": "/music/",
+    "width": 390
+  },
+  {
+    "route": "/awakening/",
+    "width": 390
+  },
+  {
+    "route": "/GhostHeart_Story.html",
+    "width": 390
+  },
+  {
+    "route": "/music/",
+    "width": 768
+  },
+  {
+    "route": "/awakening/",
+    "width": 768
+  },
+  {
+    "route": "/GhostHeart_Story.html",
+    "width": 768
+  },
+  {
+    "route": "/music/",
+    "width": 1440
+  },
+  {
+    "route": "/awakening/",
+    "width": 1440
+  },
+  {
+    "route": "/GhostHeart_Story.html",
+    "width": 1440
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "branch": "codex/homepage-less-repetition-20261101",
+  "base": "a93abe9abb414b3560c7c3c0efc0605f50914f39",
+  "campaign_context_pages": 57,
+  "build_stable": true,
+  "pr125_review": {
+    "head": "29e3f1e7ff3c8b90b1d2f951dc56db063862bfc6",
+    "verdict": "PASS - recommend owner merge",
+    "real_device_screen_reader": "not checked"
+  },
+  "campaign_state": "local candidate with latest owner corrections; not published",
+  "current_hero": "The Man Behind The Heart.",
+  "exact_owner_paragraph": "Every song starts with something that really happened. GhostHeart is how one man tells it—loud enough to be heard, honest enough to help someone feel less alone.",
+  "mission": "restored",
+  "homepage_song_list": "removed",
+  "photo_reading_label": "removed"
+}
