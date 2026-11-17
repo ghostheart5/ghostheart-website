@@ -58,13 +58,22 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   await page.close();
   // Week 2 (Dom, Nov 14 2026, apply_week2_home.py): The Parts You Hide takes over at 7 PM Central on Sunday, Nov 15.
   for (const [when, title] of [['2026-11-16T00:59:00Z', /To Those Who Served/i], ['2026-11-16T01:00:00Z', /The Parts You Hide/i],
-                               ['2026-11-16T17:59:00Z', /The Parts You Hide/i], ['2026-11-18T18:00:00Z', /The Parts You Hide/i]]) {
+                               ['2026-11-16T17:59:00Z', /The Parts You Hide/i], ['2026-11-18T18:00:00Z', /The Parts You Hide/i],
+                               ['2026-11-23T00:59:00Z', /The Parts You Hide/i]]) {
     page = await open('/', when);
     assert.equal(await page.locator('.feat2:visible').count(), 1, when);
     assert.match(await page.locator('.feat2:visible .deck h3').innerText(), title, when);
     if (String(title).includes('Parts')) assert.equal(await page.locator('[data-week2-video]').getAttribute('href'),
       when < '2026-11-16T18:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=XfF_B-_ZNxM', when);
     if (String(title).includes('Parts')) assert.match(await page.locator('.feat2:visible .also2').innerText(), /The Man Beneath the Moon/, when);
+    await page.close();
+  }
+  // Week 3 (Dom, Nov 16 2026, apply_week3_home.py): Too Small takes over at 7 PM Central on Sunday, Nov 22.
+  for (const when of ['2026-11-23T01:00:00Z', '2026-11-23T02:30:00Z', '2026-11-26T18:00:00Z']) {
+    page = await open('/', when);
+    assert.equal(await page.locator('.feat2:visible').count(), 1, when);
+    assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /Too Small/i, when);
+    assert.equal(await page.locator('.feat2:visible a[href="tel:18007997233"]').count(), 1, when);
     await page.close();
   }
   page = await open('/#thread');
