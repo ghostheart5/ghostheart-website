@@ -12,6 +12,8 @@ Find Support go to their existing pages, where their forms already work.
 Source: .github/protector-site/home.part (styles, page and script). Pictures: assets/protector/
 and assets/wake-v3/img/. Songs: assets/wake-v3/audio/ and assets/music/preview/.
 The head (title, share card, security policy, analytics) is kept from the page built before this step.
+The old home loaded the Metricool website counter through wake-v3/site.js, which this page drops, so the
+head gets /assets/shared/ghostheart-metricool.js instead (fix Nov 18, 2026: Metricool showed 0 visits).
 The signup posts to the same Mailchimp list as before. The fire box sends nothing.
 
 To go back to the old home page, remove this script's line from build_site.py and rebuild.
@@ -34,6 +36,8 @@ if MARK not in html:
     head = re.sub(r'\s*<link rel="stylesheet" href="/assets/wake-v3/site\.css">', '', head)
     head = head.replace('<meta name="viewport" content="width=device-width, initial-scale=1"/>',
                         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>')
+    if 'ghostheart-metricool' not in head:
+        head += '<script defer id="ghostheart-metricool-loader" src="/assets/shared/ghostheart-metricool.js"></script>'
     body = SOURCE.read_text(encoding='utf-8')
     HOME.write_text(head + '</head>\n<body>\n' + MARK + '\n' + body + '</body>\n</html>\n', encoding='utf-8')
     print('Home page: Protected by GhostHeart.')
