@@ -18,7 +18,16 @@ Central. The website update goes up Sunday, Nov 22 at 7 PM Central (rules sheet:
   no graphic violence) and WAIT FOR DOM'S YES before merge. Nothing implies the story is Dom's own life.
 - Support line: National Domestic Violence Hotline and Childhelp, the same numbers as Find Support.
 - Home title and share card name Week 3 from the merge.
-- Weeks list (assets/wake-v3/site.js): Week 3 says "Out tonight at 8 PM Central" until then, and carries a note.
+- Weeks list (assets/wake-v3/site.js): Week 3 says when the Too Small music video comes out, and carries a note.
+
+Switch (Dom, Nov 18, 2026, 22:51 UTC: "monday will be not your kitchen, wensday will be to small"):
+- Monday, Nov 23, 4 PM Central on YouTube: When It Isn't Your Kitchen. Wednesday, Nov 25, 4 PM Central: Too Small.
+- So the page no longer says "Out Sunday, Nov 22, 8 PM Central" or "Out tonight at 8 PM Central". It names the
+  Too Small music video for Wednesday at 4 PM, and one "Also this week" line names When It Isn't Your Kitchen for
+  Monday at 4 PM (same pattern as the Week 2 Moon line). No lyrics, no scenes, no description for Kitchen.
+- Week 3 still opens Sunday, Nov 22 at 7 PM Central (website updates the Sunday before).
+- KITCHEN_URL / KITCHEN_AT: put Kitchen's YouTube link in KITCHEN_URL and rebuild; its link flips at KITCHEN_AT.
+  Set KITCHEN_LINE = False and rebuild to drop the Kitchen line.
 
 To take it down later, remove this script's line from build_site.py and rebuild.
 """
@@ -31,22 +40,42 @@ JS = ROOT / 'assets/wake-v3/site.js'
 MARK = '<!-- WEEK 3: Too Small (Dom, Nov 16, 2026) -->'
 SWITCH = '2026-11-22 19:00'  # Central
 CHANNEL = 'https://www.youtube.com/@GhostHeart-M95RTK'
-# Empty until there is a public link for Too Small. Then set both and rebuild; the button flips at SONG_AT (Central).
+# Empty until there is a public link for the Too Small music video. Then set it and rebuild; at SONG_AT (Central)
+# the button flips to the video and the line under the title says the video is out.
 SONG_URL = ''
-SONG_AT = '2026-11-22 20:00'
+SONG_AT = '2026-11-25 16:00'  # Too Small music video on YouTube, Wed, Nov 25, 4 PM Central (Dom, Nov 18)
+# Also this week: When It Isn't Your Kitchen on YouTube, Mon, Nov 23, 4 PM Central (Dom, Nov 18).
+KITCHEN_LINE = True
+KITCHEN_URL = ''  # Empty until Kitchen has a YouTube link; until then the link goes to the channel.
+KITCHEN_AT = '2026-11-23 16:00'
+WHEN = 'The Heart Wakes · Music video Wednesday, Nov 25, 4 PM Central'
+WHEN_OUT = 'The Heart Wakes · Music video out now'
 
 WHY = ('Too Small is a song from GhostHeart Studios, told through the eyes of a little boy in a house that '
        'does not feel safe. He is too small to stop what is happening, but his love for his mother is bigger than all of it.')
 
 FLIP = ('' if not SONG_URL else
         '  if(now>="' + SONG_AT + '"){var v=document.querySelector("[data-week3-song]");if(v){v.href="' + SONG_URL
-        + '";v.textContent="Listen to the full song \\u2197"}}\n')
+        + '";v.textContent="Watch the music video \\u2197"}var w=document.querySelector("[data-week3-when]");'
+        'if(w)w.textContent="' + WHEN_OUT + '"}\n')
+FLIP += ('' if not (KITCHEN_LINE and KITCHEN_URL) else
+         '  if(now>="' + KITCHEN_AT + '"){var k=document.querySelector("[data-week3-kitchen]");if(k){k.href="'
+         + KITCHEN_URL + '";k.textContent="Watch it on YouTube \\u2197"}}\n')
+
+KITCHEN = ('' if not KITCHEN_LINE else
+           '\n          <p class="also2"><span class="mono">Also this week</span><b>When It Isn\u2019t Your Kitchen</b> comes to '
+           'YouTube on Monday, Nov 23, at 4 PM Central. <a href="' + CHANNEL + '" target="_blank" rel="noopener" '
+           'data-week3-kitchen>GhostHeart on YouTube \u2197</a></p>')
 
 WEEK3 = MARK + '''
 <style>
 .feat2.w03 .cover2{flex:0 0 130px;width:130px;height:130px;align-self:flex-start;object-fit:cover;border:1px solid rgba(192,197,204,.45);box-shadow:0 0 26px rgba(215,25,32,.35)}
 .feat2.w03 .deck .head{align-items:flex-start}
 .feat2.w03 .watch-line{color:var(--white)}
+.feat2.w03 .also2{margin:4px 0 0;padding-top:12px;border-top:1px solid rgba(192,197,204,.25);color:var(--silver);font-size:.95rem;line-height:1.45}
+.feat2.w03 .also2 .mono{display:block;margin-bottom:4px}
+.feat2.w03 .also2 b{color:var(--white)}
+.feat2.w03 .also2 a{color:var(--silverw,#fff)}
 @media (max-width:520px){.feat2.w03 .cover2{flex-basis:100px;width:100px;height:100px}}
 </style>
   <section class="wall2 feat2 w03 lit" data-seed="23" data-week="3" hidden><canvas class="paint" aria-hidden="true"></canvas>
@@ -55,9 +84,9 @@ WEEK3 = MARK + '''
       <div class="feat-head rv"><h2 class="bigtitle"><span class="steel">Featured</span> <span class="stn">week.</span></h2><span class="stamp s">Week 03 · Too Small</span></div>
       <div class="feat-grid">
         <div class="rv"><div class="poster deck">
-          <div class="head"><img class="cover2" src="/assets/wake-v3/img/heart-wakes.jpg" alt="The Heart Wakes album cover: tattooed hands tearing open a shirt to show a cracked, glowing red heart" width="1000" height="1000" loading="lazy"><div><h3>Too Small</h3><p class="mono" style="margin-top:4px">The Heart Wakes · Out Sunday, Nov 22, 8 PM Central</p></div></div>
+          <div class="head"><img class="cover2" src="/assets/wake-v3/img/heart-wakes.jpg" alt="The Heart Wakes album cover: tattooed hands tearing open a shirt to show a cracked, glowing red heart" width="1000" height="1000" loading="lazy"><div><h3>Too Small</h3><p class="mono" style="margin-top:4px" data-week3-when>''' + WHEN + '''</p></div></div>
           <p class="why">''' + WHY + '''</p>
-          <div class="row"><a class="btn" href="''' + CHANNEL + '''" target="_blank" rel="noopener" data-week3-song>GhostHeart on YouTube ↗</a></div>
+          <div class="row"><a class="btn" href="''' + CHANNEL + '''" target="_blank" rel="noopener" data-week3-song>GhostHeart on YouTube ↗</a></div>''' + KITCHEN + '''
         </div></div>
         <div class="watch rv">
           <p class="sprayline"><span class="steel">Nobody should</span><br><span class="stn">be scared at home.</span></p>
@@ -86,8 +115,10 @@ DESC = WHY
 
 JS_SWAPS = [
     ('{nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29"}',
-     '{nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29",soon:["2026-11-22 20:00","Out tonight at 8 PM Central"],'
-     'note:"If home does not feel safe, you do not have to carry it alone. Thanksgiving is Thursday, Nov 26."}'),
+     '{nm:"Too Small",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29",soon:["' + SONG_AT + '","Music video Wednesday, Nov 25, 4 PM Central"],'
+     'note:"If home does not feel safe, you do not have to carry it alone.'
+     + (' When It Isn\u2019t Your Kitchen comes to YouTube on Monday, Nov 23, at 4 PM Central.' if KITCHEN_LINE else '')
+     + ' Thanksgiving is Thursday, Nov 26."}'),
 ]
 
 
@@ -108,6 +139,9 @@ def main() -> None:
     assert t.count(MARK) == 1 and t.count('data-week="3"') == 1 and f'<title>{TITLE}</title>' in t
     assert t.index('data-week="2"') < t.index('data-week="3"')
     assert t.count('<h1') == 1
+    week3 = t[t.index(MARK):t.index('</script>', t.index(MARK))]
+    assert 'Nov 22, 8 PM' not in week3 and WHEN in week3
+    assert ('Kitchen' in week3) == KITCHEN_LINE
 
     s = JS.read_text(encoding='utf-8')
     u = s
@@ -117,8 +151,8 @@ def main() -> None:
             u = u.replace(old, new)
     if u != s:
         JS.write_text(u, encoding='utf-8')
-    assert 'soon:["2026-11-22 20:00"' in u
-    print('Week 3, Too Small, takes the home page at 7 PM Central on Sunday, Nov 22.')
+    assert 'soon:["' + SONG_AT + '"' in u and '8 PM Central' not in u.split('nm:"Too Small"')[1].split('nm:"I Can')[0]
+    print('Week 3, Too Small, takes the home page at 7 PM Central on Sunday, Nov 22 (video Wed, Nov 25, 4 PM).')
 
 
 main()

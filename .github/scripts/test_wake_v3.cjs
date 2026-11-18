@@ -74,6 +74,12 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     assert.equal(await page.locator('.feat2:visible').count(), 1, when);
     assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /Too Small/i, when);
     assert.equal(await page.locator('.feat2:visible a[href="tel:18007997233"]').count(), 1, when);
+    // Dom, Nov 18 2026: Kitchen on YouTube Mon Nov 23 4 PM, Too Small video Wed Nov 25 4 PM. No Sunday 8 PM date.
+    const deck = await page.locator('.feat2:visible .deck').innerText();
+    assert.doesNotMatch(deck, /Sunday, Nov 22|8 PM/i, when);
+    assert.match(deck, /Wednesday, Nov 25, 4 PM Central/i, when);
+    assert.match(deck, /When It Isn.t Your Kitchen[\s\S]*Monday, Nov 23, at 4 PM Central/i, when);
+    assert.doesNotMatch(await page.locator('body').innerText(), /Out tonight at 8 PM/i, when);
     await page.close();
   }
   page = await open('/#thread');
