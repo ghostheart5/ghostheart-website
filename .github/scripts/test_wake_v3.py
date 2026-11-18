@@ -161,3 +161,14 @@ assert support.select_one('a[href="tel:988"]')
 assert 'url("data:' not in site_css
 print('PASS site: 12 pages, campaign page on, one menu, no old-site links, real Mailchimp and order forms, '
       '14 album weeks, only The Heart Wakes songs listed, Films and Blog waiting for The Heart Wakes, Heart Dial without older songs, 16 resources')
+
+# Metricool website counter (Nov 18, 2026): every main page must load it. The Nov 11 home page dropped it
+# and Metricool recorded 0 visits from Nov 15. A page counts when it loads one of the three loaders.
+METRICOOL_LOADERS = ('/assets/shared/ghostheart-metricool.js', 'assets/shared/ghostheart-world.js', '/assets/wake-v3/site.js')
+METRICOOL_HASH = "hash: '9e25430c6db07385d4e58579695b9e8b'"
+for loader in ('assets/shared/ghostheart-metricool.js', 'assets/shared/ghostheart-world.js', 'assets/wake-v3/site.js'):
+    assert METRICOOL_HASH in (ROOT / loader).read_text(encoding='utf-8'), f'{loader}: Metricool brand hash missing'
+for relative in PAGES:
+    srcs = [s.get('src', '') for s in page(relative).find_all('script')]
+    assert any(src.endswith(l.lstrip('/')) for src in srcs for l in METRICOOL_LOADERS), f'{relative}: no Metricool website counter'
+print('Metricool website counter on every main page.')
