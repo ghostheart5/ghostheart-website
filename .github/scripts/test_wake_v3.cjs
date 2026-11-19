@@ -49,9 +49,10 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   await page.locator('#v-vault').waitFor();
   assert.equal(await page.locator('#albums .trk').count(), 2, 'only The Heart Wakes songs');
   await page.click('header.top a[href="#live"]');
-  await page.fill('#fire-in', 'old weight');
-  await page.press('#fire-in', 'Enter');
-  assert.equal(await page.locator('#said').innerText(), 'old weight');
+  // Sunday Live is Words From the Heart (Dom, Nov 19 2026); the old fire box is gone.
+  await page.locator('#v-live').waitFor();
+  assert.match(await page.locator('#v-live h2').innerText(), /Words from\s+the heart/i);
+  assert.equal(await page.locator('#fire-in').count(), 0);
   await page.click('header.top a[href="#merch"]');
   assert.equal(await page.locator('#v-merch .m-card').count(), 5);
   assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);

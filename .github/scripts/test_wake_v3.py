@@ -77,9 +77,9 @@ for word in ('prototype', 'Prototype'):
     assert word not in site_js.split('\n', 1)[1], word
 
 home = page('index.html')
-# Protected by GhostHeart home (Dom, Nov 11 2026): one form, the Silver Thread signup; the fire box sends nothing.
+# Protected by GhostHeart home (Dom, Nov 11 2026): one form, the Silver Thread signup. Nov 19 2026: the fire box is gone; the Sunday Live is Words From the Heart.
 assert [f.get('id') for f in home.select('form')] == ['join'] and home.select_one('#thread form.js-thread')
-assert home.select_one('#q-text') and home.select_one('canvas#living') and home.select_one('#fire-in')
+assert home.select_one('#q-text') and home.select_one('canvas#living') and not home.select_one('#fire-in')
 assert home.select_one('#join-the-signal') and home.select_one('#home')  # old links still land on the home page
 for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
     assert home.select_one('#' + view), view
