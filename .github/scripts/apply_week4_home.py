@@ -38,7 +38,7 @@ CHANNEL = 'https://www.youtube.com/@GhostHeart-M95RTK'
 VIDEO_URL = ''
 VIDEO_AT = '2026-11-30 16:00'
 # Also this week: The World Didn't Get the Chance on YouTube, Wed, Dec 2, 4 PM Central. False drops the line.
-WORLD_LINE = True
+WORLD_LINE = False  # Dom, Nov 19 2026 7:01 AM CT: "Leave grief week to only have why didnt ypu call"
 WORLD_URL = ''
 WORLD_AT = '2026-12-02 16:00'
 WHEN = 'Grief Awareness Week · Music video Monday, Nov 30, 4 PM Central'
