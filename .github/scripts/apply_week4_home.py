@@ -15,7 +15,7 @@ Runs after apply_week3_home.py in build_site.py, before Google Analytics and the
   YouTube Wednesday, Dec 2, 4 PM Central. Both buttons go to the channel until VIDEO_URL / WORLD_URL are set.
 - Care rules (plan v02): nothing graphic (no method, no scene, no note), no blame, no lyrics quoted, no jokes.
   Plain words only ("losing a friend to suicide"), and the 988 line is on the section.
-  The two lines about the song are DRAFTED from Dom's own words above and WAIT FOR DOM'S YES. Nothing says
+  The two lines about the song: Dom picked the softer wording, Nov 18 2026, 6:36 PM CT. Nothing says
   the song is Dom's own story. The sprayline is the plan's approved Monday card line.
 - Support line: 988 Suicide & Crisis Lifeline (call or text 988, chat), 911, same as Find Support.
 - Home title and share card name Week 4 from the merge, so merge close to Sunday, Nov 29 (like Week 3).
@@ -43,8 +43,8 @@ WORLD_AT = '2026-12-02 16:00'
 WHEN = 'Grief Awareness Week · Music video Monday, Nov 30, 4 PM Central'
 WHEN_OUT = 'Grief Awareness Week · Music video out now'
 
-WHY = ('Why Didn\u2019t You Call is a song from GhostHeart Studios about losing a friend to suicide, and the call '
-       'that never came. It is for everyone still carrying that question, and a reminder to reach out and to pick up.')
+WHY = ('Why Didn\u2019t You Call is a song from GhostHeart Studios about losing a friend to suicide, and the questions '
+       'it leaves behind. It is for everyone still carrying them, and a reminder to reach out and to pick up.')
 
 FLIP = ('' if not VIDEO_URL else
         '  if(now>="' + VIDEO_AT + '"){var v=document.querySelector("[data-week4-video]");if(v){v.href="' + VIDEO_URL
