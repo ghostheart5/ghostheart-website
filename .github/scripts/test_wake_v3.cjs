@@ -82,6 +82,22 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     assert.doesNotMatch(await page.locator('body').innerText(), /Out tonight at 8 PM/i, when);
     await page.close();
   }
+  // Week 4 (Dom, Nov 18 2026, apply_week4_home.py): Grief Awareness Week, Why Didn't You Call, from 7 PM Central Sun Nov 29.
+  for (const [when, title] of [['2026-11-30T00:59:00Z', /Too Small/i], ['2026-11-30T01:00:00Z', /Why Didn.t You Call/i],
+                               ['2026-12-02T23:00:00Z', /Why Didn.t You Call/i]]) {
+    page = await open('/', when);
+    assert.equal(await page.locator('.feat2:visible').count(), 1, when);
+    assert.match(await page.locator('.feat2:visible .deck h3').innerText(), title, when);
+    if (String(title).includes('Call')) {
+      assert.equal(await page.locator('.feat2:visible a[href="tel:988"]').count(), 1, when);
+      assert.equal(await page.locator('.feat2:visible a[href="sms:988"]').count(), 1, when);
+      const deck = await page.locator('.feat2:visible .deck').innerText();
+      assert.match(deck, /Monday, Nov 30, 4 PM Central/i, when);
+      assert.match(deck, /The World Didn.t Get the Chance[\s\S]*Wednesday, Dec 2, at 4 PM Central/i, when);
+      assert.doesNotMatch(await page.locator('body').innerText(), /I Can.t/i, when);
+    }
+    await page.close();
+  }
   page = await open('/#thread');
   assert.equal(await page.locator('#v-home').isVisible(), true, 'old /#thread links land on the home page');
   await page.close();
