@@ -76,7 +76,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /Too Small/i, when);
     assert.equal(await page.locator('.feat2:visible a[href="tel:18007997233"]').count(), 1, when);
     assert.equal(await page.locator('[data-week3-song]').getAttribute('href'),
-      when < '2026-11-25T22:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=Bt00MSaXM3o', when);
+      when < '2026-11-25T22:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=UTvuIgq-AWI', when);
     // Dom, Nov 18 2026: Kitchen on YouTube Mon Nov 23 4 PM, Too Small video Wed Nov 25 4 PM. No Sunday 8 PM date.
     const deck = await page.locator('.feat2:visible .deck').innerText();
     assert.doesNotMatch(deck, /Sunday, Nov 22|8 PM/i, when);

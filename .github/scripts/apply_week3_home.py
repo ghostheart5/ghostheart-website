@@ -42,7 +42,7 @@ SWITCH = '2026-11-22 19:00'  # Central
 CHANNEL = 'https://www.youtube.com/@GhostHeart-M95RTK'
 # Empty until there is a public link for the Too Small music video. Then set it and rebuild; at SONG_AT (Central)
 # the button flips to the video and the line under the title says the video is out.
-SONG_URL = 'https://www.youtube.com/watch?v=Bt00MSaXM3o'  # scheduled public Wed, Nov 25, 4 PM Central (Nov 18)
+SONG_URL = 'https://www.youtube.com/watch?v=UTvuIgq-AWI'  # effects version, scheduled public Wed, Nov 25, 4 PM Central (Nov 19; old Bt00 id now private)
 SONG_AT = '2026-11-25 16:00'  # Too Small music video on YouTube, Wed, Nov 25, 4 PM Central (Dom, Nov 18)
 # Also this week: When It Isn't Your Kitchen on YouTube, Mon, Nov 23, 4 PM Central (Dom, Nov 18).
 KITCHEN_LINE = True
