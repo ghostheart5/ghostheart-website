@@ -69,17 +69,36 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     await page.close();
   }
   // Week 3 (Dom, Nov 16 2026, apply_week3_home.py): Too Small takes over at 7 PM Central on Sunday, Nov 22.
-  for (const when of ['2026-11-23T01:00:00Z', '2026-11-23T02:30:00Z', '2026-11-26T18:00:00Z']) {
+  for (const when of ['2026-11-23T01:00:00Z', '2026-11-23T02:30:00Z', '2026-11-25T21:59:00Z', '2026-11-25T22:00:00Z', '2026-11-26T18:00:00Z']) {
     page = await open('/', when);
     assert.equal(await page.locator('.feat2:visible').count(), 1, when);
     assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /Too Small/i, when);
     assert.equal(await page.locator('.feat2:visible a[href="tel:18007997233"]').count(), 1, when);
+    assert.equal(await page.locator('[data-week3-song]').getAttribute('href'),
+      when < '2026-11-25T22:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=Bt00MSaXM3o', when);
     // Dom, Nov 18 2026: Kitchen on YouTube Mon Nov 23 4 PM, Too Small video Wed Nov 25 4 PM. No Sunday 8 PM date.
     const deck = await page.locator('.feat2:visible .deck').innerText();
     assert.doesNotMatch(deck, /Sunday, Nov 22|8 PM/i, when);
-    assert.match(deck, /Wednesday, Nov 25, 4 PM Central/i, when);
+    assert.match(deck, when < '2026-11-25T22:00:00Z' ? /Wednesday, Nov 25, 4 PM Central/i : /Music video out now/i, when);
     assert.match(deck, /When It Isn.t Your Kitchen[\s\S]*Monday, Nov 23, at 4 PM Central/i, when);
     assert.doesNotMatch(await page.locator('body').innerText(), /Out tonight at 8 PM/i, when);
+    await page.close();
+  }
+  // Week 4 (Dom, Nov 18 2026, apply_week4_home.py): Grief Awareness Week, Why Didn't You Call, from 7 PM Central Sun Nov 29.
+  for (const [when, title] of [['2026-11-30T00:59:00Z', /Too Small/i], ['2026-11-30T01:00:00Z', /Why Didn.t You Call/i],
+                               ['2026-12-02T23:00:00Z', /Why Didn.t You Call/i]]) {
+    page = await open('/', when);
+    assert.equal(await page.locator('.feat2:visible').count(), 1, when);
+    assert.match(await page.locator('.feat2:visible .deck h3').innerText(), title, when);
+    if (String(title).includes('Call')) {
+      assert.equal(await page.locator('.feat2:visible a[href="tel:988"]').count(), 1, when);
+      assert.equal(await page.locator('.feat2:visible a[href="sms:988"]').count(), 1, when);
+      const deck = await page.locator('.feat2:visible .deck').innerText();
+      assert.match(deck, /Monday, Nov 30, 4 PM Central/i, when);
+      assert.match(deck, /The World Didn.t Get the Chance[\s\S]*Wednesday, Dec 2, at 4 PM Central/i, when);
+      assert.doesNotMatch(await page.locator('body').innerText(), /I Can.t/i, when);
+      assert.match(await page.title(), /Why Didn.t You Call/, when);
+    }
     await page.close();
   }
   page = await open('/#thread');
