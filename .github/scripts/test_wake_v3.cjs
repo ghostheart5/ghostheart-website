@@ -96,7 +96,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
       assert.equal(await page.locator('.feat2:visible a[href="sms:988"]').count(), 1, when);
       const deck = await page.locator('.feat2:visible .deck').innerText();
       assert.match(deck, /Monday, Nov 30, 4 PM Central/i, when);
-      assert.match(deck, /The World Didn.t Get the Chance[\s\S]*Wednesday, Dec 2, at 4 PM Central/i, when);
+      assert.doesNotMatch(await page.locator('body').innerText(), /Get the Chance/i, when); // cancelled (Dom, Nov 19)
       assert.doesNotMatch(await page.locator('body').innerText(), /I Can.t/i, when);
       assert.match(await page.title(), /Why Didn.t You Call/, when);
     }
