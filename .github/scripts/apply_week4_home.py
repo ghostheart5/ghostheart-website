@@ -18,11 +18,12 @@ Runs after apply_week3_home.py in build_site.py, before Google Analytics and the
   The two lines about the song: Dom picked the softer wording, Nov 18 2026, 6:36 PM CT. Nothing says
   the song is Dom's own story. The sprayline is the plan's approved Monday card line.
 - Support line: 988 Suicide & Crisis Lifeline (call or text 988, chat), 911, same as Find Support.
-- Home title and share card name Week 4 from the merge, so merge close to Sunday, Nov 29 (like Week 3).
+- Home title and share card are NOT changed by this script, so it can be merged any time before Sunday (the Week 3
+  page keeps its own title and share card until then). At the switch, the browser tab title changes by itself.
+  The share card (meta tags) moves to Week 4 in a small follow-up change on Sunday, Nov 29.
 
 To take it down later, remove this script's line from build_site.py and rebuild.
 """
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -58,6 +59,8 @@ WORLD = ('' if not WORLD_LINE else
          '\n          <p class="also2"><span class="mono">Also this week</span><b>The World Didn\u2019t Get the Chance</b> comes to '
          'YouTube on Wednesday, Dec 2, at 4 PM Central. <a href="' + CHANNEL + '" target="_blank" rel="noopener" '
          'data-week4-world>GhostHeart on YouTube \u2197</a></p>')
+
+TITLE = 'GhostHeart | Why Didn\u2019t You Call · Wake the Heart Week 4'
 
 WEEK4 = MARK + '''
 <style>
@@ -95,14 +98,13 @@ WEEK4 = MARK + '''
   try{var p={};new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});now=p.year+"-"+p.month+"-"+p.day+" "+p.hour+":"+p.minute}catch(e){now=new Date(Date.now()-6*36e5).toISOString().slice(0,16).replace("T"," ")}
   if(now<at)return;
   [].forEach.call(document.querySelectorAll('section.feat2[data-week]'),function(s){s.hidden=s.getAttribute("data-week")!=="4"});
+  document.title="''' + TITLE + '''";
 ''' + FLIP + '''})();
 </script>
 '''
 
 AFTER = '\n<section class="quote2 lit">'
 
-TITLE = 'GhostHeart | Why Didn\u2019t You Call · Wake the Heart Week 4'
-DESC = WHY
 
 JS_SWAPS = [
     ('{nm:"I Can\u2019t",up:"2026-11-29",a:"2026-11-30",b:"2026-12-06"}',
@@ -121,13 +123,9 @@ def main() -> None:
         i = t.index('data-week="3"')
         j = t.index(AFTER, i)
         t = t[:j] + '\n' + WEEK4 + t[j:]
-    t = re.sub(r'<title>[^<]*</title>', f'<title>{TITLE}</title>', t, count=1)
-    for attr, value in (('property="og:title"', TITLE), ('name="twitter:title"', TITLE), ('name="description"', DESC),
-                        ('property="og:description"', DESC), ('name="twitter:description"', DESC)):
-        t = re.sub(r'<meta ' + re.escape(attr) + r' content="[^"]*"', f'<meta {attr} content="{value}"', t, count=1)
     if t != s:
         HOME.write_text(t, encoding='utf-8')
-    assert t.count(MARK) == 1 and t.count('data-week="4"') == 1 and f'<title>{TITLE}</title>' in t
+    assert t.count(MARK) == 1 and t.count('data-week="4"') == 1 and 'Week 3</title>' in t
     assert t.index('data-week="3"') < t.index('data-week="4"')
     assert t.count('<h1') == 1
     week4 = t[t.index(MARK):t.index('</script>', t.index(MARK))]
