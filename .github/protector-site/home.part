@@ -537,8 +537,8 @@ section.fire2{padding-block:clamp(18px,2.4vw,28px)!important}
     <canvas class="embers" aria-hidden="true"></canvas>
     <div class="wrap"><div class="stack fire-stack rv">
       <p class="mono"><b>Sundays</b> · live on TikTok</p>
-      <h2 class="fire-h"><span class="chrome">Come to</span> <span class="tag fire">the fire.</span></h2>
-      <a class="btn" href="#live">Come to the fire</a>
+      <h2 class="fire-h"><span class="chrome">Words from</span> <span class="tag fire">the heart.</span></h2>
+      <a class="btn" href="#live">Words from the heart</a>
     </div></div>
   </section>
   <div class="hazard red" aria-hidden="true"></div>
@@ -549,7 +549,7 @@ section.fire2{padding-block:clamp(18px,2.4vw,28px)!important}
         <h2 class="seat-h"><span class="throw">Take a seat.</span><br><span class="tag">You’re welcome here.</span></h2>
         <p class="mono"><b>The Silver Thread</b> · add yours</p>
         <form class="field js-thread" id="join" style="width:100%" action="https://myghostheart.us22.list-manage.com/subscribe/post?u=a7ab330423f3b936c48b8d8ba&amp;id=880e8056a6&amp;f_id=00bec2e1f0" method="post"><label for="join-email" class="sr">Email address</label><input id="join-email" name="EMAIL" type="email" inputmode="email" maxlength="254" placeholder="Your email" autocomplete="email" required><div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_a7ab330423f3b936c48b8d8ba_880e8056a6" tabindex="-1" value="" autocomplete="off"></div><button class="btn" type="submit">Pull up a seat</button></form>
-        <p class="note" id="join-msg">Every person who takes a seat adds a silver thread to the heart. Email only. New songs, new work from the studio, and every Sunday at the fire. Leave anytime.</p>
+        <p class="note" id="join-msg">Every person who takes a seat adds a silver thread to the heart. Email only. New songs, new work from the studio, and every Sunday Live. Leave anytime.</p>
       </div>
       <div class="seat-side rv"><div class="heartbox2"><canvas id="living" role="img" aria-label="A cracked red heart bound in silver, with a silver thread running in from each person who joins"></canvas></div><div class="triad"><div class="r"><b>Red</b>is the feeling.</div><div class="k"><b>Black</b>is the unknown.</div><div class="s"><b>Silver</b>is the connection.</div></div></div>
     </div></div>
@@ -617,19 +617,13 @@ section.fire2{padding-block:clamp(18px,2.4vw,28px)!important}
 <div class="view" id="v-live" hidden><span id="live"></span>
   <section class="firebg"><div class="wrap"><div class="stack">
     <div class="row"><p class="mono"><b>Sundays</b> · 10 AM Central · TikTok</p></div>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Come to</span><br><span class="tag fire" data-drip>the fire.</span></h2>
-    <p class="lede">Bring a thought, a question, a lesson, or something you’re ready to let go of. Come to listen or join in.</p>
+    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Words from</span><br><span class="tag fire" data-drip>the heart.</span></h2>
+    <p class="lede">An hour with GhostHeart’s own picture quotes, from the hard parts, to strength, to hope. Come to listen or join in.</p>
     <ol class="steps" style="width:100%">
-      <li><span class="n">1</span><h3>Bring it</h3><p>Drop a thought, a question, or a lesson in the comments. A topic is enough. You never have to share more than you want to.</p></li>
-      <li><span class="n">2</span><h3>We talk</h3><p>I pick a few, and we talk them through, one at a time.</p></li>
-      <li><span class="n">3</span><h3>Let it go</h3><p>If it’s something you’re done carrying, we throw it into the fire together. It’s a symbol, and it’s yours.</p></li>
+      <li><span class="n">1</span><h3>One picture</h3><p>One picture quote at a time. Take a moment with it before anything is said.</p></li>
+      <li><span class="n">2</span><h3>The story</h3><p>The words are read slowly, followed by the story behind them: what made them, and what they mean.</p></li>
+      <li><span class="n">3</span><h3>Your turn</h3><p>One question for the comments, with time to answer. You never have to share more than you want to.</p></li>
     </ol>
-    <div class="pit" style="width:100%">
-      <div class="air"><span class="said" id="said" aria-live="polite"></span></div>
-      <span class="scrawl" style="position:relative">try it. what are you ready to let go of?</span>
-      <div class="field" id="fire" role="group" aria-label="Throw something into the fire"><label for="fire-in" class="sr">Something to let go of</label><input id="fire-in" type="text" maxlength="60" placeholder="Type it here" autocomplete="off" enterkeyhint="done"><button class="btn" type="button" id="fire-go">Throw it in</button></div>
-      <p class="note" style="position:relative">Nothing you type is saved or sent anywhere. It burns and it’s gone.</p>
-    </div>
     <p class="note" style="max-width:70ch">The next live date shows here only once it’s confirmed. This is a creative community conversation, not professional care. If you need more than a song can give, <a href="/GhostHeart_Resources.html">Find Support</a> is here.</p>
     <div class="row"><a class="btn ghost" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a></div>
   </div></div></section>
@@ -819,7 +813,7 @@ function route(){var h=(location.hash||"").slice(1),spot=VIEWS.indexOf(h)<0&&h?d
   function heartHTML(cls){return '<div class="heartfx '+cls+'" aria-hidden="true">'+[1,2,3].map(function(n){return '<svg class="ring r'+n+'" viewBox="0 0 100 92"><path d="'+HP+'"/></svg>'}).join("")+'<img class="core" src="'+HEART+'" alt=""></div>'}
   function strip(words){var one=words.map(function(w){return '<span>'+w+'</span><img class="tkh" src="'+HEART+'" alt="">'}).join("");
     return '<div class="pagefx" aria-hidden="true"><div class="ekg"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="base" d="'+D+'"/><path class="run" pathLength="1" d="'+D+'"/><path class="run r2" pathLength="1" d="'+D+'"/></svg></div><div class="ticker red2"><div>'+one+one+'</div></div></div>'}
-  var WORDS={vault:["THE VAULT","EVERY ALBUM","EVERY SONG","PRESS PLAY","TURN IT UP"],story:["BEHIND THE SCARS","NOT ONE WOUND","NOT ONE LABEL","STILL HERE"],live:["COME TO THE FIRE","SUNDAYS","LIVE ON TIKTOK","SIT DOWN","STAY A WHILE"],
+  var WORDS={vault:["THE VAULT","EVERY ALBUM","EVERY SONG","PRESS PLAY","TURN IT UP"],story:["BEHIND THE SCARS","NOT ONE WOUND","NOT ONE LABEL","STILL HERE"],live:["WORDS FROM THE HEART","SUNDAYS","LIVE ON TIKTOK","SIT DOWN","STAY A WHILE"],
     work:["HOW CAN I HELP","WORDS","DOCUMENTS","SLIDES","A SONG FROM YOUR STORY"],projects:["BUILD SOMETHING THAT HELPS","AXIOMARA","SHADOW FIRE","DEAL VECTOR","MAKE IT HUMAN"],resources:["YOU’RE NOT ALONE","CALL OR TEXT 988","YOU MATTER","STILL HERE"]};
   function glitch(root){var h=root.querySelector(".bigtitle .chrome");if(h){h.classList.add("glitch");h.dataset.text=h.textContent}}
   var watch=[];
@@ -864,10 +858,7 @@ function route(){var h=(location.hash||"").slice(1),spot=VIEWS.indexOf(h)<0&&h?d
 
 addEventListener("hashchange",route);route();
 
-/* ---- forms: the seat opens Mailchimp in a new tab to finish joining; the fire sends nothing ---- */
+/* ---- forms: the seat opens Mailchimp in a new tab to finish joining ---- */
 $("#join").addEventListener("submit",function(){$("#join-msg").textContent="Opening Mailchimp to finish joining. Thank you for taking a seat."});
-function burn(){var i=$("#fire-in"),s=$("#said"),v=i.value.trim();if(!v)return;
-  s.classList.remove("burn");s.textContent=v;void s.offsetWidth;s.classList.add("burn");i.value=""}
-$("#fire-go").addEventListener("click",burn);$("#fire-in").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();burn()}});
 })();
 </script>
