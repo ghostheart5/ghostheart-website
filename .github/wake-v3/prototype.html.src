@@ -840,6 +840,7 @@ details.more table{font-size:14px}
       <div class="song-opt panel">
         <p class="mono" style="margin:0 0 4px">A song from your story</p>
         <p style="margin:0;color:var(--silver)">I also write custom songs for people, memories, and occasions that matter to you.</p>
+        <p class="note" style="margin:8px 0 0">Hear one I made: <a href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">To Those Who Served ↗</a>. I wrote it, produced it and made its music video in one week.</p>
         <details class="more">
           <summary>Find out about a custom song</summary>
           <ol class="mini-steps">
@@ -848,7 +849,6 @@ details.more table{font-size:14px}
             <li><b>Love it? Pay $50.</b> Pay through Stripe. You owe nothing until you choose the full song.</li>
             <li><b>Your song in 7 days.</b> The finished song, the lyrics as a keepsake, and one small fix if you need it.</li>
           </ol>
-          <p class="note">Christmas songs: order by Sunday, Dec 13 for delivery by Sunday, Dec 20.</p>
           <form class="f js-order" novalidate>
             <label for="o-who">Who is the song for?<input id="o-who" type="text"></label>
             <label for="o-occ">What’s the occasion?<input id="o-occ" type="text"></label>
