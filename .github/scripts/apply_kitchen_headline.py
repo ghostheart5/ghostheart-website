@@ -14,6 +14,8 @@ from html import escape
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP = ('.github', '.git', 'node_modules', 'apps')
+# Support pages stay calm: no promo strip above the crisis lines (Checker note, Nov 20).
+CALM = ('GhostHeart_Resources.html', 'here-to-help/index.html')
 
 SHOW = True
 CHANNEL = 'https://www.youtube.com/@GhostHeart-M95RTK'
@@ -47,9 +49,10 @@ def main() -> None:
         if '</head>' not in old:
             continue
         new = OLD_TAG.sub('', old)  # settings may have changed since the last build: always write a fresh tag
-        if SHOW:
+        show = SHOW and rel not in CALM
+        if show:
             new = new.replace('</head>', t + '</head>', 1)
-        assert new.count(f'id="{TAG_ID}"') == (1 if SHOW else 0), rel
+        assert new.count(f'id="{TAG_ID}"') == (1 if show else 0), rel
         if new != old:
             p.write_text(new, encoding='utf-8')
             n += 1
