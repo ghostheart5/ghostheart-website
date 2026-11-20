@@ -840,7 +840,7 @@ details.more table{font-size:14px}
       <div class="song-opt panel">
         <p class="mono" style="margin:0 0 4px">A song from your story</p>
         <p style="margin:0;color:var(--silver)">I also write custom songs for people, memories, and occasions that matter to you.</p>
-        <p class="note" style="margin:8px 0 0">Hear one I made: <a href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">To Those Who Served ↗</a>. I wrote it, produced it and made its music video in one week.</p>
+        <p class="note" style="margin:8px 0 0">Hear one I made: <a href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">To Those Who Served ↗</a>. I wrote it, produced it and made its music video.</p>
         <details class="more">
           <summary>Find out about a custom song</summary>
           <ol class="mini-steps">
