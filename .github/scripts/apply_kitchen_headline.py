@@ -25,7 +25,8 @@ UNTIL = '2026-12-11 00:00'
 WHEN = 'Out Monday, Nov 23 · 4 PM Central'
 
 TAG_ID = 'kitchen-strip-js'
-OLD_TAG = re.compile(r'<script defer id="' + TAG_ID + r'"[^>]*></script>')
+# Any earlier copy of the tag, whatever its attribute order (later build steps re-write tags and sort attributes).
+OLD_TAG = re.compile(r'<script\b[^>]*\bid="' + TAG_ID + r'"[^>]*>\s*</script>')
 
 
 def tag() -> str:
