@@ -10,6 +10,10 @@ What Dom asked for and approved on the local concept (Nov 21 and 22):
 - "remove the square image of the heart wakes and put effects on the big ghostheart scars wake the
   heart" and "can you zoom out" -> the Scars Wakes the Heart picture is shown whole, with a wake-up
   on load, a heartbeat glow, rain and lightning. People who turn motion off get the still picture.
+  Then "the top picture is huge" -> it is 600px wide at most, inside the normal picture limit.
+- To Those Who Served on the front page's merch row: "keep it off". The words that had gone
+  missing from Home (the Heart Wakes line, The Silver Thread and its heart, the paint wall, the
+  silver and black sliding bands): "fix it" -> they show again.
 - "now fix the banner where the tabs are" -> bigger logo, slanted tabs, a red line under the bar.
 - "normal size website" -> one normal-width column, less scrolling.
 
@@ -24,8 +28,7 @@ Silver Thread sign-up, the song player, and the Vault / About / Live / Merch vie
 The size caps stylesheet is still the last stylesheet link, but this <style> block comes after it in
 the page and a few of its rules are strong enough to beat a cap, so the size guard
 (test_size_caps.cjs), which measures the finished page, is what protects the sizes on Home.
-The one limit this change raises is the top picture's height: test_size_caps.cjs gives that picture
-its own limit, and raising it needs Dom's yes (he merges this draft or not).
+This change raises no size limit: test_size_caps.cjs is the same as before.
 
 To go back to the old home page, remove this script's line from build_site.py and rebuild.
 """
