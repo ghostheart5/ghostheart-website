@@ -1395,7 +1395,7 @@ html body #v-merch h2.bigtitle span::before,html body #v-merch h2.bigtitle span:
 html body #v-merch .stack>.lede:not(#_){grid-column:2;grid-row:1/span 2;align-self:end;font:400 17px/1.5 var(--nh-body);color:#d6d6d4;max-width:46ch;margin:0}
 html body #v-merch .stack>.row{grid-column:1/-1;display:flex;margin:22px 0 0}
 html body #v-merch .btn:not(#_){display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;min-height:0;box-shadow:none;text-shadow:none;transform:none;filter:none;clip-path:none;border-radius:0}
-html body #v-merch .btn:hover:not(#_){background:var(--nh-hot);border-color:var(--nh-hot)}
+html body #v-merch .btn:hover:not(#_){background:#A50D26;border-color:var(--nh-white)}
 html body #v-merch .btn:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
 html body #v-merch .stack>.note{grid-column:1/-1;font:400 14.5px/1.55 var(--nh-body);color:var(--nh-silver);margin:12px 0 40px;max-width:74ch}
 
@@ -1420,14 +1420,17 @@ html body #v-merch .m-list a i{font-style:normal;color:var(--nh-hot)}
 @media (max-width:1000px){
   html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+@media (max-width:560px){
+  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:820px){
   html body #v-merch .stack:not(#_){grid-template-columns:minmax(0,1fr);padding-top:16px}
   html body #v-merch .stack>.lede:not(#_){grid-column:1;grid-row:auto;margin-top:10px}
-  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;padding-top:16px}
+  html body #v-merch .m-cards:not(#_){gap:10px;margin-top:16px;padding-top:16px}
+  html body #v-merch .m-body h2:not(#_):not(#__){font-size:20px!important}
   html body #v-merch .m-body{padding:10px 10px 12px;gap:6px}
   html body #v-merch .m-body>p{font-size:14px}
-  html body #v-merch .m-list a:not(#_){grid-template-columns:minmax(0,1fr) auto;font-size:13px;padding:7px 6px;gap:4px}
-  html body #v-merch .m-list a span{overflow-wrap:anywhere}
+  html body #v-merch .m-list a:not(#_){display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;font-size:13px;padding:7px 6px;gap:2px 6px}
   html body #v-merch .m-list a i{display:none}
   html body #v-merch .stack>.note{margin-bottom:28px}
 }
