@@ -1,0 +1,98 @@
+<main id="main">
+<div class="view" data-view="projects">
+  <section class="np-lead nw-wrap" aria-labelledby="np-title">
+    <div>
+      <p class="np-kicker">GhostHeart Studios / Projects</p>
+      <h1 id="np-title"><span>Build something</span> <span class="nw-spray">that helps.</span></h1>
+    </div>
+    <div>
+      <p class="nw-say">The songs make room for a feeling. These projects ask what a person might need next: a clearer choice, a private place to reflect, or a way to create.</p>
+      <p class="np-own">Real people. Their own words. Their own next step.</p>
+    </div>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="np-builds nw-wrap" aria-label="The apps">
+    <article class="np-build done" id="axiomara">
+      <div>
+        <span class="np-state">Finished</span>
+        <h2>Axiomara.</h2>
+        <p class="np-kind">A tool for the next move. Available on Google Play.</p>
+        <p class="np-hook">When everything feels urgent, find one move you can actually make.</p>
+      </div>
+      <div class="np-body">
+        <p>Axiomara brings goals, tasks, time, energy, notes, and the context you choose into planning you can inspect. Ask what to do next, make the step smaller, or compare paths before you decide.</p>
+        <p>It is designed to help a crowded day feel more manageable and to leave the choice in your hands.</p>
+        <ul class="np-three"><li><b>Bring the reality</b>Goals. Time. Energy.</li><li><b>See the reason</b>A move you can inspect.</li><li><b>Keep the control</b>Accept it. Change it. Choose again.</li></ul>
+        <a class="nw-btn" href="https://play.google.com/store/apps/details?id=com.ghostheart5.chronospark" rel="noopener" target="_blank">Explore Axiomara on Google Play ↗</a>
+        <p class="np-fine">A planning and decision tool for adults; it does not replace professional or emergency support.</p>
+      </div>
+    </article>
+
+    <article class="np-build soon">
+      <div>
+        <span class="np-state">In testing</span>
+        <h2>Deal Vector.</h2>
+        <p class="np-kind">Run the numbers first.</p>
+        <p class="np-hook">An Android calculator for knowing what is left after the costs, before you commit to a resale deal.</p>
+      </div>
+      <div class="np-body">
+        <p>Enter your expected sale price, what you paid and shipping. Offline USD estimates, before selling fees.</p>
+        <ul class="np-three words"><li><b>Price</b></li><li><b>Costs</b></li><li><b>Decide</b></li></ul>
+        <p class="np-fine">Public release and availability are still pending. No download is offered yet.</p>
+      </div>
+    </article>
+
+    <article class="np-build">
+      <div>
+        <span class="np-state">In the works</span>
+        <h2>Shadow Fire.</h2>
+        <p class="np-kind">A space for your own words.</p>
+        <p class="np-hook">A private place to notice what you carry and decide what belongs in your story.</p>
+      </div>
+      <div class="np-body">
+        <p>Shadow Fire is being built around writing and guided reflection, a Life Book for the pages someone chooses to keep, and Vault controls for reviewing their own records. The aim is to help people see patterns and move at their own pace, with their words and choices under their control.</p>
+        <ul class="np-three words"><li><b>Write</b></li><li><b>Reflect</b></li><li><b>Choose</b></li></ul>
+        <p class="np-fine">In development. There is no public download or live service here yet.</p>
+      </div>
+    </article>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="np-more nw-wrap" aria-labelledby="np-more-title">
+    <h2 id="np-more-title">Not just <span class="nw-spray">apps.</span></h2>
+    <p class="nw-say">Music, film and story are projects too. Some are out, one is happening right now, and two are next.</p>
+    <ul>
+      <li class="now"><span class="np-state">Happening now</span><h3>Wake the Heart</h3><p>14 weeks · Nov 9 to Feb 8. Across fourteen weeks, I’m sharing songs about the things we carry, the words we struggle to say, and the moments that remind us we’re still here.</p><a class="np-go" href="/wake-the-heart/">The 14 weeks</a></li>
+      <li class="done"><span class="np-state">Finished</span><h3>To Those Who Served</h3><p>A tribute song and music video, written and produced by GhostHeart Studios.</p><a class="np-go" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">Watch on YouTube ↗</a></li>
+      <li class="done"><span class="np-state">Finished</span><h3>The Man Beneath the Moon</h3><p>Back as a new music video, out since Nov 18.</p><a class="np-go" href="https://www.youtube.com/watch?v=l_ftyUginiA" target="_blank" rel="noopener">Watch on YouTube ↗</a></li>
+      <li><span class="np-state">Next</span><h3>Words from the Heart, the book</h3><p>My picture quotes, and the quotes that touched my heart, gathered into one book.</p><a class="np-go" href="/#live">The Sunday Live</a></li>
+      <li><span class="np-state">Next</span><h3>Behind the Scars, the full story</h3><p>The whole story behind GhostHeart, as a book. The first part is on the site now.</p><a class="np-go" href="/GhostHeart_Story.html">Read the story</a></li>
+    </ul>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="np-next nw-wrap" aria-labelledby="np-next-title">
+    <div>
+      <p class="np-kicker">What could come next</p>
+      <h2 id="np-next-title"><span>Under</span> <span class="nw-spray">construction.</span></h2>
+      <p class="nw-say">GhostHeart Studios is exploring more ways to make, play, and carry a story. These are directions, not announced products or launch dates.</p>
+    </div>
+    <ul class="np-ways">
+      <li><span>Sound</span><b>Music Studio</b>Room to shape sounds and make something that feels like your own.</li>
+      <li><span>Play</span><b>Games</b>Stories and choices you might one day step inside.</li>
+      <li><span>Identity</span><b>Brands</b>Visual worlds and identities built with intention.</li>
+    </ul>
+  </section>
+
+  <section class="np-measure nw-wrap" aria-labelledby="np-measure-title">
+    <p class="np-kicker">The measure</p>
+    <h2 id="np-measure-title"><span>Make it human.</span> <span class="nw-spray">Make it useful.</span></h2>
+    <p class="nw-say">Ambition matters here. So do privacy, clarity, and the freedom to choose what comes next.</p>
+    <div class="np-row"><a class="nw-btn" href="/GhostHeart_Resources.html">Find Support</a><a class="nw-btn ghost" href="/follow/">Stay Connected</a></div>
+  </section>
+</div>
+</main>

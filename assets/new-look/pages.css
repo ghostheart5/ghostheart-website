@@ -1,0 +1,285 @@
+/* The new look for the separate pages in the top bar (Dom, Nov 22, 2026: "make it real").
+   Linked by .github/scripts/apply_new_pages.py on the pages it rebuilds, after the shared
+   site.css and before the size caps stylesheet, so the size caps still have the last word.
+   Same colors, fonts and width as the new Home. Everything is scoped to body.newlook. */
+html body.newlook{--nh-black:#0A0A0A;--nh-panel:#16171A;--nh-line:#2A2C31;--nh-red:#C8102E;--nh-hot:#FF2B3F;--nh-silver:#A8A9AD;--nh-white:#F3F3F1;
+  --nh-title:Anton,"Arial Narrow",Impact,sans-serif;--nh-spray:"Sedgwick Ave Display","Sedgwick Ave",cursive;--nh-body:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--nh-wrap:1120px;
+  background:var(--nh-black);color:var(--nh-white);font:400 16px/1.55 var(--nh-body)}
+html body.newlook::after{display:none}
+
+/* ---------- the bar with the tabs: the same eight tabs as Home ---------- */
+html body.newlook header.top{background:linear-gradient(180deg,#17181b,#0A0A0A 70%);backdrop-filter:none;border-bottom:2px solid var(--nh-red);box-shadow:0 0 22px rgba(200,16,46,.5),0 10px 24px rgba(0,0,0,.6)}
+html body.newlook header.top::after{display:none}
+html body.newlook header.top .wrap{width:min(var(--nh-wrap),100% - 40px);padding:0;gap:18px;min-height:78px}
+html body.newlook header.top .logo img{height:58px;filter:drop-shadow(0 0 10px rgba(200,16,46,.55))}
+html body.newlook header.top .menu-btn{display:none}
+html body.newlook header.top nav.menu{display:flex;position:static;flex-direction:row;flex-wrap:wrap;gap:4px;align-items:center;justify-content:flex-end;background:none;border:0;padding:0}
+/* the shared site.css pins the old menu's text size, spacing and padding with !important, so these need it too */
+html body.newlook header.top nav.menu a{position:relative;isolation:isolate;font:400 18px/1 var(--nh-title);font-size:18px!important;letter-spacing:.04em!important;text-transform:uppercase;text-decoration:none;color:var(--nh-silver);padding:11px 13px!important;border:0}
+html body.newlook header.top nav.menu a::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:transparent;border-bottom:2px solid transparent;transition:background .12s,border-color .12s}
+html body.newlook header.top nav.menu a::after{display:none}
+html body.newlook header.top nav.menu a:hover{color:var(--nh-white)}
+html body.newlook header.top nav.menu a:hover::before{background:#24262b;border-bottom-color:var(--nh-silver)}
+html body.newlook header.top nav.menu a[aria-current="page"]{color:#fff}
+html body.newlook header.top nav.menu a[aria-current="page"]::before{background:var(--nh-red);border-bottom-color:#000}
+html body.newlook header.top nav.menu a.support{color:#fff;margin-left:12px;padding:11px 16px!important}
+html body.newlook header.top nav.menu a.support::before{background:var(--nh-red);box-shadow:0 0 0 2px #000,0 0 0 3px var(--nh-silver),0 0 16px rgba(255,43,63,.55)}
+html body.newlook header.top nav.menu a.support:hover::before{background:var(--nh-hot);border-bottom-color:transparent}
+html body.newlook header.top nav.menu a:focus-visible{outline:2px solid var(--nh-white);outline-offset:2px}
+@media (min-width:1001px){html:has(body.newlook){scroll-padding-top:92px}}
+@media (min-width:1001px) and (max-width:1280px){
+  html body.newlook header.top .wrap{gap:12px;min-height:70px}
+  html body.newlook header.top .logo img{height:46px}
+  html body.newlook header.top nav.menu{gap:2px;flex-wrap:nowrap}
+  html body.newlook header.top nav.menu a{font-size:16px!important;padding:10px 8px!important}
+  html body.newlook header.top nav.menu a.support{margin-left:8px;padding:10px 12px!important}
+}
+@media (max-width:1000px){
+  html body.newlook header.top .wrap{flex-wrap:nowrap;justify-content:flex-start;padding-block:8px;gap:10px;min-height:0;width:100%;padding-inline:14px 0}
+  html body.newlook header.top .logo img{height:38px}
+  html body.newlook header.top nav.menu{flex-wrap:nowrap;justify-content:flex-start;gap:0;overflow-x:auto;scrollbar-width:none;padding:3px 14px 3px 6px}
+  html body.newlook header.top nav.menu::-webkit-scrollbar{display:none}
+  html body.newlook header.top nav.menu a{font-size:15px!important;padding:9px 9px!important;white-space:nowrap}
+  html body.newlook header.top nav.menu a.support{order:-1;margin:0 10px 0 0;padding:9px 12px!important}
+}
+
+/* ---------- the foot of the page ---------- */
+html body.newlook footer{background:#000;border-top:1px solid var(--nh-line);color:var(--nh-silver);font:400 15px/1.5 var(--nh-body);padding-block:32px 40px}
+html body.newlook footer::before{display:none}
+html body.newlook footer .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0}
+html body.newlook footer .foot-h{font:400 15px/1 var(--nh-title);letter-spacing:.06em;text-transform:uppercase;color:var(--nh-white)}
+html body.newlook footer .note{font:400 14px/1.5 var(--nh-body);letter-spacing:0;color:var(--nh-silver)}
+html body.newlook footer a{color:var(--nh-silver)}
+html body.newlook footer a:hover{color:var(--nh-white);text-decoration:underline}
+
+/* ---------- shared pieces ---------- */
+html body.newlook main{overflow-x:clip}
+html body.newlook main section:not(#_){background:none;padding:0;overflow:visible;animation:none}
+html body.newlook main section::before,html body.newlook main section::after{display:none}
+html body.newlook .nw-wrap:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto}
+html body.newlook main :is(h1,h2,h3){font-family:var(--nh-title);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:0;color:var(--nh-white)}
+html body.newlook main p{margin:0}
+html body.newlook .nw-spray{font-family:var(--nh-spray);text-transform:none;letter-spacing:0;color:var(--nh-hot)}
+html body.newlook .nw-say{color:#d6d6d4;max-width:60ch}
+html body.newlook .nw-btn,html body.newlook main .btn:not(#_){display:inline-flex;align-items:center;justify-content:center;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;min-height:0;cursor:pointer;border-radius:0;box-shadow:none;text-shadow:none;clip-path:none;filter:none}
+html body.newlook .nw-btn:hover,html body.newlook main .btn:hover:not(#_){background:var(--nh-hot);border-color:var(--nh-hot)}
+html body.newlook main .btn.ghost:not(#_){background:transparent;border-color:var(--nh-silver);color:var(--nh-white)}
+html body.newlook main .btn.ghost:hover:not(#_){background:var(--nh-white);color:#000}
+html body.newlook main :is(a,button,summary,input,select,textarea):focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
+html body.newlook svg.nw-rule{display:block;width:100%;height:30px;margin:26px 0 0}
+html body.newlook .nw-rule path{fill:none;stroke:var(--nh-red);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px var(--nh-hot))}
+html body.newlook .nw-card{background:var(--nh-panel);border:1px solid var(--nh-line);padding:22px}
+html body.newlook .nw-card h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:12px}
+
+/* forms: the same fields and scripts as before, in the new look */
+html body.newlook main .f{display:grid;gap:12px;padding:0;scroll-margin-top:150px}
+html body.newlook main .f fieldset:disabled{opacity:.6}
+html body.newlook main .f fieldset:disabled :is(input,textarea,select,button){cursor:not-allowed}
+html body.newlook main .f fieldset{border:0;margin:0;padding:0;min-width:0;display:grid;gap:12px}
+html body.newlook main .f label{font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);display:grid;gap:6px}
+html body.newlook main .f :is(input,textarea,select){font:400 16px var(--nh-body);background:#000;color:var(--nh-white);border:2px solid var(--nh-silver);padding:11px 12px;min-height:0;width:100%;border-radius:0}
+html body.newlook main .f textarea{min-height:110px;resize:vertical}
+html body.newlook main .f .btn{justify-self:start}
+html body.newlook main .note{font:400 14.5px/1.55 var(--nh-body);letter-spacing:0;color:var(--nh-silver);margin:0}
+html body.newlook main .note.err{color:#ff8f99}
+html body.newlook main .ok{font:400 15px/1.5 var(--nh-body);background:#1d1f23;box-shadow:none;border:1px solid var(--nh-line);border-left:4px solid var(--nh-red);padding:12px 14px;color:var(--nh-white)}
+html body.newlook main details.more{background:none;padding:0}
+html body.newlook main details.more::before,html body.newlook main details.more::after{display:none}
+html body.newlook main details.more summary{cursor:pointer;font:400 16px/1.2 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;color:var(--nh-white);padding:10px 0}
+html body.newlook main .song-opt details.more summary{color:var(--nh-hot)}
+html body.newlook main table{width:100%;border-collapse:collapse;font:400 15px/1.4 var(--nh-body)}
+html body.newlook main :is(th,td){text-align:left;padding:8px 6px;border-bottom:1px solid var(--nh-line);color:#d6d6d4}
+html body.newlook main th{font:400 14px/1 var(--nh-title);letter-spacing:.06em;text-transform:uppercase;color:var(--nh-silver)}
+html body.newlook main td.p:not(#_){white-space:nowrap;text-align:right;color:var(--nh-white);font:700 15px/1.4 var(--nh-body);background:none;-webkit-text-fill-color:currentColor;filter:none;text-shadow:none}
+
+/* ---------- Work with GhostHeart ---------- */
+html body.newlook .nw-ask{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;padding:34px 0 24px}
+html body.newlook .nw-ask h1{font-size:clamp(38px,5vw,54px)}
+html body.newlook .nw-ask h1 span{display:block}
+html body.newlook .nw-ask h1 .nw-spray{font-size:.95em;line-height:1.05;margin-top:2px}
+html body.newlook .nw-ask .nw-say{font-size:17px;margin-bottom:16px}
+html body.newlook .nw-can{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+html body.newlook .nw-can li{background:var(--nh-panel);border:1px solid var(--nh-line);border-top:4px solid var(--nh-red);padding:14px 16px 16px;color:#d6d6d4;font-size:15px}
+html body.newlook .nw-can b{display:block;font:400 21px/1.1 var(--nh-title);letter-spacing:.02em;text-transform:uppercase;color:var(--nh-white);margin-bottom:6px}
+html body.newlook .nw-shown{padding:34px 0 0}
+html body.newlook .nw-shown h2,html body.newlook .nw-job h2{font-size:clamp(26px,3.2vw,36px)}
+html body.newlook .nw-shown .nw-say{margin-top:8px}
+html body.newlook .nw-shown ul{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+html body.newlook .nw-shown a{display:grid;gap:6px;text-decoration:none;color:var(--nh-white);background:var(--nh-panel);border:1px solid var(--nh-line);padding:10px 10px 14px;height:100%;align-content:start}
+html body.newlook .nw-shown a:hover{border-color:var(--nh-silver)}
+html body.newlook .nw-shown .pic{display:block;background:#fff;border:1px solid var(--nh-line)}
+html body.newlook .nw-shown .pic img{display:block;width:100%;height:auto}
+html body.newlook .nw-shown b{font:400 20px/1.1 var(--nh-title);letter-spacing:.02em;text-transform:uppercase;margin-top:6px}
+html body.newlook .nw-shown small{font:400 14.5px/1.45 var(--nh-body);color:var(--nh-silver)}
+html body.newlook .nw-job{padding:24px 0 0}
+html body.newlook .nw-tag{display:inline-block;position:relative;isolation:isolate;font:400 15px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;color:#fff;padding:8px 12px;margin:0 0 12px 5px}
+html body.newlook .nw-tag::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:var(--nh-red);border-bottom:2px solid #000}
+html body.newlook .nw-sub{color:var(--nh-silver);margin-top:8px}
+html body.newlook .nw-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:34px;margin-top:20px;align-items:start}
+html body.newlook .nw-watch{display:block;text-decoration:none;color:var(--nh-white);background:var(--nh-panel);border:1px solid var(--nh-line);max-width:420px}
+html body.newlook .nw-watch:hover{border-color:var(--nh-silver)}
+html body.newlook .nw-watch img{display:block;width:100%;height:auto;background:#000;margin-inline:auto}
+html body.newlook .nw-watch span{display:block;padding:10px 12px;font:400 16px/1.2 var(--nh-title);letter-spacing:.04em;text-transform:uppercase}
+html body.newlook .nw-job blockquote{margin:16px 0 0;border-left:5px solid var(--nh-red);padding:2px 0 2px 14px;font:400 21px/1.3 var(--nh-spray);color:var(--nh-white)}
+html body.newlook .nw-job h3{font-size:22px;margin:0 0 10px}
+html body.newlook .nw-did{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:8px;color:#d6d6d4}
+html body.newlook .nw-did li{padding-left:16px;border-left:2px solid var(--nh-line)}
+html body.newlook .nw-did b{color:var(--nh-white)}
+html body.newlook .nw-days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;color:var(--nh-silver);font-size:15px}
+html body.newlook .nw-days li{background:var(--nh-panel);border:1px solid var(--nh-line);padding:10px 12px}
+html body.newlook .nw-days b{display:block;font:400 18px/1.1 var(--nh-title);letter-spacing:.03em;text-transform:uppercase;color:var(--nh-white);margin-bottom:4px}
+html body.newlook .nw-week{margin-top:12px;font:400 22px/1.2 var(--nh-spray);color:var(--nh-hot)}
+html body.newlook .nw-tell{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px;align-items:start;padding:26px 0 0}
+html body.newlook .nw-side>p{color:var(--nh-silver)}
+html body.newlook .nw-side .nw-mail{margin:4px 0 16px;font-size:17px}
+html body.newlook .nw-side a{color:var(--nh-white)}
+html body.newlook .nw-song{padding:24px 0 44px}
+html body.newlook .nw-song .song-opt{max-width:none;margin:0;padding:22px}
+html body.newlook .nw-song .nw-card>p{color:#d6d6d4;max-width:70ch;margin-bottom:8px}
+html body.newlook .nw-song a{color:var(--nh-white)}
+html body.newlook .nw-song .mini-steps{margin:8px 0 16px;padding-left:22px;display:grid;gap:6px;color:#d6d6d4;max-width:70ch}
+html body.newlook .nw-song .mini-steps b{color:var(--nh-white)}
+html body.newlook .nw-song form{max-width:640px}
+
+html body.newlook .nw-btn.ghost{background:transparent;border-color:var(--nh-silver);color:var(--nh-white)}
+html body.newlook .nw-btn.ghost:hover{background:var(--nh-white);color:#000;border-color:var(--nh-white)}
+
+/* ---------- Projects ---------- */
+html body.newlook .np-lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;padding:32px 0 0}
+html body.newlook .np-lead h1{font-size:clamp(38px,5vw,54px)}
+html body.newlook :is(.np-lead h1,.np-next h2,.np-measure h2) span{display:block}
+html body.newlook :is(.np-lead h1,.np-next h2,.np-measure h2) .nw-spray{font-size:.95em;line-height:1.05;margin-top:2px}
+html body.newlook .np-kicker{font-size:15px;color:var(--nh-silver);margin-bottom:8px}
+html body.newlook .np-lead .nw-say{font-size:17px}
+html body.newlook .np-own{font:400 22px/1.2 var(--nh-spray);color:var(--nh-white);margin-top:10px}
+html body.newlook .np-builds{display:grid;gap:16px;padding:24px 0 0}
+html body.newlook .np-build{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;background:var(--nh-panel);border:1px solid var(--nh-line);border-left:5px solid var(--nh-silver);padding:22px}
+html body.newlook .np-build.done{border-left-color:var(--nh-red)}
+html body.newlook .np-build.soon{border-left-color:var(--nh-hot)}
+html body.newlook .np-state{display:inline-block;position:relative;isolation:isolate;font:400 15px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;color:#fff;padding:7px 11px;margin:0 0 12px 5px}
+html body.newlook .np-state::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:#24262b;border-bottom:2px solid var(--nh-silver)}
+html body.newlook :is(.done,.now) .np-state::before{background:var(--nh-red);border-bottom-color:#000}
+html body.newlook .soon .np-state::before{border-bottom-color:var(--nh-hot)}
+html body.newlook .np-build h2{font-size:clamp(28px,3.4vw,36px)}
+html body.newlook .np-kind{color:var(--nh-silver);font-size:15px;margin-top:6px}
+html body.newlook .np-hook{font:500 19px/1.35 var(--nh-body);color:var(--nh-white);margin-top:12px}
+html body.newlook .np-body{display:grid;gap:10px;align-content:start;justify-items:start;color:#d6d6d4}
+html body.newlook .np-three{list-style:none;margin:4px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;font-size:14.5px;color:var(--nh-silver)}
+html body.newlook .np-three li{border:1px solid var(--nh-line);padding:10px 12px}
+html body.newlook .np-three b{display:block;font:400 17px/1.1 var(--nh-title);letter-spacing:.03em;text-transform:uppercase;color:var(--nh-white);margin-bottom:4px}
+html body.newlook .np-three.words b{margin:0}
+html body.newlook .np-fine{font-size:14.5px;color:var(--nh-silver)}
+html body.newlook .np-more{padding:24px 0 0}
+html body.newlook :is(.np-more,.np-next,.np-measure) h2{font-size:clamp(26px,3.2vw,36px)}
+html body.newlook .np-more .nw-say{margin-top:8px}
+html body.newlook .np-more ul{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+html body.newlook .np-more li{grid-column:span 2;background:var(--nh-panel);border:1px solid var(--nh-line);border-top:4px solid var(--nh-silver);padding:16px;display:grid;gap:8px;align-content:start;justify-items:start;color:#d6d6d4;font-size:15px}
+html body.newlook .np-more li:nth-child(n+4){grid-column:span 3}
+html body.newlook .np-more li:is(.done,.now){border-top-color:var(--nh-red)}
+html body.newlook .np-more li .np-state{margin-bottom:2px}
+html body.newlook .np-more h3{font-size:23px}
+html body.newlook .np-go{color:var(--nh-white);font:400 15px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--nh-red);padding-bottom:3px;margin-top:4px}
+html body.newlook .np-go:hover{border-bottom-color:var(--nh-white)}
+html body.newlook .np-next{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;align-items:start;padding:24px 0 0}
+html body.newlook .np-next .nw-say{margin-top:10px}
+html body.newlook .np-ways{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:#d6d6d4;font-size:15px}
+html body.newlook .np-ways li{border:1px dashed var(--nh-silver);padding:12px 14px}
+html body.newlook .np-ways span{display:block;font-size:14px;color:var(--nh-silver)}
+html body.newlook .np-ways b{display:block;font:400 20px/1.1 var(--nh-title);letter-spacing:.03em;text-transform:uppercase;color:var(--nh-white);margin:2px 0 4px}
+html body.newlook main section.np-measure:not(#_){margin-top:30px;margin-bottom:44px;background:var(--nh-panel);border:1px solid var(--nh-line);padding-inline:24px}
+html body.newlook .np-measure .nw-say{margin:10px 0 16px}
+html body.newlook .np-row{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:820px){
+  html body.newlook .np-lead,html body.newlook .np-build,html body.newlook .np-next{grid-template-columns:minmax(0,1fr);gap:16px}
+  html body.newlook .np-lead{padding-top:20px}
+  html body.newlook .np-lead h1{font-size:32px}
+  html body.newlook .np-build{padding:16px}
+  html body.newlook .np-build h2{font-size:26px}
+  html body.newlook .np-three{grid-template-columns:minmax(0,1fr)}
+  html body.newlook .np-three.words{grid-template-columns:repeat(3,minmax(0,1fr))}
+  html body.newlook .np-more ul{grid-template-columns:minmax(0,1fr)}
+  html body.newlook .np-more li:not(#_){grid-column:auto}
+  html body.newlook main section.np-measure:not(#_){padding-inline:16px;margin-bottom:28px}
+}
+
+@media (max-width:820px){
+  html body.newlook .nw-ask,html body.newlook .nw-grid,html body.newlook .nw-tell{grid-template-columns:minmax(0,1fr);gap:18px}
+  html body.newlook .nw-ask{padding:20px 0 18px}
+  html body.newlook .nw-ask h1{font-size:32px}
+  html body.newlook .nw-can,html body.newlook .nw-shown ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  html body.newlook .nw-can li{padding:12px}
+  html body.newlook .nw-can b{font-size:18px}
+  html body.newlook .nw-days{grid-template-columns:minmax(0,1fr)}
+  html body.newlook .nw-card{padding:16px}
+  html body.newlook .nw-shown{padding-top:24px}
+  html body.newlook footer .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- pages whose own words and markup are untouched: Find Support and Privacy ---------- */
+html body.newlook main .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0;margin-inline:auto}
+html body.newlook:is([data-page="support"],[data-page="privacy"]) main :is(h1,h2,h3) span:not(#_){background:none;color:inherit;-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;animation:none}
+html body.newlook:is([data-page="support"],[data-page="privacy"]) main :is(h1,h2,h3) span.red:not(#_){color:var(--nh-hot)}
+html body.newlook main .mono{font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver)}
+html body.newlook main .panel{background:var(--nh-panel);border:1px solid var(--nh-line)}
+html body.newlook main .panel::before,html body.newlook main .panel::after{display:none}
+
+/* Find Support */
+html body.newlook[data-page="support"] .pagehead{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.5fr);gap:30px;align-items:end;margin:0 0 14px}
+html body.newlook[data-page="support"] .pagehead p{color:#d6d6d4;font-size:17px}
+html body.newlook[data-page="support"] .crisis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+html body.newlook[data-page="support"] .crisis .panel{padding:18px;border-top:4px solid var(--nh-red)}
+html body.newlook[data-page="support"] .crisis b:not(#_){display:block;font:400 44px/1 var(--nh-title);color:var(--nh-hot);background:none;-webkit-text-fill-color:currentColor}
+html body.newlook[data-page="support"] .crisis b.chrome:not(#_){font-size:34px!important;color:var(--nh-white)}
+html body.newlook[data-page="support"] .crisis p{margin-top:8px;color:#d6d6d4}
+html body.newlook[data-page="support"] .crisis strong:not(#_){color:var(--nh-white)!important}
+html body.newlook[data-page="support"] main a{color:var(--nh-white)}
+html body.newlook[data-page="support"] main .note{margin-top:16px!important}
+html body.newlook[data-page="support"] .res-dir{margin-top:18px;padding-top:0;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot)}
+html body.newlook[data-page="support"] .res-dir>.mono{margin:14px 0 4px!important}
+html body.newlook[data-page="support"] .res-dir>p:not(.mono){color:#d6d6d4!important;margin:8px 0 14px!important}
+html body.newlook[data-page="support"] .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+html body.newlook[data-page="support"] .chip{font:400 15px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;background:transparent;border:1px solid var(--nh-silver);color:var(--nh-white);display:inline-flex;align-items:center;padding:9px 12px;min-height:40px;cursor:pointer;border-radius:0}
+html body.newlook[data-page="support"] .chip:hover{background:#24262b}
+html body.newlook[data-page="support"] .chip.on{background:var(--nh-red);border-color:var(--nh-red);color:#fff}
+html body.newlook[data-page="support"] .res-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+html body.newlook[data-page="support"] .resource{background:var(--nh-panel);border:1px solid var(--nh-line);border-left:4px solid var(--nh-red);padding:14px 16px;display:flex;flex-direction:column}
+html body.newlook[data-page="support"] .resource[hidden]{display:none}
+html body.newlook[data-page="support"] .resource .card-kicker{font:400 14px/1.3 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver)}
+html body.newlook[data-page="support"] .resource h3{font:400 22px/1.08 var(--nh-title);letter-spacing:.01em;margin:4px 0 6px}
+html body.newlook[data-page="support"] .resource>p:not(.card-kicker){color:#d6d6d4;font-size:15px;line-height:1.5;margin:0 0 10px}
+html body.newlook[data-page="support"] .resource .actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px}
+html body.newlook[data-page="support"] .resource .button{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;font:400 15px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--nh-white);border:1px solid var(--nh-silver)}
+html body.newlook[data-page="support"] .resource .button:hover{background:var(--nh-white);color:#000}
+html body.newlook[data-page="support"] .resource .button:is(.primary,.crisis-primary){background:var(--nh-red);border-color:var(--nh-red);color:#fff}
+html body.newlook[data-page="support"] .resource .button:is(.primary,.crisis-primary):hover{background:#A50D26;border-color:var(--nh-white);color:#fff}
+html body.newlook[data-page="support"] .res-privacy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:24px 0 44px}
+html body.newlook[data-page="support"] .res-privacy .panel{padding:18px;display:grid;gap:8px;align-content:start;justify-items:start}
+html body.newlook[data-page="support"] .res-privacy h3{font-size:22px}
+html body.newlook[data-page="support"] .res-privacy p:not(.mono):not(.note){color:#d6d6d4;font-size:15px;line-height:1.5}
+html body.newlook[data-page="support"] .res-privacy .row{display:flex;flex-wrap:wrap;gap:8px}
+html body.newlook[data-page="support"] .res-privacy .btn{color:#fff}
+html body.newlook[data-page="support"] .res-privacy .btn.red:hover:not(#_){background:#A50D26;border-color:var(--nh-white)}
+html body.newlook[data-page="support"] .res-privacy .panel>a{display:inline-flex;align-items:center;min-height:40px}
+
+/* Privacy */
+html body.newlook[data-page="privacy"] .legal{max-width:none;display:grid;grid-template-columns:minmax(0,680px);padding-bottom:44px}
+html body.newlook[data-page="privacy"] .legal h1{margin:0 0 14px}
+html body.newlook[data-page="privacy"] .legal h2{font:400 24px/1.1 var(--nh-title);margin:26px 0 8px;padding-top:14px;border-top:1px solid var(--nh-line)}
+html body.newlook[data-page="privacy"] .legal :is(p,li){color:#d6d6d4;font-size:16px;line-height:1.65}
+html body.newlook[data-page="privacy"] .legal p+p{margin-top:10px}
+html body.newlook[data-page="privacy"] .legal a{color:var(--nh-white)}
+
+@media (max-width:1199px){
+  html body.newlook[data-page="support"] .res-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:1000px){
+  html body.newlook[data-page="support"] .res-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  html body.newlook[data-page="support"] .pagehead{grid-template-columns:minmax(0,1fr);gap:12px}
+  html body.newlook[data-page="support"] .crisis,html body.newlook[data-page="support"] .res-privacy{grid-template-columns:minmax(0,1fr)}
+  html body.newlook[data-page="support"] .res-privacy{margin-bottom:28px}
+}
+@media (max-width:560px){
+  html body.newlook[data-page="support"] .res-grid{grid-template-columns:minmax(0,1fr)}
+}

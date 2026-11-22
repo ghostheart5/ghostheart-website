@@ -19,62 +19,107 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/wake-v3/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Sedgwick+Ave+Display&amp;family=Bebas+Neue&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wake-v3/site.css"><link rel="stylesheet" href="/assets/new-look/pages.css">
 <link rel="stylesheet" href="/assets/shared/size-caps.css" id="gh-size-caps"><script defer id="ghostheart-ga-loader" src="/assets/shared/ghostheart-ga.js" data-ga-id="G-7TK5DKFS5F"></script></head>
-<body data-page="work">
+<body class="newlook" data-page="work">
+<!-- NEW LOOK (Dom, Nov 22, 2026) -->
 <header class="top">
 <div class="wrap">
 <a aria-label="GhostHeart Studios home" class="logo" href="/"><picture class="wv"><source srcset="/assets/wake-v3/img/logo.webp" type="image/webp"><img alt="GhostHeart Studios" height="277" src="/assets/wake-v3/img/logo.png" width="760"/></picture></a>
 <button aria-controls="menu" aria-expanded="false" class="menu-btn" id="menu-btn">Menu</button>
 <nav aria-label="Main" class="menu" id="menu">
 <a href="/">Home</a>
-<a href="/wake-the-heart/">Wake the Heart</a>
-<a href="/music/">Music</a>
-<a href="/GhostHeart_Story.html">Enter My World</a>
-<a href="/live/">Lives</a>
+<a href="/#story">GhostHeart</a>
+<a href="/#vault">The Vault</a>
+<a href="/#live">Live</a>
 <a aria-current="page" href="/here-to-help/">Work with GhostHeart</a>
 <a href="/GhostHeart_Projects.html">Projects</a>
-<a href="https://ghostheart-studios-shop.fourthwall.com" rel="noopener" target="_blank">Merch ↗</a>
-<a href="/follow/">Stay Connected</a>
-<a href="/GhostHeart_Resources.html">Find Support</a>
+<a href="/#merch">Merch</a>
+<a class="support" href="/GhostHeart_Resources.html">Find Support</a>
 </nav>
 </div>
 </header>
 <main id="main">
 <div class="view" data-view="work">
-<section class="help-sec">
-<div class="wrap">
-<div class="help-top">
-<div>
-<h1 class="giant"><span class="chrome">How can I</span> <span class="red">help?</span></h1>
-<p class="help-lead">Need a hand with a document, some writing, a presentation, or a spreadsheet? Tell me what you’re working on and where you’re stuck. I’ll take a look and let you know how I can help.</p>
-<a class="btn red" href="#help-form">Tell me what you need</a>
-</div>
-</div>
-<ul class="help-kinds">
-<li class="panel"><b>Sort out a document</b>Letters, forms, flyers, résumés, or something that needs cleaning up.</li>
-<li class="panel"><b>Find the right words</b>Bios, descriptions, social posts, proofreading, and editing.</li>
-<li class="panel"><b>Put a presentation together</b>Organize your ideas into clear, readable slides.</li>
-<li class="panel"><b>Organize the details</b>Typing, lists, records, spreadsheets, and simple trackers.</li>
-</ul>
-<div class="help-form-wrap" id="ask">
-<form aria-label="Tell me what you need" class="f panel help-form" id="help-form" novalidate="">
-<p class="mono" style="margin:0 0 4px">Tell me what you need</p><fieldset class="help-fields" data-help-fields="" disabled=""><label aria-hidden="true" class="sr">Leave this empty<input autocomplete="off" name="website" tabindex="-1" type="text"/></label><label for="h-name">Your name — optional<input autocomplete="name" id="h-name" maxlength="100" name="name" type="text"/></label><label for="h-email">Your email<input autocomplete="email" id="h-email" maxlength="254" name="email" required="" type="email"/></label><label for="h-kind">What would you like help with?
+  <section class="nw-ask nw-wrap" aria-labelledby="nw-title">
+    <h1 id="nw-title"><span>How can I</span> <span class="nw-spray">help?</span></h1>
+    <div>
+      <p class="nw-say">Need a hand with a document, some writing, a presentation, or a spreadsheet? Tell me what you’re working on and where you’re stuck. I’ll take a look and let you know how I can help.</p>
+      <a class="nw-btn" href="#help-form">Tell me what you need</a>
+    </div>
+  </section>
+
+  <section class="nw-wrap" aria-label="What I can help with">
+    <ul class="nw-can">
+      <li><b>Sort out a document</b>Letters, forms, flyers, résumés, or something that needs cleaning up.</li>
+      <li><b>Find the right words</b>Bios, descriptions, social posts, proofreading, and editing.</li>
+      <li><b>Put a presentation together</b>Organize your ideas into clear, readable slides.</li>
+      <li><b>Organize the details</b>Typing, lists, records, spreadsheets, and simple trackers.</li>
+    </ul>
+  </section>
+
+  <section class="nw-shown nw-wrap" aria-labelledby="nw-shown-title">
+    <h2 id="nw-shown-title">What finished work looks like</h2>
+    <p class="nw-say">Four examples I made to show the kind of work you get back. The people and businesses in them are made up. Open one to see it full size.</p>
+    <ul>
+      <li><a href="/assets/work-samples/resume.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/resume.jpg" alt="Example resume for a made-up customer service lead" width="640" height="828" loading="lazy"></span><b>A resume</b><small>One clean page, with the strongest facts up top.</small></a></li>
+      <li><a href="/assets/work-samples/flyer.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/flyer.jpg" alt="Example flyer for a made-up neighborhood coat drive" width="640" height="828" loading="lazy"></span><b>A flyer</b><small>What, when and where, readable from across a room.</small></a></li>
+      <li><a href="/assets/work-samples/deck.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/deck.jpg" alt="Example three-slide presentation for a made-up bakery" width="640" height="553" loading="lazy"></span><b>A presentation</b><small>A few clear slides, one idea on each.</small></a></li>
+      <li><a href="/assets/work-samples/tracker.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/tracker.jpg" alt="Example monthly bills tracker for a made-up household" width="640" height="360" loading="lazy"></span><b>A tracker</b><small>A simple sheet that adds itself up.</small></a></li>
+    </ul>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nw-job nw-wrap" aria-labelledby="nw-job-title">
+    <span class="nw-tag">Finished job</span>
+    <h2 id="nw-job-title">To Those Who Served</h2>
+    <p class="nw-sub">A tribute song and music video, written and produced by GhostHeart Studios.</p>
+    <div class="nw-grid">
+      <div>
+        <a class="nw-watch" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/U0X6SwISG_M/mqdefault.jpg" alt="To Those Who Served music video" width="320" height="180" loading="lazy">
+          <span>▶ To Those Who Served, full song on YouTube</span>
+        </a>
+        <blockquote>We don’t need every story told<br>To know our thanks run deep.</blockquote>
+        <blockquote>You deserve more than a passing word<br>As people walk away.</blockquote>
+      </div>
+      <div>
+        <h3>What I did</h3>
+        <ul class="nw-did">
+          <li><b>Wrote it:</b> every lyric is mine. Two verses, two choruses, a bridge and a spoken dedication at the end.</li>
+          <li><b>Shaped the sound:</b> an acoustic rock ballad at 84 BPM, starting with piano and acoustic guitar and building to a full, strong final chorus. A raspy lead voice with a little tear in it on the hard words.</li>
+          <li><b>Made the video:</b> a 3-minute HD music video with word-by-word captions, plus cover art and a YouTube thumbnail.</li>
+          <li><b>Cut it for social:</b> short clips for YouTube Shorts, TikTok and Instagram Reels.</li>
+        </ul>
+        <h3>How long it took</h3>
+        <ol class="nw-days">
+          <li><b>November 3</b>lyrics finished and approved.</li>
+          <li><b>November 7</b>finished music video exported.</li>
+          <li><b>November 10</b>released.</li>
+        </ol>
+        <p class="nw-week">One week from a blank page to a finished song and video.</p>
+      </div>
+    </div>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nw-tell nw-wrap" id="ask">
+    <div class="nw-card">
+      <h2>Tell me what you need</h2>
+<form aria-label="Tell me what you need" class="f help-form" id="help-form" novalidate="">
+<fieldset class="help-fields" data-help-fields="" disabled=""><label aria-hidden="true" class="sr">Leave this empty<input autocomplete="off" name="website" tabindex="-1" type="text"/></label><label for="h-name">Your name — optional<input autocomplete="name" id="h-name" maxlength="100" name="name" type="text"/></label><label for="h-email">Your email<input autocomplete="email" id="h-email" maxlength="254" name="email" required="" type="email"/></label><label for="h-kind">What would you like help with?
             <select id="h-kind" name="service" required=""><option value="">Choose one</option><option value="word">Sort out a document</option><option value="writing">Find the right words</option><option value="powerpoint">Put a presentation together</option><option value="data_entry">Organize the details</option><option value="word">Something else</option></select></label><label for="h-about">Tell me a little about it<textarea id="h-about" maxlength="3600" name="details" required=""></textarea></label><label for="h-when">When do you need it? — optional<input id="h-when" maxlength="100" name="when" placeholder="A date, or “no rush”" type="text"/></label><p class="note err" data-help-error="" hidden="" role="alert"></p><button class="btn red" data-help-submit="" type="submit">Send my request</button></fieldset>
-
-
-
-
-
-
 <p class="note">I’ll reply by email to explain what I can help with, the timing, and any cost before we start.</p>
 <div aria-live="polite" class="ok" data-help-status="" hidden="" role="status"><strong data-help-status-title=""></strong><span data-help-status-text=""></span></div>
 </form>
-<div class="help-side">
-<p class="mono" style="margin:0 0 6px">Rather email?</p>
-<p style="margin:0 0 18px"><a href="mailto:signal@myghostheart.com">signal@myghostheart.com</a></p>
-<details class="more panel">
+    </div>
+    <div class="nw-card nw-side">
+      <p>Rather email?</p>
+      <p class="nw-mail"><a href="mailto:signal@myghostheart.com">signal@myghostheart.com</a></p>
+<details class="more">
 <summary>Service details and prices</summary>
 <div class="tablewrap"><table>
 <thead><tr><th>Service</th><th>Price</th></tr></thead>
@@ -90,12 +135,14 @@
 </table></div>
 <p class="note">I’ll email you the total first. You only pay once you agree to it.</p>
 </details>
-</div>
-</div>
-<div class="song-opt panel">
-<p class="mono" style="margin:0 0 4px">A song from your story</p>
-<p style="margin:0;color:var(--silver)">I also write custom songs for people, memories, and occasions that matter to you.</p>
-<p class="note" style="margin:8px 0 0">Hear one I made: <a href="https://www.youtube.com/watch?v=U0X6SwISG_M" rel="noopener" target="_blank">To Those Who Served ↗</a>. I wrote it, produced it and made its music video.</p>
+    </div>
+  </section>
+
+  <section class="nw-song nw-wrap">
+    <div class="nw-card song-opt">
+      <h2>A song from your story</h2>
+<p>I also write custom songs for people, memories, and occasions that matter to you.</p>
+<p class="note">Hear one I made: <a href="https://www.youtube.com/watch?v=U0X6SwISG_M" rel="noopener" target="_blank">To Those Who Served ↗</a>. I wrote it, produced it and made its music video.</p>
 <div aria-live="polite" class="ok" data-order-status="" hidden="" role="status"><strong data-order-status-title=""></strong> <span data-order-status-text=""></span></div><details class="more">
 <summary>Find out about a custom song</summary>
 <ol class="mini-steps">
@@ -105,17 +152,10 @@
 <li><b>Your song in 7 days.</b> The finished song, the lyrics as a keepsake, and one small fix if you need it.</li>
 </ol>
 <form aria-label="Tell me your story for a free song preview" class="f" id="story-form" novalidate=""><fieldset class="help-fields" data-order-fields="" disabled=""><input checked="" hidden="" name="kind" type="radio" value="try"/><label aria-hidden="true" class="sr">Leave this empty<input autocomplete="off" name="website" tabindex="-1" type="text"/></label><label for="o-who">Who is the song for?<input id="o-who" maxlength="200" name="for_whom" required="" type="text"/></label><label for="o-occ">What’s the occasion?<input id="o-occ" maxlength="200" name="occasion" type="text"/></label><label for="o-story">Your story<textarea id="o-story" maxlength="4000" name="memories" required=""></textarea></label><label for="o-email">Your email<input autocomplete="email" id="o-email" maxlength="254" name="email" required="" type="email"/></label><p class="note err" data-order-error="" hidden="" role="alert"></p><button class="btn ghost" data-order-submit="" type="submit">Send for my free preview</button><p class="note" data-order-fine="">The free preview costs nothing and asks for no card.</p></fieldset>
-
-
-
-
-
-
 </form>
 </details>
-</div>
-</div>
-</section>
+    </div>
+  </section>
 </div>
 </main>
 <footer>
