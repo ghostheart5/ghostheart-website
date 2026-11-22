@@ -14,14 +14,15 @@ html body.newlook header.top .wrap{width:min(var(--nh-wrap),100% - 40px);padding
 html body.newlook header.top .logo img{height:58px;filter:drop-shadow(0 0 10px rgba(200,16,46,.55))}
 html body.newlook header.top .menu-btn{display:none}
 html body.newlook header.top nav.menu{display:flex;position:static;flex-direction:row;flex-wrap:wrap;gap:4px;align-items:center;justify-content:flex-end;background:none;border:0;padding:0}
-html body.newlook header.top nav.menu a{position:relative;isolation:isolate;font:400 18px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--nh-silver);padding:11px 13px;border:0}
+/* the shared site.css pins the old menu's text size, spacing and padding with !important, so these need it too */
+html body.newlook header.top nav.menu a{position:relative;isolation:isolate;font:400 18px/1 var(--nh-title);font-size:18px!important;letter-spacing:.04em!important;text-transform:uppercase;text-decoration:none;color:var(--nh-silver);padding:11px 13px!important;border:0}
 html body.newlook header.top nav.menu a::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:transparent;border-bottom:2px solid transparent;transition:background .12s,border-color .12s}
 html body.newlook header.top nav.menu a::after{display:none}
 html body.newlook header.top nav.menu a:hover{color:var(--nh-white)}
 html body.newlook header.top nav.menu a:hover::before{background:#24262b;border-bottom-color:var(--nh-silver)}
 html body.newlook header.top nav.menu a[aria-current="page"]{color:#fff}
 html body.newlook header.top nav.menu a[aria-current="page"]::before{background:var(--nh-red);border-bottom-color:#000}
-html body.newlook header.top nav.menu a.support{color:#fff;margin-left:12px;padding:11px 16px}
+html body.newlook header.top nav.menu a.support{color:#fff;margin-left:12px;padding:11px 16px!important}
 html body.newlook header.top nav.menu a.support::before{background:var(--nh-red);box-shadow:0 0 0 2px #000,0 0 0 3px var(--nh-silver),0 0 16px rgba(255,43,63,.55)}
 html body.newlook header.top nav.menu a.support:hover::before{background:var(--nh-hot);border-bottom-color:transparent}
 html body.newlook header.top nav.menu a:focus-visible{outline:2px solid var(--nh-white);outline-offset:2px}
@@ -30,15 +31,15 @@ html body.newlook header.top nav.menu a:focus-visible{outline:2px solid var(--nh
   html body.newlook header.top .wrap{gap:12px;min-height:70px}
   html body.newlook header.top .logo img{height:46px}
   html body.newlook header.top nav.menu{gap:2px;flex-wrap:nowrap}
-  html body.newlook header.top nav.menu a{font-size:16px;padding:10px 8px}
-  html body.newlook header.top nav.menu a.support{margin-left:8px;padding:10px 12px}
+  html body.newlook header.top nav.menu a{font-size:16px!important;padding:10px 8px!important}
+  html body.newlook header.top nav.menu a.support{margin-left:8px;padding:10px 12px!important}
 }
 @media (max-width:1000px){
   html body.newlook header.top .wrap{flex-wrap:nowrap;padding-block:8px;gap:10px;min-height:0;width:100%;padding-inline:14px 0}
   html body.newlook header.top .logo img{height:38px}
   html body.newlook header.top nav.menu{flex-wrap:nowrap;justify-content:flex-start;gap:0;overflow-x:auto;padding:3px 14px 3px 6px}
-  html body.newlook header.top nav.menu a{font-size:15px;padding:9px 9px;white-space:nowrap}
-  html body.newlook header.top nav.menu a.support{order:-1;margin:0 10px 0 0;padding:9px 12px}
+  html body.newlook header.top nav.menu a{font-size:15px!important;padding:9px 9px!important;white-space:nowrap}
+  html body.newlook header.top nav.menu a.support{order:-1;margin:0 10px 0 0;padding:9px 12px!important}
 }
 
 /* ---------- the foot of the page ---------- */
