@@ -1,11 +1,13 @@
 /* The rebuilt home page (Dom, Nov 22, 2026). Added to index.html by .github/scripts/apply_new_home.py.
    Studio colors: blood red, obsidian black, steel silver. One normal-width column.
-   Every selector starts with "html body" so it wins over the page's older styles; the size caps
-   stylesheet (/assets/shared/size-caps.css) still loads last and still has the final say on sizes. */
+   Every selector starts with "html body" so it wins over the page's older styles. Be careful: this
+   block sits in the body, after the size caps stylesheet, and some rules here are strong enough to
+   beat a cap (the top picture's height, section spacing, the red strip, today's line width). The
+   size guard, .github/scripts/test_size_caps.cjs, measures the finished page and is what holds the line. */
 :root{--nh-black:#0A0A0A;--nh-panel:#16171A;--nh-line:#2A2C31;--nh-red:#C8102E;--nh-hot:#FF2B3F;--nh-silver:#A8A9AD;--nh-white:#F3F3F1;
   --nh-title:Anton,"Arial Narrow",Impact,sans-serif;--nh-spray:"Sedgwick Ave Display","Sedgwick Ave",cursive;--nh-body:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--nh-wrap:1120px}
-html body{background:var(--nh-black)}
-html body::after{display:none}
+html body:has(#v-home:not([hidden])){background:var(--nh-black)}
+html body:has(#v-home:not([hidden]))::after{display:none}
 
 /* ---------- the bar with the tabs ---------- */
 html body header.top{background:linear-gradient(180deg,#17181b,#0A0A0A 70%);backdrop-filter:none;border-bottom:2px solid var(--nh-red);box-shadow:0 0 22px rgba(200,16,46,.5),0 10px 24px rgba(0,0,0,.6)}
@@ -29,7 +31,7 @@ html body #v-home section{background:none;animation:none}
 html body #v-home section::after{display:none}
 html body #v-home .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0}
 html body #v-home :is(canvas.paint,canvas.embers,#spray,.heartfx,.ekg,.mega,.ticker.dark,.hazard,.cross .ticker.sil,.bgword,.hint){display:none}
-html body>.hazard{display:none}
+html body:has(#v-home:not([hidden]))>.hazard{display:none}
 
 /* the picture: Scars Wakes the Heart, shown whole and alive */
 html body #v-home .nh-wake{width:min(var(--nh-wrap),100% - 40px);margin:26px auto 0;padding:0}
@@ -56,18 +58,18 @@ html body #v-home .nh-wall::after{content:"";position:absolute;inset:0;pointer-e
   html body #v-home .nh-stage{animation:nh-pulse 1.6s ease-in-out 1.6s infinite}
   html body #v-home .nh-glow{animation:nh-glow 1.6s ease-in-out 1.6s infinite backwards}
   html body #v-home svg.nh-bolts{opacity:0}
-  html body #v-home .nh-bolts.l{animation:nh-strike 7s linear .9s infinite backwards}
-  html body #v-home .nh-bolts.r{animation:nh-strike 9s linear 3.4s infinite backwards}
-  html body #v-home .nh-flare.l{animation:nh-flare 7s linear .9s infinite backwards}
-  html body #v-home .nh-flare.r{animation:nh-flare 9s linear 3.4s infinite backwards}
+  html body #v-home .nh-bolts.l{animation:nh-strike 8s linear .9s infinite backwards}
+  html body #v-home .nh-bolts.r{animation:nh-strike 8s linear 4.9s infinite backwards}
+  html body #v-home .nh-flare.l{animation:nh-flare 8s linear .9s infinite backwards}
+  html body #v-home .nh-flare.r{animation:nh-flare 8s linear 4.9s infinite backwards}
   html body #v-home .nh-rain{animation:nh-rain .75s linear infinite}
   html body #v-home .nh-rain::after{animation:nh-rain2 1.15s linear infinite}
   @keyframes nh-wake{0%{filter:grayscale(1) brightness(.22)}54%{filter:grayscale(1) brightness(.34)}60%{filter:grayscale(0) brightness(1.9)}100%{filter:grayscale(0) brightness(1)}}
   @keyframes nh-jolt{0%,100%{transform:translate(0,0)}20%{transform:translate(7px,-3px)}40%{transform:translate(-5px,3px)}60%{transform:translate(3px,-1px)}80%{transform:translate(-2px,1px)}}
   @keyframes nh-pulse{0%,40%,100%{transform:scale(1)}9%{transform:scale(1.014)}18%{transform:scale(1)}27%{transform:scale(1.008)}}
   @keyframes nh-glow{0%,40%,100%{opacity:.12}9%{opacity:.7}18%{opacity:.2}27%{opacity:.5}}
-  @keyframes nh-strike{0%,100%{opacity:0}1%{opacity:1}2.5%{opacity:.15}4%{opacity:1}7%{opacity:.5}11%{opacity:0}}
-  @keyframes nh-flare{0%,100%{opacity:0}1%{opacity:.8}2.5%{opacity:.1}4%{opacity:.6}11%{opacity:0}}
+  @keyframes nh-strike{0%,100%{opacity:0}1.5%{opacity:1}6%{opacity:.45}11%{opacity:0}}
+  @keyframes nh-flare{0%,100%{opacity:0}1.5%{opacity:.7}6%{opacity:.25}11%{opacity:0}}
   @keyframes nh-rain{to{background-position:-30px 180px}}
   @keyframes nh-rain2{to{background-position:-48px 290px}}
 }
@@ -96,6 +98,7 @@ html body #v-home .studio-grid .scrawl .hot{color:var(--nh-silver)}
 html body #v-home .slaps2{gap:8px}
 html body #v-home .slaps2 a:not(#_){font:400 15px/1 var(--nh-title);letter-spacing:.05em;padding:8px 11px;border:1px solid var(--nh-silver);background:transparent;color:var(--nh-white);box-shadow:none;outline:0;transform:none;opacity:1;transition:none}
 html body #v-home .slaps2 a:hover:not(#_){background:var(--nh-white);color:#000;filter:none}
+html body #v-home .slaps2 a:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
 
 /* Wake the Heart: one slim line with its two buttons */
 html body #v-home section.wake2:not(#_){padding-block:16px 0!important}
@@ -195,15 +198,34 @@ html body #v-home .nh-wear li img:not(#_){display:block;width:100%;aspect-ratio:
 html body #v-home .nh-wear li span{display:block;padding:9px 10px}
 
 
-/* ---------- phones ---------- */
-@media (max-width:820px){
-  /* phones: one row, as before. The logo, then the tabs in a line you can slide sideways, Find Support first.
-     (Two rows of tabs made every view longer than the size guard allows on a phone.) */
+/* 4. people who turn motion off get the still picture: no lightning, no rain */
+@media (prefers-reduced-motion:reduce){
+  html body #v-home :is(svg.nh-bolts,.nh-rain,.nh-flare){display:none}
+  html body #v-home .nh-glow{opacity:.12}
+}
+
+/* a view opened from a link lands below the bar, not under it */
+@media (min-width:1001px){html{scroll-padding-top:92px}}
+/* smaller laptops and tablets on their side: same one row, a little tighter */
+@media (min-width:1001px) and (max-width:1280px){
+  html body header.top .wrap{gap:12px;min-height:70px}
+  html body header.top img{height:46px}
+  html body header.top .nav{gap:2px;flex-wrap:nowrap}
+  html body header.top .nav a{font-size:16px;padding:10px 8px}
+  html body header.top .nav a.support{margin-left:8px;padding:10px 12px}
+}
+/* narrow windows and phones: one row, as before. The logo, then the tabs in a line you can slide sideways,
+   Find Support first. (Two rows of tabs made every view longer than the size guard allows on a phone.) */
+@media (max-width:1000px){
   html body header.top .wrap{flex-wrap:nowrap;padding-block:8px;gap:10px;min-height:0;width:100%;padding-inline:14px 0}
   html body header.top img{height:38px}
   html body header.top .nav{margin-left:0;flex-wrap:nowrap;justify-content:flex-start;gap:0;overflow-x:auto;padding:3px 14px 3px 6px}
   html body header.top .nav a{font-size:15px;padding:9px 9px}
   html body header.top .nav a.support{order:-1;margin:0 10px 0 0;padding:9px 12px}
+}
+
+/* ---------- phones ---------- */
+@media (max-width:820px){
   html body #v-home .nh-wall{width:100%}
   html body #v-home .nh-wall::after{box-shadow:inset 0 0 30px 6px rgba(10,10,10,.7)}
   html body #v-home .studio-grid,html body #v-home .feat-grid,html body #v-home .nh-pair{grid-template-columns:minmax(0,1fr)}
@@ -223,3 +245,10 @@ html body #v-home p.creator span.tag:not(#_):not(#__){font-family:var(--nh-spray
 html body #v-home section::before{display:none}
 html body #v-home .fire-stack:not(#_){margin:0;width:100%;max-width:none;padding:0}
 html body #v-home .nh-pair .fire2 .wrap{padding:0;margin:0}
+
+/* the two side-by-side panels: same capitals as the rest, no stray indent */
+html body #v-home :is(.fire-h,.seat-h) span:not(#_):not(#__){text-transform:uppercase!important}
+html body #v-home .nh-pair>section>.wrap:not(#_){width:100%;max-width:none;margin:0;padding:0}
+html body #v-home .feat-grid .watch-line:not(#_){text-transform:none;letter-spacing:0;font-family:var(--nh-body)}
+html body #v-home .fire-stack:not(#_){transform:none!important;justify-content:start}
+html body #v-home .fire-stack>*:not(#_){justify-self:start;margin-inline:0}

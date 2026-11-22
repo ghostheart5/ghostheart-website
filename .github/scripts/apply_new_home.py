@@ -21,8 +21,11 @@ Silver Thread sign-up, the song player, and the Vault / About / Live / Merch vie
 - wraps the Sunday Live and sign-up blocks so they sit side by side,
 - adds a row of merch pictures that opens the Merch view,
 - and adds the new look as one <style> block from .github/new-home/home.css.
-The size caps stylesheet still loads last. The one place the new look goes past a cap is the top
-picture, which Dom asked to see whole; test_size_caps.cjs has its own limit for that picture.
+The size caps stylesheet is still the last stylesheet link, but this <style> block comes after it in
+the page and a few of its rules are strong enough to beat a cap, so the size guard
+(test_size_caps.cjs), which measures the finished page, is what protects the sizes on Home.
+The one limit this change raises is the top picture's height: test_size_caps.cjs gives that picture
+its own limit, and raising it needs Dom's yes (he merges this draft or not).
 
 To go back to the old home page, remove this script's line from build_site.py and rebuild.
 """
