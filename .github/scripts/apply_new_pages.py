@@ -23,6 +23,13 @@ Two lines of the concept are worded differently here to keep Dom's standing rule
 tribute song" (Nov 21: nothing should say veterans), and the line about which tools made the track
 is left out (no AI labels).
 
+Projects (GhostHeart_Projects.html), approved on the local concept:
+- where each app stands, in Dom's words (Nov 22): "axiomora is finished. deal vector is in testing
+  finishes in two days. shadowfire is still in the works."; Deal Vector now comes second;
+- "Not just apps" ("use all non app projects"): Wake the Heart, To Those Who Served, The Man
+  Beneath the Moon, Words from the Heart the book, Behind the Scars the full story;
+- every other word of the page is kept; the 01 / 02 / 03 counters are gone.
+
 To go back, remove this script's line from build_site.py and rebuild.
 """
 import re
@@ -95,7 +102,26 @@ def work(html):
     return html[:old_main.start()] + new.rstrip('\n') + html[old_main.end():]
 
 
-PAGES = {'here-to-help/index.html': ('/here-to-help/', work)}
+def projects(html):
+    """Projects: the three apps with where each one stands, the projects that are not apps, what could come next."""
+    old_main = MAIN_RE.search(html)
+    assert old_main, 'Projects page: main not found'
+    new = (SRC / 'projects.part').read_text(encoding='utf-8')
+    now = words(new)
+    doc = BeautifulSoup(old_main.group(0), 'html.parser')
+    for el in doc.select('.pill'):
+        el.decompose()                       # where each app stands is restated in the new layout
+    for el in doc.select('h1, h2, p, li, a'):
+        text = re.sub(r'^0\d / ', '', words(str(el)))   # the 01 / 02 / 03 counters are gone
+        assert not text or text in now or all(part in now for part in text.split(' / ')), f'Projects words missing: {text[:70]}'
+    # Dom, Nov 22 2026: "axiomora is finished. deal vector is in testing finishes in two days. shadowfire is still in the works."
+    order = [now.index(name) for name in ('Finished Axiomara.', 'In testing Deal Vector.', 'In the works Shadow Fire.')]
+    assert order == sorted(order), 'Projects: app order or status changed'
+    return html[:old_main.start()] + new.rstrip('\n') + html[old_main.end():]
+
+
+PAGES = {'here-to-help/index.html': ('/here-to-help/', work),
+         'GhostHeart_Projects.html': ('/GhostHeart_Projects.html', projects)}
 
 for relative, (path, body) in PAGES.items():
     page = ROOT / relative

@@ -21,7 +21,7 @@ NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with 
        'Merch ↗', 'Stay Connected', 'Find Support']
 # Dom, Nov 22 2026: "fix the tabs so about is next to home, name about something else" ... "just GhostHeart" (apply_new_home.py).
 PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
-NEW_LOOK = {'here-to-help/index.html'}
+NEW_LOOK = {'here-to-help/index.html', 'GhostHeart_Projects.html'}
 
 
 def page(relative):
