@@ -38,11 +38,12 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     }
   }
 
-  // Home (Dom, Nov 11 2026): Protected by GhostHeart (apply_protector_home.py). Featured week is To Those Who
-  // Served in steel and crimson; the full song is on YouTube only; the Vault, About, Live and Merch open on the page.
+  // Home (Dom, Nov 11 2026): Protected by GhostHeart (apply_protector_home.py). The Vault, About, Live and Merch open on the page.
+  // Dom, Nov 21 2026: nothing should say veterans anymore (apply_no_veterans_home.py), so the Week 01 block is gone.
   let page = await open('/', '2026-11-11T18:00:00Z');
-  assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /To Those Who Served/i);
-  assert.equal(await page.locator('.feat2:visible a[href="https://www.youtube.com/watch?v=U0X6SwISG_M"]').count(), 1);
+  assert.equal(await page.locator('.feat2:visible').count(), 1);
+  assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /The Parts You Hide/i);
+  assert.doesNotMatch(await page.locator('body').innerText(), /veteran/i);
   assert.ok((await page.locator('#q-text').innerText()).length > 10, 'daily line');
   assert.equal(await page.locator('#v-vault').isVisible(), false);
   await page.click('header.top a[href="#vault"]');
@@ -58,7 +59,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);
   await page.close();
   // Week 2 (Dom, Nov 14 2026, apply_week2_home.py): The Parts You Hide takes over at 7 PM Central on Sunday, Nov 15.
-  for (const [when, title] of [['2026-11-16T00:59:00Z', /To Those Who Served/i], ['2026-11-16T01:00:00Z', /The Parts You Hide/i],
+  for (const [when, title] of [['2026-11-16T00:59:00Z', /The Parts You Hide/i], ['2026-11-16T01:00:00Z', /The Parts You Hide/i],
                                ['2026-11-16T17:59:00Z', /The Parts You Hide/i], ['2026-11-18T18:00:00Z', /The Parts You Hide/i],
                                ['2026-11-23T00:59:00Z', /The Parts You Hide/i]]) {
     page = await open('/', when);

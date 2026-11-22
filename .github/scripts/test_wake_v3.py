@@ -83,7 +83,8 @@ assert home.select_one('#q-text') and home.select_one('canvas#living') and not h
 assert home.select_one('#join-the-signal') and home.select_one('#home')  # old links still land on the home page
 for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
     assert home.select_one('#' + view), view
-assert home.select_one('a[href="https://www.youtube.com/watch?v=U0X6SwISG_M"]')  # full song: YouTube only
+# Dom, Nov 21 2026: nothing should say veterans anymore; the Week 01 block and the merch tag are gone (apply_no_veterans_home.py).
+assert not home.select('section.feat2[data-week="1"]') and 'Veterans Day' not in home.get_text()
 assert '14 weeks · Nov 9 to Feb 8' in home.get_text() and '13 weeks' not in home.get_text() and 'Feb 1' not in home.get_text()  # Dom, Nov 22 2026: 14 weeks, Nov 9 to Feb 8 (13 weeks + bonus week)
 home_raw = (ROOT / 'index.html').read_text(encoding='utf-8')
 # Dom, Nov 8 2026: older songs off everywhere; the Vault lists The Heart Wakes songs only.
