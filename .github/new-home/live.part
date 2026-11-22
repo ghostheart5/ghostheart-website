@@ -1,7 +1,7 @@
 <div class="view" id="v-live" hidden><span id="live"></span>
   <section class="nl-onair" aria-labelledby="nl-live-title">
     <div>
-      <p class="nl-plates"><span>Sundays</span><span>10 AM Central</span><span>TikTok</span></p>
+      <p class="nl-plates"><span>Sundays</span> <span>10 AM Central</span> <span>TikTok</span></p>
       <h2 class="nl-h" id="nl-live-title"><span>Words from</span> <span class="nl-spray">the heart.</span></h2>
       <p class="nl-say">GhostHeart’s words, and quotes that touched GhostHeart’s heart.</p>
       <a class="nl-btn" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
