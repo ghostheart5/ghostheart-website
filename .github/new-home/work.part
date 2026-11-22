@@ -1,0 +1,86 @@
+<main id="main">
+<div class="view" data-view="work">
+  <section class="nw-ask nw-wrap" aria-labelledby="nw-title">
+    <h1 id="nw-title"><span>How can I</span> <span class="nw-spray">help?</span></h1>
+    <div>
+      <p class="nw-say">Need a hand with a document, some writing, a presentation, or a spreadsheet? Tell me what you’re working on and where you’re stuck. I’ll take a look and let you know how I can help.</p>
+      <a class="nw-btn" href="#help-form">Tell me what you need</a>
+    </div>
+  </section>
+
+  <section class="nw-wrap" aria-label="What I can help with">
+    <ul class="nw-can">
+      <li><b>Sort out a document</b>Letters, forms, flyers, résumés, or something that needs cleaning up.</li>
+      <li><b>Find the right words</b>Bios, descriptions, social posts, proofreading, and editing.</li>
+      <li><b>Put a presentation together</b>Organize your ideas into clear, readable slides.</li>
+      <li><b>Organize the details</b>Typing, lists, records, spreadsheets, and simple trackers.</li>
+    </ul>
+  </section>
+
+  <section class="nw-shown nw-wrap" aria-labelledby="nw-shown-title">
+    <h2 id="nw-shown-title">What finished work looks like</h2>
+    <p class="nw-say">Four examples I made to show the kind of work you get back. The people and businesses in them are made up. Open one to see it full size.</p>
+    <ul>
+      <li><a href="/assets/work-samples/resume.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/resume.jpg" alt="Example resume for a made-up customer service lead" width="640" height="828" loading="lazy"></span><b>A resume</b><small>One clean page, with the strongest facts up top.</small></a></li>
+      <li><a href="/assets/work-samples/flyer.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/flyer.jpg" alt="Example flyer for a made-up neighborhood coat drive" width="640" height="828" loading="lazy"></span><b>A flyer</b><small>What, when and where, readable from across a room.</small></a></li>
+      <li><a href="/assets/work-samples/deck.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/deck.jpg" alt="Example three-slide presentation for a made-up bakery" width="640" height="553" loading="lazy"></span><b>A presentation</b><small>A few clear slides, one idea on each.</small></a></li>
+      <li><a href="/assets/work-samples/tracker.pdf" target="_blank" rel="noopener"><span class="pic"><img src="/assets/work-samples/tracker.jpg" alt="Example monthly bills tracker for a made-up household" width="640" height="361" loading="lazy"></span><b>A tracker</b><small>A simple sheet that adds itself up.</small></a></li>
+    </ul>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nw-job nw-wrap" aria-labelledby="nw-job-title">
+    <span class="nw-tag">Finished job</span>
+    <h2 id="nw-job-title">To Those Who Served</h2>
+    <p class="nw-sub">A tribute song and music video, written and produced by GhostHeart Studios.</p>
+    <div class="nw-grid">
+      <div>
+        <a class="nw-watch" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/U0X6SwISG_M/hqdefault.jpg" alt="To Those Who Served music video" width="480" height="360" loading="lazy">
+          <span>▶ To Those Who Served, full song on YouTube</span>
+        </a>
+        <blockquote>We don’t need every story told<br>To know our thanks run deep.</blockquote>
+        <blockquote>You deserve more than a passing word<br>As people walk away.</blockquote>
+      </div>
+      <div>
+        <h3>What I did</h3>
+        <ul class="nw-did">
+          <li><b>Wrote it:</b> every lyric is mine. Two verses, two choruses, a bridge and a spoken dedication at the end.</li>
+          <li><b>Shaped the sound:</b> an acoustic rock ballad at 84 BPM, starting with piano and acoustic guitar and building to a full, strong final chorus. A raspy lead voice with a little tear in it on the hard words.</li>
+          <li><b>Made the video:</b> a 3-minute HD music video with word-by-word captions, plus cover art and a YouTube thumbnail.</li>
+          <li><b>Cut it for social:</b> short clips for YouTube Shorts, TikTok and Instagram Reels.</li>
+        </ul>
+        <h3>How long it took</h3>
+        <ol class="nw-days">
+          <li><b>November 3</b>lyrics finished and approved.</li>
+          <li><b>November 7</b>finished music video exported.</li>
+          <li><b>November 10</b>released.</li>
+        </ol>
+        <p class="nw-week">One week from a blank page to a finished song and video.</p>
+      </div>
+    </div>
+  </section>
+
+  <svg class="nw-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nw-tell nw-wrap" id="ask">
+    <div class="nw-card">
+      <h2>Tell me what you need</h2>
+<!--HELP-FORM-->
+    </div>
+    <div class="nw-card nw-side">
+      <p>Rather email?</p>
+      <p class="nw-mail"><a href="mailto:signal@myghostheart.com">signal@myghostheart.com</a></p>
+<!--PRICES-->
+    </div>
+  </section>
+
+  <section class="nw-song nw-wrap">
+    <div class="nw-card song-opt">
+      <h2>A song from your story</h2>
+<!--SONG-->
+    </div>
+  </section>
+</div>
+</main>

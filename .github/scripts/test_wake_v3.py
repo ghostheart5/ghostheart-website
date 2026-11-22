@@ -21,6 +21,7 @@ NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with 
        'Merch ↗', 'Stay Connected', 'Find Support']
 # Dom, Nov 22 2026: "fix the tabs so about is next to home, name about something else" ... "just GhostHeart" (apply_new_home.py).
 PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
+NEW_LOOK = {'here-to-help/index.html'}
 
 
 def page(relative):
@@ -42,7 +43,9 @@ for relative, path in PAGES.items():
         assert [a.get_text(' ', strip=True) for a in nav] == PROTECTOR_NAV, [a.get_text() for a in nav]
     else:
         nav = doc.select('header.top nav#menu a')
-        assert [a.get_text(' ', strip=True) for a in nav] == NAV, (relative, [a.get_text() for a in nav])
+        # Dom, Nov 22 2026 ("make it real"): the pages rebuilt in the new look carry Home's eight tabs (apply_new_pages.py).
+        expected = PROTECTOR_NAV if relative in NEW_LOOK else NAV
+        assert [a.get_text(' ', strip=True) for a in nav] == expected, (relative, [a.get_text() for a in nav])
         current = [a['href'] for a in nav if a.get('aria-current') == 'page']
         in_menu = path in [a['href'] for a in nav]
         assert current == ([path] if in_menu else []), (relative, current)

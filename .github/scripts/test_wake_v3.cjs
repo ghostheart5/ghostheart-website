@@ -25,12 +25,14 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   };
 
   // Every page: loads clean, one heading, no sideways scroll on a phone or a laptop, phone menu opens.
+  const NEW_LOOK = ['/here-to-help/'];
   for (const width of [390, 1280]) {
     for (const path of PAGES) {
       const page = await open(path, null, width);
       assert.equal(await page.locator('h1').count(), 1, path);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' overflow at ' + width);
-      if (width === 390 && path !== '/') {  // the Protected by GhostHeart home keeps its menu in one sliding row
+      // the Protected by GhostHeart home keeps its menu in one sliding row; so do the pages rebuilt in the new look (Dom, Nov 22 2026, apply_new_pages.py)
+      if (width === 390 && path !== '/' && !NEW_LOOK.includes(path)) {
         await page.click('#menu-btn');
         assert.equal(await page.getAttribute('#menu-btn', 'aria-expanded'), 'true', path + ' menu');
       }
