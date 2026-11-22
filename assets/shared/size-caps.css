@@ -17,10 +17,9 @@ html body header.stage>blockquote#quote:not(#_){font-size:clamp(26px,3.6vw,52px)
 
 /* ---- pictures ---- */
 /* the GhostHeart Studios block at the top of Home: a strip, not half the screen */
+/* shown whole (Dom's 16:9 banner art), never taller than about a third of the screen */
 @media (min-width:701px){
-  html body .topban:not(#_){text-align:center}
-  html body .topban img:not(#_){display:inline-block!important;width:auto!important;max-width:100%!important;height:min(15vw,200px)!important;max-height:none!important;aspect-ratio:3/1!important;object-fit:cover!important;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+  html body .topban img:not(#_){width:auto!important;max-width:100%!important;height:min(34vh,260px)!important;max-height:none!important;aspect-ratio:16/9!important;object-fit:contain!important}
 }
 /* the About picture: never taller than about a third of the screen */
 html body #v-story .banner-frame:not(#_),html body .banner-frame:not(#_){width:min(520px,100%,52vh)!important}
@@ -31,8 +30,21 @@ html body :is(main,.view,section) :is(img,video,iframe):not(.tkh):not(#_){max-he
 html body .home2 section:not(#_){padding-block:clamp(16px,2.2vw,30px)!important}
 html body .home2 section.studio:not(#_){padding-block:clamp(18px,2.4vw,32px) clamp(14px,2vw,26px)!important}
 html body :is(.view,main)>section:not(.studio):not(#_){padding-block:clamp(18px,2.4vw,32px)!important}
-html body .heartbox2:not(#_){height:clamp(170px,19vw,240px)!important}
 html body footer:not(.sitefoot):not(#_){padding-block:28px 34px!important}
+
+/* ---- Home: the big spots ---- */
+/* the giant sliding band (STILL HERE / ONE HEART): a strip, not a billboard */
+html body .mega div:not(#_){font-size:clamp(1.5rem,3vw,2.5rem)!important}
+/* the sliding strips and heartbeat line between the banner and the first words */
+html body .cross:not(#_){padding-block:8px 12px!important}
+html body .ekg:not(#_){height:clamp(20px,2.4vw,30px)!important}
+/* today's line: use the width of the page instead of a narrow, tall column */
+html body .q-text:not(#_){max-width:38ch!important}
+/* take a seat: less empty air */
+html body .heartbox2:not(#_){height:clamp(150px,15vw,190px)!important;margin-bottom:10px!important}
+/* featured week */
+html body .feat-head:not(#_){margin-bottom:12px!important}
+html body .feat2 .deck:not(#_){padding:16px 18px 16px!important;gap:8px!important}
 
 /* ---- phones ---- */
 @media (max-width:700px){

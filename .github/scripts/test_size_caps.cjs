@@ -14,8 +14,8 @@ const PAGES = ['/', '/#story', '/#vault', '/#live', '/#merch', '/wake-the-heart/
   '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html', '/GhostHeart_Quotes.html'];
 // screen size, biggest text (px), tallest picture (px), longest page in screens for Home and About
 const SIZES = [
-  {name: 'laptop', width: 1366, height: 768, text: 56, picture: 345, screens: {'/': 3.8, '/#story': 3.2}},
-  {name: 'phone', width: 390, height: 844, text: 34, picture: 330, screens: {'/': 4.3, '/#story': 3.4}},
+  {name: 'laptop', width: 1366, height: 768, text: 56, moving: 64, picture: 345, screens: {'/': 3.3, '/#story': 3.2}},
+  {name: 'phone', width: 390, height: 844, text: 34, moving: 40, picture: 330, screens: {'/': 4.0, '/#story': 3.4}},
 ];
 
 (async () => {
@@ -50,9 +50,16 @@ const SIZES = [
       const found = await page.evaluate(() => {
         const shown = e => { const r = e.getBoundingClientRect(), s = getComputedStyle(e); return r.width > 1 && r.height > 1 && s.visibility !== 'hidden' && s.display !== 'none'; };
         const label = e => e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className.trim() ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '');
-        let text = {px: 0, what: ''}, picture = {px: 0, what: ''};
+        let text = {px: 0, what: ''}, picture = {px: 0, what: ''}, moving = {px: 0, what: ''};
         for (const e of document.querySelectorAll('body *')) {
-          if (!shown(e) || e.closest('[aria-hidden="true"]')) continue;   // decorative background words are not counted
+          if (!shown(e)) continue;
+          if (e.closest('[aria-hidden="true"]')) {   // decorative text: sliding bands count (they are loud); faint background words do not
+            if (!e.closest('.bgword,.big-no') && [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) {
+              const px = parseFloat(getComputedStyle(e).fontSize);
+              if (px > moving.px) moving = {px, what: label(e) + ' "' + e.textContent.trim().slice(0, 30) + '"'};
+            }
+            continue;
+          }
           if ([...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) {
             const px = parseFloat(getComputedStyle(e).fontSize);
             if (px > text.px) text = {px, what: label(e) + ' "' + e.textContent.trim().slice(0, 30) + '"'};
@@ -62,10 +69,11 @@ const SIZES = [
             if (px > picture.px) picture = {px, what: label(e) + ' ' + (e.currentSrc || e.src || '').split('/').pop()};
           }
         }
-        return {text, picture, screens: document.documentElement.scrollHeight / innerHeight, sideways: document.documentElement.scrollWidth > innerWidth + 1};
+        return {text, picture, moving, screens: document.documentElement.scrollHeight / innerHeight, sideways: document.documentElement.scrollWidth > innerWidth + 1};
       });
       const where = size.name + ' ' + p + ': ';
       if (found.text.px > size.text) problems.push(where + 'text is ' + Math.round(found.text.px) + 'px, limit ' + size.text + 'px: ' + found.text.what);
+      if (found.moving.px > size.moving) problems.push(where + 'sliding or decorative text is ' + Math.round(found.moving.px) + 'px, limit ' + size.moving + 'px: ' + found.moving.what);
       if (found.picture.px > size.picture) problems.push(where + 'picture is ' + Math.round(found.picture.px) + 'px tall, limit ' + size.picture + 'px: ' + found.picture.what);
       if (size.screens[p] && found.screens > size.screens[p]) problems.push(where + 'page is ' + found.screens.toFixed(1) + ' screens long, limit ' + size.screens[p]);
       if (found.sideways) problems.push(where + 'page scrolls sideways');
