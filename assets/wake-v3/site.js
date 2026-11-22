@@ -88,7 +88,7 @@
   var lv=document.getElementById("lives");
   var L=[];for(var k=0;k<14;k++){var dt=new Date(Date.UTC(2026,10,8+7*k));L.push(dt.toISOString().slice(0,10))} // every Sunday, Nov 8 to Feb 7
   (function(){var nx=L.filter(function(x){return x>=T})[0];if(!nx)return;var dd=d(nx);function all(c,v){document.querySelectorAll(c).forEach(function(e){e.textContent=v})}all(".js-nl-date","Sun, "+MON[dd.m]+" "+dd.d);
-    if(nx!=="2026-11-08"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})();
+    if(nx==="2026-11-08"){all(".js-nl-topic","Lessons Learned");all(".js-nl-sub","A title. A verse. Lesson learned.")}else if(nx<"2026-11-22"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})(); // Nov 22 on: Words From the Heart (Dom, Nov 19 2026)
   if(lv)L.forEach(function(x){if(x<T)return;var dd=d(x);var li=document.createElement("li");if(!lv.children.length)li.className="first";
     li.innerHTML='<time datetime="'+x+'T10:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>10:00 AM Central · TikTok</small></div>';lv.appendChild(li)});
 

@@ -591,8 +591,8 @@ details.more table{font-size:14px}
   <section class="nextlive">
     <div class="wrap">
       <div class="nl panel">
-        <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 8</b></div>
-        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+        <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 22</b></div>
+        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Words From the Heart</b><small class="js-nl-sub">My quotes, one picture at a time.</small></div>
         <a class="btn red" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
     </div>
@@ -675,8 +675,8 @@ details.more table{font-size:14px}
   <section class="nextlive">
     <div class="wrap">
       <div class="nl panel">
-        <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 8</b></div>
-        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+        <div><p class="mono" style="margin:0">Next Live</p><b class="chrome js-nl-date">Sun, Nov 22</b></div>
+        <div><p class="mono" style="margin:0;color:var(--mute)">10:00 AM Central · TikTok</p><b class="js-nl-topic">Words From the Heart</b><small class="js-nl-sub">My quotes, one picture at a time.</small></div>
         <a class="btn red" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
     </div>
@@ -756,8 +756,8 @@ details.more table{font-size:14px}
       </div>
 
       <div class="nl nl-big panel">
-        <div><p class="mono" style="margin:0">Next Sunday Live</p><b class="chrome js-nl-date">Sun, Nov 8</b><p class="mono" style="margin:2px 0 0;color:var(--mute)">10:00 AM Central · TikTok</p></div>
-        <div><p class="mono" style="margin:0;color:var(--mute)">Topic</p><b class="js-nl-topic">Lessons Learned</b><small class="js-nl-sub">A title. A verse. Lesson learned.</small></div>
+        <div><p class="mono" style="margin:0">Next Sunday Live</p><b class="chrome js-nl-date">Sun, Nov 22</b><p class="mono" style="margin:2px 0 0;color:var(--mute)">10:00 AM Central · TikTok</p></div>
+        <div><p class="mono" style="margin:0;color:var(--mute)">Topic</p><b class="js-nl-topic">Words From the Heart</b><small class="js-nl-sub">My quotes, one picture at a time.</small></div>
         <a class="btn red big" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
       </div>
 
@@ -778,8 +778,6 @@ details.more table{font-size:14px}
           <p class="ok" hidden>You’re in. (Prototype: on the real site this signs you up for the Mailchimp email list.)</p>
         </form>
       </div>
-
-      <p style="margin-top:16px;color:var(--silver);font-size:14px"><strong style="color:var(--silverw)">Also:</strong> Ghost Day listening night, Friday, November 13, 9:00 PM Central, on the <a href="https://discord.gg/2Vf2AbdRzu" target="_blank" rel="noopener">GhostHeart Discord ↗</a>.</p>
     </div>
   </section>
 </div>
@@ -1400,6 +1398,8 @@ details.more table{font-size:14px}
         <a class="plat panel" href="https://bsky.app/profile/myghostheart.com" target="_blank" rel="noopener"><b>Bluesky</b><span>The decisions and questions behind the work.</span><em>Talk ↗</em></a>
         <a class="plat panel" href="https://www.pinterest.com/ghostheart131517/" target="_blank" rel="noopener"><b>Pinterest</b><span>Artwork to save. Every pin leads to the song behind it.</span><em>Save ↗</em></a>
         <a class="plat panel" href="https://discord.gg/2Vf2AbdRzu" target="_blank" rel="noopener"><b>Discord</b><span>Listening nights and talk with the people who get it.</span><em>Join ↗</em></a>
+        <a class="plat panel" href="https://www.reddit.com/user/Ghostheart131517/" target="_blank" rel="noopener"><b>Reddit</b><span>Talk about the songs, the stories and the apps.</span><em>Join in ↗</em></a>
+        <a class="plat panel" href="https://play.google.com/store/apps/details?id=com.ghostheart5.chronospark" target="_blank" rel="noopener"><b>Google Play</b><span>Axiomara: Next Step, the GhostHeart Studios app.</span><em>Get it ↗</em></a>
         <a class="plat panel" href="https://toohumantostayquiet.substack.com/" target="_blank" rel="noopener"><b>Substack</b><span>Too Human to Stay Quiet. The long version of the story.</span><em>Read ↗</em></a>
         <a class="plat panel" href="https://x.com/ghostheartgp" target="_blank" rel="noopener"><b>X</b><span>What I’m making and what I have to say today.</span><em>Follow ↗</em></a>
       </div>
@@ -1566,7 +1566,7 @@ details.more table{font-size:14px}
   var lv=document.getElementById("lives");
   var L=[];for(var k=0;k<14;k++){var dt=new Date(Date.UTC(2026,10,8+7*k));L.push(dt.toISOString().slice(0,10))} // every Sunday, Nov 8 to Feb 7
   (function(){var nx=L.filter(function(x){return x>=T})[0];if(!nx)return;var dd=d(nx);function all(c,v){document.querySelectorAll(c).forEach(function(e){e.textContent=v})}all(".js-nl-date","Sun, "+MON[dd.m]+" "+dd.d);
-    if(nx!=="2026-11-08"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})();
+    if(nx==="2026-11-08"){all(".js-nl-topic","Lessons Learned");all(".js-nl-sub","A title. A verse. Lesson learned.")}else if(nx<"2026-11-22"){all(".js-nl-topic","Sunday Live");all(".js-nl-sub","Topic posted before the Live.")}})(); // Nov 22 on: Words From the Heart (Dom, Nov 19 2026)
   L.forEach(function(x){if(x<T)return;var dd=d(x);var li=document.createElement("li");if(!lv.children.length)li.className="first";
     li.innerHTML='<time datetime="'+x+'T10:00-06:00">Sun, '+MON[dd.m]+" "+dd.d+'</time><div class="what">Sunday Live<small>10:00 AM Central · TikTok</small></div>';lv.appendChild(li)});
 

@@ -126,6 +126,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   await page.close();
   page = await open('/live/', '2026-11-20T18:00:00Z');
   assert.match(await page.locator('#lives li').first().innerText(), /Sun, Nov 22/i);
+  assert.match(await page.locator('.nl-big .js-nl-topic').innerText(), /Words From the Heart/i);  // Dom, Nov 19 2026
   await page.close();
 
   // Blog: Dom, Nov 8 2026: older songs off everywhere; the Blog waits for The Heart Wakes notes,
