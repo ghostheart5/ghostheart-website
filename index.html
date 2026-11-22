@@ -1001,43 +1001,149 @@ section.feat2[hidden]{display:none!important}
 </div>
 
 <!-- ================= STORY ================= -->
+<!-- NEW GHOSTHEART VIEW (Dom, Nov 22, 2026) -->
+<style id="ng-style">
+/* The rebuilt GhostHeart (About) view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_ghostheart.py. Same colors, fonts and width as the new Home (home.css sets
+   the --nh-* values). Every selector starts with "html body #v-story" so nothing leaks to other views. */
+html body:has(#v-story:not([hidden])){background:var(--nh-black)}
+html body:has(#v-story:not([hidden]))::after{display:none}
+html body:has(#v-story:not([hidden]))>.hazard{display:none}
+
+/* the strip the page script adds on top: one slim red band, like Home */
+html body #v-story .pagefx{padding:0;margin:18px 0 0}
+html body #v-story .pagefx .ekg,html body #v-story .heartfx{display:none}
+html body #v-story .pagefx .ticker{background:var(--nh-red);color:#000;border-block:2px solid #000;transform:rotate(-1deg) scale(1.02);margin:0;box-shadow:none}
+html body #v-story .pagefx .ticker div{font:400 19px/1 var(--nh-title);letter-spacing:.08em;padding:8px 0 7px}
+html body #v-story .pagefx .ticker img{height:18px}
+
+html body #v-story section:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto;background:none;animation:none;overflow:visible}
+html body #v-story section::before,html body #v-story section::after{display:none}
+html body #v-story p{margin:0}
+
+/* part one: built from the heart */
+html body #v-story section.ng-open:not(#_){display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;padding:30px 0 22px!important}
+html body #v-story .ng-kicker{font:400 15px/1.4 var(--nh-body);color:var(--nh-silver);margin-bottom:10px}
+html body #v-story .ng-kicker b{color:var(--nh-white);font-weight:700}
+html body #v-story h2.ng-h:not(#_):not(#__){font:400 clamp(38px,5vw,54px)/1 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
+html body #v-story h2.ng-h span{display:block}
+html body #v-story .ng-spray:not(#_){font-family:var(--nh-spray)!important;text-transform:none;letter-spacing:0;color:var(--nh-hot)}
+html body #v-story h2.ng-h .ng-spray{font-size:.95em;line-height:1.05;margin-top:2px}
+html body #v-story .ng-words{margin-top:18px;display:grid;gap:14px;max-width:60ch;color:#d6d6d4;font:400 16px/1.55 var(--nh-body)}
+/* the picture's width is set by the size caps stylesheet (.banner-frame: min(520px,100%,52vh), 330px on a phone);
+   the box is given the same width so it hugs the picture */
+html body #v-story .ng-pic{position:relative;line-height:0;width:min(520px,100%,52vh);max-width:100%;margin-left:auto;border:1px solid var(--nh-line);background:#000;perspective:1400px;overflow:hidden}
+html body #v-story .ng-pic .banner-frame:not(#_){width:100%;max-width:none;margin:0}
+html body #v-story .ng-pic img:not(#_){display:block;width:100%;height:auto;max-width:none;box-shadow:none}
+html body #v-story .ng-safe{font:400 22px/1 var(--nh-spray);color:var(--nh-white);margin-top:12px;text-align:right}
+
+/* the heartbeat line between the two parts */
+html body #v-story svg.ng-rule{display:block;width:100%;height:30px}
+html body #v-story .ng-rule path{fill:none;stroke:var(--nh-red);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px var(--nh-hot))}
+
+/* part two: behind the scars */
+html body #v-story section.ng-scars:not(#_){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start;padding:26px 0 10px!important}
+html body #v-story .ng-side{position:sticky;top:104px}
+html body #v-story .ng-plates{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:18px;padding-left:6px}
+html body #v-story .ng-plates span{position:relative;isolation:isolate;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;color:#fff}
+html body #v-story .ng-plates span::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:#24262b;border-bottom:2px solid var(--nh-red)}
+html body #v-story .ng-tell{display:grid;gap:14px;max-width:60ch;color:#d6d6d4;font:400 16px/1.55 var(--nh-body)}
+html body #v-story .ng-tell .lead{font-size:21px;line-height:1.35;color:var(--nh-white);font-weight:500}
+html body #v-story .ng-tell .hit:not(#_){font:400 clamp(26px,3.4vw,38px)/1.05 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);border-left:5px solid var(--nh-red);padding:4px 0 4px 16px;margin:4px 0;background:none}
+html body #v-story .ng-tell .hit.red:not(#_){color:var(--nh-hot)}
+html body #v-story .ng-tell .hit .ng-spray{display:block;font-size:1.05em;line-height:1.1}
+html body #v-story .ng-tell .last:not(#_){font:400 clamp(30px,4.2vw,48px)/1.03 var(--nh-title)!important;text-transform:uppercase;color:var(--nh-white);margin-top:8px}
+html body #v-story .ng-tell .last .ng-spray{font-size:1.1em}
+
+/* where to go next */
+html body #v-story section.ng-next:not(#_){border-top:1px solid var(--nh-line);margin-top:22px;padding:20px 0 30px!important;display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center}
+html body #v-story .ng-btn{display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;cursor:pointer;border-radius:0}
+html body #v-story .ng-btn:hover{background:var(--nh-hot);border-color:var(--nh-hot)}
+html body #v-story .ng-btn.ghost{background:transparent;border-color:var(--nh-silver);color:var(--nh-white)}
+html body #v-story .ng-btn.ghost:hover{background:var(--nh-white);color:#000}
+html body #v-story .ng-btn:focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-story .ng-note{flex-basis:100%;font:400 21px/1.2 var(--nh-spray);color:var(--nh-silver);margin-top:6px}
+
+@media (min-width:821px) and (max-width:920px){
+  html body #v-story section.ng-next:not(#_){gap:10px}
+  html body #v-story .ng-btn{font-size:15px;padding:12px 10px}
+}
+@media (max-width:820px){
+  html body #v-story section.ng-open:not(#_),html body #v-story section.ng-scars:not(#_){grid-template-columns:minmax(0,1fr);gap:18px}
+  html body #v-story section.ng-open:not(#_){padding:14px 0 10px!important}
+  html body #v-story section.ng-scars:not(#_){padding:10px 0 4px!important}
+  html body #v-story .ng-side{position:static}
+  html body #v-story h2.ng-h:not(#_):not(#__){font-size:32px!important}
+  html body #v-story .ng-tell .hit:not(#_){font-size:25px!important}
+  html body #v-story .ng-tell .last:not(#_){font-size:30px!important}
+  html body #v-story .ng-safe{text-align:left;font-size:20px;margin-top:8px}
+  html body #v-story .ng-pic{margin-left:0;width:min(330px,100%)}
+  /* tight on a phone so the page is no longer than it was before */
+  html body #v-story .pagefx{margin-top:10px}
+  html body #v-story .ng-words,html body #v-story .ng-tell{gap:10px;line-height:1.5}
+  html body #v-story .ng-words{margin-top:12px}
+  html body #v-story .ng-kicker{margin-bottom:6px}
+  html body #v-story .ng-plates{margin-top:10px;gap:6px 8px;padding-left:4px}
+  html body #v-story .ng-plates span{font-size:14px;padding:7px 8px}
+  html body #v-story .ng-tell .lead{font-size:19px}
+  html body #v-story section.ng-next:not(#_){margin-top:12px;padding:14px 0 18px!important;gap:8px}
+  html body #v-story .ng-btn{font-size:14.5px;padding:10px 11px}
+  html body #v-story .ng-note{font-size:18px;margin-top:2px}
+}
+</style>
 <div class="view" id="v-story" hidden><span id="story"></span>
-  <div class="banner" id="banner">
-    <div class="banner-frame">
-      <img src="/assets/protector/banner.jpg" alt="Protected by GhostHeart: the hooded, faceless GhostHeart holds a torn red-and-black cloak over a row of people, among them a person with the flag, a trans person in the trans flag, a man in prison orange, a father carrying his family, a man in a suit, a man carrying everything he owns, and a worker with a wrench." width="1672" height="941">
+  <section class="ng-open" aria-labelledby="ng-about-title">
+    <div>
+      <p class="ng-kicker"><b>About</b> GhostHeart Studios</p>
+      <h2 class="ng-h" id="ng-about-title"><span>Built from</span> <span class="ng-spray">the heart.</span></h2>
+      <div class="ng-words">
+        <p>I’m the founder and creator of GhostHeart Studios, an independent creative business powered by technology and built from the heart. I turn my ideas, experiences, and imagination into music, visual stories, and digital projects that give people something to connect with.</p>
+        <p>Everything starts with something personal: a feeling, a story, or something I need to say. Technology gives me the tools to bring it to life. Through social media, I share what I create, hear other people’s stories, and build a community that helps inspire what comes next.</p>
+        <p>At the center of that world is GhostHeart, the dark, faceless protector I created. I’m the person behind the vision—the heart he protects. GhostHeart Studios is where I bring that vision into the world, creating work that speaks honestly, invites connection, and gives a voice to things that can be hard to put into words.</p>
+      </div>
+    </div>
+    <div class="ng-picside">
+      <div class="ng-pic" id="banner">
+        <div class="banner-frame">
+          <img src="/assets/protector/banner.jpg" alt="Protected by GhostHeart: the hooded, faceless GhostHeart holds a torn red-and-black cloak over a row of people, among them a person with the flag, a trans person in the trans flag, a man in prison orange, a father carrying his family, a man in a suit, a man carrying everything he owns, and a worker with a wrench." width="1672" height="941">
       <span class="hbs" aria-hidden="true"><span class="hb" style="left:50.2%;top:20.5%;width:17%;animation-delay:0s"></span><span class="hb" style="left:50.8%;top:43.5%;width:5%;animation-delay:0.12s"></span><span class="hb" style="left:38.3%;top:42.5%;width:5%;animation-delay:0.2s"></span><span class="hb" style="left:64.3%;top:43%;width:5%;animation-delay:0.2s"></span><span class="hb" style="left:28.1%;top:43.5%;width:5%;animation-delay:0.3s"></span><span class="hb" style="left:75.5%;top:45.7%;width:5%;animation-delay:0.3s"></span><span class="hb" style="left:17.3%;top:43%;width:5%;animation-delay:0.4s"></span><span class="hb" style="left:85.9%;top:42.5%;width:5%;animation-delay:0.4s"></span></span>
       <span class="shine" aria-hidden="true"></span>
       <i class="cn c1" aria-hidden="true"></i><i class="cn c2" aria-hidden="true"></i><i class="cn c3" aria-hidden="true"></i><i class="cn c4" aria-hidden="true"></i>
-      <span class="stamp s safe">you’re safe here</span>
+        </div>
+      </div>
+      <p class="ng-safe">you’re safe here</p>
     </div>
-  </div>
-  <section><div class="wrap"><div class="stack">
-    <p class="mono"><b>About</b> GhostHeart Studios</p>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Built from</span> <span class="tag" data-drip>the heart.</span></h2>
-    <div class="prose">
-      <p>I’m the founder and creator of GhostHeart Studios, an independent creative business powered by technology and built from the heart. I turn my ideas, experiences, and imagination into music, visual stories, and digital projects that give people something to connect with.</p>
-      <p>Everything starts with something personal: a feeling, a story, or something I need to say. Technology gives me the tools to bring it to life. Through social media, I share what I create, hear other people’s stories, and build a community that helps inspire what comes next.</p>
-      <p>At the center of that world is GhostHeart, the dark, faceless protector I created. I’m the person behind the vision—the heart he protects. GhostHeart Studios is where I bring that vision into the world, creating work that speaks honestly, invites connection, and gives a voice to things that can be hard to put into words.</p>
+  </section>
+
+  <svg class="ng-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="ng-scars" aria-labelledby="ng-scars-title">
+    <div class="ng-side">
+      <p class="ng-kicker"><b>Enter my world</b> · the life behind the name</p>
+      <h2 class="ng-h" id="ng-scars-title"><span>Behind</span> <span class="ng-spray">the scars</span></h2>
+      <div class="ng-plates"><span>Not one wound</span><span>Not one label</span><span>Still here</span></div>
     </div>
-    <div class="hazard" style="width:100%;margin-block:14px" aria-hidden="true"></div>
-    <p class="mono"><b>Enter my world</b> · the life behind the name</p>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Behind</span><br><span class="tag" data-drip>the scars</span></h2>
-    <div class="row" style="gap:18px;margin-block:10px"><span class="stamp">Not one wound</span><span class="stamp s" style="transform:rotate(3deg)">Not one label</span><span class="stamp" style="transform:rotate(-2deg)">Still here</span></div>
-    <div class="prose">
-      <p>I kept seeing people treated like they were nothing.</p>
+    <div class="ng-tell">
+      <p class="lead">I kept seeing people treated like they were nothing.</p>
       <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
-      <p>And I had plenty to say about it. <span class="hit">But I wasn’t doing shit about it.</span></p>
+      <p>And I had plenty to say about it.</p>
+      <p class="hit red">But I wasn’t doing shit about it.</p>
       <p>That was hard to admit, because I really did care. I cared enough to get angry. Enough to hurt over it. But stepping forward meant giving people a reason to look at me.</p>
-      <p class="pull"><span class="chrome">A way to hide and</span> <span class="red">still tell my story.</span></p>
+      <p class="hit">A way to hide and <span class="ng-spray">still tell my story.</span></p>
       <p>GhostHeart carries the bravery, the strength, the courage I’m still trying to find in myself. He gives me a way to step forward while part of me still wants to stay hidden.</p>
       <p>I’m the man behind him. The one who cares deeply and is still scared.</p>
       <p>Maybe my story could help somebody. Even with the ugly parts. Even with the mistakes I have to own. Even if the world judged me for telling it.</p>
-      <p class="pull"><span class="chrome">If I help one person, then I did</span> <span class="tag" data-drip style="font-size:1.1em">something.</span></p>
-      <p class="note">Read the whole story: <a href="/GhostHeart_Story.html" style="color:var(--hot)">Behind the Scars</a></p>
+      <p class="last">If I help one person, then I did <span class="ng-spray">something.</span></p>
     </div>
-    <div class="row"><button class="btn" type="button" data-play="the-heart-wakes">▶ Play The Heart Wakes</button><a class="btn ghost" href="#vault">Stay with a song</a></div>
-    <span class="scrawl">no one has to disclose their own pain to belong here.</span>
-  </div></div></section>
+  </section>
+
+  <section class="ng-next" aria-label="Where to go next">
+    <a class="ng-btn" href="/GhostHeart_Story.html">Read the whole story: Behind the Scars</a>
+    <button class="ng-btn ghost" type="button" data-play="the-heart-wakes">▶ Play The Heart Wakes</button>
+    <a class="ng-btn ghost" href="#vault">Stay with a song</a>
+    <a class="ng-btn ghost" href="/GhostHeart_Resources.html">Find Support</a>
+    <p class="ng-note">no one has to disclose their own pain to belong here.</p>
+  </section>
 </div>
 
 <!-- ================= LIVE ================= -->
