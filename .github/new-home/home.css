@@ -244,7 +244,10 @@ html body #v-home .nh-wear li.all a:hover{background:var(--nh-red)}
   html body #v-home .studio-grid,html body #v-home .feat-grid,html body #v-home .nh-pair{grid-template-columns:minmax(0,1fr)}
   html body #v-home .studio-grid{gap:14px}
   html body #v-home .deck .cover2:not(#_){flex-basis:96px;width:96px;height:96px}
-  html body #v-home .nh-wear ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  /* one row you can slide sideways, so the page does not get longer on a phone */
+  html body #v-home .nh-wear ul{display:flex;overflow-x:auto;gap:10px;padding-bottom:6px;scroll-snap-type:x proximity}
+  html body #v-home .nh-wear li{flex:0 0 132px;scroll-snap-align:start}
+  html body #v-home .nh-wear li.all a{font-size:17px}
   html body #v-home .quote2 .wrap{padding-left:0}
   html body #v-home .quote2 .wrap::before{display:none}
   html body #v-home .nh-pair .fire2{background-image:none}
