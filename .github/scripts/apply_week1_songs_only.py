@@ -78,7 +78,7 @@ FILMS_NOW = ('<article class="film panel" id="film-the-heart-wakes"><div><p clas
              'target="_blank">GhostHeart on YouTube ↗</a><a class="btn ghost" href="/music/">Music</a></div></div></article>\n')
 BLOG_LIST = re.compile(r'<ol class="nb">.*?</ol>', re.S)
 BLOG_NOW = ('<div class="panel nb-empty" style="padding:18px"><p style="margin:0">New notes arrive with each week of '
-            '<b>The Heart Wakes</b>. Week 1: The Heart Wakes and To Those Who Served.</p></div>')
+            '<b>The Heart Wakes</b>.</p></div>')  # Nov 22 2026: no week number, so it never goes stale
 BLOG_CHIPS = re.compile(r'\s*<div class="chips nb-chips">.*?</div>', re.S)
 BLOG_NEXT = re.compile(r'\s*<div class="nb-next panel">.*?</div>', re.S)
 TO_MUSIC = ['GhostHeart_Songs.html', 'assets/platforms/index.html', 'albums/ghostheart/index.html', 'albums/youre-not-god/index.html',
