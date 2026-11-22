@@ -1370,17 +1370,84 @@ html body #v-live .nl-box .nl-btn{margin-top:6px}
 </div>
 
 <!-- ================= MERCH (Nov 11: every public product in the GhostHeart Studios shop, grouped by design) ================= -->
+<!-- NEW MERCH VIEW (Dom, Nov 22, 2026) -->
+<style id="nm-style">
+/* The rebuilt Merch view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_merch.py. Same colors, fonts and width as the new Home (home.css sets the
+   --nh-* values). Every selector starts with "html body #v-merch" so nothing leaks to other views.
+   Heading sizes are left to the size caps stylesheet. */
+html body:has(#v-merch:not([hidden])){background:var(--nh-black)}
+html body:has(#v-merch:not([hidden]))::after{display:none}
+html body:has(#v-merch:not([hidden]))>.hazard{display:none}
+
+html body #v-merch section:not(#_){background:none;animation:none;padding:0!important}
+html body #v-merch section::before,html body #v-merch section::after{display:none}
+html body #v-merch .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0;margin-inline:auto}
+
+/* top: the name on the left, the count and the shop button on the right */
+html body #v-merch .stack:not(#_){width:100%;max-width:none;margin:0;display:grid;justify-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;row-gap:0;align-items:end;padding:30px 0 0}
+html body #v-merch .stack>.mono{grid-column:1;font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0 0 8px}
+html body #v-merch .stack>.mono b{color:var(--nh-white);font-weight:700}
+html body #v-merch h2.bigtitle{grid-column:1;font-family:var(--nh-title)!important;line-height:1;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
+html body #v-merch h2.bigtitle span:not(#_){background:none;color:var(--nh-white);-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;font-family:inherit!important;-webkit-text-stroke:0;animation:none}
+html body #v-merch h2.bigtitle span.red:not(#_){color:var(--nh-hot)}
+html body #v-merch h2.bigtitle span::before,html body #v-merch h2.bigtitle span::after{display:none}
+html body #v-merch .stack>.lede:not(#_){grid-column:2;grid-row:1/span 2;align-self:end;font:400 17px/1.5 var(--nh-body);color:#d6d6d4;max-width:46ch;margin:0}
+html body #v-merch .stack>.row{grid-column:1/-1;display:flex;margin:22px 0 0}
+html body #v-merch .btn:not(#_){display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;min-height:0;box-shadow:none;text-shadow:none;transform:none;filter:none;clip-path:none;border-radius:0}
+html body #v-merch .btn:hover:not(#_){background:#A50D26;border-color:var(--nh-white)}
+html body #v-merch .btn:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-merch .stack>.note{grid-column:1/-1;font:400 14.5px/1.55 var(--nh-body);color:var(--nh-silver);margin:12px 0 40px;max-width:74ch}
+
+/* the designs */
+html body #v-merch .m-cards:not(#_){grid-column:1/-1;width:auto;margin:22px 0 0;padding:24px 0 0;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+html body #v-merch .m-card:not(#_){display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:0;margin:0;padding:0;background:var(--nh-panel);border:1px solid var(--nh-line);border-top:4px solid var(--nh-red);box-shadow:none;transform:none;animation:none;border-radius:0}
+html body #v-merch .m-card::before,html body #v-merch .m-card::after{display:none}
+html body #v-merch .m-art:not(#_){margin:0;padding:0;border:0;background:#000;transform:none;box-shadow:none;width:auto;max-width:none}
+html body #v-merch .m-art img:not(#_){display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:0;box-shadow:none;transform:none}
+html body #v-merch .m-body{padding:14px 14px 16px;display:grid;gap:8px;align-content:start}
+html body #v-merch .m-body h2{font-family:var(--nh-title)!important;line-height:1.05;text-transform:uppercase;color:var(--nh-white);background:none;-webkit-text-fill-color:currentColor;text-shadow:none;margin:0}
+html body #v-merch .m-body>p{font:400 15px/1.5 var(--nh-body);color:#d6d6d4;margin:0}
+html body #v-merch .m-list{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+html body #v-merch .m-list li{margin:0;padding:0;border:0;background:none}
+html body #v-merch .m-list li::before{display:none}
+html body #v-merch .m-list a:not(#_){display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:baseline;text-decoration:none;font:400 15px/1.3 var(--nh-body);color:var(--nh-white);background:transparent;border:1px solid var(--nh-line);padding:8px 10px;border-radius:0;box-shadow:none;transform:none}
+html body #v-merch .m-list a:hover:not(#_){border-color:var(--nh-silver);background:#1d1f23}
+html body #v-merch .m-list a:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:2px}
+html body #v-merch .m-list a b{font-weight:700;color:var(--nh-white);white-space:nowrap}
+html body #v-merch .m-list a i{font-style:normal;color:var(--nh-hot)}
+
+@media (max-width:1000px){
+  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  html body #v-merch .stack:not(#_){grid-template-columns:minmax(0,1fr);padding-top:16px}
+  html body #v-merch .stack>.lede:not(#_){grid-column:1;grid-row:auto;margin-top:10px}
+  html body #v-merch .m-cards:not(#_){gap:10px;margin-top:16px;padding-top:16px}
+  html body #v-merch .m-body h2:not(#_):not(#__){font-size:20px!important}
+  html body #v-merch .m-body{padding:10px 10px 12px;gap:6px}
+  html body #v-merch .m-body>p{font-size:14px}
+  html body #v-merch .m-list a:not(#_){display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;font-size:13px;padding:7px 6px;gap:2px 6px}
+  html body #v-merch .m-list a i{display:none}
+  html body #v-merch .stack>.note{margin-bottom:28px}
+}
+</style>
 <div class="view" id="v-merch" hidden><span id="merch"></span>
   <section><div class="wrap"><div class="stack">
     <p class="mono">GhostHeart / <b>Merch</b></p>
     <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Wear the</span> <span class="red">heart.</span></h2>
-    <p class="lede">Five designs, eighteen pieces. Printed to order. Pick a piece to open it in the shop.</p>
+    <p class="lede">Seven designs, twenty-four pieces. Printed to order. Pick a piece to open it in the shop.</p>
     <div class="m-cards">
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-ttws.jpg" alt="To Those Who Served in worn steel and crimson letters, a heartbeat line, and You shouldn’t stand alone" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>To Those Who Served</h2><p>TO THOSE WHO SERVED in worn steel and crimson, with a heartbeat line and “You shouldn’t stand alone.”</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-black-mug-11-oz" target="_blank" rel="noopener"><span>Mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/wake-v3/img/merch-still-here.jpg" alt="Still Here: cream letters with a red poppy" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Still Here</h2><p>Cream letters and a red poppy growing out of the rubble. For anyone who made it through.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/wake-v3/img/merch-take-up-space.jpg" alt="Take Up Space: cream letters in a red frame" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Take Up Space</h2><p>Bold cream letters in a red frame.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-cracked-heart.jpg" alt="A cracked crimson heart glowing on black" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>The Cracked Heart</h2><p>The cracked crimson heart GhostHeart wears on his chest.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-cuffed-beanie" target="_blank" rel="noopener"><span>Cuffed beanie</span><b>$20</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$4.99–5.39</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-human-too.jpg" alt="Human Too poster art: cream letters over a cracked red heart" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Human Too</h2><p>HUMAN TOO with a cracked heart and #HumanToo.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/human-too-black-mug-11-oz" target="_blank" rel="noopener"><span>Black mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/human-too-gothic-pride-mug-11-oz" target="_blank" rel="noopener"><span>Gothic Pride mug</span><b>$15</b><i>↗</i></a></li></ul></div></article>
+      <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-trans-heart.jpg" alt="Trans Heart tee: a cracked heart in light blue, pink and white with paint drips" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Trans Heart</h2><p>A cracked heart in the trans flag colors, light blue, pink and white, with paint drips and a crack down the middle.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-black-mug-11-oz" target="_blank" rel="noopener"><span>Mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
+      <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-you-cant-change-us.jpg" alt="You Can’t Change Us tee, back view: You can change the laws. But you can’t change us." width="640" height="640" loading="lazy"></div><div class="m-body"><h2>You Can’t Change Us</h2><p>YOU CAN CHANGE THE LAWS. BUT YOU CAN’T CHANGE US. The artwork is on the back; the front is plain black.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/you-cant-change-us-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li></ul></div></article>
     </div>
     <div class="row"><a class="btn ghost" href="https://ghostheart-studios-shop.fourthwall.com" target="_blank" rel="noopener">Whole shop ↗</a></div>
     <p class="note">These open your GhostHeart Studios shop in a new tab. Prices as listed in the shop on Nov 22, 2026; sizes 2XL and up cost a little more.</p>
