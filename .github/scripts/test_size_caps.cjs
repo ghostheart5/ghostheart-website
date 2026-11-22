@@ -15,11 +15,9 @@ const PAGES = ['/', '/#story', '/#vault', '/#live', '/#merch', '/wake-the-heart/
 // screen size, biggest text (px), tallest picture (px), longest page in screens for Home and About
 // The page-length limits sit a little above what was measured (Home 3.3 laptop, 4.0 phone on Nov 21 2026),
 // because the checks machine uses different fonts and renders pages slightly longer than a Windows PC.
-// hero: Home's top picture, Scars Wakes the Heart. Dom, Nov 22 2026: "can you zoom out on the scars wakes the heart?" It is shown
-// whole and sized to fit the first screen (apply_new_home.py), so it has its own limit instead of the 345px picture limit.
 const SIZES = [
-  {name: 'laptop', width: 1366, height: 768, text: 56, moving: 64, picture: 345, hero: 570, screens: {'/': 3.5, '/#story': 3.2}},
-  {name: 'phone', width: 390, height: 844, text: 34, moving: 40, picture: 330, hero: 330, screens: {'/': 4.2, '/#story': 3.4}},
+  {name: 'laptop', width: 1366, height: 768, text: 56, moving: 64, picture: 345, screens: {'/': 3.5, '/#story': 3.2}},
+  {name: 'phone', width: 390, height: 844, text: 34, moving: 40, picture: 330, screens: {'/': 4.2, '/#story': 3.4}},
 ];
 
 (async () => {
@@ -54,7 +52,7 @@ const SIZES = [
       const found = await page.evaluate(() => {
         const shown = e => { const r = e.getBoundingClientRect(), s = getComputedStyle(e); return r.width > 1 && r.height > 1 && s.visibility !== 'hidden' && s.display !== 'none'; };
         const label = e => e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className.trim() ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '');
-        let text = {px: 0, what: ''}, picture = {px: 0, what: ''}, moving = {px: 0, what: ''}, hero = {px: 0, what: ''};
+        let text = {px: 0, what: ''}, picture = {px: 0, what: ''}, moving = {px: 0, what: ''};
         for (const e of document.querySelectorAll('body *')) {
           if (!shown(e)) continue;
           if (e.closest('[aria-hidden="true"]')) {   // decorative text: sliding bands count (they are loud); faint background words do not
@@ -70,16 +68,14 @@ const SIZES = [
           }
           if (/^(IMG|VIDEO|IFRAME)$/.test(e.tagName)) {
             const px = e.getBoundingClientRect().height;
-            if (e.closest('.nh-wake')) { if (px > hero.px) hero = {px, what: label(e)}; continue; }   // Home's top picture has its own limit below
             if (px > picture.px) picture = {px, what: label(e) + ' ' + (e.currentSrc || e.src || '').split('/').pop()};
           }
         }
-        return {text, picture, moving, hero, screens: document.documentElement.scrollHeight / innerHeight, sideways: document.documentElement.scrollWidth > innerWidth + 1};
+        return {text, picture, moving, screens: document.documentElement.scrollHeight / innerHeight, sideways: document.documentElement.scrollWidth > innerWidth + 1};
       });
       const where = size.name + ' ' + p + ': ';
       if (found.text.px > size.text) problems.push(where + 'text is ' + Math.round(found.text.px) + 'px, limit ' + size.text + 'px: ' + found.text.what);
       if (found.moving.px > size.moving) problems.push(where + 'sliding or decorative text is ' + Math.round(found.moving.px) + 'px, limit ' + size.moving + 'px: ' + found.moving.what);
-      if (found.hero.px > size.hero) problems.push(where + 'the top picture is ' + Math.round(found.hero.px) + 'px tall, limit ' + size.hero + 'px');
       if (found.picture.px > size.picture) problems.push(where + 'picture is ' + Math.round(found.picture.px) + 'px tall, limit ' + size.picture + 'px: ' + found.picture.what);
       if (size.screens[p] && found.screens > size.screens[p]) problems.push(where + 'page is ' + found.screens.toFixed(1) + ' screens long, limit ' + size.screens[p]);
       if (found.sideways) problems.push(where + 'page scrolls sideways');
