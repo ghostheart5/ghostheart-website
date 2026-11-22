@@ -57,7 +57,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.match(await page.locator('#v-live h2').innerText(), /Words from\s+the heart/i);
   assert.equal(await page.locator('#fire-in').count(), 0);
   await page.click('header.top a[href="#merch"]');
-  assert.equal(await page.locator('#v-merch .m-card').count(), 5);
+  assert.equal(await page.locator('#v-merch .m-card').count(), 7);   // Dom, Nov 22 2026: Trans Heart and You Can't Change Us added ("yes and use the prices i chose")
   assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);
   await page.close();
   // Week 2 (Dom, Nov 14 2026, apply_week2_home.py): The Parts You Hide takes over at 7 PM Central on Sunday, Nov 15.
