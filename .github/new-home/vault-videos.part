@@ -1,5 +1,5 @@
   <section class="nv-vids" id="nv-vids" aria-labelledby="nv-vids-title">
-    <h2 id="nv-vids-title">Out as videos</h2>
+    <h2 class="vh2" id="nv-vids-title">Out as videos</h2>
     <p class="nv-say">These play on YouTube.</p>
     <ol class="nv-list" id="nv-vidlist">
       <li><a class="nv-vid" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener"><span class="no">1</span><span><span class="ti">To Those Who Served</span><span class="why">For those who served, and for everything they still carry.</span></span><span class="go">Watch ↗</span></a></li>
@@ -15,12 +15,14 @@
     function out(li){var f=li.getAttribute("data-from");return !f||Date.now()>=Date.parse(f)}
     function show(){
       var word=(q?q.value:"").trim().toLowerCase().replace(/’/g,"'"),pressed=moods&&moods.querySelector('.chip[aria-pressed="true"]'),mood=pressed?pressed.getAttribute("data-m"):"",n=0;
-      items.forEach(function(li){var ok=out(li)&&!mood&&(!word||li.textContent.toLowerCase().replace(/’/g,"'").indexOf(word)>=0);li.hidden=!ok;if(ok)n++});
+      items.forEach(function(li){var text=(li.querySelector(".ti").textContent+" "+li.querySelector(".why").textContent).toLowerCase().replace(/’/g,"'"),ok=out(li)&&!mood&&(!word||text.indexOf(word)>=0);
+        li.hidden=!ok;if(ok){n++;li.querySelector(".no").textContent=n}});
       box.hidden=!n;
       var none=document.getElementById("vempty");if(none&&n)none.hidden=true;
     }
     if(q)q.addEventListener("input",function(){setTimeout(show,0)});
     if(moods)moods.addEventListener("click",function(){setTimeout(show,0)});
     show();
+    items.forEach(function(li){var f=li.getAttribute("data-from"),wait=f?Date.parse(f)-Date.now():0;if(wait>0&&wait<2147483647)setTimeout(show,wait+1000)});
   })();
   </script>
