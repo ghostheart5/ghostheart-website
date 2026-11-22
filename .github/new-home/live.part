@@ -1,0 +1,42 @@
+<div class="view" id="v-live" hidden><span id="live"></span>
+  <section class="nl-onair" aria-labelledby="nl-live-title">
+    <div>
+      <p class="nl-plates"><span>Sundays</span> <span>10 AM Central</span> <span>TikTok</span></p>
+      <h2 class="nl-h" id="nl-live-title"><span>Words from</span> <span class="nl-spray">the heart.</span></h2>
+      <p class="nl-say">GhostHeart’s words, and quotes that touched GhostHeart’s heart.</p>
+      <a class="nl-btn" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
+    </div>
+    <blockquote class="nl-quote">
+      <p id="nl-line"></p>
+      <cite>Today’s line. A new one every day.</cite>
+    </blockquote>
+  </section>
+
+  <svg class="nl-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nl-know" aria-label="Good to know">
+    <p class="nl-fine">The next live date shows here only once it’s confirmed. This is a creative community space, not professional care. If you need more than a song can give, <a href="/GhostHeart_Resources.html">Find Support</a> is here.</p>
+  </section>
+
+  <section class="nl-seat" aria-labelledby="nl-seat-title">
+    <div class="nl-box">
+      <h3 id="nl-seat-title">Take a seat. You’re welcome here.</h3>
+      <p>Every person who takes a seat adds a silver thread to the heart. Email only. New songs, new work from the studio, and every Sunday Live. Leave anytime.</p>
+      <a class="nl-btn" href="#join-the-signal">Pull up a seat</a>
+    </div>
+  </section>
+  <script>
+  /* Live view: show today's line, the same one the Home page shows. The page's main script picks the line; this copies it once the page has loaded. */
+  (function(){
+    function fill(){
+      var from=document.getElementById("q-text"),to=document.getElementById("nl-line");
+      if(!from||!to)return;
+      var words=from.textContent.replace(/\s+/g," ").trim().split(" ");
+      if(words.length<3){to.textContent=words.join(" ");return}
+      to.textContent=words.slice(0,-2).join(" ")+" ";
+      var em=document.createElement("em");em.textContent=words.slice(-2).join(" ");to.appendChild(em);
+    }
+    if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fill);else fill();
+  })();
+  </script>
+</div>
