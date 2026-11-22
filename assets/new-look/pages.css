@@ -217,14 +217,14 @@ html body.newlook .np-row{display:flex;flex-wrap:wrap;gap:10px}
 
 /* ---------- pages whose own words and markup are untouched: Find Support and Privacy ---------- */
 html body.newlook main .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0;margin-inline:auto}
-html body.newlook main :is(h1,h2,h3) span:not(#_){background:none;color:inherit;-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;animation:none}
-html body.newlook main :is(h1,h2,h3) span.red:not(#_){color:var(--nh-hot)}
+html body.newlook:is([data-page="support"],[data-page="privacy"]) main :is(h1,h2,h3) span:not(#_){background:none;color:inherit;-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;animation:none}
+html body.newlook:is([data-page="support"],[data-page="privacy"]) main :is(h1,h2,h3) span.red:not(#_){color:var(--nh-hot)}
 html body.newlook main .mono{font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver)}
 html body.newlook main .panel{background:var(--nh-panel);border:1px solid var(--nh-line)}
 html body.newlook main .panel::before,html body.newlook main .panel::after{display:none}
 
 /* Find Support */
-html body.newlook[data-page="support"] .pagehead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:end;margin:0 0 22px}
+html body.newlook[data-page="support"] .pagehead{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.5fr);gap:30px;align-items:end;margin:0 0 14px}
 html body.newlook[data-page="support"] .pagehead p{color:#d6d6d4;font-size:17px}
 html body.newlook[data-page="support"] .crisis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 html body.newlook[data-page="support"] .crisis .panel{padding:18px;border-top:4px solid var(--nh-red)}
@@ -234,14 +234,14 @@ html body.newlook[data-page="support"] .crisis p{margin-top:8px;color:#d6d6d4}
 html body.newlook[data-page="support"] .crisis strong:not(#_){color:var(--nh-white)!important}
 html body.newlook[data-page="support"] main a{color:var(--nh-white)}
 html body.newlook[data-page="support"] main .note{margin-top:16px!important}
-html body.newlook[data-page="support"] .res-dir{margin-top:26px;padding-top:6px;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot)}
-html body.newlook[data-page="support"] .res-dir>.mono{margin:20px 0 6px!important}
+html body.newlook[data-page="support"] .res-dir{margin-top:18px;padding-top:0;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot)}
+html body.newlook[data-page="support"] .res-dir>.mono{margin:14px 0 4px!important}
 html body.newlook[data-page="support"] .res-dir>p:not(.mono){color:#d6d6d4!important;margin:8px 0 14px!important}
 html body.newlook[data-page="support"] .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 html body.newlook[data-page="support"] .chip{font:400 15px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;background:transparent;border:1px solid var(--nh-silver);color:var(--nh-white);display:inline-flex;align-items:center;padding:9px 12px;min-height:40px;cursor:pointer;border-radius:0}
 html body.newlook[data-page="support"] .chip:hover{background:#24262b}
 html body.newlook[data-page="support"] .chip.on{background:var(--nh-red);border-color:var(--nh-red);color:#fff}
-html body.newlook[data-page="support"] .res-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+html body.newlook[data-page="support"] .res-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 html body.newlook[data-page="support"] .resource{background:var(--nh-panel);border:1px solid var(--nh-line);border-left:4px solid var(--nh-red);padding:14px 16px;display:flex;flex-direction:column}
 html body.newlook[data-page="support"] .resource[hidden]{display:none}
 html body.newlook[data-page="support"] .resource .card-kicker{font:400 14px/1.3 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver)}
@@ -258,15 +258,20 @@ html body.newlook[data-page="support"] .res-privacy h3{font-size:22px}
 html body.newlook[data-page="support"] .res-privacy p:not(.mono):not(.note){color:#d6d6d4;font-size:15px;line-height:1.5}
 html body.newlook[data-page="support"] .res-privacy .row{display:flex;flex-wrap:wrap;gap:8px}
 html body.newlook[data-page="support"] .res-privacy .btn{color:#fff}
+html body.newlook[data-page="support"] .res-privacy .btn.red:hover:not(#_){background:#A50D26;border-color:var(--nh-white)}
+html body.newlook[data-page="support"] .res-privacy .panel>a{display:inline-flex;align-items:center;min-height:40px}
 
 /* Privacy */
-html body.newlook[data-page="privacy"] .legal{max-width:none;display:grid;grid-template-columns:minmax(0,760px);padding-bottom:44px}
+html body.newlook[data-page="privacy"] .legal{max-width:none;display:grid;grid-template-columns:minmax(0,680px);padding-bottom:44px}
 html body.newlook[data-page="privacy"] .legal h1{margin:0 0 14px}
 html body.newlook[data-page="privacy"] .legal h2{font:400 24px/1.1 var(--nh-title);margin:26px 0 8px;padding-top:14px;border-top:1px solid var(--nh-line)}
 html body.newlook[data-page="privacy"] .legal :is(p,li){color:#d6d6d4;font-size:16px;line-height:1.65}
 html body.newlook[data-page="privacy"] .legal p+p{margin-top:10px}
 html body.newlook[data-page="privacy"] .legal a{color:var(--nh-white)}
 
+@media (max-width:1199px){
+  html body.newlook[data-page="support"] .res-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 @media (max-width:1000px){
   html body.newlook[data-page="support"] .res-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
