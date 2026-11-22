@@ -17,7 +17,7 @@ html body #v-story section::before,html body #v-story section::after{display:non
 html body #v-story p{margin:0}
 
 /* part one: built from the heart */
-html body #v-story section.ng-open:not(#_){display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:start;padding:30px 0 22px!important}
+html body #v-story section.ng-open:not(#_){display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;padding:30px 0 22px!important}
 html body #v-story .ng-kicker{font:400 15px/1.4 var(--nh-body);color:var(--nh-silver);margin-bottom:10px}
 html body #v-story .ng-kicker b{color:var(--nh-white);font-weight:700}
 html body #v-story h2.ng-h:not(#_):not(#__){font:400 clamp(38px,5vw,54px)/1 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
@@ -25,8 +25,9 @@ html body #v-story h2.ng-h span{display:block}
 html body #v-story .ng-spray:not(#_){font-family:var(--nh-spray)!important;text-transform:none;letter-spacing:0;color:var(--nh-hot)}
 html body #v-story h2.ng-h .ng-spray{font-size:.95em;line-height:1.05;margin-top:2px}
 html body #v-story .ng-words{margin-top:18px;display:grid;gap:14px;max-width:60ch;color:#d6d6d4;font:400 16px/1.55 var(--nh-body)}
-/* the picture's width is set by the size caps stylesheet (.banner-frame); the box just hugs it */
-html body #v-story .ng-pic{position:relative;line-height:0;width:fit-content;max-width:100%;margin-left:auto;border:1px solid var(--nh-line);background:#000;perspective:1400px;overflow:hidden}
+/* the picture's width is set by the size caps stylesheet (.banner-frame: min(520px,100%,52vh), 330px on a phone);
+   the box is given the same width so it hugs the picture */
+html body #v-story .ng-pic{position:relative;line-height:0;width:min(520px,100%,52vh);max-width:100%;margin-left:auto;border:1px solid var(--nh-line);background:#000;perspective:1400px;overflow:hidden}
 html body #v-story .ng-pic .banner-frame:not(#_){width:100%;max-width:none;margin:0}
 html body #v-story .ng-pic img:not(#_){display:block;width:100%;height:auto;max-width:none;box-shadow:none}
 html body #v-story .ng-safe{font:400 22px/1 var(--nh-spray);color:var(--nh-white);margin-top:12px;text-align:right}
@@ -58,6 +59,10 @@ html body #v-story .ng-btn.ghost:hover{background:var(--nh-white);color:#000}
 html body #v-story .ng-btn:focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
 html body #v-story .ng-note{flex-basis:100%;font:400 21px/1.2 var(--nh-spray);color:var(--nh-silver);margin-top:6px}
 
+@media (min-width:821px) and (max-width:920px){
+  html body #v-story section.ng-next:not(#_){gap:10px}
+  html body #v-story .ng-btn{font-size:15px;padding:12px 10px}
+}
 @media (max-width:820px){
   html body #v-story section.ng-open:not(#_),html body #v-story section.ng-scars:not(#_){grid-template-columns:minmax(0,1fr);gap:18px}
   html body #v-story section.ng-open:not(#_){padding:14px 0 10px!important}
@@ -67,7 +72,7 @@ html body #v-story .ng-note{flex-basis:100%;font:400 21px/1.2 var(--nh-spray);co
   html body #v-story .ng-tell .hit:not(#_){font-size:25px!important}
   html body #v-story .ng-tell .last:not(#_){font-size:30px!important}
   html body #v-story .ng-safe{text-align:left;font-size:20px;margin-top:8px}
-  html body #v-story .ng-pic{margin-left:0}
+  html body #v-story .ng-pic{margin-left:0;width:min(330px,100%)}
   /* tight on a phone so the page is no longer than it was before */
   html body #v-story .pagefx{margin-top:10px}
   html body #v-story .ng-words,html body #v-story .ng-tell{gap:10px;line-height:1.5}
