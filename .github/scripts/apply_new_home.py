@@ -41,7 +41,7 @@ NAV_NEW = ('<a href="#home" data-nav="home">Home</a><a href="#story" data-nav="s
 SUPPORT_OLD = '<a href="/GhostHeart_Resources.html">Find Support</a>\n  </nav>'
 SUPPORT_NEW = '<a class="support" href="/GhostHeart_Resources.html">Find Support</a>\n  </nav>'
 FOOT_OLD = '<a href="#vault">The Vault</a><a href="#story">About</a><a href="#live">Live</a>'
-FOOT_NEW = '<a href="#home">Home</a><a href="#story">GhostHeart</a><a href="#vault">The Vault</a><a href="#live">Live</a>'
+FOOT_NEW = '<a href="#story">GhostHeart</a><a href="#vault">The Vault</a><a href="#live">Live</a>'
 TOPBAN = re.compile(r'<div class="topban">\s*(<img [^>]*>)\s*</div>')
 FIRE_OPEN = '<section class="fire2">'
 THREAD_OPEN = re.compile(r'<section [^>]*id="thread"[^>]*>')
