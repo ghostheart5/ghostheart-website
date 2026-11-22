@@ -30,6 +30,9 @@ Projects (GhostHeart_Projects.html), approved on the local concept:
   Beneath the Moon, Words from the Heart the book, Behind the Scars the full story;
 - every other word of the page is kept; the 01 / 02 / 03 counters are gone.
 
+Find Support (GhostHeart_Resources.html) and Privacy (GhostHeart_Privacy.html): nothing inside the
+page is changed, not a word, link or phone number. They get the top bar and the new stylesheet only.
+
 To go back, remove this script's line from build_site.py and rebuild.
 """
 import re
@@ -120,8 +123,16 @@ def projects(html):
     return html[:old_main.start()] + new.rstrip('\n') + html[old_main.end():]
 
 
+def same_words(html):
+    """Find Support and Privacy: the page's own words, links, phone numbers and markup are not touched at all.
+    Only the top bar changes and the new stylesheet is linked."""
+    return html
+
+
 PAGES = {'here-to-help/index.html': ('/here-to-help/', work),
-         'GhostHeart_Projects.html': ('/GhostHeart_Projects.html', projects)}
+         'GhostHeart_Projects.html': ('/GhostHeart_Projects.html', projects),
+         'GhostHeart_Resources.html': ('/GhostHeart_Resources.html', same_words),
+         'GhostHeart_Privacy.html': ('/GhostHeart_Privacy.html', same_words)}
 
 for relative, (path, body) in PAGES.items():
     page = ROOT / relative
