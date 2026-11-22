@@ -194,6 +194,7 @@ html body.newlook .np-row{display:flex;flex-wrap:wrap;gap:10px}
   html body.newlook .np-lead{padding-top:20px}
   html body.newlook .np-lead h1{font-size:32px}
   html body.newlook .np-build{padding:16px}
+  html body.newlook .np-build h2{font-size:26px}
   html body.newlook .np-three{grid-template-columns:minmax(0,1fr)}
   html body.newlook .np-three.words{grid-template-columns:repeat(3,minmax(0,1fr))}
   html body.newlook .np-more ul{grid-template-columns:minmax(0,1fr)}
