@@ -49,3 +49,4 @@ jobs:
           trap 'kill "$SERVER_PID"' EXIT
           node .github/scripts/test_wake_v3.cjs
           node .github/scripts/test_help_orders.cjs
+          node .github/scripts/test_size_caps.cjs

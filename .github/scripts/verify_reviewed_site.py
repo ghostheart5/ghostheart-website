@@ -36,6 +36,9 @@ for path in ROOT.rglob("*.html"):
         menu = soup.select_one('header.ghx-header nav#gateway-menu')
         assert menu and {a.get_text(" ", strip=True) for a in menu.select("a")} == explore
         styles = [a.get("href", "") for a in soup.select('link[rel="stylesheet"]')]
+        # Nov 21 2026: the size caps sheet is linked last on every page (apply_size_caps.py); the page's own last sheet comes just before it.
+        assert styles and styles[-1] == '/assets/shared/size-caps.css', path
+        styles = styles[:-1]
         relative = path.relative_to(ROOT).as_posix()
         if relative == 'GhostHeart_Story.html':
             assert styles[-3:] == ['/assets/loud/loud.css', '/assets/shared/compact-readings.css', '/assets/story/story-bottom-compact.css'], path
