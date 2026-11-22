@@ -1,0 +1,49 @@
+/* GhostHeart size caps (Dom, Nov 21 2026: "THE WHOLE SITE IS HUGE AGAIN, EVERYTIME THEY CHANGE
+   SOMETHING THE WHOLE WEBSITE GOES BACK TO HUGE LAYOUT, A LOT OF SCROLLING").
+   Loaded LAST on every page by .github/scripts/apply_size_caps.py, so it wins over any page's own
+   styles, including a future redesign's. Every rule here only makes something smaller.
+   The limits are checked by .github/scripts/test_size_caps.cjs: if a change goes over them, the
+   website checks fail before it can go live. Change a limit only with Dom's yes, here and there. */
+
+/* ---- headings and display text: computers and tablets ---- */
+html body h1:not(#_):not(#__){font-size:clamp(28px,3.3vw,46px)!important;line-height:1.02}
+html body :is(h2.seat-h,h2.bigtitle,h2.fire-h,h2.giant,h2.display,.wk-head h2,.manifesto h2,.album h2,.redscreen h2,.feat-head .bigtitle,.view>section>.wrap>h2,.vault-head h2,.vh2):not(#_):not(#__){font-size:clamp(24px,2.7vw,36px)!important;line-height:1.05}
+html body :is(.feat h3,.feat-l>h3,.versus h3,.cat h3):not(#_):not(#__){font-size:clamp(20px,2.2vw,30px)!important}
+html body :is(p.sprayline,.feat2 .sprayline):not(#_):not(#__){font-size:clamp(24px,2.9vw,38px)!important}
+html body :is(blockquote.q-text,.qotd blockquote):not(#_):not(#__){font-size:clamp(20px,2.4vw,32px)!important;line-height:1.15}
+html body :is(p.tag.big,footer .big,.manifesto .stamp):not(#_):not(#__){font-size:clamp(18px,2vw,28px)!important}
+html body :is(b.js-nl-date,b.js-nl-topic,.locked b,.crisis b,.weeks .n,span.n):not(#_):not(#__){font-size:clamp(20px,2.2vw,30px)!important}
+html body header.stage>blockquote#quote:not(#_){font-size:clamp(26px,3.6vw,52px)!important}
+
+/* ---- pictures ---- */
+/* the GhostHeart Studios block at the top of Home: a strip, not half the screen */
+@media (min-width:701px){
+  html body .topban:not(#_){text-align:center}
+  html body .topban img:not(#_){display:inline-block!important;width:auto!important;max-width:100%!important;height:min(15vw,200px)!important;max-height:none!important;aspect-ratio:3/1!important;object-fit:cover!important;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+}
+/* the About picture: never taller than about a third of the screen */
+html body #v-story .banner-frame:not(#_),html body .banner-frame:not(#_){width:min(520px,100%,52vh)!important}
+/* any other picture, video or player inside a page */
+html body :is(main,.view,section) :is(img,video,iframe):not(.tkh):not(#_){max-height:340px;object-fit:contain}
+
+/* ---- space between sections ---- */
+html body .home2 section:not(#_){padding-block:clamp(16px,2.2vw,30px)!important}
+html body .home2 section.studio:not(#_){padding-block:clamp(18px,2.4vw,32px) clamp(14px,2vw,26px)!important}
+html body :is(.view,main)>section:not(.studio):not(#_){padding-block:clamp(18px,2.4vw,32px)!important}
+html body .heartbox2:not(#_){height:clamp(170px,19vw,240px)!important}
+html body footer:not(.sitefoot):not(#_){padding-block:28px 34px!important}
+
+/* ---- phones ---- */
+@media (max-width:700px){
+  html body h1:not(#_):not(#__){font-size:clamp(24px,7.2vw,30px)!important}
+  html body :is(h2.seat-h,h2.bigtitle,h2.fire-h,h2.giant,h2.display,.wk-head h2,.manifesto h2,.album h2,.redscreen h2,.feat-head .bigtitle,.view>section>.wrap>h2,.vault-head h2,.vh2,.proj-card>h2):not(#_):not(#__){font-size:clamp(20px,6vw,26px)!important}
+  html body :is(.feat h3,.feat-l>h3,.versus h3,.cat h3):not(#_):not(#__){font-size:clamp(18px,5.2vw,22px)!important}
+  html body :is(p.sprayline,.feat2 .sprayline):not(#_):not(#__){font-size:clamp(20px,6.2vw,26px)!important}
+  html body :is(blockquote.q-text,.qotd blockquote):not(#_):not(#__){font-size:clamp(18px,5.4vw,24px)!important}
+  html body :is(p.tag.big,footer .big,.manifesto .stamp,.panel>b):not(#_):not(#__){font-size:clamp(17px,5vw,22px)!important}
+  html body header.stage>blockquote#quote:not(#_){font-size:clamp(22px,7vw,30px)!important}
+  html body :is(main,.view,section) :is(img,video,iframe):not(.tkh):not(#_){max-height:260px}
+  html body .home2 section:not(#_),html body :is(.view,main)>section:not(.studio):not(#_){padding-block:clamp(14px,4vw,22px)!important}
+  html body .banner-frame:not(#_){width:min(330px,100%)!important}
+}
