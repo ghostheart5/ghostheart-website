@@ -94,7 +94,7 @@ p{margin:0}
 .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--silver),rgba(192,197,204,.1) 40%,var(--red) 75%,transparent)}
 .top .wrap{display:flex;align-items:center;gap:18px;padding-block:8px}
 .top img{height:38px;width:auto;display:block}
-.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}@media (max-width:700px){.nav a[href="/GhostHeart_Resources.html"]{order:-1}}
 .nav::-webkit-scrollbar{display:none}
 .nav a{font:400 1.1rem/1 var(--bebas);letter-spacing:.07em;text-decoration:none;padding:10px 10px 7px;color:var(--silver);white-space:nowrap;position:relative}
 .nav a:hover{color:#fff;transform:rotate(-2deg)}
@@ -373,7 +373,7 @@ body[data-view="home"] .shop-link{display:none}
 .lit::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,-999px) var(--my,-999px),rgba(255,43,43,.2),rgba(215,25,32,.07) 45%,transparent 70%)}
 /* glitch */
 .glitch{position:relative;display:inline-block}
-.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;opacity:0;pointer-events:none;-webkit-text-fill-color:currentColor}
+.glitch::before,.glitch::after{content:attr(data-text);content:attr(data-text) / "";position:absolute;left:0;top:0;opacity:0;pointer-events:none;-webkit-text-fill-color:currentColor}
 .glitch::before{color:var(--red);animation:gl1 5s infinite steps(1)}
 .glitch::after{color:#fff;animation:gl2 5s infinite steps(1)}
 @keyframes gl1{0%,90%,100%{opacity:0}91%{opacity:.95;transform:translate(-5px,2px);clip-path:inset(8% 0 58% 0)}93%{opacity:.95;transform:translate(6px,-2px);clip-path:inset(62% 0 6% 0)}95%{opacity:.95;transform:translate(-3px,0);clip-path:inset(32% 0 34% 0)}97%{opacity:0}}
@@ -509,7 +509,7 @@ section.fire2{padding-block:clamp(18px,2.4vw,28px)!important}
       <div class="stack every rv">
         <p class="scrawl r">not just music. <span class="hot">everything.</span></p>
         <nav class="slaps2" aria-label="What the studio makes">
-          <a href="#vault">Music</a><a href="#story">Stories</a><a href="/GhostHeart_Projects.html">Apps</a><a href="#vault">Films</a><a href="#live">Live</a><a href="/here-to-help/">Words &amp; design</a><a href="/GhostHeart_Projects.html">Games</a><a href="/GhostHeart_Projects.html">Brands</a>
+          <a href="#vault">Music</a><a href="#story">Stories</a><a href="/GhostHeart_Projects.html">Apps</a><a href="/GhostHeart_Videos.html">Films</a><a href="#live">Live</a><a href="/here-to-help/">Words &amp; design</a><a href="/GhostHeart_Projects.html">Games</a><a href="/GhostHeart_Projects.html">Brands</a>
         </nav>
       </div>
     </div></div>
@@ -967,7 +967,7 @@ function route(){var h=(location.hash||"").slice(1),spot=VIEWS.indexOf(h)<0&&h?d
   var D=document.querySelector(".ekg .base").getAttribute("d");
   function heartHTML(cls){return '<div class="heartfx '+cls+'" aria-hidden="true">'+[1,2,3].map(function(n){return '<svg class="ring r'+n+'" viewBox="0 0 100 92"><path d="'+HP+'"/></svg>'}).join("")+'<img class="core" src="'+HEART+'" alt=""></div>'}
   function strip(words){var one=words.map(function(w){return '<span>'+w+'</span><img class="tkh" src="'+HEART+'" alt="">'}).join("");
-    return '<div class="pagefx" aria-hidden="true"><div class="ekg"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="base" d="'+D+'"/><path class="run" pathLength="1" d="'+D+'"/><path class="run r2" pathLength="1" d="'+D+'"/></svg></div><div class="ticker red2"><div>'+one+one+'</div></div></div>'}
+    return '<div class="pagefx" aria-hidden="true"><div class="ekg"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="base" d="'+D+'"/><path class="run" pathLength="1" d="'+D+'"/><path class="run r2" pathLength="1" d="'+D+'"/></svg></div><div class="ticker red2" aria-hidden="true"><div>'+one+one+'</div></div></div>'}
   var WORDS={vault:["THE VAULT","EVERY ALBUM","EVERY SONG","PRESS PLAY","TURN IT UP"],story:["BEHIND THE SCARS","NOT ONE WOUND","NOT ONE LABEL","STILL HERE"],live:["WORDS FROM THE HEART","SUNDAYS","LIVE ON TIKTOK","SIT DOWN","STAY A WHILE"],
     work:["HOW CAN I HELP","WORDS","DOCUMENTS","SLIDES","A SONG FROM YOUR STORY"],projects:["BUILD SOMETHING THAT HELPS","AXIOMARA","SHADOW FIRE","DEAL VECTOR","MAKE IT HUMAN"],resources:["YOU’RE NOT ALONE","CALL OR TEXT 988","YOU MATTER","STILL HERE"]};
   function glitch(root){var h=root.querySelector(".bigtitle .chrome");if(h){h.classList.add("glitch");h.dataset.text=h.textContent}}
