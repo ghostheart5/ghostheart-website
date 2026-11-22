@@ -84,7 +84,7 @@ assert home.select_one('#join-the-signal') and home.select_one('#home')  # old l
 for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
     assert home.select_one('#' + view), view
 assert home.select_one('a[href="https://www.youtube.com/watch?v=U0X6SwISG_M"]')  # full song: YouTube only
-assert 'Feb 8' not in home.get_text() and '14 weeks' not in home.get_text()
+assert '14 weeks · Nov 9 to Feb 8' in home.get_text() and '13 weeks' not in home.get_text() and 'Feb 1' not in home.get_text()  # Dom, Nov 22 2026: 14 weeks, Nov 9 to Feb 8 (13 weeks + bonus week)
 home_raw = (ROOT / 'index.html').read_text(encoding='utf-8')
 # Dom, Nov 8 2026: older songs off everywhere; the Vault lists The Heart Wakes songs only.
 assert 'awakening-0' not in home_raw and 'youre-not-god' not in home_raw
