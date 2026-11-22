@@ -1,0 +1,51 @@
+<div class="view" id="v-story" hidden><span id="story"></span>
+  <section class="ng-open" aria-labelledby="ng-about-title">
+    <div>
+      <p class="ng-kicker"><b>About</b> GhostHeart Studios</p>
+      <h2 class="ng-h" id="ng-about-title"><span>Built from</span> <span class="ng-spray">the heart.</span></h2>
+      <div class="ng-words">
+        <p>I’m the founder and creator of GhostHeart Studios, an independent creative business powered by technology and built from the heart. I turn my ideas, experiences, and imagination into music, visual stories, and digital projects that give people something to connect with.</p>
+        <p>Everything starts with something personal: a feeling, a story, or something I need to say. Technology gives me the tools to bring it to life. Through social media, I share what I create, hear other people’s stories, and build a community that helps inspire what comes next.</p>
+        <p>At the center of that world is GhostHeart, the dark, faceless protector I created. I’m the person behind the vision—the heart he protects. GhostHeart Studios is where I bring that vision into the world, creating work that speaks honestly, invites connection, and gives a voice to things that can be hard to put into words.</p>
+      </div>
+    </div>
+    <div class="ng-picside">
+      <div class="ng-pic" id="banner">
+        <div class="banner-frame">
+          <!--PICTURE-->
+        </div>
+      </div>
+      <p class="ng-safe">you’re safe here</p>
+    </div>
+  </section>
+
+  <svg class="ng-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="ng-scars" aria-labelledby="ng-scars-title">
+    <div class="ng-side">
+      <p class="ng-kicker"><b>Enter my world</b> · the life behind the name</p>
+      <h2 class="ng-h" id="ng-scars-title"><span>Behind</span> <span class="ng-spray">the scars</span></h2>
+      <div class="ng-plates"><span>Not one wound</span><span>Not one label</span><span>Still here</span></div>
+    </div>
+    <div class="ng-tell">
+      <p class="lead">I kept seeing people treated like they were nothing.</p>
+      <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
+      <p>And I had plenty to say about it.</p>
+      <p class="hit red">But I wasn’t doing shit about it.</p>
+      <p>That was hard to admit, because I really did care. I cared enough to get angry. Enough to hurt over it. But stepping forward meant giving people a reason to look at me.</p>
+      <p class="hit">A way to hide and <span class="ng-spray">still tell my story.</span></p>
+      <p>GhostHeart carries the bravery, the strength, the courage I’m still trying to find in myself. He gives me a way to step forward while part of me still wants to stay hidden.</p>
+      <p>I’m the man behind him. The one who cares deeply and is still scared.</p>
+      <p>Maybe my story could help somebody. Even with the ugly parts. Even with the mistakes I have to own. Even if the world judged me for telling it.</p>
+      <p class="last">If I help one person, then I did <span class="ng-spray">something.</span></p>
+    </div>
+  </section>
+
+  <section class="ng-next" aria-label="Where to go next">
+    <a class="ng-btn" href="/GhostHeart_Story.html">Read the whole story: Behind the Scars</a>
+    <button class="ng-btn ghost" type="button" data-play="the-heart-wakes">▶ Play The Heart Wakes</button>
+    <a class="ng-btn ghost" href="#vault">Stay with a song</a>
+    <a class="ng-btn ghost" href="/GhostHeart_Resources.html">Find Support</a>
+    <p class="ng-note">no one has to disclose their own pain to belong here.</p>
+  </section>
+</div>
