@@ -19,7 +19,8 @@ PAGES = {
 }
 NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
        'Merch ↗', 'Stay Connected', 'Find Support']
-PROTECTOR_NAV = ['Home', 'The Vault', 'About', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
+# Dom, Nov 22 2026: "fix the tabs so about is next to home, name about something else" ... "just GhostHeart" (apply_new_home.py).
+PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
 
 
 def page(relative):

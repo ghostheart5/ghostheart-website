@@ -1,0 +1,13 @@
+<section class="nh-wake" aria-label="GhostHeart’s Scars Wakes the Heart">
+  <div class="nh-wall">
+    <div class="nh-stage">
+      <!--PICTURE-->
+      <div class="nh-glow" aria-hidden="true"></div>
+      <div class="nh-flare l" aria-hidden="true"></div>
+      <div class="nh-flare r" aria-hidden="true"></div>
+      <svg class="nh-bolts l" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true"><path d="M96 10 L52 96 L74 140 L28 232 L50 280 L16 366 L44 452 L24 520"/><path d="M190 572 L262 640 L300 628 L400 738 L352 790 L330 850"/><path class="thin" d="M28 232 L84 262 L110 320"/><path class="thin" d="M400 738 L452 760 L470 812"/></svg>
+      <svg class="nh-bolts r" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true"><path d="M1576 10 L1620 96 L1598 140 L1644 232 L1622 280 L1656 366 L1628 452 L1648 520"/><path d="M1482 572 L1410 640 L1372 628 L1272 738 L1320 790 L1342 850"/><path class="thin" d="M1644 232 L1588 262 L1562 320"/><path class="thin" d="M1272 738 L1220 760 L1202 812"/></svg>
+    </div>
+    <div class="nh-rain" aria-hidden="true"></div>
+  </div>
+</section>
