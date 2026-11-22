@@ -984,6 +984,94 @@ section.feat2[hidden]{display:none!important}
 </div>
 
 <!-- ================= VAULT ================= -->
+<!-- NEW VAULT VIEW (Dom, Nov 22, 2026) -->
+<style id="nv-style">
+/* The rebuilt Vault view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_vault.py. Same colors, fonts and width as the new Home (home.css sets the
+   --nh-* values). Every selector starts with "html body #v-vault" so nothing leaks to other views.
+   Heading sizes are left to the size caps stylesheet. */
+html body:has(#v-vault:not([hidden])){background:var(--nh-black)}
+html body:has(#v-vault:not([hidden]))::after{display:none}
+html body:has(#v-vault:not([hidden]))>.hazard{display:none}
+
+/* the strip the page script adds on top: one slim red band, like Home */
+html body #v-vault .pagefx{padding:0;margin:18px 0 0}
+html body #v-vault .pagefx .ekg,html body #v-vault .heartfx{display:none}
+html body #v-vault .pagefx .ticker{background:var(--nh-red);color:#000;border-block:2px solid #000;transform:rotate(-1deg) scale(1.02);margin:0;box-shadow:none}
+html body #v-vault .pagefx .ticker div{font:400 19px/1 var(--nh-title);letter-spacing:.08em;padding:8px 0 7px}
+html body #v-vault .pagefx .ticker img{height:18px}
+
+html body #v-vault section:not(#_){background:none;animation:none;padding:0!important}
+html body #v-vault section::before,html body #v-vault section::after{display:none}
+html body #v-vault .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0;margin-inline:auto}
+
+/* top: the name on the left, the search on the right */
+html body #v-vault .stack:not(#_){width:100%;max-width:none;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:40px;row-gap:0;align-items:start;justify-items:stretch;padding:28px 0 0}
+html body #v-vault .stack>.row{grid-column:1;display:flex;align-items:center;gap:14px;margin:0}
+html body #v-vault .stack>.row .mono{font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0}
+html body #v-vault .stack>.row .mono b{color:var(--nh-white);font-weight:700}
+html body #v-vault .stack>.row .stamp{position:relative;isolation:isolate;font:400 15px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;color:#fff;border:0;background:none;padding:8px 12px;transform:none;filter:none;box-shadow:none;outline:0}
+html body #v-vault .stack>.row .stamp::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:var(--nh-red);border:0;border-bottom:2px solid #000}
+html body #v-vault .stack>.row .stamp::after{display:none}
+html body #v-vault h2.bigtitle{grid-column:1;font-family:var(--nh-title)!important;line-height:1;color:var(--nh-white);margin:10px 0 0;text-shadow:none;transform:none}
+html body #v-vault h2.bigtitle span:not(#_){background:none;color:var(--nh-white);-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;font-family:inherit!important;-webkit-text-stroke:0;animation:none}
+html body #v-vault h2.bigtitle span::before,html body #v-vault h2.bigtitle span::after{display:none}
+html body #v-vault .stack>.tag:not(#_){grid-column:1;display:block;font:400 clamp(22px,2.6vw,30px)/1.15 var(--nh-spray)!important;color:var(--nh-hot);text-shadow:none;transform:none;margin:4px 0 0;filter:none}
+html body #v-vault .stack>.tag::before,html body #v-vault .stack>.tag::after{display:none}
+html body #v-vault .search:not(#_){grid-column:2;grid-row:1/span 3;display:block;width:auto!important;margin:0!important}
+html body #v-vault .search label{display:block;font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin-bottom:6px}
+html body #v-vault .search input{width:100%;background:#000;border:2px solid var(--nh-silver);color:var(--nh-white);font:400 17px var(--nh-body);padding:12px 14px;border-radius:0;box-shadow:none;min-height:0}
+html body #v-vault .search input:focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-vault .search .scrawl:not(#_){display:block;font:400 21px/1.2 var(--nh-spray)!important;color:var(--nh-white);margin:12px 0 8px!important;transform:none}
+html body #v-vault .chips{display:flex;flex-wrap:wrap;gap:8px}
+html body #v-vault .chip:not(#_){font:400 15px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;background:transparent;border:1px solid var(--nh-silver);color:var(--nh-white);padding:9px 12px;cursor:pointer;border-radius:0;box-shadow:none;transform:none;clip-path:none;min-height:0}
+html body #v-vault .chip:hover:not(#_){background:#24262b}
+html body #v-vault .chip[aria-pressed="true"]:not(#_){background:var(--nh-red);border-color:var(--nh-red);color:#fff}
+html body #v-vault .chip:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-vault #vcount{font:400 15px/1.4 var(--nh-body);color:var(--nh-silver);margin:10px 0 0;min-height:1.4em}
+
+/* the album and its songs */
+html body #v-vault #albums:not(#_){grid-column:1/-1;width:auto!important;margin-top:22px;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot)}
+html body #v-vault .album{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:34px;align-items:start;padding:28px 0 30px;margin:0;border:0;background:none}
+html body #v-vault .album .poster:not(#_){width:auto;max-width:300px;margin:0;padding:0;border:1px solid var(--nh-line);background:#000;box-shadow:0 20px 44px rgba(0,0,0,.8),0 0 30px rgba(200,16,46,.3);transform:rotate(-2deg);animation:none}
+html body #v-vault .album .poster::before,html body #v-vault .album .poster::after{display:none}
+html body #v-vault .album .poster img:not(#_){display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:0;box-shadow:none;transform:none}
+html body #v-vault .album .mono{font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0}
+html body #v-vault .album .mono b{color:var(--nh-white);font-weight:700}
+html body #v-vault .album h2{font-family:var(--nh-title)!important;line-height:1;background:none;color:var(--nh-white);-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;text-transform:uppercase}
+html body #v-vault .album h2+p:not(#_){color:#d6d6d4!important;font:400 16px/1.55 var(--nh-body);max-width:52ch;margin:0}
+html body #v-vault :is(.tracks,.nv-list){list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+html body #v-vault :is(.tracks,.nv-list) li{margin:0;padding:0;border:0;background:none}
+html body #v-vault :is(.tracks,.nv-list) li::before{display:none}
+html body #v-vault :is(.trk,.nv-vid):not(#_){width:100%;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;text-align:left;text-decoration:none;background:var(--nh-panel);border:1px solid var(--nh-line);border-left:5px solid var(--nh-red);color:var(--nh-white);padding:13px 16px;cursor:pointer;font:400 16px/1.4 var(--nh-body);border-radius:0;box-shadow:none;transform:none}
+html body #v-vault :is(.trk,.nv-vid):hover:not(#_){border-color:var(--nh-silver);border-left-color:var(--nh-hot)}
+html body #v-vault :is(.trk,.nv-vid):focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-vault :is(.trk,.nv-vid) .no{font:400 28px/1 var(--nh-spray);color:var(--nh-hot);opacity:1}
+html body #v-vault :is(.trk,.nv-vid) .ti{display:block;font:400 24px/1.05 var(--nh-title);text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);background:none;-webkit-text-fill-color:currentColor;filter:none;text-shadow:none}
+html body #v-vault :is(.trk,.nv-vid) .why{display:block;color:var(--nh-silver);font:400 15px/1.4 var(--nh-body);margin-top:4px}
+html body #v-vault :is(.trk,.nv-vid) .go{font:400 15px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;background:var(--nh-red);color:#fff;padding:10px 12px;white-space:nowrap;border:0;opacity:1}
+html body #v-vault .trk.on .go,html body #v-vault .trk .go.on{background:var(--nh-white);color:#000}
+html body #v-vault #vempty{font:400 16px/1.5 var(--nh-body);color:var(--nh-silver);padding:20px 0 30px;margin:0}
+
+/* out as videos */
+html body #v-vault section.nv-vids:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto;padding:0 0 40px!important}
+html body #v-vault .nv-vids h2{font-family:var(--nh-title)!important;font-weight:400;line-height:1;text-transform:uppercase;color:var(--nh-white);margin:0}
+html body #v-vault .nv-say{font:400 16px/1.5 var(--nh-body);color:var(--nh-silver);margin:6px 0 0}
+html body #v-vault .nv-list{margin-top:12px}
+html body #v-vault [hidden]{display:none!important}
+
+@media (max-width:820px){
+  html body #v-vault .stack:not(#_){grid-template-columns:minmax(0,1fr);grid-template-rows:none;padding-top:16px}
+  html body #v-vault .search:not(#_){grid-column:1;grid-row:auto;margin-top:14px!important}
+  html body #v-vault .album{grid-template-columns:minmax(0,1fr);gap:18px;padding:22px 0 24px}
+  html body #v-vault .album .poster:not(#_){max-width:220px}
+  html body #v-vault :is(.trk,.nv-vid):not(#_){grid-template-columns:38px minmax(0,1fr);gap:10px;padding:12px}
+  html body #v-vault :is(.trk,.nv-vid) .no{font-size:23px}
+  html body #v-vault :is(.trk,.nv-vid) .go{grid-column:2;justify-self:start}
+  html body #v-vault :is(.trk,.nv-vid) .ti{font-size:21px}
+  html body #v-vault section.nv-vids:not(#_){padding-bottom:28px!important}
+}
+</style>
 <div class="view" id="v-vault" hidden><span id="vault"></span>
   <section><div class="wrap"><div class="stack">
     <div class="row"><p class="mono">GhostHeart / <b>The Vault</b></p><span class="stamp">Audio only</span></div>
@@ -998,76 +1086,368 @@ section.feat2[hidden]{display:none!important}
     </div>
     <div id="albums" style="width:100%"></div>
   </div></div></section>
+  <section class="nv-vids" id="nv-vids" aria-labelledby="nv-vids-title">
+    <h2 class="vh2" id="nv-vids-title">Out as videos</h2>
+    <p class="nv-say">These play on YouTube.</p>
+    <ol class="nv-list" id="nv-vidlist">
+      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener"><span class="no">1</span><span><span class="ti">To Those Who Served</span><span class="why">For those who served, and for everything they still carry.</span></span><span class="go">Watch ↗</span></a></li>
+      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=XfF_B-_ZNxM" target="_blank" rel="noopener"><span class="no">2</span><span><span class="ti">The Parts You Hide</span><span class="why">A Country and Americana song, released for Trans Awareness Week.</span></span><span class="go">Watch ↗</span></a></li>
+      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=l_ftyUginiA" target="_blank" rel="noopener"><span class="no">3</span><span><span class="ti">The Man Beneath the Moon</span><span class="why">Back as a new music video.</span></span><span class="go">Watch ↗</span></a></li>
+      <li data-from="2026-11-25T22:00:00Z" hidden><a class="nv-vid" href="https://www.youtube.com/watch?v=UTvuIgq-AWI" target="_blank" rel="noopener"><span class="no">4</span><span><span class="ti">Too Small</span><span class="why">Told through the eyes of a little boy in a house that does not feel safe.</span></span><span class="go">Watch ↗</span></a></li>
+    </ol>
+  </section>
+  <script>
+  /* Out as videos (Vault). A video with a date shows only once that time has passed; the search box and the feeling buttons filter this list too. */
+  (function(){
+    var box=document.getElementById("nv-vids"),items=[].slice.call(document.querySelectorAll("#nv-vidlist li")),q=document.getElementById("vq"),moods=document.getElementById("moods");
+    function out(li){var f=li.getAttribute("data-from");return !f||Date.now()>=Date.parse(f)}
+    function show(){
+      var word=(q?q.value:"").trim().toLowerCase().replace(/’/g,"'"),pressed=moods&&moods.querySelector('.chip[aria-pressed="true"]'),mood=pressed?pressed.getAttribute("data-m"):"",n=0;
+      items.forEach(function(li){var text=(li.querySelector(".ti").textContent+" "+li.querySelector(".why").textContent).toLowerCase().replace(/’/g,"'"),ok=out(li)&&!mood&&(!word||text.indexOf(word)>=0);
+        li.hidden=!ok;if(ok){n++;li.querySelector(".no").textContent=n}});
+      box.hidden=!n;
+      var none=document.getElementById("vempty");if(none&&n)none.hidden=true;
+    }
+    if(q)q.addEventListener("input",function(){setTimeout(show,0)});
+    if(moods)moods.addEventListener("click",function(){setTimeout(show,0)});
+    show();
+    items.forEach(function(li){var f=li.getAttribute("data-from"),wait=f?Date.parse(f)-Date.now():0;if(wait>0&&wait<2147483647)setTimeout(show,wait+1000)});
+  })();
+  </script>
 </div>
 
 <!-- ================= STORY ================= -->
+<!-- NEW GHOSTHEART VIEW (Dom, Nov 22, 2026) -->
+<style id="ng-style">
+/* The rebuilt GhostHeart (About) view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_ghostheart.py. Same colors, fonts and width as the new Home (home.css sets
+   the --nh-* values). Every selector starts with "html body #v-story" so nothing leaks to other views. */
+html body:has(#v-story:not([hidden])){background:var(--nh-black)}
+html body:has(#v-story:not([hidden]))::after{display:none}
+html body:has(#v-story:not([hidden]))>.hazard{display:none}
+
+/* the strip the page script adds on top: one slim red band, like Home */
+html body #v-story .pagefx{padding:0;margin:18px 0 0}
+html body #v-story .pagefx .ekg,html body #v-story .heartfx{display:none}
+html body #v-story .pagefx .ticker{background:var(--nh-red);color:#000;border-block:2px solid #000;transform:rotate(-1deg) scale(1.02);margin:0;box-shadow:none}
+html body #v-story .pagefx .ticker div{font:400 19px/1 var(--nh-title);letter-spacing:.08em;padding:8px 0 7px}
+html body #v-story .pagefx .ticker img{height:18px}
+
+html body #v-story section:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto;background:none;animation:none;overflow:visible}
+html body #v-story section::before,html body #v-story section::after{display:none}
+html body #v-story p{margin:0}
+
+/* part one: built from the heart */
+html body #v-story section.ng-open:not(#_){display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;padding:30px 0 22px!important}
+html body #v-story .ng-kicker{font:400 15px/1.4 var(--nh-body);color:var(--nh-silver);margin-bottom:10px}
+html body #v-story .ng-kicker b{color:var(--nh-white);font-weight:700}
+html body #v-story h2.ng-h:not(#_):not(#__){font:400 clamp(38px,5vw,54px)/1 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
+html body #v-story h2.ng-h span{display:block}
+html body #v-story .ng-spray:not(#_){font-family:var(--nh-spray)!important;text-transform:none;letter-spacing:0;color:var(--nh-hot)}
+html body #v-story h2.ng-h .ng-spray{font-size:.95em;line-height:1.05;margin-top:2px}
+html body #v-story .ng-words{margin-top:18px;display:grid;gap:14px;max-width:60ch;color:#d6d6d4;font:400 16px/1.55 var(--nh-body)}
+/* the picture's width is set by the size caps stylesheet (.banner-frame: min(520px,100%,52vh), 330px on a phone);
+   the box is given the same width so it hugs the picture */
+html body #v-story .ng-pic{position:relative;line-height:0;width:min(520px,100%,52vh);max-width:100%;margin-left:auto;border:1px solid var(--nh-line);background:#000;perspective:1400px;overflow:hidden}
+html body #v-story .ng-pic .banner-frame:not(#_){width:100%;max-width:none;margin:0}
+html body #v-story .ng-pic img:not(#_){display:block;width:100%;height:auto;max-width:none;box-shadow:none}
+html body #v-story .ng-safe{font:400 22px/1 var(--nh-spray);color:var(--nh-white);margin-top:12px;text-align:right}
+
+/* the heartbeat line between the two parts */
+html body #v-story svg.ng-rule{display:block;width:100%;height:30px}
+html body #v-story .ng-rule path{fill:none;stroke:var(--nh-red);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px var(--nh-hot))}
+
+/* part two: behind the scars */
+html body #v-story section.ng-scars:not(#_){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start;padding:26px 0 10px!important}
+html body #v-story .ng-side{position:sticky;top:104px}
+html body #v-story .ng-plates{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:18px;padding-left:6px}
+html body #v-story .ng-plates span{position:relative;isolation:isolate;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;color:#fff}
+html body #v-story .ng-plates span::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:#24262b;border-bottom:2px solid var(--nh-red)}
+html body #v-story .ng-tell{display:grid;gap:14px;max-width:60ch;color:#d6d6d4;font:400 16px/1.55 var(--nh-body)}
+html body #v-story .ng-tell .lead{font-size:21px;line-height:1.35;color:var(--nh-white);font-weight:500}
+html body #v-story .ng-tell .hit:not(#_){font:400 clamp(26px,3.4vw,38px)/1.05 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);border-left:5px solid var(--nh-red);padding:4px 0 4px 16px;margin:4px 0;background:none}
+html body #v-story .ng-tell .hit.red:not(#_){color:var(--nh-hot)}
+html body #v-story .ng-tell .hit .ng-spray{display:block;font-size:1.05em;line-height:1.1}
+html body #v-story .ng-tell .last:not(#_){font:400 clamp(30px,4.2vw,48px)/1.03 var(--nh-title)!important;text-transform:uppercase;color:var(--nh-white);margin-top:8px}
+html body #v-story .ng-tell .last .ng-spray{font-size:1.1em}
+
+/* where to go next */
+html body #v-story section.ng-next:not(#_){border-top:1px solid var(--nh-line);margin-top:22px;padding:20px 0 30px!important;display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center}
+html body #v-story .ng-btn{display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;cursor:pointer;border-radius:0}
+html body #v-story .ng-btn:hover{background:var(--nh-hot);border-color:var(--nh-hot)}
+html body #v-story .ng-btn.ghost{background:transparent;border-color:var(--nh-silver);color:var(--nh-white)}
+html body #v-story .ng-btn.ghost:hover{background:var(--nh-white);color:#000}
+html body #v-story .ng-btn:focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-story .ng-note{flex-basis:100%;font:400 21px/1.2 var(--nh-spray);color:var(--nh-silver);margin-top:6px}
+
+@media (min-width:821px) and (max-width:920px){
+  html body #v-story section.ng-next:not(#_){gap:10px}
+  html body #v-story .ng-btn{font-size:15px;padding:12px 10px}
+}
+@media (max-width:820px){
+  html body #v-story section.ng-open:not(#_),html body #v-story section.ng-scars:not(#_){grid-template-columns:minmax(0,1fr);gap:18px}
+  html body #v-story section.ng-open:not(#_){padding:14px 0 10px!important}
+  html body #v-story section.ng-scars:not(#_){padding:10px 0 4px!important}
+  html body #v-story .ng-side{position:static}
+  html body #v-story h2.ng-h:not(#_):not(#__){font-size:32px!important}
+  html body #v-story .ng-tell .hit:not(#_){font-size:25px!important}
+  html body #v-story .ng-tell .last:not(#_){font-size:30px!important}
+  html body #v-story .ng-safe{text-align:left;font-size:20px;margin-top:8px}
+  html body #v-story .ng-pic{margin-left:0;width:min(330px,100%)}
+  /* tight on a phone so the page is no longer than it was before */
+  html body #v-story .pagefx{margin-top:10px}
+  html body #v-story .ng-words,html body #v-story .ng-tell{gap:10px;line-height:1.5}
+  html body #v-story .ng-words{margin-top:12px}
+  html body #v-story .ng-kicker{margin-bottom:6px}
+  html body #v-story .ng-plates{margin-top:10px;gap:6px 8px;padding-left:4px}
+  html body #v-story .ng-plates span{font-size:14px;padding:7px 8px}
+  html body #v-story .ng-tell .lead{font-size:19px}
+  html body #v-story section.ng-next:not(#_){margin-top:12px;padding:14px 0 18px!important;gap:8px}
+  html body #v-story .ng-btn{font-size:14.5px;padding:10px 11px}
+  html body #v-story .ng-note{font-size:18px;margin-top:2px}
+}
+</style>
 <div class="view" id="v-story" hidden><span id="story"></span>
-  <div class="banner" id="banner">
-    <div class="banner-frame">
-      <img src="/assets/protector/banner.jpg" alt="Protected by GhostHeart: the hooded, faceless GhostHeart holds a torn red-and-black cloak over a row of people, among them a person with the flag, a trans person in the trans flag, a man in prison orange, a father carrying his family, a man in a suit, a man carrying everything he owns, and a worker with a wrench." width="1672" height="941">
+  <section class="ng-open" aria-labelledby="ng-about-title">
+    <div>
+      <p class="ng-kicker"><b>About</b> GhostHeart Studios</p>
+      <h2 class="ng-h" id="ng-about-title"><span>Built from</span> <span class="ng-spray">the heart.</span></h2>
+      <div class="ng-words">
+        <p>I’m the founder and creator of GhostHeart Studios, an independent creative business powered by technology and built from the heart. I turn my ideas, experiences, and imagination into music, visual stories, and digital projects that give people something to connect with.</p>
+        <p>Everything starts with something personal: a feeling, a story, or something I need to say. Technology gives me the tools to bring it to life. Through social media, I share what I create, hear other people’s stories, and build a community that helps inspire what comes next.</p>
+        <p>At the center of that world is GhostHeart, the dark, faceless protector I created. I’m the person behind the vision—the heart he protects. GhostHeart Studios is where I bring that vision into the world, creating work that speaks honestly, invites connection, and gives a voice to things that can be hard to put into words.</p>
+      </div>
+    </div>
+    <div class="ng-picside">
+      <div class="ng-pic" id="banner">
+        <div class="banner-frame">
+          <img src="/assets/protector/banner.jpg" alt="Protected by GhostHeart: the hooded, faceless GhostHeart holds a torn red-and-black cloak over a row of people, among them a person with the flag, a trans person in the trans flag, a man in prison orange, a father carrying his family, a man in a suit, a man carrying everything he owns, and a worker with a wrench." width="1672" height="941">
       <span class="hbs" aria-hidden="true"><span class="hb" style="left:50.2%;top:20.5%;width:17%;animation-delay:0s"></span><span class="hb" style="left:50.8%;top:43.5%;width:5%;animation-delay:0.12s"></span><span class="hb" style="left:38.3%;top:42.5%;width:5%;animation-delay:0.2s"></span><span class="hb" style="left:64.3%;top:43%;width:5%;animation-delay:0.2s"></span><span class="hb" style="left:28.1%;top:43.5%;width:5%;animation-delay:0.3s"></span><span class="hb" style="left:75.5%;top:45.7%;width:5%;animation-delay:0.3s"></span><span class="hb" style="left:17.3%;top:43%;width:5%;animation-delay:0.4s"></span><span class="hb" style="left:85.9%;top:42.5%;width:5%;animation-delay:0.4s"></span></span>
       <span class="shine" aria-hidden="true"></span>
       <i class="cn c1" aria-hidden="true"></i><i class="cn c2" aria-hidden="true"></i><i class="cn c3" aria-hidden="true"></i><i class="cn c4" aria-hidden="true"></i>
-      <span class="stamp s safe">you’re safe here</span>
+        </div>
+      </div>
+      <p class="ng-safe">you’re safe here</p>
     </div>
-  </div>
-  <section><div class="wrap"><div class="stack">
-    <p class="mono"><b>About</b> GhostHeart Studios</p>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Built from</span> <span class="tag" data-drip>the heart.</span></h2>
-    <div class="prose">
-      <p>I’m the founder and creator of GhostHeart Studios, an independent creative business powered by technology and built from the heart. I turn my ideas, experiences, and imagination into music, visual stories, and digital projects that give people something to connect with.</p>
-      <p>Everything starts with something personal: a feeling, a story, or something I need to say. Technology gives me the tools to bring it to life. Through social media, I share what I create, hear other people’s stories, and build a community that helps inspire what comes next.</p>
-      <p>At the center of that world is GhostHeart, the dark, faceless protector I created. I’m the person behind the vision—the heart he protects. GhostHeart Studios is where I bring that vision into the world, creating work that speaks honestly, invites connection, and gives a voice to things that can be hard to put into words.</p>
+  </section>
+
+  <svg class="ng-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="ng-scars" aria-labelledby="ng-scars-title">
+    <div class="ng-side">
+      <p class="ng-kicker"><b>Enter my world</b> · the life behind the name</p>
+      <h2 class="ng-h" id="ng-scars-title"><span>Behind</span> <span class="ng-spray">the scars</span></h2>
+      <div class="ng-plates"><span>Not one wound</span><span>Not one label</span><span>Still here</span></div>
     </div>
-    <div class="hazard" style="width:100%;margin-block:14px" aria-hidden="true"></div>
-    <p class="mono"><b>Enter my world</b> · the life behind the name</p>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Behind</span><br><span class="tag" data-drip>the scars</span></h2>
-    <div class="row" style="gap:18px;margin-block:10px"><span class="stamp">Not one wound</span><span class="stamp s" style="transform:rotate(3deg)">Not one label</span><span class="stamp" style="transform:rotate(-2deg)">Still here</span></div>
-    <div class="prose">
-      <p>I kept seeing people treated like they were nothing.</p>
+    <div class="ng-tell">
+      <p class="lead">I kept seeing people treated like they were nothing.</p>
       <p>People without a home being picked on. People struggling with addiction being laughed at. LGBTQ people getting torn apart for existing. Mental illness turned into a joke. Everybody pointing a finger while somebody else stood there taking the damage.</p>
-      <p>And I had plenty to say about it. <span class="hit">But I wasn’t doing shit about it.</span></p>
+      <p>And I had plenty to say about it.</p>
+      <p class="hit red">But I wasn’t doing shit about it.</p>
       <p>That was hard to admit, because I really did care. I cared enough to get angry. Enough to hurt over it. But stepping forward meant giving people a reason to look at me.</p>
-      <p class="pull"><span class="chrome">A way to hide and</span> <span class="red">still tell my story.</span></p>
+      <p class="hit">A way to hide and <span class="ng-spray">still tell my story.</span></p>
       <p>GhostHeart carries the bravery, the strength, the courage I’m still trying to find in myself. He gives me a way to step forward while part of me still wants to stay hidden.</p>
       <p>I’m the man behind him. The one who cares deeply and is still scared.</p>
       <p>Maybe my story could help somebody. Even with the ugly parts. Even with the mistakes I have to own. Even if the world judged me for telling it.</p>
-      <p class="pull"><span class="chrome">If I help one person, then I did</span> <span class="tag" data-drip style="font-size:1.1em">something.</span></p>
-      <p class="note">Read the whole story: <a href="/GhostHeart_Story.html" style="color:var(--hot)">Behind the Scars</a></p>
+      <p class="last">If I help one person, then I did <span class="ng-spray">something.</span></p>
     </div>
-    <div class="row"><button class="btn" type="button" data-play="the-heart-wakes">▶ Play The Heart Wakes</button><a class="btn ghost" href="#vault">Stay with a song</a></div>
-    <span class="scrawl">no one has to disclose their own pain to belong here.</span>
-  </div></div></section>
+  </section>
+
+  <section class="ng-next" aria-label="Where to go next">
+    <a class="ng-btn" href="/GhostHeart_Story.html">Read the whole story: Behind the Scars</a>
+    <button class="ng-btn ghost" type="button" data-play="the-heart-wakes">▶ Play The Heart Wakes</button>
+    <a class="ng-btn ghost" href="#vault">Stay with a song</a>
+    <a class="ng-btn ghost" href="/GhostHeart_Resources.html">Find Support</a>
+    <p class="ng-note">no one has to disclose their own pain to belong here.</p>
+  </section>
 </div>
 
 <!-- ================= LIVE ================= -->
+<!-- NEW LIVE VIEW (Dom, Nov 22, 2026) -->
+<style id="nl-style">
+/* The rebuilt Live view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_live.py. Same colors, fonts and width as the new Home (home.css sets the
+   --nh-* values). Every selector starts with "html body #v-live" so nothing leaks to other views. */
+html body:has(#v-live:not([hidden])){background:var(--nh-black)}
+html body:has(#v-live:not([hidden]))::after{display:none}
+html body:has(#v-live:not([hidden]))>.hazard{display:none}
+
+/* the strip the page script adds on top: one slim red band, like Home */
+html body #v-live .pagefx{padding:0;margin:18px 0 0}
+html body #v-live .pagefx .ekg,html body #v-live .heartfx{display:none}
+html body #v-live .pagefx .ticker{background:var(--nh-red);color:#000;border-block:2px solid #000;transform:rotate(-1deg) scale(1.02);margin:0;box-shadow:none}
+html body #v-live .pagefx .ticker div{font:400 19px/1 var(--nh-title);letter-spacing:.08em;padding:8px 0 7px}
+html body #v-live .pagefx .ticker img{height:18px}
+
+html body #v-live section:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto;background:none;animation:none;overflow:visible;padding:0!important}
+html body #v-live section::before,html body #v-live section::after{display:none}
+html body #v-live p{margin:0}
+html body #v-live>#live{position:absolute;top:0}
+
+/* on air: when, what, and today's line */
+html body #v-live section.nl-onair:not(#_){display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding:32px 0 26px!important}
+html body #v-live .nl-plates{display:flex;flex-wrap:wrap;gap:8px 14px;padding-left:6px;margin-bottom:16px}
+html body #v-live .nl-plates span{position:relative;isolation:isolate;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;color:#fff}
+html body #v-live .nl-plates span::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(-14deg);background:#24262b;border-bottom:2px solid var(--nh-red)}
+html body #v-live h2.nl-h:not(#_):not(#__){font:400 clamp(38px,5vw,54px)/1 var(--nh-title)!important;text-transform:uppercase;letter-spacing:.01em;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
+html body #v-live h2.nl-h span{display:block}
+html body #v-live .nl-spray:not(#_){font-family:var(--nh-spray)!important;text-transform:none;letter-spacing:0;color:var(--nh-hot);font-size:.95em;line-height:1.05;margin-top:2px}
+html body #v-live .nl-say{font:500 20px/1.4 var(--nh-body);color:var(--nh-white);max-width:36ch;margin:16px 0 20px}
+html body #v-live .nl-btn{display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;border-radius:0}
+html body #v-live .nl-btn:hover{background:#A50D26;border-color:var(--nh-white)}
+html body #v-live .nl-btn:focus-visible{outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-live .nl-quote{margin:0;background:var(--nh-panel);border:1px solid var(--nh-line);border-left:5px solid var(--nh-red);padding:24px 24px 20px;position:relative}
+html body #v-live .nl-quote::before{content:"\201C";content:"\201C" / "";display:block;font:400 48px/.6 var(--nh-title);color:var(--nh-red);height:24px}
+html body #v-live .nl-quote p{font:400 clamp(22px,2.6vw,30px)/1.14 var(--nh-title);text-transform:uppercase;color:var(--nh-white);min-height:2.3em}
+html body #v-live .nl-quote em{font-style:normal;color:var(--nh-hot)}
+html body #v-live .nl-quote cite{display:block;font:400 14px/1.4 var(--nh-body);font-style:normal;color:var(--nh-silver);margin-top:12px}
+
+html body #v-live svg.nl-rule{display:block;width:100%;height:30px}
+html body #v-live .nl-rule path{fill:none;stroke:var(--nh-red);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px var(--nh-hot))}
+
+html body #v-live section.nl-know:not(#_){padding:18px 0 0!important}
+html body #v-live .nl-fine{font:400 15px/1.55 var(--nh-body);color:var(--nh-silver);max-width:74ch}
+html body #v-live .nl-fine a{color:var(--nh-white)}
+
+html body #v-live section.nl-seat:not(#_){padding:24px 0 32px!important}
+html body #v-live .nl-box{background:var(--nh-panel) url(/assets/wake-v3/img/silver-heart.png) right -30px bottom -44px/190px no-repeat;border:1px solid var(--nh-line);padding:22px;display:grid;gap:10px;justify-items:start}
+html body #v-live .nl-box h3:not(#_):not(#__){font:400 clamp(24px,2.8vw,32px)/1.05 var(--nh-title)!important;text-transform:uppercase;color:var(--nh-white);margin:0}
+html body #v-live .nl-box p{font:400 16px/1.55 var(--nh-body);color:var(--nh-silver);max-width:60ch}
+html body #v-live .nl-box .nl-btn{margin-top:6px}
+
+@media (max-width:820px){
+  html body #v-live section.nl-onair:not(#_){grid-template-columns:minmax(0,1fr);gap:22px;padding:15px 0 15px!important}
+  html body #v-live h2.nl-h:not(#_):not(#__){font-size:32px!important}
+  html body #v-live .nl-say{font-size:18px;margin:12px 0 16px}
+  html body #v-live .nl-quote p{font-size:23px}
+  html body #v-live .nl-box{background-image:none;padding:18px}
+  html body #v-live section.nl-seat:not(#_){padding:15px 0 15px!important}
+  html body #v-live .nl-quote::before{font-size:32px;height:18px}
+  html body #v-live section.nl-know:not(#_){padding:15px 0 0!important}
+}
+</style>
 <div class="view" id="v-live" hidden><span id="live"></span>
-  <section class="firebg"><div class="wrap"><div class="stack">
-    <div class="row"><p class="mono"><b>Sundays</b> · 10 AM Central · TikTok</p></div>
-    <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Words from</span><br><span class="tag fire" data-drip>the heart.</span></h2>
-    <p class="lede">An hour with GhostHeart’s own picture quotes, from the hard parts, to strength, to hope. Come to listen or join in.</p>
-    <ol class="steps" style="width:100%">
-      <li><span class="n">1</span><h3>One picture</h3><p>One picture quote at a time. Take a moment with it before anything is said.</p></li>
-      <li><span class="n">2</span><h3>The story</h3><p>The words are read slowly, followed by the story behind them: what made them, and what they mean.</p></li>
-      <li><span class="n">3</span><h3>Your turn</h3><p>One question for the comments, with time to answer. You never have to share more than you want to.</p></li>
-    </ol>
-    <p class="note" style="max-width:70ch">The next live date shows here only once it’s confirmed. This is a creative community conversation, not professional care. If you need more than a song can give, <a href="/GhostHeart_Resources.html">Find Support</a> is here.</p>
-    <div class="row"><a class="btn ghost" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a></div>
-  </div></div></section>
+  <section class="nl-onair" aria-labelledby="nl-live-title">
+    <div>
+      <p class="nl-plates"><span>Sundays</span> <span>10 AM Central</span> <span>TikTok</span></p>
+      <h2 class="nl-h" id="nl-live-title"><span>Words from</span> <span class="nl-spray">the heart.</span></h2>
+      <p class="nl-say">GhostHeart’s words, and quotes that touched GhostHeart’s heart.</p>
+      <a class="nl-btn" href="https://www.tiktok.com/@ghosthearted1" target="_blank" rel="noopener">Watch on TikTok ↗</a>
+    </div>
+    <blockquote class="nl-quote">
+      <p id="nl-line"></p>
+      <cite>Today’s line. A new one every day.</cite>
+    </blockquote>
+  </section>
+
+  <svg class="nl-rule" viewBox="0 0 1200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 H470 L486 15 L498 4 L512 27 L526 1 L540 22 L552 15 H640 L652 9 L664 21 L676 15 H1200"/></svg>
+
+  <section class="nl-know" aria-label="Good to know">
+    <p class="nl-fine">The next live date shows here only once it’s confirmed. This is a creative community space, not professional care. If you need more than a song can give, <a href="/GhostHeart_Resources.html">Find Support</a> is here.</p>
+  </section>
+
+  <section class="nl-seat" aria-labelledby="nl-seat-title">
+    <div class="nl-box">
+      <h3 id="nl-seat-title">Take a seat. You’re welcome here.</h3>
+      <p>Every person who takes a seat adds a silver thread to the heart. Email only. New songs, new work from the studio, and every Sunday Live. Leave anytime.</p>
+      <a class="nl-btn" href="#join-the-signal">Pull up a seat</a>
+    </div>
+  </section>
+  <script>
+  /* Live view: show today's line, the same one the Home page shows. The page's main script picks the line; this copies it once the page has loaded. */
+  (function(){
+    function fill(){
+      var from=document.getElementById("q-text"),to=document.getElementById("nl-line");
+      if(!from||!to)return;
+      var words=from.textContent.replace(/\s+/g," ").trim().split(" ");
+      if(words.length<3){to.textContent=words.join(" ");return}
+      to.textContent=words.slice(0,-2).join(" ")+" ";
+      var em=document.createElement("em");em.textContent=words.slice(-2).join(" ");to.appendChild(em);
+    }
+    if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fill);else fill();
+  })();
+  </script>
 </div>
 
 <!-- ================= MERCH (Nov 11: every public product in the GhostHeart Studios shop, grouped by design) ================= -->
+<!-- NEW MERCH VIEW (Dom, Nov 22, 2026) -->
+<style id="nm-style">
+/* The rebuilt Merch view (Dom, Nov 22, 2026: "make it real"). Added to index.html by
+   .github/scripts/apply_new_merch.py. Same colors, fonts and width as the new Home (home.css sets the
+   --nh-* values). Every selector starts with "html body #v-merch" so nothing leaks to other views.
+   Heading sizes are left to the size caps stylesheet. */
+html body:has(#v-merch:not([hidden])){background:var(--nh-black)}
+html body:has(#v-merch:not([hidden]))::after{display:none}
+html body:has(#v-merch:not([hidden]))>.hazard{display:none}
+
+html body #v-merch section:not(#_){background:none;animation:none;padding:0!important}
+html body #v-merch section::before,html body #v-merch section::after{display:none}
+html body #v-merch .wrap{width:min(var(--nh-wrap),100% - 40px);padding-inline:0;margin-inline:auto}
+
+/* top: the name on the left, the count and the shop button on the right */
+html body #v-merch .stack:not(#_){width:100%;max-width:none;margin:0;display:grid;justify-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;row-gap:0;align-items:end;padding:30px 0 0}
+html body #v-merch .stack>.mono{grid-column:1;font:400 15px/1.4 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0 0 8px}
+html body #v-merch .stack>.mono b{color:var(--nh-white);font-weight:700}
+html body #v-merch h2.bigtitle{grid-column:1;font-family:var(--nh-title)!important;line-height:1;color:var(--nh-white);margin:0;text-shadow:none;transform:none}
+html body #v-merch h2.bigtitle span:not(#_){background:none;color:var(--nh-white);-webkit-text-fill-color:currentColor;filter:none;text-shadow:none;font-family:inherit!important;-webkit-text-stroke:0;animation:none}
+html body #v-merch h2.bigtitle span.red:not(#_){color:var(--nh-hot)}
+html body #v-merch h2.bigtitle span::before,html body #v-merch h2.bigtitle span::after{display:none}
+html body #v-merch .stack>.lede:not(#_){grid-column:2;grid-row:1/span 2;align-self:end;font:400 17px/1.5 var(--nh-body);color:#d6d6d4;max-width:46ch;margin:0}
+html body #v-merch .stack>.row{grid-column:1/-1;display:flex;margin:22px 0 0}
+html body #v-merch .btn:not(#_){display:inline-block;font:400 16px/1 var(--nh-title);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;background:var(--nh-red);color:#fff;border:1px solid var(--nh-red);padding:12px 16px;min-height:0;box-shadow:none;text-shadow:none;transform:none;filter:none;clip-path:none;border-radius:0}
+html body #v-merch .btn:hover:not(#_){background:#A50D26;border-color:var(--nh-white)}
+html body #v-merch .btn:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:3px}
+html body #v-merch .stack>.note{grid-column:1/-1;font:400 14.5px/1.55 var(--nh-body);color:var(--nh-silver);margin:12px 0 40px;max-width:74ch}
+
+/* the designs */
+html body #v-merch .m-cards:not(#_){grid-column:1/-1;width:auto;margin:22px 0 0;padding:24px 0 0;border-top:2px solid var(--nh-red);box-shadow:0 -8px 18px -12px var(--nh-hot);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+html body #v-merch .m-card:not(#_){display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:0;margin:0;padding:0;background:var(--nh-panel);border:1px solid var(--nh-line);border-top:4px solid var(--nh-red);box-shadow:none;transform:none;animation:none;border-radius:0}
+html body #v-merch .m-card::before,html body #v-merch .m-card::after{display:none}
+html body #v-merch .m-art:not(#_){margin:0;padding:0;border:0;background:#000;transform:none;box-shadow:none;width:auto;max-width:none}
+html body #v-merch .m-art img:not(#_){display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:0;box-shadow:none;transform:none}
+html body #v-merch .m-body{padding:14px 14px 16px;display:grid;gap:8px;align-content:start}
+html body #v-merch .m-body h2{font-family:var(--nh-title)!important;line-height:1.05;text-transform:uppercase;color:var(--nh-white);background:none;-webkit-text-fill-color:currentColor;text-shadow:none;margin:0}
+html body #v-merch .m-body>p{font:400 15px/1.5 var(--nh-body);color:#d6d6d4;margin:0}
+html body #v-merch .m-list{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+html body #v-merch .m-list li{margin:0;padding:0;border:0;background:none}
+html body #v-merch .m-list li::before{display:none}
+html body #v-merch .m-list a:not(#_){display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:baseline;text-decoration:none;font:400 15px/1.3 var(--nh-body);color:var(--nh-white);background:transparent;border:1px solid var(--nh-line);padding:8px 10px;border-radius:0;box-shadow:none;transform:none}
+html body #v-merch .m-list a:hover:not(#_){border-color:var(--nh-silver);background:#1d1f23}
+html body #v-merch .m-list a:focus-visible:not(#_){outline:2px solid var(--nh-white);outline-offset:2px}
+html body #v-merch .m-list a b{font-weight:700;color:var(--nh-white);white-space:nowrap}
+html body #v-merch .m-list a i{font-style:normal;color:var(--nh-hot)}
+
+@media (max-width:1000px){
+  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  html body #v-merch .m-cards:not(#_){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  html body #v-merch .stack:not(#_){grid-template-columns:minmax(0,1fr);padding-top:16px}
+  html body #v-merch .stack>.lede:not(#_){grid-column:1;grid-row:auto;margin-top:10px}
+  html body #v-merch .m-cards:not(#_){gap:10px;margin-top:16px;padding-top:16px}
+  html body #v-merch .m-body h2:not(#_):not(#__){font-size:20px!important}
+  html body #v-merch .m-body{padding:10px 10px 12px;gap:6px}
+  html body #v-merch .m-body>p{font-size:14px}
+  html body #v-merch .m-list a:not(#_){display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;font-size:13px;padding:7px 6px;gap:2px 6px}
+  html body #v-merch .m-list a i{display:none}
+  html body #v-merch .stack>.note{margin-bottom:28px}
+}
+</style>
 <div class="view" id="v-merch" hidden><span id="merch"></span>
   <section><div class="wrap"><div class="stack">
     <p class="mono">GhostHeart / <b>Merch</b></p>
     <h2 class="bigtitle" style="font-size:clamp(2.4rem,6vw,4.6rem)"><span class="chrome">Wear the</span> <span class="red">heart.</span></h2>
-    <p class="lede">Five designs, eighteen pieces. Printed to order. Pick a piece to open it in the shop.</p>
+    <p class="lede">Seven designs, twenty-four pieces. Printed to order. Pick a piece to open it in the shop.</p>
     <div class="m-cards">
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-ttws.jpg" alt="To Those Who Served in worn steel and crimson letters, a heartbeat line, and You shouldn’t stand alone" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>To Those Who Served</h2><p>TO THOSE WHO SERVED in worn steel and crimson, with a heartbeat line and “You shouldn’t stand alone.”</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-black-mug-11-oz" target="_blank" rel="noopener"><span>Mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/to-those-who-served-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/wake-v3/img/merch-still-here.jpg" alt="Still Here: cream letters with a red poppy" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Still Here</h2><p>Cream letters and a red poppy growing out of the rubble. For anyone who made it through.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/still-here-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/wake-v3/img/merch-take-up-space.jpg" alt="Take Up Space: cream letters in a red frame" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Take Up Space</h2><p>Bold cream letters in a red frame.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/take-up-space-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-cracked-heart.jpg" alt="A cracked crimson heart glowing on black" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>The Cracked Heart</h2><p>The cracked crimson heart GhostHeart wears on his chest.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-cuffed-beanie" target="_blank" rel="noopener"><span>Cuffed beanie</span><b>$20</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/ghostheart-cracked-heart-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$4.99–5.39</b><i>↗</i></a></li></ul></div></article>
       <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-human-too.jpg" alt="Human Too poster art: cream letters over a cracked red heart" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Human Too</h2><p>HUMAN TOO with a cracked heart and #HumanToo.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/human-too-black-mug-11-oz" target="_blank" rel="noopener"><span>Black mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/human-too-gothic-pride-mug-11-oz" target="_blank" rel="noopener"><span>Gothic Pride mug</span><b>$15</b><i>↗</i></a></li></ul></div></article>
+      <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-trans-heart.jpg" alt="Trans Heart tee: a cracked heart in light blue, pink and white with paint drips" width="640" height="640" loading="lazy"></div><div class="m-body"><h2>Trans Heart</h2><p>A cracked heart in the trans flag colors, light blue, pink and white, with paint drips and a crack down the middle.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-hoodie" target="_blank" rel="noopener"><span>Hoodie</span><b>$35–39</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-poster" target="_blank" rel="noopener"><span>Poster</span><b>$10–25</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-black-mug-11-oz" target="_blank" rel="noopener"><span>Mug</span><b>$15</b><i>↗</i></a></li><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/trans-heart-sticker" target="_blank" rel="noopener"><span>Sticker</span><b>$5–6</b><i>↗</i></a></li></ul></div></article>
+      <article class="m-card"><div class="m-art"><img src="/assets/protector/merch-you-cant-change-us.jpg" alt="You Can’t Change Us tee, back view: You can change the laws. But you can’t change us." width="640" height="640" loading="lazy"></div><div class="m-body"><h2>You Can’t Change Us</h2><p>YOU CAN CHANGE THE LAWS. BUT YOU CAN’T CHANGE US. The artwork is on the back; the front is plain black.</p><ul class="m-list"><li><a href="https://ghostheart-studios-shop.fourthwall.com/products/you-cant-change-us-heavyweight-tee" target="_blank" rel="noopener"><span>Heavyweight tee</span><b>$20–26</b><i>↗</i></a></li></ul></div></article>
     </div>
     <div class="row"><a class="btn ghost" href="https://ghostheart-studios-shop.fourthwall.com" target="_blank" rel="noopener">Whole shop ↗</a></div>
     <p class="note">These open your GhostHeart Studios shop in a new tab. Prices as listed in the shop on Nov 22, 2026; sizes 2XL and up cost a little more.</p>
