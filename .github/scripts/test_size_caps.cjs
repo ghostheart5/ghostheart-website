@@ -13,9 +13,11 @@ const PAGES = ['/', '/#story', '/#vault', '/#live', '/#merch', '/wake-the-heart/
   '/GhostHeart_Story.html', '/story/', '/journal/', '/vault/', '/here-to-help/', '/GhostHeart_Projects.html', '/follow/',
   '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html', '/GhostHeart_Quotes.html'];
 // screen size, biggest text (px), tallest picture (px), longest page in screens for Home and About
+// The page-length limits sit a little above what was measured (Home 3.3 laptop, 4.0 phone on Nov 21 2026),
+// because the checks machine uses different fonts and renders pages slightly longer than a Windows PC.
 const SIZES = [
-  {name: 'laptop', width: 1366, height: 768, text: 56, moving: 64, picture: 345, screens: {'/': 3.3, '/#story': 3.2}},
-  {name: 'phone', width: 390, height: 844, text: 34, moving: 40, picture: 330, screens: {'/': 4.0, '/#story': 3.4}},
+  {name: 'laptop', width: 1366, height: 768, text: 56, moving: 64, picture: 345, screens: {'/': 3.5, '/#story': 3.2}},
+  {name: 'phone', width: 390, height: 844, text: 34, moving: 40, picture: 330, screens: {'/': 4.2, '/#story': 3.4}},
 ];
 
 (async () => {
