@@ -20,7 +20,7 @@ CALM = ('GhostHeart_Resources.html', 'here-to-help/index.html')
 SHOW = True
 CHANNEL = 'https://www.youtube.com/@GhostHeart-M95RTK'
 PRESAVE_URL = ''  # DistroKid pre-save (HyperFollow) link, once Dom sends it
-VIDEO_URL = ''    # Kitchen music video on YouTube, once uploaded (public Mon, Nov 23, 4 PM Central)
+VIDEO_URL = 'https://www.youtube.com/watch?v=z00btt9OHWg'  # Kitchen music video (v07d), public Mon, Nov 23, 4 PM Central
 LISTEN_URL = ''   # streaming link page, once the stores are live
 OUT_AT = '2026-11-23 16:00'
 UNTIL = '2026-12-11 00:00'
