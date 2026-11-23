@@ -283,3 +283,47 @@ html body.newlook[data-page="privacy"] .legal a{color:var(--nh-white)}
 @media (max-width:560px){
   html body.newlook[data-page="support"] .res-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ---------- How's Your Heart? (/vault/): Dom, Nov 22, 2026, "REBUILD IT" ----------
+   The page's own words and its script are untouched. The six feelings sit in a block beside the
+   question, the silver heart above them, and the answer opens under the question. */
+html body.newlook[data-page="vault"] main .wrap:not(#_){width:min(var(--nh-wrap),100% - 40px);margin-inline:auto;padding:0}
+html body.newlook[data-page="vault"] .alt-b:not(#_){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:48px;align-items:start;padding:34px 0 48px;margin:0;border:0;background:none}
+html body.newlook[data-page="vault"] .alt-b>*{grid-column:1}
+html body.newlook[data-page="vault"] .alt-b>.mono:not(#_){font:400 15px/1.3 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0 0 10px!important}
+html body.newlook[data-page="vault"] h1.dial-h:not(#_){font-size:56px;line-height:.98;margin:0}
+html body.newlook[data-page="vault"] h1.dial-h span:not(#_){display:block;background:none;-webkit-text-fill-color:currentColor;color:var(--nh-white);filter:none;text-shadow:none;animation:none}
+html body.newlook[data-page="vault"] h1.dial-h span.red:not(#_){font-family:var(--nh-spray);text-transform:none;letter-spacing:0;color:var(--nh-hot);font-size:1.02em;line-height:1.05;margin-top:2px}
+html body.newlook[data-page="vault"] .alt-b>p:not(.mono):not(#_){color:#d6d6d4!important;font-size:17px;line-height:1.55;max-width:44ch!important;margin:16px 0 0!important}
+html body.newlook[data-page="vault"] .dial:not(#_){grid-column:2;grid-row:1/span 6;display:block;margin:0}
+html body.newlook[data-page="vault"] .dial-ring:not(#_){position:relative;width:100%;aspect-ratio:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:0}
+html body.newlook[data-page="vault"] .dial-heart:not(#_){position:static;order:-1;grid-column:1/-1;justify-self:center;width:150px;height:auto;transform:none;margin:0 0 6px;filter:drop-shadow(0 0 22px rgba(255,43,63,.55))}
+html body.newlook[data-page="vault"] .dial-heart.beat:not(#_){animation:nvbeat .9s ease}
+@keyframes nvbeat{0%{transform:scale(1)}20%{transform:scale(1.09)}40%{transform:scale(.98)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+html body.newlook[data-page="vault"] .dial-m:not(#_){position:static;transform:none;width:auto;min-height:72px;display:flex;align-items:center;text-align:left;padding:12px 14px;font:400 20px/1.08 var(--nh-title);letter-spacing:.02em;text-transform:uppercase;color:var(--nh-white);background:var(--nh-panel);border:1px solid var(--nh-line);border-left:4px solid var(--nh-red);border-radius:0;box-shadow:none;cursor:pointer;transition:background .12s,border-color .12s}
+html body.newlook[data-page="vault"] .dial-m:hover:not(#_){background:#24262b;border-color:var(--nh-silver);border-left-color:var(--nh-hot)}
+html body.newlook[data-page="vault"] .dial-m.on:not(#_){background:var(--nh-red);border-color:var(--nh-red);color:#fff;box-shadow:0 0 18px rgba(255,43,63,.5)}
+html body.newlook[data-page="vault"] .dial-m:focus-visible{outline:2px solid var(--nh-white);outline-offset:2px}
+html body.newlook[data-page="vault"] .dial-how:not(#_){display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-start;margin:24px 0 0;padding-top:16px;border-top:2px solid var(--nh-red)}
+html body.newlook[data-page="vault"] .dial-how[hidden]:not(#_),html body.newlook[data-page="vault"] .dial-out[hidden]:not(#_){display:none}
+html body.newlook[data-page="vault"] .dial-how .mono:not(#_){flex:0 0 100%;font:400 15px/1.3 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver);margin:0}
+html body.newlook[data-page="vault"] .dial-how .chip:not(#_){font:400 15px/1 var(--nh-title);letter-spacing:.04em;text-transform:uppercase;background:transparent;border:1px solid var(--nh-silver);border-radius:0;color:var(--nh-white);padding:9px 12px;min-height:40px;cursor:pointer}
+html body.newlook[data-page="vault"] .dial-how .chip small{font:400 13px/1 var(--nh-body);letter-spacing:0;text-transform:none;opacity:.8;margin-left:4px}
+html body.newlook[data-page="vault"] .dial-how .chip:hover:not(#_){background:#24262b}
+html body.newlook[data-page="vault"] .dial-how .chip.on:not(#_){background:var(--nh-red);border-color:var(--nh-red);color:#fff}
+html body.newlook[data-page="vault"] .dial-out:not(#_){margin:16px 0 0;padding:18px;background:var(--nh-panel);border:1px solid var(--nh-line);border-left:4px solid var(--nh-red);border-radius:0;box-shadow:none}
+html body.newlook[data-page="vault"] .dial-out .k:not(#_){font:400 14px/1.3 var(--nh-body);letter-spacing:0;text-transform:none;color:var(--nh-silver)}
+html body.newlook[data-page="vault"] .dial-out b:not(#_){display:block;font:400 30px/1.05 var(--nh-title);letter-spacing:.01em;text-transform:uppercase;color:var(--nh-white);background:none;-webkit-text-fill-color:currentColor;margin:4px 0 8px}
+html body.newlook[data-page="vault"] .dial-out p:not(#_){color:#d6d6d4;font-size:16px;line-height:1.55;margin:0 0 14px}
+html body.newlook[data-page="vault"] .dial-out .btn:not(#_){margin:0 8px 0 0}
+@media (max-width:900px){
+  html body.newlook[data-page="vault"] .alt-b:not(#_){grid-template-columns:minmax(0,1fr);padding:20px 0 32px}
+  html body.newlook[data-page="vault"] .dial:not(#_){grid-column:1;grid-row:auto;margin-top:18px}
+  html body.newlook[data-page="vault"] h1.dial-h:not(#_){font-size:34px}
+  html body.newlook[data-page="vault"] .alt-b>p:not(.mono):not(#_){font-size:16px;margin-top:10px!important}
+  html body.newlook[data-page="vault"] .dial-heart:not(#_){width:84px;margin-bottom:2px}
+  html body.newlook[data-page="vault"] .dial-m:not(#_){font-size:17px;min-height:58px;padding:8px 12px}
+  /* on a small screen the answer comes right under the feelings, before the time buttons, so a tap shows something */
+  html body.newlook[data-page="vault"] .dial-out:not(#_){order:1;margin-top:14px}
+  html body.newlook[data-page="vault"] .dial-how:not(#_){order:2;margin-top:16px}
+}

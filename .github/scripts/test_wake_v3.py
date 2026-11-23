@@ -21,7 +21,8 @@ NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with 
        'Merch ↗', 'Stay Connected', 'Find Support']
 # Dom, Nov 22 2026: "fix the tabs so about is next to home, name about something else" ... "just GhostHeart" (apply_new_home.py).
 PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
-NEW_LOOK = {'here-to-help/index.html', 'GhostHeart_Projects.html', 'GhostHeart_Resources.html', 'GhostHeart_Privacy.html'}
+NEW_LOOK = {'here-to-help/index.html', 'GhostHeart_Projects.html', 'GhostHeart_Resources.html', 'GhostHeart_Privacy.html',
+            'vault/index.html'}
 
 
 def page(relative):
@@ -47,8 +48,9 @@ for relative, path in PAGES.items():
         expected = PROTECTOR_NAV if relative in NEW_LOOK else NAV
         assert [a.get_text(' ', strip=True) for a in nav] == expected, (relative, [a.get_text() for a in nav])
         current = [a['href'] for a in nav if a.get('aria-current') == 'page']
-        in_menu = path in [a['href'] for a in nav]
-        assert current == ([path] if in_menu else []), (relative, current)
+        lit = {'/vault/': '/#vault'}.get(path, path)   # How's Your Heart? lights The Vault tab
+        in_menu = lit in [a['href'] for a in nav]
+        assert current == ([lit] if in_menu else []), (relative, current)
     # Dom, Nov 6: no link may send people to the old site. Every local link stays on these pages or /assets/.
     for el in doc.select('[href], [src]'):
         url = el.get('href') or el.get('src')
