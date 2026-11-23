@@ -25,7 +25,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   };
 
   // Every page: loads clean, one heading, no sideways scroll on a phone or a laptop, phone menu opens.
-  const NEW_LOOK = ['/here-to-help/', '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html'];
+  const NEW_LOOK = ['/here-to-help/', '/GhostHeart_Projects.html', '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html', '/vault/'];
   for (const width of [390, 1280]) {
     for (const path of PAGES) {
       const page = await open(path, null, width);

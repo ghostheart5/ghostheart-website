@@ -33,6 +33,10 @@ Projects (GhostHeart_Projects.html), approved on the local concept:
 Find Support (GhostHeart_Resources.html) and Privacy (GhostHeart_Privacy.html): nothing inside the
 page is changed, not a word, link or phone number. They get the top bar and the new stylesheet only.
 
+How's Your Heart? (vault/index.html), Dom, Nov 22, 2026, after asking what is on the Vault: "REBUILD IT".
+Same as Find Support: nothing inside the page is changed, and the six feelings and the answer box work
+as before. It gets the top bar, with The Vault lit, and the new stylesheet.
+
 To go back, remove this script's line from build_site.py and rebuild.
 """
 import re
@@ -50,6 +54,8 @@ FONT_NEW = 'family=Anton&amp;family=Sedgwick+Ave+Display&amp;family=Bebas+Neue'
 NAV = [('/', 'Home'), ('/#story', 'GhostHeart'), ('/#vault', 'The Vault'), ('/#live', 'Live'),
        ('/here-to-help/', 'Work with GhostHeart'), ('/GhostHeart_Projects.html', 'Projects'),
        ('/#merch', 'Merch'), ('/GhostHeart_Resources.html', 'Find Support')]
+# a page that belongs to a tab without being the tab's own address lights that tab
+CURRENT = {'/vault/': '/#vault'}
 NAV_RE = re.compile(r'<nav aria-label="Main" class="menu" id="menu">.*?</nav>', re.S)
 MAIN_RE = re.compile(r'<main id="main">.*?</main>', re.S)
 TAGS = re.compile(r'<[^>]+>')
@@ -63,8 +69,9 @@ def shell(html, path):
     """The top bar, the font and the stylesheet. `path` is the page's own address."""
     assert len(NAV_RE.findall(html)) == 1, f'{path}: menu not found'
     links = []
+    current = CURRENT.get(path, path)
     for href, name in NAV:
-        extra = ' aria-current="page"' if href == path else ''
+        extra = ' aria-current="page"' if href == current else ''
         extra += ' class="support"' if name == 'Find Support' else ''
         links.append(f'<a{extra} href="{href}">{name}</a>')
     html = NAV_RE.sub(lambda m: '<nav aria-label="Main" class="menu" id="menu">\n' + '\n'.join(links) + '\n</nav>', html)
@@ -132,7 +139,8 @@ def same_words(html):
 PAGES = {'here-to-help/index.html': ('/here-to-help/', work),
          'GhostHeart_Projects.html': ('/GhostHeart_Projects.html', projects),
          'GhostHeart_Resources.html': ('/GhostHeart_Resources.html', same_words),
-         'GhostHeart_Privacy.html': ('/GhostHeart_Privacy.html', same_words)}
+         'GhostHeart_Privacy.html': ('/GhostHeart_Privacy.html', same_words),
+         'vault/index.html': ('/vault/', same_words)}
 
 for relative, (path, body) in PAGES.items():
     page = ROOT / relative
