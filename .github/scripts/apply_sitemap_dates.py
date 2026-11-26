@@ -3,7 +3,8 @@
 
 Last build step. Dates come from .github/content/sitemap-lastmod.json, so
 shallow CI checkouts and the weekly Passages release build give the same
-result. To refresh the dates from git history (needs a full clone):
+result. A build from a full clone refreshes that file from git history by
+itself (Nov 26, 2026: the dates had been stuck at Nov 8). To force it:
 
     python3 .github/scripts/apply_sitemap_dates.py --refresh
 """
@@ -22,10 +23,14 @@ def page_file(loc: str) -> str:
     return path + 'index.html' if path == '' or path.endswith('/') else path
 
 
+def full_clone() -> bool:
+    out = subprocess.run(['git', 'rev-parse', '--is-shallow-repository'], cwd=ROOT,
+                         capture_output=True, text=True)
+    return out.returncode == 0 and out.stdout.strip() == 'false'
+
+
 def refresh(locs):
-    shallow = subprocess.run(['git', 'rev-parse', '--is-shallow-repository'], cwd=ROOT,
-                             capture_output=True, text=True, check=True).stdout.strip()
-    if shallow == 'true':
+    if not full_clone():
         sys.exit('Refusing to refresh sitemap dates from a shallow clone: run git fetch --unshallow first.')
     dates = {}
     for loc in locs:
@@ -40,7 +45,10 @@ def refresh(locs):
 def main():
     xml = SITEMAP.read_text(encoding='utf-8')
     locs = [m.group(2) for m in URL.finditer(xml)]
-    dates = refresh(locs) if '--refresh' in sys.argv else json.loads(DATES.read_text(encoding='utf-8'))
+    if '--refresh' in sys.argv or full_clone():
+        dates = refresh(locs)
+    else:
+        dates = json.loads(DATES.read_text(encoding='utf-8'))
 
     def fix(m):
         day = dates.get(m.group(2)[len(BASE):] or '/')
