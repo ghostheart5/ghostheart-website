@@ -1548,7 +1548,7 @@ function paint(){var playing=!au.paused;document.body.classList.toggle("playing"
   document.querySelectorAll(".trk").forEach(function(b){var on=+b.dataset.i===cur;b.classList.toggle("on",on);b.querySelector(".go").innerHTML=on&&playing?'<span class="eq"><i></i><i></i><i></i><i></i><i></i></span> Playing':"▶ Play"});
   document.querySelectorAll(".playbig[data-play]").forEach(function(b){var t=ALL[cur];b.textContent=t&&t.f===b.dataset.play&&playing?"❚❚":"▶"})}
 function play(i){if(i<0||i>=ALL.length)return;if(i===cur){au.paused?au.play():au.pause();return}
-  cur=i;var t=ALL[i];au.src=(/^(the-heart-wakes|to-those-who-served)$/.test(t.f)?"/assets/wake-v3/audio/":"/assets/music/preview/")+t.f+".mp3";au.play().catch(function(){$("#p-title").innerHTML=esc(t.t)+'<span>Could not load this song</span>'});
+  cur=i;var t=ALL[i];au.src=(/^(the-heart-wakes)$/.test(t.f)?"/assets/wake-v3/audio/":"/assets/music/preview/")+t.f+".mp3";au.play().catch(function(){$("#p-title").innerHTML=esc(t.t)+'<span>Could not load this song</span>'});
   $("#p-title").innerHTML=esc(t.t)+'<span>'+esc(t.album)+'</span>';bar.hidden=false;
   document.body.style.setProperty("--player-h",bar.offsetHeight+"px");paint()}
 document.addEventListener("click",function(e){var b=e.target.closest(".trk");if(b){play(+b.dataset.i);return}

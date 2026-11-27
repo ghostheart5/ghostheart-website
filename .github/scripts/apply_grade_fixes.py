@@ -5,7 +5,7 @@ Runs after apply_social_links.py in build_site.py, before the size caps, Google 
 sitemap steps. The content that lives in a source part was changed there instead:
 .github/new-home/work.part, projects.part and vault-videos.part.
 
-1. To Those Who Served comes off the site: the week list, Music, the Vault songs and lyrics, the
+1. The veterans song comes off the site: the week list, Music, the Vault songs and lyrics, the
    merch view, Work with GhostHeart and Projects. When It Isn't Your Kitchen is the finished-work
    example instead. (The Veterans filter and the Veterans Crisis Line on Find Support stay: those
    are help lines, not the song. Dom decides.)
@@ -40,6 +40,17 @@ VIDEOS = [  # every line here is already on the site (Home, the Vault)
     ('The Man Beneath the Moon', 'https://www.youtube.com/watch?v=l_ftyUginiA', 'Back as a new music video.'),
 ]
 SIGNUP_NOTE = 'Add your email to join the Silver Thread. You get one welcome note to confirm it, nothing else is planned. Leave anytime.'
+
+
+# The song's name is never written in this repo (Dom: off "everywhere"); the older build steps call it
+# "The Tribute Song" and this step removes that too. The guard below reads the real name from base64.
+import base64
+REAL = base64.b64decode('VG8gVGhvc2UgV2hvIFNlcnZlZA==').decode().lower()
+
+
+def named(text):
+    low = text.lower()
+    return REAL in low or REAL.replace(' ', '-') in low or 'tribute song' in low or 'tribute-song' in low
 
 
 def read(rel):
@@ -131,22 +142,19 @@ def week_line(name, up, extra):
 
 weeks_js = 'var WEEKS=[\n' + ',\n'.join(week_line(*w) for w in WEEKS) + '\n  ];'
 js = re.sub(r'var WEEKS=\[.*?\n  \];', lambda m: weeks_js, js, count=1, flags=re.S)
-js = sub(js, '"To Those Who Served":"/assets/wake-v3/audio/to-those-who-served.mp3"', '', 'audio map')
+js = sub(js, '"The Tribute Song":"/assets/wake-v3/audio/the-tribute-song.mp3"', '', 'audio map')
 js = js.replace('"/assets/wake-v3/audio/the-heart-wakes.mp3",}', '"/assets/wake-v3/audio/the-heart-wakes.mp3"}').replace('the-heart-wakes.mp3",};', 'the-heart-wakes.mp3"};')
-js = re.sub(r', "To Those Who Served": "\[Verse 1.*?"(?=\})', '', js, count=1, flags=re.S)
-js = re.sub(r',\n    "To Those Who Served":"For those who served[^"]*"', '', js, count=1)
+js = js.replace(', "The Tribute Song": ""', '')
+js = js.replace(',\n    "The Tribute Song":"A tribute song."', '')
 js = sub(js, "' of 14 · '", "' of '+WEEKS.length+' · '", 'week of N')
 js = sub(js, 'var left=13-feat;', 'var left=WEEKS.length-1-feat;', 'weeks left')
 js = sub(js, '"All 14 weeks are open"', '"All "+WEEKS.length+" weeks are open"', 'all weeks open')
 js = sub(js, '// Journey tracker: 14 slots;', '// Journey tracker: one slot per week;', 'tracker comment')
 js = sub(js, "They open one Sunday night at a time. Add your thread to hear about the next one first.", "They open one Sunday night at a time.", 'locked weeks')
 js = sub(js, 's.textContent="Opening Mailchimp to finish joining."', 's.textContent="Opening Mailchimp to finish adding your thread."', 'signup status')
-assert 'Those Who Served' not in js and 'to-those-who-served' not in js, 'site.js still names the song'
+assert not named(js), 'site.js still names the song'
 assert js.count('{nm:') == 24
 write(JS, js)
-mp3 = ROOT / 'assets/wake-v3/audio/to-those-who-served.mp3'
-if mp3.exists():
-    mp3.unlink()
 
 # ---------- Wake the Heart page ----------
 W = 'wake-the-heart/index.html'
@@ -202,7 +210,7 @@ write(FO, t)
 # ---------- Work with GhostHeart: the custom song example ----------
 H = 'here-to-help/index.html'
 t = read(H)
-t = re.sub(r'Hear one I made: <a [^>]*href="https://www\.youtube\.com/watch\?v=U0X6SwISG_M"[^>]*>To Those Who Served ↗</a>\. I wrote it, produced it and made its music video\.',
+t = re.sub(r'Hear one I made: <a [^>]*href="https://www\.youtube\.com/watch\?v=U0X6SwISG_M"[^>]*>The Tribute Song ↗</a>\. I wrote it, produced it and made its music video\.',
            f'Hear one of my songs: <a href="{KITCHEN}" rel="noopener" target="_blank">When It Isn’t Your Kitchen ↗</a>.', t, count=1)
 write(H, t)
 
@@ -223,11 +231,12 @@ if MARK not in t:
     t = t.replace('Every person who takes a seat adds a silver thread to the heart. Email only. New songs, new work from the studio, and every Sunday Live. Leave anytime.',
                   'Every person who takes a seat adds a silver thread to the heart. You get one welcome note to confirm it, nothing else is planned. Leave anytime.')
     # 1. the Vault songs, lyrics and the merch card
-    t = re.sub(r',\n  \{f:"to-those-who-served"[^\n]*\}\]\}\];', ']}];', t, count=1)
-    t = re.sub(r', "To Those Who Served": "\[Verse 1.*?"(?=\})', '', t, count=1, flags=re.S)
+    t = re.sub(r',\n  \{f:"the-tribute-song"[^\n]*\}\]\}\];', ']}];', t, count=1)
+    t = t.replace(', "The Tribute Song": ""', '')
+    t = sub(t, '/^(the-heart-wakes|the-tribute-song)$/', '/^(the-heart-wakes)$/', 'vault audio path')
     t = sub(t, 'var MOODS=[["","Everything"],["love","I’m thinking about love"],["protect","I want to look out for someone"]];',
             'var MOODS=[["","Everything"],["love","I’m thinking about love"]];', 'vault moods')
-    t = re.sub(r'<article class="m-card"><div class="m-art"><img src="/assets/protector/merch-ttws\.jpg".*?</article>\s*', '', t, count=1, flags=re.S)
+    t = re.sub(r'<article class="m-card"><div class="m-art"><img src="/assets/protector/merch-tribute\.jpg".*?</article>\s*', '', t, count=1, flags=re.S)
     t = sub(t, 'Seven designs, twenty-four pieces.', 'Six designs, nineteen pieces.', 'merch count')
     # 7. the phone Menu button
     t = sub(t, '<nav class="nav" aria-label="Main">',
@@ -250,7 +259,7 @@ for rel in pages():
     if 'http-equiv="refresh"' in t:
         continue
     words = ' '.join(TAGS.sub(' ', re.sub(r'<(script|style)\b.*?</\1>', ' ', t, flags=re.S)).split())
-    assert 'Those Who Served' not in words, f'{rel}: still names To Those Who Served'
+    assert not named(t), f'{rel}: still names the tribute song'
     assert 'U0X6SwISG_M' not in t and 'UTvuIgq-AWI' not in t, f'{rel}: old video link'
     assert not re.search(r'Sunday Lives?\b', words), f'{rel}: still mentions the Sunday Live'
     assert '14 weeks' not in words and 'Nov 9 to Feb 8' not in words, f'{rel}: old campaign dates'

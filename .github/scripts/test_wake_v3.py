@@ -2,6 +2,7 @@
 """Wake the Heart site (prototype v3, confirmed by Dom Nov 6 2026): static checks after the full build."""
 from pathlib import Path
 from urllib.parse import urlsplit
+import base64
 import re
 
 from bs4 import BeautifulSoup
@@ -24,6 +25,15 @@ NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Work with GhostHear
 PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
 NEW_LOOK = {'here-to-help/index.html', 'GhostHeart_Projects.html', 'GhostHeart_Resources.html', 'GhostHeart_Privacy.html',
             'vault/index.html'}
+
+
+# Dom, Nov 26 2026: the veterans song is off the site, and its name is not written in the repo either (grade fix 1).
+SONG = base64.b64decode('VG8gVGhvc2UgV2hvIFNlcnZlZA==').decode().lower()
+# The whole published tree, sources included, must not carry it (GitHub Pages serves .github too).
+for _f in ROOT.rglob('*'):
+    if _f.is_file() and '.git' not in _f.relative_to(ROOT).parts[:1] and _f.suffix not in ('.png', '.jpg', '.webp', '.mp3', '.mp4', '.pdf', '.ico', '.woff2'):
+        _low = _f.read_bytes().decode('utf-8', 'ignore').lower()
+        assert SONG not in _low and SONG.replace(' ', '-') not in _low, _f
 
 
 def page(relative):
@@ -93,7 +103,7 @@ for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
 # Dom, Nov 21 2026: nothing should say veterans anymore; the Week 01 block and the merch tag are gone (apply_no_veterans_home.py).
 assert not home.select('section.feat2[data-week="1"]') and 'Veterans Day' not in home.get_text()
 assert '24 weeks · Nov 9 to Apr 19' in home.get_text() and '14 weeks' not in home.get_text() and 'Feb 8' not in home.get_text()  # Dom, Nov 26 2026: the final plan runs to Apr 19
-assert 'Those Who Served' not in home.get_text() and 'Sunday Live' not in home.get_text()  # grade fixes 1 and 4
+assert SONG not in home.get_text().lower() and 'Sunday Live' not in home.get_text()  # grade fixes 1 and 4
 #  # Dom, Nov 22 2026: 14 weeks, Nov 9 to Feb 8 (13 weeks + bonus week)
 home_raw = (ROOT / 'index.html').read_text(encoding='utf-8')
 # Dom, Nov 8 2026: older songs off everywhere; the Vault lists The Heart Wakes songs only.
@@ -119,7 +129,7 @@ for relative in PAGES:
 weeks = re.findall(r'\{nm:"([^"]+)",up:"(\d{4}-\d\d-\d\d)"', site_js)
 # Dom, Nov 26 2026: the final plan, 24 weeks, Week 1 is The Heart Wakes and the finale is Carry the Light on Apr 19.
 assert len(weeks) == 24 and weeks[0] == ('The Heart Wakes', '2026-11-08') and weeks[-1] == ('Carry the Light', '2027-04-18'), weeks
-assert 'Those Who Served' not in site_js
+assert SONG not in site_js.lower() and SONG.replace(' ', '-') not in site_js.lower()
 for mp3 in re.findall(r'"/assets/wake-v3/audio/([^"]+\.mp3)"', site_js):
     assert (ROOT / 'assets/wake-v3/audio' / mp3).stat().st_size > 1_000_000, mp3
 

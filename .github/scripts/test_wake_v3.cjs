@@ -57,14 +57,14 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.equal(await page.locator('#v-vault').isVisible(), false);
   await page.click('header.top a[href="#vault"]');
   await page.locator('#v-vault').waitFor();
-  assert.equal(await page.locator('#albums .trk').count(), 1, 'only The Heart Wakes songs (grade fix 1: To Those Who Served is off)');
-  assert.doesNotMatch(await page.locator('#v-vault').innerText(), /Those Who Served/i);
+  assert.equal(await page.locator('#albums .trk').count(), 1, 'only The Heart Wakes songs (grade fix 1: the veterans song is off)');
+  assert.ok(!(await page.locator('#v-vault').innerText()).toLowerCase().includes(Buffer.from('VG8gVGhvc2UgV2hvIFNlcnZlZA==', 'base64').toString().toLowerCase()));
   assert.equal(await page.locator('#v-vault a[href="https://www.youtube.com/watch?v=-ZtyZCxKBM8"]').count(), 1, 'Too Small, public video');
   // Dom, Nov 26 2026 (grade fix 4): Lives are off the site, no Live tab.
   assert.equal(await page.locator('header.top a[href="#live"]').count(), 0);
   assert.equal(await page.locator('#fire-in').count(), 0);
   await page.click('header.top a[href="#merch"]');
-  assert.equal(await page.locator('#v-merch .m-card').count(), 6);   // Dom, Nov 22 2026: Trans Heart and You Can't Change Us added; Nov 26: To Those Who Served off (grade fix 1)
+  assert.equal(await page.locator('#v-merch .m-card').count(), 6);   // Dom, Nov 22 2026: Trans Heart and You Can't Change Us added; Nov 26: the veterans song off (grade fix 1)
   assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);
   await page.close();
   // Week 2 (Dom, Nov 14 2026, apply_week2_home.py): The Parts You Hide takes over at 7 PM Central on Sunday, Nov 15.

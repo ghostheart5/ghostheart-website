@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Wake the Heart site with only Week 1's songs (Dom, Nov 8, 2026). Runs after apply_no_awakening.py.
 
-Dom: "release the entire site and 1st weeks songs. the wake the heart is the campaign album song. to those who served
+Dom: "release the entire site and 1st weeks songs. the wake the heart is the campaign album song. the tribute song
 is the week song. no other song should be listed, the entire website protype was already completed"
 
 - The campaign pieces of the confirmed prototype stay on (apply_no_campaign.py is gone): menu link, /wake-the-heart/,
   the home campaign line. The old Oct 30 "Wake the Heart Week" post was about the retired album, so it still forwards.
-- Music lists only The Heart Wakes album songs as their week opens (Week 1: The Heart Wakes, To Those Who Served).
+- Music lists only The Heart Wakes album songs as their week opens (Week 1: The Heart Wakes, The Tribute Song).
   The "Where it started" and "You're Not God" song lists leave the Music page.
 
 Dom, Nov 8 2026 (card "Should older songs also come off the rest of the site?"): "Take older songs off everywhere".
@@ -239,9 +239,9 @@ def main() -> None:
     assert picks and not any(x['title'] in OLD_SONGS or x['kind'] != 'Quote' for x in picks)
 
     js = (ROOT / 'assets/wake-v3/site.js').read_text(encoding='utf-8')
-    assert 'var AUDIO={"The Heart Wakes":' in js and '"To Those Who Served":' in js
+    assert 'var AUDIO={"The Heart Wakes":' in js and '"The Tribute Song":' in js
     assert 'href="/wake-the-heart/"' in (ROOT / 'index.html').read_text(encoding='utf-8')
-    print('Wake the Heart on; only The Heart Wakes songs are listed (Week 1: The Heart Wakes, To Those Who Served); older songs, films and notes are off.')
+    print('Wake the Heart on; only The Heart Wakes songs are listed (Week 1: The Heart Wakes, The Tribute Song); older songs, films and notes are off.')
 
 
 main()
