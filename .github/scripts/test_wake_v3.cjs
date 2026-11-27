@@ -2,7 +2,7 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.env.GHOSTHEART_TEST_BASE_URL || 'http://127.0.0.1:8765';
-const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/live/', '/GhostHeart_Story.html', '/journal/',
+const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/GhostHeart_Story.html', '/journal/',
   '/vault/', '/here-to-help/', '/GhostHeart_Projects.html', '/follow/', '/GhostHeart_Resources.html', '/GhostHeart_Privacy.html'];
 (async () => {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM_EXECUTABLE || undefined});
@@ -31,10 +31,17 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
       const page = await open(path, null, width);
       assert.equal(await page.locator('h1').count(), 1, path);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' overflow at ' + width);
-      // the Protected by GhostHeart home keeps its menu in one sliding row; so do the pages rebuilt in the new look (Dom, Nov 22 2026, apply_new_pages.py)
-      if (width === 390 && path !== '/' && !NEW_LOOK.includes(path)) {
-        await page.click('#menu-btn');
-        assert.equal(await page.getAttribute('#menu-btn', 'aria-expanded'), 'true', path + ' menu');
+      // Dom, Nov 26 2026 (grade fix 7): every page, Home and the new-look pages too, has a Menu button on a phone.
+      if (width === 390) {
+        const btn = path === '/' ? '#nh-menu-btn' : '#menu-btn';
+        const nav = path === '/' ? '#nh-nav' : '#menu';
+        assert.equal(await page.locator(nav).isVisible(), false, path + ' menu starts closed');
+        await page.click(btn);
+        assert.equal(await page.getAttribute(btn, 'aria-expanded'), 'true', path + ' menu');
+        assert.equal(await page.locator(nav).isVisible(), true, path + ' menu opens');
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, path + ' open menu overflow');
+      } else {
+        assert.equal(await page.locator(path === '/' ? '#nh-menu-btn' : '#menu-btn').isVisible(), false, path + ' no Menu button on a laptop');
       }
       await page.close();
     }
@@ -42,7 +49,7 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   // Home (Dom, Nov 11 2026): Protected by GhostHeart (apply_protector_home.py). The Vault, About, Live and Merch open on the page.
   // Dom, Nov 21 2026: nothing should say veterans anymore (apply_no_veterans_home.py), so the Week 01 block is gone.
-  let page = await open('/', '2026-11-11T18:00:00Z');
+  let page = await open('/', '2026-11-11T18:00:00Z', 1280);  // laptop width: the tabs are in the bar (phones use the Menu button)
   assert.equal(await page.locator('.feat2:visible').count(), 1);
   assert.match(await page.locator('.feat2:visible .deck h3').innerText(), /The Parts You Hide/i);
   assert.doesNotMatch(await page.locator('body').innerText(), /veteran/i);
@@ -50,14 +57,14 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.equal(await page.locator('#v-vault').isVisible(), false);
   await page.click('header.top a[href="#vault"]');
   await page.locator('#v-vault').waitFor();
-  assert.equal(await page.locator('#albums .trk').count(), 2, 'only The Heart Wakes songs');
-  await page.click('header.top a[href="#live"]');
-  // Sunday Live is Words From the Heart (Dom, Nov 19 2026); the old fire box is gone.
-  await page.locator('#v-live').waitFor();
-  assert.match(await page.locator('#v-live h2').innerText(), /Words from\s+the heart/i);
+  assert.equal(await page.locator('#albums .trk').count(), 1, 'only The Heart Wakes songs (grade fix 1: the veterans song is off)');
+  assert.ok(!(await page.locator('#v-vault').innerText()).toLowerCase().includes(Buffer.from('VG8gVGhvc2UgV2hvIFNlcnZlZA==', 'base64').toString().toLowerCase()));
+  assert.equal(await page.locator('#v-vault a[href="https://www.youtube.com/watch?v=-ZtyZCxKBM8"]').count(), 1, 'Too Small, public video');
+  // Dom, Nov 26 2026 (grade fix 4): Lives are off the site, no Live tab.
+  assert.equal(await page.locator('header.top a[href="#live"]').count(), 0);
   assert.equal(await page.locator('#fire-in').count(), 0);
   await page.click('header.top a[href="#merch"]');
-  assert.equal(await page.locator('#v-merch .m-card').count(), 7);   // Dom, Nov 22 2026: Trans Heart and You Can't Change Us added ("yes and use the prices i chose")
+  assert.equal(await page.locator('#v-merch .m-card').count(), 6);   // Dom, Nov 22 2026: Trans Heart and You Can't Change Us added; Nov 26: the veterans song off (grade fix 1)
   assert.equal(await page.locator('header.top a[href="/here-to-help/"]').count(), 1);
   await page.close();
   // Week 2 (Dom, Nov 14 2026, apply_week2_home.py): The Parts You Hide takes over at 7 PM Central on Sunday, Nov 15.
@@ -83,12 +90,11 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
     assert.equal(await page.locator('.feat2:visible a[href="tel:18007997233"]').count(), 1, when);
     assert.equal(await page.locator('[data-week3-kitchen]').getAttribute('href'),
       when < '2026-11-23T22:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=z00btt9OHWg', when);
-    assert.equal(await page.locator('[data-week3-song]').getAttribute('href'),
-      when < '2026-11-25T22:00:00Z' ? 'https://www.youtube.com/@GhostHeart-M95RTK' : 'https://www.youtube.com/watch?v=-ZtyZCxKBM8', when);
+    assert.equal(await page.locator('[data-week3-song]').getAttribute('href'), 'https://www.youtube.com/watch?v=-ZtyZCxKBM8', when);  // grade fix 2
     const deck = await page.locator('.feat2:visible .deck').innerText();
     assert.doesNotMatch(deck, /Sunday, Nov 22|8 PM/i, when);
     assert.match(deck, when < '2026-11-23T22:00:00Z' ? /Monday, Nov 23, 4 PM Central/i : /Music video out now/i, when);
-    assert.match(deck, /Also this week[\s\S]*Too Small[\s\S]*Wednesday, Nov 25, at 4 PM Central/i, when);
+    assert.match(deck, /Also this week[\s\S]*Too Small is on YouTube now/i, when);  // grade fix 3
     assert.doesNotMatch(await page.locator('body').innerText(), /Out tonight at 8 PM/i, when);
     await page.close();
   }
@@ -117,7 +123,8 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.equal(await page.locator('#album-songs audio').count(), 0, 'Music page waits for the premiere');
   await page.close();
   page = await open('/music/', '2026-11-09T18:00:00Z');
-  assert.equal(await page.locator('#album-songs audio').count(), 2);
+  assert.equal(await page.locator('#album-songs audio').count(), 1);
+  assert.equal(await page.locator('#music-videos a[href^="https://www.youtube.com/watch?v="]').count(), 4, 'Music lists the songs out as videos');
   await page.close();
   // Dom, Nov 8 2026: the campaign page is on again (confirmed prototype).
   page = await open('/wake-the-heart/');
@@ -125,15 +132,9 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
   assert.equal(new URL(page.url()).pathname, '/wake-the-heart/');
   await page.close();
 
-  // Lives: Sundays only, from the next one.
-  page = await open('/live/', '2026-11-07T18:00:00Z');
-  assert.equal(await page.locator('#lives li').count(), 14);
-  assert.match(await page.locator('#lives li').first().innerText(), /Sun, Nov 8/i);
-  assert.match(await page.locator('.nl-big .js-nl-topic').innerText(), /Lessons Learned/i);
-  await page.close();
-  page = await open('/live/', '2026-11-20T18:00:00Z');
-  assert.match(await page.locator('#lives li').first().innerText(), /Sun, Nov 22/i);
-  assert.match(await page.locator('.nl-big .js-nl-topic').innerText(), /Words From the Heart/i);  // Dom, Nov 19 2026
+  // Dom, Nov 26 2026 (grade fix 4): the old Lives address forwards to Home.
+  page = await open('/live/');
+  await page.waitForURL(u => new URL(u).pathname === '/');
   await page.close();
 
   // Blog: Dom, Nov 8 2026: older songs off everywhere; the Blog waits for The Heart Wakes notes,
@@ -172,5 +173,5 @@ const PAGES = ['/', '/wake-the-heart/', '/music/', '/GhostHeart_Videos.html', '/
 
   assert.deepEqual(errors, []);
   await browser.close();
-  console.log('PASS site browser: 13 pages, campaign page on, at phone and laptop width, weeks, Lives, Notebook, Heart Dial, old links, Films and Blog with only The Heart Wakes, Mailchimp signup.');
+  console.log('PASS site browser: 12 pages, Menu button on every phone page, campaign page on, at phone and laptop width, weeks, no Lives, Blog, Heart Dial, old links, Films with every video, Mailchimp signup.');
 })().catch(e => { console.error(e); process.exit(1); });

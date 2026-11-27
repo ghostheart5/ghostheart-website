@@ -16,7 +16,7 @@ Work with GhostHeart (here-to-help/index.html), approved on the local concept:
 - "dont change the fact that it doesnt push the money like i want it": prices stay folded away
   under "Service details and prices", exactly as before;
 - new: "What finished work looks like", four made-up example jobs (Dom: "yes" to making them), and
-  one real finished job, To Those Who Served;
+  one real finished job, The Tribute Song;
 - the request form, the email line, the price list and the custom song block are the same HTML as
   before, moved into the new layout, so the form scripts and the order tests see no difference.
 Two lines of the concept are worded differently here to keep Dom's standing rules: the song is "a
@@ -26,7 +26,7 @@ is left out (no AI labels).
 Projects (GhostHeart_Projects.html), approved on the local concept:
 - where each app stands, in Dom's words (Nov 22): "axiomora is finished. deal vector is in testing
   finishes in two days. shadowfire is still in the works."; Deal Vector now comes second;
-- "Not just apps" ("use all non app projects"): Wake the Heart, To Those Who Served, The Man
+- "Not just apps" ("use all non app projects"): Wake the Heart, The Tribute Song, The Man
   Beneath the Moon, Words from the Heart the book, Behind the Scars the full story;
 - every other word of the page is kept; the 01 / 02 / 03 counters are gone.
 

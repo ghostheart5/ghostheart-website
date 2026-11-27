@@ -44,8 +44,10 @@ assert awakening.select_one('meta[http-equiv="refresh"]')["content"] == "0; url=
 assert page("journal/how-we-got-here.html").select_one('meta[http-equiv="refresh"]')["content"].endswith("/GhostHeart_Story.html")
 # Dom, Nov 8 2026: older films are off the site; Films points to The Heart Wakes premiere (apply_week1_songs_only.py).
 film_cards = films.select('article.film[id]')
-assert [card['id'] for card in film_cards] == ['film-the-heart-wakes'], [card['id'] for card in film_cards]
-assert film_cards[0].select_one('a[href="https://www.youtube.com/@GhostHeart-M95RTK"]')
+# Dom, Nov 26 2026 (site grade fixes): Films lists every music video with its own link, then The Heart Wakes premiere.
+assert [card['id'] for card in film_cards] == ['film-kitchen', 'film-too-small', 'film-the-parts-you-hide', 'film-the-man-beneath-the-moon', 'film-the-heart-wakes'], [card['id'] for card in film_cards]
+assert all(card.select_one('a[href^="https://www.youtube.com/watch?v="]') for card in film_cards[:4])
+assert film_cards[-1].select_one('a[href="https://www.youtube.com/@GhostHeart-M95RTK"]')
 recordings = page('GhostHeart_Songs.html')
 assert recordings.select_one('meta[http-equiv="refresh"]')['content'] == '0; url=/music/'
 assert recordings.select_one('#human-too')  # old deep links still land before the forward

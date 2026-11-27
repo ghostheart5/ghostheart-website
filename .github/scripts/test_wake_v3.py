@@ -2,6 +2,7 @@
 """Wake the Heart site (prototype v3, confirmed by Dom Nov 6 2026): static checks after the full build."""
 from pathlib import Path
 from urllib.parse import urlsplit
+import base64
 import re
 
 from bs4 import BeautifulSoup
@@ -11,18 +12,28 @@ MAILCHIMP = ('https://myghostheart.us22.list-manage.com/subscribe/post'
              '?u=a7ab330423f3b936c48b8d8ba&id=880e8056a6&f_id=00bec2e1f0')
 PAGES = {
     'index.html': '/', 'wake-the-heart/index.html': '/wake-the-heart/', 'music/index.html': '/music/',
-    'GhostHeart_Videos.html': '/GhostHeart_Videos.html', 'live/index.html': '/live/',
+    'GhostHeart_Videos.html': '/GhostHeart_Videos.html',
     'GhostHeart_Story.html': '/GhostHeart_Story.html', 'journal/index.html': '/journal/',
     'vault/index.html': '/vault/', 'here-to-help/index.html': '/here-to-help/',
     'GhostHeart_Projects.html': '/GhostHeart_Projects.html', 'follow/index.html': '/follow/',
     'GhostHeart_Resources.html': '/GhostHeart_Resources.html', 'GhostHeart_Privacy.html': '/GhostHeart_Privacy.html',
 }
-NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Lives', 'Work with GhostHeart', 'Projects',
+# Dom, Nov 26 2026 (site grade fixes, apply_grade_fixes.py): Lives are off the site.
+NAV = ['Home', 'Wake the Heart', 'Music', 'Enter My World', 'Work with GhostHeart', 'Projects',
        'Merch ↗', 'Stay Connected', 'Find Support']
 # Dom, Nov 22 2026: "fix the tabs so about is next to home, name about something else" ... "just GhostHeart" (apply_new_home.py).
-PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Live', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
+PROTECTOR_NAV = ['Home', 'GhostHeart', 'The Vault', 'Work with GhostHeart', 'Projects', 'Merch', 'Find Support']
 NEW_LOOK = {'here-to-help/index.html', 'GhostHeart_Projects.html', 'GhostHeart_Resources.html', 'GhostHeart_Privacy.html',
             'vault/index.html'}
+
+
+# Dom, Nov 26 2026: the veterans song is off the site, and its name is not written in the repo either (grade fix 1).
+SONG = base64.b64decode('VG8gVGhvc2UgV2hvIFNlcnZlZA==').decode().lower()
+# The whole published tree, sources included, must not carry it (GitHub Pages serves .github too).
+for _f in ROOT.rglob('*'):
+    if _f.is_file() and '.git' not in _f.relative_to(ROOT).parts[:1] and _f.suffix not in ('.png', '.jpg', '.webp', '.mp3', '.mp4', '.pdf', '.ico', '.woff2'):
+        _low = _f.read_bytes().decode('utf-8', 'ignore').lower()
+        assert SONG not in _low and SONG.replace(' ', '-') not in _low, _f
 
 
 def page(relative):
@@ -91,7 +102,9 @@ for view in ('v-home', 'v-vault', 'v-story', 'v-live', 'v-merch'):
     assert home.select_one('#' + view), view
 # Dom, Nov 21 2026: nothing should say veterans anymore; the Week 01 block and the merch tag are gone (apply_no_veterans_home.py).
 assert not home.select('section.feat2[data-week="1"]') and 'Veterans Day' not in home.get_text()
-assert '14 weeks · Nov 9 to Feb 8' in home.get_text() and '13 weeks' not in home.get_text() and 'Feb 1' not in home.get_text()  # Dom, Nov 22 2026: 14 weeks, Nov 9 to Feb 8 (13 weeks + bonus week)
+assert '24 weeks · Nov 9 to Apr 19' in home.get_text() and '14 weeks' not in home.get_text() and 'Feb 8' not in home.get_text()  # Dom, Nov 26 2026: the final plan runs to Apr 19
+assert SONG not in home.get_text().lower() and 'Sunday Live' not in home.get_text()  # grade fixes 1 and 4
+#  # Dom, Nov 22 2026: 14 weeks, Nov 9 to Feb 8 (13 weeks + bonus week)
 home_raw = (ROOT / 'index.html').read_text(encoding='utf-8')
 # Dom, Nov 8 2026: older songs off everywhere; the Vault lists The Heart Wakes songs only.
 assert 'awakening-0' not in home_raw and 'youre-not-god' not in home_raw
@@ -114,7 +127,9 @@ for relative in PAGES:
     raw = (ROOT / relative).read_text(encoding='utf-8')
     assert 'Awakening' not in raw, relative
 weeks = re.findall(r'\{nm:"([^"]+)",up:"(\d{4}-\d\d-\d\d)"', site_js)
-assert len(weeks) == 14 and weeks[0] == ('To Those Who Served', '2026-11-08') and weeks[-1][0] == 'Watch Me Anyway', weeks
+# Dom, Nov 26 2026: the final plan, 24 weeks, Week 1 is The Heart Wakes and the finale is Carry the Light on Apr 19.
+assert len(weeks) == 24 and weeks[0] == ('The Heart Wakes', '2026-11-08') and weeks[-1] == ('Carry the Light', '2027-04-18'), weeks
+assert SONG not in site_js.lower() and SONG.replace(' ', '-') not in site_js.lower()
 for mp3 in re.findall(r'"/assets/wake-v3/audio/([^"]+\.mp3)"', site_js):
     assert (ROOT / 'assets/wake-v3/audio' / mp3).stat().st_size > 1_000_000, mp3
 
@@ -124,11 +139,11 @@ assert not music.select('.tracks li[id^="song-"]') and music.select_one('ul#albu
 
 # Dom, Nov 8 2026: older songs off everywhere; Films points to The Heart Wakes premiere only.
 films = page('GhostHeart_Videos.html')
-assert [a['id'] for a in films.select('article.film[id^="film-"]')] == ['film-the-heart-wakes']
+assert [a['id'] for a in films.select('article.film[id^="film-"]')] == ['film-kitchen', 'film-too-small', 'film-the-parts-you-hide', 'film-the-man-beneath-the-moon', 'film-the-heart-wakes']
 
+# Dom, Nov 26 2026: Lives are off the site; the old Lives address forwards to Home.
 live = page('live/index.html')
-assert live.select_one('#lives') and live.select_one('form.js-thread')
-assert live.select_one('a[href="https://www.tiktok.com/@ghosthearted1"]')
+assert live.select_one('meta[http-equiv=refresh]')['content'] == '0; url=/' and live.select_one('meta[name=robots]')['content'] == 'noindex'
 
 # Dom, Nov 8 2026: the Blog's entries were all about older songs, so it waits for The Heart Wakes notes.
 blog = page('journal/index.html')
@@ -167,7 +182,7 @@ assert len(support.select('.res-grid .resource')) == 16
 assert support.select_one('a[href="tel:988"]')
 assert 'url("data:' not in site_css
 print('PASS site: 12 pages, campaign page on, one menu, no old-site links, real Mailchimp and order forms, '
-      '14 album weeks, only The Heart Wakes songs listed, Films and Blog waiting for The Heart Wakes, Heart Dial without older songs, 16 resources')
+      '24 weeks to Apr 19, no veterans song, no Lives, Films with every video, Heart Dial without older songs, 16 resources')
 
 # Metricool website counter (Nov 18, 2026): every main page must load it. The Nov 11 home page dropped it
 # and Metricool recorded 0 visits from Nov 15. A page counts when it loads one of the three loaders.

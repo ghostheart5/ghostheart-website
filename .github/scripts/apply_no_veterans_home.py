@@ -5,7 +5,7 @@ yes to this website draft Nov 21, 8:53 PM Central).
 Runs after the week scripts in build_site.py, because apply_week2_home.py still finds the old Week 01 block in home.part.
 - Takes out the Week 01 · Veterans Day featured block. Week 2 becomes the block that shows when no script has run;
   the week 3 and week 4 switches still pick the right week by date.
-- Takes the "New · Veterans Day week" tag off the To Those Who Served merch card. The card itself stays.
+- Takes the "New · Veterans Day week" tag off the The Tribute Song merch card. The card itself stays.
 - The banner picture's description says "a person with the flag" instead of "a veteran with the flag".
 Left alone on purpose: the song's own lyrics in the player, and the Veterans Crisis Line and veterans housing line on the Find Support page, which are help, not promotion.
 """

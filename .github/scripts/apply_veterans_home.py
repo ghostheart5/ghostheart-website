@@ -3,11 +3,11 @@
 
 Runs after apply_week1_premiere.py in build_site.py.
 
-- Puts a "To Those Who Served" Veterans Day section at the very top of the home page,
+- Puts a "The Tribute Song" Veterans Day section at the very top of the home page,
   above The Heart Wakes. Everything else on the home page stays as it is.
-- Home page title, description and share card name To Those Who Served / Veterans Day.
+- Home page title, description and share card name The Tribute Song / Veterans Day.
 - The full song lives on YouTube only (one home rule), so the main button goes to the
-  To Those Who Served video. Second button: the Substack, where Dom's grandfather's
+  The Tribute Song video. Second button: the Substack, where Dom's grandfather's
   story (Army, Korean War), "He couldn't come home", is up now.
 - The only lyric quoted is "You shouldn't stand alone." No veteran stories are invented.
 - Veterans Crisis Line (US): dial 988 then press 1, or text 838255.
@@ -22,7 +22,7 @@ HOME = ROOT / 'index.html'
 MARK = '<!-- VETERANS: top of home (Dom, Nov 9, 2026) -->'
 
 SECTION = MARK + '''
-<section aria-label="To Those Who Served" class="vets" id="veterans">
+<section aria-label="The Tribute Song" class="vets" id="veterans">
 <style>
 .vets{background:radial-gradient(120% 90% at 85% 0%,rgba(215,25,32,.22),rgba(8,9,12,0) 60%),linear-gradient(180deg,#0d0e12,var(--obsidian));border-bottom:1px solid var(--line)}
 .vets .v-grid{display:grid;gap:clamp(22px,4vw,48px);grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}
@@ -48,9 +48,9 @@ SECTION = MARK + '''
 <div>
 <p class="mono" style="margin:0 0 14px"><b class="red">Veterans Day</b> · Wednesday, Nov 11</p>
 <h1 class="giant"><span class="chrome">To Those</span><br/><span class="red">Who Served.</span></h1>
-<p class="v-lede">Thank you. For those who served, and for everything they still carry. This song looks beyond the uniform, with gratitude, room for complicated feelings, and care that continues after the speeches end.</p>
+<p class="v-lede">Thank you. A tribute song.</p>
 <blockquote>You shouldn’t stand alone.</blockquote>
-<p class="mono v-cite">To Those Who Served · GhostHeart</p>
+<p class="mono v-cite">The Tribute Song · GhostHeart</p>
 <div class="row">
 <a class="btn red" href="https://www.youtube.com/watch?v=U0X6SwISG_M" rel="noopener" target="_blank">Watch on YouTube ↗</a>
 <a class="btn ghost" href="https://toohumantostayquiet.substack.com/p/he-couldnt-come-home" rel="noopener" target="_blank">Read on Substack ↗</a>
@@ -69,9 +69,9 @@ SECTION = MARK + '''
 
 ANCHOR = '<div class="view" data-view="home">\n'
 
-TITLE = 'GhostHeart | To Those Who Served · Veterans Day'
-DESC = ('To Those Who Served: a Veterans Day thank you song from GhostHeart. '
-        'For those who served, and for everything they still carry. Watch on YouTube.')
+TITLE = 'GhostHeart | The Tribute Song · Veterans Day'
+DESC = ('The Tribute Song: a Veterans Day thank you song from GhostHeart. '
+        'A tribute song. Watch on YouTube.')
 
 
 
@@ -91,7 +91,7 @@ def main() -> None:
     if t != s:
         HOME.write_text(t, encoding='utf-8')
     assert t.count('id="veterans"') == 1 and t.count('<h1') == 1 and f'<title>{TITLE}</title>' in t
-    print('Home page opens with To Those Who Served for veterans.')
+    print('Home page opens with The Tribute Song for veterans.')
 
 
 main()

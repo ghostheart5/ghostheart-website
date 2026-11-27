@@ -11,7 +11,7 @@ What Dom asked for and approved on the local concept (Nov 21 and 22):
   heart" and "can you zoom out" -> the Scars Wakes the Heart picture is shown whole, with a wake-up
   on load, a heartbeat glow, rain and lightning. People who turn motion off get the still picture.
   Then "the top picture is huge" -> it is 600px wide at most, inside the normal picture limit.
-- To Those Who Served on the front page's merch row: "keep it off". The words that had gone
+- The Tribute Song on the front page's merch row: "keep it off". The words that had gone
   missing from Home (the Heart Wakes line, The Silver Thread and its heart, the paint wall, the
   silver and black sliding bands): "fix it" -> they show again.
 - "now fix the banner where the tabs are" -> bigger logo, slanted tabs, a red line under the bar.

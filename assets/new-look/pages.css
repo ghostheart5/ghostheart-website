@@ -327,3 +327,13 @@ html body.newlook[data-page="vault"] .dial-out .btn:not(#_){margin:0 8px 0 0}
   html body.newlook[data-page="vault"] .dial-out:not(#_){order:1;margin-top:14px}
   html body.newlook[data-page="vault"] .dial-how:not(#_){order:2;margin-top:16px}
 }
+
+/* phones: a Menu button, like the other pages (grade fix 7, Nov 26 2026) */
+@media (max-width:1000px){
+  html body.newlook header.top .wrap{position:relative;justify-content:space-between;padding-inline:14px}
+  html body.newlook header.top .menu-btn{display:inline-flex;align-items:center;margin-left:auto;background:none;border:1px solid var(--nh-silver);color:var(--nh-white);font:400 16px/1 var(--nh-title);letter-spacing:.08em;text-transform:uppercase;min-height:44px;padding:0 14px;cursor:pointer}
+  html body.newlook header.top nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#0A0A0A;border-bottom:2px solid var(--nh-red);padding:8px 16px 16px;overflow:visible;z-index:60}
+  html body.newlook header.top nav.menu.open{display:flex}
+  html body.newlook header.top nav.menu a{padding:14px 6px!important;border-bottom:1px solid var(--nh-line)}
+  html body.newlook header.top nav.menu a.support{order:-1;margin:0 0 8px;text-align:center}
+}

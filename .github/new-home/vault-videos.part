@@ -2,10 +2,10 @@
     <h2 class="vh2" id="nv-vids-title">Out as videos</h2>
     <p class="nv-say">These play on YouTube.</p>
     <ol class="nv-list" id="nv-vidlist">
-      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener"><span class="no">1</span><span><span class="ti">To Those Who Served</span><span class="why">For those who served, and for everything they still carry.</span></span><span class="go">Watch ↗</span></a></li>
+      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=z00btt9OHWg" target="_blank" rel="noopener"><span class="no">1</span><span><span class="ti">When It Isn’t Your Kitchen</span><span class="why">It follows a mother whose husband is admired all over town.</span></span><span class="go">Watch ↗</span></a></li>
       <li><a class="nv-vid" href="https://www.youtube.com/watch?v=XfF_B-_ZNxM" target="_blank" rel="noopener"><span class="no">2</span><span><span class="ti">The Parts You Hide</span><span class="why">A Country and Americana song, released for Trans Awareness Week.</span></span><span class="go">Watch ↗</span></a></li>
       <li><a class="nv-vid" href="https://www.youtube.com/watch?v=l_ftyUginiA" target="_blank" rel="noopener"><span class="no">3</span><span><span class="ti">The Man Beneath the Moon</span><span class="why">Back as a new music video.</span></span><span class="go">Watch ↗</span></a></li>
-      <li data-from="2026-11-25T22:00:00Z" hidden><a class="nv-vid" href="https://www.youtube.com/watch?v=UTvuIgq-AWI" target="_blank" rel="noopener"><span class="no">4</span><span><span class="ti">Too Small</span><span class="why">Told through the eyes of a little boy in a house that does not feel safe.</span></span><span class="go">Watch ↗</span></a></li>
+      <li><a class="nv-vid" href="https://www.youtube.com/watch?v=-ZtyZCxKBM8" target="_blank" rel="noopener"><span class="no">4</span><span><span class="ti">Too Small</span><span class="why">Told through the eyes of a little boy in a house that does not feel safe.</span></span><span class="go">Watch ↗</span></a></li>
     </ol>
   </section>
   <script>

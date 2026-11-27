@@ -6,7 +6,7 @@ Runs after apply_protector_home.py in build_site.py, before Google Analytics and
 Wake the Heart Week 2 is The Parts You Hide, for Trans Awareness Week. The song comes out Monday, Nov 16.
 The website update goes up Sunday, Nov 15 at 7 PM Central (rules sheet: website updates the Sunday before).
 
-- Home, Featured week: the page carries both weeks. Week 1 (To Those Who Served) shows until Sunday,
+- Home, Featured week: the page carries both weeks. Week 1 (The Tribute Song) shows until Sunday,
   Nov 15 at 7 PM Central, then Week 2 (The Parts You Hide) shows instead. So this can be merged any time
   before Sunday night and it switches by itself. Without JavaScript, Week 1 stays.
 - Week 2 has no play button: the song file is not on the site yet. The button goes to the GhostHeart

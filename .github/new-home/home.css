@@ -268,3 +268,17 @@ html body #v-home .nh-pair>section>.wrap:not(#_){width:100%;max-width:none;margi
 html body #v-home .feat-grid .watch-line:not(#_){text-transform:none;letter-spacing:0;font-family:var(--nh-body)}
 html body #v-home .fire-stack:not(#_){transform:none!important;justify-content:start}
 html body #v-home .fire-stack>*:not(#_){justify-self:start;margin-inline:0}
+
+/* the Sunday Live box left the pair (grade fix 4, Nov 26 2026), so the sign-up takes the whole row */
+html body #v-home .nh-pair{grid-template-columns:minmax(0,1fr)}
+
+/* ---------- phones: a Menu button, like the other pages (grade fix 7, Nov 26 2026) ---------- */
+html body header.top .menu-btn{display:none}
+@media (max-width:1000px){
+  html body header.top .wrap{position:relative;justify-content:space-between;padding-inline:14px}
+  html body header.top .menu-btn{display:inline-flex;align-items:center;margin-left:auto;background:none;border:1px solid var(--nh-silver);color:var(--nh-white);font:400 16px/1 var(--nh-title);letter-spacing:.08em;text-transform:uppercase;min-height:44px;padding:0 14px;cursor:pointer}
+  html body header.top .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#0A0A0A;border-bottom:2px solid var(--nh-red);padding:8px 16px 16px;overflow:visible;z-index:60}
+  html body header.top .nav.open{display:flex}
+  html body header.top .nav a{padding:14px 6px;border-bottom:1px solid var(--nh-line)}
+  html body header.top .nav a.support{order:-1;margin:0 0 8px;text-align:center}
+}
