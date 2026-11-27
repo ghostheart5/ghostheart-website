@@ -19,7 +19,8 @@ nav = ["Home", "Music", "Enter My World", "Work with GhostHeart", "Merch"]  # re
 # Owner request 2026-10-31: The Awakening lives under Enter My World; Stay Connected left the menu.
 # Site audit 2026-11-01 (apply_clear_names.py): one name per place; Merch stays in the top bar only.
 # Dom, Nov 8 2026: The Awakening is retired; its "Before the Heart Wakes" page forwards to Music (apply_no_awakening.py).
-explore = {"Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Blog", "Lives", "Projects"}
+# Dom, Nov 26 2026 (site grade fixes, apply_grade_fixes.py): Lives are off the site and the empty Blog left the menus.
+explore = {"Behind the Scars", "The Woman Behind the Scenes", "The Vault", "Projects"}
 checks = 0
 for path in ROOT.rglob("*.html"):
     if ".git" in path.parts or ".github" in path.parts:

@@ -58,4 +58,4 @@ assert(fs.readFileSync('start/index.html','utf8').includes('content="0; url=/"')
 const films=fs.readFileSync('GhostHeart_Videos.html','utf8');
 // Dom, Nov 8 2026: older songs (Cruel included) are off the site; Films points to The Heart Wakes premiere.
 assert(!films.includes('id="film-cruel"') && films.includes('id="film-the-heart-wakes"'));
-console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, same 17 lines on the home page; Films shows only The Heart Wakes.');
+console.log('PASS: 32 timezone/boundary cases, unchanged 17 quotes, quote links, same 17 lines on the home page; Films still has The Heart Wakes premiere.');

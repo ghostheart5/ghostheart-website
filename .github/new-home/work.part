@@ -32,32 +32,18 @@
 
   <section class="nw-job nw-wrap" aria-labelledby="nw-job-title">
     <span class="nw-tag">Finished job</span>
-    <h2 id="nw-job-title">To Those Who Served</h2>
-    <p class="nw-sub">A tribute song and music video, written and produced by GhostHeart Studios.</p>
+    <h2 id="nw-job-title">When It Isn’t Your Kitchen</h2>
+    <p class="nw-sub">A single and music video from GhostHeart Studios, out since Monday, Nov 23.</p>
     <div class="nw-grid">
       <div>
-        <a class="nw-watch" href="https://www.youtube.com/watch?v=U0X6SwISG_M" target="_blank" rel="noopener">
-          <img src="https://i.ytimg.com/vi/U0X6SwISG_M/mqdefault.jpg" alt="To Those Who Served music video" width="320" height="180" loading="lazy">
-          <span>▶ To Those Who Served, full song on YouTube</span>
+        <a class="nw-watch" href="https://www.youtube.com/watch?v=z00btt9OHWg" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/z00btt9OHWg/mqdefault.jpg" alt="When It Isn’t Your Kitchen music video" width="320" height="180" loading="lazy">
+          <span>▶ When It Isn’t Your Kitchen, full music video on YouTube</span>
         </a>
-        <blockquote>We don’t need every story told<br>To know our thanks run deep.</blockquote>
-        <blockquote>You deserve more than a passing word<br>As people walk away.</blockquote>
       </div>
       <div>
-        <h3>What I did</h3>
-        <ul class="nw-did">
-          <li><b>Wrote it:</b> every lyric is mine. Two verses, two choruses, a bridge and a spoken dedication at the end.</li>
-          <li><b>Shaped the sound:</b> an acoustic rock ballad at 84 BPM, starting with piano and acoustic guitar and building to a full, strong final chorus. A raspy lead voice with a little tear in it on the hard words.</li>
-          <li><b>Made the video:</b> a 3-minute HD music video with word-by-word captions, plus cover art and a YouTube thumbnail.</li>
-          <li><b>Cut it for social:</b> short clips for YouTube Shorts, TikTok and Instagram Reels.</li>
-        </ul>
-        <h3>How long it took</h3>
-        <ol class="nw-days">
-          <li><b>November 3</b>lyrics finished and approved.</li>
-          <li><b>November 7</b>finished music video exported.</li>
-          <li><b>November 10</b>released.</li>
-        </ol>
-        <p class="nw-week">One week from a blank page to a finished song and video.</p>
+        <h3>The story it tells</h3>
+        <p class="nw-week">It follows a mother whose husband is admired all over town. Behind closed doors he controls the money, the car keys and the front door.</p>
       </div>
     </div>
   </section>

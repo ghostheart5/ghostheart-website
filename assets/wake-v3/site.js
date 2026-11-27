@@ -6,28 +6,37 @@
   // Weeks: CAMPAIGN_BRIEF.md (Nov 6, 2026) + TRACKLIST.md. Only FEATURED weeks are shown on the site.
   // A week becomes featured when it goes up (Sunday night before its Monday). Week 1 goes up Sun, Nov 8.
   var WEEKS=[
-    {nm:"To Those Who Served",up:"2026-11-08",at:"2026-11-09 12:00",a:"2026-11-09",b:"2026-11-15",songs:["The Heart Wakes","To Those Who Served"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)",note:"Veterans Day is Wednesday, Nov 11."},
-    {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon comes back as a new music video on Wednesday, Nov 18."},
-    {nm:"When It Isn’t Your Kitchen",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29",soon:["2026-11-23 16:00","Music video Monday, Nov 23, 4 PM Central"],note:"If home does not feel safe, you do not have to carry it alone. Too Small comes to YouTube on Wednesday, Nov 25, at 4 PM Central. Thanksgiving is Thursday, Nov 26."},
+    {nm:"The Heart Wakes",up:"2026-11-08",a:"2026-11-09",b:"2026-11-15",at:"2026-11-09 12:00",songs:["The Heart Wakes"],cover:"/assets/wake-v3/img/heart-wakes.jpg",color:"var(--song-heartwakes)"},
+    {nm:"The Parts You Hide",up:"2026-11-15",a:"2026-11-16",b:"2026-11-22",soon:["2026-11-16 00:00","Out Monday, Nov 16"],note:"For Trans Awareness Week. Your story. Your timing. The Man Beneath the Moon is back as a new music video."},
+    {nm:"When It Isn’t Your Kitchen",up:"2026-11-22",a:"2026-11-23",b:"2026-11-29",soon:["2026-11-23 16:00","Music video Monday, Nov 23, 4 PM Central"],note:"If home does not feel safe, you do not have to carry it alone. Too Small is on YouTube now."},
     {nm:"Why Didn’t You Call",up:"2026-11-29",a:"2026-11-30",b:"2026-12-06",soon:["2026-11-30 16:00","Music video Monday, Nov 30, 4 PM Central"],note:"For Grief Awareness Week. If someone’s on your mind, call them. If you are struggling, call or text 988."},
-    {nm:"What Saved You",up:"2026-12-06",a:"2026-12-07",b:"2026-12-13"},
+    {nm:"Freedom Belongs to Everyone",up:"2026-12-06",a:"2026-12-07",b:"2026-12-13"},
     {nm:"Heart Before Law",up:"2026-12-13",a:"2026-12-14",b:"2026-12-20"},
-    {nm:"Still",up:"2026-12-20",a:"2026-12-21",b:"2026-12-27",color:"var(--song-still)"},
-    {nm:"Still Here",up:"2026-12-27",a:"2026-12-28",b:"2027-01-03"},
-    {nm:"A Kinder Tomorrow",up:"2027-01-03",a:"2027-01-04",b:"2027-01-10"},
-    {nm:"Love Makes Me Braver",up:"2027-01-10",a:"2027-01-11",b:"2027-01-17"},
-    {nm:"One Side of the Story",up:"2027-01-17",a:"2027-01-18",b:"2027-01-24"},
-    {nm:"Letters to My Younger Self",up:"2027-01-24",a:"2027-01-25",b:"2027-01-31"},
-    {nm:"Carry the Light",up:"2027-01-31",a:"2027-02-01",b:"2027-02-01"},
-    {nm:"Watch Me Anyway",up:"2027-02-01",a:"2027-02-02",b:"2027-02-08"}
+    {nm:"The Lights Don’t Reach Every House",up:"2026-12-20",a:"2026-12-21",b:"2026-12-27",songs:["The Lights Don’t Reach Every House","Still"],color:"var(--song-still)"},
+    {nm:"Still Me",up:"2026-12-27",a:"2026-12-28",b:"2027-01-03"},
+    {nm:"Letters to My Younger Self",up:"2027-01-03",a:"2027-01-04",b:"2027-01-10"},
+    {nm:"What Did You Take From Her?",up:"2027-01-10",a:"2027-01-11",b:"2027-01-17"},
+    {nm:"Stand Up for Somebody",up:"2027-01-17",a:"2027-01-18",b:"2027-01-24"},
+    {nm:"Every Life Has a Name",up:"2027-01-24",a:"2027-01-25",b:"2027-01-31"},
+    {nm:"Against the World",up:"2027-01-31",a:"2027-02-01",b:"2027-02-07"},
+    {nm:"Love Makes Me Braver",up:"2027-02-07",a:"2027-02-08",b:"2027-02-14"},
+    {nm:"A Kinder Tomorrow",up:"2027-02-14",a:"2027-02-15",b:"2027-02-21"},
+    {nm:"One Side of the Story",up:"2027-02-21",a:"2027-02-22",b:"2027-02-28"},
+    {nm:"Still Here",up:"2027-02-28",a:"2027-03-01",b:"2027-03-07"},
+    {nm:"Watch Me Anyway",up:"2027-03-07",a:"2027-03-08",b:"2027-03-14"},
+    {nm:"The Heart That Fought for Me",up:"2027-03-14",a:"2027-03-15",b:"2027-03-21"},
+    {nm:"What Saved You",up:"2027-03-21",a:"2027-03-22",b:"2027-03-28"},
+    {nm:"Invisible Crown",up:"2027-03-28",a:"2027-03-29",b:"2027-04-04"},
+    {nm:"Listen to the Kids",up:"2027-04-04",a:"2027-04-05",b:"2027-04-11"},
+    {nm:"Home Got There First",up:"2027-04-11",a:"2027-04-12",b:"2027-04-18"},
+    {nm:"Carry the Light",up:"2027-04-18",a:"2027-04-19",b:"2027-04-25"}
   ];
   // Play buttons: song files bundled with the site (from 12_PROJECTS/Active/The_Heart_Wakes/01_Songs)
-  var AUDIO={"The Heart Wakes":"/assets/wake-v3/audio/the-heart-wakes.mp3","To Those Who Served":"/assets/wake-v3/audio/to-those-who-served.mp3"};
+  var AUDIO={"The Heart Wakes":"/assets/wake-v3/audio/the-heart-wakes.mp3"};
   // Lyrics: approved sheets in 12_PROJECTS/Active/The_Heart_Wakes/01_Songs/*/2-lyrics/lyrics.md
-  var LYRICS={"The Heart Wakes": "[Verse 1 — Male]\nI left my doubts on the kitchen chair,\nTurned up the song, let down my guard.\nThere’s a little more light in the morning air,\nAnd I’m done making joy so hard.\n\n[Verse 2 — Female]\nI’ve got two left feet and a brand-new plan,\nA laugh too loud for a room this small.\nTake a chance and take my hand—\nWe don’t have to know it all.\n\n[Chorus — Both]\nThe heart wakes—oh, here we go!\nA little more yes, a little less no.\nYou bring the spark, I’ll bring the beat,\nWe’ll find our way on these two left feet.\nHands up, let the daylight in—\nThe heart wakes, and we begin!\n\n[Verse 3 — Male]\nI used to save every little good thing\nFor a day when the hard part was through.\nNow I’m burning the toast while you laugh and sing,\nAnd I’m dancing round the kitchen with you.\n\n[Verse 4 — Female]\nWe can miss that turn, take the long way home,\nLet the radio lead us along.\nThere’s a whole wide world past the fear we’ve known,\nAnd I wanna hear you sing our song.\n\n[Bridge — Call and Response]\n[Male]\nI can’t promise easy.\n[Female]\nI don’t need you to.\n[Male]\nI can bring my whole heart.\n[Female]\nI can bring mine too.\n\n[Male]\nIf the next step feels unsteady,\n[Female]\nWe can take it side by side.\n[Male]\nI think I’m finally ready.\n[Female]\nThen let’s see what’s outside!\n\n[Final Chorus — Both]\nThe heart wakes—oh, here we go!\nA little more yes, a little less no.\nYou bring the spark, I’ll bring the beat,\nWe’ll find our way on these two left feet.\nHands up, let the daylight in—\nThe heart wakes, and we begin!\n\n[Short Outro — Both]\nYou bring the spark, I’ll bring the beat—\nThe heart wakes—\nCome dance with me!", "To Those Who Served": "[Verse 1 — Quiet, Raspy]\nYou gave your time, you stood your watch,\nYou carried out your part.\nBeyond the uniform you wore,\nThere lives a human heart.\n\nA life before, a life beyond,\nSome chapters yours to keep.\nWe don’t need every story told\nTo know our thanks run deep.\n\n[Chorus — Strong, Emotional]\nFor every kind of service,\nFor every road you’ve known—\nWith gratitude, we stand with you.\nYou shouldn’t stand alone.\n\nLet “thank you” turn to something\nThat lasts beyond today.\nYou deserve more than a passing word\nAs people walk away.\n\n[Verse 2 — A Little Tear in the Voice]\nSome came home to open arms,\nSome had to find their way.\nSome found pride in work well done,\nSome carry mixed feelings today.\n\nYou don’t owe us a perfect smile,\nOr words you’d rather save.\nYour worth was never measured\nBy how much more you gave.\n\n[Bridge — Building, Defiant]\nYou’ve got a right to speak your mind,\nA right to ask for more.\nA life that’s yours to choose and build—\nYou’ve got that right, for sure.\n\nSo let our thanks mean listening.\nLet respect show in what we do.\nWhen the speeches end and chairs fold up,\nLet care keep coming through.\n\n[Final Chorus — Full, Raspy, Resolute]\nFor every kind of service,\nFor every road you’ve known—\nWith gratitude, we stand with you.\nYou shouldn’t stand alone.\n\nLet “thank you” turn to something\nThat lasts beyond today.\nYou deserve more than a passing word\nAs people walk away.\n\n[Spoken — Rough Voice, Holding Back Tears]\nTo every veteran—\nthank you for your service.\nYour story matters.\nAnd so do you."};
+  var LYRICS={"The Heart Wakes": "[Verse 1 — Male]\nI left my doubts on the kitchen chair,\nTurned up the song, let down my guard.\nThere’s a little more light in the morning air,\nAnd I’m done making joy so hard.\n\n[Verse 2 — Female]\nI’ve got two left feet and a brand-new plan,\nA laugh too loud for a room this small.\nTake a chance and take my hand—\nWe don’t have to know it all.\n\n[Chorus — Both]\nThe heart wakes—oh, here we go!\nA little more yes, a little less no.\nYou bring the spark, I’ll bring the beat,\nWe’ll find our way on these two left feet.\nHands up, let the daylight in—\nThe heart wakes, and we begin!\n\n[Verse 3 — Male]\nI used to save every little good thing\nFor a day when the hard part was through.\nNow I’m burning the toast while you laugh and sing,\nAnd I’m dancing round the kitchen with you.\n\n[Verse 4 — Female]\nWe can miss that turn, take the long way home,\nLet the radio lead us along.\nThere’s a whole wide world past the fear we’ve known,\nAnd I wanna hear you sing our song.\n\n[Bridge — Call and Response]\n[Male]\nI can’t promise easy.\n[Female]\nI don’t need you to.\n[Male]\nI can bring my whole heart.\n[Female]\nI can bring mine too.\n\n[Male]\nIf the next step feels unsteady,\n[Female]\nWe can take it side by side.\n[Male]\nI think I’m finally ready.\n[Female]\nThen let’s see what’s outside!\n\n[Final Chorus — Both]\nThe heart wakes—oh, here we go!\nA little more yes, a little less no.\nYou bring the spark, I’ll bring the beat,\nWe’ll find our way on these two left feet.\nHands up, let the daylight in—\nThe heart wakes, and we begin!\n\n[Short Outro — Both]\nYou bring the spark, I’ll bring the beat—\nThe heart wakes—\nCome dance with me!"};
   // Why this song (Dom's words, Nov 6 2026)
-  var NOTES={"The Heart Wakes":"A playful duet about taking a chance on joy. With the radio on and two imperfect dancers in the kitchen, it’s about letting go of doubt and moving forward together.",
-    "To Those Who Served":"For those who served, and for everything they still carry. This song looks beyond the uniform, with gratitude, room for complicated feelings, and care that continues after the speeches end."};
+  var NOTES={"The Heart Wakes":"A playful duet about taking a chance on joy. With the radio on and two imperfect dancers in the kitchen, it’s about letting go of doubt and moving forward together."};
   function esc(t){return t.replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
   var MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   function d(s){var p=s.split("-");return {m:+p[1]-1,d:+p[2]}}
@@ -40,21 +49,21 @@
   function nowCT(){try{var p={};new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return p.year+"-"+p.month+"-"+p.day+" "+p.hour+":"+p.minute}catch(e){return new Date().toISOString().slice(0,16).replace("T"," ")}}
   var NOW=nowCT(),live=-1;WEEKS.forEach(function(w,i){if(NOW>=(w.at||w.up+" 19:00"))live=i});
   var feat=live>=0?live:0, isUp=live>=0;
-  var left=13-feat;
+  var left=WEEKS.length-1-feat;
 
   function songLi(x){var a=AUDIO[x];if(!a)return '<li>'+x+'</li>';
       return '<li class="player"><b>'+x+'</b><audio controls preload="none" src="'+a+'"></audio>'+(NOTES[x]?'<p class="why-song">'+NOTES[x]+'</p>':'')+
         (LYRICS[x]?'<details class="lyr"><summary>Read the lyrics</summary><pre>'+esc(LYRICS[x])+'</pre></details>':'')+'</li>'}
   function card(i,up){var w=WEEKS[i];var el=document.createElement("div");el.className="feat panel";if(w.color)el.style.setProperty("--song",w.color);
     var songs=(w.songs||[w.nm]).map(up?songLi:function(x){return '<li>'+x+'</li>'}).join("");
-    el.innerHTML='<span class="bar"></span><div class="feat-l"><p class="mono" style="margin:0">Week '+(i+1)+' of 14 · '+rng(w.a,w.b)+'</p><h3></h3>'+
+    el.innerHTML='<span class="bar"></span><div class="feat-l"><p class="mono" style="margin:0">Week '+(i+1)+' of '+WEEKS.length+' · '+rng(w.a,w.b)+'</p><h3></h3>'+
       '<p class="mono" style="margin:0;color:'+(up?"var(--accent)":"var(--song,var(--silver))")+'">'+(up?(w.soon&&NOW<w.soon[0]?w.soon[1]:"Out now"):(w.at?"Premieres Monday at 12 PM Central":"Goes up Sunday night"))+'</p>'+(w.cover?'<div class="feat-art"><picture class="wv"><source srcset="'+w.cover.replace(/\.jpg$/,".webp")+'" type="image/webp"><img src="'+w.cover+'" alt="The Heart Wakes album cover" width="110" height="110"></picture><p class="note" style="margin:0">From the album<br><b>The Heart Wakes</b></p></div>':'')+'</div>'+
       '<div class="feat-r"><p class="mono" style="margin:0 0 6px;color:var(--mute)">'+(w.songs&&w.songs.length>1?"This week’s songs":"This week’s song")+'</p><ul class="songlist">'+songs+'</ul>'+(w.cover?'':'')+(w.note?'<p class="note" style="margin-top:10px">'+w.note+'</p>':"")+
       '<div class="row" style="margin-top:16px"><a class="btn red" href="https://open.spotify.com/artist/68OskMXP10WmzJPexLzRc7" target="_blank" rel="noopener">Spotify ↗</a><a class="btn ghost" href="https://www.youtube.com/@GhostHeart-M95RTK" target="_blank" rel="noopener">YouTube ↗</a></div></div>';
     el.querySelector("h3").textContent=w.nm;return el}
   function locked(){var el=document.createElement("a");el.className="locked panel";el.href="/#thread";
-    el.innerHTML='<b class="chrome">+'+left+'</b><span><strong>'+left+' more weeks.</strong> They open one Sunday night at a time. Add your thread to hear about the next one first.</span><em class="mono">Add your thread ↓</em>';return el}
-  // Journey tracker: 14 slots; open weeks can be revisited, future weeks stay numbered until revealed
+    el.innerHTML='<b class="chrome">+'+left+'</b><span><strong>'+left+' more weeks.</strong> They open one Sunday night at a time.</span><em class="mono">Add your thread ↓</em>';return el}
+  // Journey tracker: one slot per week; open weeks can be revisited, future weeks stay numbered until revealed
   function showWeek(i){var box=document.getElementById("featured-wake");box.innerHTML="";box.appendChild(card(i,isUp&&i<=live));
     document.querySelectorAll("#track button").forEach(function(b){b.setAttribute("aria-pressed",+b.dataset.i===i?"true":"false")})}
   (function(){var tr=document.getElementById("track");if(!tr)return;
@@ -63,7 +72,7 @@
       var st=cur?(isUp?"This week":"Opens Sun night"):open?"Revisit":"Opens "+short(w.up);
       b.innerHTML='<span class="n">'+String(i+1).padStart(2,"0")+'</span>'+(open?'<span class="t">'+w.nm+'</span>':'<span class="sr">Week '+(i+1)+'</span>')+'<span class="s">'+st+'</span>';
       if(open)b.addEventListener("click",function(){showWeek(i)});li.appendChild(b);tr.appendChild(li)});
-    var nx=WEEKS[feat+1];document.getElementById("j-next").innerHTML=nx?'Next week opens <b class="red">Sunday, '+short(nx.up)+'</b>, at 7 PM Central':"All 14 weeks are open";
+    var nx=WEEKS[feat+1];document.getElementById("j-next").innerHTML=nx?'Next week opens <b class="red">Sunday, '+short(nx.up)+'</b>, at 7 PM Central':"All "+WEEKS.length+" weeks are open";
   })();
   (function(){var al=document.getElementById("album-songs");if(!al)return;var h="";for(var k=0;k<=live;k++)(WEEKS[k].songs||[]).forEach(function(x){if(AUDIO[x])h+=songLi(x)});al.innerHTML=h})();
   ["featured-home","featured-wake"].forEach(function(id){var box=document.getElementById(id);if(!box)return;
@@ -172,7 +181,7 @@
 
 
   // Silver Thread: the browser posts straight to Mailchimp, which confirms the signup itself.
-  document.querySelectorAll("form.js-thread").forEach(function(form){form.addEventListener("submit",function(){var s=form.querySelector(".ok");if(s){s.textContent="Opening Mailchimp to finish joining.";s.hidden=false}})});
+  document.querySelectorAll("form.js-thread").forEach(function(form){form.addEventListener("submit",function(){var s=form.querySelector(".ok");if(s){s.textContent="Opening Mailchimp to finish adding your thread.";s.hidden=false}})});
   // Notebook deep links (/journal/#e-papa) open that entry.
   (function(){var id=(location.hash||"").slice(1);if(!/^e-[\w-]+$/.test(id))return;var el=document.getElementById(id);if(!el)return;var dd=el.querySelector("details");if(dd)dd.open=true;el.scrollIntoView()})();
   var mb=document.getElementById("menu-btn"),menu=document.getElementById("menu");
