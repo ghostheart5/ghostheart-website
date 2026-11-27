@@ -21,6 +21,8 @@ Runs after apply_week3_home.py in build_site.py, before Google Analytics and the
 - Home title and share card are NOT changed by this script, so it can be merged any time before Sunday (the Week 3
   page keeps its own title and share card until then). At the switch, the browser tab title changes by itself.
   The share card (meta tags) moves to Week 4 in a small follow-up change on Sunday, Nov 29.
+- Nov 27, 2026: use Dom's supplied Sunday homepage banner, timing, description, button and support copy.
+  The existing Sunday 7 PM Central switch and support destinations are preserved.
 
 To take it down later, remove this script's line from build_site.py and rebuild.
 """
@@ -41,11 +43,10 @@ VIDEO_AT = '2026-11-30 16:00'
 WORLD_LINE = False  # Dom, Nov 19 2026 7:01 AM CT: "Leave grief week to only have why didnt ypu call"
 WORLD_URL = ''
 WORLD_AT = '2026-12-02 16:00'
-WHEN = 'Grief Awareness Week · Music video Monday, Nov 30, 4 PM Central'
+WHEN = 'Monday, 4 PM CT on YouTube'
 WHEN_OUT = 'Grief Awareness Week · Music video out now'
 
-WHY = ('Why Didn\u2019t You Call is a song from GhostHeart Studios about losing a friend to suicide, and the questions '
-       'it leaves behind. It is for everyone still carrying them, and a reminder to reach out and to pick up.')
+WHY = 'For the friend who was hurting, and for everyone still carrying the question.'
 
 FLIP = ('' if not VIDEO_URL else
         '  if(now>="' + VIDEO_AT + '"){var v=document.querySelector("[data-week4-video]");if(v){v.href="' + VIDEO_URL
@@ -79,15 +80,15 @@ WEEK4 = MARK + '''
       <div class="feat-head rv"><h2 class="bigtitle"><span class="steel">Featured</span> <span class="stn">week.</span></h2><span class="stamp s">Week 04 · Grief Awareness Week</span></div>
       <div class="feat-grid">
         <div class="rv"><div class="poster deck">
-          <div class="head"><img class="cover2" src="/assets/wake-v3/img/heart-wakes.jpg" alt="The Heart Wakes album cover: tattooed hands tearing open a shirt to show a cracked, glowing red heart" width="1000" height="1000" loading="lazy"><div><h3>Why Didn\u2019t You Call</h3><p class="mono" style="margin-top:4px" data-week4-when>''' + WHEN + '''</p></div></div>
+          <div class="head"><img class="cover2" src="/assets/wake-v3/img/heart-wakes.jpg" alt="The Heart Wakes album cover: tattooed hands tearing open a shirt to show a cracked, glowing red heart" width="1000" height="1000" loading="lazy"><div><h3>Next song: Why Didn't You Call</h3><p class="mono" style="margin-top:4px" data-week4-when>''' + WHEN + '''</p></div></div>
           <p class="why">''' + WHY + '''</p>
-          <div class="row"><a class="btn" href="''' + CHANNEL + '''" target="_blank" rel="noopener" data-week4-video>GhostHeart on YouTube \u2197</a></div>''' + WORLD + '''
+          <div class="row"><a class="btn" href="''' + CHANNEL + '''" target="_blank" rel="noopener" data-week4-video>GhostHeart on YouTube</a></div>''' + WORLD + '''
         </div></div>
         <div class="watch rv">
           <p class="sprayline"><span class="steel">If someone\u2019s on your mind,</span><br><span class="stn">call them.</span></p>
           <svg class="hb-line" viewBox="0 0 360 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 13 H150 L158 5 L166 13 L176 13 L184 1 L194 25 L202 13 H360"/></svg>
-          <p class="watch-line">If you are struggling, you do not have to carry it alone.</p>
-          <p class="note">988 Suicide &amp; Crisis Lifeline: <a href="tel:988">call 988</a>, <a href="sms:988">text 988</a>, or <a href="https://chat.988lifeline.org/" target="_blank" rel="noopener">chat</a>. In danger right now? <a href="tel:911">Call 911</a>. <a href="/GhostHeart_Resources.html">More support</a></p>
+          <p class="note">988 Suicide &amp; Crisis Lifeline: <a href="https://chat.988lifeline.org/" target="_blank" rel="noopener">chat</a>. In danger right now? <a href="tel:911">Call 911</a>. <a href="/GhostHeart_Resources.html">More support</a></p>
+          <p class="watch-line">If you're struggling, <a href="tel:988">call</a> or <a href="sms:988">text 988</a>.</p>
         </div>
       </div>
     </div>
